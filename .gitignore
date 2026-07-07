@@ -1,0 +1,74 @@
+# ── LaTeX build artifacts ────────────────────────────────────────────────────
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.log
+report/*.out
+report/*.synctex.gz
+report/*.fls
+report/*.fdb_latexmk
+
+# Old/intermediate/backup paper files
+report/*_backup*
+report/paper.tex
+report/paper.aux
+report/paper.log
+report/paper.out
+report/paper.pdf
+report/GeneratorSurvey.pdf
+report/GeneratorSurvey_v1_backup.pdf
+report/algorithm_matrix.md
+report/category4_research.md
+report/comparison_paper.md
+report/tables.md
+
+# ── Intermediate / scratch markdown files ────────────────────────────────────
+literature.md
+int
+fg.fbd.sum.txt
+*.fbd
+*.fbd.sum.txt
+"$1"
+
+# ── Downloaded papers (copyright) ────────────────────────────────────────────
+papers/
+
+# ── Datasets (large; downloaded via src/datasets.py) ─────────────────────────
+datasets/
+
+# ── SPMF JAR (users download their own from spmf.sourceforge.net) ─────────────
+spmf/
+
+# ── Benchmark raw output (regenerable) ───────────────────────────────────────
+results/raw/
+results/summary_dirty_backup_20260604_215720.csv
+results/summary_v097e_backup.csv
+results/test_*.txt
+
+# ── Compiled binaries ─────────────────────────────────────────────────────────
+*.exe
+*.dll
+*.obj
+*.o
+*.pdb
+*.ilk
+*.iobj
+*.ipdb
+
+# FGC-Stream: has its own git repo — clone from GitHub (see README)
+external_algos/FGC_Stream/
+
+# Visual Studio build artifacts
+**/Debug/
+**/Release/
+**/x64/
+**/.vs/
+*.user
+*.VC.db
+
+# ── Python cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
