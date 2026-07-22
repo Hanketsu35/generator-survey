@@ -97,7 +97,7 @@ def plot_scalability(df: pd.DataFrame):
     """Dataset buyuklugune gore runtime — Category 1 algoritmalar."""
     # Dataset boyutlari (transaction sayisi)
     dataset_sizes = {
-        "mushroom": 8124, "chess": 3196, "connect": 67557,
+        "mushroom": 8416, "chess": 3196, "connect": 67557,
         "t10i4d100k": 100000, "retail": 88162,
         "leviathan": 5834, "bible": 36369, "sign": 730,
         "chainstore": 45000, "foodmart": 4141,
