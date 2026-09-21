@@ -269,7 +269,9 @@ def plot(Z, cost, feats, fp, path, objective, projection, quality):
     ax.grid(alpha=0.25, lw=0.5)
     fig.tight_layout(rect=(0, 0.035, 1, 1))
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    fig.savefig(path)
+    # Suppress the PDF CreationDate stamp so an unchanged figure re-saves
+    # to identical bytes; see the same fix in src/analyze.py.
+    fig.savefig(path, metadata={"CreationDate": None})
     plt.close(fig)
     return path
 

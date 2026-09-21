@@ -2,6 +2,11 @@ import sys
 sys.path.insert(0, ".")
 import pandas as pd
 import matplotlib
+
+# Matplotlib stamps a CreationDate into every PDF, so an unchanged figure
+# re-saves to different bytes and git reports 25 phantom modifications after
+# each run. Suppressing it makes the plots reproducible.
+PDF_METADATA = {"CreationDate": None}
 matplotlib.use("Agg")  # headless mode - GUI gerektirmez
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -43,7 +48,7 @@ def plot_runtime_by_param(df: pd.DataFrame, dataset: str, category: int, param_c
     ax.legend(bbox_to_anchor=(1.05, 1), loc="upper left", fontsize=9)
     plt.tight_layout()
     fname = PLOTS_DIR / f"runtime_cat{category}_{dataset}.pdf"
-    fig.savefig(fname, bbox_inches="tight")
+    fig.savefig(fname, bbox_inches="tight", metadata=PDF_METADATA)
     plt.close()
     print(f"[PLOT] {fname}")
 
@@ -63,7 +68,7 @@ def plot_memory_heatmap(df: pd.DataFrame):
     ax.set_ylabel("Algorithm")
     plt.tight_layout()
     fname = PLOTS_DIR / "memory_heatmap.pdf"
-    fig.savefig(fname, bbox_inches="tight")
+    fig.savefig(fname, bbox_inches="tight", metadata=PDF_METADATA)
     plt.close()
     print(f"[PLOT] {fname}")
 
@@ -88,7 +93,7 @@ def plot_generator_count(df: pd.DataFrame, category: int):
     fig.suptitle(f"Generator Count — Category {category}", fontsize=12)
     plt.tight_layout()
     fname = PLOTS_DIR / f"gencount_cat{category}.pdf"
-    fig.savefig(fname, bbox_inches="tight")
+    fig.savefig(fname, bbox_inches="tight", metadata=PDF_METADATA)
     plt.close()
     print(f"[PLOT] {fname}")
 
@@ -124,7 +129,7 @@ def plot_scalability(df: pd.DataFrame):
     ax.legend(bbox_to_anchor=(1.05, 1), loc="upper left", fontsize=9)
     plt.tight_layout()
     fname = PLOTS_DIR / "scalability.pdf"
-    fig.savefig(fname, bbox_inches="tight")
+    fig.savefig(fname, bbox_inches="tight", metadata=PDF_METADATA)
     plt.close()
     print(f"[PLOT] {fname}")
 
@@ -148,7 +153,7 @@ def plot_category_comparison(df: pd.DataFrame):
     fig.suptitle("Average Runtime by Category", fontsize=12)
     plt.tight_layout()
     fname = PLOTS_DIR / "category_comparison.pdf"
-    fig.savefig(fname, bbox_inches="tight")
+    fig.savefig(fname, bbox_inches="tight", metadata=PDF_METADATA)
     plt.close()
     print(f"[PLOT] {fname}")
 
