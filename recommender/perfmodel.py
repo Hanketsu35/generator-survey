@@ -142,9 +142,20 @@ class PerformanceModel:
             return None
         x = self._x(feats, threshold)
         src = "model"
+        mem_band = None
         if algo in self.rt:
             rt = float(10 ** self.rt[algo].predict(x)[0])
             mem = float(10 ** self.mem[algo].predict(x)[0])
+            # Per-tree spread of the memory forest, bootstrapped the same way
+            # as the runtime band so the two are comparable.
+            per_tree = np.array([10 ** t.predict(x)[0]
+                                 for t in self.mem[algo].estimators_])
+            rng = np.random.default_rng(self.seed)
+            idx = rng.integers(0, per_tree.size, size=(300, per_tree.size))
+            boot = per_tree[idx].mean(axis=1)
+            mem_band = (float(per_tree.mean()),
+                        float(np.percentile(boot, 5)),
+                        float(np.percentile(boot, 95)))
         else:
             rt = float(10 ** fb["rt"])
             mem = float(10 ** fb["mem"])
@@ -159,15 +170,22 @@ class PerformanceModel:
         # runtime nor the completion probability is biased by discarding the
         # runs that hit the cutoff.
         par10 = None
+        band = None
         if algo in self.surv:
             grid, s = _sv.curve(self.surv[algo], x)
             rt = _sv.expected_runtime(grid, s)
             p = 1.0 - _sv.timeout_probability(grid, s)
             par10 = _sv.expected_par10(grid, s)
+            # How precise is that number? The engine needs this to avoid
+            # presenting a strict ranking over indistinguishable candidates.
+            band = _sv.rule_interval(self.surv[algo], x,
+                                     rule=_sv.expected_par10,
+                                     random_state=self.seed)
             src = "survival"
 
         return {"runtime_s": rt, "memory_mb": mem, "p_complete": p,
-                "expected_par10": par10, "source": src}
+                "expected_par10": par10, "cost_band": band,
+                "memory_band": mem_band, "source": src}
 
     # ------------------------------------------------------------------
     @staticmethod

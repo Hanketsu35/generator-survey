@@ -100,6 +100,35 @@ Reported in **nPAR10**, the algorithm-selection standard: 0 = oracle-perfect,
 1 = no better than always running the single best algorithm, > 1 = actively
 worse than not selecting at all.
 
+### Equivalence tiers — the recommender says when it cannot tell
+
+The ranking used to read 1-2-3 over candidates whose predicted costs differed
+by hundredths of a second, which asserts a preference the data does not
+support. Each survival tree yields its own value of the decision rule, so
+resampling those per-tree values bootstraps the ensemble mean and gives a
+5-95% band at no extra fitting cost. Candidates whose bands overlap share a
+**tier**, and within a tier the order carries no information:
+
+```
+tier implementation              runtime_s  memory_MB  P(fin)   PAR10_cost
+1    Gr-growth                        8.54      151.0    100%          8.5
+     FP-growth (Borgelt, -tg)         6.11      225.5    100%          6.1
+
+2    Eclat (Borgelt, -tg)             7.18      274.6    100%          7.2
+
+  Tier 1 contains 2 implementations whose predicted cost bands overlap.
+  The data does not support preferring one over another here.
+
+RECOMMENDED: Gr-growth  (tied with 1 other)
+   predicted cost 2.700, 5-95% band 2.444..2.934
+```
+
+The band is computed on the **composite score**, not on runtime alone — a first
+version tiered on the runtime band while ranking by the balanced score, which
+put Gr-growth in tier 1 and a *cheaper* FP-growth in tier 2. Relative widths of
+whichever bands feed the objective are propagated with that objective's
+exponent (`balanced` takes a square root, so it halves the relative width).
+
 **First, measure whether there is anything to select between**
 (`python -m recommender.complementarity`). Headroom is SBS/VBS — how much a
 *perfect* selector could win over the best fixed choice:

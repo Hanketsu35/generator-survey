@@ -15,6 +15,7 @@ from typing import List, Optional
 
 from . import metafeatures as mf
 from .capabilities import CapabilityDB
+from . import survival as _sv
 from .perfmodel import PerformanceModel, load_runs, pareto_front
 
 
@@ -31,6 +32,14 @@ class Recommendation:
     on_pareto_front: bool
     within_budget: bool
     prediction_source: str
+    #: 5-95% bootstrap band on the expected cost, or None when the model could
+    #: not supply one. Candidates whose bands overlap share a tier.
+    cost_band: Optional[tuple] = None
+    #: The same, on the composite score the ranking actually uses.
+    score_band: Optional[tuple] = None
+    #: 1 = best supported group. Within a tier the ordering is NOT supported by
+    #: the data and must not be presented as a preference.
+    tier: int = 1
     reasons: List[str] = field(default_factory=list)
     warnings: List[str] = field(default_factory=list)
     budget_notes: List[str] = field(default_factory=list)
@@ -159,6 +168,8 @@ class Recommender:
                 "memory_mb": pred["memory_mb"],
                 "p_complete": pred["p_complete"],
                 "source": pred["source"],
+                "cost_band": pred.get("cost_band"),
+                "memory_band": pred.get("memory_band"),
                 "expected_cost": PerformanceModel.expected_cost(pred),
                 "within_budget": ok,
                 "budget_notes": notes,
@@ -190,6 +201,29 @@ class Recommender:
             # A predicted budget violation is a hard demotion, not a tiebreak.
             r["score"] = s * (1.0 if r["within_budget"] else 1e6)
 
+            # Uncertainty on the SCORE. The ranking is by score, so a tier
+            # computed from the runtime band alone would contradict it -- as it
+            # did: Gr-growth landed in tier 1 on a balanced score while a
+            # cheaper FP-growth sat in tier 2. Propagate the relative width of
+            # whichever bands feed this objective, with the exponent the
+            # objective actually applies (balanced takes a square root, so it
+            # halves the relative width).
+            rel = []
+            cb, mb = r.get("cost_band"), r.get("memory_band")
+            if task.objective in ("runtime", "balanced") and cb and cb[0] > 0:
+                rel.append(((cb[1] / cb[0]), (cb[2] / cb[0])))
+            if task.objective in ("memory", "balanced") and mb and mb[0] > 0:
+                rel.append(((mb[1] / mb[0]), (mb[2] / mb[0])))
+            if rel:
+                expo = 0.5 if task.objective == "balanced" and len(rel) == 2 else 1.0
+                lo = hi = 1.0
+                for a, b in rel:
+                    lo *= a ** expo
+                    hi *= b ** expo
+                r["score_band"] = (r["score"], r["score"] * lo, r["score"] * hi)
+            else:
+                r["score_band"] = None
+
         rows.sort(key=lambda r: (r["score"], r["expected_cost"]))
 
         out = []
@@ -203,6 +237,8 @@ class Recommender:
                 on_pareto_front=False,   # recomputed on the sorted list below
                 within_budget=r["within_budget"],
                 prediction_source=r["source"],
+                cost_band=r.get("cost_band"),
+                score_band=r.get("score_band"),
                 reasons=list(v.reasons),
                 warnings=self._resolve_input_dependent(v, feats),
                 budget_notes=r["budget_notes"],
@@ -213,6 +249,25 @@ class Recommender:
                                     "memory_mb": o.memory_mb} for o in out]))
         for i, o in enumerate(out):
             o.on_pareto_front = i in front2
+
+        # --- equivalence tiers ------------------------------------------
+        # Presenting a strict 1-2-3 ordering over candidates whose predicted
+        # costs differ by hundredths of a second asserts a preference the data
+        # does not support. Group candidates whose uncertainty bands overlap
+        # the band of their tier's leader; within a tier, order is arbitrary.
+        # Comparing against the LEADER rather than the previous entry stops a
+        # chain of pairwise overlaps from merging everything into one tier.
+        tier, leader = 1, None
+        for o in out:
+            if o.score_band is None:
+                o.tier = tier                 # no band: keep it where it sits
+                continue
+            if leader is None:
+                leader = o.score_band
+            elif not _sv.indistinguishable(o.score_band, leader):
+                tier += 1
+                leader = o.score_band
+            o.tier = tier
 
         return (out[:top] if top else out), rejected, feats
 
@@ -242,19 +297,44 @@ def format_report(task, recs, rejected, feats, show_rejected=True):
         L.append("LAYER 3 - ranked by predicted %s" % task.objective)
         L.append("")
         hdr = ("%-4s %-26s %10s %10s %7s %12s %6s %s"
-               % ("rank", "implementation", "runtime_s", "memory_MB", "P(fin)",
+               % ("tier", "implementation", "runtime_s", "memory_MB", "P(fin)",
                   "PAR10_cost", "pareto", "match"))
         L.append(hdr)
         L.append("-" * len(hdr))
-        for i, r in enumerate(recs, 1):
+        prev_tier = None
+        for r in recs:
+            # A blank line between tiers, and the tier number only on its first
+            # row: within a tier the order carries no information and should not
+            # look like it does.
+            if prev_tier is not None and r.tier != prev_tier:
+                L.append("")
+            label = "%d" % r.tier if r.tier != prev_tier else ""
+            prev_tier = r.tier
             flag = "*" if r.on_pareto_front else " "
             bad = "" if r.within_budget else "  <-- OVER BUDGET"
-            L.append("%-4d %-26s %10.2f %10.1f %6.0f%% %12.1f %6s %s%s"
-                     % (i, r.display, r.runtime_s, r.memory_mb,
+            L.append("%-4s %-26s %10.2f %10.1f %6.0f%% %12.1f %6s %s%s"
+                     % (label, r.display, r.runtime_s, r.memory_mb,
                         100 * r.p_complete, r.expected_cost, flag, r.match, bad))
+
+        tier1 = [r for r in recs if r.tier == 1]
+        if len(tier1) > 1:
+            L.append("")
+            L.append("  Tier 1 contains %d implementations whose predicted cost"
+                     % len(tier1))
+            L.append("  bands overlap: %s."
+                     % ", ".join(r.display for r in tier1))
+            L.append("  The data does not support preferring one over another")
+            L.append("  here; choose on whatever else matters to you.")
         L.append("")
         top = recs[0]
-        L.append("RECOMMENDED: %s" % top.display)
+        L.append("RECOMMENDED: %s%s"
+                 % (top.display,
+                    "  (tied with %d other%s)"
+                    % (len(tier1) - 1, "s" if len(tier1) > 2 else "")
+                    if len(tier1) > 1 else ""))
+        if top.score_band:
+            L.append("   predicted cost %.3f, 5-95%% band %.3f..%.3f"
+                     % (top.score_band[0], top.score_band[1], top.score_band[2]))
         for s in top.reasons:
             L.append("   + %s" % s)
         for s in top.warnings:

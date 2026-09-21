@@ -149,3 +149,50 @@ RULES = {
     "expected_par10": expected_par10,
     "risk_averse": risk_averse,
 }
+
+
+# ----------------------------------------------------------------------
+# How sure is the forest?
+# ----------------------------------------------------------------------
+def rule_interval(rsf, x, rule=expected_par10, n_boot=300, lo=5, hi=95,
+                  random_state=0):
+    """Point estimate and uncertainty band for a decision rule.
+
+    Why this exists: the recommender was presenting a strict ranking over
+    implementations whose predicted costs differ by hundredths of a second.
+    That reads as a preference which the data does not support. To say "these
+    are indistinguishable" the engine needs to know how precise its own
+    estimate is.
+
+    Each tree in the forest yields its own survival curve, and therefore its
+    own value of the rule. Resampling those per-tree values with replacement
+    bootstraps the ENSEMBLE mean, which is the quantity actually being
+    reported. This costs nothing extra: the trees are already fitted.
+
+    Returns (mean, lo_pct, hi_pct). The mean agrees with the ensemble-curve
+    value by construction, so nothing about the ranking changes -- only the
+    confidence attached to it.
+    """
+    x = np.asarray(x, dtype=float).reshape(1, -1)
+    per_tree = np.empty(len(rsf.estimators_), dtype=float)
+    for i, tree in enumerate(rsf.estimators_):
+        fn = tree.predict_survival_function(x)[0]
+        per_tree[i] = rule(np.asarray(fn.x, float), np.asarray(fn.y, float))
+
+    rng = np.random.default_rng(random_state)
+    idx = rng.integers(0, per_tree.size, size=(n_boot, per_tree.size))
+    boot = per_tree[idx].mean(axis=1)
+    return float(per_tree.mean()), float(np.percentile(boot, lo)), \
+        float(np.percentile(boot, hi))
+
+
+def indistinguishable(a, b):
+    """True when two (mean, lo, hi) estimates have overlapping bands.
+
+    Deliberately the weakest possible test: if the intervals overlap at all,
+    the ordering between the two is not supported. Being generous here means
+    the recommender under-claims rather than over-claims, which is the right
+    direction for a tool whose whole argument is that unsupported claims are
+    the problem.
+    """
+    return not (a[2] < b[1] or b[2] < a[1])
