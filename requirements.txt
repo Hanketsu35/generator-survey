@@ -1,0 +1,17 @@
+# Benchmark harness and analysis
+psutil
+pandas>=2.0,<3
+matplotlib>=3.7
+requests
+
+# Recommender (recommender/)
+numpy>=1.24,<2
+scikit-learn>=1.4,<1.5
+scipy>=1.10
+
+# Censored-runtime modelling (recommender/survival.py).
+# PIN REQUIRED. scikit-survival >=0.24 needs numpy>=2, which forces an upgrade
+# of pandas / scikit-learn / matplotlib and breaks the benchmark pipeline;
+# <=0.22 predates the scikit-learn 1.4 API (imports sklearn.ensemble._gb_losses,
+# removed in 1.4). 0.23.0 is the single version compatible with both.
+scikit-survival==0.23.0

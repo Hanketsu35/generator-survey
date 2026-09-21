@@ -1,0 +1,226 @@
+# Semantics-Aware Algorithm Recommendation for Minimal-Generator Mining
+
+A three-layer recommender built on the 667-run benchmark and the output-correctness
+audit in the parent repository.
+
+## The thesis
+
+Every published algorithm-selection framework — Rice's formulation, empirical
+hardness models, AutoML portfolio methods — assumes the candidate algorithms are
+semantically interchangeable, and selects among them on a performance metric.
+
+**In generator mining that assumption is false, and this repository measures how
+false.** Of 17 executable implementations:
+
+| implementation | what the audit found |
+|---|---|
+| HUCI-Miner-Generators | returns **0 / 2002** support-minimal patterns — a different family entirely, despite the name |
+| Gr-growth (`k ≥ 2`) | an **undocumented parameter** silently switches to the disjunction-free family; 40% of the output, faster for exactly that reason |
+| Talky-G, Talky-G-diffset | return **non-minimal itemsets on 7 of 57** configurations, up to 13.8% of the output |
+| VGEN vs FEAT/FSGP | disagree on **3802 patterns** at one configuration — a threshold-rounding convention, not an algorithmic difference |
+| Talky-G (empty set) | emits the empty set **iff the dataset has no full-support item** — an input-dependent convention |
+
+A recommender that optimises runtime over this candidate set returns implementations
+that silently answer a different question. So Layer 2 runs *first*.
+
+## Layers
+
+```
+  natural language
+        │  Layer 1  nl.py           rule baseline + optional LLM adapter
+        ▼
+    MiningTask                      spec.py   formal, checkable
+        │  Layer 2  capabilities.py HARD semantic filter, oracle-backed
+        ▼
+   eligible set
+        │  Layer 3  perfmodel.py    runtime / memory / completion prediction
+        ▼
+  ranked recommendation + explanation + refusals with evidence
+```
+
+Layer 2 is a knowledge base and a constraint check, not a learned model: every
+claim is traceable to an oracle measurement recorded in `data/capabilities.json`.
+
+## Quick start
+
+```bash
+python -m recommender.cli --dataset mushroom --threshold 0.05
+python -m recommender.cli --ask "minimal generators at 30% support, memory is tight under 512 MB" --dataset chess
+python -m recommender.cli --dataset foodmart --data-type utility --family high_utility_generator --threshold 50
+python -m recommender.cli --data-path mydata.txt --threshold 0.1 --json
+```
+
+Explicit flags always override anything `--ask` parses out of the text.
+
+## Experiments
+
+```bash
+python -m recommender.evaluate      # E1-E4, writes out/experiments.{txt,json}
+python -m recommender.nl --eval     # Layer 1 accuracy, per field
+```
+
+### E1 — the oracle gap (negative result)
+
+A *perfect* per-instance selector beats "always run the single best implementation"
+by **7.7%** in geometric mean (1.011× on PAR10 mean). Performance prediction cannot
+carry this paper. It is reported so the contribution is not oversold.
+
+The objectives do conflict, however, which is what keeps Layer 3 worth having:
+FP-growth is best on runtime (1.08×) but 1.84× on memory; Apriori is best on memory
+(1.38×) but 2.46× on runtime.
+
+### E2 — semantic error rate (headline)
+
+830 queries = 83 configurations × 5 requirement profiles × 2 objectives. The
+baseline selector is given the **true measured** runtime and memory of every
+implementation — a perfect performance oracle, strictly stronger than anything
+learnable — and picks the cheapest implementation that accepts the input format.
+
+| | |
+|---|---|
+| specification violated by performance-first selection | **193 / 830 (23.3%)** |
+| violated by semantics-first selection | 0 (by construction) |
+| price of correctness (compliant vs non-compliant pick) | 1.87× geometric mean |
+| queries admitting **no** compliant implementation | 30 (3.6%) |
+
+By profile: floor boundary 58.4%, ceil boundary 41.6%, default 5.4%. By objective:
+runtime 21.4%, memory 25.1%.
+
+Failure modes: 88 wrong-boundary picks, 60 opposite-boundary picks, 30 picks of
+Arima (rare itemsets, not generators), 15 picks of HUCI-Miner-Generators
+(utility-minimal, not support-minimal).
+
+### Selector comparison — normalized PAR10 (leave-one-dataset-out)
+
+```bash
+python -m recommender.bench_selectors --category 1
+```
+
+Reported in **nPAR10**, the algorithm-selection standard: 0 = oracle-perfect,
+1 = no better than always running the single best algorithm, > 1 = actively
+worse than not selecting at all.
+
+**First, measure whether there is anything to select between**
+(`python -m recommender.complementarity`). Headroom is SBS/VBS — how much a
+*perfect* selector could win over the best fixed choice:
+
+| slice | headroom | best learned selector |
+|---|---|---|
+| runtime, dedicated miners | **1.000×** | — Gr-growth wins 58 of 58 |
+| runtime, all 9 | 1.011× | none beats the fixed choice |
+| memory, SPMF only | 1.016× | pairwise ranking, 0.745 |
+| rare/stream (46.8% censored) | 1.251× | pairwise ranking, **0.000** |
+| **memory, all 9** | **3.660×** | **pairwise ranking, 0.445** |
+
+On the one slice with real headroom, every learned selector beats the fixed
+choice and the ordering is the one the literature predicts —
+**ranking > survival > regression > fixed**:
+
+| selector | nPAR10 | top-1 |
+|---|---|---|
+| pairwise ranking | **0.445** | 45.0% |
+| survival (risk-averse) | 0.869 | 35.0% |
+| survival (expected runtime / PAR10) | 0.893 | 32.5% |
+| regression (the original Layer 3) | 0.916 | 10.0% |
+| SBS (fixed choice) | 1.000 | 27.5% |
+
+Three things this says, none of them flattering to a naive reading:
+
+1. **Where runtime is the objective there is nothing to win.** Headroom is
+   1.011×, and on the dedicated-miner portfolio Gr-growth wins every single
+   configuration. The portfolio lacks the complementarity that makes algorithm
+   selection pay in SAT — a property of the benchmark, not of any model.
+2. **Absolute magnitudes stay modest** even in the good slice: 18.4 MB down to
+   11.0 MB. The 55% gap closure is a relative claim and should be stated as one.
+3. **Top-1 accuracy and cost disagree.** On an earlier run the pairwise ranker
+   had the best accuracy and the worst cost: one catastrophic pick outweighs
+   many small wins when the loss is asymmetric. Judge selectors on cost.
+
+See `literature/NOTES.md`, including a mistake of ours that a 10× penalty on
+peak memory manufactured an apparent 4.35× headroom where the clean subset
+shows 1.016×.
+
+### E3 — does the performance model generalise? (negative result)
+
+Leave-one-**dataset**-out, seven folds. Leave-one-run-out would test on
+near-duplicates and inflate everything.
+
+| | |
+|---|---|
+| meta-feature model, MAE (log₁₀ s) | 0.727 |
+| per-algorithm constant baseline | **0.689** |
+| learned selector, geo-mean slowdown | 1.159× |
+| always-single-best baseline | **1.112×** |
+
+**The learned selector loses to a fixed choice by 4.2%.** With seven datasets each
+fold removes a seventh of the *feature space*, so the model extrapolates rather
+than interpolates. This is why `synth.py` exists.
+
+### E4 — is unsoundness predictable from meta-features?
+
+Target: does Talky-G return non-minimal itemsets on this configuration?
+57 configurations, 7 positive.
+
+Pooled leave-one-dataset-out AUC is 0.771, significant under label permutation
+(p = 0.012) — **and it must not be reported**. Decomposed:
+
+| | |
+|---|---|
+| across datasets (*does this dataset carry the defect?*) | **0.417** — below chance |
+| within datasets (*which threshold is affected?*) | 0.907 |
+
+The model ranks T10I4D100K highest while that dataset has no defect at all. The
+usable conclusion is the conservative one: **capability profiles must be measured
+per implementation**, and a benchmark result on one dataset licenses no inference
+about another. That is an argument for the audit.
+
+### Layer 1
+
+The rule-based baseline scores **100%** field-level exact match on the 28-query
+set. That means the set is saturated and was written by the same author as the
+rules: there is no headroom for an LLM to demonstrate value. An independently
+authored query set, containing genuinely ambiguous requests, is a prerequisite
+before Layer 1 can be claimed as a contribution rather than an interface.
+
+## Synthetic instances
+
+`synth.py` implements an IBM Quest-style generator with controlled meta-features
+(size, item count, transaction length, support skew, corruption), because E3 and
+E4 both fail for lack of meta-instances.
+
+```bash
+python -m recommender.synth --grid --dry-run      # 162 datasets, ~346 MB, ~28 min
+python -m recommender.synth --grid
+```
+
+**The evaluation protocol must always hold out a *real* dataset, never a synthetic
+one**, or the accuracy is self-congratulatory. Synthetic instances fill the space
+so a held-out real dataset is interpolated; they do not replace it.
+
+## Files
+
+| file | role |
+|---|---|
+| `spec.py` | `MiningTask` — the formal specification |
+| `capabilities.py` | Layer 2 filter, with per-rejection evidence |
+| `data/capabilities.json` | the oracle-derived knowledge base (the core artifact) |
+| `metafeatures.py` | single-pass structural features; `data/metafeatures.json` cache |
+| `perfmodel.py` | Layer 3 predictors + Pareto front |
+| `engine.py` | orchestration and report formatting |
+| `cli.py` | command line |
+| `nl.py` | Layer 1 extractors + evaluation |
+| `data/nl_queries.json` | Layer 1 ground truth |
+| `synth.py` | controlled instance generation |
+| `evaluate.py` | E1–E4 |
+| `out/` | generated results (gitignored) |
+
+## Reproducing
+
+Requires the parent repository's `results/summary.csv` and `datasets/raw/`.
+No network access, no API key (unless `--llm` is used for Layer 1).
+
+```bash
+python -m recommender.metafeatures   # rebuild the meta-feature cache
+python -m recommender.evaluate       # E1-E4
+python -m recommender.nl --eval      # Layer 1
+```

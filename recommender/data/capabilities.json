@@ -1,0 +1,373 @@
+{
+  "schema_version": "1.0",
+  "description": "Machine-readable semantic capability profiles for the 17 executable minimal-generator implementations. Every field marked provenance='oracle' was determined by measurement against an independent oracle (tools/validate_*.py), not read off the algorithm's title or its source paper.",
+  "generated_from": [
+    "tools/validate_generators.py",
+    "tools/validate_hui.py",
+    "tools/validate_sequential.py",
+    "tools/validate_remaining.py",
+    "tools/check_grgrowth.py"
+  ],
+
+  "family_relation": {
+    "_comment": "satisfies[emitted][requested] -> how an implementation emitting `emitted` can serve a request for `requested`. exact = identical family; post_filter = requested family is recoverable by a documented filter on the output; no = different question.",
+    "minimal_generator": {
+      "minimal_generator": "exact",
+      "disjunction_free": "post_filter"
+    },
+    "disjunction_free": {
+      "disjunction_free": "exact",
+      "minimal_generator": "no"
+    },
+    "sequential_generator": {
+      "sequential_generator": "exact"
+    },
+    "generator_closure_pairs": {
+      "generator_closure_pairs": "exact",
+      "minimal_generator": "post_filter",
+      "closed_itemset": "post_filter"
+    },
+    "high_utility_generator": {
+      "high_utility_generator": "exact"
+    },
+    "ghui": {
+      "ghui": "exact",
+      "high_utility_generator": "post_filter"
+    },
+    "utility_minimal": {
+      "utility_minimal": "exact",
+      "minimal_generator": "no",
+      "high_utility_generator": "no",
+      "ghui": "no"
+    },
+    "minimal_rare_itemset": {
+      "minimal_rare_itemset": "exact",
+      "minimal_generator": "no"
+    }
+  },
+
+  "post_filters": {
+    "ghui->high_utility_generator": "retain X with u(X) >= theta; verified exactly equal to HUG-Miner output (687 at theta=100, 1475 at theta=50 on foodmart)",
+    "generator_closure_pairs->minimal_generator": "project each class onto its generator list",
+    "generator_closure_pairs->closed_itemset": "project each class onto its closure",
+    "minimal_generator->disjunction_free": "disjunction-free sets are a proper subset of the generators; requires an inclusion-exclusion test per candidate"
+  },
+
+  "implementations": [
+    {
+      "id": "DefMe",
+      "display": "DefMe",
+      "category": 1,
+      "input_type": "transactional",
+      "provenance": "SPMF v2.65",
+      "emits": {"family": "minimal_generator", "evidence": "oracle"},
+      "conventions": {
+        "empty_set": "always",
+        "threshold_boundary": "floor",
+        "boundary_evidence": "oracle: on Connect at minsup=0.4 (27022.8) DefMe returns 3 itemsets of support exactly 27023 that the ceil-boundary miners omit"
+      },
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "vertical bitset support oracle", "scope": "58 transactional configurations; set-level equality on mushroom/0.4 and chess/0.7"},
+      "notes": ["Highest robustness among JVM transactional miners: completed all 58 configurations."]
+    },
+    {
+      "id": "Gr_growth",
+      "display": "Gr-growth",
+      "category": 1,
+      "input_type": "transactional",
+      "provenance": "native C++ (GrGrowth-PBd)",
+      "emits": {"family": "minimal_generator", "evidence": "oracle", "conditional_on": {"k": 1}},
+      "conventions": {
+        "empty_set": "always",
+        "threshold_boundary": "floor",
+        "boundary_evidence": "oracle: on Chess at minsup=0.7 (2237.2) returns 99 itemsets of support exactly 2237 that the native post-filters omit"
+      },
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {
+        "status": "conditional",
+        "condition": "k == 1",
+        "hazard": "At k >= 2 the released binary applies an inclusion-exclusion test (calc_subset_sum, PatternSet.cpp:346,440) that characterises the strictly smaller DISJUNCTION-FREE family. Output stays sound but returns ~40% of the generators, and runs faster for exactly that reason. The parameter is undocumented.",
+        "evidence": "oracle: mushroom/0.2 returns 683 of 1703 generators at k=100"
+      },
+      "validation": {"oracle": "vertical bitset support oracle + set equality against DefMe", "scope": "58 transactional configurations"},
+      "notes": ["Fastest dedicated generator miner and lowest peak memory, but native C++ so the advantage is not attributable to algorithm design alone."]
+    },
+    {
+      "id": "Talky_G",
+      "display": "Talky-G",
+      "category": 1,
+      "input_type": "transactional",
+      "provenance": "SPMF v2.65",
+      "emits": {"family": "minimal_generator", "evidence": "oracle"},
+      "conventions": {
+        "empty_set": "input_dependent",
+        "empty_set_rule": "emitted iff the dataset contains NO full-support item. Mushroom has item 90 in all 8416 transactions, so the empty set is omitted there but emitted on the other six datasets.",
+        "threshold_boundary": "ceil"
+      },
+      "soundness": {
+        "status": "defective",
+        "summary": "Returns itemsets that fail the minimality criterion stated in its own source paper.",
+        "scope": "7 of the 57 configurations it completes",
+        "max_contamination": 0.138,
+        "evidence": "oracle: on mushroom/0.05, 2960 of 24350 returned itemsets have a proper subset of equal support",
+        "defective_configs": [
+          {"dataset": "mushroom", "param_value": 0.05, "extra": 2960},
+          {"dataset": "mushroom", "param_value": 0.10, "extra": 853},
+          {"dataset": "mushroom", "param_value": 0.15, "extra": 205},
+          {"dataset": "mushroom", "param_value": 0.20, "extra": 149},
+          {"dataset": "mushroom", "param_value": 0.30, "extra": 8},
+          {"dataset": "chess", "param_value": 0.30, "extra": 45},
+          {"dataset": "retail", "param_value": 0.0005, "extra": 7}
+        ]
+      },
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "vertical bitset support oracle", "scope": "57 completed configurations, 50 exact"},
+      "notes": ["The defect is shared with TalkyG_Diffset and is therefore located in the common generator test, not in the TID-list representation."]
+    },
+    {
+      "id": "TalkyG_Diffset",
+      "display": "Talky-G (diffset)",
+      "category": 1,
+      "input_type": "transactional",
+      "provenance": "SPMF v2.65",
+      "emits": {"family": "minimal_generator", "evidence": "oracle"},
+      "conventions": {
+        "empty_set": "input_dependent",
+        "empty_set_rule": "identical to Talky-G",
+        "threshold_boundary": "ceil"
+      },
+      "soundness": {
+        "status": "defective",
+        "summary": "Byte-identical defect to Talky-G.",
+        "scope": "7 of the 57 configurations it completes",
+        "max_contamination": 0.138,
+        "evidence": "oracle: output identical to Talky-G on every configuration",
+        "defective_configs": [
+          {"dataset": "mushroom", "param_value": 0.05, "extra": 2960},
+          {"dataset": "mushroom", "param_value": 0.10, "extra": 853},
+          {"dataset": "mushroom", "param_value": 0.15, "extra": 205},
+          {"dataset": "mushroom", "param_value": 0.20, "extra": 149},
+          {"dataset": "mushroom", "param_value": 0.30, "extra": 8},
+          {"dataset": "chess", "param_value": 0.30, "extra": 45},
+          {"dataset": "retail", "param_value": 0.0005, "extra": 7}
+        ]
+      },
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "vertical bitset support oracle", "scope": "57 completed configurations"},
+      "notes": []
+    },
+    {
+      "id": "Pascal",
+      "display": "Pascal",
+      "category": 1,
+      "input_type": "transactional",
+      "provenance": "SPMF v2.65",
+      "emits": {"family": "minimal_generator", "evidence": "oracle"},
+      "conventions": {"empty_set": "never", "threshold_boundary": "ceil"},
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "vertical bitset support oracle", "scope": "set equality against DefMe on mushroom/0.4 and chess/0.7"},
+      "notes": ["Writes all frequent itemsets tagged '#IS_GENERATOR: true|false'; a plain line count counts frequent itemsets, not generators.", "Breadth-first: times out on dense data."]
+    },
+    {
+      "id": "Zart",
+      "display": "Zart",
+      "category": 1,
+      "input_type": "transactional",
+      "provenance": "SPMF v2.65",
+      "emits": {"family": "minimal_generator", "evidence": "oracle"},
+      "conventions": {"empty_set": "always", "threshold_boundary": "ceil"},
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "vertical bitset support oracle", "scope": "set equality against DefMe on the shared configurations"},
+      "notes": ["Emits a human-readable closed-set + generator report; a plain line count includes headings.", "Lowest completion rate of the transactional family (69.0%)."]
+    },
+    {
+      "id": "Apriori_Gen_Borgelt",
+      "display": "Apriori (Borgelt, -tg)",
+      "category": 1,
+      "input_type": "transactional",
+      "provenance": "native C (borgelt.net v6.x)",
+      "emits": {"family": "minimal_generator", "evidence": "oracle"},
+      "conventions": {"empty_set": "never", "threshold_boundary": "ceil"},
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "vertical bitset support oracle", "scope": "~27000 itemsets across mushroom/0.4 and chess/0.7, 0 violations"},
+      "notes": ["Post-filtering baseline: mines all frequent itemsets, then discards non-generators. Not a dedicated generator algorithm and not part of the 25-algorithm taxonomy."]
+    },
+    {
+      "id": "Eclat_Gen_Borgelt",
+      "display": "Eclat (Borgelt, -tg)",
+      "category": 1,
+      "input_type": "transactional",
+      "provenance": "native C (borgelt.net v6.x)",
+      "emits": {"family": "minimal_generator", "evidence": "oracle"},
+      "conventions": {"empty_set": "never", "threshold_boundary": "ceil"},
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "vertical bitset support oracle", "scope": "~27000 itemsets, 0 violations"},
+      "notes": ["Post-filtering baseline."]
+    },
+    {
+      "id": "FPgrowth_Gen_Borgelt",
+      "display": "FP-growth (Borgelt, -tg)",
+      "category": 1,
+      "input_type": "transactional",
+      "provenance": "native C (borgelt.net v6.x)",
+      "emits": {"family": "minimal_generator", "evidence": "oracle"},
+      "conventions": {"empty_set": "never", "threshold_boundary": "ceil"},
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "vertical bitset support oracle", "scope": "~27000 itemsets, 0 violations"},
+      "notes": ["Post-filtering baseline; fastest single implementation overall on the transactional grid."]
+    },
+
+    {
+      "id": "FEAT",
+      "display": "FEAT",
+      "category": 2,
+      "input_type": "sequential",
+      "provenance": "SPMF v2.65",
+      "emits": {"family": "sequential_generator", "evidence": "oracle"},
+      "conventions": {
+        "empty_set": "never",
+        "threshold_boundary": "floor",
+        "boundary_evidence": "oracle: on sign/0.03 (threshold 21.9) FEAT retains patterns of support 21"
+      },
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "subsequence-matching oracle", "scope": "16 configurations, 22455 patterns, 0 violations"},
+      "notes": ["Output byte-identical to FSGP on all 16 configurations, but 3.4x slower.", "Lowest peak memory of the sequential family (520 MB mean)."]
+    },
+    {
+      "id": "FSGP",
+      "display": "FSGP",
+      "category": 2,
+      "input_type": "sequential",
+      "provenance": "SPMF v2.65",
+      "emits": {"family": "sequential_generator", "evidence": "oracle"},
+      "conventions": {"empty_set": "never", "threshold_boundary": "floor"},
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "subsequence-matching oracle", "scope": "16 configurations, 0 violations"},
+      "notes": ["Fastest sequential generator miner (2.98 s mean); identical output to FEAT."]
+    },
+    {
+      "id": "VGEN",
+      "display": "VGEN",
+      "category": 2,
+      "input_type": "sequential",
+      "provenance": "SPMF v2.65",
+      "emits": {"family": "sequential_generator", "evidence": "oracle"},
+      "conventions": {
+        "empty_set": "never",
+        "threshold_boundary": "ceil",
+        "boundary_evidence": "oracle: on sign/0.03 (threshold 21.9) VGEN's effective floor is 22; all 3802 patterns it omits relative to FEAT/FSGP have support exactly 21. Same at 0.04 (128 omitted, all at support 29, threshold 29.2)."
+      },
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {
+        "status": "boundary_dependent",
+        "hazard": "Returns strictly fewer patterns than FEAT/FSGP whenever sigma*|D| is non-integral. This is a boundary convention, not an incompleteness bug: every pattern it returns is a genuine generator, and every pattern it omits sits exactly on the rounded threshold."
+      },
+      "validation": {"oracle": "subsequence-matching oracle", "scope": "16 configurations, 0 violations"},
+      "notes": ["Highest peak memory of the sequential family (1147 MB mean, 3046 MB peak)."]
+    },
+
+    {
+      "id": "HUG_Miner",
+      "display": "HUG-Miner",
+      "category": 3,
+      "input_type": "utility",
+      "provenance": "SPMF v2.65",
+      "emits": {"family": "high_utility_generator", "evidence": "oracle"},
+      "conventions": {"empty_set": "never", "threshold_boundary": "unknown"},
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "bitset support oracle + utility summation", "scope": "17937 patterns, 0 violations"},
+      "notes": ["Best runtime-memory trade-off among the evaluated high-utility methods.", "Prints '#SUP:' as the database size rather than the pattern's support - a display quirk, not a data defect."]
+    },
+    {
+      "id": "GHUI_Miner",
+      "display": "GHUI-Miner",
+      "category": 3,
+      "input_type": "utility",
+      "provenance": "SPMF v2.65",
+      "emits": {"family": "ghui", "evidence": "oracle"},
+      "conventions": {"empty_set": "never", "threshold_boundary": "unknown"},
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {"status": "verified"},
+      "validation": {"oracle": "bitset support oracle + closure + utility", "scope": "foodmart at theta=50 and theta=100"},
+      "notes": ["Emits support-minimal itemsets whose CLOSURE is high-utility. Strict superset of HUG-Miner: filtering to u(X) >= theta reproduces HUG's output exactly (687 at theta=100, 1475 at theta=50)."]
+    },
+    {
+      "id": "HUCI_Miner_Generators",
+      "display": "HUCI-Miner (generators)",
+      "category": 3,
+      "input_type": "utility",
+      "provenance": "SPMF v2.65",
+      "emits": {"family": "utility_minimal", "evidence": "oracle"},
+      "conventions": {"empty_set": "never", "threshold_boundary": "unknown"},
+      "soundness": {
+        "status": "different_family",
+        "summary": "Despite its name, this implementation returns NO support-minimal generators. Its minimality is defined with respect to utility.",
+        "evidence": "oracle on foodmart/theta=50: of 2002 returned patterns, 0 are support-minimal and 0 are closed, but 1976 (98.7%) are minimal with respect to utility (no immediate subset reaches the threshold).",
+        "consequence": "Its pattern counts are NOT commensurable with HUG-Miner's or GHUI-Miner's and must not be tabulated in the same column."
+      },
+      "completeness": {"status": "unvalidated"},
+      "validation": {"oracle": "bitset support + closure + utility oracle", "scope": "foodmart at theta=50"},
+      "notes": ["The paper grouped this with HUG/GHUI before the audit; the grouping was corrected."]
+    },
+
+    {
+      "id": "FGC_Stream",
+      "display": "FGC-Stream",
+      "category": 5,
+      "input_type": "transactional",
+      "provenance": "native C++ Windows binary (not bundled)",
+      "emits": {"family": "generator_closure_pairs", "evidence": "oracle"},
+      "conventions": {"empty_set": "always", "threshold_boundary": "floor"},
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {"status": "verified"},
+      "validation": {
+        "oracle": "vertical bitset support oracle + closure verification",
+        "scope": "mushroom/0.4 (124 classes, 153 generators) and mushroom/0.3 (425 classes, 544 generators); 1246 checks, 0 discrepancies"
+      },
+      "notes": [
+        "The only implementation emitting generator-closure PAIRS, so both halves are independently checkable.",
+        "The harness runs it with window size = |D|, so its output is directly comparable with static generator miners.",
+        "Streaming/sliding-window operation is its actual design target and is NOT exercised by this benchmark.",
+        "Must be launched with an absolute path; a relative forward-slash path fails CreateProcess on Windows."
+      ]
+    },
+    {
+      "id": "Arima",
+      "display": "Arima (AprioriRare)",
+      "category": 5,
+      "input_type": "transactional",
+      "provenance": "SPMF v2.65 (AprioriRare; the MRG-Exp variant is not separately exposed)",
+      "emits": {"family": "minimal_rare_itemset", "evidence": "oracle"},
+      "conventions": {
+        "empty_set": "never",
+        "threshold_boundary": "indistinguishable",
+        "boundary_evidence": "oracle: rarity is supp(X) < sigma_max*|D|, but no returned itemset ever sits between floor and ceil of that value, so the output does not discriminate the two roundings. Every verdict below was re-derived under BOTH and holds under both."
+      },
+      "soundness": {"status": "verified", "violations": 0},
+      "completeness": {
+        "status": "verified",
+        "note": "Arima is the only implementation for which COMPLETENESS is checkable rather than merely soundness: minimal rare itemsets are exactly the negative border of the frequent family, so every one has the form F + {i} for a frequent F, and the true family can be enumerated in full and compared as a set."
+      },
+      "validation": {
+        "oracle": "maximum-support bitset oracle + negative-border enumeration",
+        "scope": "the 11 configurations Arima completes; set-equal to the oracle enumeration wherever the candidate space is tractable, sound everywhere",
+        "tool": "tools/validate_rare.py"
+      },
+      "operational_hazard": {
+        "summary": "Aborts on dense data through candidate explosion, not through a JVM heap ceiling.",
+        "evidence": "5 of 21 runs abort at the default heap; re-run at -Xmx12g only 1 of the 5 recovers (chess maxsup=0.3: 107 s, 8.2 GB, 180161 generators), the other 4 abort again at 11.1-11.8 GB after 14-23 min.",
+        "completion_rate": 0.52
+      },
+      "notes": ["Parameter is a MAXIMUM support threshold, not a minimum.", "Usable on sparse data only."]
+    }
+  ]
+}

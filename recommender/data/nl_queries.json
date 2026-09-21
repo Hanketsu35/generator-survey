@@ -1,0 +1,89 @@
+{
+  "description": "Ground-truth evaluation set for Layer 1 (natural language -> MiningTask). Each entry pairs a request as a practitioner would phrase it with the formal specification it must produce. Fields absent from the text are left null and are not scored. Written before any extractor was implemented, so that neither the rule-based baseline nor an LLM was tuned against it.",
+  "scoring": "Field-level exact match over the non-null fields of `spec`. A field the text does not determine is null and is skipped.",
+  "queries": [
+    {"id": "q01", "text": "I need the minimal generators of my transactional data at 5% support.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.05}},
+
+    {"id": "q02", "text": "Find patterns that appear in at least 5 percent of the records and cannot be shrunk without losing coverage. I'm on a 16 GB laptop.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.05, "max_memory_mb": 16384}},
+
+    {"id": "q03", "text": "Which sequential generator miner should I use on my clickstream logs at minsup 0.02?",
+     "spec": {"data_type": "sequential", "family": "sequential_generator", "threshold": 0.02}},
+
+    {"id": "q04", "text": "high utility generators, minimum utility 50, on my retail basket data with prices",
+     "spec": {"data_type": "utility", "family": "high_utility_generator", "threshold": 50}},
+
+    {"id": "q05", "text": "I want to reproduce a published result exactly, so I need the implementation that keeps itemsets whose support equals the rounded-down threshold. Transactional, 30% support.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.3, "boundary": "floor"}},
+
+    {"id": "q06", "text": "Generators at 0.3 minsup, and please make sure the empty set is NOT in the output.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.3, "include_empty": false}},
+
+    {"id": "q07", "text": "Give me the fastest option for minimal generators, I don't care about memory. minsup 0.1",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.1, "objective": "runtime"}},
+
+    {"id": "q08", "text": "Memory is very tight, under 512 MB. Minimal generators at 20% support.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.2, "max_memory_mb": 512, "objective": "memory"}},
+
+    {"id": "q09", "text": "I only want implementations whose output has actually been verified against an oracle.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "trust": "verified_only"}},
+
+    {"id": "q10", "text": "Show me everything including the ones with known bugs, I want to compare.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "trust": "allow_defective"}},
+
+    {"id": "q11", "text": "I need disjunction-free itemsets, not ordinary generators.",
+     "spec": {"data_type": "transactional", "family": "disjunction_free"}},
+
+    {"id": "q12", "text": "Rare itemset mining - I want the minimal rare itemsets with maximum support 0.2",
+     "spec": {"data_type": "transactional", "family": "minimal_rare_itemset", "threshold": 0.2}},
+
+    {"id": "q13", "text": "Mine both the generators and the closed sets of each equivalence class.",
+     "spec": {"data_type": "transactional", "family": "generator_closure_pairs"}},
+
+    {"id": "q14", "text": "Sequential patterns, minimum support 3%, must finish within 60 seconds.",
+     "spec": {"data_type": "sequential", "family": "sequential_generator", "threshold": 0.03, "max_runtime_s": 60}},
+
+    {"id": "q15", "text": "GHUI please, min utility 100.",
+     "spec": {"data_type": "utility", "family": "ghui", "threshold": 100}},
+
+    {"id": "q16", "text": "Balance speed and memory. Transactional generators at half a percent support.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.005, "objective": "balanced"}},
+
+    {"id": "q17", "text": "My data is a set of sequences of events. I want the smallest subsequences that characterise each support class, at 1.5% support.",
+     "spec": {"data_type": "sequential", "family": "sequential_generator", "threshold": 0.015}},
+
+    {"id": "q18", "text": "Minimal generators, 40 percent support, budget of two minutes and 1 GB of RAM.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.4, "max_runtime_s": 120, "max_memory_mb": 1024}},
+
+    {"id": "q19", "text": "I need itemsets that are minimal with respect to utility rather than support.",
+     "spec": {"data_type": "utility", "family": "utility_minimal"}},
+
+    {"id": "q20", "text": "Which generator miner is most robust? I keep getting timeouts at minsup 0.05.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.05}},
+
+    {"id": "q21", "text": "The empty set must be present in the output because my downstream code expects it. Support 0.25.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.25, "include_empty": true}},
+
+    {"id": "q22", "text": "Use the ceiling convention on the absolute threshold. Generators, 0.7 minsup.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.7, "boundary": "ceil"}},
+
+    {"id": "q23", "text": "high-utility itemsets that are also support-minimal, threshold 20",
+     "spec": {"data_type": "utility", "family": "high_utility_generator", "threshold": 20}},
+
+    {"id": "q24", "text": "minsup=0.0005 on a very sparse transaction log, minimal generators, optimise for memory",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.0005, "objective": "memory"}},
+
+    {"id": "q25", "text": "I don't want anything that needs a post-processing step; give me a direct miner. Generators at 10%.",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "threshold": 0.1, "allow_post_filter": false}},
+
+    {"id": "q26", "text": "Sequence generators on my text corpus, 0.2% support, memory under 2 GB.",
+     "spec": {"data_type": "sequential", "family": "sequential_generator", "threshold": 0.002, "max_memory_mb": 2048}},
+
+    {"id": "q27", "text": "What should I run to get minimal generators if I only trust oracle-validated code and I have half an hour?",
+     "spec": {"data_type": "transactional", "family": "minimal_generator", "trust": "verified_only", "max_runtime_s": 1800}},
+
+    {"id": "q28", "text": "closed itemsets please",
+     "spec": {"data_type": "transactional", "family": "closed_itemset"}}
+  ]
+}
