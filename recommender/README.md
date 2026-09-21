@@ -100,6 +100,36 @@ Reported in **nPAR10**, the algorithm-selection standard: 0 = oracle-perfect,
 1 = no better than always running the single best algorithm, > 1 = actively
 worse than not selecting at all.
 
+### Instance space — where each miner actually wins
+
+```bash
+python -m recommender.instance_space                      # runtime, PLS
+python -m recommender.instance_space --objective memory
+```
+
+Projects the instances into a plane where performance varies smoothly (partial
+least squares, because PCA never sees performance) and draws each algorithm's
+**footprint**: the region where it is within 20% of best.
+
+| | |
+|---|---|
+| performance variance the plane explains | **0.233** (PCA: 0.115) |
+| Eclat / FP-growth footprint area | 1.000 / 0.966 — good *everywhere* |
+| Gr-growth footprint | area 0.075, **purity 1.00** — the only real niche |
+| algorithms good on zero instances | **5 of 9** |
+| coverage | 16 of 36 grid cells (runtime), 11 of 36 (memory) |
+| **effective instance count** | **7, not 58** |
+
+That last row is the important one. Ten of the eleven features are properties
+of the *dataset*; only the threshold varies within one, so the configurations
+land in vertical stripes and **95.6% of positional variance lies between
+datasets**. Anything learned across the plane has an effective sample size of
+seven. It is also why the plane explains only 23% of performance variation —
+the root cause of every weak selector number above is the features, not the
+model class.
+
+Figures: `plots/instance_space_{runtime,memory}_{pls,pca}.pdf`.
+
 ### Equivalence tiers — the recommender says when it cannot tell
 
 The ranking used to read 1-2-3 over candidates whose predicted costs differed
