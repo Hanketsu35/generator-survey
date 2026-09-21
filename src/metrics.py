@@ -42,19 +42,55 @@ class MemoryMonitor(threading.Thread):
         self._stop_event.set()
 
 
+
+def classify_failure(returncode, stdout, stderr, timed_out) -> str:
+    """
+    Bir kosunun sessizce bozulup bozulmadigini belirler.
+
+    Timeout bir hata DEGILDIR: protokolun parcasi (DNF olarak raporlanir).
+    Asil tehlike, sifir-disi cikis kodu ile biten ama arkasinda kismi cikti
+    dosyasi birakan kosulardir -- bunlar duz satir sayimiyla "basarili" gibi
+    gorunur.  Bulunan ornek: Arima/chess ve Arima/connect, varsayilan ~4 GB
+    JVM heap'ini tuketip java.lang.OutOfMemoryError ile cikti.
+
+    Dondurur: bos string (sorun yok) veya kisa hata etiketi.
+    """
+    if timed_out:
+        return ""
+    txt = (stdout or "") + (stderr or "")
+    if "OutOfMemoryError" in txt:
+        return "java.lang.OutOfMemoryError: Java heap space"
+    if "StackOverflowError" in txt:
+        return "java.lang.StackOverflowError"
+    if returncode not in (0, None):
+        return "non-zero exit code %s" % returncode
+    return ""
+
+
 def run_spmf(
     spmf_name: str,
     input_file: str,
     output_file: str,
     params: list,
     timeout: int = 300,
+    count_fn=None,
+    max_heap: str = None,
 ) -> dict:
     """
     SPMF algoritmasini calistirir.
+
+    max_heap: None ise JVM varsayilan heap'i kullanilir (fiziksel RAM'in 1/4'u).
+    Ana protokol BU varsayilani kullanir; boylece tum JVM algoritmalari ayni
+    kosullarda olculur. "-Xmx12g" gibi bir deger yalnizca TANI amacli
+    yeniden kosularda verilir (bkz. tools/rerun_arima_xmx.py): amac, bir
+    OutOfMemoryError'un algoritmanin sinirindan mi yoksa yalnizca varsayilan
+    heap tavanindan mi kaynaklandigini ayirt etmektir.
+
     Returns: runtime_s, peak_memory_mb, generator_count, returncode, timed_out
     """
     Path(output_file).parent.mkdir(parents=True, exist_ok=True)
-    cmd = (["java", "-jar", SPMF_JAR, "run", spmf_name,
+    heap_flags = [max_heap] if max_heap else []
+    cmd = (["java"] + heap_flags + ["-jar", SPMF_JAR, "run", spmf_name,
             input_file, output_file] + [str(p) for p in params])
 
     t0 = time.perf_counter()
@@ -90,10 +126,20 @@ def run_spmf(
     try:
         out_path = Path(output_file)
         if out_path.exists():
-            lines = out_path.read_text(encoding="utf-8", errors="ignore").strip().splitlines()
-            generator_count = len([l for l in lines if l.strip()])
+            if count_fn:
+                generator_count = count_fn(out_path)
+            else:
+                generator_count = count_plain_lines(out_path)
     except Exception:
         pass
+
+    # Cokme tespiti: JVM heap tukendiginde SPMF stderr'e OutOfMemoryError yazip
+    # sifir-disi kodla cikar, ama kismi (truncated) bir cikti dosyasi birakir.
+    # Bu dosya sayilirsa kosu "basarili" gorunur ve YANLIS sayim CSV'ye girer.
+    # Bu yuzden sayimi gecersiz kilip hatayi acikca raporluyoruz.
+    failure = classify_failure(proc.returncode, stdout, stderr, timed_out)
+    if failure:
+        generator_count = None
 
     return {
         "runtime_s": round(runtime_s, 4),
@@ -103,6 +149,7 @@ def run_spmf(
         "stderr": stderr[:2000],
         "generator_count": generator_count,
         "timed_out": timed_out,
+        "failure": failure,
     }
 
 
@@ -182,6 +229,69 @@ def count_transactions(input_file: str) -> int:
             if line.strip():
                 count += 1
     return count
+
+
+def count_plain_lines(out_path: Path) -> int:
+    """Bos olmayan satir sayisi. Ciktisi 'her satir bir pattern' olan
+    algoritmalar icin dogru sayim (DefMe, TalkyG, TalkyG_Diffset, VGEN, ...)."""
+    n = 0
+    with open(out_path, encoding="utf-8", errors="ignore") as f:
+        for line in f:
+            if line.strip():
+                n += 1
+    return n
+
+
+def count_pascal_generators(out_path: Path) -> int:
+    """Pascal (SPMF) TUM frequent itemset'leri yazar; her satir
+    '#IS_GENERATOR: true|false' etiketi tasir.  Jeneratör sayisi = 'true' satirlari.
+
+    Duz satir sayimi frequent itemset sayisini verir (connect/minsup=0.7'de
+    80x fazla), bu yuzden etiket filtrelemesi zorunludur.
+    """
+    n = 0
+    with open(out_path, encoding="utf-8", errors="ignore") as f:
+        for line in f:
+            if "IS_GENERATOR: true" in line:
+                n += 1
+    return n
+
+
+def count_zart_generators(out_path: Path) -> int:
+    """Zart (SPMF) insan-okunabilir bir rapor yazar:
+
+        ======= List of closed itemsets and their generators ============
+         CLOSED :
+           90  #SUP: 8416
+           GENERATOR(S) :
+             EMPTYSET
+
+    Jeneratörler 'GENERATOR(S) :' satirindan sonra, bir sonraki ' CLOSED :'
+    satirina kadar gelen satirlardir.  Duz satir sayimi baslik/bos satirlari
+    da sayar (mushroom/minsup=0.2'de 34x fazla).
+    """
+    n = 0
+    in_gen = False
+    with open(out_path, encoding="utf-8", errors="ignore") as f:
+        for line in f:
+            s = line.strip()
+            if not s:
+                continue
+            if s.startswith("====="):
+                in_gen = False
+            elif s.startswith("CLOSED"):
+                in_gen = False
+            elif s.startswith("GENERATOR(S)"):
+                in_gen = True
+            elif in_gen:
+                n += 1
+    return n
+
+
+def count_borgelt_generators(out_path: Path) -> int:
+    """Borgelt apriori/eclat/fpgrowth '-tg' ciktisi: her satir bir jeneratör,
+    format 'item1 item2 ... (support%)'."""
+    return count_plain_lines(out_path)
 
 
 def count_grgrowth_generators(out_path: Path) -> int:

@@ -72,3 +72,34 @@ __pycache__/
 *.pyo
 .venv/
 venv/
+
+# Validation intermediates (regenerable by tools/validate_*.py)
+results/seqval/
+results/valremain/
+results/validate_hui_*.txt
+results/output_xmx/Arima_*.txt
+
+# Recommender generated outputs (regenerable)
+recommender/out/
+recommender/__pycache__/
+datasets/synthetic/
+results/rareval/
+
+# LaTeX yardimci dosyalari (Elsevier surumu)
+report/*.spl
+
+# Literatur PDF'leri ucuncu tarafa ait ve sources.json'dan yeniden indirilebilir;
+# 18 MB'i depoya koymanin anlami yok. sources.json ve NOTES.md izlenir.
+literature/pdf/
+literature/txt/
+
+# Ara/yedek dosyalar (uretilebilir, depoya girmez)
+results/summary_pre*.csv
+results/*.log
+report/*.tex.bak
+
+# Farkli bir Springer sablonuyla denemeden kalanlar; derleme sn-jnl.cls kullaniyor
+report/sn-article-template/
+report/svjour3.cls
+report/svglov3.clo
+report/spbasic.bst

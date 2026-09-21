@@ -1,0 +1,6 @@
+algorithm,dataset,param_name,param_value,max_heap,runtime_s,peak_memory_mb,generator_count,timed_out,returncode,error
+Arima,chess,maxsup,0.1,-Xmx12g,814.7142,11302.07,,False,1,java.lang.OutOfMemoryError: Java heap space
+Arima,chess,maxsup,0.2,-Xmx12g,822.3434,11336.06,,False,1,java.lang.OutOfMemoryError: Java heap space
+Arima,chess,maxsup,0.3,-Xmx12g,107.367,8172.99,180161,False,0,
+Arima,connect,maxsup,0.2,-Xmx12g,1398.5883,11810.18,,False,1,java.lang.OutOfMemoryError: Java heap space
+Arima,connect,maxsup,0.3,-Xmx12g,830.7791,11100.65,,False,1,java.lang.OutOfMemoryError: Java heap space

@@ -153,15 +153,53 @@ def plot_category_comparison(df: pd.DataFrame):
     print(f"[PLOT] {fname}")
 
 
+# Implementasyon ortami: runtime karsilastirmalarinda dil etkisini
+# algoritmik etkiden ayirmak icin gerekli.
+# "native-postfilter": Borgelt'in programlari; once tum frequent itemset'leri
+# bulup sonra jeneratör filtresi uygular (jeneratöre ozel budama yok).
+IMPLEMENTATION = {
+    "Gr_growth":            ("C/C++", "native"),
+    "FGC_Stream":           ("C++",   "native"),
+    "Apriori_Gen_Borgelt":  ("C",     "native-postfilter"),
+    "Eclat_Gen_Borgelt":    ("C",     "native-postfilter"),
+    "FPgrowth_Gen_Borgelt": ("C",     "native-postfilter"),
+}
+
+
+def annotate_implementation(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    df["language"] = df["algorithm"].map(
+        lambda a: IMPLEMENTATION.get(a, ("Java", "jvm"))[0])
+    df["impl_kind"] = df["algorithm"].map(
+        lambda a: IMPLEMENTATION.get(a, ("Java", "jvm"))[1])
+    return df
+
+
+def load_outcomes() -> pd.DataFrame:
+    """Algoritma basina kosu sonuclarini filtrelenmemis CSV'den sayar.
+
+    load_data() DNF ve cokmus satirlari atiyor; bunlari ozet tabloda
+    raporlayabilmek icin ham dosyayi ayrica okumak gerekiyor.
+    """
+    raw = pd.read_csv(SUMMARY_CSV)
+    raw["_dnf"] = raw["timed_out"].astype(str).str.lower() == "true"
+    raw["_err"] = raw["error"].notna()
+    return raw.groupby("algorithm").agg(
+        n_total=("_dnf", "size"), n_dnf=("_dnf", "sum"), n_crash=("_err", "sum"),
+    ).reset_index()
+
+
 def generate_summary_table(df: pd.DataFrame) -> str:
-    summary = df.groupby(["algorithm", "category"]).agg(
+    df = annotate_implementation(df)
+    summary = df.groupby(["algorithm", "category", "language", "impl_kind"]).agg(
         avg_runtime_s=("runtime_s", "mean"),
         min_runtime_s=("runtime_s", "min"),
         max_runtime_s=("runtime_s", "max"),
         avg_memory_mb=("peak_memory_mb", "mean"),
         avg_generators=("generator_count", "mean"),
-        n_runs=("runtime_s", "count"),
+        n_ok=("runtime_s", "count"),
     ).reset_index()
+    summary = summary.merge(load_outcomes(), on="algorithm", how="left")
     summary = summary.sort_values(["category", "avg_runtime_s"])
     summary = summary.round(3)
     table_str = tabulate(summary, headers="keys", tablefmt="github", floatfmt=".3f", showindex=False)
