@@ -184,7 +184,7 @@
       "soundness": {"status": "verified", "violations": 0},
       "completeness": {"status": "verified"},
       "validation": {"oracle": "vertical bitset support oracle", "scope": "set equality against DefMe on the shared configurations"},
-      "notes": ["Emits a human-readable closed-set + generator report; a plain line count includes headings.", "Lowest completion rate of the transactional family (69.0%)."]
+      "notes": ["Emits a human-readable closed-set + generator report; a plain line count includes headings.", "Lowest completion rate of the transactional family (67.2%; 69.0% before one silent crash, connect 0.8, was corrected in results/summary.csv)."]
     },
     {
       "id": "Apriori_Gen_Borgelt",

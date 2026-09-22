@@ -49,7 +49,7 @@ A warning this script exists to deliver
 here that it can mean a worse one.** On the memory objective the landmarks raise
 the plane's explained performance variance from 0.296 to 0.514 and cut the ICC
 from 0.986 to 0.658 — every instance-space metric improves — while the best
-selector's nPAR10 goes from 0.445 to 0.922 and its bootstrap band stops excluding
+selector's nPAR10 goes from 0.429 to 0.820 and its bootstrap band stops excluding
 1.0 (``bench_selectors --objective memory --features landmarks``).
 
 The two quantities are not the same question. The plane's R^2 asks how well a

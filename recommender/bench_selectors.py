@@ -102,7 +102,7 @@ def run(df, category=1, verbose=True, portfolio="all", objective="runtime",
     ``recommender.complementarity``, runtime headroom on the full portfolio is
     1.011x -- there is essentially nothing to select, and on the dedicated-miner
     portfolio Gr-growth wins 58 of 58 configurations. The one slice with real
-    headroom is memory over the full portfolio (3.660x), where the algorithms
+    headroom is memory over the full portfolio (3.642x), where the algorithms
     that win are not the ones that win on runtime.
 
     Peak memory is censored in the same sense as runtime: a run killed at the

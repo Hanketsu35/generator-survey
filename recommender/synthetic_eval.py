@@ -362,7 +362,7 @@ def main(argv=None):
          "  runs at %ds (rule 3) drops the ones that needed longer, so this"
          % int(SWEEP_CUTOFF_S),
          "  slice is smaller and easier: on memory, 31 instances at headroom",
-         "  3.007x where bench_selectors has 40 at 3.660x. Compare arms within",
+         "  3.007x where bench_selectors has 39 at 3.642x. Compare arms within",
          "  this report, never a number here against a number there.",
          ""]
 

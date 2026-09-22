@@ -291,7 +291,7 @@ Zart,1,mushroom,minsup,0.4,0.6765,133.04,153.0,False,,20260902_232659
 Zart,1,mushroom,minsup,0.6,0.4477,86.88,21.0,False,,20260902_232659
 Zart,1,connect,minsup,0.4,3600.0397,457.18,0.0,True,,20260902_232659
 Zart,1,connect,minsup,0.6,3600.0335,390.67,0.0,True,,20260902_232659
-Zart,1,connect,minsup,0.8,1741.4468,380.66,0.0,False,,20260902_232659
+Zart,1,connect,minsup,0.8,1741.4468,380.66,,False,"non-zero exit code -1 (4294967295 unsigned), no error text",20260902_232659
 Zart,1,connect,minsup,0.9,149.7569,368.34,3487.0,False,,20260904_214619
 Zart,1,chess,minsup,0.4,3600.0305,296.23,0.0,True,,20260904_214619
 Zart,1,chess,minsup,0.6,1991.7023,304.95,98419.0,False,,20260904_214619

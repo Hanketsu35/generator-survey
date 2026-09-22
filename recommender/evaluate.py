@@ -379,7 +379,7 @@ def e3_lodo(df, data_type="transactional"):
         L.append("  dedicated miners, and headroom over the full portfolio is")
         L.append("  1.011x. More meta-instances cannot manufacture complementarity")
         L.append("  that is not there, so synthetic data is a prerequisite for the")
-        L.append("  MEMORY objective (headroom 3.660x), not for this one.")
+        L.append("  MEMORY objective (headroom 3.642x), not for this one.")
         L.append("")
         L.append("  The model does NOT beat the constant baseline. At this")
         L.append("  meta-instance count that is the honest finding: report it, and")

@@ -157,7 +157,7 @@ class PerformanceModel:
         #: double the instance plane's explained performance variance and win
         #: decisively on runtime, but on MEMORY they lose -- every selector's
         #: bootstrap band then spans 1.0, where the static set reaches nPAR10
-        #: 0.445 with P(beats the fixed choice) = 0.96. Since the engine reports
+        #: 0.429 with P(beats the fixed choice) = 0.98. Since the engine reports
         #: both runtime and memory from one fitted model, and the runtime gain is
         #: worth 3.1 ms against a 9.9 ms oracle gap while the memory loss is
         #: worth 7.4 MB against a 13.3 MB gap, static is the choice that costs

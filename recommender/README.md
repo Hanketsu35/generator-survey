@@ -174,15 +174,19 @@ problem, reappearing as the reason it cannot be shown to be solved.
 
 **The gain is objective-specific, so the feature set is a flag, not a default:**
 
-| objective | best selector | nPAR10 | band | P(beats SBS) |
-|---|---|---|---|---|
-| memory, **static** | pairwise ranking | **0.445** | 0.094–0.962 | **0.96** |
-| memory, landmarks | survival (exp. runtime) | 0.922 | 0.773–1.084 | 0.80 |
-| runtime, static | survival (risk-averse) | 0.913 | 0.766–1.000 | 0.91 |
-| runtime, **landmarks** | pairwise ranking | **0.688** | 0.411–0.884 | **1.00** |
+Shown for pairwise ranking, the selector that the training jackknife below
+finds stable; "best selector per slice" is itself unstable at this sample size.
 
-On memory the landmarks actively hurt — every band then spans 1.0. On runtime
-they are decisive. The explanation is coherent: landmarks describe what makes an
+| objective | features | nPAR10 | band | P(beats SBS) |
+|---|---|---|---|---|
+| memory | **static** | **0.429** | 0.075–0.948 | **0.98** |
+| memory | landmarks | 0.820 | 0.745–1.003 | 0.95 |
+| runtime | static | 1.116 | 1.006–1.460 | 0.01 |
+| runtime | **landmarks** | **0.688** | 0.411–0.884 | **1.00** |
+
+On memory the landmarks hurt — the band stops excluding 1.0. On runtime they
+are decisive, turning a selector that loses to the fixed choice into one that
+beats it in every bootstrap resample. The explanation is coherent: landmarks describe what makes an
 *instance* expensive in time, namely the size of the frequent sub-problem,
 whereas what makes an *implementation* memory-hungry is its data structure — JVM
 around 500 MB against native C around 40 MB — which the threshold barely moves.
@@ -235,13 +239,9 @@ exponent (`balanced` takes a square root, so it halves the relative width).
 |---|---|---|
 | runtime, dedicated miners | **1.000×** | — Gr-growth wins 58 of 58 |
 | runtime, all 9 | 1.011× | none beats the fixed choice |
-| memory, SPMF only | 1.016× | pairwise ranking, 0.745 |
+| memory, SPMF only | 1.016× | none beats the fixed choice — the oracle gap is 2.8 MB |
 | rare/stream (46.8% censored) | 1.251× | pairwise ranking, **0.000** |
-| **memory, all 9** | **3.660×** | **pairwise ranking, 0.445** |
-
-On the one slice with real headroom, every learned selector beats the fixed
-choice and the ordering is the one the literature predicts —
-**ranking > survival > regression > fixed**:
+| **memory, all 9** | **3.642×** | **every learned selector; pairwise ranking the most stable** |
 
 Every number below carries a **cluster bootstrap over held-out datasets** —
 whole datasets resampled, not configurations, because configurations of one
@@ -250,27 +250,56 @@ instance count measures. An instance-level bootstrap would report intervals
 several times too narrow. nPAR10 is recomputed inside each resample, its
 denominator being estimated from the same data.
 
+Memory objective, full portfolio, the 39 configurations where every candidate
+completed:
+
 | selector | nPAR10 | 5–95% band | P(beats SBS) | top-1 |
 |---|---|---|---|---|
-| pairwise ranking | **0.445** | **0.094–0.962** | **0.96** | 45.0% |
-| survival (risk-averse) | 0.869 | 0.507–1.034 | 0.88 | 35.0% |
-| survival (expected runtime / PAR10) | 0.893 | 0.612–1.034 | 0.88 | 32.5% |
-| regression (the original Layer 3) | 0.916 | 0.443–1.194 | 0.65 | 10.0% |
-| **SUNNY** (k-NN, k=16) | 0.987 | 0.911–1.087 | 0.67 | 37.5% |
-| SBS (fixed choice) | 1.000 | — | — | 27.5% |
-| **random pick** | 11.824 | 6.262–30.582 | 0.00 | 7.5% |
+| regression (the original Layer 3) | 0.352 | 0.022–0.939 | 1.00 | 28.2% |
+| pairwise ranking | **0.429** | **0.075–0.948** | **0.98** | 48.7% |
+| survival (expected runtime / PAR10) | 0.575 | 0.107–0.987 | 0.96 | 56.4% |
+| survival (risk-averse) | 0.610 | 0.152–1.107 | 0.90 | 17.9% |
+| **SUNNY** (k-NN, k=16) | 0.981 | 0.902–1.054 | 0.74 | 38.5% |
+| SBS (fixed choice) | 1.000 | — | — | 28.2% |
+| **random pick** | 12.005 | 6.331–32.909 | 0.00 | 7.7% |
 
-Only the pairwise ranker's band excludes 1.0. For every other selector,
-"beats the fixed choice" is not supported by the data, and saying so is the
-difference between a result and a ranking of point estimates.
+**Read the order of these rows as carrying no information.** This table used
+to show pairwise ranking first and regression last, and was presented as "the
+ordering the literature predicts: ranking > survival > regression > fixed".
+Then one run in `results/summary.csv` turned out to be a silent crash recorded
+as a success (see *Data repair* below). Removing that single configuration
+moved regression from 0.916 to 0.352 — from worst learned selector to best.
 
-The two bracketing baselines are there because they change how the rest reads.
-**SUNNY** is the most-cited k-NN selector in the field and fits nothing; it
-barely clears the fixed choice (0.987 here, 0.993 on runtime), which is
-independent evidence that the weakness lies in the features rather than in the
-model class. **Random** scores 11.8, establishing that "beats the single best
-fixed choice" is a demanding bar on this portfolio and not a trivial one — a
-reader seeing 0.445 has no way to know that otherwise.
+So the stability was measured. A **training jackknife** removes each of the 39
+configurations from the data in turn — train and test — refits every selector
+and re-evaluates:
+
+| selector | nPAR10 range over 39 refits | median | best in | beats SBS in |
+|---|---|---|---|---|
+| **pairwise ranking** | **0.143 – 0.480** | 0.429 | **30 / 39** | 39 / 39 |
+| regression | 0.009 – 0.853 | 0.484 | 8 / 39 | 39 / 39 |
+| survival (risk-averse) | 0.110 – 0.921 | 0.600 | 1 / 39 | 39 / 39 |
+| survival (expected runtime) | 0.487 – 0.861 | 0.576 | 0 / 39 | 39 / 39 |
+| SUNNY | 0.726 – 0.992 | 0.981 | 0 / 39 | 39 / 39 |
+
+The 39 refits produce **11 distinct orders**. What survives:
+
+- **Every learned selector beats the fixed choice, in all 39.** That is robust.
+- **Pairwise ranking is the one to use** — not because it always wins, but
+  because it is never bad: the narrowest range by far, and best in 30 of 39.
+  Regression's 0.352 above is a favourable draw from a range that reaches 0.853.
+- **No ordering among the selectors is a property of this benchmark.**
+  Dropping the jackknife only on the *test* side leaves the order unchanged in
+  39 of 39; the instability is entirely in what the selectors *learn* from
+  roughly 33 training configurations per fold. That is the effective instance
+  count of 7.3 showing up as fragility rather than as a wide interval.
+
+The two bracketing baselines change how the rest reads. **SUNNY** is the
+most-cited k-NN selector in the field and fits nothing; it barely clears the
+fixed choice (0.981 here, 0.993 on runtime), independent evidence that the
+weakness lies in the features rather than the model class. **Random** scores
+12.0, establishing that "beats the single best fixed choice" is a demanding bar
+on this portfolio — a reader seeing 0.429 has no way to know that otherwise.
 
 Three things this says, none of them flattering to a naive reading:
 
@@ -278,8 +307,9 @@ Three things this says, none of them flattering to a naive reading:
    1.011×, and on the dedicated-miner portfolio Gr-growth wins every single
    configuration. The portfolio lacks the complementarity that makes algorithm
    selection pay in SAT — a property of the benchmark, not of any model.
-2. **Absolute magnitudes stay modest** even in the good slice: 18.4 MB down to
-   11.0 MB. The 55% gap closure is a relative claim and should be stated as one.
+2. **Absolute magnitudes stay modest** even in the good slice: pairwise
+   ranking takes the mean from 18.5 MB to 10.9 MB against an oracle of 5.1 MB.
+   The gap closure is a relative claim and should be stated as one.
 3. **Top-1 accuracy and cost disagree.** On an earlier run the pairwise ranker
    had the best accuracy and the worst cost: one catastrophic pick outweighs
    many small wins when the loss is asymmetric. Judge selectors on cost.
@@ -287,6 +317,32 @@ Three things this says, none of them flattering to a naive reading:
 See `literature/NOTES.md`, including a mistake of ours that a 10× penalty on
 peak memory manufactured an apparent 4.35× headroom where the clean subset
 shows 1.016×.
+
+### Data repair: a silent crash recorded as a success
+
+`results/summary.csv` held one run that crashed and was recorded as completed:
+**Zart on connect at minsup 0.8** ran 1741 s, exited with −1 (4294967295 as
+Windows reports it), wrote no output, and entered the table as a success with 0
+generators — where DefMe finds 15,108. The Layer 3 models trained on it as a
+1741-second completed run.
+
+`tools/repair_summary.py` exists for exactly this class of defect and missed
+it, because it detected a crash only by `OutOfMemoryError` in the output, and
+this process died without a word. It now also checks the exit code of the JSON
+that produced each row — matched by timestamp, because `results/raw` also holds
+superseded re-runs and matching on (algorithm, dataset, threshold) would blame a
+row for an older run's crash. Exit codes that are a program's convention are
+excluded, each confirmed in the program's own source: Gr-growth returns its
+generator count (`return (int)gdtotal_generators;`), and Borgelt's 15 is
+`E_NOITEMS`, "no (frequent) items found". Without those two rules the check
+flags 79 rows, every one a correct run; with them it flags exactly one.
+
+The table moves from 597 completed / 65 DNF / 5 crash to **596 / 65 / 6**, and
+Zart's completion rate from 69.0% to 67.2%. The repair changes one line of the
+file. E2 (193 of 830), complementarity and every runtime result are unchanged.
+On memory, connect 0.8 leaves the clean subset (40 → 39 configurations, headroom
+3.660× → 3.642×), and the selector ordering the section above describes did not
+survive it — which is how its instability was found.
 
 ### E3 — does the performance model generalise? (negative result)
 
