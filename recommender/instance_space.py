@@ -168,9 +168,31 @@ def effective_instances(Z, feats):
             within += Z[m].var(axis=0).sum() * m.sum()
     within /= max(len(Z), 1)
     between_share = 1.0 - within / max(total, 1e-12)
-    return {"n_configurations": int(len(Z)),
-            "n_datasets": int(len(pd.unique(ds))),
-            "between_dataset_share": float(between_share)}
+
+    # The share on its own understates the problem, and "effective sample size
+    # equals the number of datasets" overstates it whenever the threshold does
+    # move an instance a little. Both are special cases of the design effect
+    # from cluster sampling, with the between-dataset share read as an
+    # intra-cluster correlation:
+    #
+    #     n_eff = n / (1 + (mbar - 1) * ICC),   mbar = configurations per dataset
+    #
+    # At ICC = 1 this returns exactly the number of datasets, at ICC = 0 the
+    # number of configurations, and it interpolates in between. On the published
+    # static feature set (ICC 0.956, 58 configurations over 7 datasets) it gives
+    # 7.3, reproducing the figure that was previously asserted as "7"; with
+    # threshold-dependent landmarks (ICC 0.622) it gives 10.5, which is the
+    # honest size of the gain -- a doubled share of explained performance
+    # variance buys 3 more effective instances, not 51.
+    n_conf = int(len(Z))
+    n_ds = int(len(pd.unique(ds)))
+    mbar = n_conf / max(n_ds, 1)
+    n_eff = n_conf / (1.0 + (mbar - 1.0) * max(min(between_share, 1.0), 0.0))
+    return {"n_configurations": n_conf,
+            "n_datasets": n_ds,
+            "between_dataset_share": float(between_share),
+            "configs_per_dataset": float(mbar),
+            "effective_instances": float(n_eff)}
 
 
 def coverage(Z, feats):
@@ -322,12 +344,16 @@ def main(argv=None):
              % (eff["n_configurations"], eff["n_datasets"]))
     L.append("    share of position determined by the dataset alone: %.1f%%"
              % (100 * eff["between_dataset_share"]))
+    L.append("    design effect n/(1+(mbar-1)*ICC) with mbar=%.2f configs/dataset"
+             % eff["configs_per_dataset"])
+    L.append("    -> EFFECTIVE INSTANCES: %.1f  (of %d configurations, %d datasets)"
+             % (eff["effective_instances"], eff["n_configurations"],
+                eff["n_datasets"]))
     if eff["between_dataset_share"] > 0.85:
-        L.append("    -> the threshold barely moves an instance, so the plane")
-        L.append("       holds %d distinct locations, not %d. Anything learned"
-                 % (eff["n_datasets"], eff["n_configurations"]))
-        L.append("       ACROSS the plane has an effective sample size of %d."
-                 % eff["n_datasets"])
+        L.append("       The threshold barely moves an instance, so the plane")
+        L.append("       holds about as many distinct locations as there are")
+        L.append("       datasets. Anything learned ACROSS it is fitted to that")
+        L.append("       many points, whatever the row count suggests.")
     L.append("")
     L.append("  COVERAGE")
     L.append("    grid cells containing at least one instance : %d of %d"
