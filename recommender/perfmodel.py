@@ -32,6 +32,7 @@ import pandas as pd
 
 from . import metafeatures as mf
 from . import survival as _sv
+from . import landmarks as _lm
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _SUMMARY = os.path.join(os.path.dirname(_HERE), "results", "summary.csv")
@@ -59,20 +60,109 @@ def load_runs(path=_SUMMARY):
     df = df.merge(feats, on="dataset", how="inner")
     # The threshold is part of the instance, not of the dataset.
     df["log_thr"] = np.log10(df.param_value.clip(lower=1e-9))
-    return df
+    return attach_landmarks(df)
 
 
-def _design(df):
-    cols = list(mf.FEATURE_NAMES) + ["log_thr"]
-    return df[cols].to_numpy(dtype=float)
+#: Feature sets available to Layer 3. ``static`` is what the published results
+#: used; ``landmarks`` is threshold-dependent (see landmarks.py). Which one a
+#: given experiment uses is a reported choice, not a default buried in code,
+#: because the ablation in ``feature_ablation.py`` shows the answer depends on
+#: the objective: landmarks raise the share of performance variance the instance
+#: plane explains from 0.233 to 0.517, but on the memory objective -- the one
+#: slice with real headroom -- the static set still selects better.
+FEATURE_SETS = ("static", "landmarks", "both")
+
+
+def design_columns(kind="static"):
+    """Column names for a named feature set."""
+    static = list(mf.FEATURE_NAMES) + ["log_thr"]
+    if kind == "static":
+        return static
+    if kind == "landmarks":
+        return list(_lm.LANDMARK_NAMES)
+    if kind == "both":
+        return static + list(_lm.LANDMARK_NAMES)
+    raise ValueError("unknown feature set %r (expected one of %r)"
+                     % (kind, FEATURE_SETS))
+
+
+def attach_landmarks(df):
+    """Left-join cached landmark features on (dataset, param_value).
+
+    Left, not inner: landmarks are only defined where the run parameter IS a
+    relative support threshold, so the utility and stream categories -- whose
+    parameter is an absolute utility or a window size -- keep their rows with
+    NaN landmarks rather than vanishing from the table. A caller that asks for
+    landmark columns must therefore drop incomplete rows itself, which
+    ``rows_with_features`` does.
+
+    The join is keyed on ``param_name == "minsup"`` as well as on the dataset
+    and the value, and that guard is load-bearing rather than defensive. Every
+    landmark is a statement about the sub-problem *at or above* a minimum
+    support. Arima's parameter is ``maxsup``, an upper bound -- it mines rare
+    itemsets -- so a value of 0.2 selects the complement of what the same number
+    selects for a frequent miner. Joining on (dataset, value) alone silently
+    attached minsup landmarks to 12 Arima runs, describing the opposite region
+    of the support axis from the one those runs explored.
+    """
+    cache = _lm.load_cache()
+    if not cache or "param_name" not in df.columns:
+        return df
+    eligible = df[df.param_name == "minsup"]
+    rows = []
+    for ds, pv in (eligible[["dataset", "param_value"]]
+                   .drop_duplicates().itertuples(index=False)):
+        entry = cache.get(_lm._key(ds, pv))
+        if entry is not None:
+            rows.append(dict(dataset=ds, param_name="minsup", param_value=pv, **entry))
+    if not rows:
+        return df
+    return df.merge(pd.DataFrame(rows),
+                    on=["dataset", "param_name", "param_value"], how="left")
+
+
+def rows_with_features(df, kind="static"):
+    """Subset of ``df`` for which every column of the feature set is present."""
+    cols = design_columns(kind)
+    have = [c for c in cols if c in df.columns]
+    if len(have) < len(cols):
+        raise KeyError("feature set %r needs %s; missing %s. Build the cache "
+                       "with `python -m recommender.landmarks`."
+                       % (kind, cols, sorted(set(cols) - set(have))))
+    return df.dropna(subset=cols)
+
+
+def _design(df, kind="static"):
+    return df[design_columns(kind)].to_numpy(dtype=float)
 
 
 class PerformanceModel:
     """Per-implementation runtime / memory / completion predictors."""
 
-    def __init__(self, min_rows=8, seed=0, use_survival=True):
+    #: Class-level default so that a model pickled by an older version -- the
+    #: engine caches the fitted model under ``out/`` -- still answers
+    #: ``self.features`` after unpickling instead of raising AttributeError.
+    #: Unpickling restores ``__dict__`` and never runs ``__init__``, so any
+    #: attribute added to the constructor needs a class default or a cache
+    #: invalidation; this is the cheaper of the two.
+    features = "static"
+
+    def __init__(self, min_rows=8, seed=0, use_survival=True, features="static"):
         self.min_rows = min_rows
         self.seed = seed
+        #: Which feature set the per-implementation models are fitted on.
+        #: ``static`` is the default deliberately, not by inheritance: the
+        #: ablation (feature_ablation.py, bench_selectors --features) finds the
+        #: better set depends on the objective. Threshold-dependent landmarks
+        #: double the instance plane's explained performance variance and win
+        #: decisively on runtime, but on MEMORY they lose -- every selector's
+        #: bootstrap band then spans 1.0, where the static set reaches nPAR10
+        #: 0.445 with P(beats the fixed choice) = 0.96. Since the engine reports
+        #: both runtime and memory from one fitted model, and the runtime gain is
+        #: worth 3.1 ms against a 9.9 ms oracle gap while the memory loss is
+        #: worth 7.4 MB against a 13.3 MB gap, static is the choice that costs
+        #: least where it is wrong.
+        self.features = features
         #: Model runtime with a random survival forest instead of regressing on
         #: completed runs only. Dropping timed-out runs keeps the short
         #: runtimes and discards the long ones, which biases the surrogate
@@ -94,6 +184,10 @@ class PerformanceModel:
 
         if exclude_dataset:
             df = df[df.dataset != exclude_dataset]
+        # Rows lacking the chosen features cannot train a model on them; for the
+        # static set this is a no-op, for landmarks it drops the categories whose
+        # parameter is not a support threshold.
+        df = rows_with_features(df, self.features)
         self.trained_on = sorted(df.dataset.unique())
 
         for algo, g in df.groupby("algorithm"):
@@ -105,7 +199,7 @@ class PerformanceModel:
                 "comp": float(g.completed.mean()),
             }
             if len(ok) >= self.min_rows:
-                X = _design(ok)
+                X = _design(ok, self.features)
                 kw = dict(n_estimators=200, min_samples_leaf=2,
                           random_state=self.seed, n_jobs=1)
                 m1 = RandomForestRegressor(**kw)
@@ -118,12 +212,12 @@ class PerformanceModel:
             if len(g) >= self.min_rows and g.completed.nunique() > 1:
                 c = RandomForestClassifier(n_estimators=200, min_samples_leaf=2,
                                            random_state=self.seed, n_jobs=1)
-                c.fit(_design(g), g.completed.astype(int))
+                c.fit(_design(g, self.features), g.completed.astype(int))
                 self.comp[algo] = c
 
             # Survival model over ALL rows, censored ones included.
             if self.use_survival and len(g) >= self.min_rows:
-                rsf = _sv.fit_rsf(_design(g), g.runtime_s.values,
+                rsf = _sv.fit_rsf(_design(g, self.features), g.runtime_s.values,
                                   g.completed.values, random_state=self.seed)
                 if rsf is not None:
                     self.surv[algo] = rsf
@@ -131,9 +225,28 @@ class PerformanceModel:
 
     # ------------------------------------------------------------------
     def _x(self, feats, threshold):
-        v = [float(feats[k]) for k in mf.FEATURE_NAMES]
-        v.append(float(np.log10(max(threshold, 1e-9))))
-        return np.array([v], dtype=float)
+        """Feature row for one (dataset features, threshold) pair.
+
+        ``feats`` may carry landmark columns as well as static ones; whichever
+        the fitted feature set names are read from it, and ``log_thr`` is derived
+        from the threshold because it is a property of the query rather than of
+        the dataset.
+        """
+        merged = dict(feats)
+        # ALWAYS derived from the threshold argument, never taken from `feats`.
+        # `feats` is often a row of the runs table, which carries the log_thr of
+        # the run it came from; letting that win silently ignores the threshold
+        # being asked about. A `setdefault` here did exactly that and moved E3's
+        # runtime MAE from 0.727 to 1.422 before it was caught.
+        merged["log_thr"] = float(np.log10(max(threshold, 1e-9)))
+        cols = design_columns(self.features)
+        missing = [c for c in cols if c not in merged]
+        if missing:
+            raise KeyError(
+                "feature set %r needs %s, which the caller did not supply. "
+                "Landmark features come from landmarks.DatasetProbe(...).at(sigma)."
+                % (self.features, missing))
+        return np.array([[float(merged[c]) for c in cols]], dtype=float)
 
     def predict(self, algo, feats, threshold):
         """Return dict(runtime_s, memory_mb, p_complete, source)."""

@@ -154,9 +154,21 @@ DATASET_TYPES = {
 
 RAW_DIR = os.path.join(os.path.dirname(_HERE), "datasets", "raw")
 UTIL_DIR = os.path.join(os.path.dirname(_HERE), "datasets", "spmf_format")
+SYN_DIR = os.path.join(os.path.dirname(_HERE), "datasets", "synthetic")
+
+#: Synthetic datasets are named by their generating parameters (see synth.py),
+#: so they are recognised by prefix rather than listed in DATASET_TYPES. They
+#: are always transactional.
+SYN_PREFIX = "syn_"
+
+
+def is_synthetic(name):
+    return str(name).startswith(SYN_PREFIX)
 
 
 def dataset_path(name):
+    if is_synthetic(name):
+        return os.path.join(SYN_DIR, "%s.txt" % name)
     t = DATASET_TYPES.get(name, "transactional")
     if t == "utility":
         p = os.path.join(UTIL_DIR, "%s_utility_fixed.txt" % name)
@@ -165,12 +177,19 @@ def dataset_path(name):
     return os.path.join(RAW_DIR, "%s.txt" % name)
 
 
+def data_type(name):
+    """Input format of a dataset by name; synthetic ones are transactional."""
+    if is_synthetic(name):
+        return "transactional"
+    return DATASET_TYPES.get(name, "transactional")
+
+
 def for_dataset(name, use_cache=True):
     """Meta-features of a named benchmark dataset, cached on first use."""
     cache = load_cache() if use_cache else {}
     if name in cache:
         return cache[name]
-    feats = extract(dataset_path(name), DATASET_TYPES.get(name, "transactional"))
+    feats = extract(dataset_path(name), data_type(name))
     cache[name] = feats
     save_cache(cache)
     return feats
@@ -184,7 +203,7 @@ def build_cache(names=None):
         p = dataset_path(nm)
         if not os.path.exists(p):
             continue
-        cache[nm] = extract(p, DATASET_TYPES.get(nm, "transactional"))
+        cache[nm] = extract(p, data_type(nm))
     save_cache(cache)
     return cache
 
