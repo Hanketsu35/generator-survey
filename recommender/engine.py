@@ -19,6 +19,41 @@ from . import survival as _sv
 from .perfmodel import PerformanceModel, load_runs, pareto_front
 
 
+def installed_implementations():
+    """ids whose program is present on this machine, per src/config.py.
+
+    The recommender used to rank implementations without asking whether they
+    could run. Asked for exact association rules on Linux, it recommended
+    FGC-Stream -- the only implementation the capability base credits with that
+    family, and a Windows-only binary the repository cannot redistribute --
+    with no hint that it was not there. ``available`` in the config is
+    platform-aware for the native binaries; the SPMF implementations also need
+    spmf.jar, which is checked here.
+
+    Returns None when the harness config cannot be imported, meaning "unknown",
+    so that the recommender still works outside this repository.
+    """
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    try:
+        import sys as _sys
+        if root not in _sys.path:
+            _sys.path.insert(0, root)
+        from src import config as _cfg
+    except Exception:                                   # noqa: BLE001
+        return None
+    jar = os.path.exists(os.path.join(root, "spmf", "spmf.jar"))
+    out = set()
+    for name, c in _cfg.ALGORITHMS.items():
+        if not c.get("available"):
+            continue
+        if c.get("exe"):
+            if os.path.exists(os.path.join(root, c["exe"])):
+                out.add(name)
+        elif jar:
+            out.add(name)
+    return out
+
+
 @dataclass
 class Recommendation:
     algorithm: str
@@ -44,6 +79,11 @@ class Recommendation:
     warnings: List[str] = field(default_factory=list)
     budget_notes: List[str] = field(default_factory=list)
     post_filter: Optional[str] = None
+    #: Whether this implementation's program is present on THIS machine. Kept
+    #: separate from the ranking on purpose: the ranking is a statement about
+    #: the implementations, installation a statement about the machine, and a
+    #: user who can obtain the missing binary should still see where it ranks.
+    installed: bool = True
 
 
 class Recommender:
@@ -142,6 +182,7 @@ class Recommender:
     def recommend(self, task, top=None):
         feats = self._features(task)
         eligible, rejected = self.db.filter(task)
+        installed = installed_implementations()
 
         thr = task.threshold if task.threshold is not None else 0.1
         rows = []
@@ -243,6 +284,8 @@ class Recommender:
                 warnings=self._resolve_input_dependent(v, feats),
                 budget_notes=r["budget_notes"],
                 post_filter=v.post_filter,
+                installed=(True if installed is None
+                           else v.algorithm in installed),
             ))
         # Recompute the Pareto flags on the sorted list (indices moved).
         front2 = set(pareto_front([{"runtime_s": o.runtime_s,
@@ -312,6 +355,8 @@ def format_report(task, recs, rejected, feats, show_rejected=True):
             prev_tier = r.tier
             flag = "*" if r.on_pareto_front else " "
             bad = "" if r.within_budget else "  <-- OVER BUDGET"
+            if not r.installed:
+                bad += "  <-- NOT INSTALLED HERE"
             L.append("%-4s %-26s %10.2f %10.1f %6.0f%% %12.1f %6s %s%s"
                      % (label, r.display, r.runtime_s, r.memory_mb,
                         100 * r.p_complete, r.expected_cost, flag, r.match, bad))
@@ -343,6 +388,18 @@ def format_report(task, recs, rejected, feats, show_rejected=True):
             L.append("   ! %s" % s)
         if top.post_filter:
             L.append("   > post-filter required: %s" % top.post_filter)
+        if not top.installed:
+            runnable = [r for r in recs if r.installed]
+            L.append("")
+            L.append("   ! %s is NOT INSTALLED on this machine." % top.display)
+            if runnable:
+                L.append("BEST YOU CAN RUN HERE: %s  (tier %d)"
+                         % (runnable[0].display, runnable[0].tier))
+            else:
+                L.append("   ! None of the %d eligible implementations is installed"
+                         % len(recs))
+                L.append("     here. The request is answerable -- the ranking above")
+                L.append("     says by what -- but not on this machine as it stands.")
         others = [r for r in recs[1:] if r.warnings]
         if others:
             L.append("")
