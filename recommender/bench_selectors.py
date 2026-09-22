@@ -26,10 +26,10 @@ import numpy as np
 import pandas as pd
 
 from . import metafeatures as mf
-from .perfmodel import load_runs
+from .perfmodel import load_runs, design_columns, rows_with_features, FEATURE_SETS
 from .selectors import (CUTOFF, PAR_FACTOR, PairwiseRankSelector,
                         RegressionSelector, SBSSelector, SurvivalSelector,
-                        npar10, par10)
+                        npar10, par10, SunnySelector, RandomSelector)
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(_HERE, "out")
@@ -43,6 +43,8 @@ def _cut(objective):
 def build_selectors():
     return [
         SBSSelector(),
+        RandomSelector(),
+        SunnySelector(k=16),
         RegressionSelector(),
         PairwiseRankSelector(),
         SurvivalSelector(rule="expected_runtime"),
@@ -59,7 +61,41 @@ PORTFOLIOS = {
 }
 
 
-def run(df, category=1, verbose=True, portfolio="all", objective="runtime"):
+def _cluster_bootstrap(res, names, sbs_name, n_boot=5000, seed=0):
+    """Cluster bootstrap over held-out datasets; returns nPAR10 bands.
+
+    Resamples whole datasets with replacement, recomputing the VBS and SBS
+    anchors inside each resample so the interval reflects uncertainty in the
+    normaliser too. Reported as a 5-95% band to match the equivalence-tier
+    convention used elsewhere in the recommender.
+    """
+    datasets = res.dataset.unique()
+    if len(datasets) < 3:
+        return {}
+    groups = {d: res[res.dataset == d] for d in datasets}
+    rng = np.random.default_rng(seed)
+    draws = {n: [] for n in names}
+    for _ in range(n_boot):
+        pick = rng.integers(0, len(datasets), len(datasets))
+        sample = pd.concat([groups[datasets[i]] for i in pick], ignore_index=True)
+        vbs_b, sbs_b = sample.vbs.mean(), sample[sbs_name].mean()
+        if abs(sbs_b - vbs_b) < 1e-12:
+            continue
+        for n in names:
+            draws[n].append(npar10(sample[n].mean(), sbs_b, vbs_b))
+    out = {}
+    for n, vals in draws.items():
+        v = np.asarray([x for x in vals if np.isfinite(x)], dtype=float)
+        if v.size < 50:
+            continue
+        out[n] = {"npar10_lo": float(np.percentile(v, 5)),
+                  "npar10_hi": float(np.percentile(v, 95)),
+                  "p_beats_sbs": float((v < 1.0).mean())}
+    return out
+
+
+def run(df, category=1, verbose=True, portfolio="all", objective="runtime",
+        features="static"):
     """Compare selectors under one portfolio and one objective.
 
     `objective` matters more than any model choice. Measured with
@@ -73,8 +109,13 @@ def run(df, category=1, verbose=True, portfolio="all", objective="runtime"):
     cutoff recorded the memory it had reached, which is a LOWER BOUND on what it
     would have used. The survival machinery therefore applies unchanged.
     """
-    cols = list(mf.FEATURE_NAMES) + ["log_thr"]
-    sub = df[df.category == category].copy()
+    # Which feature set is a reported choice, not a hardcoded one: the ablation
+    # in feature_ablation.py shows the answer depends on the objective, with
+    # threshold-dependent landmarks doubling the instance plane's explained
+    # performance variance while not improving selection on memory.
+    cols = design_columns(features)
+    sub = rows_with_features(df, features)
+    sub = sub[sub.category == category].copy()
     algos = PORTFOLIOS.get(portfolio)
     if algos is not None:
         sub = sub[sub.algorithm.isin(algos)]
@@ -158,6 +199,19 @@ def run(df, category=1, verbose=True, portfolio="all", objective="runtime"):
                                "top1": 1.0,
                                "timeouts": int((res.vbs >= CUTOFF * PAR_FACTOR).sum())}
 
+    # Confidence intervals, by resampling the HELD-OUT DATASETS rather than the
+    # individual configurations. Configurations of one dataset are not
+    # independent -- that non-independence is exactly what the effective instance
+    # count of 7.3 measures -- so an instance-level bootstrap would report
+    # intervals several times too narrow. Resampling clusters keeps the
+    # dependence intact, at the price of intervals wide enough to show how
+    # little seven datasets settle. nPAR10 is recomputed inside each resample,
+    # because its denominator is itself estimated from the same data.
+    ci = _cluster_bootstrap(res, names, sbs_name)
+    for n, band in ci.items():
+        if n in summary:
+            summary[n].update(band)
+
     if verbose:
         print("=" * 78)
         print("LEAVE-ONE-DATASET-OUT SELECTOR COMPARISON  (category %d)" % category)
@@ -170,9 +224,10 @@ def run(df, category=1, verbose=True, portfolio="all", objective="runtime"):
         print("  censored runs in this category: %d of %d (%.1f%%)"
               % ((~sub.completed).sum(), len(sub), 100 * (~sub.completed).mean()))
         print()
-        print("  %-30s %12s %9s %8s %9s"
-              % ("selector", "PAR10 mean", "nPAR10", "top-1", "timeouts"))
-        print("  " + "-" * 72)
+        print("  %-30s %12s %9s %17s %8s %7s"
+              % ("selector", "PAR10 mean", "nPAR10", "5-95% band", "top-1",
+                 "P(<SBS)"))
+        print("  " + "-" * 90)
         order = sorted(summary, key=lambda k: summary[k]["npar10"])
         for n in order:
             s = summary[n]
@@ -181,9 +236,12 @@ def run(df, category=1, verbose=True, portfolio="all", objective="runtime"):
                 mark = "  <- baseline"
             elif s["npar10"] < 1.0 and n != "VBS (oracle)":
                 mark = "  beats SBS"
-            print("  %-30s %12.1f %9.3f %7.1f%% %9d%s"
-                  % (n, s["par10_mean"], s["npar10"], 100 * s["top1"],
-                     s["timeouts"], mark))
+            band = ("%7.3f..%-7.3f" % (s["npar10_lo"], s["npar10_hi"])
+                    if "npar10_lo" in s else "%16s" % "-")
+            pb = ("%6.2f" % s["p_beats_sbs"]) if "p_beats_sbs" in s else "     -"
+            print("  %-30s %12.1f %9.3f %17s %7.1f%% %7s%s"
+                  % (n, s["par10_mean"], s["npar10"], band, 100 * s["top1"],
+                     pb, mark))
         print()
         best = min((k for k in summary if k not in (sbs_name, "VBS (oracle)")),
                    key=lambda k: summary[k]["npar10"])
@@ -204,6 +262,9 @@ def main(argv=None):
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--category", type=int, default=1)
     ap.add_argument("--portfolio", default="all", choices=sorted(PORTFOLIOS))
+    ap.add_argument("--features", default="static", choices=FEATURE_SETS,
+                    help="feature set for every learned selector (default: the "
+                         "published static set)")
     ap.add_argument("--objective", default="runtime",
                     choices=["runtime", "memory"])
     args = ap.parse_args(argv)
@@ -211,11 +272,12 @@ def main(argv=None):
     os.makedirs(OUT_DIR, exist_ok=True)
     df = load_runs()
     res, summary = run(df, category=args.category, portfolio=args.portfolio,
-                       objective=args.objective)
+                       objective=args.objective, features=args.features)
     if res.empty:
         print("no folds")
         return 1
-    tag = "%s_%s_cat%d" % (args.portfolio, args.objective, args.category)
+    tag = "%s_%s_%s_cat%d" % (args.portfolio, args.objective, args.features,
+                              args.category)
     csv_path = os.path.join(OUT_DIR, "selector_%s.csv" % tag)
     res.to_csv(csv_path, index=False)
     with open(os.path.join(OUT_DIR, "selector_%s.json" % tag), "w",

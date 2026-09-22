@@ -215,6 +215,99 @@ class PairwiseRankSelector(Selector):
         return max(candidates, key=lambda a: votes[a])
 
 
+class SunnySelector(Selector):
+    """SUNNY (Amadini et al.), in its single-pick form.
+
+    The most-cited k-nearest-neighbour selector in the algorithm-selection
+    literature, and the baseline an ASlib-literate reader expects to see before
+    believing any learned model. It is also the strongest possible argument that
+    a result is not an artefact of model complexity: SUNNY fits nothing.
+
+    For an instance, take the ``k`` nearest training instances in standardised
+    feature space, and pick the algorithm that solved the most of them, breaking
+    ties by lower mean cost over that neighbourhood. The published method spends
+    the remaining budget on a *schedule* over several algorithms; only the
+    selection half is implemented, because the benchmark measures one run per
+    configuration and a schedule has no meaning against it.
+
+    Features are standardised on the training fold, so the distance is not
+    dominated by whichever feature happens to have the largest units --
+    ``log_n_tx`` and ``max_len`` differ by two orders of magnitude here.
+    """
+
+    def __init__(self, k=16):
+        self.k = k
+        self.name = "SUNNY (k-NN, k=%d)" % k
+
+    def fit(self, train, cols):
+        self.cols_ = cols
+        t = add_par10(train)
+        wide_cost = t.pivot_table(index=["dataset", "param_value"],
+                                  columns="algorithm", values="par10", aggfunc="min")
+        wide_done = t.pivot_table(index=["dataset", "param_value"],
+                                  columns="algorithm", values="completed",
+                                  aggfunc="max")
+        feats = (t.drop_duplicates(subset=["dataset", "param_value"])
+                  .set_index(["dataset", "param_value"])[cols]).reindex(wide_cost.index)
+
+        X = feats.to_numpy(float)
+        self.mu_ = np.nanmean(X, axis=0)
+        self.sd_ = np.nanstd(X, axis=0)
+        self.sd_[self.sd_ < 1e-12] = 1.0
+        self.X_ = (X - self.mu_) / self.sd_
+        self.cost_ = wide_cost
+        self.done_ = wide_done.reindex(wide_cost.index)
+        self.order_ = t.groupby("algorithm").par10.mean().sort_values().index.tolist()
+        return self
+
+    def select(self, x, candidates):
+        z = (np.asarray(x, float) - self.mu_) / self.sd_
+        d = np.linalg.norm(self.X_ - z, axis=1)
+        k = min(self.k, len(d))
+        idx = np.argsort(d)[:k]
+
+        best, best_key = None, None
+        for a in candidates:
+            if a not in self.cost_.columns:
+                continue
+            costs = self.cost_[a].to_numpy(float)[idx]
+            done = self.done_[a].to_numpy(float)[idx]
+            solved = float(np.nansum(done))
+            mean_cost = float(np.nanmean(costs)) if np.isfinite(costs).any() else np.inf
+            # More solved is better; then cheaper on the neighbourhood.
+            key = (-solved, mean_cost)
+            if best_key is None or key < best_key:
+                best, best_key = a, key
+        if best is not None:
+            return best
+        for a in self.order_:                 # nothing comparable: fall back
+            if a in candidates:
+                return a
+        return candidates[0]
+
+
+class RandomSelector(Selector):
+    """Uniform random pick: the floor a selector has to clear to mean anything.
+
+    Reported because "beats the single best fixed choice" and "better than
+    guessing" are different claims, and on a portfolio where one algorithm
+    dominates the second is much easier than the first. Seeded per instance from
+    the feature vector so the result is reproducible across runs.
+    """
+    name = "random pick"
+
+    def __init__(self, random_state=0):
+        self.random_state = random_state
+
+    def fit(self, train, cols):
+        self.cols_ = cols
+        return self
+
+    def select(self, x, candidates):
+        h = hash((self.random_state, tuple(np.round(np.asarray(x, float), 6))))
+        return candidates[h % len(candidates)]
+
+
 class VBSOracle(Selector):
     """Virtual Best Solver: cheats by reading the true costs. Upper bound only."""
     name = "VBS (oracle)"
