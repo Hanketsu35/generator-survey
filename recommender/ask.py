@@ -140,7 +140,13 @@ def suggest_threshold(prof, min_pairs=MIN_USEFUL_PAIRS):
 # ----------------------------------------------------------------------
 # 2. The model understands. Its output is validated, never trusted.
 # ----------------------------------------------------------------------
-UNDERSTAND_PROMPT = """You turn a data-mining question into a formal specification.
+#: v1, kept so the comparison with v2 stays reproducible. Measured on the dev
+#: split of nl_queries_domain.json it had one systematic error, and the prompt
+#: caused it: the minimal_generator line said to use it for "minimal rules",
+#: which sent requests for RULES to the family that produces no rules. 14B sent
+#: 4 of 5 rule requests there. It also offered no way to say "the question
+#: states no goal", so on "find patterns in my data" both models invented one.
+UNDERSTAND_PROMPT_V1 = """You turn a data-mining question into a formal specification.
 
 The user's data has already been measured, so do NOT guess these:
   data_type: {data_type}
@@ -166,10 +172,79 @@ Reply as JSON only:
   "objective": "runtime" or "memory" or "balanced",
   "reason": "<one sentence, in the user's own terms>"}}"""
 
+#: v2 changes three things, each aimed at a measured failure rather than at
+#: particular dev queries, and adds no vocabulary taken from them:
+#:   - each family is stated by its DEFINITION, as the set of records it
+#:     describes, so the model can map a paraphrase instead of a keyword;
+#:   - the misleading "minimal rules" cue is gone, and rules are assigned to
+#:     the family that actually produces rules;
+#:   - "unclear" is a legal answer, so a question with no goal returns a
+#:     question to the user instead of an invented intent.
+#: The model restates the goal in English first, because the question may be
+#: in any language and a restatement gives a small model something to reason
+#: from before it commits to a label.
+UNDERSTAND_PROMPT_V2 = """You turn a data-mining question into a formal specification.
 
-def ask_model(host, model, prompt, timeout=180):
+The user's data has already been measured, so do NOT guess these:
+  data_type: {data_type}
+  {n_tx} records, {n_items} distinct items, average record length {avg_len}
+
+First lines of their file:
+{sample}
+
+Their question (it may be in any language, e.g. Turkish): {question}
+
+A GROUP of records means all records that share the same full set of items.
+Choose the pattern family whose output answers their question:
+
+  minimal_generator       For each group, the SHORTEST set of items that
+                          identifies exactly that group. Output: short
+                          identifying descriptions. No rules.
+  closed_itemset          For each group, the LONGEST set of items all its
+                          records share; adding any item would lose records.
+                          Output: complete, maximal descriptions.
+  generator_closure_pairs Exact rules "if X is present, Y is ALWAYS present
+                          too" (100% confidence): each shortest condition X
+                          paired with everything it implies. Choose this
+                          whenever the user wants rules, implications or
+                          dependencies between items.
+  minimal_rare_itemset    Combinations that are RARE or unusual, i.e. occur in
+                          very few records, rather than common ones.
+  high_utility_generator  Short item combinations ranked by VALUE -- price,
+                          profit, revenue -- rather than by how often they occur.
+  sequential_generator    As minimal_generator, but the ORDER of items matters.
+  unclear                 The question does not say what kind of pattern the
+                          user wants to find. Do not guess a goal the user did
+                          not state.
+
+Reply as JSON only, fields in this order:
+{{"goal": "<what the user wants, restated in one English sentence>",
+  "family": "<one of the names above>",
+  "objective": "runtime" or "memory" or "balanced",
+  "reason": "<one sentence, in the user's own terms>"}}"""
+
+PROMPTS = {"v1": UNDERSTAND_PROMPT_V1, "v2": UNDERSTAND_PROMPT_V2}
+UNDERSTAND_PROMPT = UNDERSTAND_PROMPT_V2
+
+#: What ask.py says back when the model reports that no goal was stated. The
+#: options are phrased as outcomes, because the user does not know the family
+#: names -- which is why they asked.
+CLARIFY = """Your question does not say what you want to find, so any answer
+would be a guess. Which of these is closest?
+
+  1. the shortest description that identifies each group of records
+  2. the complete set of items each group of records shares
+  3. exact rules: "if these are present, those always are too"
+  4. combinations that are unusually rare
+  5. combinations worth the most (needs prices or profits in the data)
+  6. as 1, but where the order of items matters
+
+Re-run with --ask describing the one you want."""
+
+
+def ask_model(host, model, prompt, timeout=180, temperature=0.0, seed=0):
     body = {"model": model, "stream": False, "format": "json",
-            "options": {"temperature": 0, "seed": 0},
+            "options": {"temperature": temperature, "seed": seed},
             "messages": [{"role": "user", "content": prompt}]}
     req = urllib.request.Request(host.rstrip("/") + "/api/chat",
                                  data=json.dumps(body).encode(),
@@ -178,9 +253,103 @@ def ask_model(host, model, prompt, timeout=180):
         return json.loads(r.read())["message"]["content"]
 
 
-def understand(question, prof, sample, host, model):
-    """free text -> (MiningTask fields, how it was obtained, any complaint)."""
-    prompt = UNDERSTAND_PROMPT.format(
+#: Which input type each family's implementations read. The data type is
+#: measured from the file, so a family inconsistent with it is a model error
+#: that code can see without asking anyone.
+FAMILY_DATA_TYPE = {
+    "minimal_generator": "transactional", "closed_itemset": "transactional",
+    "generator_closure_pairs": "transactional", "minimal_rare_itemset": "transactional",
+    "disjunction_free": "transactional",
+    "sequential_generator": "sequential",
+    "high_utility_generator": "utility", "ghui": "utility", "utility_minimal": "utility",
+}
+
+#: The one repair that is safe to make without asking: the same goal, stated on
+#: the kind of data the user actually has. "Shortest identifying description"
+#: on sequence data IS a sequential generator. There is no sequential analogue
+#: of closed itemsets, rules or rare itemsets in the capability base, so those
+#: inconsistencies go back to the user instead.
+ANALOGUE = {("minimal_generator", "sequential"): "sequential_generator",
+            ("sequential_generator", "transactional"): "minimal_generator"}
+
+
+def reconcile(family, data_type):
+    """A family consistent with the measured data type, or None to ask.
+
+    Measured on the dev split, the two remaining 14B errors were both this: on a
+    sequence file the model answered minimal_generator, a family whose
+    implementations cannot read sequences. Left alone, Layer 2 would then find
+    no eligible implementation and report that, which is true but unhelpful.
+    """
+    if family in (None, "unclear") or family not in FAMILY_DATA_TYPE:
+        return family
+    if FAMILY_DATA_TYPE[family] == data_type:
+        return family
+    return ANALOGUE.get((family, data_type))
+
+
+#: Self-consistency. Sampled answers to a question with a clear goal agree;
+#: answers to a question without one scatter. Chosen on the dev split, where
+#: every tau from 0.6 to 0.8 gave the same result for 14B -- 0.7 is the middle
+#: of that plateau, not an edge fitted to it. With K = 7, 0.7 means at least 5
+#: of 7 samples agree.
+SC_SAMPLES = 7
+SC_TEMPERATURE = 0.8
+SC_TAU = 0.7
+
+
+def understand_consistent(question, prof, sample, host, model, prompt_version="v2",
+                          k=SC_SAMPLES, tau=SC_TAU, temperature=SC_TEMPERATURE):
+    """Sample k answers, reconcile each with the data type, vote, abstain if split.
+
+    Returns (fields, source, note) like ``understand``; ``source`` is "unclear"
+    both when the majority says the question has no goal and when no family
+    reaches ``tau`` of the votes. The agreement is reported in ``note`` so the
+    user can see how sure the reading was.
+    """
+    from collections import Counter
+    prompt = PROMPTS[prompt_version].format(
+        data_type=prof["data_type"], n_tx=prof["n_tx"], n_items=prof["n_items"],
+        avg_len=prof["avg_len"], sample=sample, question=question)
+    votes, objectives = [], []
+    for s in range(1, k + 1):
+        try:
+            got = json.loads(ask_model(host, model, prompt,
+                                       temperature=temperature, seed=s))
+        except (urllib.error.URLError, OSError) as exc:
+            return None, "unavailable", "no model at %s (%s)" % (host, exc)
+        except (ValueError, KeyError):
+            votes.append(None)
+            continue
+        fam = got.get("family")
+        if fam != "unclear" and fam not in spec.FAMILIES:
+            fam = None
+        # A sample whose family cannot be reconciled with the data votes for
+        # "unclear": it is a reading the tool cannot act on.
+        rec = reconcile(fam, prof["data_type"])
+        votes.append(rec if rec is not None else "unclear")
+        if got.get("objective") in spec.OBJECTIVES:
+            objectives.append(got["objective"])
+    top, n = Counter(votes).most_common(1)[0]
+    agree = n / k
+    note = "%d of %d readings agree" % (n, k)
+    if top in (None, "unclear") or agree < tau:
+        return None, "unclear", note
+    fields = {"family": top, "data_type": prof["data_type"]}
+    if objectives:
+        fields["objective"] = Counter(objectives).most_common(1)[0][0]
+    return fields, "llm", note
+
+
+def understand(question, prof, sample, host, model, prompt_version="v2",
+               repair=True):
+    """free text -> (MiningTask fields, how it was obtained, any complaint).
+
+    ``source`` is "unclear" when the model reports that the question states no
+    goal. That is a legitimate outcome, not a failure: the caller asks the user
+    instead of inventing an intent.
+    """
+    prompt = PROMPTS[prompt_version].format(
         data_type=prof["data_type"], n_tx=prof["n_tx"], n_items=prof["n_items"],
         avg_len=prof["avg_len"], sample=sample, question=question)
     try:
@@ -191,12 +360,20 @@ def understand(question, prof, sample, host, model):
         return None, "unparseable", "model did not return usable JSON (%s)" % exc
 
     fam = got.get("family")
+    if fam == "unclear":
+        return None, "unclear", got.get("goal", "")
     if fam not in spec.FAMILIES:
         # Rejected rather than passed through: an invented family would be a
         # hard constraint nothing can satisfy, and the failure would surface as
         # "no implementation is eligible" rather than as a parsing error.
         return None, "rejected", ("model proposed family %r, which is not one of "
                                   "the measured families" % fam)
+    if repair:
+        rec = reconcile(fam, prof["data_type"])
+        if rec is None:
+            return None, "unclear", ("model proposed %s, which cannot read %s data"
+                                     % (fam, prof["data_type"]))
+        fam = rec
     obj = got.get("objective")
     fields = {"family": fam, "data_type": prof["data_type"]}
     if obj in spec.OBJECTIVES:
@@ -228,6 +405,10 @@ def main(argv=None):
     ap.add_argument("--threshold", type=float, help="override the computed threshold")
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--host", default=DEFAULT_HOST)
+    ap.add_argument("--samples", type=int, default=SC_SAMPLES,
+                    help="readings of the question to vote over; 1 = a single "
+                         "deterministic reading, which cannot tell a clear "
+                         "question from a vague one")
     ap.add_argument("--no-llm", action="store_true",
                     help="use the rule extractor instead of a model")
     ap.add_argument("--json", action="store_true")
@@ -247,7 +428,21 @@ def main(argv=None):
     note = ""
     fields, source = None, "rules"
     if args.ask and not args.no_llm:
-        fields, source, note = understand(args.ask, prof, sample, args.host, args.model)
+        if args.samples > 1:
+            fields, source, note = understand_consistent(
+                args.ask, prof, sample, args.host, args.model, k=args.samples)
+        else:
+            fields, source, note = understand(args.ask, prof, sample, args.host,
+                                              args.model)
+    if source == "unclear":
+        # The model found no goal in the question. Falling back to the rule
+        # extractor here would silently answer "minimal generators", which is
+        # exactly the invented intent this outcome exists to prevent.
+        if args.json:
+            print(json.dumps({"profile": prof, "clarify": CLARIFY}, indent=2, default=str))
+        else:
+            print(CLARIFY)
+        return 2
     if fields is None:
         got = nl.RuleExtractor().extract(args.ask) if args.ask else {}
         fields = {k: v for k, v in got.items() if v is not None}
