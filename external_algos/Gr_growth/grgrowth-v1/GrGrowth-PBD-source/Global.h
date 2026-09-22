@@ -6,7 +6,7 @@
 
 #define ITEM_SUP_MAP_SIZE   1000
 
-#define MAX_FILENAME_LEN	100
+#define MAX_FILENAME_LEN	4096
 #define MAX(x,y)   (x>=y?x:y)
 #define MIN(x,y)   (x<=y?x:y)
 

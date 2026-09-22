@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 
-	strcpy(goparameters.szdata_filename, argv[1]);
+	snprintf(goparameters.szdata_filename, MAX_FILENAME_LEN, "%s", argv[1]);
 	goparameters.nmin_sup = atoi(argv[2]);
 	goparameters.k = atoi(argv[3]);
 	gnmin_sup = goparameters.nmin_sup;

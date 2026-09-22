@@ -1,5 +1,6 @@
 #pragma once 
 
+#include <cstdint>
 #include <string.h>
 #include "Global.h"
 #include "parameters.h"

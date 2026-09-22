@@ -381,3 +381,46 @@ DATASETS = {
 }
 
 TIMEOUT_SECONDS = 3600  # Survey: 1 saat timeout, geçenler DNF olarak raporlanır
+
+
+# ---------------------------------------------------------------------------
+# Platform-aware binary resolution.
+#
+# The `exe` paths above name the Windows builds the original benchmark ran, and
+# they are what `results/summary.csv` was produced with. They are PE32+ images,
+# so on Linux/macOS each one is replaced by its extension-less sibling when that
+# file exists -- built from source per README (Gr-growth) or from borgelt.net
+# (apriori/eclat/fpgrowth).
+#
+# The Linux builds were validated against the committed Windows results before
+# being wired in, on mushroom across the whole threshold grid: Borgelt 18/18
+# exact generator-count matches over three miners, Gr-growth 9/9. A mismatch
+# here would silently mix two implementations in one results table, so the
+# substitution is reported by `verify_availability.py` rather than being
+# invisible.
+# ---------------------------------------------------------------------------
+def _resolve_native_binaries(algorithms, base_dir=None):
+    """On non-Windows, point each `exe` at its extension-less sibling."""
+    import os
+    import sys
+
+    if sys.platform.startswith("win"):
+        return algorithms
+    base_dir = base_dir or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    for name, cfg in algorithms.items():
+        exe = cfg.get("exe")
+        if not exe or not exe.endswith(".exe"):
+            continue
+        native = exe[: -len(".exe")]
+        if os.path.exists(os.path.join(base_dir, native)):
+            cfg["exe"] = native
+            cfg["exe_note"] = "linux build, validated against the Windows results"
+        else:
+            # Leave the .exe in place; availability checking will mark it down.
+            cfg["available"] = False
+            cfg["note"] = (cfg.get("note", "") +
+                           " [Windows binary; no native build at %s]" % native).strip()
+    return algorithms
+
+
+ALGORITHMS = _resolve_native_binaries(ALGORITHMS)

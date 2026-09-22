@@ -103,3 +103,14 @@ report/sn-article-template/
 report/svjour3.cls
 report/svglov3.clo
 report/spbasic.bst
+
+# Natif miner binary'leri: platforma gore kaynaktan uretilir, depoya girmez.
+# Windows .exe'leri yukaridaki *.exe kuralina, Linux build'leri buraya takilir.
+external_algos/borgelt/apriori
+external_algos/borgelt/eclat
+external_algos/borgelt/fpgrowth
+external_algos/Gr_growth/grgrowth-v1/*-source/GrGrowth_PBd
+external_algos/Gr_growth/grgrowth-v1/*-source/*.o
+
+# Sentetik sweep'in gecici cikti dizini (sayim yapilir, dosya silinir).
+results/synthetic_scratch/
