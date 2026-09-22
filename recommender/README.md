@@ -397,11 +397,20 @@ FP-growth > Eclat — and the top is where selection happens. On memory 8 of 9
 positions differ and Gr-growth falls from best to fourth.
 
 Not a training-ratio effect, though 642 against 58 makes that the obvious
-objection. With the selector **fixed in advance** and 8 random draws per dose, a
-dose of 7 synthetic datasets — matched to the 7 real ones — beats the real-only
-baseline in **4 of 8 draws**, mean 7.791 MB against 7.465. At 14 it is 3 of 8, at
-20 it is 2 of 8. No dose helps on average, and reweighting cannot repair a wrong
-ranking; at best it recovers the real-only result by ignoring the synthetic data.
+objection. With the selector **fixed in advance** and 8 random draws per dose:
+
+| synthetic datasets | mean | draws beating real-only |
+|---|---|---|
+| 0 (baseline) | 7.465 MB | — |
+| 7 (matched to the 7 real) | 8.177 | 4 / 8 |
+| 14 | 9.835 | 3 / 8 |
+| 20 | 10.900 | 2 / 8 |
+| 50 / 100 / 157 | 12.1 – 12.4 | **0 / 8** |
+
+Degradation is monotone and **no dose helps on average**, not even the matched
+one. Which datasets are drawn matters more than how many — at a dose of 7 the
+draws span 6.077 to 13.687 MB. Reweighting cannot repair a wrong ranking; at
+best it recovers the real-only result by ignoring the synthetic data.
 
 So **coverage of the meta-feature space is not coverage of the performance
 space**, and filling the former is a remedy that measurably fails here. Anyone
