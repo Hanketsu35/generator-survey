@@ -12,34 +12,115 @@ RESULTS_RAW.mkdir(parents=True, exist_ok=True)
 
 
 class MemoryMonitor(threading.Thread):
-    """subprocess'in peak RSS memory'sini arka planda takip eder."""
+    """subprocess'in peak RSS memory'sini arka planda takip eder.
+
+    A run shorter than the thread's own startup latency used to be recorded as
+    0.0 MB: ``psutil.Process(pid)`` raised ``NoSuchProcess`` because the child
+    had already exited, the outer handler swallowed it, and ``peak_mb`` kept its
+    initial zero. Zero is not a measurement -- no process occupies no memory --
+    and on the synthetic sweep, where the native miners finish in about 5 ms,
+    every Borgelt run was reported that way.
+
+    Two changes. ``sample()`` is callable synchronously, so a caller takes one
+    reading immediately after spawning rather than waiting for the thread to be
+    scheduled; and ``n_samples`` records whether anything was ever read, so a
+    caller can report an honest missing value instead of a fabricated zero.
+    Both only ever add samples, so no previously recorded peak can fall.
+    """
     def __init__(self, pid: int, interval: float = 0.1):
         super().__init__(daemon=True)
         self.pid = pid
         self.interval = interval
         self.peak_mb: float = 0.0
+        self.n_samples: int = 0
         self._stop_event = threading.Event()
 
-    def run(self):
+    def sample(self) -> bool:
+        """Read RSS of the process tree once. False once the process is gone."""
         try:
             proc = psutil.Process(self.pid)
-            while not self._stop_event.is_set():
+            mem = proc.memory_info().rss
+            for child in proc.children(recursive=True):
                 try:
-                    mem = proc.memory_info().rss
-                    for child in proc.children(recursive=True):
-                        try:
-                            mem += child.memory_info().rss
-                        except psutil.NoSuchProcess:
-                            pass
-                    self.peak_mb = max(self.peak_mb, mem / 1024 / 1024)
+                    mem += child.memory_info().rss
                 except psutil.NoSuchProcess:
-                    break
-                self._stop_event.wait(self.interval)
+                    pass
+            self.peak_mb = max(self.peak_mb, mem / 1024 / 1024)
+            self.n_samples += 1
+            return True
+        except psutil.NoSuchProcess:
+            return False
         except Exception:
-            pass
+            return False
+
+    @property
+    def measured(self) -> bool:
+        return self.n_samples > 0
+
+    def run(self):
+        while not self._stop_event.is_set():
+            if not self.sample():
+                break
+            self._stop_event.wait(self.interval)
 
     def stop(self):
         self._stop_event.set()
+
+
+#: Sampling interval of the peak-RSS monitor, in seconds. 0.1 is what
+#: ``results/summary.csv`` was measured with, and it is the default so that new
+#: runs stay comparable with the published table. The synthetic sweep lowers it,
+#: because its native-miner runs last about 10 ms and a 0.1 s poll takes at most
+#: one reading of them.
+MONITOR_INTERVAL = 0.1
+
+
+def _children_maxrss_mb():
+    """Kernel peak RSS over reaped children, in MB -- NOT usable here.
+
+    ``getrusage(RUSAGE_CHILDREN).ru_maxrss`` is measured by the kernel instead
+    of sampled, so it looked like the right instrument for runs too short to
+    poll. Measured, it is not: it reported about 42 MB for *every* miner on the
+    synthetic pilot, including the native ones that use around 2 MB on real
+    data, and it reported nearly the same number for all nine.
+
+    The cause is ``fork``. ``subprocess.Popen`` with pipes forks before it
+    execs, and between those two points the child shares the parent's address
+    space, so the child's RSS high-water mark starts at the parent's footprint.
+    The parent here is a Python worker with numpy and pandas imported -- about
+    42 MB. The counter therefore measures the harness, not the miner, and no
+    amount of per-child attribution fixes that.
+
+    Kept, unused by the measurement path, so the finding is recorded where the
+    next person will look for it rather than being rediscovered.
+    """
+    try:
+        import resource
+    except ImportError:
+        return None
+    try:
+        ru = resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss
+    except (OSError, ValueError):
+        return None
+    if not ru:
+        return 0.0
+    import sys
+    return ru / 1024.0 if sys.platform != "darwin" else ru / 1024.0 / 1024.0
+
+
+def peak_rss_mb(monitor, rss_before=None):
+    """Sampled peak RSS of the run just finished, or None if never sampled.
+
+    None rather than 0.0 is the point. A run shorter than the sampler's startup
+    latency yields no reading at all, and recording that as zero asserts that a
+    process used no memory. Downstream analysis must treat these as missing --
+    on the synthetic sweep the sub-10 ms native runs are the affected group, so
+    any memory comparison there has to be restricted to runs long enough to
+    have been observed.
+    """
+    if monitor.measured:
+        return round(monitor.peak_mb, 2)
+    return None
 
 
 
@@ -96,7 +177,10 @@ def run_spmf(
     t0 = time.perf_counter()
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
-    monitor = MemoryMonitor(proc.pid)
+    monitor = MemoryMonitor(proc.pid, interval=MONITOR_INTERVAL)
+    # One reading now: a run shorter than thread-startup latency would otherwise
+    # never be sampled at all and be recorded as 0.0 MB.
+    monitor.sample()
     monitor.start()
 
     timed_out = False
@@ -143,7 +227,7 @@ def run_spmf(
 
     return {
         "runtime_s": round(runtime_s, 4),
-        "peak_memory_mb": round(monitor.peak_mb, 2),
+        "peak_memory_mb": peak_rss_mb(monitor),
         "returncode": proc.returncode,
         "stdout": stdout[:2000],
         "stderr": stderr[:2000],
@@ -174,7 +258,10 @@ def run_external(
     t0 = time.perf_counter()
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
-    monitor = MemoryMonitor(proc.pid)
+    monitor = MemoryMonitor(proc.pid, interval=MONITOR_INTERVAL)
+    # One reading now: a run shorter than thread-startup latency would otherwise
+    # never be sampled at all and be recorded as 0.0 MB.
+    monitor.sample()
     monitor.start()
 
     timed_out = False
@@ -212,7 +299,7 @@ def run_external(
 
     return {
         "runtime_s": round(runtime_s, 4),
-        "peak_memory_mb": round(monitor.peak_mb, 2),
+        "peak_memory_mb": peak_rss_mb(monitor),
         "returncode": proc.returncode,
         "stdout": (stdout or "")[:2000],
         "stderr": (stderr or "")[:2000],
