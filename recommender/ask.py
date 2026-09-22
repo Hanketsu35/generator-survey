@@ -22,9 +22,9 @@ benchmark's own measurements force:
 
 The model is never allowed to decide eligibility. ``llm_layer2.py`` measures
 why: asked whether an implementation satisfies a requirement, and given exactly
-what a practitioner has, a model returns unsafe answers -- and a third of them
-concern facts that appear in no document, because they were found by running
-the code against an oracle. Talky-G returns non-minimal itemsets on 7 of 57
+what a practitioner has, qwen2.5-14b returns 3 unsafe answers in 51 -- and 2 of
+the 3 concern facts that appear in no document, because they were found by
+running the code against an oracle. Talky-G returns non-minimal itemsets on 7 of 57
 configurations; Gr-growth's undocumented third argument changes the pattern
 family at k >= 2. No model can retrieve what nothing has written down.
 
@@ -51,7 +51,13 @@ from . import spec
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_HOST = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434")
-DEFAULT_MODEL = os.environ.get("RECOMMENDER_LLM", "qwen2.5:7b-instruct")
+#: 14B rather than 7B. Their family accuracy does not differ significantly on
+#: either split (exact McNemar p = 0.69 dev, 0.25 test), so that is not the
+#: reason. The reason is the question this tool exists for -- a user with a
+#: file and no stated goal. 7B asked back on 0 of 3 goal-less questions on BOTH
+#: splits, always inventing a goal instead; 14B with self-consistency asked back
+#: on 2 of 3 on both. It fits a 12 GB GPU at 4-bit.
+DEFAULT_MODEL = os.environ.get("RECOMMENDER_LLM", "qwen2.5:14b-instruct")
 
 
 # ----------------------------------------------------------------------

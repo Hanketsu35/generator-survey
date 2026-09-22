@@ -339,10 +339,68 @@ about another. That is an argument for the audit.
 ### Layer 1
 
 The rule-based baseline scores **100%** field-level exact match on the 28-query
-set. That means the set is saturated and was written by the same author as the
-rules: there is no headroom for an LLM to demonstrate value. An independently
-authored query set, containing genuinely ambiguous requests, is a prerequisite
-before Layer 1 can be claimed as a contribution rather than an interface.
+set in `data/nl_queries.json`. That set speaks the field's vocabulary, so it is
+saturated and cannot show whether a language model adds anything.
+
+#### On questions a user without that vocabulary would ask
+
+```bash
+python -m recommender.nl_domain_eval                  # dev split
+python -m recommender.nl_domain_eval --split test     # scored once
+```
+
+`data/nl_queries_domain.json`: 64 domain-phrased questions, half Turkish, every
+word the rules key on banned and checked mechanically, split into dev and test,
+with three goal-less questions per split -- one of them the literal *"which
+algorithm should I use for this dataset?"*. Models run locally through Ollama.
+The configuration was frozen in commit `ee34ecb` **before** the test split was
+scored. Test split, 29 questions that state a goal:
+
+| system | right | **silent error** | asked back | goal-less asked back |
+|---|---|---|---|---|
+| keyword rules | 27.6% | 72.4% | — | 0/3 |
+| **type-default** (ignores the question) | 51.7% | 48.3% | — | 0/3 |
+| qwen2.5-14b, prompt v1 | 82.8% | 17.2% | 0% | 0/3 |
+| qwen2.5-14b, prompt v2 | **96.6%** | **3.4%** | 0% | 1/3 |
+| qwen2.5-14b, v2 + type repair + self-consistency | 93.1% | 3.4% | 3.4% | **2/3** |
+
+**Silent error** is the column that matters: a wrong family returned as if it
+were right. Layer 2 cannot catch it, because Layer 2 guarantees that the output
+matches the *specification*, not the user's *intent*. Asking back is unhelpful
+but safe.
+
+What the paired tests (exact McNemar) do and do not support:
+
+- **The model beats the best no-model baseline: p = 0.004 on test**, p = 0.008
+  on dev. This is the claim Layer 1 can now make.
+- Prompt v2 over v1: it wins all 4 discordant test questions, consistent with
+  dev, but **p = 0.125 — not significant at 29 questions.** Pooling with dev
+  would reach p ≈ 0.04, and is not done, because dev was used to design v2.
+- 7B against 14B, and self-consistency against none: not significant.
+
+Three mechanisms, each aimed at a failure measured on dev:
+
+- **Prompt v2** states each family by definition rather than by cue. v1 told
+  the model to use `minimal_generator` for "minimal rules", which sent requests
+  for rules to the one family that produces none — 14B did that on 4 of 5.
+- **Type repair** reconciles the family with the data type measured from the
+  file: on a sequence file, `minimal_generator` becomes `sequential_generator`,
+  and any other inconsistency is sent back to the user.
+- **Self-consistency** samples 7 readings, votes, and abstains below 5 of 7. It
+  did **not** reduce silent errors on test — the remaining one is confident and
+  wrong, and a vote cannot catch that. What it does is ask back on goal-less
+  questions (1/3 → 2/3), at 6× the latency. It is a safety feature, not an
+  accuracy feature, and it is on by default because a goal-less question is the
+  scenario this entry point exists for.
+
+**Residual failures, on every configuration:** a request for exact rules is
+sometimes read as a request for identifying descriptions; and the 7B model
+never asks back — it invents a goal on every goal-less question, on both
+splits, which is why 14B is the default.
+
+**Residual threat to validity:** the questions and the prompt were written by
+the same agent. The split, the keyword ban and the pre-test commit reduce that
+bias; independently collected questions would remove it.
 
 ## Synthetic instances
 
