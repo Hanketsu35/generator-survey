@@ -155,25 +155,43 @@ class Recommender:
         raise ValueError("MiningTask needs either dataset or dataset_path")
 
     # ------------------------------------------------------------------
-    @staticmethod
-    def _resolve_input_dependent(verdict, feats):
+    #: How each recorded empty-set condition is decided from the instance. Both
+    #: read only the static meta-features and the requested threshold, so the
+    #: prediction costs nothing.
+    #:   no_full_support_item  Talky-G: emitted iff no item occurs in every
+    #:                         transaction, i.e. max_sup_ratio < 1.
+    #:   some_item_frequent    Zart: emitted iff at least one item reaches the
+    #:                         threshold, i.e. max_sup_ratio >= sigma.
+    EMPTY_SET_CONDITIONS = {
+        "no_full_support_item": (lambda f, t: f.get("max_sup_ratio", 0.0) < 1.0,
+                                 "max item support ratio is %.4f"),
+        "some_item_frequent": (lambda f, t: t is not None
+                               and f.get("max_sup_ratio", 0.0) >= t,
+                               "max item support ratio is %.4f against the threshold"),
+    }
+
+    def _resolve_input_dependent(self, verdict, feats, threshold=None):
         """Turn an input-dependent convention into a concrete prediction.
 
-        Talky-G emits the empty set iff the dataset has no full-support item.
-        That condition is exactly ``max_sup_ratio < 1``, which the meta-features
-        already carry -- so a convention the audit could only describe as
-        'input-dependent' becomes decidable for the instance at hand.
+        The condition is read from the implementation's own capability record.
+        This used to apply Talky-G's rule to ANY input-dependent implementation,
+        which was harmless while Talky-G and its diffset twin were the only ones.
+        Zart's convention, once measured correctly, is also input-dependent --
+        but on a different condition, and Talky-G's rule would have predicted
+        the opposite of what Zart does on mushroom.
         """
+        conv = self.db.impls.get(verdict.algorithm, {}).get("conventions", {})
+        cond = self.EMPTY_SET_CONDITIONS.get(conv.get("empty_set_condition"))
         out = []
         for w in verdict.warnings:
-            if w.startswith("empty-set output is INPUT-DEPENDENT"):
-                full = feats.get("max_sup_ratio", 0.0) >= 1.0
+            if w.startswith("empty-set output is INPUT-DEPENDENT") and cond:
+                test, what = cond
+                emitted = test(feats, threshold)
                 out.append(
-                    "empty-set convention resolved for this dataset: "
-                    "max item support ratio is %.4f, so the empty set will %s"
-                    % (feats.get("max_sup_ratio", float("nan")),
-                       "NOT be emitted" if full else "be emitted")
-                )
+                    "empty-set convention resolved for this instance: %s, so the "
+                    "empty set will %s"
+                    % (what % feats.get("max_sup_ratio", float("nan")),
+                       "be emitted" if emitted else "NOT be emitted"))
             else:
                 out.append(w)
         return out
@@ -281,7 +299,7 @@ class Recommender:
                 cost_band=r.get("cost_band"),
                 score_band=r.get("score_band"),
                 reasons=list(v.reasons),
-                warnings=self._resolve_input_dependent(v, feats),
+                warnings=self._resolve_input_dependent(v, feats, task.threshold),
                 budget_notes=r["budget_notes"],
                 post_filter=v.post_filter,
                 installed=(True if installed is None

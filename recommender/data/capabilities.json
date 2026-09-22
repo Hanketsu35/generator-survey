@@ -103,6 +103,7 @@
       "conventions": {
         "empty_set": "input_dependent",
         "empty_set_rule": "emitted iff the dataset contains NO full-support item. Mushroom has item 90 in all 8416 transactions, so the empty set is omitted there but emitted on the other six datasets.",
+        "empty_set_condition": "no_full_support_item",
         "threshold_boundary": "ceil"
       },
       "soundness": {
@@ -135,6 +136,7 @@
       "conventions": {
         "empty_set": "input_dependent",
         "empty_set_rule": "identical to Talky-G",
+        "empty_set_condition": "no_full_support_item",
         "threshold_boundary": "ceil"
       },
       "soundness": {
@@ -177,7 +179,8 @@
       "input_type": "transactional",
       "provenance": "SPMF v2.65",
       "emits": {"family": "minimal_generator", "evidence": "oracle"},
-      "conventions": {"empty_set": "always", "threshold_boundary": "ceil"},
+      "also_emits": [{"family": "generator_closure_pairs", "evidence": "tools/validate_zart_closures.py: 8 of 8 non-degenerate configurations (mushroom 0.5/0.3/0.2, chess 0.9/0.8, connect 0.95/0.9, pumsb 0.95), 11,632 classes and 12,325 generators, 0 violations of closedness, printed support, generator-in-closure, cl(G) == C or support-minimality, and generator set equal to DefMe's"}],
+      "conventions": {"empty_set": "input_dependent", "empty_set_rule": "emitted iff at least one item is frequent. On the 7 benchmark configurations where no item reaches the threshold (retail 0.7, t10i4d100k 0.02-0.7) Zart emits nothing at all, where DefMe emits the empty set; the audit had recorded this convention as 'always'.", "empty_set_condition": "some_item_frequent", "threshold_boundary": "ceil"},
       "soundness": {"status": "verified", "violations": 0},
       "completeness": {"status": "verified"},
       "validation": {"oracle": "vertical bitset support oracle", "scope": "set equality against DefMe on the shared configurations"},

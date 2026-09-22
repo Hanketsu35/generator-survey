@@ -96,9 +96,25 @@ class CapabilityDB:
                             % (impl["input_type"], task.data_type)], [])
 
         # --- 2. pattern family -------------------------------------------
+        # An implementation may emit more than one family: Zart prints each
+        # closed set together with its generators. The primary family is the one
+        # the benchmark measured it on; ``also_emits`` lists further families,
+        # each admitted ONLY with its own oracle evidence -- being documented as
+        # producing a family is not enough, which is the lesson of
+        # HUCI-Miner-Generators. The best-matching family serves the request,
+        # so adding a secondary family can widen what an implementation serves
+        # but never changes how it serves a request its primary family already
+        # matched.
         emitted = impl["emits"]["family"]
         match = self.family_match(emitted, task.family)
+        via_secondary = None
+        rank = {"exact": 0, "post_filter": 1, "no": 2}
+        for extra in impl.get("also_emits", []):
+            m = self.family_match(extra["family"], task.family)
+            if rank[m] < rank[match]:
+                emitted, match, via_secondary = extra["family"], m, extra
         if match == "no":
+            emitted = impl["emits"]["family"]
             snd = impl.get("soundness", {})
             reasons.append("emits the %s family, not %s" % (emitted, task.family))
             # Only a *misnamed* implementation needs the extra explanation; for
@@ -195,7 +211,10 @@ class CapabilityDB:
                 warnings.append("never emits the empty set; add it manually "
                                 "(support |D|, a generator by definition)")
 
-        if match == "exact":
+        if via_secondary is not None:
+            reasons.append("also emits %s, verified by %s"
+                           % (emitted, via_secondary.get("evidence", "oracle")))
+        elif match == "exact":
             reasons.append("emits %s, verified by %s"
                            % (emitted, impl.get("validation", {}).get("oracle", "oracle")))
         return Verdict(algo, display, True, match, reasons, warnings, post_filter=pf,
