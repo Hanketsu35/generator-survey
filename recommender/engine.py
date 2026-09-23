@@ -84,6 +84,21 @@ class Recommendation:
     #: the implementations, installation a statement about the machine, and a
     #: user who can obtain the missing binary should still see where it ranks.
     installed: bool = True
+    #: Ways this instance lies outside the data the implementation's costs were
+    #: learned from; non-empty means runtime_s and memory_mb are extrapolations.
+    extrapolated: List[str] = field(default_factory=list)
+
+
+#: The structural features that bound where a prediction was learned. Size and
+#: shape, not threshold: the threshold grid differs per dataset by design.
+DOMAIN_FEATURES = (("log_n_tx", "records", True), ("log_n_items", "distinct items", True),
+                   ("avg_len", "average transaction length", False),
+                   ("density", "density", False))
+#: Slack on each side of the observed range, in the feature's own units (log10
+#: for the sizes: 0.3 is a factor of 2). A prediction a factor of two beyond the
+#: largest training dataset is still an interpolation of the trend; one at a
+#: tenth of the smallest is not.
+DOMAIN_SLACK = {"log_n_tx": 0.3, "log_n_items": 0.3, "avg_len": 0.0, "density": 0.0}
 
 
 class Recommender:
@@ -105,6 +120,40 @@ class Recommender:
                                                 exclude_dataset=exclude_dataset)
             if cache:
                 self._store_cached(exclude_dataset, self.model)
+        self._domain = self._training_domain()
+
+    def _training_domain(self):
+        """{algorithm: {feature: (min, max)}} over the datasets it was run on.
+
+        Found necessary, not assumed: a 400-record, 10-item file uploaded to
+        the chat interface got a predicted 1007 s for Zart, whose fastest
+        recorded run is 0.45 s. The smallest training dataset has 3,196
+        records; the forests had nothing to say about a file an eighth of
+        that size and said it anyway.
+        """
+        runs = self.runs
+        if self.excluded is not None:
+            runs = runs[runs.dataset != self.excluded]
+        cols = [f for f, _, _ in DOMAIN_FEATURES if f in runs.columns]
+        out = {}
+        for algo, g in runs.groupby("algorithm"):
+            out[algo] = {f: (float(g[f].min()), float(g[f].max())) for f in cols}
+        return out
+
+    def outside_domain(self, algorithm, feats):
+        """Plain-language reasons this instance is outside the training data."""
+        rng = self._domain.get(algorithm) or {}
+        out = []
+        for f, name, is_log in DOMAIN_FEATURES:
+            if f not in rng or f not in feats:
+                continue
+            lo, hi = rng[f]
+            x, slack = feats[f], DOMAIN_SLACK.get(f, 0.0)
+            if lo - slack <= x <= hi + slack:
+                continue
+            show = (lambda v: "{:,}".format(int(round(10 ** v)))) if is_log else (lambda v: "%.3g" % v)
+            out.append("%s %s, trained on %s..%s" % (show(x), name, show(lo), show(hi)))
+        return out
 
     # ------------------------------------------------------------------
     def _cache_key(self, exclude_dataset):
@@ -304,6 +353,7 @@ class Recommender:
                 post_filter=v.post_filter,
                 installed=(True if installed is None
                            else v.algorithm in installed),
+                extrapolated=self.outside_domain(v.algorithm, feats),
             ))
         # Recompute the Pareto flags on the sorted list (indices moved).
         front2 = set(pareto_front([{"runtime_s": o.runtime_s,
@@ -404,6 +454,9 @@ def format_report(task, recs, rejected, feats, show_rejected=True):
             L.append("   ! %s" % s)
         for s in top.budget_notes:
             L.append("   ! %s" % s)
+        if top.extrapolated:
+            L.append("   ! predicted costs are EXTRAPOLATED -- this data is outside")
+            L.append("     what the model was measured on: %s" % "; ".join(top.extrapolated))
         if top.post_filter:
             L.append("   > post-filter required: %s" % top.post_filter)
         if not top.installed:
