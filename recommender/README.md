@@ -52,6 +52,29 @@ python -m recommender.cli --data-path mydata.txt --threshold 0.1 --json
 
 Explicit flags always override anything `--ask` parses out of the text.
 
+### Chat interface
+
+```bash
+ollama serve &                       # optional: without it, rules + template text
+python -m recommender.chat           # then open http://127.0.0.1:8765
+```
+
+Drop a CSV (baskets, order/item pairs, or 0/1 columns — `ingest.py` decides
+which and says how it read the file) or an SPMF file, and ask in Turkish or
+English; a TR/EN switch sets the language of every reply. Everything stays on
+the machine. The model reads the question and phrases the answer; the decision
+is the engine's, unchanged. Its explanation is discarded for the template if it
+names an implementation it was not shown, writes a number it was not given, or
+leaves out an over-budget caveat. A reason invented without a name or number
+still passes, and the page says "checked", not "verified".
+
+Two limits the interface surfaced, both now in the engine: when a file lies
+outside the size/shape range an implementation's costs were learned on
+(`Recommender.outside_domain`), its predicted time and memory are marked as
+extrapolations and not quoted — a 400-record file got 1007 s for Zart, whose
+fastest recorded run is 0.45 s; and budgets stated in the first message are
+read (they were silently dropped).
+
 ## Experiments
 
 ```bash
