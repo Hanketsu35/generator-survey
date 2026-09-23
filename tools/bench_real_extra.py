@@ -183,6 +183,15 @@ def main(argv=None):
     instances = plan()
     done = done_keys()
     jobs = []
+    # Easiest difficulty level of EVERY dataset first, hardest last. Dataset by
+    # dataset, the first run spent two hours on bms1's two hardest levels while
+    # four datasets had not started: there the JVM miners run to the 3600 s
+    # cutoff, and an instance where any of them does is excluded from the memory
+    # evaluation -- the one objective with headroom -- so those hours bought
+    # nothing it can use. Nothing is dropped; the order changes.
+    instances = sorted(instances, key=lambda i: (i[3] != "calibration",
+                                                 i[2] or 0, EXTENSION.index(i[0])
+                                                 if i[0] in EXTENSION else -1))
     for ds, sg, tg, role, n_tx, n_items in instances:
         if n_tx is None:
             from recommender import metafeatures as mf
