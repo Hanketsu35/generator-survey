@@ -288,6 +288,13 @@ The 39 refits produce **11 distinct orders**. What survives:
 - **Pairwise ranking is the one to use** — not because it always wins, but
   because it is never bad: the narrowest range by far, and best in 30 of 39.
   Regression's 0.352 above is a favourable draw from a range that reaches 0.853.
+- **That verdict holds within one training regime, and the regime matters
+  more.** Every selector above is trained on the clean subset only. The engine
+  (`engine_memory_eval.py`) is trained on every completed run, and pairwise
+  ranking trained the same way moves its median from 0.869 to 0.248 on that
+  script's anchors. There, pairwise ranking wins typically (24 of 39 refits)
+  and the engine's regression has the better worst case (0.600 against 0.898).
+  Neither dominates, so the engine is left as it is — measured, not assumed.
 - **No ordering among the selectors is a property of this benchmark.**
   Dropping the jackknife only on the *test* side leaves the order unchanged in
   39 of 39; the instability is entirely in what the selectors *learn* from
