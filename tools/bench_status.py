@@ -179,6 +179,42 @@ def metrics(p):
     print()
     print("  A result on few instances is a direction, not a verdict: each new")
     print("  dataset contributes up to five instances, and they are not independent.")
+    post_hoc(p)
+
+
+#: Minimum duration of the BEST run for an instance to count as measurable.
+#: At 0.1 s memory sampling a 20 ms run is read once, at spawn -- one reading
+#: gave 0.84 MB, not a plausible process -- and runtime ratios of 10 ms runs
+#: are process-start noise. 1 s gives about ten memory samples.
+MEASURABLE_S = 1.0
+
+
+def post_hoc(p):
+    """NOT pre-registered: the same metrics on instances long enough to measure.
+
+    Added after the first results, and labelled so. The pre-registered S2 and S3
+    above stand as specified and are not re-scored; this section exists because
+    the instances that finish first are the easy ones, where both costs are
+    measurement noise, and the criteria omitted a minimum duration that the
+    memory monitor's own documentation says any comparison needs.
+    """
+    df = pd.read_csv(EXTRA)
+    fast = df[completed(df)].groupby(["dataset", "param_value"]).runtime_s.min()
+    long_enough = set(fast[fast >= MEASURABLE_S].index)
+    q = p[[(d, s) in long_enough for d, s in zip(p.dataset, p.sigma)]]
+    print()
+    print("POST-HOC, NOT PRE-REGISTERED -- instances whose best run takes >= %.0f s"
+          % MEASURABLE_S)
+    if q.empty:
+        print("  none yet: every finished instance is too fast to measure. The")
+        print("  hard difficulty levels, still running, are where this is decided.")
+        return
+    for obj in ("memory", "runtime"):
+        r = q[q.objective == obj]
+        if r.empty:
+            continue
+        print("  %-8s %2d instances | regret recommender %.3fx, fixed choice %.3fx"
+              % (obj, len(r), gmean(r.pick_cost / r.best), gmean(r.fixed_cost / r.best)))
 
 
 def main():
