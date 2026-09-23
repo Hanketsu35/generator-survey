@@ -56,6 +56,7 @@ import numpy as np
 
 _ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_ROOT))
+sys.path.insert(0, str(_ROOT / "tools"))       # repair_summary, from workers too
 
 from src import config as cfg
 from src import metrics as _metrics
@@ -125,6 +126,36 @@ def calibrated_thresholds(path, fractions=TARGET_FREQ_FRACTIONS):
 
 
 # ----------------------------------------------------------------------
+def _failure_label(name, res):
+    """The error text for a run, or "" -- never a silent success.
+
+    This used to be ``res.get("error")``, and neither runner sets that key:
+    run_spmf reports a failure under "failure", and run_external reports only a
+    return code. Every crash was therefore written down as a completed run --
+    the same defect repaired in results/summary.csv (repair_summary.py), in the
+    code that was supposed to be free of it. An exception caught in run_one
+    itself does set "error", and is kept.
+
+    A non-zero exit counts as a failure unless it is a documented convention of
+    that program, confirmed in its source (repair_summary._conventional_exit).
+    A process killed by a signal -- the OOM killer, an address-space cap --
+    exits negative and is always a failure.
+    """
+    from repair_summary import _conventional_exit
+    if res.get("timed_out"):
+        return ""
+    err = res.get("error") or res.get("failure")
+    if err:
+        return str(err)
+    rc = res.get("returncode")
+    if rc in (0, None) or _conventional_exit(name, rc, res.get("generator_count")):
+        return ""
+    if rc < 0:
+        return "killed by signal %d" % -rc
+    signed = rc - (1 << 32) if rc >= (1 << 31) else rc
+    return "non-zero exit code %d" % signed
+
+
 def run_one(job):
     """Execute one (dataset, sigma, algorithm) run. Returns a summary row."""
     (name, c, ds_path, ds_name, sigma, frac, n_tx, n_items, timeout, keep_mb,
@@ -179,7 +210,7 @@ def run_one(job):
             "peak_memory_mb": res.get("peak_memory_mb"),
             "generator_count": res.get("generator_count"),
             "timed_out": bool(res.get("timed_out")),
-            "error": res.get("error") or "",
+            "error": _failure_label(name, res),
             "timestamp": time.strftime("%Y%m%d_%H%M%S"),
             "n_tx": n_tx, "n_items": n_items, "target_frac": frac}
 

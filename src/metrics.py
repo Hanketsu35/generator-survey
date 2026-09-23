@@ -74,6 +74,32 @@ class MemoryMonitor(threading.Thread):
 #: one reading of them.
 MONITOR_INTERVAL = 0.1
 
+#: Address-space cap for NATIVE miners, in MB; None means no cap, which is how
+#: results/summary.csv was measured. The JVM implementations have always been
+#: capped -- the default heap is a quarter of physical RAM -- but a native
+#: binary could take the whole machine: Borgelt's apriori on bms1 at a support
+#: of 11 transactions grew to 28.9 GB resident and the kernel's OOM killer took
+#: it and the benchmark with it. A cap equal to the JVM default gives every
+#: implementation the same memory budget, and turns running out of it into a
+#: recorded failure instead of a machine that stops. Set it only for runs that
+#: are not compared against the uncapped published table.
+NATIVE_MEM_LIMIT_MB = None
+
+
+def _address_space_limiter(limit_mb):
+    """preexec_fn setting RLIMIT_AS in the child, or None where unsupported."""
+    if not limit_mb:
+        return None
+    try:
+        import resource
+    except ImportError:                                  # Windows
+        return None
+    lim = int(limit_mb) * 1024 * 1024
+
+    def _set():
+        resource.setrlimit(resource.RLIMIT_AS, (lim, lim))
+    return _set
+
 
 def _children_maxrss_mb():
     """Kernel peak RSS over reaped children, in MB -- NOT usable here.
@@ -256,7 +282,8 @@ def run_external(
     cmd = [exe_abs] + [str(a) for a in cmd_args]
 
     t0 = time.perf_counter()
-    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+                            preexec_fn=_address_space_limiter(NATIVE_MEM_LIMIT_MB))
 
     monitor = MemoryMonitor(proc.pid, interval=MONITOR_INTERVAL)
     # One reading now: a run shorter than thread-startup latency would otherwise

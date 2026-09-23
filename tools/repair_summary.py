@@ -58,9 +58,14 @@ def crashed_runs() -> dict:
 #:   Borgelt     apriori.c defines ``E_NOITEMS -15 "no (frequent) items
 #:               found"``: an empty result, not a crash.
 def _conventional_exit(algorithm, rc, generator_count):
-    if algorithm == "Gr_growth" and generator_count is not None \
-            and rc == generator_count:
-        return True
+    # Gr-growth's status is its count -- but only Windows keeps all 32 bits of
+    # it. POSIX keeps the low 8, so on Linux 1,310 generators exit with 30. An
+    # equality test written against the Windows table flagged every such run
+    # as a crash the first time it met Linux; both forms are the convention.
+    if algorithm == "Gr_growth" and generator_count is not None:
+        g = int(generator_count)
+        if rc == g or rc == (g & 0xFF):
+            return True
     if str(algorithm).endswith("_Borgelt") and rc == 15:
         return True
     return False
