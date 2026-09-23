@@ -131,6 +131,17 @@ def suggest_threshold(prof, min_pairs=MIN_USEFUL_PAIRS):
     rows = prof.get("support_profile") or []
     if not rows:
         return None, "no support profile for this data type"
+    # With few items the target cannot be reached at all: 10 items have 45
+    # pairs. Then the right sigma is the largest at which every pair is
+    # frequent, and the data is small, not sparse.
+    n = prof.get("n_items") or 0
+    all_pairs = n * (n - 1) // 2
+    if 0 < all_pairs < min_pairs:
+        for r in rows:
+            if r["frequent_pairs"] >= all_pairs:
+                return r["sigma"], ("with %d items there are only %d possible item "
+                                    "pairs, and all are frequent at this threshold"
+                                    % (n, all_pairs))
     for r in rows:
         if r["frequent_pairs"] >= min_pairs:
             return r["sigma"], ("%d of %d items and about %d item pairs are "
