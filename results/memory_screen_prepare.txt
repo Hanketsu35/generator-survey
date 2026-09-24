@@ -1,0 +1,10 @@
+chainstore_fim   from chainstoreFIM.txt                    1112949 tx | re-sorted 0, de-duplicated 0, empty lines dropped 0
+chicago          from Chicago_Crimes_2001_to_2017_FIM.txt   2662309 tx | re-sorted 642947, de-duplicated 0, empty lines dropped 0
+fruithut         from fruithut_original.txt                 181970 tx | re-sorted 0, de-duplicated 0, empty lines dropped 0
+instacart        from instacart_trainFIM.txt                131209 tx | re-sorted 0, de-duplicated 0, empty lines dropped 0
+kddcup99         from kddcup99.txt                         1000000 tx | re-sorted 0, de-duplicated 0, empty lines dropped 0
+onlineretail     from OnlineRetailZZ.txt                    540455 tx | re-sorted 0, de-duplicated 0, empty lines dropped 1454
+pamap            from PAMAP.txt                            1000000 tx | re-sorted 0, de-duplicated 0, empty lines dropped 0
+recordlink       from RecordLink.txt                        574913 tx | re-sorted 0, de-duplicated 0, empty lines dropped 0
+skin             from Skin.txt                              245057 tx | re-sorted 0, de-duplicated 0, empty lines dropped 0
+t20i6d100k       from t20i6d100k.txt                         99922 tx | re-sorted 0, de-duplicated 0, empty lines dropped 0
