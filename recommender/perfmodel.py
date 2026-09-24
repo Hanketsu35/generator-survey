@@ -41,6 +41,10 @@ TIMEOUT_S = 3600.0
 PAR_PENALTY = 10.0          # PAR10 convention for a non-completing run
 
 
+def _timed_out(df):
+    return df.timed_out.astype(str).str.lower() == "true"
+
+
 def load_runs(path=_SUMMARY):
     """Load summary.csv and attach meta-features. Returns a tidy DataFrame."""
     df = pd.read_csv(path)
@@ -215,10 +219,21 @@ class PerformanceModel:
                 c.fit(_design(g, self.features), g.completed.astype(int))
                 self.comp[algo] = c
 
-            # Survival model over ALL rows, censored ones included.
-            if self.use_survival and len(g) >= self.min_rows:
-                rsf = _sv.fit_rsf(_design(g, self.features), g.runtime_s.values,
-                                  g.completed.values, random_state=self.seed)
+            # Survival model over completed and TIMED-OUT rows. A timeout is
+            # right-censoring: the clock stopped a run that was still going, so
+            # its true time exceeds the cutoff. A crash is not: a miner killed
+            # by memory exhaustion at 300 s says nothing about how long it
+            # would take with memory to spare, and read as "longer than 300 s"
+            # it is a false statement about speed. Found by measurement: adding
+            # the extension datasets, whose Borgelt runs on kosarak and bms2
+            # hit the memory cap, moved leave-one-dataset-out runtime regret
+            # on the seven original datasets from 1.314x to 2.018x (fixed
+            # choice 1.289x); without those rows it was 1.269x. Crashes still
+            # train the completion classifier, which is where they belong.
+            sv = g[g.completed | _timed_out(g)]
+            if self.use_survival and len(sv) >= self.min_rows:
+                rsf = _sv.fit_rsf(_design(sv, self.features), sv.runtime_s.values,
+                                  sv.completed.values, random_state=self.seed)
                 if rsf is not None:
                     self.surv[algo] = rsf
         return self

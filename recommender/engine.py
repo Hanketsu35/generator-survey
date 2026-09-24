@@ -165,7 +165,7 @@ class Recommender:
                 h.update(fh.read())
         except OSError:
             return None
-        h.update(repr(("v2-survival", exclude_dataset)).encode())
+        h.update(repr(("v3-survival-timeouts-censored", exclude_dataset)).encode())
         return h.hexdigest()[:16]
 
     def _cache_path(self, exclude_dataset):
