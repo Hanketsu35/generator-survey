@@ -316,11 +316,12 @@ def run_external(
     try:
         out_path = Path(output_file)
         if out_path.exists():
-            if count_fn:
-                generator_count = count_fn(out_path)
-            else:
-                lines = out_path.read_text(encoding="utf-8", errors="ignore").strip().splitlines()
-                generator_count = len([l for l in lines if l.strip()])
+            # Every counter streams. Reading the file whole, as two of them
+            # did, cost several times its size: a Gr-growth run on kosarak
+            # left a multi-GB partial output and the worker counting it
+            # reached 18.5 GB -- outside the native miners' address-space
+            # cap, which covers the miner and not the harness.
+            generator_count = (count_fn or count_plain_lines)(out_path)
     except Exception:
         pass
 
@@ -410,8 +411,7 @@ def count_borgelt_generators(out_path: Path) -> int:
 
 def count_grgrowth_generators(out_path: Path) -> int:
     """GrGrowth .txt dosyasindaki generator sayisini sayar (bos satirlar haric)."""
-    lines = out_path.read_text(encoding="utf-8", errors="ignore").strip().splitlines()
-    return len([l for l in lines if l.strip()])
+    return count_plain_lines(out_path)
 
 
 def count_fgcstream_generators(out_path: Path) -> int:
@@ -420,16 +420,16 @@ def count_fgcstream_generators(out_path: Path) -> int:
     Generatorler 'generateurs :' sonrasinda iki boslukla ayrilir.
     """
     total = 0
-    for line in out_path.read_text(encoding="utf-8", errors="ignore").splitlines():
-        if "generateurs :" not in line:
-            continue
-        gen_part = line.split("generateurs :", 1)[1].strip()
-        if not gen_part:
-            total += 1  # empty set generator
-        else:
-            # Generators separated by double spaces
-            gens = [g.strip() for g in gen_part.split("  ") if g.strip()]
-            total += len(gens)
+    with open(out_path, encoding="utf-8", errors="ignore") as f:
+        for line in f:
+            if "generateurs :" not in line:
+                continue
+            gen_part = line.split("generateurs :", 1)[1].strip()
+            if not gen_part:
+                total += 1  # empty set generator
+            else:
+                # Generators separated by double spaces
+                total += sum(1 for g in gen_part.split("  ") if g.strip())
     return total
 
 

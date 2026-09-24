@@ -150,10 +150,15 @@ def _failure_label(name, res):
     rc = res.get("returncode")
     if rc in (0, None) or _conventional_exit(name, rc, res.get("generator_count")):
         return ""
+    # The program's own last words, when it left any: Borgelt's miners exit 1
+    # for several reasons, and "not enough memory" -- reproduced under a cap
+    # on kosarak -- is only told apart from a crash by what they print.
+    tail = [l.strip() for l in (res.get("stderr") or "").splitlines() if l.strip()]
+    said = (": " + tail[-1][-160:]) if tail else ""
     if rc < 0:
-        return "killed by signal %d" % -rc
+        return "killed by signal %d%s" % (-rc, said)
     signed = rc - (1 << 32) if rc >= (1 << 31) else rc
-    return "non-zero exit code %d" % signed
+    return "non-zero exit code %d%s" % (signed, said)
 
 
 def run_one(job):
