@@ -3,6 +3,42 @@
 A three-layer recommender built on the 667-run benchmark and the output-correctness
 audit in the parent repository.
 
+## Where it stands (read this first)
+
+Five more real datasets were benchmarked (bms1, bms2, c20d10k, kosarak,
+c73d10k; 216 runs), and every completed run under 30 s — 714 of them — was
+re-measured after the memory monitor turned out not to measure short runs at
+all. Full account: `results/REMEASURE_RESULTS.md`.
+
+- **Layer 2 is unaffected.** Its claims are measured against an oracle, not a
+  cost model, and they are the contribution that stands.
+- **The pre-registered test on the new datasets failed on cost**: S1 safety
+  PASS (0 of 38, but performance-first also 0 of 38), S2 memory FAIL (1.637×
+  vs fixed 1.446×), S3 runtime FAIL (1.142×, bar 1.10). These stand as
+  recorded.
+- **The ground truth could not have passed them.** Native runs under 0.1 s
+  were read once, at spawn — apriori on mushroom 0.5 recorded at 0.02 MB,
+  3.7–4.2 MB when measured. The old machine's own best, scored on the new
+  one, gave memory regret 4.95×. After re-measurement the repeatability floor
+  is 1.055× (memory) and 1.048× (runtime).
+- **Held out one at a time over twelve datasets, the engine ties the fixed
+  choice**: memory 1.452× vs 1.445× (ratio 1.006, 5–95% 0.964–1.039), runtime
+  1.240× vs 1.226× (1.014, 0.950–1.087). That is after a fix to how crashes
+  enter the runtime model, chosen after seeing the result; before it, runtime
+  was 1.707× vs 1.226×.
+- **Learned selectors still beat the fixed choice on the memory slice** of the
+  selector benchmark after re-measurement (headroom 3.642× → 2.18×; best
+  nPAR10 0.180 on seven datasets, 0.559 on twelve), but *which* selector is
+  best changed with every change of data, as it did before. See *Selector
+  results after re-measurement* below.
+- **The engine now trains on the re-measured table by default**
+  (`results/training_runs.csv`, 883 runs, 12 transactional datasets);
+  published experiments keep reading `results/summary.csv` and reproduce.
+  The engine also says when a request lies outside the data it learned from.
+
+Sections below that report numbers on `results/summary.csv` are kept as they
+were measured; where re-measurement changes a conclusion, the section says so.
+
 ## The thesis
 
 Every published algorithm-selection framework — Rice's formulation, empirical
@@ -51,6 +87,10 @@ python -m recommender.cli --data-path mydata.txt --threshold 0.1 --json
 ```
 
 Explicit flags always override anything `--ask` parses out of the text.
+
+The engine learns from `results/training_runs.csv` when it exists (build it
+with `python tools/build_training_table.py`), otherwise from
+`results/summary.csv`. The fitted model is cached per table content in `out/`.
 
 ### Chat interface
 
@@ -264,7 +304,7 @@ exponent (`balanced` takes a square root, so it halves the relative width).
 | runtime, all 9 | 1.011× | none beats the fixed choice |
 | memory, SPMF only | 1.016× | none beats the fixed choice — the oracle gap is 2.8 MB |
 | rare/stream (46.8% censored) | 1.251× | pairwise ranking, **0.000** |
-| **memory, all 9** | **3.642×** | **every learned selector; pairwise ranking the most stable** |
+| **memory, all 9** | **3.642×** (2.18× re-measured) | **every learned selector; pairwise ranking the most stable** |
 
 Every number below carries a **cluster bootstrap over held-out datasets** —
 whole datasets resampled, not configurations, because configurations of one
@@ -347,6 +387,53 @@ Three things this says, none of them flattering to a naive reading:
 See `literature/NOTES.md`, including a mistake of ours that a 10× penalty on
 peak memory manufactured an apparent 4.35× headroom where the clean subset
 shows 1.016×.
+
+### Selector results after re-measurement
+
+The tables above were measured on `results/summary.csv`, where every native
+run under 0.1 s had its peak memory read once, at spawn. Re-measured
+(`tools/remeasure.py`, 3 repeats, median; repeat spread 1.01×), the same
+comparison — memory, full portfolio, configurations where every candidate
+completed, `python -m recommender.bench_selectors --objective memory --table …`:
+
+| | recorded (7 datasets) | re-measured (7) | re-measured + extension (12) |
+|---|---|---|---|
+| configurations | 39 | 39 | 46 |
+| headroom SBS/VBS | 3.642× | 2.181× | 2.166× |
+| best learned selector | regression 0.352 | pairwise ranking **0.180** | survival (E[T]) 0.559 |
+| pairwise ranking | 0.429 | 0.180 (0.088–0.294) | 0.608 (0.198–0.902) |
+| regression | 0.352 | 0.791 | 0.706 |
+| SUNNY | 0.981 | 0.859 | 0.864 |
+| random | 12.0 | 15.7 | 30.6 |
+
+- The memory headroom was inflated by the monitor, roughly by a third of its
+  size, but most of it is real: 2.2× on clean measurements.
+- **Every learned selector still beats the fixed choice on this slice**, on
+  every table.
+- **The winner changed with each table**, as the jackknife above predicted.
+  Pairwise ranking is the one learned selector with P(beats SBS) ≥ 0.98 on all
+  three; it stays the defensible default, for its worst case rather than its
+  best.
+- The engine's own leave-one-dataset-out test (`tools/remeasure_eval.py`, M4)
+  measures something different — geometric-mean regret per instance against
+  the pre-registered fixed choice, on every instance where the eligible
+  miners completed — and there it ties the fixed choice (ratio 1.006). The two
+  results are compatible: nPAR10 is a ratio of arithmetic means, dominated by
+  the instances where memory is large, and that is where selection pays; the
+  geometric mean weights every instance equally, and on most instances every
+  choice is within a few megabytes.
+
+### Data repair: a second silent crash, and one that exited 0
+
+**HUCI-Miner (generators) on chainstore at min utility 5000** was recorded as
+completed with 0 generators. SPMF had caught an `IndexOutOfBoundsException`,
+printed "An error while trying to run the algorithm", and exited **0** — so
+neither the exit-code check nor the OOM check could see it.
+`src.metrics.spmf_error` now recognises the report, and `repair_summary.py`
+checks for it. The repair also fixed the repair tool: it looked for
+`…_5000_0.json` where the harness wrote `…_5000.json`, so no utility row had
+ever been checked. One row changes; the neighbouring 1000 and 2000 rows are
+genuine zeros.
 
 ### Data repair: a silent crash recorded as a success
 
@@ -570,21 +657,29 @@ much cheaper than the sweep.
 | `data/capabilities.json` | the oracle-derived knowledge base (the core artifact) |
 | `metafeatures.py` | single-pass structural features; `data/metafeatures.json` cache |
 | `perfmodel.py` | Layer 3 predictors + Pareto front |
-| `engine.py` | orchestration and report formatting |
+| `engine.py` | orchestration, report formatting, training-domain check (`outside_domain`) |
+| `ingest.py` | CSV (basket / long / one-hot) → SPMF, with a plain-words account of how it was read |
+| `chat.py`, `web/` | local bilingual chat interface |
 | `cli.py` | command line |
 | `nl.py` | Layer 1 extractors + evaluation |
 | `data/nl_queries.json` | Layer 1 ground truth |
 | `synth.py` | controlled instance generation |
 | `evaluate.py` | E1–E4 |
 | `out/` | generated results (gitignored) |
+| `../tools/build_training_table.py` | builds `results/training_runs.csv`, the engine's default training table |
+| `../tools/remeasure.py`, `remeasure_eval.py` | re-measurement of short runs, and the analyses fixed in `results/REMEASURE_PROTOCOL.md` |
+| `../tools/bench_real_extra.py`, `bench_status.py` | the extension benchmark and its pre-registered criteria |
 
 ## Reproducing
 
-Requires the parent repository's `results/summary.csv` and `datasets/raw/`.
+Requires the parent repository's `results/summary.csv` and `datasets/raw/`;
+the engine's default also reads `results/training_runs.csv`.
 No network access, no API key (unless `--llm` is used for Layer 1).
 
 ```bash
 python -m recommender.metafeatures   # rebuild the meta-feature cache
 python -m recommender.evaluate       # E1-E4
 python -m recommender.nl --eval      # Layer 1
+python tools/remeasure_eval.py       # M0-M4 on the re-measured data
+python tools/bench_status.py         # the pre-registered S1-S3
 ```
