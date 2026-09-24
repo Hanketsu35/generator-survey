@@ -78,7 +78,7 @@ def m0(r_all, r):
           % (len(r_all), len(r), (r_all.failed_reps > 0).sum(), (~r_all.match).sum()))
     if (~r_all.match).any():
         for x in r_all[~r_all.match].itertuples():
-            print("      mismatch: %s %s %s recorded %s, now %s"
+            print("      mismatch: %s %s %s %s recorded %s, now %s"
                   % (x.source, x.algorithm, x.dataset, x.param_value,
                      x.generator_count_recorded, x.generator_count))
     r = r.copy()

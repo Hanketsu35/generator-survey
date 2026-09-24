@@ -1,0 +1,36 @@
+M2  S2/S3 re-scored on re-measured costs (post-hoc; 140 extension rows replaced)
+    memory    14 instances,  5 datasets | regret engine 1.637x, fixed 1.446x
+    runtime   24 instances,  5 datasets | regret engine 1.142x, fixed 1.152x
+    ^ recorded costs, as bench_status scored them
+    memory    14 instances,  5 datasets | regret engine 2.060x, fixed 1.295x
+    runtime   24 instances,  5 datasets | regret engine 1.064x, fixed 1.088x
+    ^ re-measured costs, same model
+
+M3  model retrained on re-measured training labels, scored as M2
+    memory    14 instances,  5 datasets | regret engine 1.214x, fixed 1.295x
+    runtime   24 instances,  5 datasets | regret engine 1.079x, fixed 1.088x
+    (507 training rows re-measured)
+
+M4  twelve datasets, leave one dataset out
+    held out mushroom   mem 1.100/1.100  run 1.220/1.062
+    held out chess      mem 1.053/1.053  run 1.151/1.030
+    held out connect    mem 1.223/1.223  run 12.680/1.181
+    held out pumsb      mem 1.000/1.257  run 1.152/1.129
+    held out accidents  mem 3.439/3.439  run 4.572/1.558
+    held out retail     mem 1.209/1.284  run 1.169/1.387
+    held out t10i4d100k mem 1.771/1.770  run 1.788/1.788
+    held out bms1       mem 1.000/1.000  run 1.032/1.005
+    held out bms2       mem 1.000/1.000  run 1.149/1.000
+    held out c20d10k    mem 1.221/1.174  run 1.206/1.015
+    held out kosarak    mem 3.622/3.004  run 1.272/1.441
+    held out c73d10k    mem 1.000/1.000  run 1.069/1.021
+    (engine/fixed regret per held-out dataset)
+    memory    53 instances, 12 datasets | regret engine 1.424x, fixed 1.445x
+    runtime   82 instances, 12 datasets | regret engine 1.707x, fixed 1.226x
+    memory   engine/fixed regret ratio 0.987, 5-95% 0.950..1.022, P(engine better) 0.72 [cluster bootstrap over 12 held-out datasets]
+        inside  training domain:  39 instances, engine 1.457x, fixed 1.472x
+        outside training domain:  14 instances, engine 1.337x, fixed 1.371x
+    runtime  engine/fixed regret ratio 1.344, 5-95% 1.021..2.047, P(engine better) 0.03 [cluster bootstrap over 12 held-out datasets]
+        inside  training domain:  57 instances, engine 2.031x, fixed 1.273x
+        outside training domain:  25 instances, engine 1.149x, fixed 1.125x
+

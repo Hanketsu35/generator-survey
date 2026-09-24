@@ -105,6 +105,11 @@ def run_once(name, dataset, param_val, timeout):
         else:
             raise ValueError(et)
     else:
+        # The tables hold every threshold as a float; SPMF's utility miners
+        # want an Integer and, given "100.0", fail at exit 0 (src.metrics.
+        # spmf_error). The first pass lost all 18 utility rows that way.
+        if param_val is not None and float(param_val).is_integer() and param_val >= 1:
+            param_val = int(param_val)
         params = [param_val] if param_val is not None else []
         res = M.run_spmf(cfg["spmf_name"], path, out_file, params,
                          timeout=timeout, count_fn=count_fn)
@@ -123,11 +128,19 @@ def _same_count(a, b):
         return str(a) == str(b)
 
 
-def _failed(res):
+def _failed(name, res):
+    """As the benchmark decides it, conventions included: Gr-growth exits with
+    its generator count (mod 256 on Linux), and Borgelt's miners exit 15 when
+    nothing is frequent. The first pass of this tool ignored both and marked
+    115 good runs as failed."""
+    sys.path.insert(0, str(_ROOT / "tools"))
+    from repair_summary import _conventional_exit
     if res.get("timed_out") or res.get("failure"):
         return True
     rc = res.get("returncode")
-    return rc not in (0, None)
+    if rc in (0, None):
+        return False
+    return not _conventional_exit(name, rc, res.get("generator_count"))
 
 
 def plan(max_runtime):
@@ -194,7 +207,7 @@ def main(argv=None):
                     print("      repeat failed: %s: %s" % (type(exc).__name__, exc), flush=True)
                     failed += 1
                     continue
-                if _failed(res) or res.get("peak_memory_mb") is None:
+                if _failed(r.algorithm, res) or res.get("peak_memory_mb") is None:
                     failed += 1
                     continue
                 reps.append(res)
