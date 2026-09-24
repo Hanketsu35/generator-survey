@@ -23,6 +23,10 @@ from pathlib import Path
 
 import pandas as pd
 
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from src.metrics import spmf_error  # noqa: E402
+
 SUMMARY = Path("results/summary.csv")
 RAW = Path("results/raw")
 
@@ -71,6 +75,27 @@ def _conventional_exit(algorithm, rc, generator_count):
     return False
 
 
+def _producing_json(r):
+    """The raw JSON written by the run that produced row `r`, or None.
+
+    The harness names it with ``str(param_value)``: a utility threshold read
+    back from the CSV as 5000.0 was written as 5000, so both spellings are
+    tried. Before this, no integer-threshold row was ever checked.
+    """
+    v = r.param_value
+    spellings = {("%s" % v).replace(".", "_")}
+    try:
+        if float(v).is_integer():
+            spellings.add("%d" % int(float(v)))
+    except (TypeError, ValueError):
+        pass
+    for pv in spellings:
+        f = RAW / ("%s_%s_%s_%s.json" % (r.algorithm, r.dataset, pv, r.timestamp))
+        if f.exists():
+            return f
+    return None
+
+
 def nonzero_exit_rows(df) -> dict:
     """row index -> error label, for runs that exited non-zero and were kept.
 
@@ -95,13 +120,16 @@ def nonzero_exit_rows(df) -> dict:
     for idx, r in df.iterrows():
         if str(r.timed_out).lower() == "true" or not pd.isna(r.error):
             continue                  # timeout is protocol; error already set
-        pv = ("%s" % r.param_value).replace(".", "_")
-        f = RAW / ("%s_%s_%s_%s.json" % (r.algorithm, r.dataset, pv, r.timestamp))
-        if not f.exists():
+        f = _producing_json(r)
+        if f is None:
             continue
         try:
             d = json.load(open(f, encoding="utf-8", errors="ignore"))
         except Exception:
+            continue
+        said = spmf_error((d.get("stdout") or "") + (d.get("stderr") or ""))
+        if said:
+            out[idx] = said + " (exit 0)"
             continue
         rc = d.get("returncode")
         if rc in (0, None) or _conventional_exit(r.algorithm, rc,
@@ -129,7 +157,7 @@ def main(argv=None):
     df["error"] = df["error"].astype("object")   # bos sutun float64 gelir
 
     silent = nonzero_exit_rows(df)
-    print("[EXIT]  %d kept run(s) exited non-zero without error text:" % len(silent))
+    print("[EXIT]  %d kept run(s) failed without being recorded (non-zero exit, or an SPMF error at exit 0):" % len(silent))
     for idx, label in silent.items():
         r = df.loc[idx]
         print("         %-8s %-9s %-7s  %8.1fs  gens %-8s  -> %s"

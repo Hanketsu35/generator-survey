@@ -200,6 +200,24 @@ def peak_rss_mb(monitor, rss_before=None):
 
 
 
+def spmf_error(txt):
+    """SPMF's own failure report, or "".
+
+    SPMF catches an exception inside the algorithm, prints "An error while
+    trying to run the algorithm" and the exception, and EXITS 0 -- with no
+    output file, so the run counts 0 generators and looks like an empty
+    result. Found twice: HUCI-Miner (generators) on chainstore at 5000,
+    IndexOutOfBoundsException, recorded in summary.csv as a completed run;
+    and a utility threshold passed as "100.0" where SPMF wants an Integer.
+    """
+    if "An error while trying to run the algorithm" not in (txt or ""):
+        return ""
+    for line in txt.splitlines():
+        if "ERROR MESSAGE" in line:
+            return "SPMF error: " + line.split("=", 1)[-1].strip()[:160]
+    return "SPMF error (no message)"
+
+
 def classify_failure(returncode, stdout, stderr, timed_out) -> str:
     """
     Bir kosunun sessizce bozulup bozulmadigini belirler.
@@ -219,6 +237,8 @@ def classify_failure(returncode, stdout, stderr, timed_out) -> str:
         return "java.lang.OutOfMemoryError: Java heap space"
     if "StackOverflowError" in txt:
         return "java.lang.StackOverflowError"
+    if spmf_error(txt):
+        return spmf_error(txt)
     if returncode not in (0, None):
         return "non-zero exit code %s" % returncode
     return ""
