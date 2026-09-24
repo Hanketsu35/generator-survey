@@ -106,16 +106,26 @@ def sigma_for_pairs(probe, target):
     return hi
 
 
-def plan():
-    """[(dataset, sigma, target_pairs or None, role, n_tx, n_items)]"""
+def plan(datasets=EXTENSION, calibration=True, cap_reachable=False):
+    """[(dataset, sigma, target_pairs or None, role, n_tx, n_items)]
+
+    ``cap_reachable`` lowers each target to 90% of the pairs that can reach
+    the minimum absolute support. Off by default, so the first extension's
+    levels are reproduced exactly; on for attribute data (the second
+    extension), where items of one attribute never co-occur and a fixed
+    target of 5,000 or 20,000 pairs does not exist.
+    """
     out = []
-    for ds, sg in CALIBRATION:
-        out.append((ds, sg, None, "calibration", None, None))
-    for ds in EXTENSION:
+    if calibration:
+        for ds, sg in CALIBRATION:
+            out.append((ds, sg, None, "calibration", None, None))
+    for ds in datasets:
         probe = lm.DatasetProbe.build(str(RAW / ("%s.txt" % ds)))
         seen = set()
+        reachable = (10 ** probe.at((MIN_ABS_SUPPORT + 0.25) / probe.n_tx)["log_n_freq2"] - 1
+                     if cap_reachable else float("inf"))
         for tg in PAIR_TARGETS:
-            sg = sigma_for_pairs(probe, tg)
+            sg = sigma_for_pairs(probe, min(tg, 0.9 * reachable))
             # Bisection converges on the support of the pair that crosses the
             # target -- an INTEGER -- so sigma*|D| lands on an integer to within
             # one ulp. The first run of this benchmark put bms1 at
@@ -136,10 +146,10 @@ def plan():
     return out
 
 
-def done_keys():
+def done_keys(out_csv=OUT_CSV):
     keys = set()
-    if OUT_CSV.exists():
-        with open(OUT_CSV, newline="", encoding="utf-8") as fh:
+    if out_csv.exists():
+        with open(out_csv, newline="", encoding="utf-8") as fh:
             for r in csv.DictReader(fh):
                 try:
                     keys.add((r["algorithm"], r["dataset"], round(float(r["param_value"]), 9)))
@@ -176,12 +186,20 @@ def main(argv=None):
                     help="concurrent runs. Each JVM may take a quarter of RAM by "
                          "default, so 3 keeps the worst case under 30 GB")
     ap.add_argument("--plan", action="store_true")
+    ap.add_argument("--datasets", nargs="+", default=list(EXTENSION))
+    ap.add_argument("--out", default=str(OUT_CSV))
+    ap.add_argument("--no-calibration", action="store_true")
+    ap.add_argument("--cap-reachable", action="store_true",
+                    help="see plan(); used for the second extension")
     args = ap.parse_args(argv)
     os.chdir(_ROOT)
+    out_csv = Path(args.out)
+    order = list(args.datasets)
 
     algos = category1_algorithms()
-    instances = plan()
-    done = done_keys()
+    instances = plan(order, calibration=not args.no_calibration,
+                     cap_reachable=args.cap_reachable)
+    done = done_keys(out_csv)
     jobs = []
     # Easiest difficulty level of EVERY dataset first, hardest last. Dataset by
     # dataset, the first run spent two hours on bms1's two hardest levels while
@@ -190,8 +208,8 @@ def main(argv=None):
     # evaluation -- the one objective with headroom -- so those hours bought
     # nothing it can use. Nothing is dropped; the order changes.
     instances = sorted(instances, key=lambda i: (i[3] != "calibration",
-                                                 i[2] or 0, EXTENSION.index(i[0])
-                                                 if i[0] in EXTENSION else -1))
+                                                 i[2] or 0, order.index(i[0])
+                                                 if i[0] in order else -1))
     for ds, sg, tg, role, n_tx, n_items in instances:
         if n_tx is None:
             from recommender import metafeatures as mf
@@ -214,11 +232,11 @@ def main(argv=None):
     if args.plan or not jobs:
         return 0
 
-    OUT_CSV.parent.mkdir(parents=True, exist_ok=True)
-    header = not OUT_CSV.exists()
+    out_csv.parent.mkdir(parents=True, exist_ok=True)
+    header = not out_csv.exists()
     t0 = time.time()
     n = n_to = n_err = 0
-    with open(OUT_CSV, "a", newline="", encoding="utf-8") as fh:
+    with open(out_csv, "a", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=FIELDS, extrasaction="ignore")
         if header:
             w.writeheader()
