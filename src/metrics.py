@@ -1,4 +1,5 @@
 # src/metrics.py
+import os
 import subprocess
 import time
 import threading
@@ -9,6 +10,29 @@ from pathlib import Path
 SPMF_JAR = "spmf/spmf.jar"
 RESULTS_RAW = Path("results/raw")
 RESULTS_RAW.mkdir(parents=True, exist_ok=True)
+
+
+#: See MemoryMonitor: the opening stretch of each run is polled this finely.
+FAST_START_S = 0.25
+FAST_INTERVAL = 0.001
+CHILD_SCAN_S = 0.1
+#: Which reading the monitor takes. "vmhwm" where the kernel provides it,
+#: "rss" (an instantaneous resident size) elsewhere. Recorded with each run.
+PEAK_SOURCE = "vmhwm" if os.path.exists("/proc/self/status") else "rss"
+
+
+def _peak_bytes(proc):
+    if PEAK_SOURCE == "vmhwm":
+        try:
+            with open("/proc/%d/status" % proc.pid) as fh:
+                for line in fh:
+                    if line.startswith("VmHWM:"):
+                        return int(line.split()[1]) * 1024
+        except FileNotFoundError:
+            raise psutil.NoSuchProcess(proc.pid)
+        except (OSError, ValueError, IndexError):
+            pass
+    return proc.memory_info().rss
 
 
 class MemoryMonitor(threading.Thread):
@@ -26,6 +50,17 @@ class MemoryMonitor(threading.Thread):
     scheduled; and ``n_samples`` records whether anything was ever read, so a
     caller can report an honest missing value instead of a fabricated zero.
     Both only ever add samples, so no previously recorded peak can fall.
+
+    On Linux each reading is the kernel's own high-water mark (VmHWM in
+    /proc/<pid>/status), not the resident size at that instant. VmHWM is the
+    peak since exec and only rises, so a reading taken late in a run carries
+    everything before it; the RSS poll kept only what happened to be resident
+    at the moment of each poll. That difference decided results: the native
+    miners' runs on small instances last 10-15 ms, a 0.1 s poll read them once
+    at spawn, and apriori on mushroom at 0.5 was recorded at 0.02 MB. Polled
+    with VmHWM it reads 3.9-4.1 MB in three repeats. The first FAST_START_S of
+    every run is polled at FAST_INTERVAL for the same reason. What remains
+    unseen is the tail after the last poll, at most one interval.
     """
     def __init__(self, pid: int, interval: float = 0.1):
         super().__init__(daemon=True)
@@ -34,15 +69,28 @@ class MemoryMonitor(threading.Thread):
         self.peak_mb: float = 0.0
         self.n_samples: int = 0
         self._stop_event = threading.Event()
+        self._proc = None
+        self._children = []
+        self._children_at = -1.0
 
     def sample(self) -> bool:
-        """Read RSS of the process tree once. False once the process is gone."""
+        """Read the peak RSS of the process tree once. False once it is gone."""
         try:
-            proc = psutil.Process(self.pid)
-            mem = proc.memory_info().rss
-            for child in proc.children(recursive=True):
+            if self._proc is None:
+                self._proc = psutil.Process(self.pid)
+            proc = self._proc
+            mem = _peak_bytes(proc)
+            # Listing children scans all of /proc (2.3 ms here) -- longer than
+            # the fast poll itself, and enough to leave a 10 ms run with one
+            # reading. The list is refreshed at most every CHILD_SCAN_S; the
+            # miners measured here run as a single process.
+            now = time.perf_counter()
+            if now - self._children_at >= CHILD_SCAN_S:
+                self._children = proc.children(recursive=True)
+                self._children_at = now
+            for child in self._children:
                 try:
-                    mem += child.memory_info().rss
+                    mem += _peak_bytes(child)
                 except psutil.NoSuchProcess:
                     pass
             self.peak_mb = max(self.peak_mb, mem / 1024 / 1024)
@@ -58,10 +106,12 @@ class MemoryMonitor(threading.Thread):
         return self.n_samples > 0
 
     def run(self):
+        t0 = time.perf_counter()
         while not self._stop_event.is_set():
             if not self.sample():
                 break
-            self._stop_event.wait(self.interval)
+            fast = time.perf_counter() - t0 < FAST_START_S
+            self._stop_event.wait(min(self.interval, FAST_INTERVAL) if fast else self.interval)
 
     def stop(self):
         self._stop_event.set()
@@ -174,6 +224,62 @@ def classify_failure(returncode, stdout, stderr, timed_out) -> str:
     return ""
 
 
+def _kill_tree(pid):
+    # Windows'ta proc.kill() sadece ana processi öldürür; Java child tree kalır.
+    # psutil ile tüm process ağacını temizle.
+    try:
+        parent = psutil.Process(pid)
+        for child in parent.children(recursive=True):
+            child.kill()
+        parent.kill()
+    except psutil.NoSuchProcess:
+        pass
+
+
+def _communicate_monitored(proc, timeout):
+    """Wait for `proc`, reading its pipes, while sampling its peak memory.
+
+    The sampling runs on the CALLING thread and the pipes on a helper -- the
+    reverse of a monitor thread beside communicate(). With the monitor on its
+    own thread, 5 of 30 apriori runs of 5-8 ms ended before that thread took
+    its first reading, and were recorded at 0.02-0.32 MB against 3.6-4.2 MB
+    for the rest. Here the first reading is taken at once and the next within
+    FAST_INTERVAL.  -> (stdout, stderr, timed_out, monitor)
+    """
+    monitor = MemoryMonitor(proc.pid, interval=MONITOR_INTERVAL)
+    box = {}
+
+    def talk():
+        try:
+            box["out"] = proc.communicate(timeout=timeout)
+        except subprocess.TimeoutExpired:
+            box["timeout"] = True
+        except Exception as exc:                        # noqa: BLE001
+            box["exc"] = exc
+
+    t = threading.Thread(target=talk, daemon=True)
+    t.start()
+    t0 = time.perf_counter()
+    while True:
+        monitor.sample()
+        fast = time.perf_counter() - t0 < FAST_START_S
+        t.join(min(monitor.interval, FAST_INTERVAL) if fast else monitor.interval)
+        if not t.is_alive():
+            break
+    timed_out = bool(box.get("timeout"))
+    if timed_out:
+        _kill_tree(proc.pid)
+        try:
+            stdout, stderr = proc.communicate(timeout=10)
+        except subprocess.TimeoutExpired:
+            stdout, stderr = "", ""
+    elif "exc" in box:
+        raise box["exc"]
+    else:
+        stdout, stderr = box["out"]
+    return stdout, stderr, timed_out, monitor
+
+
 def run_spmf(
     spmf_name: str,
     input_file: str,
@@ -203,33 +309,7 @@ def run_spmf(
     t0 = time.perf_counter()
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
-    monitor = MemoryMonitor(proc.pid, interval=MONITOR_INTERVAL)
-    # One reading now: a run shorter than thread-startup latency would otherwise
-    # never be sampled at all and be recorded as 0.0 MB.
-    monitor.sample()
-    monitor.start()
-
-    timed_out = False
-    try:
-        stdout, stderr = proc.communicate(timeout=timeout)
-    except subprocess.TimeoutExpired:
-        # Windows'ta proc.kill() sadece ana processi öldürür; Java child tree kalır.
-        # psutil ile tüm process ağacını temizle.
-        try:
-            parent = psutil.Process(proc.pid)
-            for child in parent.children(recursive=True):
-                child.kill()
-            parent.kill()
-        except psutil.NoSuchProcess:
-            pass
-        try:
-            stdout, stderr = proc.communicate(timeout=10)
-        except subprocess.TimeoutExpired:
-            stdout, stderr = b"", b""
-        timed_out = True
-
-    monitor.stop()
-    monitor.join()
+    stdout, stderr, timed_out, monitor = _communicate_monitored(proc, timeout)
     runtime_s = time.perf_counter() - t0
 
     generator_count = 0
@@ -254,6 +334,7 @@ def run_spmf(
     return {
         "runtime_s": round(runtime_s, 4),
         "peak_memory_mb": peak_rss_mb(monitor),
+        "peak_source": PEAK_SOURCE,
         "returncode": proc.returncode,
         "stdout": stdout[:2000],
         "stderr": stderr[:2000],
@@ -285,31 +366,7 @@ def run_external(
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
                             preexec_fn=_address_space_limiter(NATIVE_MEM_LIMIT_MB))
 
-    monitor = MemoryMonitor(proc.pid, interval=MONITOR_INTERVAL)
-    # One reading now: a run shorter than thread-startup latency would otherwise
-    # never be sampled at all and be recorded as 0.0 MB.
-    monitor.sample()
-    monitor.start()
-
-    timed_out = False
-    try:
-        stdout, stderr = proc.communicate(timeout=timeout)
-    except subprocess.TimeoutExpired:
-        try:
-            parent = psutil.Process(proc.pid)
-            for child in parent.children(recursive=True):
-                child.kill()
-            parent.kill()
-        except psutil.NoSuchProcess:
-            pass
-        try:
-            stdout, stderr = proc.communicate(timeout=10)
-        except subprocess.TimeoutExpired:
-            stdout, stderr = b"", b""
-        timed_out = True
-
-    monitor.stop()
-    monitor.join()
+    stdout, stderr, timed_out, monitor = _communicate_monitored(proc, timeout)
     runtime_s = time.perf_counter() - t0
 
     generator_count = 0
@@ -328,6 +385,7 @@ def run_external(
     return {
         "runtime_s": round(runtime_s, 4),
         "peak_memory_mb": peak_rss_mb(monitor),
+        "peak_source": PEAK_SOURCE,
         "returncode": proc.returncode,
         "stdout": (stdout or "")[:2000],
         "stderr": (stderr or "")[:2000],
