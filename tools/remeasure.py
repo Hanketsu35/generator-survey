@@ -136,7 +136,9 @@ def plan(max_runtime):
         d = pd.read_csv(path, dtype={"generator_count": str})
         c = d[_completed(d) & (d.runtime_s < max_runtime)]
         for r in c.itertuples():
-            if r.algorithm not in ALGORITHMS:
+            # Not runnable here (FGC-Stream ships a Windows binary only): its
+            # recorded values stay, and it is listed as skipped.
+            if r.algorithm not in ALGORITHMS or not ALGORITHMS[r.algorithm].get("available"):
                 continue
             rows.append((src, r))
     return rows
@@ -186,7 +188,12 @@ def main(argv=None):
             timeout = max(60, int(10 * r.runtime_s))
             reps, failed = [], 0
             for _ in range(args.repeats):
-                res = run_once(r.algorithm, r.dataset, float(r.param_value), timeout)
+                try:
+                    res = run_once(r.algorithm, r.dataset, float(r.param_value), timeout)
+                except Exception as exc:                # noqa: BLE001
+                    print("      repeat failed: %s: %s" % (type(exc).__name__, exc), flush=True)
+                    failed += 1
+                    continue
                 if _failed(res) or res.get("peak_memory_mb") is None:
                     failed += 1
                     continue
