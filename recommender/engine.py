@@ -101,16 +101,38 @@ DOMAIN_FEATURES = (("log_n_tx", "records", True), ("log_n_items", "distinct item
 DOMAIN_SLACK = {"log_n_tx": 0.3, "log_n_items": 0.3, "avg_len": 0.0, "density": 0.0}
 
 
+_RESULTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "results")
+#: What the engine learns from by default: the published table plus the five
+#: extension datasets, with every short run re-measured
+#: (tools/build_training_table.py). The published experiments keep reading
+#: summary.csv through perfmodel.load_runs(), and so stay reproducible.
+TRAINING_TABLE = os.path.join(_RESULTS, "training_runs.csv")
+PUBLISHED_TABLE = os.path.join(_RESULTS, "summary.csv")
+
+
+def default_training_table():
+    return TRAINING_TABLE if os.path.exists(TRAINING_TABLE) else PUBLISHED_TABLE
+
+
 class Recommender:
     #: Fitting the survival forests takes ~12 s, which is tolerable once and
     #: irritating on every CLI invocation. The fitted model is cached on disk
-    #: and keyed by the content of summary.csv together with the settings that
-    #: affect fitting, so a stale cache cannot survive a change to either.
+    #: and keyed by the content of the training table together with the
+    #: settings that affect fitting, so a stale cache cannot survive a change
+    #: to either. Only a model fitted on a table FILE is cached: rows passed in
+    #: as `runs` have no file to key on, and keying them on the default table
+    #: -- as this class once did -- would return a model fitted on other data.
     CACHE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out")
 
-    def __init__(self, runs=None, capdb=None, exclude_dataset=None, cache=True):
+    def __init__(self, runs=None, capdb=None, exclude_dataset=None, cache=True,
+                 table=None):
         self.db = capdb or CapabilityDB()
-        self.runs = load_runs() if runs is None else runs
+        if runs is None:
+            self.table = table or default_training_table()
+            self.runs = load_runs(self.table)
+        else:
+            self.table, self.runs, cache = None, runs, False
         self.excluded = exclude_dataset
         self.model = None
         if cache:
@@ -158,10 +180,8 @@ class Recommender:
     # ------------------------------------------------------------------
     def _cache_key(self, exclude_dataset):
         h = hashlib.sha256()
-        summary = os.path.join(os.path.dirname(self.CACHE_DIR), "..",
-                               "results", "summary.csv")
         try:
-            with open(os.path.normpath(summary), "rb") as fh:
+            with open(self.table, "rb") as fh:
                 h.update(fh.read())
         except OSError:
             return None

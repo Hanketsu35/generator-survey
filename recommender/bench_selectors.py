@@ -267,10 +267,14 @@ def main(argv=None):
                          "published static set)")
     ap.add_argument("--objective", default="runtime",
                     choices=["runtime", "memory"])
+    ap.add_argument("--table", default=None,
+                    help="runs table to evaluate on (default: results/summary.csv, "
+                         "the published table; results/training_runs.csv is the "
+                         "re-measured one with the extension datasets)")
     args = ap.parse_args(argv)
 
     os.makedirs(OUT_DIR, exist_ok=True)
-    df = load_runs()
+    df = load_runs(args.table) if args.table else load_runs()
     res, summary = run(df, category=args.category, portfolio=args.portfolio,
                        objective=args.objective, features=args.features)
     if res.empty:

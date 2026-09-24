@@ -98,10 +98,13 @@ def progress(df):
 
 def picks(df):
     """Per new instance: recommender pick, fixed choice, best, and costs."""
-    from recommender.engine import Recommender
+    from recommender.engine import Recommender, PUBLISHED_TABLE
     from recommender.spec import MiningTask
     from recommender.capabilities import CapabilityDB
-    rec, db = Recommender(), CapabilityDB()
+    # Pinned to the published table: the criteria were registered for a model
+    # trained on the seven published datasets. The engine's default has since
+    # moved to results/training_runs.csv, which CONTAINS the new datasets.
+    rec, db = Recommender(table=PUBLISHED_TABLE), CapabilityDB()
     rows = []
     ext = df[df.role == "extension"]
     for (ds, sg), g in ext.groupby(["dataset", "param_value"]):

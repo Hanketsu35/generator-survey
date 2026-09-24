@@ -177,7 +177,8 @@ def m2_m3(rem):
     ext_raw = ext_raw[ext_raw.role == "extension"]
     ext, n = apply(ext_raw, rem, "extra")
     print("M2  S2/S3 re-scored on re-measured costs (post-hoc; %d extension rows replaced)" % n)
-    rec = Recommender()
+    from recommender.engine import PUBLISHED_TABLE
+    rec = Recommender(table=PUBLISHED_TABLE)       # the model M2 is defined on
     report(score(ext_raw, rec, db), "recorded")
     print("    ^ recorded costs, as bench_status scored them")
     p2 = score(ext, rec, db)
