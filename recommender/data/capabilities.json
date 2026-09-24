@@ -124,7 +124,7 @@
       },
       "completeness": {"status": "verified"},
       "validation": {"oracle": "vertical bitset support oracle", "scope": "57 completed configurations, 50 exact"},
-      "notes": ["The defect is shared with TalkyG_Diffset and is therefore located in the common generator test, not in the TID-list representation."]
+      "notes": ["The defect is shared with TalkyG_Diffset and is therefore located in the common generator test, not in the TID-list representation.", "Resource failure, measured on the extension datasets (Linux, JVM default heap = 1/4 of 30 GB RAM, ~7.6 GB): java.lang.OutOfMemoryError within 2-5 s at EVERY threshold tried on bms2 (77,512 tx, 3,340 items; 5 thresholds) and kosarak (989,471 tx, 41,265 items; 5 thresholds), including thresholds at which the Borgelt miners finish in under 0.1 s. It completed on bms1, c20d10k and c73d10k. Width alone does not explain it -- retail (16,470 items) completed -- so no triggering condition is claimed; the instances are recorded. Source: results/real_extra_summary.csv."]
     },
     {
       "id": "TalkyG_Diffset",
@@ -157,7 +157,7 @@
       },
       "completeness": {"status": "verified"},
       "validation": {"oracle": "vertical bitset support oracle", "scope": "57 completed configurations"},
-      "notes": []
+      "notes": ["Resource failure, measured on the extension datasets (Linux, JVM default heap = 1/4 of 30 GB RAM, ~7.6 GB): java.lang.OutOfMemoryError within 2-5 s at EVERY threshold tried on bms2 (77,512 tx, 3,340 items; 5 thresholds) and kosarak (989,471 tx, 41,265 items; 5 thresholds), including thresholds at which the Borgelt miners finish in under 0.1 s. It completed on bms1, c20d10k and c73d10k. Width alone does not explain it -- retail (16,470 items) completed -- so no triggering condition is claimed; the instances are recorded. Source: results/real_extra_summary.csv."]
     },
     {
       "id": "Pascal",
