@@ -1,0 +1,18 @@
+PROGRESS  171 runs | 19 of 19 instances complete (all nine miners)
+
+  memory   13 instances, 5 datasets | engine 2.579x | fixed Apriori 5.365x | Gr_growth 1.000x
+  runtime  19 instances, 5 datasets | engine 1.428x | fixed FPgrowth 1.503x | Gr_growth 1.012x
+
+  T1 safety          0 of 32 picks violate the request  -> PASS
+  T2 memory          engine 2.579x < fixed 5.365x              -> PASS  (expected by dataset choice)
+  T3 memory absolute engine 2.579x <= 1.25x                   -> FAIL
+  T4 runtime         engine 1.428x <= 1.10x                   -> FAIL
+
+  per dataset (memory / runtime engine regret; picks):
+    chicago       mem 4.248  run 2.748  | memory picks: Apriori, Gr_growth
+    kddcup99      mem 1.000  run 1.567  | memory picks: Gr_growth
+    onlineretail  mem 1.362  run 1.107  | memory picks: Eclat, Gr_growth
+    pamap         mem 9.873  run 1.273  | memory picks: Eclat
+    recordlink    mem 2.279  run 1.171  | memory picks: Apriori, Eclat, Gr_growth
+  inside  training domain: 20 picks, memory 2.196x, runtime 1.286x
+  outside training domain: 12 picks, memory 3.111x, runtime 1.794x
