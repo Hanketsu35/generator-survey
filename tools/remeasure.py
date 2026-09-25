@@ -84,7 +84,12 @@ def run_once(name, dataset, param_val, timeout):
     """One run, dispatched as src/harness.py dispatches it. -> result dict"""
     cfg = ALGORITHMS[name]
     path = _input_path(cfg, dataset)
-    out_file = str(SCRATCH / ("out_%s.txt" % name))
+    # One file per run. Named after the algorithm alone, two concurrent runs
+    # of the same miner (tools/rerun_published.py runs two at a time) wrote to
+    # and deleted the same file, and six Pascal runs were counted from
+    # another run's output -- 0 or a fraction of the true generator count.
+    out_file = str(SCRATCH / ("out_%s_%s_%s_%d.txt" % (
+        name, dataset, ("%.10g" % param_val).replace(".", "_"), os.getpid())))
     count_fn = COUNT_FUNCS.get(cfg.get("count_fn"))
     exe, et = cfg.get("exe"), cfg.get("exe_type")
     if exe and et:
