@@ -10,7 +10,13 @@ import pandas as pd
 
 os.chdir(Path(__file__).resolve().parent.parent)
 
-df = pd.read_csv("results/summary.csv")
+import sys
+
+# --table results/summary_linux.csv regenerates every number from the table
+# measured entirely on the Linux machine (tools/build_linux_table.py).
+TABLE = sys.argv[sys.argv.index("--table") + 1] if "--table" in sys.argv else "results/summary.csv"
+print("table: %s" % TABLE)
+df = pd.read_csv(TABLE)
 df["dnf"] = df["timed_out"].astype(str).str.lower() == "true"
 df["crash"] = df["error"].notna()
 df["ok"] = ~df["dnf"] & ~df["crash"]
