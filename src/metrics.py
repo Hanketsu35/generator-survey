@@ -267,6 +267,10 @@ def _communicate_monitored(proc, timeout):
     FAST_INTERVAL.  -> (stdout, stderr, timed_out, monitor)
     """
     monitor = MemoryMonitor(proc.pid, interval=MONITOR_INTERVAL)
+    # First reading before anything else is started: a Borgelt run on chess
+    # at 0.9 lasts ~8 ms and had exited by the time the helper thread was up,
+    # leaving no reading at all (recorded as a missing value, not a zero).
+    monitor.sample()
     box = {}
 
     def talk():

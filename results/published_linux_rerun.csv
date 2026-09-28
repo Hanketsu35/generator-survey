@@ -1,5 +1,5 @@
 algorithm,category,dataset,param_name,param_value,runtime_s,peak_memory_mb,generator_count,timed_out,error,runtime_s_recorded,peak_memory_mb_recorded,generator_count_recorded,timed_out_recorded,error_recorded,count_matches,peak_source,machine,timestamp
-Eclat_Gen_Borgelt,1,chess,minsup,0.9,0.0084,,498,False,,0.0334,1.97,498.0,False,,True,vmhwm,Linux x86_64,20260925_094737
+Eclat_Gen_Borgelt,1,chess,minsup,0.9,0.0045,3.27,498,False,,0.0334,1.97,498.0,False,,True,vmhwm,Linux x86_64,20260925_094737
 FGC_Stream,5,mushroom,minsup,0.7,0.4118,22.89,13,False,,0.7726,24.43,13.0,False,,True,vmhwm,Linux x86_64,20260925_094738
 FGC_Stream,5,t10i4d100k,minsup,0.7,0.6667,98.11,1,False,,0.9011,100.36,1.0,False,,True,vmhwm,Linux x86_64,20260925_094738
 FGC_Stream,5,t10i4d100k,minsup,0.5,0.6987,98.13,1,False,,0.9543,100.55,1.0,False,,True,vmhwm,Linux x86_64,20260925_094739
@@ -86,7 +86,7 @@ FGC_Stream,5,pumsb,minsup,0.95,936.4791,346.87,142,False,,1819.4529,381.1,142.0,
 Zart,1,chess,minsup,0.6,1330.0085,515.32,98419,False,,1991.7023,304.95,98419.0,False,,True,vmhwm,Linux x86_64,20260925_133113
 Zart,1,connect,minsup,0.8,3600.1262,485.34,,True,,1741.4468,380.66,,False,"non-zero exit code -1 (4294967295 unsigned), no error text",,vmhwm,Linux x86_64,20260925_135046
 FGC_Stream,5,retail,minsup,0.002,998.0178,105.67,2716,False,,2708.7112,153.53,2716.0,False,,True,vmhwm,Linux x86_64,20260925_140724
-Arima,5,chess,maxsup,0.3,67.7226,7234.66,180161,False,,66.5203,4141.83,nan,False,java.lang.OutOfMemoryError: Java heap space,,vmhwm,Linux x86_64,20260925_144846
+Arima,5,chess,maxsup,0.3,67.7226,7234.66,180161,False,,66.5203,4141.83,,False,java.lang.OutOfMemoryError: Java heap space,,vmhwm,Linux x86_64,20260925_144846
 Pascal,1,chess,minsup,0.5,441.1246,419.19,372603,False,,532.7063,285.55,372603.0,False,,True,vmhwm,Linux x86_64,20260925_145459
 Pascal,1,accidents,minsup,0.4,701.2038,425.86,32528,False,,578.7154,436.0,32528.0,False,,True,vmhwm,Linux x86_64,20260925_150027
 Pascal,1,retail,minsup,0.002,1162.8797,194.34,2691,False,,975.9776,182.52,2691.0,False,,True,vmhwm,Linux x86_64,20260925_151423
