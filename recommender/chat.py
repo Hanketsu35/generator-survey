@@ -210,6 +210,7 @@ class Session:
     def __init__(self, sid, workdir):
         self.id = sid
         self.lang = "en"
+        self.probes = {}
         self.dir = workdir
         self.path = None
         self.info = {}
@@ -432,11 +433,27 @@ class App:
         kw["dataset_path"] = s.path
         kw["threshold"] = s.threshold
         task = spec.MiningTask(**kw)
-        recs, rejected, _feats = self.engine().recommend(task)
+        # A memory request on a transactional file is probed: the four
+        # native miners run briefly on the user's own data (see
+        # recommender/probe.py and Recommender.should_probe for why memory
+        # and not runtime). The probe's result is kept per threshold.
+        pr = None
+        if self.engine().should_probe(task):
+            from . import probe as _probe
+            key = round(float(s.threshold), 9)
+            pr = s.probes.get(key)
+            if pr is None:
+                pr = _probe.probe(s.path, float(s.threshold))
+                s.probes[key] = pr
+            notes.append("native miners %s on your file in %.1f s"
+                         % ("measured" if pr.mode == "direct" else "probed on samples",
+                            pr.wall_s))
+        recs, rejected, _feats = self.engine().recommend(task, probe=pr)
         rows = [{"algorithm": r.algorithm, "display": r.display, "tier": r.tier,
                  "runtime_s": r.runtime_s, "memory_mb": r.memory_mb,
                  "p_complete": r.p_complete, "installed": r.installed,
                  "match": r.match, "warnings": r.warnings,
+                 "source": r.prediction_source,
                  "within_budget": r.within_budget, "budget_notes": r.budget_notes,
                  "extrapolated": r.extrapolated} for r in recs]
         refused = [{"algorithm": v.algorithm, "display": v.display,

@@ -180,6 +180,10 @@ const T = {
                "Uygun hiçbir implementasyonun belirtilen bütçeye sığması beklenmiyor; bu en az kötüsü."],
   extrap: ["Your data is outside the range the costs were measured on, so the ranking is an extrapolation and the times and sizes in brackets are not reliable:",
            "Verin, maliyetlerin ölçüldüğü aralığın dışında; sıralama bir tahmin, parantez içindeki süre ve bellek değerleri güvenilir değil:"],
+  probeMeasured: ["measured on your file", "verinde ölçüldü"],
+  probeSampled: ["from samples of your file", "verinin örneklerinden"],
+  probeTip: ["time and memory for this miner come from running it on your data, not from the model",
+             "bu algoritmanın süre ve belleği modelden değil, verinde koşturulmasından geliyor"],
   budgetUnknown: ["Whether this fits the stated budget cannot be predicted for this data.",
                   "Bunun belirtilen bütçeye sığıp sığmayacağı bu veri için tahmin edilemiyor."],
   extrapShort: ["extrapolated: outside the measured range", "tahmin: ölçülen aralığın dışında"]
@@ -210,6 +214,8 @@ const SERVER_TR = [
   [/^([\d,.]+) (records|distinct items|average transaction length|density), trained on ([\d,.e-]+)\.\.([\d,.e-]+)$/,
    (m, x, f, a, b) => `${x} ${{"records": "kayıt", "distinct items": "farklı öğe",
      "average transaction length": "ortalama işlem uzunluğu", "density": "yoğunluk"}[f]} (eğitim aralığı ${a}–${b})`],
+  [/^native miners (measured|probed on samples) on your file in ([\d.]+) s$/,
+   (m, how, sec) => `native algoritmalar ${how === "measured" ? "verinde doğrudan ölçüldü" : "verinin örneklerinde koşturuldu"} (${sec} s)`],
   [/^(\d+) of (\d+) readings agree$/, (m, a, b) => `${b} okumanın ${a} tanesi aynı sonuçta`],
   [/^language model offline; keyword rules used$/, () => "dil modeli kapalı; anahtar kelime kuralları kullanıldı"],
   [/^language model offline; the request was not changed$/, () => "dil modeli kapalı; istek değiştirilmedi"],
@@ -358,7 +364,9 @@ function render(d) {
   let prev = null;
   const tbl = rows.map(r => {
     const g = r.tier !== prev ? r.tier : ""; prev = r.tier;
-    return `<tr class="${r.tier === rows[0].tier ? "sel" : ""}"><td>${g}</td><td style="text-align:left">${esc(r.display)}</td>
+    return `<tr class="${r.tier === rows[0].tier ? "sel" : ""}"><td>${g}</td><td style="text-align:left">${esc(r.display)}${
+      (r.source || "").startsWith("probe") ? ` <span class="tag yes" title="${esc(t("probeTip"))}">${
+        t(r.source === "probe-measured" ? "probeMeasured" : "probeSampled")}</span>` : ""}</td>
       ${r.extrapolated && r.extrapolated.length
         ? `<td title="${esc(t("extrapShort"))}">(${fmt(r.runtime_s)} s)*</td><td>(${fmt(r.memory_mb, 1)} MB)*</td>`
         : `<td>${fmt(r.runtime_s)} s</td><td>${fmt(r.memory_mb, 1)} MB</td>`}<td>${Math.round(100 * r.p_complete)}%</td>

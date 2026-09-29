@@ -48,6 +48,10 @@ def build_parser():
     o = p.add_argument_group("output")
     o.add_argument("--top", type=int, help="show only the top N")
     o.add_argument("--json", action="store_true", help="emit JSON instead of a report")
+    o.add_argument("--no-probe", action="store_true",
+                   help="do not probe the native miners on --data-path (by default a "
+                        "memory request on a transactional file is probed; see "
+                        "recommender/probe.py)")
     o.add_argument("--hide-rejected", action="store_true")
     o.add_argument("--exclude-dataset", metavar="NAME",
                    help="train the performance model without this dataset "
@@ -93,7 +97,15 @@ def main(argv=None):
     task = MiningTask(dataset=args.dataset, dataset_path=args.data_path, **fields)
 
     rec = Recommender(exclude_dataset=args.exclude_dataset)
-    recs, rejected, feats = rec.recommend(task, top=args.top)
+    pr = None
+    if not args.no_probe and rec.should_probe(task):
+        from .probe import probe
+        pr = probe(task.dataset_path, float(task.threshold))
+        if not args.json:
+            print("probe: native miners %s on %s in %.1f s"
+                  % ("measured" if pr.mode == "direct" else "sampled", task.dataset_path,
+                     pr.wall_s))
+    recs, rejected, feats = rec.recommend(task, top=args.top, probe=pr)
 
     if args.json:
         payload = {

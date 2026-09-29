@@ -266,7 +266,30 @@ class Recommender:
         return out
 
     # ------------------------------------------------------------------
-    def recommend(self, task, top=None):
+    @staticmethod
+    def should_probe(task):
+        """Whether a subsample probe is worth its cost for this request.
+
+        Decided by the pre-registered evaluation (results/PROBE_PROTOCOL.md,
+        results/probe_eval_output.txt): on memory, the probe beat the model
+        (1.073x against 1.282x regret, P1 passed with the amended affine
+        extrapolation); on runtime it lost badly once its own wall-clock time
+        was charged (6.29x against 1.19x, P3 failed), because where the best
+        miner takes milliseconds the probe's 0.35 s median dominates. So:
+        memory requests on a transactional file, and nothing else.
+        """
+        return (task.objective == "memory" and task.data_type == "transactional"
+                and bool(task.dataset_path) and task.threshold is not None)
+
+    def recommend(self, task, top=None, probe=None):
+        """Rank the eligible implementations for `task`.
+
+        ``probe``: a recommender.probe.ProbeResult for this task's file and
+        threshold. Where it costs a native miner -- measured on the full
+        database, or extrapolated from samples -- those costs replace the
+        model's for that miner, and the miner is not flagged as outside the
+        training domain, since nothing about it was learned from other data.
+        """
         feats = self._features(task)
         eligible, rejected = self.db.filter(task)
         installed = installed_implementations()
@@ -277,6 +300,20 @@ class Recommender:
             pred = self.model.predict(v.algorithm, feats, thr)
             if pred is None:
                 continue
+            probed = False
+            pc = (probe.costs.get(v.algorithm) if probe is not None else None) or {}
+            if pc.get("memory_mb") is not None:
+                m, t = pc["memory_mb"], pc["runtime_s"]
+                # Bands from the probe's measured accuracy: median |log10|
+                # error 0.02-0.04 on memory and 0.06-0.08 on runtime for
+                # extrapolation; a direct measurement is repeatable to ~5%.
+                mf_, rf_ = (1.05, 1.1) if pc["mode"] == "measured" else (1.1, 1.2)
+                pred = dict(pred, memory_mb=m, runtime_s=t, p_complete=1.0,
+                            expected_par10=None,
+                            source="probe-%s" % pc["mode"],
+                            memory_band=(m, m / mf_, m * mf_),
+                            cost_band=(t, t / rf_, t * rf_))
+                probed = True
             notes = []
             ok = True
             if task.max_runtime_s and pred["runtime_s"] > task.max_runtime_s:
@@ -301,6 +338,7 @@ class Recommender:
                 "expected_cost": PerformanceModel.expected_cost(pred),
                 "within_budget": ok,
                 "budget_notes": notes,
+                "probed": probed,
             })
 
         if not rows:
@@ -373,7 +411,7 @@ class Recommender:
                 post_filter=v.post_filter,
                 installed=(True if installed is None
                            else v.algorithm in installed),
-                extrapolated=self.outside_domain(v.algorithm, feats),
+                extrapolated=([] if r.get("probed") else self.outside_domain(v.algorithm, feats)),
             ))
         # Recompute the Pareto flags on the sorted list (indices moved).
         front2 = set(pareto_front([{"runtime_s": o.runtime_s,
