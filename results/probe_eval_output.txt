@@ -1,0 +1,38 @@
+==============================================================================
+VARIANT: loglog  (registered)
+==============================================================================
+memory    66 instances, 17 datasets | engine 1.282x  probe 1.189x  fixed 1.865x  always-Gr 1.582x
+         other twelve         53 | engine 1.362x  probe 1.197x  fixed 1.439x
+         second extension     13 | engine 1.000x  probe 1.156x  fixed 5.365x
+runtime  101 instances, 17 datasets | engine 1.194x  probe 6.287x  fixed 1.281x  always-Gr 1.214x
+         other twelve         82 | engine 1.240x  probe 7.112x  fixed 1.234x
+         second extension     19 | engine 1.012x  probe 3.694x  fixed 1.503x
+P1 memory, probe < engine: ratio 0.936 [5-95% 0.775..1.073], P(better) 0.714 -> FAIL
+P2 memory, probe < fixed : ratio 0.636 [5-95% 0.451..0.825], P(better) 1.000 -> PASS
+P3 runtime incl. probe cost: probe/engine 5.267 (bar <= 1.10) -> FAIL
+probe wall-clock: median 0.35s, max 249.6s ({'direct': 63, 'sampled': 38})
+extrapolation accuracy on sampled instances, |log10 error| median (probe vs model):
+   Apriori_Gen_Borgelt    memory 0.237 vs 0.170   runtime 0.224 vs 1.590  (n=34)
+   Eclat_Gen_Borgelt      memory 0.195 vs 0.294   runtime 0.255 vs 0.675  (n=34)
+   FPgrowth_Gen_Borgelt   memory 0.234 vs 0.325   runtime 0.214 vs 0.706  (n=34)
+   Gr_growth              memory 0.013 vs 0.202   runtime 0.262 vs 0.722  (n=34)
+
+==============================================================================
+VARIANT: affine  (amended after one smoke-test instance)
+==============================================================================
+memory    66 instances, 17 datasets | engine 1.282x  probe 1.073x  fixed 1.865x  always-Gr 1.582x
+         other twelve         53 | engine 1.362x  probe 1.092x  fixed 1.439x
+         second extension     13 | engine 1.000x  probe 1.000x  fixed 5.365x
+runtime  101 instances, 17 datasets | engine 1.194x  probe 6.287x  fixed 1.281x  always-Gr 1.214x
+         other twelve         82 | engine 1.240x  probe 7.112x  fixed 1.234x
+         second extension     19 | engine 1.012x  probe 3.694x  fixed 1.503x
+P1 memory, probe < engine: ratio 0.845 [5-95% 0.710..0.971], P(better) 0.987 -> PASS
+P2 memory, probe < fixed : ratio 0.580 [5-95% 0.435..0.741], P(better) 1.000 -> PASS
+P3 runtime incl. probe cost: probe/engine 5.267 (bar <= 1.10) -> FAIL
+probe wall-clock: median 0.35s, max 249.6s ({'direct': 63, 'sampled': 38})
+extrapolation accuracy on sampled instances, |log10 error| median (probe vs model):
+   Apriori_Gen_Borgelt    memory 0.018 vs 0.170   runtime 0.075 vs 1.590  (n=34)
+   Eclat_Gen_Borgelt      memory 0.035 vs 0.294   runtime 0.061 vs 0.675  (n=34)
+   FPgrowth_Gen_Borgelt   memory 0.034 vs 0.325   runtime 0.079 vs 0.706  (n=34)
+   Gr_growth              memory 0.039 vs 0.202   runtime 0.076 vs 0.722  (n=34)
+
