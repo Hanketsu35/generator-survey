@@ -66,3 +66,23 @@ Also reported, not criteria: extrapolation accuracy (log10 absolute error of
 the probe's native memory and runtime against the measured full-size values,
 against the engine's own predictions for the same runs), probe wall-clock
 cost, and results split by the second extension vs the other twelve.
+
+## Amendment (before the evaluation ran; after one smoke-test instance)
+
+A smoke test on one instance (chicago, sigma 0.001494) showed the registered
+log-log extrapolation underestimating Borgelt's full-size memory by a factor
+of 3.6 (37 MB predicted, 133 MB measured). The sample points show why:
+Apriori takes 4.36 MB at 26,776 transactions and 8.14 MB at 107,104 -- a fixed
+footprint plus about 47 bytes per transaction. A power law through two points
+dominated by the fixed part has a slope far below 1 (0.45 here) and cannot
+reach the linear regime; an affine line, fixed part plus per-transaction
+cost, extrapolates to 128 MB.
+
+So a second extrapolation is added, and BOTH are evaluated and reported:
+
+- **registered**: log-log line through the two largest sizes, as above;
+- **affine (amended)**: v(n) = v(s3) + b (n - s3), b = (v(s3) - v(s2)) /
+  (s3 - s2), b clipped below at 0; for memory and runtime alike.
+
+P1-P3 are computed for each. The affine variant is labelled as chosen after
+one smoke-test instance; no evaluation result had been seen.
