@@ -166,7 +166,9 @@ def evaluate(variant):
                              "engine": cost[eng] / best, "probe": realized / best,
                              "fixed": cost.get(FIXED[obj], np.nan) / best,
                              "gr": cost.get(REF, np.nan) / best, "wall": pr["wall"],
-                             "mode": pr["mode"], "pick": pick, "eng_pick": eng})
+                             "mode": pr["mode"], "pick": pick, "eng_pick": eng,
+                             "eng_pred_rt": model[eng][1],
+                             "eng_cost": cost[eng], "probe_cost": realized, "best": best})
                 if obj == "memory":
                     for a, (m, t, meas) in pr["costs"].items():
                         if a in cost and not meas and a in model:
