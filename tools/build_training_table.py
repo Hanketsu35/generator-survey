@@ -40,32 +40,38 @@ os.chdir(_ROOT)
 import remeasure_eval as E                               # noqa: E402
 
 OUT = _ROOT / "results" / "training_runs.csv"
-RECORDED_MACHINE = {"summary": "Windows x86_64 (recorded)",
-                    "extra": "Linux x86_64"}
+LINUX = _ROOT / "results" / "summary_linux.csv"
+EXTRA2 = _ROOT / "results" / "real_extra2_summary.csv"
 
 
 def build():
+    """Everything measured on the Linux machine, in one table.
+
+    summary        results/summary_linux.csv -- the 667 published
+                   configurations, every row measured on this machine
+                   (re-measured short runs + tools/rerun_published.py)
+    extra          the first extension (bms1, bms2, c20d10k, kosarak,
+                   c73d10k), short runs replaced by their re-measured medians
+    extra2         the second extension (chicago, kddcup99, onlineretail,
+                   pamap, recordlink), measured with the corrected monitor
+    """
     _all, rem = E.valid_remeasured()
-    summ = pd.read_csv(E.SUMMARY, dtype={"generator_count": str})
+    summ = pd.read_csv(LINUX, dtype={"generator_count": str})
+    cols = [c for c in pd.read_csv(E.SUMMARY, nrows=1).columns]
+    summ = summ[cols].assign(measured=summ.source, machine="Linux x86_64",
+                             source_table="summary")
     ext = pd.read_csv(E.EXTRA, dtype={"generator_count": str})
-    ext = ext[ext.role == "extension"][summ.columns]
-    parts = []
-    for src, df in (("summary", summ), ("extra", ext)):
-        keys = {E._key(a, d, p) for a, d, p in
-                zip(rem[rem.source == src].algorithm, rem[rem.source == src].dataset,
-                    rem[rem.source == src].param_value)}
-        new, n = E.apply(df, rem, src)
-        hit = [E._key(a, d, p) in keys for a, d, p in
-               zip(new.algorithm, new.dataset, new.param_value)]
-        new["measured"] = ["remeasured" if h else "recorded" for h in hit]
-        new["machine"] = ["Linux x86_64" if h else RECORDED_MACHINE[src] for h in hit]
-        new["source_table"] = src
-        parts.append(new)
-        print("%-8s %4d rows, %4d re-measured" % (src, len(new), n))
-    out = pd.concat(parts, ignore_index=True)
+    ext = ext[ext.role == "extension"][cols]
+    ext, n1 = E.apply(ext, rem, "extra")
+    ext = ext.assign(measured="linux", machine="Linux x86_64", source_table="extra")
+    ext2 = pd.read_csv(EXTRA2, dtype={"generator_count": str})[cols]
+    ext2 = ext2.assign(measured="linux", machine="Linux x86_64", source_table="extra2")
+    out = pd.concat([summ, ext, ext2], ignore_index=True)
     out.to_csv(OUT, index=False)
-    print("-> %s: %d rows, %d datasets" % (OUT.relative_to(_ROOT), len(out),
-                                            out.dataset.nunique()))
+    for src, g in out.groupby("source_table", sort=False):
+        print("%-8s %4d rows, %2d datasets" % (src, len(g), g.dataset.nunique()))
+    print("-> %s: %d rows, %d datasets, all measured on Linux"
+          % (OUT.relative_to(_ROOT), len(out), out.dataset.nunique()))
     return out
 
 

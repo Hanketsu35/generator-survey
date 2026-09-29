@@ -1,9 +1,9 @@
 algorithm,category,dataset,param_name,param_value,runtime_s,peak_memory_mb,generator_count,timed_out,error,timestamp,measured,machine,source_table
-DefMe,1,connect,minsup,0.2,74.2699,792.62,1482862.0,False,,20260604_215741,recorded,Windows x86_64 (recorded),summary
+DefMe,1,connect,minsup,0.2,39.339,1074.08,1482862,False,,20260604_215741,rerun,Linux x86_64,summary
 DefMe,1,connect,minsup,0.3,12.4079,1168.03,460357.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 DefMe,1,connect,minsup,0.5,3.4386,1137.27,130102.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 DefMe,1,connect,minsup,0.7,1.2143,926.57,35876.0,False,,20260604_215741,remeasured,Linux x86_64,summary
-DefMe,1,chess,minsup,0.2,56.6424,575.52,25031186.0,False,,20260604_215741,recorded,Windows x86_64 (recorded),summary
+DefMe,1,chess,minsup,0.2,33.3844,742.77,25031186,False,,20260604_215741,rerun,Linux x86_64,summary
 DefMe,1,chess,minsup,0.3,6.4614,758.67,5601829.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 DefMe,1,chess,minsup,0.5,0.6254,469.82,372604.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 DefMe,1,chess,minsup,0.7,0.2326,158.02,23893.0,False,,20260604_215741,remeasured,Linux x86_64,summary
@@ -15,11 +15,11 @@ DefMe,1,retail,minsup,0.2,0.378,480.78,4.0,False,,20260604_215741,remeasured,Lin
 DefMe,1,retail,minsup,0.3,0.3836,481.32,4.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 DefMe,1,retail,minsup,0.5,0.3782,481.75,2.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 DefMe,1,retail,minsup,0.7,0.3754,484.17,1.0,False,,20260604_215741,remeasured,Linux x86_64,summary
-Talky_G,1,connect,minsup,0.2,60.0091,737.82,1482862.0,False,,20260604_215741,recorded,Windows x86_64 (recorded),summary
+Talky_G,1,connect,minsup,0.2,36.2326,732.58,1482862,False,,20260604_215741,rerun,Linux x86_64,summary
 Talky_G,1,connect,minsup,0.3,2.9281,652.76,460357.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 Talky_G,1,connect,minsup,0.5,0.877,508.84,130102.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 Talky_G,1,connect,minsup,0.7,0.5948,342.76,35876.0,False,,20260604_215741,remeasured,Linux x86_64,summary
-Talky_G,1,chess,minsup,0.3,831.0637,823.38,5601874.0,False,,20260604_215741,recorded,Windows x86_64 (recorded),summary
+Talky_G,1,chess,minsup,0.3,994.1657,871.21,5601874,False,,20260604_215741,rerun,Linux x86_64,summary
 Talky_G,1,chess,minsup,0.5,3.0274,378.37,372604.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 Talky_G,1,chess,minsup,0.7,0.2556,115.79,23893.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 Talky_G,1,t10i4d100k,minsup,0.2,0.3068,144.77,1.0,False,,20260604_215741,remeasured,Linux x86_64,summary
@@ -30,13 +30,13 @@ Talky_G,1,retail,minsup,0.2,0.6051,1153.61,4.0,False,,20260604_215741,remeasured
 Talky_G,1,retail,minsup,0.3,0.6143,1154.89,4.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 Talky_G,1,retail,minsup,0.5,0.6138,1152.29,2.0,False,,20260604_215741,remeasured,Linux x86_64,summary
 Talky_G,1,retail,minsup,0.7,0.6108,1153.19,1.0,False,,20260604_215741,remeasured,Linux x86_64,summary
-Pascal,1,connect,minsup,0.2,3600.0352,960.12,821318.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Pascal,1,connect,minsup,0.3,3600.0398,585.13,303721.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Pascal,1,connect,minsup,0.5,3600.0373,789.32,128159.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Pascal,1,connect,minsup,0.7,3600.0453,712.48,35875.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Pascal,1,chess,minsup,0.2,3600.04,638.04,1459438.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Pascal,1,chess,minsup,0.3,3600.0345,620.0,1555523.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Pascal,1,chess,minsup,0.5,532.7063,285.55,372603.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
+Pascal,1,connect,minsup,0.2,3600.0901,1050.15,,True,,20260605_080337,rerun,Linux x86_64,summary
+Pascal,1,connect,minsup,0.3,3600.1463,818.22,,True,,20260605_080337,rerun,Linux x86_64,summary
+Pascal,1,connect,minsup,0.5,3600.1394,733.87,,True,,20260605_080337,rerun,Linux x86_64,summary
+Pascal,1,connect,minsup,0.7,3600.1371,566.24,,True,,20260605_080337,rerun,Linux x86_64,summary
+Pascal,1,chess,minsup,0.2,3600.1119,731.03,,True,,20260605_080337,rerun,Linux x86_64,summary
+Pascal,1,chess,minsup,0.3,3600.0519,768.73,,True,,20260605_080337,rerun,Linux x86_64,summary
+Pascal,1,chess,minsup,0.5,441.1246,419.19,372603,False,,20260605_080337,rerun,Linux x86_64,summary
 Pascal,1,chess,minsup,0.7,3.0817,96.81,23892.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 Pascal,1,t10i4d100k,minsup,0.2,0.2441,129.15,0.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 Pascal,1,t10i4d100k,minsup,0.3,0.2513,128.52,0.0,False,,20260605_080337,remeasured,Linux x86_64,summary
@@ -46,14 +46,14 @@ Pascal,1,retail,minsup,0.2,0.271,125.69,3.0,False,,20260605_080337,remeasured,Li
 Pascal,1,retail,minsup,0.3,0.2713,120.96,3.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 Pascal,1,retail,minsup,0.5,0.2582,125.97,1.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 Pascal,1,retail,minsup,0.7,0.2531,124.21,0.0,False,,20260605_080337,remeasured,Linux x86_64,summary
-Zart,1,connect,minsup,0.2,3600.0292,386.79,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Zart,1,connect,minsup,0.3,3600.0313,528.1,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Zart,1,connect,minsup,0.5,3600.0311,291.21,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Zart,1,connect,minsup,0.7,3600.0315,410.3,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Zart,1,chess,minsup,0.2,3600.04,411.03,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Zart,1,chess,minsup,0.3,3600.0318,421.39,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Zart,1,chess,minsup,0.5,3600.0415,309.16,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Zart,1,chess,minsup,0.7,50.7196,232.36,23893.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
+Zart,1,connect,minsup,0.2,3600.1313,551.76,,True,,20260605_080337,rerun,Linux x86_64,summary
+Zart,1,connect,minsup,0.3,3600.1297,548.79,,True,,20260605_080337,rerun,Linux x86_64,summary
+Zart,1,connect,minsup,0.5,3600.1279,481.43,,True,,20260605_080337,rerun,Linux x86_64,summary
+Zart,1,connect,minsup,0.7,3600.131,501.77,,True,,20260605_080337,rerun,Linux x86_64,summary
+Zart,1,chess,minsup,0.2,3600.1367,546.62,,True,,20260605_080337,rerun,Linux x86_64,summary
+Zart,1,chess,minsup,0.3,3600.1341,617.25,,True,,20260605_080337,rerun,Linux x86_64,summary
+Zart,1,chess,minsup,0.5,3600.0631,565.08,,True,,20260605_080337,rerun,Linux x86_64,summary
+Zart,1,chess,minsup,0.7,44.1872,399.76,23893,False,,20260605_080337,rerun,Linux x86_64,summary
 Zart,1,t10i4d100k,minsup,0.2,0.3054,149.47,0.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 Zart,1,t10i4d100k,minsup,0.3,0.2949,149.95,0.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 Zart,1,t10i4d100k,minsup,0.5,0.306,147.57,0.0,False,,20260605_080337,remeasured,Linux x86_64,summary
@@ -62,12 +62,12 @@ Zart,1,retail,minsup,0.2,0.3404,145.31,4.0,False,,20260605_080337,remeasured,Lin
 Zart,1,retail,minsup,0.3,0.3292,147.05,4.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 Zart,1,retail,minsup,0.5,0.3163,145.61,2.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 Zart,1,retail,minsup,0.7,0.3161,145.67,0.0,False,,20260605_080337,remeasured,Linux x86_64,summary
-TalkyG_Diffset,1,connect,minsup,0.2,43.4927,894.25,1482862.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
+TalkyG_Diffset,1,connect,minsup,0.2,39.8986,877.66,1482862,False,,20260605_080337,rerun,Linux x86_64,summary
 TalkyG_Diffset,1,connect,minsup,0.3,3.5146,1002.9,460357.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,connect,minsup,0.5,1.0608,652.16,130102.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,connect,minsup,0.7,0.6369,349.13,35876.0,False,,20260605_080337,remeasured,Linux x86_64,summary
-TalkyG_Diffset,1,chess,minsup,0.2,3600.0308,1565.85,9971749.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-TalkyG_Diffset,1,chess,minsup,0.3,833.9739,884.35,5601874.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
+TalkyG_Diffset,1,chess,minsup,0.2,3600.1187,1581.16,,True,,20260605_080337,rerun,Linux x86_64,summary
+TalkyG_Diffset,1,chess,minsup,0.3,946.3379,912.7,5601874,False,,20260605_080337,rerun,Linux x86_64,summary
 TalkyG_Diffset,1,chess,minsup,0.5,2.9883,410.52,372604.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,chess,minsup,0.7,0.2685,128.51,23893.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,t10i4d100k,minsup,0.2,0.3045,143.7,1.0,False,,20260605_080337,remeasured,Linux x86_64,summary
@@ -78,28 +78,28 @@ TalkyG_Diffset,1,retail,minsup,0.2,0.5924,1155.82,4.0,False,,20260605_080337,rem
 TalkyG_Diffset,1,retail,minsup,0.3,0.6091,1162.74,4.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,retail,minsup,0.5,0.5985,1156.26,2.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,retail,minsup,0.7,0.5905,1155.38,1.0,False,,20260605_080337,remeasured,Linux x86_64,summary
-FGC_Stream,5,connect,minsup,0.2,3600.0534,74.14,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,connect,minsup,0.3,3601.9887,101.34,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,connect,minsup,0.5,3602.0551,159.03,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,connect,minsup,0.7,3604.8342,217.53,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,chess,minsup,0.2,3606.6339,594.97,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,chess,minsup,0.3,3622.0171,382.45,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,chess,minsup,0.5,3602.3178,259.65,0.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,chess,minsup,0.7,1466.8597,56.39,23992.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,t10i4d100k,minsup,0.2,2.8963,100.51,1.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,t10i4d100k,minsup,0.3,0.9902,100.55,1.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,t10i4d100k,minsup,0.5,0.9543,100.55,1.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,t10i4d100k,minsup,0.7,0.9011,100.36,1.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,retail,minsup,0.2,39.3975,107.03,4.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,retail,minsup,0.3,100.6131,114.4,4.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,retail,minsup,0.5,1.0799,99.4,2.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,retail,minsup,0.7,1.0065,99.07,1.0,False,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Arima,5,connect,maxsup,0.1,3600.0336,2696.6,32591.0,True,,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Arima,5,connect,maxsup,0.2,416.5369,4147.82,,False,java.lang.OutOfMemoryError: Java heap space,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Arima,5,connect,maxsup,0.3,90.0621,4160.74,,False,java.lang.OutOfMemoryError: Java heap space,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Arima,5,chess,maxsup,0.1,32.1055,4142.8,,False,java.lang.OutOfMemoryError: Java heap space,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Arima,5,chess,maxsup,0.2,37.8689,4158.67,,False,java.lang.OutOfMemoryError: Java heap space,20260605_080337,recorded,Windows x86_64 (recorded),summary
-Arima,5,chess,maxsup,0.3,66.5203,4141.83,,False,java.lang.OutOfMemoryError: Java heap space,20260605_080337,recorded,Windows x86_64 (recorded),summary
+FGC_Stream,5,connect,minsup,0.2,3600.1129,72.45,,True,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,connect,minsup,0.3,3600.0319,98.11,,True,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,connect,minsup,0.5,3600.0802,152.23,,True,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,connect,minsup,0.7,3600.0995,208.75,,True,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,chess,minsup,0.2,3600.1218,651.84,,True,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,chess,minsup,0.3,3600.126,459.46,,True,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,chess,minsup,0.5,3600.0493,389.12,,True,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,chess,minsup,0.7,911.3875,56.66,23992,False,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,t10i4d100k,minsup,0.2,0.6982,98.11,1,False,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,t10i4d100k,minsup,0.3,0.7099,98.11,1,False,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,t10i4d100k,minsup,0.5,0.6987,98.13,1,False,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,t10i4d100k,minsup,0.7,0.6667,98.11,1,False,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,retail,minsup,0.2,34.3437,96.29,4,False,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,retail,minsup,0.3,53.2454,96.27,4,False,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,retail,minsup,0.5,0.8554,96.25,2,False,,20260605_080337,rerun,Linux x86_64,summary
+FGC_Stream,5,retail,minsup,0.7,0.8061,96.22,1,False,,20260605_080337,rerun,Linux x86_64,summary
+Arima,5,connect,maxsup,0.1,3600.2003,2858.83,,True,,20260605_080337,rerun,Linux x86_64,summary
+Arima,5,connect,maxsup,0.2,394.5635,8258.57,,False,java.lang.OutOfMemoryError: Java heap space,20260605_080337,rerun,Linux x86_64,summary
+Arima,5,connect,maxsup,0.3,209.9342,8270.09,,False,java.lang.OutOfMemoryError: Java heap space,20260605_080337,rerun,Linux x86_64,summary
+Arima,5,chess,maxsup,0.1,67.1115,8230.62,,False,java.lang.OutOfMemoryError: Java heap space,20260605_080337,rerun,Linux x86_64,summary
+Arima,5,chess,maxsup,0.2,70.5496,8265.13,,False,java.lang.OutOfMemoryError: Java heap space,20260605_080337,rerun,Linux x86_64,summary
+Arima,5,chess,maxsup,0.3,67.7226,7234.66,180161,False,,20260605_080337,rerun,Linux x86_64,summary
 Arima,5,t10i4d100k,maxsup,0.1,0.217,98.96,870.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 Arima,5,t10i4d100k,maxsup,0.2,0.2249,98.24,870.0,False,,20260605_080337,remeasured,Linux x86_64,summary
 Arima,5,t10i4d100k,maxsup,0.3,0.2133,95.73,870.0,False,,20260605_080337,remeasured,Linux x86_64,summary
@@ -118,7 +118,7 @@ Pascal,1,mushroom,minsup,0.2,0.9832,110.0,1703.0,False,,20260722_121411,remeasur
 Pascal,1,mushroom,minsup,0.3,0.3789,97.03,543.0,False,,20260722_121411,remeasured,Linux x86_64,summary
 Pascal,1,mushroom,minsup,0.5,0.224,97.51,52.0,False,,20260722_121411,remeasured,Linux x86_64,summary
 Pascal,1,mushroom,minsup,0.7,0.1977,105.0,12.0,False,,20260722_121411,remeasured,Linux x86_64,summary
-Zart,1,mushroom,minsup,0.2,59.3,225.14,1704.0,False,,20260722_121411,recorded,Windows x86_64 (recorded),summary
+Zart,1,mushroom,minsup,0.2,44.2896,384.95,1704,False,,20260722_121411,rerun,Linux x86_64,summary
 Zart,1,mushroom,minsup,0.3,1.2506,195.08,544.0,False,,20260722_121411,remeasured,Linux x86_64,summary
 Zart,1,mushroom,minsup,0.5,0.2785,99.1,53.0,False,,20260722_121411,remeasured,Linux x86_64,summary
 Zart,1,mushroom,minsup,0.7,0.2146,98.31,13.0,False,,20260722_121411,remeasured,Linux x86_64,summary
@@ -126,10 +126,10 @@ TalkyG_Diffset,1,mushroom,minsup,0.2,0.2252,96.39,1852.0,False,,20260722_121411,
 TalkyG_Diffset,1,mushroom,minsup,0.3,0.2251,99.91,551.0,False,,20260722_121411,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,mushroom,minsup,0.5,0.2134,97.75,52.0,False,,20260722_121411,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,mushroom,minsup,0.7,0.2185,96.37,12.0,False,,20260722_121411,remeasured,Linux x86_64,summary
-FGC_Stream,5,mushroom,minsup,0.2,277.3621,31.2,1704.0,False,,20260722_121411,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,mushroom,minsup,0.3,113.8872,27.91,544.0,False,,20260722_121411,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,mushroom,minsup,0.5,18.2721,26.77,53.0,False,,20260722_121411,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,mushroom,minsup,0.7,0.7726,24.43,13.0,False,,20260722_121411,recorded,Windows x86_64 (recorded),summary
+FGC_Stream,5,mushroom,minsup,0.2,134.1415,24.63,1704,False,,20260722_121411,rerun,Linux x86_64,summary
+FGC_Stream,5,mushroom,minsup,0.3,69.8936,23.66,544,False,,20260722_121411,rerun,Linux x86_64,summary
+FGC_Stream,5,mushroom,minsup,0.5,8.3822,23.27,53,False,,20260722_121411,rerun,Linux x86_64,summary
+FGC_Stream,5,mushroom,minsup,0.7,0.4118,22.89,13,False,,20260722_121411,rerun,Linux x86_64,summary
 Arima,5,mushroom,maxsup,0.1,1.343,329.59,3077.0,False,,20260722_121411,remeasured,Linux x86_64,summary
 Arima,5,mushroom,maxsup,0.2,0.27,108.01,1004.0,False,,20260722_121411,remeasured,Linux x86_64,summary
 Arima,5,mushroom,maxsup,0.3,0.2108,89.55,409.0,False,,20260722_121411,remeasured,Linux x86_64,summary
@@ -201,7 +201,7 @@ DefMe,1,accidents,minsup,0.5,1.0604,874.51,8058.0,False,,20260902_232659,remeasu
 DefMe,1,accidents,minsup,0.6,0.8599,792.43,2075.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 DefMe,1,accidents,minsup,0.7,0.7956,652.05,530.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 DefMe,1,accidents,minsup,0.8,0.7786,657.42,150.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-DefMe,1,pumsb,minsup,0.6,30.4356,1250.42,2853042.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
+DefMe,1,pumsb,minsup,0.6,22.3843,1121.7,2853042,False,,20260902_232659,rerun,Linux x86_64,summary
 DefMe,1,pumsb,minsup,0.7,4.9336,871.64,658380.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 DefMe,1,pumsb,minsup,0.75,2.0546,876.3,248299.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 DefMe,1,pumsb,minsup,0.8,0.8963,862.24,67836.0,False,,20260902_232659,remeasured,Linux x86_64,summary
@@ -217,7 +217,7 @@ Talky_G,1,connect,minsup,0.4,1.2828,645.91,239373.0,False,,20260902_232659,remea
 Talky_G,1,connect,minsup,0.6,0.6738,393.3,68344.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Talky_G,1,connect,minsup,0.8,0.539,272.6,15108.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Talky_G,1,connect,minsup,0.9,0.5064,274.98,3487.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-Talky_G,1,chess,minsup,0.4,55.0255,302.29,1396843.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
+Talky_G,1,chess,minsup,0.4,49.3159,511.64,1396843,False,,20260902_232659,rerun,Linux x86_64,summary
 Talky_G,1,chess,minsup,0.6,0.4304,158.84,98419.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Talky_G,1,chess,minsup,0.8,0.2161,94.04,5084.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Talky_G,1,chess,minsup,0.9,0.2059,92.54,499.0,False,,20260902_232659,remeasured,Linux x86_64,summary
@@ -239,87 +239,87 @@ Talky_G,1,accidents,minsup,0.5,1.1971,796.82,8058.0,False,,20260902_232659,remea
 Talky_G,1,accidents,minsup,0.6,1.1451,814.86,2075.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Talky_G,1,accidents,minsup,0.7,1.1149,727.72,530.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Talky_G,1,accidents,minsup,0.8,1.1148,714.51,150.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-Talky_G,1,pumsb,minsup,0.6,118.7432,1054.15,2853042.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
+Talky_G,1,pumsb,minsup,0.6,129.5294,1400.69,2853042,False,,20260902_232659,rerun,Linux x86_64,summary
 Talky_G,1,pumsb,minsup,0.7,5.7824,966.71,658380.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Talky_G,1,pumsb,minsup,0.75,1.5897,963.18,248299.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Talky_G,1,pumsb,minsup,0.8,0.895,663.88,67836.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Talky_G,1,pumsb,minsup,0.85,0.7813,462.58,13790.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Talky_G,1,pumsb,minsup,0.9,0.7441,448.11,2031.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Talky_G,1,pumsb,minsup,0.95,0.7056,442.11,142.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-Pascal,1,mushroom,minsup,0.05,3600.0442,477.62,21390.0,True,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,mushroom,minsup,0.1,80.3058,217.44,7584.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
+Pascal,1,mushroom,minsup,0.05,3600.0837,545.44,,True,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,mushroom,minsup,0.1,57.691,273.36,7584,False,,20260902_232659,rerun,Linux x86_64,summary
 Pascal,1,mushroom,minsup,0.15,2.1117,117.02,3082.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Pascal,1,mushroom,minsup,0.4,0.2905,95.8,152.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Pascal,1,mushroom,minsup,0.6,0.2098,108.78,20.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-Pascal,1,connect,minsup,0.4,3600.036,507.23,175958.0,True,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,connect,minsup,0.6,3600.0455,785.89,68343.0,True,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,connect,minsup,0.8,170.0494,235.79,15107.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
+Pascal,1,connect,minsup,0.4,3600.1424,691.35,,True,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,connect,minsup,0.6,3600.1418,785.24,,True,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,connect,minsup,0.8,124.7782,347.39,15107,False,,20260902_232659,rerun,Linux x86_64,summary
 Pascal,1,connect,minsup,0.9,16.4821,304.18,3486.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-Pascal,1,chess,minsup,0.4,3600.0438,512.48,920370.0,True,,20260902_232659,recorded,Windows x86_64 (recorded),summary
+Pascal,1,chess,minsup,0.4,3600.1363,550.2,,True,,20260902_232659,rerun,Linux x86_64,summary
 Pascal,1,chess,minsup,0.6,20.6284,169.45,98418.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Pascal,1,chess,minsup,0.8,0.8281,91.37,5083.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Pascal,1,chess,minsup,0.9,0.3224,86.98,498.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-Pascal,1,t10i4d100k,minsup,0.001,1250.9229,155.35,870.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,t10i4d100k,minsup,0.002,864.2449,154.89,870.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,t10i4d100k,minsup,0.005,788.3122,154.07,870.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,t10i4d100k,minsup,0.01,726.2323,153.86,869.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
+Pascal,1,t10i4d100k,minsup,0.001,954.0731,155.15,870,False,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,t10i4d100k,minsup,0.002,975.784,159.95,870,False,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,t10i4d100k,minsup,0.005,995.6832,155.71,870,False,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,t10i4d100k,minsup,0.01,969.3234,165.66,869,False,,20260902_232659,rerun,Linux x86_64,summary
 Pascal,1,t10i4d100k,minsup,0.02,0.2401,128.79,0.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Pascal,1,t10i4d100k,minsup,0.05,0.2427,128.43,0.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-Pascal,1,retail,minsup,0.0005,3600.0427,683.35,3610.0,True,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,retail,minsup,0.001,3201.5593,332.64,7572.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,retail,minsup,0.002,975.9776,182.52,2691.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,retail,minsup,0.005,39.7559,122.5,580.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
+Pascal,1,retail,minsup,0.0005,3600.0824,690.33,,True,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,retail,minsup,0.001,3519.7285,442.03,7572,False,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,retail,minsup,0.002,1162.8797,194.34,2691,False,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,retail,minsup,0.005,53.7008,129.27,580,False,,20260902_232659,rerun,Linux x86_64,summary
 Pascal,1,retail,minsup,0.01,4.288,120.57,159.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Pascal,1,retail,minsup,0.02,0.5707,124.45,55.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-Pascal,1,accidents,minsup,0.3,2285.2093,440.48,149529.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,accidents,minsup,0.4,578.7154,436.0,32528.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,accidents,minsup,0.5,125.2706,422.26,8057.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,accidents,minsup,0.6,45.6015,442.16,2074.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
+Pascal,1,accidents,minsup,0.3,2867.3672,465.76,149529,False,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,accidents,minsup,0.4,701.2038,425.86,32528,False,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,accidents,minsup,0.5,138.517,410.84,8057,False,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,accidents,minsup,0.6,47.193,408.71,2074,False,,20260902_232659,rerun,Linux x86_64,summary
 Pascal,1,accidents,minsup,0.7,11.4804,408.96,529.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Pascal,1,accidents,minsup,0.8,3.5074,412.95,149.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-Pascal,1,pumsb,minsup,0.6,3600.0394,411.3,713581.0,True,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,pumsb,minsup,0.7,3600.0408,467.75,514996.0,True,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,pumsb,minsup,0.75,1236.6243,236.86,248298.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,pumsb,minsup,0.8,343.882,233.84,67835.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Pascal,1,pumsb,minsup,0.85,73.9365,232.33,13789.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
+Pascal,1,pumsb,minsup,0.6,3600.0766,599.46,,True,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,pumsb,minsup,0.7,3600.1416,827.57,,True,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,pumsb,minsup,0.75,1237.6079,389.08,248298,False,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,pumsb,minsup,0.8,247.1454,363.95,67835,False,,20260902_232659,rerun,Linux x86_64,summary
+Pascal,1,pumsb,minsup,0.85,63.5295,363.17,13789,False,,20260902_232659,rerun,Linux x86_64,summary
 Pascal,1,pumsb,minsup,0.9,7.7666,360.7,2030.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Pascal,1,pumsb,minsup,0.95,1.0149,365.81,141.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-Zart,1,mushroom,minsup,0.05,3600.0341,308.48,0.0,True,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Zart,1,mushroom,minsup,0.1,3600.0511,285.1,0.0,True,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Zart,1,mushroom,minsup,0.15,205.5136,247.87,3083.0,False,,20260902_232659,recorded,Windows x86_64 (recorded),summary
+Zart,1,mushroom,minsup,0.05,3600.0642,581.59,,True,,20260902_232659,rerun,Linux x86_64,summary
+Zart,1,mushroom,minsup,0.1,3600.1033,550.93,,True,,20260902_232659,rerun,Linux x86_64,summary
+Zart,1,mushroom,minsup,0.15,126.5752,418.91,3083,False,,20260902_232659,rerun,Linux x86_64,summary
 Zart,1,mushroom,minsup,0.4,0.3876,137.89,153.0,False,,20260902_232659,remeasured,Linux x86_64,summary
 Zart,1,mushroom,minsup,0.6,0.224,96.91,21.0,False,,20260902_232659,remeasured,Linux x86_64,summary
-Zart,1,connect,minsup,0.4,3600.0397,457.18,0.0,True,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Zart,1,connect,minsup,0.6,3600.0335,390.67,0.0,True,,20260902_232659,recorded,Windows x86_64 (recorded),summary
-Zart,1,connect,minsup,0.8,1741.4468,380.66,,False,"non-zero exit code -1 (4294967295 unsigned), no error text",20260902_232659,recorded,Windows x86_64 (recorded),summary
-Zart,1,connect,minsup,0.9,149.7569,368.34,3487.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,chess,minsup,0.4,3600.0305,296.23,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,chess,minsup,0.6,1991.7023,304.95,98419.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+Zart,1,connect,minsup,0.4,3600.1323,515.62,,True,,20260902_232659,rerun,Linux x86_64,summary
+Zart,1,connect,minsup,0.6,3600.1337,675.45,,True,,20260902_232659,rerun,Linux x86_64,summary
+Zart,1,connect,minsup,0.8,3600.1262,485.34,,True,,20260902_232659,rerun,Linux x86_64,summary
+Zart,1,connect,minsup,0.9,130.6938,418.37,3487,False,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,chess,minsup,0.4,3600.1294,519.06,,True,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,chess,minsup,0.6,1330.0085,515.32,98419,False,,20260904_214619,rerun,Linux x86_64,summary
 Zart,1,chess,minsup,0.8,3.0932,394.35,5084.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Zart,1,chess,minsup,0.9,0.3299,118.67,499.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-Zart,1,t10i4d100k,minsup,0.001,748.0323,1233.13,871.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,t10i4d100k,minsup,0.002,760.5744,1231.21,871.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,t10i4d100k,minsup,0.005,679.5518,1187.03,871.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,t10i4d100k,minsup,0.01,738.5711,1138.68,870.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+Zart,1,t10i4d100k,minsup,0.001,719.7062,1291.53,871,False,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,t10i4d100k,minsup,0.002,545.852,1450.12,871,False,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,t10i4d100k,minsup,0.005,550.0992,1307.9,871,False,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,t10i4d100k,minsup,0.01,554.432,1311.42,870,False,,20260904_214619,rerun,Linux x86_64,summary
 Zart,1,t10i4d100k,minsup,0.02,0.2892,149.05,0.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Zart,1,t10i4d100k,minsup,0.05,0.2905,145.93,0.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-Zart,1,retail,minsup,0.0005,3600.0399,4102.85,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,retail,minsup,0.001,3600.0393,1781.17,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,retail,minsup,0.002,778.5503,1237.74,2692.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+Zart,1,retail,minsup,0.0005,3600.2428,4262.69,,True,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,retail,minsup,0.001,3600.1833,2215.16,,True,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,retail,minsup,0.002,579.5006,1661.21,2692,False,,20260904_214619,rerun,Linux x86_64,summary
 Zart,1,retail,minsup,0.005,24.7684,690.74,581.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Zart,1,retail,minsup,0.01,2.2642,613.49,160.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Zart,1,retail,minsup,0.02,0.5581,278.68,56.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-Zart,1,accidents,minsup,0.3,3600.0426,1029.57,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,accidents,minsup,0.4,929.1072,1011.62,32529.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,accidents,minsup,0.5,202.0631,1013.59,8058.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,accidents,minsup,0.6,47.6552,1099.95,2075.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+Zart,1,accidents,minsup,0.3,3600.1433,914.04,,True,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,accidents,minsup,0.4,908.8655,864.61,32529,False,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,accidents,minsup,0.5,212.8178,859.54,8058,False,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,accidents,minsup,0.6,45.8235,619.23,2075,False,,20260904_214619,rerun,Linux x86_64,summary
 Zart,1,accidents,minsup,0.7,7.8675,802.37,530.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Zart,1,accidents,minsup,0.8,2.0683,803.81,150.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-Zart,1,pumsb,minsup,0.6,3600.0399,844.18,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,pumsb,minsup,0.7,3600.0448,846.96,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,pumsb,minsup,0.75,3600.0465,790.06,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,pumsb,minsup,0.8,1350.3785,648.07,67836.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Zart,1,pumsb,minsup,0.85,128.6659,630.79,13790.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+Zart,1,pumsb,minsup,0.6,3600.1417,1475.64,,True,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,pumsb,minsup,0.7,3600.1603,1088.16,,True,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,pumsb,minsup,0.75,3600.0987,1090.66,,True,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,pumsb,minsup,0.8,1079.0713,964.1,67836,False,,20260904_214619,rerun,Linux x86_64,summary
+Zart,1,pumsb,minsup,0.85,107.8816,842.21,13790,False,,20260904_214619,rerun,Linux x86_64,summary
 Zart,1,pumsb,minsup,0.9,8.3215,838.73,2031.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Zart,1,pumsb,minsup,0.95,0.9708,827.43,142.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,mushroom,minsup,0.05,0.3009,139.99,24350.0,False,,20260904_214619,remeasured,Linux x86_64,summary
@@ -331,7 +331,7 @@ TalkyG_Diffset,1,connect,minsup,0.4,1.6257,789.34,239373.0,False,,20260904_21461
 TalkyG_Diffset,1,connect,minsup,0.6,0.7822,518.36,68344.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,connect,minsup,0.8,0.5556,275.88,15108.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,connect,minsup,0.9,0.5108,274.29,3487.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-TalkyG_Diffset,1,chess,minsup,0.4,47.5354,301.06,1396843.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+TalkyG_Diffset,1,chess,minsup,0.4,51.5933,490.89,1396843,False,,20260904_214619,rerun,Linux x86_64,summary
 TalkyG_Diffset,1,chess,minsup,0.6,0.4589,179.36,98419.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,chess,minsup,0.8,0.2159,93.96,5084.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,chess,minsup,0.9,0.2065,94.34,499.0,False,,20260904_214619,remeasured,Linux x86_64,summary
@@ -353,7 +353,7 @@ TalkyG_Diffset,1,accidents,minsup,0.5,1.2459,824.22,8058.0,False,,20260904_21461
 TalkyG_Diffset,1,accidents,minsup,0.6,1.1479,790.38,2075.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,accidents,minsup,0.7,1.1223,726.36,530.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,accidents,minsup,0.8,1.0921,673.77,150.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-TalkyG_Diffset,1,pumsb,minsup,0.6,113.5917,1055.95,2853042.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+TalkyG_Diffset,1,pumsb,minsup,0.6,122.1556,1076.15,2853042,False,,20260904_214619,rerun,Linux x86_64,summary
 TalkyG_Diffset,1,pumsb,minsup,0.7,6.6818,969.04,658380.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,pumsb,minsup,0.75,1.8205,957.79,248299.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,pumsb,minsup,0.8,1.026,958.17,67836.0,False,,20260904_214619,remeasured,Linux x86_64,summary
@@ -361,17 +361,17 @@ TalkyG_Diffset,1,pumsb,minsup,0.85,0.7851,481.93,13790.0,False,,20260904_214619,
 TalkyG_Diffset,1,pumsb,minsup,0.9,0.7378,455.48,2031.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 TalkyG_Diffset,1,pumsb,minsup,0.95,0.7154,436.19,142.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,mushroom,minsup,0.05,0.212,6.57,21390.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-Apriori_Gen_Borgelt,1,connect,minsup,0.2,245.6209,79.59,1482861.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Apriori_Gen_Borgelt,1,connect,minsup,0.3,36.6982,39.27,460356.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+Apriori_Gen_Borgelt,1,connect,minsup,0.2,145.698,73.83,1482861,False,,20260904_214619,rerun,Linux x86_64,summary
+Apriori_Gen_Borgelt,1,connect,minsup,0.3,26.3211,27.52,460356,False,,20260904_214619,rerun,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,connect,minsup,0.4,6.4563,17.51,239372.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,connect,minsup,0.5,1.2209,17.21,130101.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,connect,minsup,0.6,0.4512,17.27,68343.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,connect,minsup,0.7,0.1273,17.22,35875.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,connect,minsup,0.8,0.0894,17.25,15107.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,connect,minsup,0.9,0.0699,17.21,3486.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-Apriori_Gen_Borgelt,1,chess,minsup,0.2,725.3446,866.41,25031185.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Apriori_Gen_Borgelt,1,chess,minsup,0.3,160.1858,185.14,5601828.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Apriori_Gen_Borgelt,1,chess,minsup,0.4,38.7158,49.52,1396842.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+Apriori_Gen_Borgelt,1,chess,minsup,0.2,233.4849,848.81,25031185,False,,20260904_214619,rerun,Linux x86_64,summary
+Apriori_Gen_Borgelt,1,chess,minsup,0.3,55.4055,188.48,5601828,False,,20260904_214619,rerun,Linux x86_64,summary
+Apriori_Gen_Borgelt,1,chess,minsup,0.4,14.8769,49.36,1396842,False,,20260904_214619,rerun,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,chess,minsup,0.5,3.4445,15.5,372603.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,chess,minsup,0.6,0.5387,6.36,98418.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,chess,minsup,0.7,0.0475,3.95,23892.0,False,,20260904_214619,remeasured,Linux x86_64,summary
@@ -397,13 +397,13 @@ Apriori_Gen_Borgelt,1,retail,minsup,0.2,0.047,11.68,3.0,False,,20260904_214619,r
 Apriori_Gen_Borgelt,1,retail,minsup,0.3,0.047,11.7,3.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,retail,minsup,0.5,0.0451,11.67,1.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,retail,minsup,0.7,0.0424,11.0,0.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-Apriori_Gen_Borgelt,1,accidents,minsup,0.3,50.6374,85.68,149529.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+Apriori_Gen_Borgelt,1,accidents,minsup,0.3,32.0856,63.95,149529,False,,20260904_214619,rerun,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,accidents,minsup,0.4,8.26,62.16,32528.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,accidents,minsup,0.5,1.3671,61.69,8057.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,accidents,minsup,0.6,0.4831,61.22,2074.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,accidents,minsup,0.7,0.3345,59.03,529.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,accidents,minsup,0.8,0.3086,61.57,149.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-Apriori_Gen_Borgelt,1,pumsb,minsup,0.6,42.499,107.32,2853041.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+Apriori_Gen_Borgelt,1,pumsb,minsup,0.6,19.2979,92.9,2853041,False,,20260904_214619,rerun,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,pumsb,minsup,0.7,1.6765,24.4,658379.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,pumsb,minsup,0.75,0.484,18.71,248298.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Apriori_Gen_Borgelt,1,pumsb,minsup,0.8,0.2125,18.65,67835.0,False,,20260904_214619,remeasured,Linux x86_64,summary
@@ -419,14 +419,14 @@ Eclat_Gen_Borgelt,1,connect,minsup,0.6,0.1188,25.1,68343.0,False,,20260904_21461
 Eclat_Gen_Borgelt,1,connect,minsup,0.7,0.093,25.08,35875.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Eclat_Gen_Borgelt,1,connect,minsup,0.8,0.0852,24.72,15107.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Eclat_Gen_Borgelt,1,connect,minsup,0.9,0.0736,20.91,3486.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-Eclat_Gen_Borgelt,1,chess,minsup,0.2,35.1677,2231.18,25031185.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+Eclat_Gen_Borgelt,1,chess,minsup,0.2,28.9072,2216.16,25031185,False,,20260904_214619,rerun,Linux x86_64,summary
 Eclat_Gen_Borgelt,1,chess,minsup,0.3,3.1402,500.23,5601828.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Eclat_Gen_Borgelt,1,chess,minsup,0.4,0.6688,117.62,1396842.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Eclat_Gen_Borgelt,1,chess,minsup,0.5,0.1569,42.34,372603.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Eclat_Gen_Borgelt,1,chess,minsup,0.6,0.0477,20.1,98418.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Eclat_Gen_Borgelt,1,chess,minsup,0.7,0.0184,13.25,23892.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Eclat_Gen_Borgelt,1,chess,minsup,0.8,0.0113,8.67,5083.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-Eclat_Gen_Borgelt,1,chess,minsup,0.9,0.0334,1.97,498.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+Eclat_Gen_Borgelt,1,chess,minsup,0.9,0.0045,3.27,498,False,,20260904_214619,rerun,Linux x86_64,summary
 Eclat_Gen_Borgelt,1,t10i4d100k,minsup,0.001,0.0746,25.74,870.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Eclat_Gen_Borgelt,1,t10i4d100k,minsup,0.002,0.0743,25.78,870.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 Eclat_Gen_Borgelt,1,t10i4d100k,minsup,0.005,0.075,25.77,870.0,False,,20260904_214619,remeasured,Linux x86_64,summary
@@ -469,7 +469,7 @@ FPgrowth_Gen_Borgelt,1,connect,minsup,0.6,0.1046,25.28,68343.0,False,,20260904_2
 FPgrowth_Gen_Borgelt,1,connect,minsup,0.7,0.0846,25.17,35875.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 FPgrowth_Gen_Borgelt,1,connect,minsup,0.8,0.081,24.59,15107.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 FPgrowth_Gen_Borgelt,1,connect,minsup,0.9,0.0677,19.64,3486.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-FPgrowth_Gen_Borgelt,1,chess,minsup,0.2,32.3714,2230.12,25031185.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+FPgrowth_Gen_Borgelt,1,chess,minsup,0.2,21.8235,2223.58,25031185,False,,20260904_214619,rerun,Linux x86_64,summary
 FPgrowth_Gen_Borgelt,1,chess,minsup,0.3,2.6837,507.08,5601828.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 FPgrowth_Gen_Borgelt,1,chess,minsup,0.4,0.5515,116.08,1396842.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 FPgrowth_Gen_Borgelt,1,chess,minsup,0.5,0.1118,42.49,372603.0,False,,20260904_214619,remeasured,Linux x86_64,summary
@@ -511,55 +511,55 @@ GHUI_Miner,3,foodmart,min_utility,50.0,0.6088,283.43,10069.0,False,,20260904_214
 GHUI_Miner,3,foodmart,min_utility,100.0,0.3939,163.0,807.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 HUCI_Miner_Generators,3,chainstore,min_utility,1000.0,1.4272,259.72,0.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 HUCI_Miner_Generators,3,chainstore,min_utility,2000.0,1.444,258.69,0.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-HUCI_Miner_Generators,3,chainstore,min_utility,5000.0,1.3382,254.66,,False,SPMF error: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0 (exit 0),20260904_214619,recorded,Windows x86_64 (recorded),summary
+HUCI_Miner_Generators,3,chainstore,min_utility,5000.0,1.6632,256.22,,False,SPMF error: java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0,20260904_214619,rerun,Linux x86_64,summary
 HUCI_Miner_Generators,3,foodmart,min_utility,20.0,11.1306,267.83,13146.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 HUCI_Miner_Generators,3,foodmart,min_utility,50.0,0.7176,205.38,2002.0,False,,20260904_214619,remeasured,Linux x86_64,summary
 HUCI_Miner_Generators,3,foodmart,min_utility,100.0,0.394,162.5,2.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-FGC_Stream,5,mushroom,minsup,0.05,1319.0059,54.23,21391.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,mushroom,minsup,0.1,664.7174,38.54,7585.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,mushroom,minsup,0.15,369.2222,31.43,3084.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,mushroom,minsup,0.4,37.8483,26.12,153.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,mushroom,minsup,0.6,2.9337,24.85,21.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,connect,minsup,0.4,3600.052,129.23,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,connect,minsup,0.6,3600.0617,188.03,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,connect,minsup,0.8,3600.0637,246.66,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,connect,minsup,0.9,3600.0643,277.25,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,chess,minsup,0.4,3600.0588,265.94,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,chess,minsup,0.6,3600.1108,119.54,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,chess,minsup,0.8,346.2335,23.79,5084.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,chess,minsup,0.9,17.385,16.99,504.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,t10i4d100k,minsup,0.001,282.4585,112.42,871.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,t10i4d100k,minsup,0.002,275.5646,112.42,871.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,t10i4d100k,minsup,0.005,228.9117,112.44,871.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,t10i4d100k,minsup,0.01,43.3517,104.2,870.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,t10i4d100k,minsup,0.02,1.1386,100.06,1.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,t10i4d100k,minsup,0.05,1.1257,100.08,1.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,retail,minsup,0.0005,3600.055,140.53,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,retail,minsup,0.001,3600.0983,98.16,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,retail,minsup,0.002,2708.7112,153.53,2716.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,retail,minsup,0.005,1236.6719,139.99,581.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,retail,minsup,0.01,412.253,132.14,160.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,retail,minsup,0.02,228.2839,138.22,56.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,accidents,minsup,0.3,3600.086,431.31,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,accidents,minsup,0.4,3600.1012,564.42,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,accidents,minsup,0.5,3600.0897,694.3,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,accidents,minsup,0.6,3600.1153,822.18,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,accidents,minsup,0.7,3605.695,953.23,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,accidents,minsup,0.8,3605.7864,1045.43,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,pumsb,minsup,0.6,3600.0675,248.88,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,pumsb,minsup,0.7,3605.3658,288.67,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,pumsb,minsup,0.75,3600.0695,307.68,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,pumsb,minsup,0.8,3600.0699,326.27,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,pumsb,minsup,0.85,3600.0879,345.75,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,pumsb,minsup,0.9,3600.0821,364.42,0.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-FGC_Stream,5,pumsb,minsup,0.95,1819.4529,381.1,142.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Arima,5,accidents,maxsup,0.1,3600.048,699.35,46658.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Arima,5,accidents,maxsup,0.2,129.6717,455.89,19187.0,False,,20260904_214619,recorded,Windows x86_64 (recorded),summary
+FGC_Stream,5,mushroom,minsup,0.05,884.4065,44.75,21391,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,mushroom,minsup,0.1,413.828,30.93,7585,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,mushroom,minsup,0.15,233.2462,26.47,3084,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,mushroom,minsup,0.4,23.4236,23.26,153,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,mushroom,minsup,0.6,1.755,23.25,21,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,connect,minsup,0.4,3600.0409,124.68,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,connect,minsup,0.6,3600.0899,180.25,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,connect,minsup,0.8,3600.0217,236.2,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,connect,minsup,0.9,3600.0689,265.21,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,chess,minsup,0.4,3600.0345,329.84,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,chess,minsup,0.6,3503.2678,195.66,98419,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,chess,minsup,0.8,187.0577,23.67,5084,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,chess,minsup,0.9,9.7388,16.28,504,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,t10i4d100k,minsup,0.001,218.4696,98.96,871,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,t10i4d100k,minsup,0.002,201.3183,98.96,871,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,t10i4d100k,minsup,0.005,169.6082,98.98,871,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,t10i4d100k,minsup,0.01,34.6795,98.96,870,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,t10i4d100k,minsup,0.02,0.7699,98.11,1,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,t10i4d100k,minsup,0.05,0.7413,98.11,1,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,retail,minsup,0.0005,2925.0589,124.59,19699,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,retail,minsup,0.001,1663.3835,111.25,7696,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,retail,minsup,0.002,998.0178,105.67,2716,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,retail,minsup,0.005,452.5109,103.0,581,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,retail,minsup,0.01,179.3822,101.72,160,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,retail,minsup,0.02,98.5938,101.11,56,False,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,accidents,minsup,0.3,3600.0357,410.36,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,accidents,minsup,0.4,3600.041,534.01,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,accidents,minsup,0.5,3600.0846,656.46,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,accidents,minsup,0.6,3600.0602,778.32,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,accidents,minsup,0.7,3600.0361,899.75,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,accidents,minsup,0.8,3600.1078,1021.07,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,pumsb,minsup,0.6,3600.1182,230.55,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,pumsb,minsup,0.7,3600.1208,265.99,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,pumsb,minsup,0.75,3600.0542,283.45,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,pumsb,minsup,0.8,3600.09,300.81,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,pumsb,minsup,0.85,3600.0751,318.5,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,pumsb,minsup,0.9,3600.0245,335.96,,True,,20260904_214619,rerun,Linux x86_64,summary
+FGC_Stream,5,pumsb,minsup,0.95,936.4791,346.87,142,False,,20260904_214619,rerun,Linux x86_64,summary
+Arima,5,accidents,maxsup,0.1,3600.0368,707.79,,True,,20260904_214619,rerun,Linux x86_64,summary
+Arima,5,accidents,maxsup,0.2,134.2372,560.31,19187,False,,20260904_214619,rerun,Linux x86_64,summary
 Arima,5,accidents,maxsup,0.3,13.7258,268.65,5096.0,False,,20260904_214619,remeasured,Linux x86_64,summary
-Arima,5,pumsb,maxsup,0.1,3600.0489,3376.21,73241.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Arima,5,pumsb,maxsup,0.2,3600.0458,1517.08,38277.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Arima,5,pumsb,maxsup,0.3,3600.0423,2782.0,70112.0,True,,20260904_214619,recorded,Windows x86_64 (recorded),summary
-Talky_G,1,chess,minsup,0.2,3600.0473,1443.57,9744841.0,True,,20260906_103451,recorded,Windows x86_64 (recorded),summary
+Arima,5,pumsb,maxsup,0.1,3600.1832,3367.45,,True,,20260904_214619,rerun,Linux x86_64,summary
+Arima,5,pumsb,maxsup,0.2,3600.1685,1561.83,,True,,20260904_214619,rerun,Linux x86_64,summary
+Arima,5,pumsb,maxsup,0.3,3600.2003,2905.93,,True,,20260904_214619,rerun,Linux x86_64,summary
+Talky_G,1,chess,minsup,0.2,3600.1471,1351.99,,True,,20260906_103451,rerun,Linux x86_64,summary
 Gr_growth,1,mushroom,minsup,0.05,0.0255,15.59,21391.0,False,,20260906_113511,remeasured,Linux x86_64,summary
 Gr_growth,1,mushroom,minsup,0.1,0.0168,14.74,7585.0,False,,20260906_113511,remeasured,Linux x86_64,summary
 Gr_growth,1,mushroom,minsup,0.15,0.0134,14.43,3084.0,False,,20260906_113511,remeasured,Linux x86_64,summary
@@ -577,7 +577,7 @@ Gr_growth,1,connect,minsup,0.6,0.0788,16.52,68349.0,False,,20260906_113511,remea
 Gr_growth,1,connect,minsup,0.7,0.0649,15.2,35875.0,False,,20260906_113511,remeasured,Linux x86_64,summary
 Gr_growth,1,connect,minsup,0.8,0.0564,14.46,15108.0,False,,20260906_113511,remeasured,Linux x86_64,summary
 Gr_growth,1,connect,minsup,0.9,0.055,14.07,3487.0,False,,20260906_113511,remeasured,Linux x86_64,summary
-Gr_growth,1,chess,minsup,0.2,38.465,1204.89,25155785.0,False,,20260906_113511,recorded,Windows x86_64 (recorded),summary
+Gr_growth,1,chess,minsup,0.2,19.8408,1209.13,25155785,False,,20260906_113511,rerun,Linux x86_64,summary
 Gr_growth,1,chess,minsup,0.3,3.4843,285.5,5601829.0,False,,20260906_113511,remeasured,Linux x86_64,summary
 Gr_growth,1,chess,minsup,0.4,0.736,66.47,1402786.0,False,,20260906_113511,remeasured,Linux x86_64,summary
 Gr_growth,1,chess,minsup,0.5,0.1798,29.02,372604.0,False,,20260906_113511,remeasured,Linux x86_64,summary
@@ -648,8 +648,8 @@ FEAT,2,sign,minsup,0.05,0.4303,316.56,267,False,,20260906_181531,remeasured,Linu
 FEAT,2,sign,minsup,0.04,0.6105,393.16,526,False,,20260906_181531,remeasured,Linux x86_64,summary
 FEAT,2,sign,minsup,0.03,7.7032,380.91,13128,False,,20260906_181531,remeasured,Linux x86_64,summary
 FEAT,2,sign,minsup,0.025,17.4633,414.07,30445,False,,20260906_181531,remeasured,Linux x86_64,summary
-FEAT,2,sign,minsup,0.02,41.1021,292.39,56952,False,,20260906_181531,recorded,Windows x86_64 (recorded),summary
-FEAT,2,sign,minsup,0.015,55.8119,295.89,69710,False,,20260906_181531,recorded,Windows x86_64 (recorded),summary
+FEAT,2,sign,minsup,0.02,34.4259,447.8,56952,False,,20260906_181531,rerun,Linux x86_64,summary
+FEAT,2,sign,minsup,0.015,44.3638,453.19,69710,False,,20260906_181531,rerun,Linux x86_64,summary
 FSGP,2,leviathan,minsup,0.008,0.2594,150.06,0,False,,20260906_181531,remeasured,Linux x86_64,summary
 FSGP,2,leviathan,minsup,0.006,0.3058,147.02,315,False,,20260906_181531,remeasured,Linux x86_64,summary
 FSGP,2,leviathan,minsup,0.005,0.5364,414.44,2076,False,,20260906_181531,remeasured,Linux x86_64,summary
@@ -666,219 +666,390 @@ FSGP,2,sign,minsup,0.03,1.2374,618.9,13128,False,,20260906_181531,remeasured,Lin
 FSGP,2,sign,minsup,0.025,2.083,769.55,30445,False,,20260906_181531,remeasured,Linux x86_64,summary
 FSGP,2,sign,minsup,0.02,3.2525,993.49,56952,False,,20260906_181531,remeasured,Linux x86_64,summary
 FSGP,2,sign,minsup,0.015,4.0357,1194.24,69710,False,,20260906_181531,remeasured,Linux x86_64,summary
-Apriori_Gen_Borgelt,1,bms1,minsup,0.009894802187846,0.015,5.89,79,False,,20260923_124200,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,bms1,minsup,0.009894802187846,0.0156,6.35,79,False,,20260923_124200,remeasured,Linux x86_64,extra
-DefMe,1,bms1,minsup,0.009894802187846,0.2258,114.97,80,False,,20260923_124200,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,bms1,minsup,0.009894802187846,0.0135,6.64,79,False,,20260923_124200,remeasured,Linux x86_64,extra
-Gr_growth,1,bms1,minsup,0.009894802187846,0.0166,14.89,80,False,,20260923_124200,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,bms1,minsup,0.009894802187846,1.731,7944.42,80,False,,20260923_124202,remeasured,Linux x86_64,extra
-Pascal,1,bms1,minsup,0.009894802187846,1.6217,98.05,79,False,,20260923_124202,remeasured,Linux x86_64,extra
-Talky_G,1,bms1,minsup,0.009894802187846,1.7335,7787.98,80,False,,20260923_124204,remeasured,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,bms1,minsup,0.0038547364182409,0.0167,5.91,304,False,,20260923_124205,remeasured,Linux x86_64,extra
-Zart,1,bms1,minsup,0.009894802187846,1.5986,590.48,80,False,,20260923_124205,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,bms1,minsup,0.0038547364182409,0.016,7.38,304,False,,20260923_124205,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,bms1,minsup,0.0038547364182409,0.0158,7.69,304,False,,20260923_124205,remeasured,Linux x86_64,extra
-DefMe,1,bms1,minsup,0.0038547364182409,0.2632,179.53,305,False,,20260923_124205,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,bms1,minsup,0.0038547364182409,1.7455,7941.65,305,False,,20260923_124207,remeasured,Linux x86_64,extra
-Talky_G,1,bms1,minsup,0.0038547364182409,1.724,7935.31,305,False,,20260923_124209,remeasured,Linux x86_64,extra
-Pascal,1,bms1,minsup,0.0038547364182409,11.0548,97.41,304,False,,20260923_124217,remeasured,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,bms1,minsup,0.0012709305056877,0.0229,5.92,2077,False,,20260923_124218,remeasured,Linux x86_64,extra
-DefMe,1,bms1,minsup,0.0012709305056877,0.3726,397.33,2078,False,,20260923_124218,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,bms1,minsup,0.0012709305056877,0.0201,9.09,2077,False,,20260923_124219,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,bms1,minsup,0.0012709305056877,0.0206,10.06,2077,False,,20260923_124219,remeasured,Linux x86_64,extra
-Zart,1,bms1,minsup,0.0038547364182409,9.3992,604.37,305,False,,20260923_124220,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,bms1,minsup,0.0012709305056877,1.7719,7945.18,2079,False,,20260923_124222,remeasured,Linux x86_64,extra
-Talky_G,1,bms1,minsup,0.0012709305056877,1.7897,7828.76,2079,False,,20260923_124225,remeasured,Linux x86_64,extra
-Pascal,1,bms1,minsup,0.0012709305056877,32.0492,106.71,2077,False,,20260923_124251,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,bms1,minsup,0.0005662561659004,0.3491,23.11,159224,False,,20260923_124252,remeasured,Linux x86_64,extra
-Gr_growth,1,bms1,minsup,0.0038547364182409,0.0224,15.85,305,False,,20260923_124401,remeasured,Linux x86_64,extra
-Gr_growth,1,bms1,minsup,0.0012709305056877,0.0269,16.43,2078,False,,20260923_124401,remeasured,Linux x86_64,extra
-DefMe,1,bms1,minsup,0.0005662561659004,4.4752,848.44,159225,False,,20260923_124406,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,bms1,minsup,0.0005662561659004,0.0989,25.48,159224,False,,20260923_124406,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,bms1,minsup,0.0005662561659004,0.0839,29.9,159224,False,,20260923_124407,remeasured,Linux x86_64,extra
-Gr_growth,1,bms1,minsup,0.0005662561659004,0.1201,21.77,159225,False,,20260923_124407,remeasured,Linux x86_64,extra
-Zart,1,bms1,minsup,0.0012709305056877,39.8572,629.61,2078,False,,20260923_124441,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,bms1,minsup,0.0005662561659004,58.7362,7971.97,246441,False,,20260923_124540,recorded,Linux x86_64,extra
-Talky_G,1,bms1,minsup,0.0005662561659004,60.9755,7967.99,246441,False,,20260923_124642,recorded,Linux x86_64,extra
-Pascal,1,bms1,minsup,0.0005662561659004,3600.1096,598.29,159224,True,,20260923_134740,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,bms1,minsup,0.0001803630750645,33.0664,7835.55,0,False,non-zero exit code 1,20260923_134814,recorded,Linux x86_64,extra
-DefMe,1,bms1,minsup,0.0001803630750645,254.9194,836.25,2915744,False,,20260923_135229,recorded,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,bms1,minsup,0.0001803630750645,1.9336,234.37,2915743,False,,20260923_135231,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,bms1,minsup,0.0001803630750645,1.7026,234.8,2915743,False,,20260923_135234,remeasured,Linux x86_64,extra
-Gr_growth,1,bms1,minsup,0.0001803630750645,4.4693,133.21,2915744,False,,20260923_135239,remeasured,Linux x86_64,extra
-Zart,1,bms1,minsup,0.0005662561659004,3600.1476,986.59,0,True,,20260923_144740,recorded,Linux x86_64,extra
-Pascal,1,bms1,minsup,0.0001803630750645,3600.208,2797.2,1684158,True,,20260923_145240,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,bms2,minsup,0.0123819537619981,0.0234,7.77,51,False,,20260923_150940,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,bms2,minsup,0.0123819537619981,0.0238,8.02,51,False,,20260923_150941,remeasured,Linux x86_64,extra
-DefMe,1,bms2,minsup,0.0123819537619981,0.2618,167.14,52,False,,20260923_150941,remeasured,Linux x86_64,extra
-Gr_growth,1,bms2,minsup,0.0123819537619981,0.0268,15.98,52,False,,20260923_150941,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,bms2,minsup,0.0123819537619981,0.0232,7.84,51,False,,20260923_150941,remeasured,Linux x86_64,extra
-Pascal,1,bms2,minsup,0.0123819537619981,0.8173,105.71,51,False,,20260923_150943,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,bms2,minsup,0.0123819537619981,1.9027,7590.8,,False,java.lang.OutOfMemoryError: Java heap space,20260923_150943,recorded,Linux x86_64,extra
-Zart,1,bms2,minsup,0.0123819537619981,1.1889,533.52,52,False,,20260923_150944,remeasured,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,c20d10k,minsup,0.946075,0.0095,3.94,8,False,,20260923_150945,remeasured,Linux x86_64,extra
-Talky_G,1,bms2,minsup,0.0123819537619981,1.8906,7598.84,,False,java.lang.OutOfMemoryError: Java heap space,20260923_150945,recorded,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,c20d10k,minsup,0.946075,0.008,3.96,8,False,,20260923_150945,remeasured,Linux x86_64,extra
-DefMe,1,c20d10k,minsup,0.946075,0.1985,99.42,9,False,,20260923_150945,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,c20d10k,minsup,0.946075,0.0085,2.86,8,False,,20260923_150945,remeasured,Linux x86_64,extra
-Gr_growth,1,c20d10k,minsup,0.946075,0.0119,13.98,9,False,,20260923_150945,remeasured,Linux x86_64,extra
-Pascal,1,c20d10k,minsup,0.946075,0.2058,104.86,8,False,,20260923_150946,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,c20d10k,minsup,0.946075,0.2232,100.95,8,False,,20260923_150946,remeasured,Linux x86_64,extra
-Talky_G,1,c20d10k,minsup,0.946075,0.2204,102.55,8,False,,20260923_150946,remeasured,Linux x86_64,extra
-Zart,1,c20d10k,minsup,0.946075,0.2312,114.3,9,False,,20260923_150946,remeasured,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,kosarak,minsup,0.0600247505990574,0.4092,80.05,24,False,,20260923_150947,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,kosarak,minsup,0.0600247505990574,0.4129,80.22,24,False,,20260923_150948,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,kosarak,minsup,0.0600247505990574,0.4153,80.16,24,False,,20260923_150949,remeasured,Linux x86_64,extra
-Gr_growth,1,kosarak,minsup,0.0600247505990574,0.2025,14.22,24,False,,20260923_150949,remeasured,Linux x86_64,extra
-DefMe,1,kosarak,minsup,0.0600247505990574,3.1222,7929.91,25,False,,20260923_150950,remeasured,Linux x86_64,extra
-Pascal,1,kosarak,minsup,0.0600247505990574,1.3387,478.87,24,False,,20260923_150951,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,kosarak,minsup,0.0600247505990574,3.199,7926.61,,False,java.lang.OutOfMemoryError: Java heap space,20260923_150953,recorded,Linux x86_64,extra
-Talky_G,1,kosarak,minsup,0.0600247505990574,4.6089,8031.39,,False,java.lang.OutOfMemoryError: Java heap space,20260923_150956,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,c73d10k,minsup,0.979375,0.0215,6.09,6,False,,20260923_150956,remeasured,Linux x86_64,extra
-Zart,1,kosarak,minsup,0.0600247505990574,1.6252,1042.08,25,False,,20260923_150956,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,c73d10k,minsup,0.979375,0.0213,6.2,6,False,,20260923_150956,remeasured,Linux x86_64,extra
-DefMe,1,c73d10k,minsup,0.979375,0.2384,125.81,7,False,,20260923_150956,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,c73d10k,minsup,0.979375,0.0211,6.13,6,False,,20260923_150957,remeasured,Linux x86_64,extra
-Gr_growth,1,c73d10k,minsup,0.979375,0.019,14.0,6,False,,20260923_150957,remeasured,Linux x86_64,extra
-Pascal,1,c73d10k,minsup,0.979375,0.2348,123.27,6,False,,20260923_150957,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,c73d10k,minsup,0.979375,0.3079,127.82,6,False,,20260923_150957,remeasured,Linux x86_64,extra
-Talky_G,1,c73d10k,minsup,0.979375,0.3039,131.99,6,False,,20260923_150958,remeasured,Linux x86_64,extra
-Zart,1,c73d10k,minsup,0.979375,0.2826,136.3,7,False,,20260923_150958,remeasured,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,bms2,minsup,0.0052862782536897,0.0332,7.76,345,False,,20260923_150958,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,bms2,minsup,0.0052862782536897,0.0324,9.39,345,False,,20260923_150958,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,bms2,minsup,0.0052862782536897,0.0258,9.6,345,False,,20260923_150959,remeasured,Linux x86_64,extra
-DefMe,1,bms2,minsup,0.0052862782536897,0.2897,213.02,346,False,,20260923_150959,remeasured,Linux x86_64,extra
-Gr_growth,1,bms2,minsup,0.0052862782536897,0.0315,17.25,346,False,,20260923_150959,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,bms2,minsup,0.0052862782536897,1.8227,7592.71,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151001,recorded,Linux x86_64,extra
-Talky_G,1,bms2,minsup,0.0052862782536897,1.8376,7590.3,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151003,recorded,Linux x86_64,extra
-Zart,1,bms2,minsup,0.0052862782536897,6.9626,723.93,346,False,,20260923_151010,remeasured,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,c20d10k,minsup,0.337575,0.0123,4.27,659,False,,20260923_151011,remeasured,Linux x86_64,extra
-DefMe,1,c20d10k,minsup,0.337575,0.2172,118.01,660,False,,20260923_151011,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,c20d10k,minsup,0.337575,0.0088,4.6,659,False,,20260923_151011,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,c20d10k,minsup,0.337575,0.0082,4.99,659,False,,20260923_151012,remeasured,Linux x86_64,extra
-Gr_growth,1,c20d10k,minsup,0.337575,0.0106,14.0,660,False,,20260923_151012,remeasured,Linux x86_64,extra
-Pascal,1,c20d10k,minsup,0.337575,0.3948,96.91,659,False,,20260923_151013,remeasured,Linux x86_64,extra
-Pascal,1,bms2,minsup,0.0052862782536897,11.2322,107.05,345,False,,20260923_151013,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,c20d10k,minsup,0.337575,0.2312,103.01,659,False,,20260923_151013,remeasured,Linux x86_64,extra
-Talky_G,1,c20d10k,minsup,0.337575,0.2279,99.38,659,False,,20260923_151013,remeasured,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,kosarak,minsup,0.0126772285392901,0.487,81.46,251,False,,20260923_151014,remeasured,Linux x86_64,extra
-Zart,1,c20d10k,minsup,0.337575,2.0404,400.73,660,False,,20260923_151016,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,kosarak,minsup,0.0126772285392901,0.4792,94.86,251,False,,20260923_151017,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,kosarak,minsup,0.0126772285392901,0.4528,80.54,251,False,,20260923_151017,remeasured,Linux x86_64,extra
-DefMe,1,kosarak,minsup,0.0126772285392901,3.1447,7910.47,252,False,,20260923_151018,remeasured,Linux x86_64,extra
-Gr_growth,1,kosarak,minsup,0.0126772285392901,0.2934,21.44,252,False,,20260923_151018,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,kosarak,minsup,0.0126772285392901,3.1047,7936.34,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151021,recorded,Linux x86_64,extra
-Talky_G,1,kosarak,minsup,0.0126772285392901,4.0978,8030.91,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151026,recorded,Linux x86_64,extra
-Pascal,1,kosarak,minsup,0.0126772285392901,15.5118,478.0,251,False,,20260923_151035,remeasured,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,c73d10k,minsup,0.919975,0.0235,6.17,600,False,,20260923_151035,remeasured,Linux x86_64,extra
-DefMe,1,c73d10k,minsup,0.919975,0.2514,149.58,601,False,,20260923_151036,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,c73d10k,minsup,0.919975,0.0227,6.45,600,False,,20260923_151036,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,c73d10k,minsup,0.919975,0.0197,6.33,600,False,,20260923_151036,remeasured,Linux x86_64,extra
-Gr_growth,1,c73d10k,minsup,0.919975,0.0202,14.0,596,False,,20260923_151036,remeasured,Linux x86_64,extra
-Pascal,1,c73d10k,minsup,0.919975,0.6919,122.26,600,False,,20260923_151037,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,c73d10k,minsup,0.919975,0.3136,128.64,600,False,,20260923_151038,remeasured,Linux x86_64,extra
-Zart,1,kosarak,minsup,0.0126772285392901,11.5303,1719.52,252,False,,20260923_151038,remeasured,Linux x86_64,extra
-Talky_G,1,c73d10k,minsup,0.919975,0.3244,129.95,600,False,,20260923_151039,remeasured,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,bms2,minsup,0.0012094901434616,0.0665,10.68,13848,False,,20260923_151039,remeasured,Linux x86_64,extra
-DefMe,1,bms2,minsup,0.0012094901434616,1.0722,658.89,13849,False,,20260923_151040,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,bms2,minsup,0.0012094901434616,0.0521,19.16,13848,False,,20260923_151040,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,bms2,minsup,0.0012094901434616,0.0471,21.25,13848,False,,20260923_151041,remeasured,Linux x86_64,extra
-Gr_growth,1,bms2,minsup,0.0012094901434616,0.0692,22.03,13849,False,,20260923_151041,remeasured,Linux x86_64,extra
-Zart,1,c73d10k,minsup,0.919975,3.8725,498.77,601,False,,20260923_151043,remeasured,Linux x86_64,extra
-TalkyG_Diffset,1,bms2,minsup,0.0012094901434616,1.7312,7592.77,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151045,recorded,Linux x86_64,extra
-Talky_G,1,bms2,minsup,0.0012094901434616,1.781,7592.48,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151047,recorded,Linux x86_64,extra
-Zart,1,bms2,minsup,0.0012094901434616,367.5665,1304.33,13849,False,,20260923_151654,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,c20d10k,minsup,0.034375,0.0998,5.16,34690,False,,20260923_151655,remeasured,Linux x86_64,extra
-DefMe,1,c20d10k,minsup,0.034375,0.4194,475.98,34691,False,,20260923_151655,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,c20d10k,minsup,0.034375,0.0314,15.25,34690,False,,20260923_151656,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,c20d10k,minsup,0.034375,0.0226,15.39,34690,False,,20260923_151656,remeasured,Linux x86_64,extra
-Gr_growth,1,c20d10k,minsup,0.034375,0.0312,15.75,34691,False,,20260923_151656,remeasured,Linux x86_64,extra
-Pascal,1,c20d10k,minsup,0.034375,83.7692,328.51,34690,False,,20260923_151820,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,c20d10k,minsup,0.034375,0.2979,161.93,34764,False,,20260923_151821,remeasured,Linux x86_64,extra
-Talky_G,1,c20d10k,minsup,0.034375,0.2904,154.38,34764,False,,20260923_151821,remeasured,Linux x86_64,extra
-Pascal,1,bms2,minsup,0.0012094901434616,478.7567,152.21,13848,False,,20260923_151840,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,kosarak,minsup,0.0032752349487756,0.8339,81.53,4001,False,,20260923_151841,remeasured,Linux x86_64,extra
-DefMe,1,kosarak,minsup,0.0032752349487756,4.1924,7995.96,4002,False,,20260923_151846,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,kosarak,minsup,0.0032752349487756,0.652,122.38,4001,False,,20260923_151847,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,kosarak,minsup,0.0032752349487756,0.8103,135.97,4001,False,,20260923_151848,remeasured,Linux x86_64,extra
-Gr_growth,1,kosarak,minsup,0.0032752349487756,0.9058,64.31,4002,False,,20260923_151849,remeasured,Linux x86_64,extra
-Pascal,1,kosarak,minsup,0.0032752349487756,686.1005,492.09,4001,False,,20260923_153015,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,kosarak,minsup,0.0032752349487756,3.0924,7930.08,,False,java.lang.OutOfMemoryError: Java heap space,20260923_153018,recorded,Linux x86_64,extra
-Talky_G,1,kosarak,minsup,0.0032752349487756,4.1195,8035.33,,False,java.lang.OutOfMemoryError: Java heap space,20260923_153023,recorded,Linux x86_64,extra
-Zart,1,kosarak,minsup,0.0032752349487756,550.9333,1732.37,4002,False,,20260923_153934,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,c73d10k,minsup,0.446675,19.7934,63.33,1807687,False,,20260923_153955,remeasured,Linux x86_64,extra
-DefMe,1,c73d10k,minsup,0.446675,10.2334,768.36,1807688,False,,20260923_154006,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,c73d10k,minsup,0.446675,0.9261,166.02,1807687,False,,20260923_154007,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,c73d10k,minsup,0.446675,0.7738,154.75,1807687,False,,20260923_154008,remeasured,Linux x86_64,extra
-Gr_growth,1,c73d10k,minsup,0.446675,1.0554,94.47,1806480,False,,20260923_154010,remeasured,Linux x86_64,extra
-Zart,1,c20d10k,minsup,0.034375,3600.1483,963.83,0,True,,20260923_161822,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,c73d10k,minsup,0.446675,58.1968,559.34,1810556,False,,20260923_161920,recorded,Linux x86_64,extra
-Talky_G,1,c73d10k,minsup,0.446675,58.2635,572.93,1810556,False,,20260923_162019,recorded,Linux x86_64,extra
-Pascal,1,c73d10k,minsup,0.446675,3600.0643,917.91,684563,True,,20260923_164010,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,bms2,minsup,0.0004354164516461,0.162,20.79,100911,False,,20260923_164011,remeasured,Linux x86_64,extra
-DefMe,1,bms2,minsup,0.0004354164516461,4.5104,720.69,100912,False,,20260923_164016,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,bms2,minsup,0.0004354164516461,0.0992,28.01,100911,False,,20260923_164016,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,bms2,minsup,0.0004354164516461,0.0863,33.52,100911,False,,20260923_164017,remeasured,Linux x86_64,extra
-Gr_growth,1,bms2,minsup,0.0004354164516461,0.1416,27.17,100912,False,,20260923_164017,remeasured,Linux x86_64,extra
-Pascal,1,bms2,minsup,0.0004354164516461,2035.6853,399.44,100911,False,,20260923_171413,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,bms2,minsup,0.0004354164516461,1.7428,7586.2,,False,java.lang.OutOfMemoryError: Java heap space,20260923_171415,recorded,Linux x86_64,extra
-Talky_G,1,bms2,minsup,0.0004354164516461,1.8746,7591.22,,False,java.lang.OutOfMemoryError: Java heap space,20260923_171417,recorded,Linux x86_64,extra
-Zart,1,c73d10k,minsup,0.446675,3600.0692,1090.62,0,True,,20260923_172019,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,c20d10k,minsup,0.001275,0.3772,21.71,386701,False,,20260923_172020,remeasured,Linux x86_64,extra
-DefMe,1,c20d10k,minsup,0.001275,2.5427,788.95,386702,False,,20260923_172023,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,c20d10k,minsup,0.001275,0.1672,40.52,386701,False,,20260923_172023,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,c20d10k,minsup,0.001275,0.1358,42.89,386701,False,,20260923_172023,remeasured,Linux x86_64,extra
-Gr_growth,1,c20d10k,minsup,0.001275,0.1959,28.09,386702,False,,20260923_172024,remeasured,Linux x86_64,extra
-Zart,1,bms2,minsup,0.0004354164516461,3479.1071,1883.97,100912,False,,20260923_181217,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,c20d10k,minsup,0.001275,11.0026,412.87,394806,False,,20260923_181229,remeasured,Linux x86_64,extra
-Talky_G,1,c20d10k,minsup,0.001275,11.1731,404.51,394806,False,,20260923_181242,remeasured,Linux x86_64,extra
-Pascal,1,c20d10k,minsup,0.001275,3600.0509,643.75,253643,True,,20260923_182024,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,kosarak,minsup,0.0013246977425311,10.4093,93.32,202882,False,,20260923_182035,remeasured,Linux x86_64,extra
-DefMe,1,kosarak,minsup,0.0013246977425311,206.058,8031.17,202883,False,,20260923_182402,recorded,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,kosarak,minsup,0.0013246977425311,1.091,155.05,202882,False,,20260923_182403,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,kosarak,minsup,0.0013246977425311,1.7251,213.53,202882,False,,20260923_182405,remeasured,Linux x86_64,extra
-Gr_growth,1,kosarak,minsup,0.0013246977425311,2.6066,120.85,202882,False,,20260923_182408,remeasured,Linux x86_64,extra
-Zart,1,c20d10k,minsup,0.001275,3600.1552,1144.04,0,True,,20260923_191243,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,kosarak,minsup,0.0013246977425311,3.0123,7931.48,,False,java.lang.OutOfMemoryError: Java heap space,20260923_191246,recorded,Linux x86_64,extra
-Talky_G,1,kosarak,minsup,0.0013246977425311,4.0715,8030.71,,False,java.lang.OutOfMemoryError: Java heap space,20260923_191250,recorded,Linux x86_64,extra
-Pascal,1,kosarak,minsup,0.0013246977425311,3600.1365,505.62,677,True,,20260923_192409,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,c73d10k,minsup,0.124675,1800.7562,7835.69,0,False,non-zero exit code 1,20260923_195410,recorded,Linux x86_64,extra
-Zart,1,kosarak,minsup,0.0013246977425311,3600.1806,1791.38,0,True,,20260923_201251,recorded,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,c73d10k,minsup,0.124675,244.8376,7834.46,82036521,False,non-zero exit code 1,20260923_201701,recorded,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,c73d10k,minsup,0.124675,237.0021,7834.51,82018035,False,non-zero exit code 1,20260923_202104,recorded,Linux x86_64,extra
-Gr_growth,1,c73d10k,minsup,0.124675,351.593,7834.22,164364300,False,killed by signal 6,20260923_202722,recorded,Linux x86_64,extra
-DefMe,1,c73d10k,minsup,0.124675,3600.1501,951.8,426915793,True,,20260923_205447,recorded,Linux x86_64,extra
-Pascal,1,c73d10k,minsup,0.124675,3600.1687,1245.84,745089,True,,20260923_212722,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,c73d10k,minsup,0.124675,3600.1636,1593.89,9464304,True,,20260923_215448,recorded,Linux x86_64,extra
-Talky_G,1,c73d10k,minsup,0.124675,3600.1142,1627.34,9790483,True,,20260923_222723,recorded,Linux x86_64,extra
-Zart,1,c73d10k,minsup,0.124675,3600.1641,1182.39,0,True,,20260923_225448,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,bms1,minsup,0.0001803630750645,3600.3483,7970.2,1652741,True,,20260923_232724,recorded,Linux x86_64,extra
-Talky_G,1,bms1,minsup,0.0001803630750645,3600.3175,7981.06,1663800,True,,20260923_235449,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,bms2,minsup,0.0001515894313138,0.5823,58.2,524757,False,,20260923_235450,remeasured,Linux x86_64,extra
-DefMe,1,bms2,minsup,0.0001515894313138,21.795,833.14,524758,False,,20260923_235514,remeasured,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,bms2,minsup,0.0001515894313138,0.3158,52.14,524757,False,,20260923_235515,remeasured,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,bms2,minsup,0.0001515894313138,0.2579,70.99,524757,False,,20260923_235516,remeasured,Linux x86_64,extra
-Gr_growth,1,bms2,minsup,0.0001515894313138,0.3869,41.84,524758,False,,20260923_235516,remeasured,Linux x86_64,extra
-Zart,1,bms1,minsup,0.0001803630750645,3600.2197,2594.45,0,True,,20260924_002725,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,bms2,minsup,0.0001515894313138,1.7157,7588.92,,False,java.lang.OutOfMemoryError: Java heap space,20260924_002726,recorded,Linux x86_64,extra
-Talky_G,1,bms2,minsup,0.0001515894313138,1.8217,7591.55,,False,java.lang.OutOfMemoryError: Java heap space,20260924_002728,recorded,Linux x86_64,extra
-Pascal,1,bms2,minsup,0.0001515894313138,3600.1379,511.46,2458,True,,20260924_005517,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,kosarak,minsup,0.0006425150408652,1701.4612,7832.91,0,False,non-zero exit code 1,20260924_012338,recorded,Linux x86_64,extra
-Zart,1,bms2,minsup,0.0001515894313138,3600.2143,2305.97,0,True,,20260924_012729,recorded,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,kosarak,minsup,0.0006425150408652,317.6957,7831.64,80375420,False,non-zero exit code 1,20260924_013252,recorded,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,kosarak,minsup,0.0006425150408652,293.4879,7830.41,77733661,False,non-zero exit code 1,20260924_013752,recorded,Linux x86_64,extra
-Gr_growth,1,kosarak,minsup,0.0006425150408652,497.3721,7833.66,159581220,False,killed by signal 6,20260924_014639,recorded,Linux x86_64,extra
-DefMe,1,kosarak,minsup,0.0006425150408652,3600.3263,8001.69,189920,True,,20260924_022339,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,kosarak,minsup,0.0006425150408652,2.9669,7927.38,,False,java.lang.OutOfMemoryError: Java heap space,20260924_022343,recorded,Linux x86_64,extra
-Talky_G,1,kosarak,minsup,0.0006425150408652,4.1167,8033.11,,False,java.lang.OutOfMemoryError: Java heap space,20260924_022347,recorded,Linux x86_64,extra
-Pascal,1,kosarak,minsup,0.0006425150408652,3600.148,669.32,1579,True,,20260924_024640,recorded,Linux x86_64,extra
-Apriori_Gen_Borgelt,1,c73d10k,minsup,0.015375,507.3927,7835.66,0,False,non-zero exit code 1,20260924_025507,recorded,Linux x86_64,extra
-Zart,1,kosarak,minsup,0.0006425150408652,3600.1334,2204.73,0,True,,20260924_032347,recorded,Linux x86_64,extra
-Eclat_Gen_Borgelt,1,c73d10k,minsup,0.015375,243.4157,7833.36,81504774,False,non-zero exit code 1,20260924_032756,recorded,Linux x86_64,extra
-FPgrowth_Gen_Borgelt,1,c73d10k,minsup,0.015375,234.12,7834.09,81472379,False,non-zero exit code 1,20260924_033156,recorded,Linux x86_64,extra
-Gr_growth,1,c73d10k,minsup,0.015375,428.3709,7834.13,161793128,False,killed by signal 6,20260924_033928,recorded,Linux x86_64,extra
-DefMe,1,c73d10k,minsup,0.015375,3600.0789,939.6,371037846,True,,20260924_035539,recorded,Linux x86_64,extra
-Pascal,1,c73d10k,minsup,0.015375,3600.1802,1529.62,6446509,True,,20260924_043930,recorded,Linux x86_64,extra
-TalkyG_Diffset,1,c73d10k,minsup,0.015375,3600.1538,787.26,4250488,True,,20260924_045539,recorded,Linux x86_64,extra
-Talky_G,1,c73d10k,minsup,0.015375,3600.1539,735.38,4091388,True,,20260924_053930,recorded,Linux x86_64,extra
-Zart,1,c73d10k,minsup,0.015375,3600.2109,1994.02,0,True,,20260924_055540,recorded,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,bms1,minsup,0.009894802187846,0.015,5.89,79,False,,20260923_124200,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,bms1,minsup,0.009894802187846,0.0156,6.35,79,False,,20260923_124200,linux,Linux x86_64,extra
+DefMe,1,bms1,minsup,0.009894802187846,0.2258,114.97,80,False,,20260923_124200,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,bms1,minsup,0.009894802187846,0.0135,6.64,79,False,,20260923_124200,linux,Linux x86_64,extra
+Gr_growth,1,bms1,minsup,0.009894802187846,0.0166,14.89,80,False,,20260923_124200,linux,Linux x86_64,extra
+TalkyG_Diffset,1,bms1,minsup,0.009894802187846,1.731,7944.42,80,False,,20260923_124202,linux,Linux x86_64,extra
+Pascal,1,bms1,minsup,0.009894802187846,1.6217,98.05,79,False,,20260923_124202,linux,Linux x86_64,extra
+Talky_G,1,bms1,minsup,0.009894802187846,1.7335,7787.98,80,False,,20260923_124204,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,bms1,minsup,0.0038547364182409,0.0167,5.91,304,False,,20260923_124205,linux,Linux x86_64,extra
+Zart,1,bms1,minsup,0.009894802187846,1.5986,590.48,80,False,,20260923_124205,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,bms1,minsup,0.0038547364182409,0.016,7.38,304,False,,20260923_124205,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,bms1,minsup,0.0038547364182409,0.0158,7.69,304,False,,20260923_124205,linux,Linux x86_64,extra
+DefMe,1,bms1,minsup,0.0038547364182409,0.2632,179.53,305,False,,20260923_124205,linux,Linux x86_64,extra
+TalkyG_Diffset,1,bms1,minsup,0.0038547364182409,1.7455,7941.65,305,False,,20260923_124207,linux,Linux x86_64,extra
+Talky_G,1,bms1,minsup,0.0038547364182409,1.724,7935.31,305,False,,20260923_124209,linux,Linux x86_64,extra
+Pascal,1,bms1,minsup,0.0038547364182409,11.0548,97.41,304,False,,20260923_124217,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,bms1,minsup,0.0012709305056877,0.0229,5.92,2077,False,,20260923_124218,linux,Linux x86_64,extra
+DefMe,1,bms1,minsup,0.0012709305056877,0.3726,397.33,2078,False,,20260923_124218,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,bms1,minsup,0.0012709305056877,0.0201,9.09,2077,False,,20260923_124219,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,bms1,minsup,0.0012709305056877,0.0206,10.06,2077,False,,20260923_124219,linux,Linux x86_64,extra
+Zart,1,bms1,minsup,0.0038547364182409,9.3992,604.37,305,False,,20260923_124220,linux,Linux x86_64,extra
+TalkyG_Diffset,1,bms1,minsup,0.0012709305056877,1.7719,7945.18,2079,False,,20260923_124222,linux,Linux x86_64,extra
+Talky_G,1,bms1,minsup,0.0012709305056877,1.7897,7828.76,2079,False,,20260923_124225,linux,Linux x86_64,extra
+Pascal,1,bms1,minsup,0.0012709305056877,32.0492,106.71,2077,False,,20260923_124251,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,bms1,minsup,0.0005662561659004,0.3491,23.11,159224,False,,20260923_124252,linux,Linux x86_64,extra
+Gr_growth,1,bms1,minsup,0.0038547364182409,0.0224,15.85,305,False,,20260923_124401,linux,Linux x86_64,extra
+Gr_growth,1,bms1,minsup,0.0012709305056877,0.0269,16.43,2078,False,,20260923_124401,linux,Linux x86_64,extra
+DefMe,1,bms1,minsup,0.0005662561659004,4.4752,848.44,159225,False,,20260923_124406,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,bms1,minsup,0.0005662561659004,0.0989,25.48,159224,False,,20260923_124406,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,bms1,minsup,0.0005662561659004,0.0839,29.9,159224,False,,20260923_124407,linux,Linux x86_64,extra
+Gr_growth,1,bms1,minsup,0.0005662561659004,0.1201,21.77,159225,False,,20260923_124407,linux,Linux x86_64,extra
+Zart,1,bms1,minsup,0.0012709305056877,39.8572,629.61,2078,False,,20260923_124441,linux,Linux x86_64,extra
+TalkyG_Diffset,1,bms1,minsup,0.0005662561659004,58.7362,7971.97,246441,False,,20260923_124540,linux,Linux x86_64,extra
+Talky_G,1,bms1,minsup,0.0005662561659004,60.9755,7967.99,246441,False,,20260923_124642,linux,Linux x86_64,extra
+Pascal,1,bms1,minsup,0.0005662561659004,3600.1096,598.29,159224,True,,20260923_134740,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,bms1,minsup,0.0001803630750645,33.0664,7835.55,0,False,non-zero exit code 1,20260923_134814,linux,Linux x86_64,extra
+DefMe,1,bms1,minsup,0.0001803630750645,254.9194,836.25,2915744,False,,20260923_135229,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,bms1,minsup,0.0001803630750645,1.9336,234.37,2915743,False,,20260923_135231,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,bms1,minsup,0.0001803630750645,1.7026,234.8,2915743,False,,20260923_135234,linux,Linux x86_64,extra
+Gr_growth,1,bms1,minsup,0.0001803630750645,4.4693,133.21,2915744,False,,20260923_135239,linux,Linux x86_64,extra
+Zart,1,bms1,minsup,0.0005662561659004,3600.1476,986.59,0,True,,20260923_144740,linux,Linux x86_64,extra
+Pascal,1,bms1,minsup,0.0001803630750645,3600.208,2797.2,1684158,True,,20260923_145240,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,bms2,minsup,0.0123819537619981,0.0234,7.77,51,False,,20260923_150940,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,bms2,minsup,0.0123819537619981,0.0238,8.02,51,False,,20260923_150941,linux,Linux x86_64,extra
+DefMe,1,bms2,minsup,0.0123819537619981,0.2618,167.14,52,False,,20260923_150941,linux,Linux x86_64,extra
+Gr_growth,1,bms2,minsup,0.0123819537619981,0.0268,15.98,52,False,,20260923_150941,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,bms2,minsup,0.0123819537619981,0.0232,7.84,51,False,,20260923_150941,linux,Linux x86_64,extra
+Pascal,1,bms2,minsup,0.0123819537619981,0.8173,105.71,51,False,,20260923_150943,linux,Linux x86_64,extra
+TalkyG_Diffset,1,bms2,minsup,0.0123819537619981,1.9027,7590.8,,False,java.lang.OutOfMemoryError: Java heap space,20260923_150943,linux,Linux x86_64,extra
+Zart,1,bms2,minsup,0.0123819537619981,1.1889,533.52,52,False,,20260923_150944,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,c20d10k,minsup,0.946075,0.0095,3.94,8,False,,20260923_150945,linux,Linux x86_64,extra
+Talky_G,1,bms2,minsup,0.0123819537619981,1.8906,7598.84,,False,java.lang.OutOfMemoryError: Java heap space,20260923_150945,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,c20d10k,minsup,0.946075,0.008,3.96,8,False,,20260923_150945,linux,Linux x86_64,extra
+DefMe,1,c20d10k,minsup,0.946075,0.1985,99.42,9,False,,20260923_150945,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,c20d10k,minsup,0.946075,0.0085,2.86,8,False,,20260923_150945,linux,Linux x86_64,extra
+Gr_growth,1,c20d10k,minsup,0.946075,0.0119,13.98,9,False,,20260923_150945,linux,Linux x86_64,extra
+Pascal,1,c20d10k,minsup,0.946075,0.2058,104.86,8,False,,20260923_150946,linux,Linux x86_64,extra
+TalkyG_Diffset,1,c20d10k,minsup,0.946075,0.2232,100.95,8,False,,20260923_150946,linux,Linux x86_64,extra
+Talky_G,1,c20d10k,minsup,0.946075,0.2204,102.55,8,False,,20260923_150946,linux,Linux x86_64,extra
+Zart,1,c20d10k,minsup,0.946075,0.2312,114.3,9,False,,20260923_150946,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,kosarak,minsup,0.0600247505990574,0.4092,80.05,24,False,,20260923_150947,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,kosarak,minsup,0.0600247505990574,0.4129,80.22,24,False,,20260923_150948,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,kosarak,minsup,0.0600247505990574,0.4153,80.16,24,False,,20260923_150949,linux,Linux x86_64,extra
+Gr_growth,1,kosarak,minsup,0.0600247505990574,0.2025,14.22,24,False,,20260923_150949,linux,Linux x86_64,extra
+DefMe,1,kosarak,minsup,0.0600247505990574,3.1222,7929.91,25,False,,20260923_150950,linux,Linux x86_64,extra
+Pascal,1,kosarak,minsup,0.0600247505990574,1.3387,478.87,24,False,,20260923_150951,linux,Linux x86_64,extra
+TalkyG_Diffset,1,kosarak,minsup,0.0600247505990574,3.199,7926.61,,False,java.lang.OutOfMemoryError: Java heap space,20260923_150953,linux,Linux x86_64,extra
+Talky_G,1,kosarak,minsup,0.0600247505990574,4.6089,8031.39,,False,java.lang.OutOfMemoryError: Java heap space,20260923_150956,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,c73d10k,minsup,0.979375,0.0215,6.09,6,False,,20260923_150956,linux,Linux x86_64,extra
+Zart,1,kosarak,minsup,0.0600247505990574,1.6252,1042.08,25,False,,20260923_150956,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,c73d10k,minsup,0.979375,0.0213,6.2,6,False,,20260923_150956,linux,Linux x86_64,extra
+DefMe,1,c73d10k,minsup,0.979375,0.2384,125.81,7,False,,20260923_150956,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,c73d10k,minsup,0.979375,0.0211,6.13,6,False,,20260923_150957,linux,Linux x86_64,extra
+Gr_growth,1,c73d10k,minsup,0.979375,0.019,14.0,6,False,,20260923_150957,linux,Linux x86_64,extra
+Pascal,1,c73d10k,minsup,0.979375,0.2348,123.27,6,False,,20260923_150957,linux,Linux x86_64,extra
+TalkyG_Diffset,1,c73d10k,minsup,0.979375,0.3079,127.82,6,False,,20260923_150957,linux,Linux x86_64,extra
+Talky_G,1,c73d10k,minsup,0.979375,0.3039,131.99,6,False,,20260923_150958,linux,Linux x86_64,extra
+Zart,1,c73d10k,minsup,0.979375,0.2826,136.3,7,False,,20260923_150958,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,bms2,minsup,0.0052862782536897,0.0332,7.76,345,False,,20260923_150958,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,bms2,minsup,0.0052862782536897,0.0324,9.39,345,False,,20260923_150958,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,bms2,minsup,0.0052862782536897,0.0258,9.6,345,False,,20260923_150959,linux,Linux x86_64,extra
+DefMe,1,bms2,minsup,0.0052862782536897,0.2897,213.02,346,False,,20260923_150959,linux,Linux x86_64,extra
+Gr_growth,1,bms2,minsup,0.0052862782536897,0.0315,17.25,346,False,,20260923_150959,linux,Linux x86_64,extra
+TalkyG_Diffset,1,bms2,minsup,0.0052862782536897,1.8227,7592.71,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151001,linux,Linux x86_64,extra
+Talky_G,1,bms2,minsup,0.0052862782536897,1.8376,7590.3,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151003,linux,Linux x86_64,extra
+Zart,1,bms2,minsup,0.0052862782536897,6.9626,723.93,346,False,,20260923_151010,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,c20d10k,minsup,0.337575,0.0123,4.27,659,False,,20260923_151011,linux,Linux x86_64,extra
+DefMe,1,c20d10k,minsup,0.337575,0.2172,118.01,660,False,,20260923_151011,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,c20d10k,minsup,0.337575,0.0088,4.6,659,False,,20260923_151011,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,c20d10k,minsup,0.337575,0.0082,4.99,659,False,,20260923_151012,linux,Linux x86_64,extra
+Gr_growth,1,c20d10k,minsup,0.337575,0.0106,14.0,660,False,,20260923_151012,linux,Linux x86_64,extra
+Pascal,1,c20d10k,minsup,0.337575,0.3948,96.91,659,False,,20260923_151013,linux,Linux x86_64,extra
+Pascal,1,bms2,minsup,0.0052862782536897,11.2322,107.05,345,False,,20260923_151013,linux,Linux x86_64,extra
+TalkyG_Diffset,1,c20d10k,minsup,0.337575,0.2312,103.01,659,False,,20260923_151013,linux,Linux x86_64,extra
+Talky_G,1,c20d10k,minsup,0.337575,0.2279,99.38,659,False,,20260923_151013,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,kosarak,minsup,0.0126772285392901,0.487,81.46,251,False,,20260923_151014,linux,Linux x86_64,extra
+Zart,1,c20d10k,minsup,0.337575,2.0404,400.73,660,False,,20260923_151016,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,kosarak,minsup,0.0126772285392901,0.4792,94.86,251,False,,20260923_151017,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,kosarak,minsup,0.0126772285392901,0.4528,80.54,251,False,,20260923_151017,linux,Linux x86_64,extra
+DefMe,1,kosarak,minsup,0.0126772285392901,3.1447,7910.47,252,False,,20260923_151018,linux,Linux x86_64,extra
+Gr_growth,1,kosarak,minsup,0.0126772285392901,0.2934,21.44,252,False,,20260923_151018,linux,Linux x86_64,extra
+TalkyG_Diffset,1,kosarak,minsup,0.0126772285392901,3.1047,7936.34,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151021,linux,Linux x86_64,extra
+Talky_G,1,kosarak,minsup,0.0126772285392901,4.0978,8030.91,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151026,linux,Linux x86_64,extra
+Pascal,1,kosarak,minsup,0.0126772285392901,15.5118,478.0,251,False,,20260923_151035,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,c73d10k,minsup,0.919975,0.0235,6.17,600,False,,20260923_151035,linux,Linux x86_64,extra
+DefMe,1,c73d10k,minsup,0.919975,0.2514,149.58,601,False,,20260923_151036,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,c73d10k,minsup,0.919975,0.0227,6.45,600,False,,20260923_151036,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,c73d10k,minsup,0.919975,0.0197,6.33,600,False,,20260923_151036,linux,Linux x86_64,extra
+Gr_growth,1,c73d10k,minsup,0.919975,0.0202,14.0,596,False,,20260923_151036,linux,Linux x86_64,extra
+Pascal,1,c73d10k,minsup,0.919975,0.6919,122.26,600,False,,20260923_151037,linux,Linux x86_64,extra
+TalkyG_Diffset,1,c73d10k,minsup,0.919975,0.3136,128.64,600,False,,20260923_151038,linux,Linux x86_64,extra
+Zart,1,kosarak,minsup,0.0126772285392901,11.5303,1719.52,252,False,,20260923_151038,linux,Linux x86_64,extra
+Talky_G,1,c73d10k,minsup,0.919975,0.3244,129.95,600,False,,20260923_151039,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,bms2,minsup,0.0012094901434616,0.0665,10.68,13848,False,,20260923_151039,linux,Linux x86_64,extra
+DefMe,1,bms2,minsup,0.0012094901434616,1.0722,658.89,13849,False,,20260923_151040,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,bms2,minsup,0.0012094901434616,0.0521,19.16,13848,False,,20260923_151040,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,bms2,minsup,0.0012094901434616,0.0471,21.25,13848,False,,20260923_151041,linux,Linux x86_64,extra
+Gr_growth,1,bms2,minsup,0.0012094901434616,0.0692,22.03,13849,False,,20260923_151041,linux,Linux x86_64,extra
+Zart,1,c73d10k,minsup,0.919975,3.8725,498.77,601,False,,20260923_151043,linux,Linux x86_64,extra
+TalkyG_Diffset,1,bms2,minsup,0.0012094901434616,1.7312,7592.77,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151045,linux,Linux x86_64,extra
+Talky_G,1,bms2,minsup,0.0012094901434616,1.781,7592.48,,False,java.lang.OutOfMemoryError: Java heap space,20260923_151047,linux,Linux x86_64,extra
+Zart,1,bms2,minsup,0.0012094901434616,367.5665,1304.33,13849,False,,20260923_151654,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,c20d10k,minsup,0.034375,0.0998,5.16,34690,False,,20260923_151655,linux,Linux x86_64,extra
+DefMe,1,c20d10k,minsup,0.034375,0.4194,475.98,34691,False,,20260923_151655,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,c20d10k,minsup,0.034375,0.0314,15.25,34690,False,,20260923_151656,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,c20d10k,minsup,0.034375,0.0226,15.39,34690,False,,20260923_151656,linux,Linux x86_64,extra
+Gr_growth,1,c20d10k,minsup,0.034375,0.0312,15.75,34691,False,,20260923_151656,linux,Linux x86_64,extra
+Pascal,1,c20d10k,minsup,0.034375,83.7692,328.51,34690,False,,20260923_151820,linux,Linux x86_64,extra
+TalkyG_Diffset,1,c20d10k,minsup,0.034375,0.2979,161.93,34764,False,,20260923_151821,linux,Linux x86_64,extra
+Talky_G,1,c20d10k,minsup,0.034375,0.2904,154.38,34764,False,,20260923_151821,linux,Linux x86_64,extra
+Pascal,1,bms2,minsup,0.0012094901434616,478.7567,152.21,13848,False,,20260923_151840,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,kosarak,minsup,0.0032752349487756,0.8339,81.53,4001,False,,20260923_151841,linux,Linux x86_64,extra
+DefMe,1,kosarak,minsup,0.0032752349487756,4.1924,7995.96,4002,False,,20260923_151846,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,kosarak,minsup,0.0032752349487756,0.652,122.38,4001,False,,20260923_151847,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,kosarak,minsup,0.0032752349487756,0.8103,135.97,4001,False,,20260923_151848,linux,Linux x86_64,extra
+Gr_growth,1,kosarak,minsup,0.0032752349487756,0.9058,64.31,4002,False,,20260923_151849,linux,Linux x86_64,extra
+Pascal,1,kosarak,minsup,0.0032752349487756,686.1005,492.09,4001,False,,20260923_153015,linux,Linux x86_64,extra
+TalkyG_Diffset,1,kosarak,minsup,0.0032752349487756,3.0924,7930.08,,False,java.lang.OutOfMemoryError: Java heap space,20260923_153018,linux,Linux x86_64,extra
+Talky_G,1,kosarak,minsup,0.0032752349487756,4.1195,8035.33,,False,java.lang.OutOfMemoryError: Java heap space,20260923_153023,linux,Linux x86_64,extra
+Zart,1,kosarak,minsup,0.0032752349487756,550.9333,1732.37,4002,False,,20260923_153934,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,c73d10k,minsup,0.446675,19.7934,63.33,1807687,False,,20260923_153955,linux,Linux x86_64,extra
+DefMe,1,c73d10k,minsup,0.446675,10.2334,768.36,1807688,False,,20260923_154006,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,c73d10k,minsup,0.446675,0.9261,166.02,1807687,False,,20260923_154007,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,c73d10k,minsup,0.446675,0.7738,154.75,1807687,False,,20260923_154008,linux,Linux x86_64,extra
+Gr_growth,1,c73d10k,minsup,0.446675,1.0554,94.47,1806480,False,,20260923_154010,linux,Linux x86_64,extra
+Zart,1,c20d10k,minsup,0.034375,3600.1483,963.83,0,True,,20260923_161822,linux,Linux x86_64,extra
+TalkyG_Diffset,1,c73d10k,minsup,0.446675,58.1968,559.34,1810556,False,,20260923_161920,linux,Linux x86_64,extra
+Talky_G,1,c73d10k,minsup,0.446675,58.2635,572.93,1810556,False,,20260923_162019,linux,Linux x86_64,extra
+Pascal,1,c73d10k,minsup,0.446675,3600.0643,917.91,684563,True,,20260923_164010,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,bms2,minsup,0.0004354164516461,0.162,20.79,100911,False,,20260923_164011,linux,Linux x86_64,extra
+DefMe,1,bms2,minsup,0.0004354164516461,4.5104,720.69,100912,False,,20260923_164016,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,bms2,minsup,0.0004354164516461,0.0992,28.01,100911,False,,20260923_164016,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,bms2,minsup,0.0004354164516461,0.0863,33.52,100911,False,,20260923_164017,linux,Linux x86_64,extra
+Gr_growth,1,bms2,minsup,0.0004354164516461,0.1416,27.17,100912,False,,20260923_164017,linux,Linux x86_64,extra
+Pascal,1,bms2,minsup,0.0004354164516461,2035.6853,399.44,100911,False,,20260923_171413,linux,Linux x86_64,extra
+TalkyG_Diffset,1,bms2,minsup,0.0004354164516461,1.7428,7586.2,,False,java.lang.OutOfMemoryError: Java heap space,20260923_171415,linux,Linux x86_64,extra
+Talky_G,1,bms2,minsup,0.0004354164516461,1.8746,7591.22,,False,java.lang.OutOfMemoryError: Java heap space,20260923_171417,linux,Linux x86_64,extra
+Zart,1,c73d10k,minsup,0.446675,3600.0692,1090.62,0,True,,20260923_172019,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,c20d10k,minsup,0.001275,0.3772,21.71,386701,False,,20260923_172020,linux,Linux x86_64,extra
+DefMe,1,c20d10k,minsup,0.001275,2.5427,788.95,386702,False,,20260923_172023,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,c20d10k,minsup,0.001275,0.1672,40.52,386701,False,,20260923_172023,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,c20d10k,minsup,0.001275,0.1358,42.89,386701,False,,20260923_172023,linux,Linux x86_64,extra
+Gr_growth,1,c20d10k,minsup,0.001275,0.1959,28.09,386702,False,,20260923_172024,linux,Linux x86_64,extra
+Zart,1,bms2,minsup,0.0004354164516461,3479.1071,1883.97,100912,False,,20260923_181217,linux,Linux x86_64,extra
+TalkyG_Diffset,1,c20d10k,minsup,0.001275,11.0026,412.87,394806,False,,20260923_181229,linux,Linux x86_64,extra
+Talky_G,1,c20d10k,minsup,0.001275,11.1731,404.51,394806,False,,20260923_181242,linux,Linux x86_64,extra
+Pascal,1,c20d10k,minsup,0.001275,3600.0509,643.75,253643,True,,20260923_182024,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,kosarak,minsup,0.0013246977425311,10.4093,93.32,202882,False,,20260923_182035,linux,Linux x86_64,extra
+DefMe,1,kosarak,minsup,0.0013246977425311,206.058,8031.17,202883,False,,20260923_182402,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,kosarak,minsup,0.0013246977425311,1.091,155.05,202882,False,,20260923_182403,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,kosarak,minsup,0.0013246977425311,1.7251,213.53,202882,False,,20260923_182405,linux,Linux x86_64,extra
+Gr_growth,1,kosarak,minsup,0.0013246977425311,2.6066,120.85,202882,False,,20260923_182408,linux,Linux x86_64,extra
+Zart,1,c20d10k,minsup,0.001275,3600.1552,1144.04,0,True,,20260923_191243,linux,Linux x86_64,extra
+TalkyG_Diffset,1,kosarak,minsup,0.0013246977425311,3.0123,7931.48,,False,java.lang.OutOfMemoryError: Java heap space,20260923_191246,linux,Linux x86_64,extra
+Talky_G,1,kosarak,minsup,0.0013246977425311,4.0715,8030.71,,False,java.lang.OutOfMemoryError: Java heap space,20260923_191250,linux,Linux x86_64,extra
+Pascal,1,kosarak,minsup,0.0013246977425311,3600.1365,505.62,677,True,,20260923_192409,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,c73d10k,minsup,0.124675,1800.7562,7835.69,0,False,non-zero exit code 1,20260923_195410,linux,Linux x86_64,extra
+Zart,1,kosarak,minsup,0.0013246977425311,3600.1806,1791.38,0,True,,20260923_201251,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,c73d10k,minsup,0.124675,244.8376,7834.46,82036521,False,non-zero exit code 1,20260923_201701,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,c73d10k,minsup,0.124675,237.0021,7834.51,82018035,False,non-zero exit code 1,20260923_202104,linux,Linux x86_64,extra
+Gr_growth,1,c73d10k,minsup,0.124675,351.593,7834.22,164364300,False,killed by signal 6,20260923_202722,linux,Linux x86_64,extra
+DefMe,1,c73d10k,minsup,0.124675,3600.1501,951.8,426915793,True,,20260923_205447,linux,Linux x86_64,extra
+Pascal,1,c73d10k,minsup,0.124675,3600.1687,1245.84,745089,True,,20260923_212722,linux,Linux x86_64,extra
+TalkyG_Diffset,1,c73d10k,minsup,0.124675,3600.1636,1593.89,9464304,True,,20260923_215448,linux,Linux x86_64,extra
+Talky_G,1,c73d10k,minsup,0.124675,3600.1142,1627.34,9790483,True,,20260923_222723,linux,Linux x86_64,extra
+Zart,1,c73d10k,minsup,0.124675,3600.1641,1182.39,0,True,,20260923_225448,linux,Linux x86_64,extra
+TalkyG_Diffset,1,bms1,minsup,0.0001803630750645,3600.3483,7970.2,1652741,True,,20260923_232724,linux,Linux x86_64,extra
+Talky_G,1,bms1,minsup,0.0001803630750645,3600.3175,7981.06,1663800,True,,20260923_235449,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,bms2,minsup,0.0001515894313138,0.5823,58.2,524757,False,,20260923_235450,linux,Linux x86_64,extra
+DefMe,1,bms2,minsup,0.0001515894313138,21.795,833.14,524758,False,,20260923_235514,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,bms2,minsup,0.0001515894313138,0.3158,52.14,524757,False,,20260923_235515,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,bms2,minsup,0.0001515894313138,0.2579,70.99,524757,False,,20260923_235516,linux,Linux x86_64,extra
+Gr_growth,1,bms2,minsup,0.0001515894313138,0.3869,41.84,524758,False,,20260923_235516,linux,Linux x86_64,extra
+Zart,1,bms1,minsup,0.0001803630750645,3600.2197,2594.45,0,True,,20260924_002725,linux,Linux x86_64,extra
+TalkyG_Diffset,1,bms2,minsup,0.0001515894313138,1.7157,7588.92,,False,java.lang.OutOfMemoryError: Java heap space,20260924_002726,linux,Linux x86_64,extra
+Talky_G,1,bms2,minsup,0.0001515894313138,1.8217,7591.55,,False,java.lang.OutOfMemoryError: Java heap space,20260924_002728,linux,Linux x86_64,extra
+Pascal,1,bms2,minsup,0.0001515894313138,3600.1379,511.46,2458,True,,20260924_005517,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,kosarak,minsup,0.0006425150408652,1701.4612,7832.91,0,False,non-zero exit code 1,20260924_012338,linux,Linux x86_64,extra
+Zart,1,bms2,minsup,0.0001515894313138,3600.2143,2305.97,0,True,,20260924_012729,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,kosarak,minsup,0.0006425150408652,317.6957,7831.64,80375420,False,non-zero exit code 1,20260924_013252,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,kosarak,minsup,0.0006425150408652,293.4879,7830.41,77733661,False,non-zero exit code 1,20260924_013752,linux,Linux x86_64,extra
+Gr_growth,1,kosarak,minsup,0.0006425150408652,497.3721,7833.66,159581220,False,killed by signal 6,20260924_014639,linux,Linux x86_64,extra
+DefMe,1,kosarak,minsup,0.0006425150408652,3600.3263,8001.69,189920,True,,20260924_022339,linux,Linux x86_64,extra
+TalkyG_Diffset,1,kosarak,minsup,0.0006425150408652,2.9669,7927.38,,False,java.lang.OutOfMemoryError: Java heap space,20260924_022343,linux,Linux x86_64,extra
+Talky_G,1,kosarak,minsup,0.0006425150408652,4.1167,8033.11,,False,java.lang.OutOfMemoryError: Java heap space,20260924_022347,linux,Linux x86_64,extra
+Pascal,1,kosarak,minsup,0.0006425150408652,3600.148,669.32,1579,True,,20260924_024640,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,c73d10k,minsup,0.015375,507.3927,7835.66,0,False,non-zero exit code 1,20260924_025507,linux,Linux x86_64,extra
+Zart,1,kosarak,minsup,0.0006425150408652,3600.1334,2204.73,0,True,,20260924_032347,linux,Linux x86_64,extra
+Eclat_Gen_Borgelt,1,c73d10k,minsup,0.015375,243.4157,7833.36,81504774,False,non-zero exit code 1,20260924_032756,linux,Linux x86_64,extra
+FPgrowth_Gen_Borgelt,1,c73d10k,minsup,0.015375,234.12,7834.09,81472379,False,non-zero exit code 1,20260924_033156,linux,Linux x86_64,extra
+Gr_growth,1,c73d10k,minsup,0.015375,428.3709,7834.13,161793128,False,killed by signal 6,20260924_033928,linux,Linux x86_64,extra
+DefMe,1,c73d10k,minsup,0.015375,3600.0789,939.6,371037846,True,,20260924_035539,linux,Linux x86_64,extra
+Pascal,1,c73d10k,minsup,0.015375,3600.1802,1529.62,6446509,True,,20260924_043930,linux,Linux x86_64,extra
+TalkyG_Diffset,1,c73d10k,minsup,0.015375,3600.1538,787.26,4250488,True,,20260924_045539,linux,Linux x86_64,extra
+Talky_G,1,c73d10k,minsup,0.015375,3600.1539,735.38,4091388,True,,20260924_053930,linux,Linux x86_64,extra
+Zart,1,c73d10k,minsup,0.015375,3600.2109,1994.02,0,True,,20260924_055540,linux,Linux x86_64,extra
+Apriori_Gen_Borgelt,1,chicago,minsup,0.0313061894768789,0.5734,133.04,22,False,,20260924_125504,linux,Linux x86_64,extra2
+DefMe,1,chicago,minsup,0.0313061894768789,0.6457,610.12,23,False,,20260924_125504,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,chicago,minsup,0.0313061894768789,0.5361,133.14,22,False,,20260924_125505,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,chicago,minsup,0.0313061894768789,0.5306,133.04,22,False,,20260924_125505,linux,Linux x86_64,extra2
+Gr_growth,1,chicago,minsup,0.0313061894768789,0.2006,14.05,23,False,,20260924_125505,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,chicago,minsup,0.0313061894768789,0.7181,609.41,23,False,,20260924_125506,linux,Linux x86_64,extra2
+Talky_G,1,chicago,minsup,0.0313061894768789,0.6972,600.8,23,False,,20260924_125507,linux,Linux x86_64,extra2
+Pascal,1,chicago,minsup,0.0313061894768789,2.4853,398.73,22,False,,20260924_125507,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,kddcup99,minsup,0.76716775,0.4103,109.6,34,False,,20260924_125508,linux,Linux x86_64,extra2
+DefMe,1,kddcup99,minsup,0.76716775,0.9647,773.62,35,False,,20260924_125509,linux,Linux x86_64,extra2
+Zart,1,chicago,minsup,0.0313061894768789,2.2804,906.6,23,False,,20260924_125509,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,kddcup99,minsup,0.76716775,0.4224,109.67,34,False,,20260924_125510,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,kddcup99,minsup,0.76716775,0.3795,109.76,34,False,,20260924_125510,linux,Linux x86_64,extra2
+Gr_growth,1,kddcup99,minsup,0.76716775,0.3125,13.95,35,False,,20260924_125510,linux,Linux x86_64,extra2
+Pascal,1,kddcup99,minsup,0.76716775,1.3842,592.58,34,False,,20260924_125512,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,kddcup99,minsup,0.76716775,1.3352,689.86,35,False,,20260924_125512,linux,Linux x86_64,extra2
+Talky_G,1,kddcup99,minsup,0.76716775,1.4308,806.24,35,False,,20260924_125513,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,onlineretail,minsup,0.017636528480632,0.1338,36.01,54,False,,20260924_125514,linux,Linux x86_64,extra2
+Zart,1,kddcup99,minsup,0.76716775,2.0421,1173.86,35,False,,20260924_125514,linux,Linux x86_64,extra2
+DefMe,1,onlineretail,minsup,0.017636528480632,0.5899,628.89,55,False,,20260924_125514,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,onlineretail,minsup,0.017636528480632,0.1429,36.12,54,False,,20260924_125515,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,onlineretail,minsup,0.017636528480632,0.1452,36.0,54,False,,20260924_125515,linux,Linux x86_64,extra2
+Gr_growth,1,onlineretail,minsup,0.017636528480632,0.1011,14.04,55,False,,20260924_125515,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,onlineretail,minsup,0.017636528480632,0.5796,525.02,55,False,,20260924_125516,linux,Linux x86_64,extra2
+Talky_G,1,onlineretail,minsup,0.017636528480632,0.6118,671.02,55,False,,20260924_125517,linux,Linux x86_64,extra2
+Zart,1,onlineretail,minsup,0.017636528480632,4.6665,808.08,55,False,,20260924_125522,linux,Linux x86_64,extra2
+Pascal,1,onlineretail,minsup,0.017636528480632,7.1688,284.84,54,False,,20260924_125522,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,pamap,minsup,0.87309175,0.6862,139.85,21,False,,20260924_125523,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,pamap,minsup,0.87309175,0.6918,139.93,21,False,,20260924_125523,linux,Linux x86_64,extra2
+DefMe,1,pamap,minsup,0.87309175,1.3447,1165.31,22,False,,20260924_125524,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,pamap,minsup,0.87309175,0.6506,139.98,21,False,,20260924_125524,linux,Linux x86_64,extra2
+Gr_growth,1,pamap,minsup,0.87309175,0.4039,14.0,22,False,,20260924_125525,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,pamap,minsup,0.87309175,1.8575,1212.67,22,False,,20260924_125527,linux,Linux x86_64,extra2
+Pascal,1,pamap,minsup,0.87309175,2.493,682.41,21,False,,20260924_125527,linux,Linux x86_64,extra2
+Talky_G,1,pamap,minsup,0.87309175,2.0549,1252.39,22,False,,20260924_125529,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,recordlink,minsup,0.7772354251860716,0.1783,46.63,33,False,,20260924_125529,linux,Linux x86_64,extra2
+DefMe,1,recordlink,minsup,0.7772354251860716,0.4789,278.88,34,False,,20260924_125530,linux,Linux x86_64,extra2
+Zart,1,pamap,minsup,0.87309175,2.8441,1879.73,22,False,,20260924_125530,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,recordlink,minsup,0.7772354251860716,0.1804,46.71,33,False,,20260924_125530,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,recordlink,minsup,0.7772354251860716,0.1604,46.75,33,False,,20260924_125531,linux,Linux x86_64,extra2
+Gr_growth,1,recordlink,minsup,0.7772354251860716,0.0999,13.97,34,False,,20260924_125531,linux,Linux x86_64,extra2
+Pascal,1,recordlink,minsup,0.7772354251860716,0.7135,339.2,33,False,,20260924_125532,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,recordlink,minsup,0.7772354251860716,0.5669,271.16,34,False,,20260924_125532,linux,Linux x86_64,extra2
+Talky_G,1,recordlink,minsup,0.7772354251860716,0.6806,316.26,34,False,,20260924_125532,linux,Linux x86_64,extra2
+Zart,1,recordlink,minsup,0.7772354251860716,1.046,582.79,34,False,,20260924_125533,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,chicago,minsup,0.0014940977925552,0.5623,133.05,378,False,,20260924_125533,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,chicago,minsup,0.0014940977925552,0.5576,133.19,378,False,,20260924_125534,linux,Linux x86_64,extra2
+DefMe,1,chicago,minsup,0.0014940977925552,0.9103,1051.68,379,False,,20260924_125534,linux,Linux x86_64,extra2
+Gr_growth,1,chicago,minsup,0.0014940977925552,0.1865,14.86,379,False,,20260924_125534,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,chicago,minsup,0.0014940977925552,0.5575,133.14,378,False,,20260924_125535,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,chicago,minsup,0.0014940977925552,0.8067,810.47,379,False,,20260924_125536,linux,Linux x86_64,extra2
+Talky_G,1,chicago,minsup,0.0014940977925552,0.7825,762.86,379,False,,20260924_125537,linux,Linux x86_64,extra2
+Pascal,1,chicago,minsup,0.0014940977925552,16.6443,393.04,378,False,,20260924_125551,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,kddcup99,minsup,0.45114675,0.4542,109.64,3394,False,,20260924_125552,linux,Linux x86_64,extra2
+DefMe,1,kddcup99,minsup,0.45114675,1.5365,1406.8,3395,False,,20260924_125554,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,kddcup99,minsup,0.45114675,0.4993,109.76,3394,False,,20260924_125555,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,kddcup99,minsup,0.45114675,0.4676,109.66,3394,False,,20260924_125555,linux,Linux x86_64,extra2
+Gr_growth,1,kddcup99,minsup,0.45114675,0.2815,13.9,3395,False,,20260924_125556,linux,Linux x86_64,extra2
+Zart,1,chicago,minsup,0.0014940977925552,25.105,1304.64,379,False,,20260924_125602,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,kddcup99,minsup,0.45114675,1.4233,783.72,3687,False,,20260924_125604,linux,Linux x86_64,extra2
+Talky_G,1,kddcup99,minsup,0.45114675,1.3662,805.22,3687,False,,20260924_125605,linux,Linux x86_64,extra2
+Pascal,1,kddcup99,minsup,0.45114675,40.6292,608.15,3394,False,,20260924_125637,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,onlineretail,minsup,0.0058890194373259,0.141,36.0,270,False,,20260924_125637,linux,Linux x86_64,extra2
+DefMe,1,onlineretail,minsup,0.0058890194373259,0.7731,1117.08,271,False,,20260924_125638,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,onlineretail,minsup,0.0058890194373259,0.15,36.08,270,False,,20260924_125638,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,onlineretail,minsup,0.0058890194373259,0.1502,36.12,270,False,,20260924_125639,linux,Linux x86_64,extra2
+Gr_growth,1,onlineretail,minsup,0.0058890194373259,0.1492,14.12,271,False,,20260924_125639,linux,Linux x86_64,extra2
+Pascal,1,onlineretail,minsup,0.0058890194373259,92.667,283.02,270,False,,20260924_125812,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,onlineretail,minsup,0.0058890194373259,0.5556,519.51,271,False,,20260924_125813,linux,Linux x86_64,extra2
+Talky_G,1,onlineretail,minsup,0.0058890194373259,0.6172,686.21,271,False,,20260924_125814,linux,Linux x86_64,extra2
+Zart,1,onlineretail,minsup,0.0058890194373259,87.3878,849.51,271,False,,20260924_125941,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,pamap,minsup,0.63655675,0.754,139.86,1673,False,,20260924_125942,linux,Linux x86_64,extra2
+DefMe,1,pamap,minsup,0.63655675,1.5887,1739.82,1674,False,,20260924_125944,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,pamap,minsup,0.63655675,0.7684,139.94,1673,False,,20260924_125945,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,pamap,minsup,0.63655675,0.7153,139.95,1673,False,,20260924_125946,linux,Linux x86_64,extra2
+Gr_growth,1,pamap,minsup,0.63655675,0.4392,14.35,1674,False,,20260924_125947,linux,Linux x86_64,extra2
+Pascal,1,pamap,minsup,0.63655675,54.9236,655.23,1673,False,,20260924_130042,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,pamap,minsup,0.63655675,2.0118,1797.96,1674,False,,20260924_130044,linux,Linux x86_64,extra2
+Talky_G,1,pamap,minsup,0.63655675,2.0661,1465.4,1674,False,,20260924_130046,linux,Linux x86_64,extra2
+Zart,1,kddcup99,minsup,0.45114675,354.6493,1421.39,3395,False,,20260924_130200,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,recordlink,minsup,0.0439401265930671,0.2227,50.29,2550,False,,20260924_130201,linux,Linux x86_64,extra2
+DefMe,1,recordlink,minsup,0.0439401265930671,0.7757,827.79,2551,False,,20260924_130202,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,recordlink,minsup,0.0439401265930671,0.2371,52.14,2550,False,,20260924_130202,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,recordlink,minsup,0.0439401265930671,0.2224,52.26,2550,False,,20260924_130203,linux,Linux x86_64,extra2
+Gr_growth,1,recordlink,minsup,0.0439401265930671,0.1065,14.01,2551,False,,20260924_130203,linux,Linux x86_64,extra2
+Zart,1,pamap,minsup,0.63655675,90.7496,1815.95,1674,False,,20260924_130217,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,recordlink,minsup,0.0439401265930671,0.6844,406.65,2551,False,,20260924_130218,linux,Linux x86_64,extra2
+Talky_G,1,recordlink,minsup,0.0439401265930671,0.6705,305.22,2551,False,,20260924_130219,linux,Linux x86_64,extra2
+Pascal,1,recordlink,minsup,0.0439401265930671,19.602,319.17,2550,False,,20260924_130223,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,chicago,minsup,9.29644154754388e-06,0.5379,133.02,18503,False,,20260924_130224,linux,Linux x86_64,extra2
+DefMe,1,chicago,minsup,9.29644154754388e-06,7.0549,1822.45,18504,False,,20260924_130231,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,chicago,minsup,9.29644154754388e-06,0.5375,133.07,18503,False,,20260924_130232,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,chicago,minsup,9.29644154754388e-06,0.5184,133.1,18503,False,,20260924_130232,linux,Linux x86_64,extra2
+Gr_growth,1,chicago,minsup,9.29644154754388e-06,0.2069,15.54,18504,False,,20260924_130233,linux,Linux x86_64,extra2
+Zart,1,recordlink,minsup,0.0439401265930671,98.4032,784.78,2551,False,,20260924_130358,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,chicago,minsup,9.29644154754388e-06,3.398,1894.39,18506,False,,20260924_130401,linux,Linux x86_64,extra2
+Talky_G,1,chicago,minsup,9.29644154754388e-06,2.2952,1930.95,18506,False,,20260924_130404,linux,Linux x86_64,extra2
+Pascal,1,chicago,minsup,9.29644154754388e-06,229.861,396.95,18503,False,,20260924_130623,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,kddcup99,minsup,0.00029375,0.5174,113.39,69925,False,,20260924_130624,linux,Linux x86_64,extra2
+DefMe,1,kddcup99,minsup,0.00029375,16.3038,1307.5,69926,False,,20260924_130640,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,kddcup99,minsup,0.00029375,0.553,109.64,69925,False,,20260924_130641,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,kddcup99,minsup,0.00029375,0.5021,109.82,69925,False,,20260924_130642,linux,Linux x86_64,extra2
+Gr_growth,1,kddcup99,minsup,0.00029375,0.3426,14.12,69926,False,,20260924_130642,linux,Linux x86_64,extra2
+Zart,1,chicago,minsup,9.29644154754388e-06,1057.9855,1695.39,18504,False,,20260924_132142,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,kddcup99,minsup,0.00029375,4.2389,1517.89,76770,False,,20260924_132147,linux,Linux x86_64,extra2
+Talky_G,1,kddcup99,minsup,0.00029375,3.3176,1465.41,76770,False,,20260924_132150,linux,Linux x86_64,extra2
+Pascal,1,kddcup99,minsup,0.00029375,3588.2038,767.3,69925,False,,20260924_140631,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,onlineretail,minsup,0.0015334301653236,0.1531,35.94,1510,False,,20260924_140631,linux,Linux x86_64,extra2
+DefMe,1,onlineretail,minsup,0.0015334301653236,2.1924,2060.48,1511,False,,20260924_140634,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,onlineretail,minsup,0.0015334301653236,0.1481,36.08,1510,False,,20260924_140634,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,onlineretail,minsup,0.0015334301653236,0.1437,36.13,1510,False,,20260924_140634,linux,Linux x86_64,extra2
+Gr_growth,1,onlineretail,minsup,0.0015334301653236,0.1445,14.29,1511,False,,20260924_140635,linux,Linux x86_64,extra2
+Pascal,1,onlineretail,minsup,0.0015334301653236,834.7978,289.1,1510,False,,20260924_142030,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,onlineretail,minsup,0.0015334301653236,0.6137,601.33,1527,False,,20260924_142031,linux,Linux x86_64,extra2
+Talky_G,1,onlineretail,minsup,0.0015334301653236,0.7463,1028.43,1527,False,,20260924_142032,linux,Linux x86_64,extra2
+Zart,1,kddcup99,minsup,0.00029375,3600.0609,926.16,0,True,,20260924_142150,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,pamap,minsup,0.04525675,147.862,826.47,20842078,False,,20260924_142420,linux,Linux x86_64,extra2
+Zart,1,onlineretail,minsup,0.0015334301653236,800.5185,882.88,1511,False,,20260924_143352,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,pamap,minsup,0.04525675,28.4018,1947.34,20842078,False,,20260924_143422,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,pamap,minsup,0.04525675,23.7877,1957.13,20842078,False,,20260924_143448,linux,Linux x86_64,extra2
+Gr_growth,1,pamap,minsup,0.04525675,21.4911,1034.2,20842079,False,,20260924_143511,linux,Linux x86_64,extra2
+DefMe,1,pamap,minsup,0.04525675,3600.0961,1802.48,18515363,True,,20260924_152421,linux,Linux x86_64,extra2
+Pascal,1,pamap,minsup,0.04525675,3600.1394,690.78,251742,True,,20260924_153511,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,pamap,minsup,0.04525675,3600.1739,2934.83,14558305,True,,20260924_162423,linux,Linux x86_64,extra2
+Talky_G,1,pamap,minsup,0.04525675,3600.2053,3007.59,15116610,True,,20260924_163513,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,recordlink,minsup,0.0001021893747401,0.208,50.64,8989,False,,20260924_163513,linux,Linux x86_64,extra2
+DefMe,1,recordlink,minsup,0.0001021893747401,1.4279,805.29,8990,False,,20260924_163515,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,recordlink,minsup,0.0001021893747401,0.223,57.23,8989,False,,20260924_163515,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,recordlink,minsup,0.0001021893747401,0.2202,56.55,8989,False,,20260924_163516,linux,Linux x86_64,extra2
+Gr_growth,1,recordlink,minsup,0.0001021893747401,0.1205,14.31,8990,False,,20260924_163516,linux,Linux x86_64,extra2
+Pascal,1,recordlink,minsup,0.0001021893747401,56.3277,349.46,8989,False,,20260924_163613,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,recordlink,minsup,0.0001021893747401,0.8799,784.55,9186,False,,20260924_163614,linux,Linux x86_64,extra2
+Talky_G,1,recordlink,minsup,0.0001021893747401,0.8454,823.69,9186,False,,20260924_163615,linux,Linux x86_64,extra2
+Zart,1,recordlink,minsup,0.0001021893747401,608.0888,830.86,8990,False,,20260924_164623,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,kddcup99,minsup,2.775e-05,0.5342,113.46,87682,False,,20260924_164624,linux,Linux x86_64,extra2
+DefMe,1,kddcup99,minsup,2.775e-05,22.6675,1472.67,87683,False,,20260924_164647,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,kddcup99,minsup,2.775e-05,0.5512,109.73,87682,False,,20260924_164648,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,kddcup99,minsup,2.775e-05,0.5121,109.73,87682,False,,20260924_164648,linux,Linux x86_64,extra2
+Gr_growth,1,kddcup99,minsup,2.775e-05,0.3537,14.12,87683,False,,20260924_164649,linux,Linux x86_64,extra2
+Zart,1,pamap,minsup,0.04525675,3600.1844,1821.8,0,True,,20260924_172423,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,kddcup99,minsup,2.775e-05,5.1374,1561.99,96853,False,,20260924_172429,linux,Linux x86_64,extra2
+Talky_G,1,kddcup99,minsup,2.775e-05,4.014,1564.35,96853,False,,20260924_172433,linux,Linux x86_64,extra2
+Pascal,1,kddcup99,minsup,2.775e-05,3600.088,776.91,79165,True,,20260924_174649,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,onlineretail,minsup,0.0004010509663154,0.1482,36.04,5987,False,,20260924_174650,linux,Linux x86_64,extra2
+DefMe,1,onlineretail,minsup,0.0004010509663154,8.2196,2150.64,5988,False,,20260924_174658,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,onlineretail,minsup,0.0004010509663154,0.1469,36.11,5987,False,,20260924_174659,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,onlineretail,minsup,0.0004010509663154,0.1427,36.16,5987,False,,20260924_174659,linux,Linux x86_64,extra2
+Gr_growth,1,onlineretail,minsup,0.0004010509663154,0.1572,14.48,5988,False,,20260924_174659,linux,Linux x86_64,extra2
+Zart,1,kddcup99,minsup,2.775e-05,3600.1521,892.87,0,True,,20260924_182433,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,onlineretail,minsup,0.0004010509663154,1.0926,1651.94,6116,False,,20260924_182435,linux,Linux x86_64,extra2
+Talky_G,1,onlineretail,minsup,0.0004010509663154,1.0922,1756.58,6116,False,,20260924_182436,linux,Linux x86_64,extra2
+Pascal,1,onlineretail,minsup,0.0004010509663154,3600.1194,287.49,686,True,,20260924_184700,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,pamap,minsup,0.00018775,248.7193,7833.06,0,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/apriori: not enough memory,20260924_185109,linux,Linux x86_64,extra2
+Zart,1,onlineretail,minsup,0.0004010509663154,3069.9668,1757.5,5988,False,,20260924_191546,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,pamap,minsup,0.00018775,286.6328,7832.04,81536254,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/eclat: not enough memory,20260924_192038,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,pamap,minsup,0.00018775,272.8343,7830.52,81496188,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/fpgrowth: not enough memory,20260924_192516,linux,Linux x86_64,extra2
+Gr_growth,1,pamap,minsup,0.00018775,306.3922,7834.09,163893921,False,killed by signal 6: what():  std::bad_alloc,20260924_193034,linux,Linux x86_64,extra2
+DefMe,1,pamap,minsup,0.00018775,3600.1465,1983.21,14839070,True,,20260924_195110,linux,Linux x86_64,extra2
+Pascal,1,pamap,minsup,0.00018775,3600.0715,696.11,42344,True,,20260924_203034,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,pamap,minsup,0.00018775,3600.2017,2336.16,11129983,True,,20260924_205111,linux,Linux x86_64,extra2
+Talky_G,1,pamap,minsup,0.00018775,3600.1952,2363.75,11398930,True,,20260924_213035,linux,Linux x86_64,extra2
+Apriori_Gen_Borgelt,1,onlineretail,minsup,4.024386859220471e-05,0.163,36.03,14687,False,,20260924_213035,linux,Linux x86_64,extra2
+DefMe,1,onlineretail,minsup,4.024386859220471e-05,27.3897,2247.18,14688,False,,20260924_213103,linux,Linux x86_64,extra2
+Eclat_Gen_Borgelt,1,onlineretail,minsup,4.024386859220471e-05,0.1527,37.81,14687,False,,20260924_213103,linux,Linux x86_64,extra2
+FPgrowth_Gen_Borgelt,1,onlineretail,minsup,4.024386859220471e-05,0.1468,37.69,14687,False,,20260924_213104,linux,Linux x86_64,extra2
+Gr_growth,1,onlineretail,minsup,4.024386859220471e-05,0.1566,14.84,14688,False,,20260924_213104,linux,Linux x86_64,extra2
+Zart,1,pamap,minsup,0.00018775,3600.2,2039.44,0,True,,20260924_215112,linux,Linux x86_64,extra2
+TalkyG_Diffset,1,onlineretail,minsup,4.024386859220471e-05,1.8719,2079.16,15221,False,,20260924_215114,linux,Linux x86_64,extra2
+Talky_G,1,onlineretail,minsup,4.024386859220471e-05,1.6833,2081.04,15221,False,,20260924_215116,linux,Linux x86_64,extra2
+Pascal,1,onlineretail,minsup,4.024386859220471e-05,3600.0886,299.98,1614,True,,20260924_223104,linux,Linux x86_64,extra2
+Zart,1,onlineretail,minsup,4.024386859220471e-05,3600.195,2325.71,0,True,,20260924_225116,linux,Linux x86_64,extra2
