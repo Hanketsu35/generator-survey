@@ -36,6 +36,15 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
   published experiments keep reading `results/summary.csv` and reproduce.
   The engine also says when a request lies outside the data it learned from.
 
+- **Memory requests are now answered partly by measurement.** On a memory
+  request for a transactional file, the four native miners are run briefly on
+  samples of the user's own file and their cost is extrapolated to full size
+  (`probe.py`). Leave-one-dataset-out over 17 datasets: memory regret 1.073x
+  against the model's 1.282x (pre-registered P1 passed, with an extrapolation
+  form amended after one smoke-test instance; see `literature/NOTES.md` §10).
+  On runtime the probe's own time dominates millisecond-scale runs (6.29x vs
+  1.19x, P3 failed), so runtime stays with the model.
+
 Sections below that report numbers on `results/summary.csv` are kept as they
 were measured; where re-measurement changes a conclusion, the section says so.
 
