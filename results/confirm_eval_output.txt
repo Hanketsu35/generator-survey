@@ -1,0 +1,50 @@
+==============================================================================
+VARIANT: affine
+==============================================================================
+memory: 14 instances, 5 datasets | engine 1.000x  probe 1.023x  fixed 1.099x
+   chainstore_fim  1 | engine 1.000 probe 1.000 | picks engine ['Gr_growth'], probe ['Gr_growth']
+   fruithut        4 | engine 1.000 probe 1.080 | picks engine ['Apriori_Gen_Borgelt'], probe ['Apriori_Gen_Borgelt', 'Gr_growth']
+   instacart       3 | engine 1.000 probe 1.002 | picks engine ['Apriori_Gen_Borgelt'], probe ['Apriori_Gen_Borgelt', 'Gr_growth']
+   skin            2 | engine 1.000 probe 1.000 | picks engine ['Gr_growth'], probe ['Gr_growth']
+   t20i6d100k      4 | engine 1.000 probe 1.000 | picks engine ['Apriori_Gen_Borgelt'], probe ['Apriori_Gen_Borgelt']
+Q1 non-inferiority: probe 1.023 <= 1.05 x engine 1.000 -> PASS
+Q2 superiority: ratio 1.022 [5-95% 1.000..1.053], P(better) 0.000 -> FAIL
+Q3 accuracy (median |log10 error| memory, sampled instances):
+   Apriori_Gen_Borgelt    probe 0.021  model 0.178  (n=13)
+   Eclat_Gen_Borgelt      probe 0.060  model 0.181  (n=13)
+   FPgrowth_Gen_Borgelt   probe 0.052  model 0.173  (n=13)
+   Gr_growth              probe 0.011  model 0.247  (n=13)
+   -> PASS
+Q4 budget answers correct (share):
+     25 MB  probe 0.875  model 0.739
+     50 MB  probe 0.989  model 0.693
+    100 MB  probe 0.966  model 0.875
+    200 MB  probe 0.989  model 0.943
+    500 MB  probe 1.000  model 1.000
+   overall probe 0.964  model 0.850 -> PASS
+
+==============================================================================
+VARIANT: loglog
+==============================================================================
+memory: 14 instances, 5 datasets | engine 1.000x  probe 1.018x  fixed 1.099x
+   chainstore_fim  1 | engine 1.000 probe 1.000 | picks engine ['Gr_growth'], probe ['Gr_growth']
+   fruithut        4 | engine 1.000 probe 1.064 | picks engine ['Apriori_Gen_Borgelt'], probe ['Apriori_Gen_Borgelt', 'FPgrowth_Gen_Borgelt']
+   instacart       3 | engine 1.000 probe 1.000 | picks engine ['Apriori_Gen_Borgelt'], probe ['Apriori_Gen_Borgelt']
+   skin            2 | engine 1.000 probe 1.000 | picks engine ['Gr_growth'], probe ['Gr_growth']
+   t20i6d100k      4 | engine 1.000 probe 1.000 | picks engine ['Apriori_Gen_Borgelt'], probe ['Apriori_Gen_Borgelt']
+Q1 non-inferiority: probe 1.018 <= 1.05 x engine 1.000 -> PASS
+Q2 superiority: ratio 1.018 [5-95% 1.000..1.042], P(better) 0.000 -> FAIL
+Q3 accuracy (median |log10 error| memory, sampled instances):
+   Apriori_Gen_Borgelt    probe 0.161  model 0.178  (n=13)
+   Eclat_Gen_Borgelt      probe 0.097  model 0.181  (n=13)
+   FPgrowth_Gen_Borgelt   probe 0.074  model 0.173  (n=13)
+   Gr_growth              probe 0.093  model 0.247  (n=13)
+   -> PASS
+Q4 budget answers correct (share):
+     25 MB  probe 0.841  model 0.739
+     50 MB  probe 0.920  model 0.693
+    100 MB  probe 0.955  model 0.875
+    200 MB  probe 1.000  model 0.943
+    500 MB  probe 1.000  model 1.000
+   overall probe 0.943  model 0.850 -> PASS
+
