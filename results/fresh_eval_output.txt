@@ -1,0 +1,48 @@
+  bike_set       0.00145887 direct  best Apriori_Gen_Borgelt       8.4 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  bike_set       0.00696224 direct  best Apriori_Gen_Borgelt       5.4 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  bike_set       0.0338623  direct  best Apriori_Gen_Borgelt       5.2 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  bike_set       0.0555437  direct  best Apriori_Gen_Borgelt       4.9 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  ecommerce_fim  0.000717863 direct  best Eclat_Gen_Borgelt        17.5 MB | A Apriori_Gen_Borgelt   1.12 | B Eclat_Gen_Borgelt     1.00 | C Eclat_Gen_Borgelt     1.00 | failed: Gr_growth,Zart
+  ecommerce_fim  0.00111853 direct  best Apriori_Gen_Borgelt      14.2 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: Gr_growth,Zart
+  ecommerce_fim  0.00278798 direct  best Apriori_Gen_Borgelt       8.1 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: Gr_growth
+  ecommerce_fim  0.00799666 direct  best Apriori_Gen_Borgelt       5.3 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: Gr_growth
+  ecommerce_fim  0.0150751  direct  best Apriori_Gen_Borgelt       4.7 MB | A Eclat_Gen_Borgelt     1.20 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: Gr_growth
+  fifa_set       0.341161   direct  best Apriori_Gen_Borgelt       6.8 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  fifa_set       0.359694   direct  best FPgrowth_Gen_Borgelt      6.5 MB | A Apriori_Gen_Borgelt   1.02 | B FPgrowth_Gen_Borgelt  1.00 | C FPgrowth_Gen_Borgelt  1.00 | failed: -
+  microblog_set  0.0320513  direct  best Gr_growth               211.4 MB | A Apriori_Gen_Borgelt   1.85 | B FGC_Stream           10.00 | C Gr_growth             1.00 | failed: FGC_Stream,Pascal,Zart
+  microblog_set  0.0623543  direct  best Apriori_Gen_Borgelt      22.7 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: Zart
+  microblog_set  0.127622   direct  best Apriori_Gen_Borgelt       8.4 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  microblog_set  0.295455   direct  best FPgrowth_Gen_Borgelt      8.3 MB | A Apriori_Gen_Borgelt   1.00 | B Eclat_Gen_Borgelt     1.06 | C Eclat_Gen_Borgelt     1.06 | failed: -
+  microblog_set  0.56352    direct  best Apriori_Gen_Borgelt       8.1 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  msnbc_set      0.00662944 direct  best Apriori_Gen_Borgelt       5.1 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: FGC_Stream
+  msnbc_set      0.0345942  direct  best Apriori_Gen_Borgelt       5.2 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: FGC_Stream
+  msnbc_set      0.261961   direct  best FPgrowth_Gen_Borgelt      2.9 MB | A Gr_growth             4.78 | B FPgrowth_Gen_Borgelt  1.00 | C FPgrowth_Gen_Borgelt  1.00 | failed: -
+  splice         0.0535266  direct  best Apriori_Gen_Borgelt      10.8 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: Zart
+  splice         0.0751567  direct  best Apriori_Gen_Borgelt       5.5 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  splice         0.11152    direct  best Apriori_Gen_Borgelt       4.9 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  splice         0.163871   direct  best Apriori_Gen_Borgelt       4.9 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  splice         0.244436   direct  best Apriori_Gen_Borgelt       4.4 MB | A Apriori_Gen_Borgelt   1.00 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  t25i10d10k     0.0035836  direct  best Apriori_Gen_Borgelt      17.3 MB | A Eclat_Gen_Borgelt     1.37 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: Zart
+  t25i10d10k     0.00709202 direct  best Apriori_Gen_Borgelt       7.8 MB | A Eclat_Gen_Borgelt     1.79 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  t25i10d10k     0.0115026  direct  best Apriori_Gen_Borgelt       6.6 MB | A Eclat_Gen_Borgelt     1.30 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  t25i10d10k     0.0188202  direct  best Apriori_Gen_Borgelt       6.0 MB | A Eclat_Gen_Borgelt     1.27 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  t25i10d10k     0.025837   direct  best Apriori_Gen_Borgelt       5.8 MB | A Eclat_Gen_Borgelt     1.22 | B Apriori_Gen_Borgelt   1.00 | C Apriori_Gen_Borgelt   1.00 | failed: -
+  uscensus       0.0540938  sampled best Gr_growth              5969.2 MB | A Gr_growth             1.00 | B Gr_growth             1.00 | C Apriori_Gen_Borgelt  10.00 | failed: Apriori_Gen_Borgelt,DefMe,Eclat_Gen_Borgelt,FGC_Stream,FPgrowth_Gen_Borgelt,Pascal,Zart
+  uscensus       0.256854   sampled best Gr_growth                79.0 MB | A Gr_growth             1.00 | B FGC_Stream           10.00 | C Apriori_Gen_Borgelt   2.98 | failed: FGC_Stream,Pascal,Zart
+  uscensus       0.604019   sampled best Gr_growth                14.4 MB | A Gr_growth             1.00 | B Gr_growth             1.00 | C Gr_growth             1.00 | failed: FGC_Stream
+  uscensus       0.744477   sampled best Gr_growth                14.0 MB | A Gr_growth             1.00 | B Gr_growth             1.00 | C Gr_growth             1.00 | failed: FGC_Stream
+33 instances, 8 datasets | A engine 1.132x  B registered probe rule 1.152x  C shipped 1.110x
+   bike_set       n=4  A 1.000  B 1.000  C 1.000
+   ecommerce_fim  n=5  A 1.061  B 1.000  C 1.000
+   fifa_set       n=2  A 1.012  B 1.000  C 1.000
+   microblog_set  n=5  A 1.132  B 1.603  C 1.012
+   msnbc_set      n=3  A 1.685  B 1.000  C 1.000
+   splice         n=5  A 1.000  B 1.000  C 1.000
+   t25i10d10k     n=5  A 1.376  B 1.000  C 1.000
+   uscensus       n=4  A 1.000  B 1.778  C 2.336
+F1 C < A: ratio 0.978 [5-95% 0.815..1.229], P(better) 0.599 -> FAIL
+F2 C <= 1.02 x B: 1.110 vs 1.175 -> PASS
+F3 failed picks: A 0  B 2  C 1 -> FAIL
+F4 model memory interval coverage 0.785 (n=237; per dataset min 0.54) -> FAIL
+F4 probe memory interval coverage 0.911 (n=123; per dataset min 0.75) -> PASS
+probe wall-clock: median 0.2s, max 24.6s
