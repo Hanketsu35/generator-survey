@@ -63,7 +63,7 @@ from src import metrics as _metrics
 from src.metrics import (run_spmf, run_external, count_transactions,
                          count_plain_lines, count_pascal_generators,
                          count_zart_generators, count_borgelt_generators,
-                         count_grgrowth_generators)
+                         count_grgrowth_generators, count_fgcstream_generators)
 from recommender import synth
 from recommender import landmarks as lm
 
@@ -185,6 +185,12 @@ def run_one(job):
                                    base + ".txt", timeout=timeout,
                                    count_fn=count_grgrowth_generators)
                 out_file = base + ".txt"
+            elif et == "fgcstream":
+                # exe input abs_sup 0 output window_size (src/harness.py)
+                res = run_external(exe, [ds_path, max(1, int(round(sigma * n_tx))), 0,
+                                         out_file, n_tx],
+                                   out_file, timeout=timeout,
+                                   count_fn=count_fgcstream_generators)
             elif et == "borgelt":
                 res = run_external(exe, ["-tg", "-s%g" % (sigma * 100), ds_path, out_file],
                                    out_file, timeout=timeout,

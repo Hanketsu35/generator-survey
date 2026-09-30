@@ -1,0 +1,8 @@
+uscensus       from USCensus.txt                         (plain)  1000000 tx | empty dropped 0
+t25i10d10k     from t25i10d10k.txt                       (plain)     9976 tx | empty dropped 0
+fifa_set       from FIFA.txt                             (sequence)    20450 tx | empty dropped 0
+bike_set       from BIKE.txt                             (sequence)    21078 tx | empty dropped 0
+msnbc_set      from MSNBC.txt                            (sequence)    31790 tx | empty dropped 0
+microblog_set  from microblogPCU.txt                     (sequence)      429 tx | empty dropped 0
+ecommerce_fim  from ecommerce_time_without_utility.txt   (utility)    14975 tx | empty dropped 0
+splice         from splice.arff                          (arff)     3190 tx | empty dropped 0

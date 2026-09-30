@@ -194,12 +194,15 @@ def main(argv=None):
     ap.add_argument("--targets", type=int, nargs="+", default=list(PAIR_TARGETS),
                     help="pair targets to run (default: all five levels)")
     ap.add_argument("--timeout", type=float, default=TIMEOUT)
+    ap.add_argument("--extra-algos", nargs="*", default=[],
+                    help="further implementations to run, e.g. FGC_Stream")
     args = ap.parse_args(argv)
     os.chdir(_ROOT)
     out_csv = Path(args.out)
     order = list(args.datasets)
 
-    algos = category1_algorithms()
+    from src import config as _cfg
+    algos = category1_algorithms() + [(a, _cfg.ALGORITHMS[a]) for a in args.extra_algos]
     instances = plan(order, calibration=not args.no_calibration,
                      cap_reachable=args.cap_reachable, targets=args.targets)
     done = done_keys(out_csv)
