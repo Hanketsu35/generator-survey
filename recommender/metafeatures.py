@@ -80,7 +80,31 @@ def _iter_records(path, data_type):
                 yield toks
 
 
+_EXTRACTED = {}
+
+
 def extract(path, data_type="transactional"):
+    """Single-pass meta-feature extraction.  Returns a dict (a copy).
+
+    Memoised on (path, size, mtime, data_type): the chat asks for the same
+    file's features on every turn, and a pass over chicago takes 1.7 s.
+    """
+    try:
+        st = os.stat(path)
+        key = (os.path.abspath(path), st.st_size, st.st_mtime_ns, data_type)
+    except OSError:
+        key = None
+    if key is not None and key in _EXTRACTED:
+        return dict(_EXTRACTED[key])
+    out = _extract(path, data_type)
+    if key is not None:
+        if len(_EXTRACTED) > 64:
+            _EXTRACTED.clear()
+        _EXTRACTED[key] = dict(out)
+    return out
+
+
+def _extract(path, data_type="transactional"):
     """Single-pass meta-feature extraction.  Returns a dict."""
     counts = Counter()
     n = 0
