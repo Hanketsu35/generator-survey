@@ -77,6 +77,20 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
     gives 1.222x. On every hard instance the pick is the lowest-memory
     miner that completed.
 
+- **The fresh confirmation of that ranking was mixed** (`results/FRESH_RESULTS.md`:
+  8 datasets downloaded for it, 33 instances).
+  - Where the probe measured the user's file directly (29 instances, 7
+    datasets), the shipped ranking had regret 1.002x against the engine's
+    1.152x.
+  - On the one large dataset it had to sample (uscensus), it lost: 2.336x
+    against 1.000x. Ranking by lower bounds picked a slow allocator that did
+    not finish, and the affine extrapolation overestimated Gr-growth 2.8x.
+  - Superiority over the engine failed (P = 0.60), and so did "no more
+    failed picks". The model's 90% memory interval covered 79% there. The
+    probe's interval covered 91%.
+  - Nothing was re-tuned on this result. When no probed miner finishes, the
+    engine now says so, and says that the ranking is then weak.
+
 Sections below that report numbers on `results/summary.csv` are kept as they
 were measured; where re-measurement changes a conclusion, the section says so.
 

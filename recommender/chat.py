@@ -536,6 +536,8 @@ class App:
             notes.append("native miners %s on your file in %.1f s"
                          % ("measured" if pr.mode == "direct" else "probed on samples",
                             pr.wall_s))
+            if _probe.none_finished(pr):
+                notes.append(_probe.NONE_FINISHED)
         recs, rejected, _feats = self.engine().recommend(task, probe=pr)
         rows = [{"algorithm": r.algorithm, "display": r.display, "tier": r.tier,
                  "runtime_s": r.runtime_s, "memory_mb": r.memory_mb,

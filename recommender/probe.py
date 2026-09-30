@@ -175,6 +175,20 @@ def _affine(pts, n):
     return v2 + b * (n - s2)
 
 
+#: Said when no probed miner finished: the ranking then rests on how much
+#: memory each had taken when stopped. On mooc_set that pointed to the right
+#: miner; on uscensus (results/FRESH_RESULTS.md) to a slow allocator that did
+#: not finish. It is shown, not hidden.
+NONE_FINISHED = ("no native miner finished its probe on your file; the ranking "
+                 "rests on how much memory each had taken when stopped, which "
+                 "does not show whether it will finish")
+
+
+def none_finished(result):
+    """True when every probed miner failed."""
+    return bool(result.costs) and all(c.get("mode") == "failed" for c in result.costs.values())
+
+
 def estimate(points, n, variant="affine"):
     """-> (memory_mb, runtime_s) extrapolated from probe points, or None."""
     if len(points) < 2:

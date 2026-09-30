@@ -203,6 +203,8 @@ const t = k => (T[k] || [k, k])[TR ? 1 : 0];
 const DELIM = {commas: "virgül", semicolons: "noktalı virgül", tabs: "sekme", pipes: "dikey çizgi",
                spaces: "boşluk"};
 const SERVER_TR = [
+  [/^no native miner finished its probe on your file; the ranking rests on how much memory each had taken when stopped, which does not show whether it will finish$/,
+   () => "verinde yapılan denemede hiçbir yerel algoritma bitmedi; sıralama, durdurulduklarında ne kadar bellek almış olduklarına dayanıyor ve bu, bitip bitmeyeceklerini göstermiyor"],
   [/^did not finish the probe on your file \((full file|a sample), (\d+) s\): expect it to be heavy here; its memory estimate is the model's$/,
    (m, w, n) => `verinde yapılan denemede bitmedi (${w === "full file" ? "tüm dosya" : "bir örnek"}, ${n} s): burada ağır olması beklenir; bellek tahmini modelden`],
   [/^already in SPMF format \(integer item ids\)$/, () => "zaten SPMF biçiminde (tamsayı öğe kimlikleri)"],

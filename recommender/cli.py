@@ -105,6 +105,9 @@ def main(argv=None):
             print("probe: native miners %s on %s in %.1f s"
                   % ("measured" if pr.mode == "direct" else "sampled", task.dataset_path,
                      pr.wall_s))
+            from .probe import none_finished, NONE_FINISHED
+            if none_finished(pr):
+                print("probe: ! %s" % NONE_FINISHED)
     recs, rejected, feats = rec.recommend(task, top=args.top, probe=pr)
 
     if args.json:
