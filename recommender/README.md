@@ -45,6 +45,27 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
   On runtime the probe's own time dominates millisecond-scale runs (6.29x vs
   1.19x, P3 failed), so runtime stays with the model.
 
+- **The probe held up on unseen data, but it did not win there.** First
+  confirmation, 5 unseen datasets (`results/CONFIRM_RESULTS.md`):
+  non-inferior (1.023x vs 1.000x). The engine was already perfect where every
+  miner finished, so superiority failed as the protocol expected. Probe
+  accuracy and budget answers replicate. Hard thresholds, 4 more unseen
+  datasets (`results/HARD_RESULTS.md`): superiority failed (2.154x vs
+  2.172x); budget answers were 100% vs 62%. The probe's two losses came from
+  the decision rule, which set a measurement against an optimistic model
+  guess.
+- **Cost estimates now come with calibrated 90% prediction intervals**
+  (`intervals.py`, `results/INTERVAL_RESULTS.md`). The band shown before was
+  a bootstrap of the forest mean, and it covered 5% of runs on unseen data.
+  Split-conformal intervals from leave-one-dataset-out residuals cover 88%
+  (memory) and 89% (runtime). They are honest about the model: 22x wide on
+  memory, against 1.1x for a probe measurement. The probe's runtime interval
+  undercovered (83%) and is not shown.
+- **With a probe, memory is ranked at the interval's upper end.** This was
+  found after the hard-threshold test and has not been confirmed. On all 125
+  instances seen, regret is 1.062x against 1.101x for the point rule and
+  1.222x for the engine (`results/DECISION_RULE_POSTHOC.md`).
+
 Sections below that report numbers on `results/summary.csv` are kept as they
 were measured; where re-measurement changes a conclusion, the section says so.
 
