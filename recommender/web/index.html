@@ -68,6 +68,7 @@ th:first-child, td:first-child { text-align: left; }
 th { color: var(--muted); font-weight: 600; font-size: 12px; }
 tr.sel td { background: var(--accent-soft); font-weight: 600; }
 .note { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+.iv { font-size: 11px; color: var(--muted); white-space: nowrap; }
 .items { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .items span { font-size: 12px; background: var(--bg); border-radius: 6px; padding: 2px 7px; }
 #chat { overflow: hidden; }
@@ -186,7 +187,10 @@ const T = {
              "bu algoritmanın süre ve belleği modelden değil, verinde koşturulmasından geliyor"],
   budgetUnknown: ["Whether this fits the stated budget cannot be predicted for this data.",
                   "Bunun belirtilen bütçeye sığıp sığmayacağı bu veri için tahmin edilemiyor."],
-  extrapShort: ["extrapolated: outside the measured range", "tahmin: ölçülen aralığın dışında"]
+  extrapShort: ["extrapolated: outside the measured range", "tahmin: ölçülen aralığın dışında"],
+  ivTip: ["90% prediction interval: where the measured value is expected to fall, calibrated on datasets the model had not seen",
+          "%90 tahmin aralığı: ölçülecek değerin düşmesi beklenen aralık; modelin görmediği veri setlerinde kalibre edildi"],
+  upTo: ["up to", "en çok"]
 };
 const t = k => (T[k] || [k, k])[TR ? 1 : 0];
 // The server's own sentences (how the file was read, why this threshold, the
@@ -197,6 +201,8 @@ const t = k => (T[k] || [k, k])[TR ? 1 : 0];
 const DELIM = {commas: "virgül", semicolons: "noktalı virgül", tabs: "sekme", pipes: "dikey çizgi",
                spaces: "boşluk"};
 const SERVER_TR = [
+  [/^did not finish the probe on your file \((full file|a sample), (\d+) s\): expect it to be heavy here; its memory estimate is the model's$/,
+   (m, w, n) => `verinde yapılan denemede bitmedi (${w === "full file" ? "tüm dosya" : "bir örnek"}, ${n} s): burada ağır olması beklenir; bellek tahmini modelden`],
   [/^already in SPMF format \(integer item ids\)$/, () => "zaten SPMF biçiminde (tamsayı öğe kimlikleri)"],
   [/^one transaction per line, items separated by (\w+)$/,
    (m, d) => `her satır bir işlem, öğeler ${DELIM[d] || d} ile ayrılmış`],
@@ -353,7 +359,7 @@ function render(d) {
     head = `<div class="pick"><span class="label">${t("recommended")}</span><span class="algo">${esc(top.display)}</span>
       ${top.installed ? "" : `<span class="tag no">${t("notHere")}</span>`}</div>`;
     if (!top.installed && d.runnable) head += `<div class="warn">${t("bestHere")}: <b>${esc(d.runnable)}</b></div>`;
-    top.warnings.forEach(w => head += `<div class="warn">${esc(w)}</div>`);
+    top.warnings.forEach(w => head += `<div class="warn">${esc(L(w))}</div>`);
     const pick = top.installed ? top : (rows.find(r => r.installed) || top);
     const extrap = pick.extrapolated && pick.extrapolated.length;
     if (!pick.within_budget) head += `<div class="warn">${t(extrap ? "budgetUnknown" : "overBudget")}</div>`;
@@ -361,6 +367,10 @@ function render(d) {
       head += `<div class="warn">${t("extrap")}<br><span style="font-size:12px">${
         pick.extrapolated.map(x => esc(L(x))).join(" · ")}</span></div>`;
   }
+  // 90% prediction interval under the point estimate. Runtime shows only its
+  // upper end: the model's lower end is near zero and says nothing.
+  const iv = (b, u, upper) => b ? `<div class="iv" title="${esc(t("ivTip"))}">${
+    upper ? `${t("upTo")} ${fmt(b[1])}` : `${fmt(b[0], 1)}–${fmt(b[1], 1)}`} ${u}</div>` : "";
   let prev = null;
   const tbl = rows.map(r => {
     const g = r.tier !== prev ? r.tier : ""; prev = r.tier;
@@ -369,7 +379,7 @@ function render(d) {
         t(r.source === "probe-measured" ? "probeMeasured" : "probeSampled")}</span>` : ""}</td>
       ${r.extrapolated && r.extrapolated.length
         ? `<td title="${esc(t("extrapShort"))}">(${fmt(r.runtime_s)} s)*</td><td>(${fmt(r.memory_mb, 1)} MB)*</td>`
-        : `<td>${fmt(r.runtime_s)} s</td><td>${fmt(r.memory_mb, 1)} MB</td>`}<td>${Math.round(100 * r.p_complete)}%</td>
+        : `<td>${fmt(r.runtime_s)} s${iv(r.runtime_interval, "s", true)}</td><td>${fmt(r.memory_mb, 1)} MB${iv(r.memory_interval, "MB")}</td>`}<td>${Math.round(100 * r.p_complete)}%</td>
       <td><span class="tag ${r.installed ? "yes" : "no"}">${r.installed ? "✓" : "✗"}</span></td></tr>`;
   }).join("");
   const refused = (d.refused || []).map(r => `<li><b>${esc(r.display)}</b> — ${esc(r.reason)}</li>`).join("");

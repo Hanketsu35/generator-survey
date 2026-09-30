@@ -454,6 +454,7 @@ class App:
                  "p_complete": r.p_complete, "installed": r.installed,
                  "match": r.match, "warnings": r.warnings,
                  "source": r.prediction_source,
+                 "memory_interval": r.memory_interval, "runtime_interval": r.runtime_interval,
                  "within_budget": r.within_budget, "budget_notes": r.budget_notes,
                  "extrapolated": r.extrapolated} for r in recs]
         refused = [{"algorithm": v.algorithm, "display": v.display,

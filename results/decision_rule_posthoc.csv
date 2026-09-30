@@ -1,0 +1,126 @@
+set,dataset,all_ok,engine,point,upper
+training LODO,accidents,False,2.43232810615199,1.0,1.0
+training LODO,accidents,True,2.954714430550862,1.0,1.0
+training LODO,accidents,True,3.1996887966804977,1.0,1.0
+training LODO,accidents,True,3.9323116219667944,1.0,1.0
+training LODO,accidents,True,4.348377997179125,1.0,1.0
+training LODO,accidents,True,4.405714285714286,1.0,1.0
+training LODO,bms1,False,1.0,10.0,1.0
+training LODO,bms1,False,1.0,1.0,1.0
+training LODO,bms1,True,1.0,1.0,1.0
+training LODO,bms1,True,1.0,1.0,1.0
+training LODO,bms1,True,1.0,1.0,1.0
+training LODO,bms2,False,1.3910133843212236,1.0,1.0
+training LODO,bms2,True,1.0,1.0,1.0
+training LODO,bms2,True,1.0,1.0,1.0
+training LODO,bms2,True,1.0,1.0,1.0
+training LODO,bms2,True,1.0,1.0090090090090091,1.0090090090090091
+training LODO,c20d10k,False,1.0,1.0,1.0
+training LODO,c20d10k,False,1.0,1.0,1.0
+training LODO,c20d10k,True,1.0,1.0,1.0
+training LODO,c20d10k,True,1.3776223776223777,1.3776223776223777,1.3776223776223777
+training LODO,c73d10k,False,1.0,1.0,1.0
+training LODO,c73d10k,True,1.0,1.0,1.0
+training LODO,c73d10k,True,1.0,1.0,1.0
+training LODO,chess,False,1.142762901032621,1.142762901032621,1.142762901032621
+training LODO,chess,False,1.0,1.0,1.0
+training LODO,chess,False,1.0,1.0,1.0
+training LODO,chess,False,1.0,1.0,1.0
+training LODO,chess,True,1.0,1.0,1.0
+training LODO,chess,True,1.0,1.0,1.0
+training LODO,chess,True,1.0,1.0,1.0
+training LODO,chess,True,1.0,1.7272727272727273,1.7272727272727273
+training LODO,chicago,True,1.0,1.0,1.0
+training LODO,chicago,True,1.0,1.0,1.0
+training LODO,chicago,True,1.0,1.0,1.0
+training LODO,connect,False,1.0,1.0,1.0860083976703239
+training LODO,connect,False,1.0,1.0,1.0
+training LODO,connect,False,1.0,1.0,1.0
+training LODO,connect,False,1.0,1.0,1.0
+training LODO,connect,False,1.0453995157384988,1.0,1.0
+training LODO,connect,False,1.1328947368421052,1.0,1.0
+training LODO,connect,False,1.1929460580912863,1.0,1.0
+training LODO,connect,True,1.2231698649609097,1.0,1.0
+training LODO,kddcup99,False,1.0,1.0,1.0
+training LODO,kddcup99,False,1.0,1.0,1.0
+training LODO,kddcup99,True,1.0,1.0,1.0
+training LODO,kddcup99,True,1.0,1.0,1.0
+training LODO,kosarak,False,1.295006429489927,1.0,1.0
+training LODO,kosarak,True,1.0,1.0,1.0
+training LODO,kosarak,True,1.0,1.0,1.0
+training LODO,kosarak,True,1.0,1.0,1.0
+training LODO,mushroom,False,1.0,1.0,1.0
+training LODO,mushroom,False,1.0,1.0,1.0
+training LODO,mushroom,True,1.0,1.0,1.0
+training LODO,mushroom,True,1.0,1.0,1.0
+training LODO,mushroom,True,1.0271604938271606,1.1185185185185187,1.1185185185185187
+training LODO,mushroom,True,1.0,1.0332480818414322,1.0332480818414322
+training LODO,mushroom,True,1.4000000000000001,1.4000000000000001,1.4000000000000001
+training LODO,mushroom,True,1.3535714285714286,1.0214285714285714,1.0214285714285714
+training LODO,mushroom,True,1.0,1.4705882352941175,1.4705882352941175
+training LODO,onlineretail,False,1.0,1.0,1.0
+training LODO,onlineretail,False,1.0,1.0,1.0
+training LODO,onlineretail,True,1.0,1.0,1.0
+training LODO,onlineretail,True,1.0,1.0,1.0
+training LODO,onlineretail,True,1.0,1.0,1.0
+training LODO,pamap,False,1.2513460863673214,1.0,1.0
+training LODO,pamap,True,1.0,1.0,1.0
+training LODO,pamap,True,1.0,1.0,1.0
+training LODO,pumsb,False,1.0,1.0,1.0
+training LODO,pumsb,False,1.0,1.0,1.0
+training LODO,pumsb,False,1.0,1.0,1.0
+training LODO,pumsb,True,1.1127684964200475,1.0,1.0
+training LODO,pumsb,True,1.274710293115201,1.0,1.0
+training LODO,pumsb,True,1.3213276836158192,1.0,1.0
+training LODO,pumsb,True,1.331908831908832,1.0,1.0
+training LODO,recordlink,True,1.0,1.0,1.0
+training LODO,recordlink,True,1.0,1.0,1.0
+training LODO,recordlink,True,1.0,1.0,1.0
+training LODO,retail,False,1.4668327623793211,1.0,1.0
+training LODO,retail,False,1.0,1.0,1.0
+training LODO,retail,True,1.0,1.0,1.0
+training LODO,retail,True,1.0,1.0,1.0
+training LODO,retail,True,1.0,1.0,1.0
+training LODO,retail,True,1.0,1.0050462573591252,1.0050462573591252
+training LODO,retail,True,1.0,1.009417808219178,1.009417808219178
+training LODO,retail,True,1.0,1.0068376068376068,1.0068376068376068
+training LODO,retail,True,2.8052884615384612,1.0,1.0
+training LODO,retail,True,2.6378896882494005,1.0,1.0
+training LODO,t10i4d100k,True,1.0,1.0,1.0
+training LODO,t10i4d100k,True,1.0,1.0,1.0
+training LODO,t10i4d100k,True,1.0,1.0,1.0
+training LODO,t10i4d100k,True,1.0,1.0,1.0
+training LODO,t10i4d100k,True,2.5933503836317136,2.621483375959079,2.621483375959079
+training LODO,t10i4d100k,True,2.578005115089514,2.6112531969309463,2.6112531969309463
+training LODO,t10i4d100k,True,2.5933503836317136,2.5933503836317136,2.5933503836317136
+training LODO,t10i4d100k,True,2.5907928388746804,1.0,1.0
+training LODO,t10i4d100k,True,2.59846547314578,1.0,1.0
+training LODO,t10i4d100k,True,2.5882352941176467,1.0,1.0
+confirm,chainstore_fim,False,1.1185085890179725,1.0,1.0
+confirm,chainstore_fim,False,1.0335486672819063,1.0,1.0
+confirm,chainstore_fim,False,1.1738862475787992,1.0,1.0
+confirm,chainstore_fim,False,1.0,1.0,1.0
+confirm,chainstore_fim,True,1.0,1.0,1.0
+confirm,fruithut,False,1.0,1.0,1.0
+confirm,fruithut,True,1.0,1.0,1.0
+confirm,fruithut,True,1.0,1.0,1.0
+confirm,fruithut,True,1.0,1.0,1.0
+confirm,fruithut,True,1.0,1.3627450980392157,1.3627450980392157
+confirm,instacart,False,2.686270074643746,1.0,1.0
+confirm,instacart,False,1.1534908992121706,1.0,1.0
+confirm,instacart,True,1.0,1.0,1.0
+confirm,instacart,True,1.0,1.0,1.0
+confirm,instacart,True,1.0,1.0050675675675675,1.0050675675675675
+confirm,skin,True,1.0,1.0,1.0
+confirm,skin,True,1.0,1.0,1.0
+confirm,t20i6d100k,False,1.0,1.0,1.0
+confirm,t20i6d100k,True,1.0,1.0,1.0
+confirm,t20i6d100k,True,1.0,1.0,1.0
+confirm,t20i6d100k,True,1.0,1.0,1.0
+confirm,t20i6d100k,True,1.0,1.0,1.0
+hard,liquor,False,1.4323083983478662,1.0,1.0
+hard,liquor,True,2.381033022861981,1.0,1.0
+hard,mooc_set,False,10.0,10.0,10.0
+hard,mooc_set,False,1.7367203334735553,10.0,1.0
+hard,sign_set,False,1.7741379310344827,1.0,1.0
+hard,sign_set,True,1.0,1.0,1.0

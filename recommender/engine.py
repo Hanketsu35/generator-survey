@@ -15,6 +15,7 @@ from typing import List, Optional
 
 from . import metafeatures as mf
 from .capabilities import CapabilityDB
+from . import intervals as _iv
 from . import survival as _sv
 from .perfmodel import PerformanceModel, load_runs, pareto_front
 
@@ -72,6 +73,12 @@ class Recommendation:
     cost_band: Optional[tuple] = None
     #: The same, on the composite score the ranking actually uses.
     score_band: Optional[tuple] = None
+    #: 90% prediction intervals (recommender/intervals.py) on memory_mb and
+    #: runtime_s: where the measured cost is expected to fall. cost_band and
+    #: memory bands above describe the precision of the MEAN and are used only
+    #: to form tiers; these describe the run the user will get.
+    memory_interval: Optional[tuple] = None
+    runtime_interval: Optional[tuple] = None
     #: 1 = best supported group. Within a tier the ordering is NOT supported by
     #: the data and must not be presented as a preference.
     tier: int = 1
@@ -302,6 +309,21 @@ class Recommender:
                 continue
             probed = False
             pc = (probe.costs.get(v.algorithm) if probe is not None else None) or {}
+            kind = ("model", "")
+            probe_note = None
+            if pc.get("mode") == "failed":
+                # A probe that ran out of time is a measurement too: a lower
+                # bound on the runtime (on the full file directly; on a sample,
+                # a fortiori on the full file). The model's runtime is replaced
+                # by it when lower; its memory estimate stays, flagged.
+                from .probe import DIRECT_TIMEOUT, SAMPLE_TIMEOUT
+                floor = DIRECT_TIMEOUT if probe.mode == "direct" else SAMPLE_TIMEOUT
+                probe_note = ("did not finish the probe on your file (%s, %d s): expect "
+                              "it to be heavy here; its memory estimate is the model's"
+                              % ("full file" if probe.mode == "direct" else "a sample",
+                                 floor))
+                if pred["runtime_s"] < floor:
+                    pred = dict(pred, runtime_s=float(floor))
             if pc.get("memory_mb") is not None:
                 m, t = pc["memory_mb"], pc["runtime_s"]
                 # Bands from the probe's measured accuracy: median |log10|
@@ -314,6 +336,12 @@ class Recommender:
                             memory_band=(m, m / mf_, m * mf_),
                             cost_band=(t, t / rf_, t * rf_))
                 probed = True
+                kind = ("probe", "_measured" if pc["mode"] == "measured" else "_sampled")
+            mem_iv = _iv.interval("%s_memory%s" % kind, pred["memory_mb"])
+            # The probe's runtime interval undercovered on unseen data (0.83,
+            # INTERVAL_RESULTS.md), so it is not offered as a 90% interval.
+            rt_iv = (None if kind[0] == "probe"
+                     else _iv.interval("%s_runtime%s" % kind, pred["runtime_s"]))
             notes = []
             ok = True
             if task.max_runtime_s and pred["runtime_s"] > task.max_runtime_s:
@@ -339,6 +367,9 @@ class Recommender:
                 "within_budget": ok,
                 "budget_notes": notes,
                 "probed": probed,
+                "memory_interval": mem_iv,
+                "runtime_interval": rt_iv,
+                "probe_note": probe_note,
             })
 
         if not rows:
@@ -352,11 +383,22 @@ class Recommender:
         # PAR10 penalty into the runtime term instead would leave the memory
         # objective blind to completion -- which ranks an implementation with a
         # 6% chance of finishing first, because it fails cheaply.
+        #
+        # Memory enters at the UPPER end of its 90% interval. With every
+        # estimate from the model this is a common factor and changes nothing;
+        # with a probe it stops a model guess (22x wide) from beating a
+        # measurement (1.1x wide) by being optimistic -- on mooc it picked
+        # Pascal at a guessed 252 MB over measured 512 MB, and Pascal timed
+        # out (results/HARD_RESULTS.md; the rule's effect, found after that
+        # test: results/DECISION_RULE_POSTHOC.md).
+        def _mem(r):
+            iv = r.get("memory_interval")
+            return iv[1] if iv else r["memory_mb"]
         rt_min = min(r["runtime_s"] for r in rows) or 1.0
-        mm_min = min(r["memory_mb"] for r in rows) or 1.0
+        mm_min = min(_mem(r) for r in rows) or 1.0
         for r in rows:
             nr = r["runtime_s"] / rt_min
-            nm = r["memory_mb"] / mm_min
+            nm = _mem(r) / mm_min
             if task.objective == "runtime":
                 s = nr
             elif task.objective == "memory":
@@ -406,7 +448,10 @@ class Recommender:
                 cost_band=r.get("cost_band"),
                 score_band=r.get("score_band"),
                 reasons=list(v.reasons),
-                warnings=self._resolve_input_dependent(v, feats, task.threshold),
+                warnings=(self._resolve_input_dependent(v, feats, task.threshold)
+                          + ([r["probe_note"]] if r.get("probe_note") else [])),
+                memory_interval=r.get("memory_interval"),
+                runtime_interval=r.get("runtime_interval"),
                 budget_notes=r["budget_notes"],
                 post_filter=v.post_filter,
                 installed=(True if installed is None
@@ -503,8 +548,14 @@ def format_report(task, recs, rejected, feats, show_rejected=True):
                     "  (tied with %d other%s)"
                     % (len(tier1) - 1, "s" if len(tier1) > 2 else "")
                     if len(tier1) > 1 else ""))
+        if top.memory_interval:
+            L.append("   memory: %.1f MB, 90%% prediction interval %.1f..%.1f MB"
+                     % (top.memory_mb, top.memory_interval[0], top.memory_interval[1]))
+        if top.runtime_interval:
+            L.append("   runtime: %.2f s, 90%% prediction interval up to %.2f s"
+                     % (top.runtime_s, top.runtime_interval[1]))
         if top.score_band:
-            L.append("   predicted cost %.3f, 5-95%% band %.3f..%.3f"
+            L.append("   ranking score %.3f, precision of the mean 5-95%% %.3f..%.3f"
                      % (top.score_band[0], top.score_band[1], top.score_band[2]))
         for s in top.reasons:
             L.append("   + %s" % s)

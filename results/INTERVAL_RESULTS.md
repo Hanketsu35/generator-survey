@@ -27,5 +27,5 @@ tested, and the interval stays as registered: it undercovers.
 - Replace the old band with the conformal interval for memory. The old band
   is a statement about the forest's mean, and it covered 5% of runs.
 - Show runtime intervals from the model as an upper bound only.
-- Show the probe's runtime interval with its measured coverage (83%), not
-  as a 90% interval.
+- Do not show a runtime interval for probed miners: at 83% coverage it
+  is not a 90% interval.
