@@ -66,6 +66,17 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
   instances seen, regret is 1.062x against 1.101x for the point rule and
   1.222x for the engine (`results/DECISION_RULE_POSTHOC.md`).
 
+- **The probe now uses everything it sees.**
+  - A miner stopped in its probe has already used a known amount of memory,
+    and that is a lower bound on its peak.
+  - The probe's measured scale on the file corrects the model's estimates
+    for the miners it does not run.
+  - The four miners run concurrently (worst case 68 s, was 249 s).
+  - This is post hoc, on seen data (`results/DECISION_RULE_POSTHOC.md`).
+    Over 125 instances, regret is 1.042x with no failed pick; the engine
+    gives 1.222x. On every hard instance the pick is the lowest-memory
+    miner that completed.
+
 Sections below that report numbers on `results/summary.csv` are kept as they
 were measured; where re-measurement changes a conclusion, the section says so.
 
