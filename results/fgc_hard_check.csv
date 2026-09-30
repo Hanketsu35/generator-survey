@@ -1,0 +1,5 @@
+dataset,sigma,runtime_s,peak_memory_mb,timed_out,generator_count,timeout_s,note
+mooc_set,0.000299873,600.1,870.12,True,,600,memory at stop is a lower bound
+mooc_set,0.000820864,600.1,701.6,True,,600,memory at stop is a lower bound
+liquor,0.000954327,557.3,63.37,False,12861,600,
+sign_set,0.0407534,10.0,30.01,False,22437,600,

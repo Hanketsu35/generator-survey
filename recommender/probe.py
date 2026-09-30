@@ -101,8 +101,14 @@ def _conventional(name, rc, count):
     return name.endswith("_Borgelt") and rc == 15
 
 
-def _run(name, path, n, sigma, timeout, workdir):
-    """One native run. -> (peak_mb, runtime_s) or None if it failed."""
+def _run(name, path, n, sigma, timeout, workdir, failures=None):
+    """One native run. -> (peak_mb, runtime_s) or None if it failed.
+
+    On failure, ``failures[name]`` records what the run still showed: a
+    miner stopped at the timeout had already reached its peak so far, and
+    one that ran out of its address-space cap needed more than the cap --
+    both LOWER BOUNDS on its memory for this (sub)problem.
+    """
     from src import metrics as M
     from src.config import ALGORITHMS, GRGROWTH_K
     cfg = ALGORITHMS[name]
@@ -122,11 +128,20 @@ def _run(name, path, n, sigma, timeout, workdir):
     except OSError:
         pass
     rc = res.get("returncode")
-    if res.get("timed_out") or res.get("peak_memory_mb") is None:
-        return None
-    if rc not in (0, None) and not _conventional(name, rc, res.get("generator_count")):
-        return None
-    return res["peak_memory_mb"], res["runtime_s"]
+    ok = not res.get("timed_out") and res.get("peak_memory_mb") is not None and (
+        rc in (0, None) or _conventional(name, rc, res.get("generator_count")))
+    if ok:
+        return res["peak_memory_mb"], res["runtime_s"]
+    if failures is not None:
+        lb = res.get("peak_memory_mb") or 0.0
+        why = "timeout" if res.get("timed_out") else "error"
+        # Borgelt exits 1 with "not enough memory" and Gr-growth aborts on
+        # bad_alloc (signal 6) when the cap is reached
+        if ("memory" in (res.get("stderr") or "").lower() or "bad_alloc" in (res.get("stderr") or "")
+                or rc in (-6, 134)):
+            lb, why = max(lb, float(M.NATIVE_MEM_LIMIT_MB or 0)), "memory cap"
+        failures[name] = {"memory_lb": lb, "why": why, "size": n}
+    return None
 
 
 def _sample(lines, k, dest):
@@ -186,24 +201,27 @@ def probe(path, sigma, algorithms=PROBED):
     try:
         if sizes[-1] > n / 2:
             r = ProbeResult(n=n, sigma=sigma, mode="direct", sizes=[n], wall_s=0.0)
+            fails = {}
             with ThreadPoolExecutor(max_workers=len(algorithms)) as ex:
                 runs = dict(zip(algorithms, ex.map(
-                    lambda a: _run(a, path, n, sigma, DIRECT_TIMEOUT, work), algorithms)))
+                    lambda a: _run(a, path, n, sigma, DIRECT_TIMEOUT, work, fails), algorithms)))
             for a in algorithms:
                 got = runs[a]
                 if got and got[1] < RERUN_BELOW:
                     got = _run(a, path, n, sigma, DIRECT_TIMEOUT, work) or got
                 r.points[a] = [(n, got)] if got else []
                 r.costs[a] = ({"memory_mb": got[0], "runtime_s": got[1], "mode": "measured"}
-                              if got else {"mode": "failed"})
+                              if got else dict({"mode": "failed"}, **fails.get(a, {})))
         else:
             r = ProbeResult(n=n, sigma=sigma, mode="sampled", sizes=sizes, wall_s=0.0)
             files = {s: _sample(lines, s, os.path.join(work, "s%d.txt" % s)) for s in sizes}
 
+            fails = {}
+
             def climb(a):
                 pts = []
                 for s in sizes:
-                    got = _run(a, files[s], s, sigma, SAMPLE_TIMEOUT, work)
+                    got = _run(a, files[s], s, sigma, SAMPLE_TIMEOUT, work, fails)
                     if got is None:
                         break
                     pts.append((s, got))
@@ -215,7 +233,10 @@ def probe(path, sigma, algorithms=PROBED):
                         if got[1] < RERUN_BELOW else got) for s, got in climbs[a]]
                 r.points[a] = pts
                 if len(pts) < 2:
-                    r.costs[a] = {"mode": "failed"}
+                    # a bound on a sample is not a bound on the full file's
+                    # peak only if memory could shrink with n; it cannot for
+                    # these miners (all hold the data or a tree of it)
+                    r.costs[a] = dict({"mode": "failed"}, **fails.get(a, {}))
                     continue
                 mem, rt = estimate(pts, n, "affine")
                 mem_l, rt_l = estimate(pts, n, "loglog")

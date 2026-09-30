@@ -55,6 +55,21 @@ def installed_implementations():
     return out
 
 
+#: share of the probe's native-miner scale applied to model estimates of the
+#: other miners (0 = off); see Recommender._probe_scale. At 0.5 it cut the
+#: JVM miners' median memory error from 0.248 to 0.213 (log10, LODO), left
+#: every benchmarked pick unchanged, and stops FGC-Stream -- never measured
+#: on the confirmation data -- from winning mooc_set on a guess of 109 MB:
+#: scaled 915 MB; measured, it had reached 870 MB when stopped at 600 s
+#: (results/DECISION_RULE_POSTHOC.md).
+PROBE_SCALE_BETA = 0.5
+#: interval of a miner stopped in its probe: "scaled" = the model interval
+#: around the lower bound; "floor" = the model's own interval, raised to it.
+#: "scaled" makes a stopped miner look far heavier than any guess and
+#: raised regret (1.085x vs 1.042x post hoc); "floor" is used.
+LB_INTERVAL = "floor"
+
+
 @dataclass
 class Recommendation:
     algorithm: str
@@ -230,6 +245,25 @@ class Recommender:
             return mf.for_dataset(task.dataset)
         raise ValueError("MiningTask needs either dataset or dataset_path")
 
+    def _probe_scale(self, probe, feats, thr):
+        """Median log10(probe / model) memory over the native miners, or 0.
+
+        A miner that did not finish contributes its lower bound, so the
+        scale is itself at least what the probe showed. 0 when fewer than two
+        natives say anything.
+        """
+        import math
+        r = []
+        for a, c in probe.costs.items():
+            v = c.get("memory_mb") if c.get("mode") != "failed" else c.get("memory_lb")
+            p = self.model.predict(a, feats, thr)
+            if v and p and p["memory_mb"] > 0:
+                r.append(math.log10(max(v, 1e-3) / p["memory_mb"]))
+        if len(r) < 2:
+            return 0.0
+        r.sort()
+        return (r[len(r) // 2] + r[(len(r) - 1) // 2]) / 2.0
+
     # ------------------------------------------------------------------
     #: How each recorded empty-set condition is decided from the instance. Both
     #: read only the static meta-features and the requested threshold, so the
@@ -302,9 +336,11 @@ class Recommender:
         installed = installed_implementations()
 
         thr = task.threshold if task.threshold is not None else 0.1
+        k_scale = self._probe_scale(probe, feats, thr) if probe is not None else 0.0
         rows = []
         for v in eligible:
             pred = self.model.predict(v.algorithm, feats, thr)
+            model_mem = pred["memory_mb"] if pred else None
             if pred is None:
                 continue
             probed = False
@@ -324,6 +360,14 @@ class Recommender:
                                  floor))
                 if pred["runtime_s"] < floor:
                     pred = dict(pred, runtime_s=float(floor))
+                # ... and what it had used when it stopped is a lower bound on
+                # its memory (the cap itself when it ran out of memory)
+                lb = pc.get("memory_lb") or 0.0
+                if lb > pred["memory_mb"]:
+                    pred = dict(pred, memory_mb=float(lb))
+                if lb:
+                    probe_note += ("; it had reached %.0f MB when stopped (%s), so it "
+                                   "needs at least that" % (lb, pc.get("why", "stopped")))
             if pc.get("memory_mb") is not None:
                 m, t = pc["memory_mb"], pc["runtime_s"]
                 # Bands from the probe's measured accuracy: median |log10|
@@ -337,7 +381,16 @@ class Recommender:
                             cost_band=(t, t / rf_, t * rf_))
                 probed = True
                 kind = ("probe", "_measured" if pc["mode"] == "measured" else "_sampled")
+            lb = pc.get("memory_lb") if pc.get("mode") == "failed" else None
+            if kind[0] == "model" and k_scale and not lb:
+                # the probe measured how far off the model is on THIS file for
+                # the native miners; move the other estimates part of the way
+                pred = dict(pred, memory_mb=pred["memory_mb"] * 10 ** (PROBE_SCALE_BETA * k_scale))
             mem_iv = _iv.interval("%s_memory%s" % kind, pred["memory_mb"])
+            if mem_iv and lb:
+                hi = (_iv.interval("model_memory", model_mem)[1] if LB_INTERVAL == "floor"
+                      else mem_iv[1])
+                mem_iv = (max(mem_iv[0], lb), max(hi, lb))
             # The probe's runtime interval undercovered on unseen data (0.83,
             # INTERVAL_RESULTS.md), so it is not offered as a 90% interval.
             rt_iv = (None if kind[0] == "probe"

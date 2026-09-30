@@ -1,0 +1,126 @@
+set,dataset,sigma,all_ok,any_lb,engine,upper,upper pick,upper+lb,upper+lb pick,upper+lb floor,upper+lb floor pick,upper+lb+scale,upper+lb+scale pick,upper+lb floor+scale,upper+lb floor+scale pick
+training LODO,accidents,0.3,False,False,2.43232810615199,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,accidents,0.4,True,False,2.954714430550862,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,accidents,0.5,True,False,3.1996887966804977,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,accidents,0.6,True,False,3.9323116219667944,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,accidents,0.7,True,False,4.348377997179125,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,accidents,0.8,True,False,4.405714285714286,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,bms1,0.0001803630750645,False,True,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,bms1,0.0005662561659004,False,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,bms1,0.0012709305056877,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,bms1,0.0038547364182409,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,bms1,0.009894802187846,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,bms2,0.0001515894313138,False,False,1.3910133843212236,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,bms2,0.0004354164516461,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,bms2,0.0012094901434616,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,bms2,0.0052862782536897,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,bms2,0.0123819537619981,True,False,1.0,1.0090090090090091,FPgrowth_Gen_Borgelt,1.0090090090090091,FPgrowth_Gen_Borgelt,1.0090090090090091,FPgrowth_Gen_Borgelt,1.0090090090090091,FPgrowth_Gen_Borgelt,1.0090090090090091,FPgrowth_Gen_Borgelt
+training LODO,c20d10k,0.001275,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,c20d10k,0.034375,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,c20d10k,0.337575,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,c20d10k,0.946075,True,False,1.3776223776223777,1.3776223776223777,Apriori_Gen_Borgelt,1.3776223776223777,Apriori_Gen_Borgelt,1.3776223776223777,Apriori_Gen_Borgelt,1.3776223776223777,Apriori_Gen_Borgelt,1.3776223776223777,Apriori_Gen_Borgelt
+training LODO,c73d10k,0.446675,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,c73d10k,0.919975,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,c73d10k,0.979375,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,chess,0.2,False,True,1.142762901032621,1.142762901032621,Apriori_Gen_Borgelt,1.6278659611992947,Gr_growth,1.142762901032621,Apriori_Gen_Borgelt,1.6278659611992947,Gr_growth,1.142762901032621,Apriori_Gen_Borgelt
+training LODO,chess,0.3,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,chess,0.4,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,chess,0.5,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,chess,0.6,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,chess,0.7,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,chess,0.8,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,chess,0.9,True,False,1.0,1.7272727272727273,FPgrowth_Gen_Borgelt,1.7272727272727273,FPgrowth_Gen_Borgelt,1.7272727272727273,FPgrowth_Gen_Borgelt,1.7272727272727273,FPgrowth_Gen_Borgelt,1.7272727272727273,FPgrowth_Gen_Borgelt
+training LODO,chicago,9.29644154754388e-06,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,chicago,0.0014940977925552,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,chicago,0.0313061894768789,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,connect,0.2,False,True,1.0,1.0860083976703239,Gr_growth,1.0860083976703239,Gr_growth,1.0860083976703239,Gr_growth,1.0860083976703239,Gr_growth,1.0860083976703239,Gr_growth
+training LODO,connect,0.3,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,connect,0.4,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,connect,0.5,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,connect,0.6,False,False,1.0453995157384988,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,connect,0.7,False,False,1.1328947368421052,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,connect,0.8,False,False,1.1929460580912863,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,connect,0.9,True,False,1.2231698649609097,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,kddcup99,2.775e-05,False,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,kddcup99,0.00029375,False,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,kddcup99,0.45114675,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,kddcup99,0.76716775,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,kosarak,0.0013246977425311,False,False,1.295006429489927,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,kosarak,0.0032752349487756,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,kosarak,0.0126772285392901,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,kosarak,0.0600247505990574,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,mushroom,0.05,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,mushroom,0.1,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,mushroom,0.15,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,mushroom,0.2,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,mushroom,0.3,True,False,1.0271604938271606,1.1185185185185187,Eclat_Gen_Borgelt,1.1185185185185187,Eclat_Gen_Borgelt,1.1185185185185187,Eclat_Gen_Borgelt,1.1185185185185187,Eclat_Gen_Borgelt,1.1185185185185187,Eclat_Gen_Borgelt
+training LODO,mushroom,0.4,True,False,1.0,1.0332480818414322,FPgrowth_Gen_Borgelt,1.0332480818414322,FPgrowth_Gen_Borgelt,1.0332480818414322,FPgrowth_Gen_Borgelt,1.0332480818414322,FPgrowth_Gen_Borgelt,1.0332480818414322,FPgrowth_Gen_Borgelt
+training LODO,mushroom,0.5,True,False,1.4000000000000001,1.4000000000000001,Apriori_Gen_Borgelt,1.4000000000000001,Apriori_Gen_Borgelt,1.4000000000000001,Apriori_Gen_Borgelt,1.4000000000000001,Apriori_Gen_Borgelt,1.4000000000000001,Apriori_Gen_Borgelt
+training LODO,mushroom,0.6,True,False,1.3535714285714286,1.0214285714285714,FPgrowth_Gen_Borgelt,1.0214285714285714,FPgrowth_Gen_Borgelt,1.0214285714285714,FPgrowth_Gen_Borgelt,1.0214285714285714,FPgrowth_Gen_Borgelt,1.0214285714285714,FPgrowth_Gen_Borgelt
+training LODO,mushroom,0.7,True,False,1.0,1.4705882352941175,FPgrowth_Gen_Borgelt,1.4705882352941175,FPgrowth_Gen_Borgelt,1.4705882352941175,FPgrowth_Gen_Borgelt,1.4705882352941175,FPgrowth_Gen_Borgelt,1.4705882352941175,FPgrowth_Gen_Borgelt
+training LODO,onlineretail,4.024386859220471e-05,False,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,onlineretail,0.0004010509663154,False,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,onlineretail,0.0015334301653236,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,onlineretail,0.0058890194373259,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,onlineretail,0.017636528480632,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,pamap,0.04525675,False,True,1.2513460863673214,1.0,Apriori_Gen_Borgelt,10.0,Pascal,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,pamap,0.63655675,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,pamap,0.87309175,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,pumsb,0.6,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,pumsb,0.7,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,pumsb,0.75,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,pumsb,0.8,True,False,1.1127684964200475,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,pumsb,0.85,True,False,1.274710293115201,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,pumsb,0.9,True,False,1.3213276836158192,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,pumsb,0.95,True,False,1.331908831908832,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,recordlink,0.0001021893747401,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,recordlink,0.0439401265930671,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,recordlink,0.7772354251860716,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,retail,0.0005,False,False,1.4668327623793211,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt
+training LODO,retail,0.001,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,retail,0.002,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,retail,0.005,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,retail,0.01,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,retail,0.02,True,False,1.0,1.0050462573591252,FPgrowth_Gen_Borgelt,1.0050462573591252,FPgrowth_Gen_Borgelt,1.0050462573591252,FPgrowth_Gen_Borgelt,1.0050462573591252,FPgrowth_Gen_Borgelt,1.0050462573591252,FPgrowth_Gen_Borgelt
+training LODO,retail,0.2,True,False,1.0,1.009417808219178,Eclat_Gen_Borgelt,1.009417808219178,Eclat_Gen_Borgelt,1.009417808219178,Eclat_Gen_Borgelt,1.009417808219178,Eclat_Gen_Borgelt,1.009417808219178,Eclat_Gen_Borgelt
+training LODO,retail,0.3,True,False,1.0,1.0068376068376068,Eclat_Gen_Borgelt,1.0068376068376068,Eclat_Gen_Borgelt,1.0068376068376068,Eclat_Gen_Borgelt,1.0068376068376068,Eclat_Gen_Borgelt,1.0068376068376068,Eclat_Gen_Borgelt
+training LODO,retail,0.5,True,False,2.8052884615384612,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,retail,0.7,True,False,2.6378896882494005,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,t10i4d100k,0.001,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,t10i4d100k,0.002,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,t10i4d100k,0.005,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,t10i4d100k,0.01,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+training LODO,t10i4d100k,0.02,True,False,2.5933503836317136,2.621483375959079,FPgrowth_Gen_Borgelt,2.621483375959079,FPgrowth_Gen_Borgelt,2.621483375959079,FPgrowth_Gen_Borgelt,2.621483375959079,FPgrowth_Gen_Borgelt,2.621483375959079,FPgrowth_Gen_Borgelt
+training LODO,t10i4d100k,0.05,True,False,2.578005115089514,2.6112531969309463,Eclat_Gen_Borgelt,2.6112531969309463,Eclat_Gen_Borgelt,2.6112531969309463,Eclat_Gen_Borgelt,2.6112531969309463,Eclat_Gen_Borgelt,2.6112531969309463,Eclat_Gen_Borgelt
+training LODO,t10i4d100k,0.2,True,False,2.5933503836317136,2.5933503836317136,Apriori_Gen_Borgelt,2.5933503836317136,Apriori_Gen_Borgelt,2.5933503836317136,Apriori_Gen_Borgelt,2.5933503836317136,Apriori_Gen_Borgelt,2.5933503836317136,Apriori_Gen_Borgelt
+training LODO,t10i4d100k,0.3,True,False,2.5907928388746804,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,t10i4d100k,0.5,True,False,2.59846547314578,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+training LODO,t10i4d100k,0.7,True,False,2.5882352941176467,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+confirm,chainstore_fim,9.951039984761208e-05,False,False,1.1185085890179725,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt
+confirm,chainstore_fim,0.0002244038136518,False,False,1.0335486672819063,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt
+confirm,chainstore_fim,0.0005370866050465,False,False,1.1738862475787992,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+confirm,chainstore_fim,0.0015038874198188,False,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+confirm,chainstore_fim,0.0033943603884814,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+confirm,fruithut,6.457108314557345e-05,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+confirm,fruithut,0.0003503324723855,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+confirm,fruithut,0.0015428367313293,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+confirm,fruithut,0.0058402483925921,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+confirm,fruithut,0.0140888608012309,True,False,1.0,1.3627450980392157,Gr_growth,1.3627450980392157,Gr_growth,1.3627450980392157,Gr_growth,1.3627450980392157,Gr_growth,1.3627450980392157,Gr_growth
+confirm,instacart,0.0002267374951413,False,False,2.686270074643746,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt
+confirm,instacart,0.0005849446303226,False,False,1.1534908992121706,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt
+confirm,instacart,0.0016062160370096,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+confirm,instacart,0.0051044516763331,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+confirm,instacart,0.0124896158037939,True,False,1.0,1.0050675675675675,Gr_growth,1.0050675675675675,Gr_growth,1.0050675675675675,Gr_growth,1.0050675675675675,Gr_growth,1.0050675675675675,Gr_growth
+confirm,skin,0.0023535340757456,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+confirm,skin,0.2363562354880701,True,False,1.0,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+confirm,t20i6d100k,0.0022092231940913,False,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+confirm,t20i6d100k,0.0050614479293849,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+confirm,t20i6d100k,0.0090045235283521,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+confirm,t20i6d100k,0.0145488481015191,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+confirm,t20i6d100k,0.0196027901763375,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+hard,liquor,0.0002253937196677,False,False,1.4323083983478662,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+hard,liquor,0.0009543266002954,True,False,2.381033022861981,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
+hard,mooc_set,0.0002998727812443,False,True,10.0,10.0,Apriori_Gen_Borgelt,10.0,Pascal,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+hard,mooc_set,0.0008208638759314,False,False,1.7367203334735553,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth,1.0,Gr_growth
+hard,sign_set,0.0407534246575342,False,False,1.7741379310344827,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt
+hard,sign_set,0.0503424657534246,True,False,1.0,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt
