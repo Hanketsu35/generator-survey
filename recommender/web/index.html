@@ -169,6 +169,8 @@ const T = {
   avglen: ["avg. length", "ort. uzunluk"], thr: ["threshold", "eşik"], fItems: ["frequent items", "sık öğe"],
   fPairs: ["frequent pairs", "sık çift"], suggested: ["suggested", "önerilen"],
   topItems: ["most common items", "en sık öğeler"], thinking: ["reading your question…", "sorunu okuyorum…"],
+  stillWorking: ["still working — for a memory question the miners are being run on your file; this can take up to about a minute",
+                 "hâlâ çalışıyorum — bellek sorusunda algoritmalar senin verinde koşturuluyor; bu bir dakikaya kadar sürebilir"],
   recommended: ["Recommended", "Önerilen"], notHere: ["not installed here", "burada kurulu değil"],
   bestHere: ["Best you can run here", "Burada çalıştırabileceğin en iyisi"],
   none: ["No verified implementation fits this request.", "Bu isteğe uyan doğrulanmış bir implementasyon yok."],
@@ -328,6 +330,9 @@ async function send(text, choice) {
   wait.className = "msg bot thinking"; wait.textContent = t("thinking");
   $("log").appendChild(wait); scroll();
   $("send").disabled = true;
+  // A memory request runs the native miners on the user's file (up to ~60 s
+  // on hard thresholds); say so rather than leave "reading…" on screen.
+  const slow = setTimeout(() => { wait.textContent = t("stillWorking"); }, 3000);
   try {
     const r = await fetch("/api/message", {method: "POST", headers: {"Content-Type": "application/json"},
                                            body: JSON.stringify(body)});
@@ -336,6 +341,7 @@ async function send(text, choice) {
     if (!r.ok) throw new Error(d.error);
     render(d);
   } catch (e) { wait.remove(); bot(`<div class="bubble err">${esc(e.message)}</div>`); }
+  clearTimeout(slow);
   $("send").disabled = false;
 }
 

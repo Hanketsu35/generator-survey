@@ -31,6 +31,21 @@ Protocol, fixed in results/PROBE_PROTOCOL.md before the first probe ran:
              runtime) and the amended affine line (fixed part plus a
              per-transaction cost), which the costs report by default
 
+The four miners run CONCURRENTLY, one thread each (each run is its own
+process, so peak memory -- the process's own VmHWM -- is unaffected). Run one
+after another the probe took up to 249 s on hard instances (four 60 s
+timeouts, results/HARD_RESULTS.md); concurrently its worst case is one
+timeout: 60 s direct, 3 x 20 s sampled. Runtimes measured concurrently are
+somewhat higher than alone; the probe's runtime is not used for ranking
+(memory requests only) and its runtime interval is not shown. Runs shorter
+than RERUN_BELOW are then run again, one at a time: the memory sampler's first
+reading comes after launch, and with four monitors sharing the interpreter it
+can come after a 5-ms miner has exited. Measured, the concurrent reading was
+the sequential one to within 0.001 log10 (median) on runs of 0.05 s or more,
+and off by 0.41 on shorter ones (results/probe_parallel_check.csv). Each miner's
+address space is capped at an eighth of RAM, so the four together stay under
+half of it; a miner that hits the cap is reported as not finishing.
+
 Only the four native miners are probed. A JVM miner's run costs a JVM start
 and a heap that grows towards the default ceiling before collecting; that is
 neither cheap nor extrapolable from a small sample, and the engine's model
@@ -43,6 +58,7 @@ import shutil
 import sys
 import tempfile
 import time
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -60,6 +76,10 @@ DIRECT_TIMEOUT = 60
 MEM_SLOPE = (0.0, 1.2)
 RT_SLOPE = (0.0, 2.0)
 SEED = 0
+#: runs faster than this (s) are re-measured alone; see the module docstring
+RERUN_BELOW = 0.1
+#: fraction of physical RAM each concurrently probed miner may address
+MEM_SHARE = 8
 
 
 @dataclass
@@ -86,7 +106,8 @@ def _run(name, path, n, sigma, timeout, workdir):
     from src import metrics as M
     from src.config import ALGORITHMS, GRGROWTH_K
     cfg = ALGORITHMS[name]
-    out = os.path.join(workdir, "out_%s.txt" % name)
+    # one output file per miner and size: the miners now run side by side
+    out = os.path.join(workdir, "out_%s_%d.txt" % (name, n))
     if cfg.get("exe_type") == "grgrowth":
         base = out[:-4]
         res = M.run_external(cfg["exe"], [path, max(1, int(round(sigma * n))), GRGROWTH_K, base],
@@ -154,7 +175,7 @@ def probe(path, sigma, algorithms=PROBED):
     """Probe `algorithms` on the transactional database at `path`."""
     from src import metrics as M
     import psutil
-    M.NATIVE_MEM_LIMIT_MB = int(psutil.virtual_memory().total / 4 / 2 ** 20)
+    M.NATIVE_MEM_LIMIT_MB = int(psutil.virtual_memory().total / MEM_SHARE / 2 ** 20)
     t0 = time.perf_counter()
     with open(path) as fh:
         lines = [l if l.endswith("\n") else l + "\n" for l in fh if l.strip()]
@@ -165,21 +186,33 @@ def probe(path, sigma, algorithms=PROBED):
     try:
         if sizes[-1] > n / 2:
             r = ProbeResult(n=n, sigma=sigma, mode="direct", sizes=[n], wall_s=0.0)
+            with ThreadPoolExecutor(max_workers=len(algorithms)) as ex:
+                runs = dict(zip(algorithms, ex.map(
+                    lambda a: _run(a, path, n, sigma, DIRECT_TIMEOUT, work), algorithms)))
             for a in algorithms:
-                got = _run(a, path, n, sigma, DIRECT_TIMEOUT, work)
+                got = runs[a]
+                if got and got[1] < RERUN_BELOW:
+                    got = _run(a, path, n, sigma, DIRECT_TIMEOUT, work) or got
                 r.points[a] = [(n, got)] if got else []
                 r.costs[a] = ({"memory_mb": got[0], "runtime_s": got[1], "mode": "measured"}
                               if got else {"mode": "failed"})
         else:
             r = ProbeResult(n=n, sigma=sigma, mode="sampled", sizes=sizes, wall_s=0.0)
             files = {s: _sample(lines, s, os.path.join(work, "s%d.txt" % s)) for s in sizes}
-            for a in algorithms:
+
+            def climb(a):
                 pts = []
                 for s in sizes:
                     got = _run(a, files[s], s, sigma, SAMPLE_TIMEOUT, work)
                     if got is None:
                         break
                     pts.append((s, got))
+                return pts
+            with ThreadPoolExecutor(max_workers=len(algorithms)) as ex:
+                climbs = dict(zip(algorithms, ex.map(climb, algorithms)))
+            for a in algorithms:
+                pts = [(s, (_run(a, files[s], s, sigma, SAMPLE_TIMEOUT, work) or got)
+                        if got[1] < RERUN_BELOW else got) for s, got in climbs[a]]
                 r.points[a] = pts
                 if len(pts) < 2:
                     r.costs[a] = {"mode": "failed"}

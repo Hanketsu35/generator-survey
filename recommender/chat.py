@@ -137,6 +137,73 @@ def _turkish(text):
     return bool(re.search(r"[ğüşıöçĞÜŞİÖÇ]|\b(ve|bir|bu|hangi|için|mi|mı|ne)\b", text or ""))
 
 
+# ----------------------------------------------------------------------
+# Keyword reading of a request when no language model is running, in both
+# languages of the interface. nl.RuleExtractor is English only, and the
+# chat used to take nothing from it but the family: "en az bellek" and even
+# "optimise for memory" left the objective at balanced, and a follow-up was
+# not read at all. Its rules are scored in the Layer-1 experiments, so they
+# are not changed; this reads what the chat needs on top of them.
+_MEM = r"(memory|ram\b|bellek|hafıza|hafiza)"
+_FAST = r"(fast|speed|quick|runtime|hızlı|hizli|hız\b|hiz\b|çabuk|cabuk|süre|sure\b|zaman)"
+_DONT = r".{0,25}(önemli değil|onemli degil|umurumda değil|fark etmez|farketmez|" \
+        r"don't care|do not care|doesn't matter|does not matter|not important)"
+_NUM = r"(\d+(?:[.,]\d+)?)"
+
+
+def _f(x):
+    return float(x.replace(",", "."))
+
+
+def keyword_fields(text):
+    """Objective, threshold and budgets read from ``text`` by keywords.
+
+    Returns only what the text states; an empty dict when it states nothing.
+    """
+    t = text.lower()
+    got = {k: v for k, v in nl.RuleExtractor().extract(text).items()
+           if k in ("objective", "threshold", "max_memory_mb", "max_runtime_s")
+           and v is not None}
+    mem = re.search(_MEM, t) and not re.search(_MEM + _DONT, t)
+    fast = re.search(_FAST, t) and not re.search(_FAST + _DONT, t)
+    if re.search(_MEM + _DONT, t) and re.search(_FAST, t):
+        fast, mem = True, False
+    # a memory BUDGET mentions memory without asking to minimise it
+    if mem and re.search(_NUM + r"\s*(gb|mb|giga|mega)", t) and not re.search(
+            r"en az|az bellek|least|lowest|minimi|düşük|dusuk|kısıtlı|kisitli|tight|"
+            r"limited|sınırlı|sinirli", t):
+        mem = False
+    if re.search(r"denge|dengeli|balance", t) or (mem and fast):
+        got["objective"] = "balanced"
+    elif mem:
+        got["objective"] = "memory"
+    elif fast:
+        got["objective"] = "runtime"
+    m = re.search(_NUM + r"\s*(gb|gigabayt|gigabyte)", t)
+    if m:
+        got["max_memory_mb"] = _f(m.group(1)) * 1024
+    else:
+        m = re.search(_NUM + r"\s*(mb|megabayt|megabyte)", t)
+        if m:
+            got["max_memory_mb"] = _f(m.group(1))
+    for unit, mult in ((r"(saniye|sn\b|seconds?|secs?\b|s\b)", 1), (r"(dakika|dk\b|minutes?|mins?\b)", 60),
+                       (r"(saat|hours?)", 3600)):
+        m = re.search(_NUM + r"\s*" + unit, t)
+        if m:
+            got["max_runtime_s"] = _f(m.group(1)) * mult
+            break
+    m = re.search(r"%\s*" + _NUM, t) or re.search(_NUM + r"\s*(%|percent|yüzde)", t) \
+        or re.search(r"yüzde\s*" + _NUM, t)
+    if m:
+        got["threshold"] = _f(m.group(1)) / 100.0
+    else:
+        m = re.search(r"(destek|eşik|esik|support|minsup|threshold)\D{0,15}?" + _NUM, t) \
+            or re.search(_NUM + r"\s*(destek|eşik|esik|support|minsup)", t)
+        if m:
+            got["threshold"] = _f(m.group(2) if m.group(1).isalpha() else m.group(1))
+    return got
+
+
 def _num(x):
     """A number as the explanation prompt shows it -- and as the check expects it."""
     if x is None:
@@ -349,6 +416,10 @@ class App:
                           "data_type": dtype}
                 if ask.reconcile(fields["family"], dtype) is None:
                     fields = None
+                if fields is not None:
+                    kw = keyword_fields(text)
+                    fields.update({k: v for k, v in kw.items() if k != "threshold"})
+                    notes += self._apply_threshold(s, kw.get("threshold"), fields["family"])
                 source, note = ("rules", "language model offline; keyword rules used")
             if fields is None:
                 s.pending = "family"
@@ -378,7 +449,13 @@ class App:
             if llm:
                 notes += self._revise(s, text)
             else:
-                notes.append("language model offline; the request was not changed")
+                kw = keyword_fields(text)
+                if kw:
+                    s.task.update({k: v for k, v in kw.items() if k != "threshold"})
+                    notes += self._apply_threshold(s, kw.get("threshold"), s.task.get("family"))
+                    notes.append("language model offline; keyword rules used")
+                else:
+                    notes.append("language model offline; the request was not changed")
 
         if dtype == "utility" and s.threshold is None:
             s.pending = "utility_threshold"
@@ -388,6 +465,17 @@ class App:
         if s.task.get("family") == "minimal_rare_itemset" and s.threshold_why != "given by you":
             s.threshold, s.threshold_why = 0.1, "a maximum support of 10%, the benchmark's default for rare patterns"
         return self._recommend(s, text, notes, llm)
+
+    @staticmethod
+    def _apply_threshold(s, thr, family):
+        """Set a threshold read from the text, if it is in range."""
+        if thr is None:
+            return []
+        util = family == "high_utility_generator"
+        if (util and thr > 0) or (not util and 0 < thr <= 1):
+            s.threshold, s.threshold_why = float(thr), "given by you"
+            return []
+        return ["ignored threshold %r: out of range" % thr]
 
     def _revise(self, s, text, numbers_only=False):
         """Apply what a follow-up message changes; drop anything invalid."""
