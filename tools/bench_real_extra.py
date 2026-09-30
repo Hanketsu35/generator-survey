@@ -106,7 +106,7 @@ def sigma_for_pairs(probe, target):
     return hi
 
 
-def plan(datasets=EXTENSION, calibration=True, cap_reachable=False):
+def plan(datasets=EXTENSION, calibration=True, cap_reachable=False, targets=PAIR_TARGETS):
     """[(dataset, sigma, target_pairs or None, role, n_tx, n_items)]
 
     ``cap_reachable`` lowers each target to 90% of the pairs that can reach
@@ -124,7 +124,7 @@ def plan(datasets=EXTENSION, calibration=True, cap_reachable=False):
         seen = set()
         reachable = (10 ** probe.at((MIN_ABS_SUPPORT + 0.25) / probe.n_tx)["log_n_freq2"] - 1
                      if cap_reachable else float("inf"))
-        for tg in PAIR_TARGETS:
+        for tg in targets:
             sg = sigma_for_pairs(probe, min(tg, 0.9 * reachable))
             # Bisection converges on the support of the pair that crosses the
             # target -- an INTEGER -- so sigma*|D| lands on an integer to within
@@ -191,6 +191,9 @@ def main(argv=None):
     ap.add_argument("--no-calibration", action="store_true")
     ap.add_argument("--cap-reachable", action="store_true",
                     help="see plan(); used for the second extension")
+    ap.add_argument("--targets", type=int, nargs="+", default=list(PAIR_TARGETS),
+                    help="pair targets to run (default: all five levels)")
+    ap.add_argument("--timeout", type=float, default=TIMEOUT)
     args = ap.parse_args(argv)
     os.chdir(_ROOT)
     out_csv = Path(args.out)
@@ -198,7 +201,7 @@ def main(argv=None):
 
     algos = category1_algorithms()
     instances = plan(order, calibration=not args.no_calibration,
-                     cap_reachable=args.cap_reachable)
+                     cap_reachable=args.cap_reachable, targets=args.targets)
     done = done_keys(out_csv)
     jobs = []
     # Easiest difficulty level of EVERY dataset first, hardest last. Dataset by
@@ -219,7 +222,7 @@ def main(argv=None):
             if (name, ds, round(sg, 9)) in done:
                 continue
             jobs.append((name, c, str(RAW / ("%s.txt" % ds)), ds, sg, None,
-                         n_tx, n_items, TIMEOUT, 0, MONITOR_INTERVAL, tg, role))
+                         n_tx, n_items, args.timeout, 0, MONITOR_INTERVAL, tg, role))
 
     print("machine: %s | java: %s" % (MACHINE, _jre[-1] if _jre else "NOT FOUND"))
     print("%d instances (%d calibration, %d extension) x %d algorithms"

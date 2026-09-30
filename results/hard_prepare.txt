@@ -1,0 +1,7 @@
+liquor         from liquor_11.txt    (utility)    52131 tx | empty dropped 0
+foodmart_fim   from foodmart.txt     (utility)     4141 tx | empty dropped 0
+bible_set      from bible.txt        (sequence)    36369 tx | empty dropped 0
+leviathan_set  from leviathan.txt    (sequence)     5834 tx | empty dropped 0
+sign_set       from sign.txt         (sequence)      730 tx | empty dropped 0
+eshop_set      from e_shop.txt       (sequence)    24026 tx | empty dropped 0
+mooc_set       from mooc.txt         (sequence)    82535 tx | empty dropped 0
