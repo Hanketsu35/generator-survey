@@ -1,0 +1,18 @@
+210 completed runs, 8 datasets
+old band (bootstrap of the forest mean) coverage: 0.048
+I1 model memory   coverage 0.881 (n=210) | per dataset mean 0.767, min 0.000 -> PASS
+I2 probe memory   coverage 0.991 (n=108) | per dataset mean 0.994, min 0.950 -> PASS
+I3 model runtime  coverage 0.890 (n=210) | per dataset mean 0.807, min 0.000 -> PASS
+I4 probe runtime  coverage 0.833 (n=108) | per dataset mean 0.766, min 0.250 -> FAIL
+   probe measured memory coverage 0.982 (n=56)
+   probe sampled  memory coverage 1.000 (n=52)
+per dataset (I1, I2):
+   chainstore_fim n= 28  I1 1.00  I2 1.00
+   fruithut       n= 43  I1 1.00  I2 0.95
+   instacart      n= 41  I1 0.88  I2 1.00
+   liquor         n= 12  I1 1.00  I2 1.00
+   mooc_set       n=  7  I1 0.00  I2 1.00
+   sign_set       n= 17  I1 0.65  I2 1.00
+   skin           n= 18  I1 0.61  I2 1.00
+   t20i6d100k     n= 44  I1 1.00  I2 1.00
+median width: model memory x21.9, probe memory x1.09

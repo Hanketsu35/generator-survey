@@ -1,0 +1,73 @@
+algorithm,category,dataset,param_name,param_value,runtime_s,peak_memory_mb,generator_count,timed_out,error,timestamp,n_tx,n_items,target_pairs,role,machine
+Apriori_Gen_Borgelt,1,sign_set,minsup,0.05034246575342466,0.0395,4.42,6262,False,,20260930_084141,730,267,5000,extension,Linux x86_64
+DefMe,1,sign_set,minsup,0.05034246575342466,0.2327,126.12,6263,False,,20260930_084141,730,267,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,sign_set,minsup,0.05034246575342466,0.015,4.75,6262,False,,20260930_084141,730,267,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,sign_set,minsup,0.05034246575342466,0.0301,12.12,6262,False,,20260930_084141,730,267,5000,extension,Linux x86_64
+Gr_growth,1,sign_set,minsup,0.05034246575342466,0.03,15.64,6263,False,,20260930_084141,730,267,5000,extension,Linux x86_64
+TalkyG_Diffset,1,sign_set,minsup,0.05034246575342466,0.2625,109.65,6263,False,,20260930_084142,730,267,5000,extension,Linux x86_64
+Talky_G,1,sign_set,minsup,0.05034246575342466,0.2358,104.45,6263,False,,20260930_084142,730,267,5000,extension,Linux x86_64
+Pascal,1,sign_set,minsup,0.05034246575342466,2.1433,94.1,6262,False,,20260930_084144,730,267,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,liquor,minsup,0.0009543266002954097,0.0611,11.81,12860,False,,20260930_084144,52131,4026,5000,extension,Linux x86_64
+DefMe,1,liquor,minsup,0.0009543266002954097,0.7542,803.45,12861,False,,20260930_084145,52131,4026,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,liquor,minsup,0.0009543266002954097,0.0665,20.53,12860,False,,20260930_084145,52131,4026,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,liquor,minsup,0.0009543266002954097,0.0654,32.39,12860,False,,20260930_084145,52131,4026,5000,extension,Linux x86_64
+Gr_growth,1,liquor,minsup,0.0009543266002954097,0.0803,28.12,12861,False,,20260930_084146,52131,4026,5000,extension,Linux x86_64
+Zart,1,sign_set,minsup,0.05034246575342466,28.4174,513.67,6263,False,,20260930_084211,730,267,5000,extension,Linux x86_64
+TalkyG_Diffset,1,liquor,minsup,0.0009543266002954097,2.4697,7691.76,,False,java.lang.OutOfMemoryError: Java heap space,20260930_084214,52131,4026,5000,extension,Linux x86_64
+Talky_G,1,liquor,minsup,0.0009543266002954097,2.4264,7690.71,,False,java.lang.OutOfMemoryError: Java heap space,20260930_084216,52131,4026,5000,extension,Linux x86_64
+Pascal,1,liquor,minsup,0.0009543266002954097,224.7158,131.88,12860,False,,20260930_084531,52131,4026,5000,extension,Linux x86_64
+Zart,1,liquor,minsup,0.0009543266002954097,505.3404,1054.93,12861,False,,20260930_085042,52131,4026,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,eshop_set,minsup,0.016263631066344795,600.2217,5407.41,0,True,,20260930_085531,24026,317,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,eshop_set,minsup,0.016263631066344795,253.6069,7834.82,79444513,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/eclat: not enough memory,20260930_085951,24026,317,5000,extension,Linux x86_64
+DefMe,1,eshop_set,minsup,0.016263631066344795,600.1525,990.3,43555473,True,,20260930_090045,24026,317,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,eshop_set,minsup,0.016263631066344795,221.4653,7824.98,79408068,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/fpgrowth: not enough memory,20260930_090338,24026,317,5000,extension,Linux x86_64
+Gr_growth,1,eshop_set,minsup,0.016263631066344795,350.7316,7834.18,157637608,False,killed by signal 6: what():  std::bad_alloc,20260930_090647,24026,317,5000,extension,Linux x86_64
+Pascal,1,eshop_set,minsup,0.016263631066344795,600.043,508.27,249586,True,,20260930_091339,24026,317,5000,extension,Linux x86_64
+TalkyG_Diffset,1,eshop_set,minsup,0.016263631066344795,600.142,594.34,2303828,True,,20260930_091647,24026,317,5000,extension,Linux x86_64
+Talky_G,1,eshop_set,minsup,0.016263631066344795,600.0513,575.3,2249134,True,,20260930_092339,24026,317,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,mooc_set,minsup,0.000820863875931423,37.8125,908.27,10789017,False,,20260930_092418,82535,1302,5000,extension,Linux x86_64
+Zart,1,eshop_set,minsup,0.016263631066344795,600.1427,788.62,0,True,,20260930_092648,24026,317,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,mooc_set,minsup,0.000820863875931423,10.8294,969.92,10789017,False,,20260930_092659,82535,1302,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,mooc_set,minsup,0.000820863875931423,9.9976,972.28,10789017,False,,20260930_092710,82535,1302,5000,extension,Linux x86_64
+Gr_growth,1,mooc_set,minsup,0.000820863875931423,9.6539,522.98,10789018,False,,20260930_092721,82535,1302,5000,extension,Linux x86_64
+DefMe,1,mooc_set,minsup,0.000820863875931423,600.1504,852.6,5947993,True,,20260930_093418,82535,1302,5000,extension,Linux x86_64
+Pascal,1,mooc_set,minsup,0.000820863875931423,600.1288,281.36,230779,True,,20260930_093721,82535,1302,5000,extension,Linux x86_64
+TalkyG_Diffset,1,mooc_set,minsup,0.000820863875931423,600.0833,484.64,891202,True,,20260930_094419,82535,1302,5000,extension,Linux x86_64
+Talky_G,1,mooc_set,minsup,0.000820863875931423,600.0454,482.57,886472,True,,20260930_094722,82535,1302,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,sign_set,minsup,0.040753424657534246,0.0774,10.29,22436,False,,20260930_094722,730,267,20000,extension,Linux x86_64
+DefMe,1,sign_set,minsup,0.040753424657534246,0.3537,238.38,22437,False,,20260930_094722,730,267,20000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,sign_set,minsup,0.040753424657534246,0.0438,5.8,22436,False,,20260930_094723,730,267,20000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,sign_set,minsup,0.040753424657534246,0.0514,33.4,22436,False,,20260930_094723,730,267,20000,extension,Linux x86_64
+Gr_growth,1,sign_set,minsup,0.040753424657534246,0.05,16.2,22437,False,,20260930_094723,730,267,20000,extension,Linux x86_64
+Pascal,1,sign_set,minsup,0.040753424657534246,11.3449,162.82,22436,False,,20260930_094735,730,267,20000,extension,Linux x86_64
+TalkyG_Diffset,1,sign_set,minsup,0.040753424657534246,0.4583,242.59,22437,False,,20260930_094736,730,267,20000,extension,Linux x86_64
+Talky_G,1,sign_set,minsup,0.040753424657534246,0.4676,221.16,22437,False,,20260930_094736,730,267,20000,extension,Linux x86_64
+Zart,1,mooc_set,minsup,0.000820863875931423,600.087,925.01,0,True,,20260930_095419,82535,1302,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,liquor,minsup,0.00022539371966776007,0.1268,21.79,89264,False,,20260930_095420,52131,4026,20000,extension,Linux x86_64
+DefMe,1,liquor,minsup,0.00022539371966776007,2.4276,808.79,89265,False,,20260930_095422,52131,4026,20000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,liquor,minsup,0.00022539371966776007,0.1104,27.38,89264,False,,20260930_095423,52131,4026,20000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,liquor,minsup,0.00022539371966776007,0.1111,48.99,89264,False,,20260930_095423,52131,4026,20000,extension,Linux x86_64
+Gr_growth,1,liquor,minsup,0.00022539371966776007,0.1452,31.21,89265,False,,20260930_095423,52131,4026,20000,extension,Linux x86_64
+Zart,1,sign_set,minsup,0.040753424657534246,600.1197,770.26,0,True,,20260930_095737,730,267,20000,extension,Linux x86_64
+TalkyG_Diffset,1,liquor,minsup,0.00022539371966776007,2.4583,7691.6,,False,java.lang.OutOfMemoryError: Java heap space,20260930_095739,52131,4026,20000,extension,Linux x86_64
+Talky_G,1,liquor,minsup,0.00022539371966776007,2.4211,7477.58,,False,java.lang.OutOfMemoryError: Java heap space,20260930_095742,52131,4026,20000,extension,Linux x86_64
+Pascal,1,liquor,minsup,0.00022539371966776007,600.1219,171.24,1127,True,,20260930_100424,52131,4026,20000,extension,Linux x86_64
+Zart,1,liquor,minsup,0.00022539371966776007,600.1717,1307.63,0,True,,20260930_100742,52131,4026,20000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,eshop_set,minsup,0.0018209439773578624,233.4257,7835.68,0,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/apriori: not enough memory,20260930_100817,24026,317,20000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,eshop_set,minsup,0.0018209439773578624,250.8103,7834.47,79396573,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/eclat: not enough memory,20260930_101233,24026,317,20000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,eshop_set,minsup,0.0018209439773578624,238.7818,7833.33,79337697,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/fpgrowth: not enough memory,20260930_101638,24026,317,20000,extension,Linux x86_64
+DefMe,1,eshop_set,minsup,0.0018209439773578624,600.1559,873.3,33248765,True,,20260930_101745,24026,317,20000,extension,Linux x86_64
+Gr_growth,1,eshop_set,minsup,0.0018209439773578624,359.0829,7834.06,157141204,False,killed by signal 6: what():  std::bad_alloc,20260930_102250,24026,317,20000,extension,Linux x86_64
+Pascal,1,eshop_set,minsup,0.0018209439773578624,600.0631,543.64,359663,True,,20260930_102745,24026,317,20000,extension,Linux x86_64
+TalkyG_Diffset,1,eshop_set,minsup,0.0018209439773578624,600.1397,486.41,1113484,True,,20260930_103251,24026,317,20000,extension,Linux x86_64
+Talky_G,1,eshop_set,minsup,0.0018209439773578624,600.0376,467.46,1097932,True,,20260930_103746,24026,317,20000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,mooc_set,minsup,0.0002998727812443206,207.9337,7835.39,0,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/apriori: not enough memory,20260930_104114,82535,1302,20000,extension,Linux x86_64
+Zart,1,eshop_set,minsup,0.0018209439773578624,600.084,680.05,0,True,,20260930_104251,24026,317,20000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,mooc_set,minsup,0.0002998727812443206,198.7657,5834.66,68140296,False,,20260930_104614,82535,1302,20000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,mooc_set,minsup,0.0002998727812443206,198.1182,5861.59,68140296,False,,20260930_104937,82535,1302,20000,extension,Linux x86_64
+Gr_growth,1,mooc_set,minsup,0.0002998727812443206,87.5891,2986.74,68140297,False,,20260930_105109,82535,1302,20000,extension,Linux x86_64
+DefMe,1,mooc_set,minsup,0.0002998727812443206,600.0891,874.62,4393330,True,,20260930_105114,82535,1302,20000,extension,Linux x86_64
+Pascal,1,mooc_set,minsup,0.0002998727812443206,600.1224,212.56,20836,True,,20260930_110109,82535,1302,20000,extension,Linux x86_64
+TalkyG_Diffset,1,mooc_set,minsup,0.0002998727812443206,600.098,470.19,584506,True,,20260930_110115,82535,1302,20000,extension,Linux x86_64
+Talky_G,1,mooc_set,minsup,0.0002998727812443206,600.073,470.09,550941,True,,20260930_111109,82535,1302,20000,extension,Linux x86_64
+Zart,1,mooc_set,minsup,0.0002998727812443206,600.1589,1151.38,0,True,,20260930_111115,82535,1302,20000,extension,Linux x86_64

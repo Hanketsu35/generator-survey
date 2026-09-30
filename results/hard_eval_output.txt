@@ -1,0 +1,44 @@
+==============================================================================
+VARIANT: affine
+==============================================================================
+  liquor     0.000225394 direct  best Apriori_Gen_Borgelt     21.8 MB | engine Gr_growth             1.43x | probe Apriori_Gen_Borgelt   1.00x | failed: Pascal,Zart
+  liquor     0.000954327 direct  best Apriori_Gen_Borgelt     11.8 MB | engine Gr_growth             2.38x | probe Apriori_Gen_Borgelt   1.00x | failed: -
+  mooc_set   0.000299873 direct  best Gr_growth             2986.7 MB | engine Apriori_Gen_Borgelt  10.00x | probe Apriori_Gen_Borgelt  10.00x | failed: Apriori_Gen_Borgelt,DefMe,Pascal,Zart
+  mooc_set   0.000820864 direct  best Gr_growth              523.0 MB | engine Apriori_Gen_Borgelt   1.74x | probe Pascal               10.00x | failed: DefMe,Pascal,Zart
+  sign_set   0.0407534  direct  best Eclat_Gen_Borgelt        5.8 MB | engine Apriori_Gen_Borgelt   1.77x | probe Eclat_Gen_Borgelt     1.00x | failed: Zart
+  sign_set   0.0503425  direct  best Apriori_Gen_Borgelt      4.4 MB | engine Apriori_Gen_Borgelt   1.00x | probe Apriori_Gen_Borgelt   1.00x | failed: -
+memory: 6 instances, 3 datasets | engine 2.172x  probe 2.154x
+H1 superiority: ratio 0.992 [5-95% 0.604..1.629], P(better) 0.644 -> FAIL
+H2 non-inferiority: probe 2.154 <= 1.05 x engine 2.172 -> PASS
+H3: no sampled instance (every probe was a direct measurement)
+H4 budget answers correct (share):
+     25 MB  probe 1.000  model 0.400
+     50 MB  probe 1.000  model 0.300
+    100 MB  probe 1.000  model 0.800
+    200 MB  probe 1.000  model 0.800
+    500 MB  probe 1.000  model 0.800
+   overall probe 1.000  model 0.620 -> PASS
+not tested -- pick restricted to completed miners: engine 1.480x  probe 1.000x
+
+==============================================================================
+VARIANT: loglog
+==============================================================================
+  liquor     0.000225394 direct  best Apriori_Gen_Borgelt     21.8 MB | engine Gr_growth             1.43x | probe Apriori_Gen_Borgelt   1.00x | failed: Pascal,Zart
+  liquor     0.000954327 direct  best Apriori_Gen_Borgelt     11.8 MB | engine Gr_growth             2.38x | probe Apriori_Gen_Borgelt   1.00x | failed: -
+  mooc_set   0.000299873 direct  best Gr_growth             2986.7 MB | engine Apriori_Gen_Borgelt  10.00x | probe Apriori_Gen_Borgelt  10.00x | failed: Apriori_Gen_Borgelt,DefMe,Pascal,Zart
+  mooc_set   0.000820864 direct  best Gr_growth              523.0 MB | engine Apriori_Gen_Borgelt   1.74x | probe Pascal               10.00x | failed: DefMe,Pascal,Zart
+  sign_set   0.0407534  direct  best Eclat_Gen_Borgelt        5.8 MB | engine Apriori_Gen_Borgelt   1.77x | probe Eclat_Gen_Borgelt     1.00x | failed: Zart
+  sign_set   0.0503425  direct  best Apriori_Gen_Borgelt      4.4 MB | engine Apriori_Gen_Borgelt   1.00x | probe Apriori_Gen_Borgelt   1.00x | failed: -
+memory: 6 instances, 3 datasets | engine 2.172x  probe 2.154x
+H1 superiority: ratio 0.992 [5-95% 0.604..1.629], P(better) 0.630 -> FAIL
+H2 non-inferiority: probe 2.154 <= 1.05 x engine 2.172 -> PASS
+H3: no sampled instance (every probe was a direct measurement)
+H4 budget answers correct (share):
+     25 MB  probe 1.000  model 0.400
+     50 MB  probe 1.000  model 0.300
+    100 MB  probe 1.000  model 0.800
+    200 MB  probe 1.000  model 0.800
+    500 MB  probe 1.000  model 0.800
+   overall probe 1.000  model 0.620 -> PASS
+not tested -- pick restricted to completed miners: engine 1.480x  probe 1.000x
+
