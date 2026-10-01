@@ -1,0 +1,16 @@
+dataset,sigma,mode,best,best_mb,A,C1,C2,A_pick,C1_pick,C2_pick,failed
+census_kdd,0.015099762934599,sampled,Gr_growth,5848.76,10.0,10.0,10.0,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"Apriori_Gen_Borgelt,DefMe,Eclat_Gen_Borgelt,FGC_Stream,FPgrowth_Gen_Borgelt,Pascal,Zart"
+census_kdd,0.2090423159234775,sampled,Apriori_Gen_Borgelt,42.1,1.5337292161520188,1.0,1.0,FPgrowth_Gen_Borgelt,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"FGC_Stream,Pascal,Zart"
+census_kdd,0.8078705211930454,sampled,Gr_growth,13.98,1.0,1.0,1.0,Gr_growth,Gr_growth,Gr_growth,FGC_Stream
+census_kdd,0.9695761892112688,sampled,Gr_growth,13.98,1.0,1.0,1.0,Gr_growth,Gr_growth,Gr_growth,
+covertype,0.0002663456176464,direct,Apriori_Gen_Borgelt,187.13,1.041254742692246,1.0,1.0,Gr_growth,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"FGC_Stream,Pascal,Zart"
+covertype,0.0368869317673301,sampled,Gr_growth,53.48,1.0,1.0478683620044877,1.0,Gr_growth,Apriori_Gen_Borgelt,Gr_growth,FGC_Stream
+covertype,0.0938995235898742,sampled,Gr_growth,44.74,1.0,1.252123379526151,1.0,Gr_growth,Apriori_Gen_Borgelt,Gr_growth,FGC_Stream
+covertype,0.1456747020715579,sampled,Gr_growth,43.75,1.0,1.2811428571428571,1.0,Gr_growth,Apriori_Gen_Borgelt,Gr_growth,FGC_Stream
+diabetes130,0.2130549495902364,sampled,Gr_growth,949.44,10.0,10.0,10.0,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"Apriori_Gen_Borgelt,DefMe,FGC_Stream,Pascal,Zart"
+diabetes130,0.9969415128824952,sampled,Gr_growth,14.0,1.7678571428571428,1.0,1.0,Apriori_Gen_Borgelt,Gr_growth,Gr_growth,
+diabetes130,0.9999877169192068,sampled,Gr_growth,13.89,1.786897048236141,1.0,1.0,Apriori_Gen_Borgelt,Gr_growth,Gr_growth,
+poker,0.00164075,sampled,Gr_growth,171.08,1.0,1.009761515080664,1.0,Gr_growth,Apriori_Gen_Borgelt,Gr_growth,"FGC_Stream,Pascal,Zart"
+poker,0.01922275,sampled,Gr_growth,159.44,1.0,1.071249372804817,1.0,Gr_growth,Apriori_Gen_Borgelt,Gr_growth,FGC_Stream
+poker,0.06372875,sampled,Gr_growth,156.55,1.0,1.0824017885659531,1.0,Gr_growth,Apriori_Gen_Borgelt,Gr_growth,FGC_Stream
+poker,0.12537575,sampled,Gr_growth,14.24,1.0,1.0,1.0,Gr_growth,Gr_growth,Gr_growth,FGC_Stream
