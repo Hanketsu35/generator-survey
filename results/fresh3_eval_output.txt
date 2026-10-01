@@ -1,0 +1,18 @@
+  dota2      0.00077442 direct  best Apriori_Gen_Borgelt      30.3 MB | A Gr_growth             1.66 | S Apriori_Gen_Borgelt   1.00 | D Apriori_Gen_Borgelt   1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream,Pascal,Zart
+  dota2      0.00373179 sampled best Apriori_Gen_Borgelt      20.5 MB | A Gr_growth             2.18 | S Apriori_Gen_Borgelt   1.00 | D Apriori_Gen_Borgelt   1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream
+  dota2      0.0134566  sampled best Apriori_Gen_Borgelt      19.3 MB | A Gr_growth             2.18 | S Apriori_Gen_Borgelt   1.00 | D Apriori_Gen_Borgelt   1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream
+  dota2      0.0582704  sampled best Apriori_Gen_Borgelt      17.8 MB | A Gr_growth             1.41 | S Apriori_Gen_Borgelt   1.00 | D Apriori_Gen_Borgelt   1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream
+  dota2      0.141552   sampled best FPgrowth_Gen_Borgelt     11.5 MB | A Gr_growth             1.21 | S Apriori_Gen_Borgelt   1.02 | D Apriori_Gen_Borgelt   1.02 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: -
+  miniboone  0.0366262  sampled best Apriori_Gen_Borgelt      72.0 MB | A Gr_growth             3.82 | S Apriori_Gen_Borgelt   1.00 | D Apriori_Gen_Borgelt   1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream,Pascal,Zart
+  miniboone  0.0500196  sampled best Apriori_Gen_Borgelt      65.0 MB | A Gr_growth             3.89 | S Apriori_Gen_Borgelt   1.00 | D Apriori_Gen_Borgelt   1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream,Zart
+  miniboone  0.0786517  sampled best Apriori_Gen_Borgelt      64.1 MB | A Gr_growth             3.68 | S Apriori_Gen_Borgelt   1.00 | D Apriori_Gen_Borgelt   1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream
+  miniboone  0.162726   sampled best Apriori_Gen_Borgelt      63.8 MB | A Gr_growth             3.67 | S Apriori_Gen_Borgelt   1.00 | D Apriori_Gen_Borgelt   1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream
+  miniboone  0.189043   sampled best Apriori_Gen_Borgelt      63.6 MB | A Gr_growth             3.68 | S Apriori_Gen_Borgelt   1.00 | D Apriori_Gen_Borgelt   1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream
+  power      0.0136481  sampled best Gr_growth                14.1 MB | A Gr_growth             1.00 | S Gr_growth             1.00 | D Gr_growth             1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream
+  power      0.0564363  sampled best Gr_growth                14.1 MB | A Gr_growth             1.00 | S Gr_growth             1.00 | D Gr_growth             1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream
+  power      0.219215   sampled best Gr_growth                14.0 MB | A Gr_growth             1.00 | S Gr_growth             1.00 | D Gr_growth             1.00 | {'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0} | failed: FGC_Stream
+13 instances, 3 datasets | A engine 2.029x  S flag off 1.001x  D shipped 1.001x | failed A 0 S 0 D 0
+changed picks (S -> D): 0
+P1 D <= S and failed D <= S: 1.001 vs 1.001, 0 vs 0 -> PASS
+P2 D < A: ratio 0.493 [5-95% 0.349..0.791], P(better) 0.959 -> PASS
+P3 probe memory interval coverage 0.923 (n=52) -> PASS

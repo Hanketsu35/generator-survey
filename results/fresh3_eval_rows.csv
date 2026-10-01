@@ -1,0 +1,14 @@
+dataset,sigma,mode,best,best_mb,A,S,D,A_pick,S_pick,D_pick,progress,failed
+dota2,0.0007744198596869,direct,Apriori_Gen_Borgelt,30.3,1.6574257425742573,1.0,1.0,Gr_growth,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}","FGC_Stream,Pascal,Zart"
+dota2,0.0037317862924986,sampled,Apriori_Gen_Borgelt,20.48,2.18359375,1.0,1.0,Gr_growth,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}",FGC_Stream
+dota2,0.0134565569347004,sampled,Apriori_Gen_Borgelt,19.33,2.1795137092602177,1.0,1.0,Gr_growth,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}",FGC_Stream
+dota2,0.0582703723691311,sampled,Apriori_Gen_Borgelt,17.81,1.4065131948343628,1.0,1.0,Gr_growth,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}",FGC_Stream
+dota2,0.1415515380464112,sampled,FPgrowth_Gen_Borgelt,11.51,1.2067767158992182,1.0191138140747178,1.0191138140747178,Gr_growth,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}",
+miniboone,0.0366261994095214,sampled,Apriori_Gen_Borgelt,72.0,3.8202777777777777,1.0,1.0,Gr_growth,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}","FGC_Stream,Pascal,Zart"
+miniboone,0.0500196057325624,sampled,Apriori_Gen_Borgelt,65.04,3.8851476014760142,1.0,1.0,Gr_growth,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}","FGC_Stream,Zart"
+miniboone,0.0786516637962849,sampled,Apriori_Gen_Borgelt,64.12,3.6830941983780408,1.0,1.0,Gr_growth,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}",FGC_Stream
+miniboone,0.1627256581375323,sampled,Apriori_Gen_Borgelt,63.76,3.674560853199498,1.0,1.0,Gr_growth,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}",FGC_Stream
+miniboone,0.1890434709066306,sampled,Apriori_Gen_Borgelt,63.63,3.6820682068206816,1.0,1.0,Gr_growth,Apriori_Gen_Borgelt,Apriori_Gen_Borgelt,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}",FGC_Stream
+power,0.0136480861570893,sampled,Gr_growth,14.07,1.0,1.0,1.0,Gr_growth,Gr_growth,Gr_growth,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}",FGC_Stream
+power,0.0564362849391005,sampled,Gr_growth,14.08,1.0,1.0,1.0,Gr_growth,Gr_growth,Gr_growth,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}",FGC_Stream
+power,0.219214919386321,sampled,Gr_growth,13.98,1.0,1.0,1.0,Gr_growth,Gr_growth,Gr_growth,"{'Aprior': 1.0, 'Eclat_': 1.0, 'FPgrow': 1.0, 'Gr_gro': 1.0}",FGC_Stream
