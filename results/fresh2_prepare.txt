@@ -1,0 +1,4 @@
+poker         1000000 tx,    95 item codes, 11 columns (0 numeric binned, 0 one-hot)
+covertype      581012 tx,   101 item codes, 55 columns (10 numeric binned, 44 one-hot)
+census_kdd     199523 tx,   510 item codes, 41 columns (7 numeric binned, 0 one-hot)
+diabetes130    101766 tx,  2530 item codes, 48 columns (8 numeric binned, 0 one-hot)

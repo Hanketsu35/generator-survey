@@ -189,14 +189,49 @@ def none_finished(result):
     return bool(result.costs) and all(c.get("mode") == "failed" for c in result.costs.values())
 
 
-def estimate(points, n, variant="affine"):
-    """-> (memory_mb, runtime_s) extrapolated from probe points, or None."""
+#: Gr-growth's fixed footprint, from its source rather than fitted: a
+#: pattern hash map of MAP_SIZE = 1,299,709 pointers (PatternSet.h:10,53),
+#: 9.9 MiB, on top of the 3.9 MiB the binary takes when nothing is frequent.
+GR_FIXED_MB = 3.9 + 1299709 * 8 / 2 ** 20
+
+
+def _fixed_power(pts, n, fixed):
+    """Fixed part plus a power law in n on the rest, from the two largest sizes.
+
+    Gr-growth holds a prefix tree of the frequent items, which grows
+    sublinearly in n (later transactions share prefixes), on top of a fixed
+    hash map. The affine line extended that growth linearly: on uscensus at
+    sigma 0.257 it gave 221 MB for a true 79 MB (results/FRESH_RESULTS.md).
+    Exponent clipped to [0, 1]; when the variable part does not grow, the
+    affine line is used.
+    """
+    (s1, v1), (s2, v2) = pts[-2], pts[-1]
+    f = min(fixed, min(v for _s, v in pts))
+    t1, t2 = v1 - f, v2 - f
+    if t2 <= 0:
+        return v2
+    if t1 <= 0 or s2 <= s1:
+        return _affine(pts, n)
+    k = min(max(math.log(t2 / t1) / math.log(s2 / s1), 0.0), 1.0)
+    return f + t2 * (n / s2) ** k
+
+
+def estimate(points, n, variant="affine", algorithm=None):
+    """-> (memory_mb, runtime_s) extrapolated from probe points, or None.
+
+    variant "affine" (the default) is the affine line, except Gr-growth's
+    memory, which uses the fixed-plus-power form; "affine_plain" is the
+    affine line for every miner (as registered before FRESH2_PROTOCOL.md);
+    "loglog" the registered log-log line.
+    """
     if len(points) < 2:
         return None
     mem = [(s, g[0]) for s, g in points]
     rt = [(s, g[1]) for s, g in points]
     if variant == "loglog":
         return _extrapolate(mem, n, *MEM_SLOPE), _extrapolate(rt, n, *RT_SLOPE)
+    if variant == "affine" and algorithm == "Gr_growth" and len(mem) >= 2:
+        return _fixed_power(mem, n, GR_FIXED_MB), _affine(rt, n)
     return _affine(mem, n), _affine(rt, n)
 
 
@@ -252,7 +287,7 @@ def probe(path, sigma, algorithms=PROBED):
                     # these miners (all hold the data or a tree of it)
                     r.costs[a] = dict({"mode": "failed"}, **fails.get(a, {}))
                     continue
-                mem, rt = estimate(pts, n, "affine")
+                mem, rt = estimate(pts, n, "affine", a)
                 mem_l, rt_l = estimate(pts, n, "loglog")
                 r.costs[a] = {"memory_mb": mem, "runtime_s": rt, "memory_mb_loglog": mem_l,
                               "runtime_s_loglog": rt_l, "mode": "extrapolated"}
