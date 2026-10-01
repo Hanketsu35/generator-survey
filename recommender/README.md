@@ -91,6 +91,19 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
   - Nothing was re-tuned on this result. When no probed miner finishes, the
     engine now says so, and says that the ranking is then weak.
 
+- **Gr-growth's memory extrapolation was fixed and confirmed on new data**
+  (`results/FRESH2_RESULTS.md`; 4 large UCI datasets downloaded for the
+  test, 15 instances). The probe now models Gr-growth as its fixed hash map
+  (13.8 MiB, from the source) plus a sublinear tree. All four registered
+  criteria passed:
+  - Gr-growth's median memory error fell from 0.084 to 0.054 (log10);
+  - the ranking went from 1.422x to 1.359x;
+  - it beat the engine (1.514x, P = 0.998);
+  - the probe's interval covered 89%.
+
+  Two instances remain where every rule picks a miner that does not finish:
+  completion, not memory, is now the weak point.
+
 Sections below that report numbers on `results/summary.csv` are kept as they
 were measured; where re-measurement changes a conclusion, the section says so.
 
