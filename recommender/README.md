@@ -104,6 +104,16 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
   Two instances remain where every rule picks a miner that does not finish:
   completion, not memory, is now the weak point.
 
+- **On three more new datasets** (`results/FRESH3_RESULTS.md`), the
+  probe-backed ranking matched the lowest-memory miner on 12 of 13
+  instances: 1.001x, against the engine's 2.029x (P = 0.959). Twelve of the
+  13 were sampled. The rule that demotes a miner lagging in its probe
+  (`PROGRESS_DEMOTE`, found post hoc, `results/PROGRESS_POSTHOC.md`) had
+  nothing to act on there, so it remains unconfirmed.
+
+  Over the three fresh confirmations the probe-backed ranking was below the
+  engine every time: 1.110x vs 1.132x, 1.359x vs 1.514x, 1.001x vs 2.029x.
+
 Sections below that report numbers on `results/summary.csv` are kept as they
 were measured; where re-measurement changes a conclusion, the section says so.
 
