@@ -68,6 +68,12 @@ PROBE_SCALE_BETA = 0.5
 #: "scaled" makes a stopped miner look far heavier than any guess and
 #: raised regret (1.085x vs 1.042x post hoc); "floor" is used.
 LB_INTERVAL = "floor"
+#: demote a probed miner that finished fewer of its probe runs than another
+#: probed miner did (see recommend). Post hoc over 173 seen instances it
+#: turned two failed picks into the best ones and cost two others (Apriori
+#: slow but finishing within 3600 s): 1.073x -> 1.048x, failed picks 3 -> 1
+#: (results/PROGRESS_POSTHOC.md); confirmation: results/FRESH3_PROTOCOL.md.
+PROGRESS_DEMOTE = True
 
 
 @dataclass
@@ -245,6 +251,16 @@ class Recommender:
             return mf.for_dataset(task.dataset)
         raise ValueError("MiningTask needs either dataset or dataset_path")
 
+    @staticmethod
+    def _probe_progress(probe):
+        """Share of its probe runs each probed miner finished, {algo: 0..1}."""
+        sizes = probe.sizes or [probe.n]
+        out = {}
+        for a, c in probe.costs.items():
+            pts = (probe.points or {}).get(a) or []
+            out[a] = min(len(pts), len(sizes)) / float(len(sizes))
+        return out
+
     def _probe_scale(self, probe, feats, thr):
         """Median log10(probe / model) memory over the native miners, or 0.
 
@@ -337,6 +353,9 @@ class Recommender:
 
         thr = task.threshold if task.threshold is not None else 0.1
         k_scale = self._probe_scale(probe, feats, thr) if probe is not None else 0.0
+        progress = self._probe_progress(probe) if probe is not None else {}
+        lagging = ({a for a, p in progress.items() if p < max(progress.values())}
+                   if progress and PROGRESS_DEMOTE else set())
         rows = []
         for v in eligible:
             pred = self.model.predict(v.algorithm, feats, thr)
@@ -423,6 +442,7 @@ class Recommender:
                 "memory_interval": mem_iv,
                 "runtime_interval": rt_iv,
                 "probe_note": probe_note,
+                "lagging": v.algorithm in lagging,
             })
 
         if not rows:
@@ -461,6 +481,11 @@ class Recommender:
             s /= max(r["p_complete"], 0.01)
             # A predicted budget violation is a hard demotion, not a tiebreak.
             r["score"] = s * (1.0 if r["within_budget"] else 1e6)
+            # A probed miner that finished fewer probe runs than another one
+            # did is the slow one on this file; ranked after every miner the
+            # probe did not show to be slow, budget violations still last.
+            if r.get("lagging"):
+                r["score"] *= 1e3
 
             # Uncertainty on the SCORE. The ranking is by score, so a tier
             # computed from the runtime band alone would contradict it -- as it

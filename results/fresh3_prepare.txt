@@ -1,0 +1,3 @@
+dota2           92650 tx
+power         2049280 tx
+miniboone      130064 tx
