@@ -1,0 +1,802 @@
+dataset,sigma,algorithm,kind,hit,hit_old,width
+adult,0.0004837075028408,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+adult,0.0004837075028408,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+adult,0.0004837075028408,Gr_growth,V1 model memory,True,True,223.18018010424294
+adult,0.0004837075028408,Gr_growth,V3 model runtime,True,False,
+adult,0.0004837075028408,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+adult,0.0004837075028408,Eclat_Gen_Borgelt,V3 model runtime,True,False,
+adult,0.0004837075028408,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+adult,0.0004837075028408,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+adult,0.0004837075028408,DefMe,V1 model memory,True,True,223.18018010424294
+adult,0.0004837075028408,DefMe,V3 model runtime,True,True,
+adult,0.0004837075028408,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+adult,0.0004837075028408,Gr_growth,V2 probe memory,True,True,1.1047530180068967
+adult,0.0004837075028408,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+adult,0.0004837075028408,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+adult,0.0004837075028408,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+adult,0.0176821964927367,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+adult,0.0176821964927367,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+adult,0.0176821964927367,Eclat_Gen_Borgelt,V1 model memory,True,True,223.1801801042429
+adult,0.0176821964927367,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+adult,0.0176821964927367,Gr_growth,V1 model memory,True,True,223.18018010424296
+adult,0.0176821964927367,Gr_growth,V3 model runtime,True,True,
+adult,0.0176821964927367,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+adult,0.0176821964927367,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+adult,0.0176821964927367,Pascal,V1 model memory,True,True,223.18018010424294
+adult,0.0176821964927367,Pascal,V3 model runtime,True,True,
+adult,0.0176821964927367,DefMe,V1 model memory,True,True,223.18018010424296
+adult,0.0176821964927367,DefMe,V3 model runtime,True,True,
+adult,0.0176821964927367,Zart,V1 model memory,True,True,223.18018010424296
+adult,0.0176821964927367,Zart,V3 model runtime,True,True,
+adult,0.0176821964927367,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+adult,0.0176821964927367,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+adult,0.0176821964927367,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+adult,0.0176821964927367,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+adult,0.0176821964927367,Pascal,scaled model memory (not tested),True,True,223.18018010424296
+adult,0.0176821964927367,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+adult,0.0176821964927367,Zart,scaled model memory (not tested),True,True,223.18018010424296
+adult,0.1999861797856331,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+adult,0.1999861797856331,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+adult,0.1999861797856331,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+adult,0.1999861797856331,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+adult,0.1999861797856331,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+adult,0.1999861797856331,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+adult,0.1999861797856331,Gr_growth,V1 model memory,True,True,223.18018010424294
+adult,0.1999861797856331,Gr_growth,V3 model runtime,True,True,
+adult,0.1999861797856331,Pascal,V1 model memory,True,True,223.18018010424296
+adult,0.1999861797856331,Pascal,V3 model runtime,True,True,
+adult,0.1999861797856331,DefMe,V1 model memory,True,True,223.18018010424294
+adult,0.1999861797856331,DefMe,V3 model runtime,True,True,
+adult,0.1999861797856331,Zart,V1 model memory,True,True,223.18018010424296
+adult,0.1999861797856331,Zart,V3 model runtime,True,True,
+adult,0.1999861797856331,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+adult,0.1999861797856331,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+adult,0.1999861797856331,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+adult,0.1999861797856331,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+adult,0.1999861797856331,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+adult,0.1999861797856331,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+adult,0.1999861797856331,Zart,scaled model memory (not tested),True,True,223.18018010424294
+adult,0.6756165351187002,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+adult,0.6756165351187002,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+adult,0.6756165351187002,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+adult,0.6756165351187002,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+adult,0.6756165351187002,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+adult,0.6756165351187002,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+adult,0.6756165351187002,Gr_growth,V1 model memory,True,True,223.18018010424294
+adult,0.6756165351187002,Gr_growth,V3 model runtime,True,True,
+adult,0.6756165351187002,FGC_Stream,V1 model memory,True,True,223.18018010424296
+adult,0.6756165351187002,FGC_Stream,V3 model runtime,True,True,
+adult,0.6756165351187002,Pascal,V1 model memory,True,True,223.18018010424296
+adult,0.6756165351187002,Pascal,V3 model runtime,True,True,
+adult,0.6756165351187002,Zart,V1 model memory,True,True,223.18018010424294
+adult,0.6756165351187002,Zart,V3 model runtime,False,False,
+adult,0.6756165351187002,DefMe,V1 model memory,True,True,223.18018010424296
+adult,0.6756165351187002,DefMe,V3 model runtime,True,True,
+adult,0.6756165351187002,FPgrowth_Gen_Borgelt,V2 probe memory,True,False,1.1047530180068965
+adult,0.6756165351187002,Apriori_Gen_Borgelt,V2 probe memory,False,True,1.1047530180068965
+adult,0.6756165351187002,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068967
+adult,0.6756165351187002,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+adult,0.6756165351187002,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+adult,0.6756165351187002,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+adult,0.6756165351187002,Zart,scaled model memory (not tested),True,True,223.18018010424296
+adult,0.6756165351187002,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+bank_full,0.0019630178496383,Apriori_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+bank_full,0.0019630178496383,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.0019630178496383,Gr_growth,V1 model memory,True,True,223.18018010424294
+bank_full,0.0019630178496383,Gr_growth,V3 model runtime,True,True,
+bank_full,0.0019630178496383,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+bank_full,0.0019630178496383,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.0019630178496383,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+bank_full,0.0019630178496383,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.0019630178496383,DefMe,V1 model memory,True,True,223.18018010424296
+bank_full,0.0019630178496383,DefMe,V3 model runtime,True,True,
+bank_full,0.0019630178496383,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068967
+bank_full,0.0019630178496383,Gr_growth,V2 probe memory,False,False,1.1047530180068967
+bank_full,0.0019630178496383,Eclat_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+bank_full,0.0019630178496383,FPgrowth_Gen_Borgelt,V2 probe memory,False,True,1.1047530180068965
+bank_full,0.0019630178496383,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+bank_full,0.0314912300103957,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+bank_full,0.0314912300103957,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.0314912300103957,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+bank_full,0.0314912300103957,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.0314912300103957,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+bank_full,0.0314912300103957,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.0314912300103957,Gr_growth,V1 model memory,True,True,223.18018010424294
+bank_full,0.0314912300103957,Gr_growth,V3 model runtime,True,True,
+bank_full,0.0314912300103957,Pascal,V1 model memory,True,True,223.18018010424294
+bank_full,0.0314912300103957,Pascal,V3 model runtime,True,True,
+bank_full,0.0314912300103957,DefMe,V1 model memory,True,True,223.18018010424294
+bank_full,0.0314912300103957,DefMe,V3 model runtime,True,True,
+bank_full,0.0314912300103957,Zart,V1 model memory,True,True,223.18018010424294
+bank_full,0.0314912300103957,Zart,V3 model runtime,True,True,
+bank_full,0.0314912300103957,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+bank_full,0.0314912300103957,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+bank_full,0.0314912300103957,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+bank_full,0.0314912300103957,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+bank_full,0.0314912300103957,Pascal,scaled model memory (not tested),True,True,223.180180104243
+bank_full,0.0314912300103957,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+bank_full,0.0314912300103957,Zart,scaled model memory (not tested),True,True,223.18018010424294
+bank_full,0.2128630200614894,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+bank_full,0.2128630200614894,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.2128630200614894,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+bank_full,0.2128630200614894,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.2128630200614894,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+bank_full,0.2128630200614894,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.2128630200614894,Gr_growth,V1 model memory,True,True,223.18018010424294
+bank_full,0.2128630200614894,Gr_growth,V3 model runtime,True,True,
+bank_full,0.2128630200614894,Pascal,V1 model memory,True,True,223.18018010424296
+bank_full,0.2128630200614894,Pascal,V3 model runtime,True,True,
+bank_full,0.2128630200614894,DefMe,V1 model memory,True,True,223.18018010424294
+bank_full,0.2128630200614894,DefMe,V3 model runtime,True,True,
+bank_full,0.2128630200614894,Zart,V1 model memory,True,True,223.18018010424296
+bank_full,0.2128630200614894,Zart,V3 model runtime,True,True,
+bank_full,0.2128630200614894,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+bank_full,0.2128630200614894,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+bank_full,0.2128630200614894,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068967
+bank_full,0.2128630200614894,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+bank_full,0.2128630200614894,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+bank_full,0.2128630200614894,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+bank_full,0.2128630200614894,Zart,scaled model memory (not tested),True,True,223.18018010424294
+bank_full,0.8174725177501051,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+bank_full,0.8174725177501051,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.8174725177501051,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+bank_full,0.8174725177501051,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.8174725177501051,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+bank_full,0.8174725177501051,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+bank_full,0.8174725177501051,Gr_growth,V1 model memory,True,True,223.18018010424296
+bank_full,0.8174725177501051,Gr_growth,V3 model runtime,True,True,
+bank_full,0.8174725177501051,FGC_Stream,V1 model memory,True,True,223.18018010424296
+bank_full,0.8174725177501051,FGC_Stream,V3 model runtime,True,True,
+bank_full,0.8174725177501051,Pascal,V1 model memory,True,True,223.18018010424294
+bank_full,0.8174725177501051,Pascal,V3 model runtime,True,True,
+bank_full,0.8174725177501051,DefMe,V1 model memory,True,True,223.18018010424294
+bank_full,0.8174725177501051,DefMe,V3 model runtime,True,True,
+bank_full,0.8174725177501051,Zart,V1 model memory,True,True,223.18018010424294
+bank_full,0.8174725177501051,Zart,V3 model runtime,True,True,
+bank_full,0.8174725177501051,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+bank_full,0.8174725177501051,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+bank_full,0.8174725177501051,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+bank_full,0.8174725177501051,Gr_growth,V2 probe memory,True,True,1.1047530180068967
+bank_full,0.8174725177501051,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+bank_full,0.8174725177501051,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+bank_full,0.8174725177501051,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+bank_full,0.8174725177501051,Zart,scaled model memory (not tested),True,True,223.18018010424296
+car,0.0264756944444444,Gr_growth,V1 model memory,True,True,223.18018010424296
+car,0.0264756944444444,Gr_growth,V3 model runtime,True,True,
+car,0.0264756944444444,Apriori_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+car,0.0264756944444444,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+car,0.0264756944444444,Eclat_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+car,0.0264756944444444,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+car,0.0264756944444444,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424296
+car,0.0264756944444444,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+car,0.0264756944444444,FGC_Stream,V1 model memory,False,False,223.18018010424294
+car,0.0264756944444444,FGC_Stream,V3 model runtime,True,True,
+car,0.0264756944444444,Pascal,V1 model memory,True,True,223.18018010424294
+car,0.0264756944444444,Pascal,V3 model runtime,False,False,
+car,0.0264756944444444,DefMe,V1 model memory,True,False,223.18018010424296
+car,0.0264756944444444,DefMe,V3 model runtime,True,True,
+car,0.0264756944444444,Zart,V1 model memory,True,True,223.18018010424294
+car,0.0264756944444444,Zart,V3 model runtime,True,False,
+car,0.0264756944444444,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+car,0.0264756944444444,Apriori_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+car,0.0264756944444444,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+car,0.0264756944444444,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+car,0.0264756944444444,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+car,0.0264756944444444,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+car,0.0264756944444444,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+car,0.0264756944444444,Zart,scaled model memory (not tested),True,True,223.18018010424294
+car,0.0831886574074074,Gr_growth,V1 model memory,True,True,223.18018010424294
+car,0.0831886574074074,Gr_growth,V3 model runtime,True,True,
+car,0.0831886574074074,Apriori_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+car,0.0831886574074074,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+car,0.0831886574074074,Eclat_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+car,0.0831886574074074,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+car,0.0831886574074074,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+car,0.0831886574074074,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+car,0.0831886574074074,FGC_Stream,V1 model memory,False,False,223.18018010424296
+car,0.0831886574074074,FGC_Stream,V3 model runtime,True,True,
+car,0.0831886574074074,Pascal,V1 model memory,True,True,223.18018010424296
+car,0.0831886574074074,Pascal,V3 model runtime,False,False,
+car,0.0831886574074074,DefMe,V1 model memory,True,False,223.18018010424296
+car,0.0831886574074074,DefMe,V3 model runtime,True,True,
+car,0.0831886574074074,Zart,V1 model memory,True,True,223.18018010424294
+car,0.0831886574074074,Zart,V3 model runtime,False,False,
+car,0.0831886574074074,Eclat_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+car,0.0831886574074074,Apriori_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+car,0.0831886574074074,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+car,0.0831886574074074,Gr_growth,V2 probe memory,False,False,1.1047530180068965
+car,0.0831886574074074,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+car,0.0831886574074074,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+car,0.0831886574074074,DefMe,scaled model memory (not tested),True,True,223.18018010424296
+car,0.0831886574074074,Zart,scaled model memory (not tested),True,True,223.18018010424296
+car,0.1861979166666666,Gr_growth,V1 model memory,True,True,223.18018010424294
+car,0.1861979166666666,Gr_growth,V3 model runtime,True,True,
+car,0.1861979166666666,Apriori_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+car,0.1861979166666666,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+car,0.1861979166666666,Eclat_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+car,0.1861979166666666,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+car,0.1861979166666666,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+car,0.1861979166666666,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+car,0.1861979166666666,FGC_Stream,V1 model memory,False,False,223.18018010424296
+car,0.1861979166666666,FGC_Stream,V3 model runtime,True,True,
+car,0.1861979166666666,Pascal,V1 model memory,True,True,223.18018010424294
+car,0.1861979166666666,Pascal,V3 model runtime,False,False,
+car,0.1861979166666666,DefMe,V1 model memory,True,True,223.18018010424296
+car,0.1861979166666666,DefMe,V3 model runtime,True,True,
+car,0.1861979166666666,Zart,V1 model memory,True,True,223.18018010424294
+car,0.1861979166666666,Zart,V3 model runtime,False,False,
+car,0.1861979166666666,Apriori_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+car,0.1861979166666666,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+car,0.1861979166666666,Eclat_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+car,0.1861979166666666,Gr_growth,V2 probe memory,True,False,1.1047530180068965
+car,0.1861979166666666,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424294
+car,0.1861979166666666,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+car,0.1861979166666666,DefMe,scaled model memory (not tested),True,True,223.18018010424296
+car,0.1861979166666666,Zart,scaled model memory (not tested),True,True,223.18018010424296
+krk,0.0019514542343883,Gr_growth,V1 model memory,True,True,223.18018010424296
+krk,0.0019514542343883,Gr_growth,V3 model runtime,True,True,
+krk,0.0019514542343883,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+krk,0.0019514542343883,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0019514542343883,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+krk,0.0019514542343883,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0019514542343883,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+krk,0.0019514542343883,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0019514542343883,FGC_Stream,V1 model memory,True,True,223.18018010424296
+krk,0.0019514542343883,FGC_Stream,V3 model runtime,True,True,
+krk,0.0019514542343883,Pascal,V1 model memory,True,True,223.18018010424296
+krk,0.0019514542343883,Pascal,V3 model runtime,True,True,
+krk,0.0019514542343883,DefMe,V1 model memory,True,True,223.18018010424294
+krk,0.0019514542343883,DefMe,V3 model runtime,True,True,
+krk,0.0019514542343883,Zart,V1 model memory,True,False,223.18018010424296
+krk,0.0019514542343883,Zart,V3 model runtime,True,True,
+krk,0.0019514542343883,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+krk,0.0019514542343883,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+krk,0.0019514542343883,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+krk,0.0019514542343883,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+krk,0.0019514542343883,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424294
+krk,0.0019514542343883,Pascal,scaled model memory (not tested),True,True,223.18018010424296
+krk,0.0019514542343883,DefMe,scaled model memory (not tested),True,True,223.1801801042429
+krk,0.0019514542343883,Zart,scaled model memory (not tested),True,True,223.18018010424296
+krk,0.0042326062161391,Gr_growth,V1 model memory,True,True,223.18018010424294
+krk,0.0042326062161391,Gr_growth,V3 model runtime,True,True,
+krk,0.0042326062161391,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+krk,0.0042326062161391,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0042326062161391,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+krk,0.0042326062161391,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0042326062161391,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+krk,0.0042326062161391,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0042326062161391,FGC_Stream,V1 model memory,True,True,223.18018010424296
+krk,0.0042326062161391,FGC_Stream,V3 model runtime,True,True,
+krk,0.0042326062161391,Pascal,V1 model memory,True,True,223.18018010424296
+krk,0.0042326062161391,Pascal,V3 model runtime,True,True,
+krk,0.0042326062161391,DefMe,V1 model memory,True,True,223.18018010424296
+krk,0.0042326062161391,DefMe,V3 model runtime,True,True,
+krk,0.0042326062161391,Zart,V1 model memory,True,False,223.18018010424294
+krk,0.0042326062161391,Zart,V3 model runtime,True,True,
+krk,0.0042326062161391,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+krk,0.0042326062161391,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+krk,0.0042326062161391,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+krk,0.0042326062161391,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+krk,0.0042326062161391,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+krk,0.0042326062161391,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+krk,0.0042326062161391,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+krk,0.0042326062161391,Zart,scaled model memory (not tested),True,True,223.18018010424294
+krk,0.0409805389221556,Gr_growth,V1 model memory,True,True,223.18018010424294
+krk,0.0409805389221556,Gr_growth,V3 model runtime,True,True,
+krk,0.0409805389221556,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+krk,0.0409805389221556,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0409805389221556,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+krk,0.0409805389221556,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0409805389221556,FPgrowth_Gen_Borgelt,V1 model memory,True,False,223.18018010424296
+krk,0.0409805389221556,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0409805389221556,FGC_Stream,V1 model memory,True,True,223.18018010424296
+krk,0.0409805389221556,FGC_Stream,V3 model runtime,True,True,
+krk,0.0409805389221556,Pascal,V1 model memory,True,True,223.18018010424296
+krk,0.0409805389221556,Pascal,V3 model runtime,True,True,
+krk,0.0409805389221556,DefMe,V1 model memory,True,True,223.18018010424294
+krk,0.0409805389221556,DefMe,V3 model runtime,True,True,
+krk,0.0409805389221556,Zart,V1 model memory,True,True,223.18018010424296
+krk,0.0409805389221556,Zart,V3 model runtime,True,True,
+krk,0.0409805389221556,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+krk,0.0409805389221556,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068963
+krk,0.0409805389221556,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+krk,0.0409805389221556,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+krk,0.0409805389221556,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+krk,0.0409805389221556,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+krk,0.0409805389221556,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+krk,0.0409805389221556,Zart,scaled model memory (not tested),True,True,223.18018010424296
+krk,0.0697087966923296,Gr_growth,V1 model memory,True,True,223.18018010424296
+krk,0.0697087966923296,Gr_growth,V3 model runtime,True,True,
+krk,0.0697087966923296,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+krk,0.0697087966923296,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0697087966923296,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+krk,0.0697087966923296,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0697087966923296,FPgrowth_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+krk,0.0697087966923296,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+krk,0.0697087966923296,FGC_Stream,V1 model memory,True,True,223.18018010424296
+krk,0.0697087966923296,FGC_Stream,V3 model runtime,True,True,
+krk,0.0697087966923296,Pascal,V1 model memory,True,True,223.18018010424294
+krk,0.0697087966923296,Pascal,V3 model runtime,True,True,
+krk,0.0697087966923296,DefMe,V1 model memory,True,True,223.18018010424294
+krk,0.0697087966923296,DefMe,V3 model runtime,True,True,
+krk,0.0697087966923296,Zart,V1 model memory,True,True,223.18018010424294
+krk,0.0697087966923296,Zart,V3 model runtime,True,True,
+krk,0.0697087966923296,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+krk,0.0697087966923296,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+krk,0.0697087966923296,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+krk,0.0697087966923296,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+krk,0.0697087966923296,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+krk,0.0697087966923296,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+krk,0.0697087966923296,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+krk,0.0697087966923296,Zart,scaled model memory (not tested),True,True,223.18018010424296
+letter,0.0008375,Gr_growth,V1 model memory,True,True,223.18018010424294
+letter,0.0008375,Gr_growth,V3 model runtime,True,True,
+letter,0.0008375,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+letter,0.0008375,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0008375,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+letter,0.0008375,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0008375,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+letter,0.0008375,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0008375,DefMe,V1 model memory,True,True,223.18018010424294
+letter,0.0008375,DefMe,V3 model runtime,True,True,
+letter,0.0008375,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+letter,0.0008375,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+letter,0.0008375,Eclat_Gen_Borgelt,V2 probe memory,True,False,1.1047530180068965
+letter,0.0008375,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+letter,0.0008375,DefMe,scaled model memory (not tested),True,True,223.18018010424296
+letter,0.0082875,Gr_growth,V1 model memory,True,True,223.1801801042429
+letter,0.0082875,Gr_growth,V3 model runtime,True,True,
+letter,0.0082875,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+letter,0.0082875,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0082875,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+letter,0.0082875,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0082875,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+letter,0.0082875,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0082875,Pascal,V1 model memory,True,True,223.18018010424296
+letter,0.0082875,Pascal,V3 model runtime,True,True,
+letter,0.0082875,DefMe,V1 model memory,True,True,223.18018010424296
+letter,0.0082875,DefMe,V3 model runtime,True,True,
+letter,0.0082875,Zart,V1 model memory,True,True,223.18018010424294
+letter,0.0082875,Zart,V3 model runtime,True,True,
+letter,0.0082875,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068963
+letter,0.0082875,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068967
+letter,0.0082875,Gr_growth,V2 probe memory,True,True,1.1047530180068963
+letter,0.0082875,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+letter,0.0082875,Pascal,scaled model memory (not tested),True,True,223.18018010424296
+letter,0.0082875,DefMe,scaled model memory (not tested),True,True,223.18018010424296
+letter,0.0082875,Zart,scaled model memory (not tested),True,True,223.18018010424294
+letter,0.0253875,Gr_growth,V1 model memory,True,True,223.18018010424294
+letter,0.0253875,Gr_growth,V3 model runtime,True,True,
+letter,0.0253875,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+letter,0.0253875,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0253875,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+letter,0.0253875,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0253875,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+letter,0.0253875,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0253875,FGC_Stream,V1 model memory,True,True,223.18018010424294
+letter,0.0253875,FGC_Stream,V3 model runtime,True,True,
+letter,0.0253875,Pascal,V1 model memory,True,True,223.18018010424294
+letter,0.0253875,Pascal,V3 model runtime,True,True,
+letter,0.0253875,DefMe,V1 model memory,True,True,223.18018010424294
+letter,0.0253875,DefMe,V3 model runtime,True,True,
+letter,0.0253875,Zart,V1 model memory,True,True,223.18018010424296
+letter,0.0253875,Zart,V3 model runtime,True,True,
+letter,0.0253875,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+letter,0.0253875,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068967
+letter,0.0253875,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068967
+letter,0.0253875,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+letter,0.0253875,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+letter,0.0253875,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+letter,0.0253875,DefMe,scaled model memory (not tested),True,True,223.18018010424296
+letter,0.0253875,Zart,scaled model memory (not tested),True,True,223.18018010424296
+letter,0.0615875,Gr_growth,V1 model memory,True,True,223.18018010424294
+letter,0.0615875,Gr_growth,V3 model runtime,True,True,
+letter,0.0615875,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+letter,0.0615875,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0615875,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+letter,0.0615875,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0615875,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+letter,0.0615875,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.0615875,FGC_Stream,V1 model memory,True,True,223.18018010424296
+letter,0.0615875,FGC_Stream,V3 model runtime,True,True,
+letter,0.0615875,Pascal,V1 model memory,True,True,223.18018010424294
+letter,0.0615875,Pascal,V3 model runtime,True,True,
+letter,0.0615875,DefMe,V1 model memory,True,True,223.18018010424294
+letter,0.0615875,DefMe,V3 model runtime,True,True,
+letter,0.0615875,Zart,V1 model memory,True,True,223.18018010424296
+letter,0.0615875,Zart,V3 model runtime,True,True,
+letter,0.0615875,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068967
+letter,0.0615875,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+letter,0.0615875,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+letter,0.0615875,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+letter,0.0615875,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424294
+letter,0.0615875,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+letter,0.0615875,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+letter,0.0615875,Zart,scaled model memory (not tested),True,True,223.18018010424294
+letter,0.1434875,Gr_growth,V1 model memory,True,True,223.18018010424294
+letter,0.1434875,Gr_growth,V3 model runtime,True,True,
+letter,0.1434875,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+letter,0.1434875,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.1434875,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+letter,0.1434875,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.1434875,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+letter,0.1434875,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+letter,0.1434875,FGC_Stream,V1 model memory,True,True,223.18018010424294
+letter,0.1434875,FGC_Stream,V3 model runtime,True,True,
+letter,0.1434875,Pascal,V1 model memory,True,True,223.18018010424294
+letter,0.1434875,Pascal,V3 model runtime,True,True,
+letter,0.1434875,DefMe,V1 model memory,True,True,223.18018010424296
+letter,0.1434875,DefMe,V3 model runtime,True,True,
+letter,0.1434875,Zart,V1 model memory,True,True,223.18018010424294
+letter,0.1434875,Zart,V3 model runtime,True,False,
+letter,0.1434875,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+letter,0.1434875,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+letter,0.1434875,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+letter,0.1434875,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+letter,0.1434875,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+letter,0.1434875,Pascal,scaled model memory (not tested),True,True,223.18018010424296
+letter,0.1434875,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+letter,0.1434875,Zart,scaled model memory (not tested),True,True,223.18018010424294
+nursery,0.0499807098765432,Gr_growth,V1 model memory,True,True,223.18018010424294
+nursery,0.0499807098765432,Gr_growth,V3 model runtime,True,True,
+nursery,0.0499807098765432,Apriori_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+nursery,0.0499807098765432,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+nursery,0.0499807098765432,Eclat_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+nursery,0.0499807098765432,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+nursery,0.0499807098765432,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424296
+nursery,0.0499807098765432,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+nursery,0.0499807098765432,FGC_Stream,V1 model memory,True,False,223.18018010424296
+nursery,0.0499807098765432,FGC_Stream,V3 model runtime,True,True,
+nursery,0.0499807098765432,Pascal,V1 model memory,True,True,223.18018010424294
+nursery,0.0499807098765432,Pascal,V3 model runtime,True,True,
+nursery,0.0499807098765432,DefMe,V1 model memory,True,True,223.1801801042429
+nursery,0.0499807098765432,DefMe,V3 model runtime,True,True,
+nursery,0.0499807098765432,Zart,V1 model memory,True,True,223.1801801042429
+nursery,0.0499807098765432,Zart,V3 model runtime,True,True,
+nursery,0.0499807098765432,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068967
+nursery,0.0499807098765432,FPgrowth_Gen_Borgelt,V2 probe memory,True,False,1.1047530180068965
+nursery,0.0499807098765432,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+nursery,0.0499807098765432,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+nursery,0.0499807098765432,FGC_Stream,scaled model memory (not tested),True,True,223.1801801042429
+nursery,0.0499807098765432,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+nursery,0.0499807098765432,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+nursery,0.0499807098765432,Zart,scaled model memory (not tested),True,True,223.18018010424294
+nursery,0.1110918209876543,Gr_growth,V1 model memory,True,True,223.18018010424296
+nursery,0.1110918209876543,Gr_growth,V3 model runtime,True,True,
+nursery,0.1110918209876543,Apriori_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+nursery,0.1110918209876543,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+nursery,0.1110918209876543,Eclat_Gen_Borgelt,V1 model memory,True,False,223.18018010424296
+nursery,0.1110918209876543,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+nursery,0.1110918209876543,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+nursery,0.1110918209876543,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+nursery,0.1110918209876543,FGC_Stream,V1 model memory,True,False,223.1801801042429
+nursery,0.1110918209876543,FGC_Stream,V3 model runtime,True,True,
+nursery,0.1110918209876543,Pascal,V1 model memory,True,True,223.18018010424296
+nursery,0.1110918209876543,Pascal,V3 model runtime,True,True,
+nursery,0.1110918209876543,DefMe,V1 model memory,True,True,223.18018010424296
+nursery,0.1110918209876543,DefMe,V3 model runtime,True,True,
+nursery,0.1110918209876543,Zart,V1 model memory,True,True,223.18018010424296
+nursery,0.1110918209876543,Zart,V3 model runtime,True,True,
+nursery,0.1110918209876543,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+nursery,0.1110918209876543,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+nursery,0.1110918209876543,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+nursery,0.1110918209876543,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+nursery,0.1110918209876543,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424294
+nursery,0.1110918209876543,Pascal,scaled model memory (not tested),True,True,223.18018010424296
+nursery,0.1110918209876543,DefMe,scaled model memory (not tested),True,True,223.18018010424296
+nursery,0.1110918209876543,Zart,scaled model memory (not tested),True,True,223.18018010424294
+nursery,0.1666473765432098,Gr_growth,V1 model memory,True,True,223.18018010424296
+nursery,0.1666473765432098,Gr_growth,V3 model runtime,True,True,
+nursery,0.1666473765432098,Apriori_Gen_Borgelt,V1 model memory,True,False,223.18018010424296
+nursery,0.1666473765432098,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+nursery,0.1666473765432098,Eclat_Gen_Borgelt,V1 model memory,True,False,223.18018010424296
+nursery,0.1666473765432098,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+nursery,0.1666473765432098,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+nursery,0.1666473765432098,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+nursery,0.1666473765432098,FGC_Stream,V1 model memory,True,False,223.18018010424294
+nursery,0.1666473765432098,FGC_Stream,V3 model runtime,True,True,
+nursery,0.1666473765432098,Pascal,V1 model memory,True,True,223.18018010424296
+nursery,0.1666473765432098,Pascal,V3 model runtime,True,True,
+nursery,0.1666473765432098,DefMe,V1 model memory,True,True,223.18018010424296
+nursery,0.1666473765432098,DefMe,V3 model runtime,True,True,
+nursery,0.1666473765432098,Zart,V1 model memory,True,True,223.18018010424294
+nursery,0.1666473765432098,Zart,V3 model runtime,True,False,
+nursery,0.1666473765432098,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068967
+nursery,0.1666473765432098,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+nursery,0.1666473765432098,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+nursery,0.1666473765432098,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+nursery,0.1666473765432098,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+nursery,0.1666473765432098,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+nursery,0.1666473765432098,DefMe,scaled model memory (not tested),True,True,223.18018010424296
+nursery,0.1666473765432098,Zart,scaled model memory (not tested),True,True,223.18018010424296
+shoppers,0.002250608272506,Apriori_Gen_Borgelt,V1 model memory,True,False,223.18018010424296
+shoppers,0.002250608272506,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+shoppers,0.002250608272506,Gr_growth,V1 model memory,True,False,223.18018010424294
+shoppers,0.002250608272506,Gr_growth,V3 model runtime,True,False,
+shoppers,0.002250608272506,Eclat_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+shoppers,0.002250608272506,Eclat_Gen_Borgelt,V3 model runtime,True,False,
+shoppers,0.002250608272506,FPgrowth_Gen_Borgelt,V1 model memory,True,False,223.18018010424296
+shoppers,0.002250608272506,FPgrowth_Gen_Borgelt,V3 model runtime,True,False,
+shoppers,0.002250608272506,DefMe,V1 model memory,True,True,223.18018010424296
+shoppers,0.002250608272506,DefMe,V3 model runtime,True,True,
+shoppers,0.002250608272506,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068967
+shoppers,0.002250608272506,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+shoppers,0.002250608272506,Eclat_Gen_Borgelt,V2 probe memory,True,False,1.1047530180068967
+shoppers,0.002250608272506,FPgrowth_Gen_Borgelt,V2 probe memory,False,True,1.1047530180068965
+shoppers,0.002250608272506,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+shoppers,0.0338807785888077,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+shoppers,0.0338807785888077,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+shoppers,0.0338807785888077,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+shoppers,0.0338807785888077,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+shoppers,0.0338807785888077,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+shoppers,0.0338807785888077,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+shoppers,0.0338807785888077,Gr_growth,V1 model memory,True,True,223.18018010424296
+shoppers,0.0338807785888077,Gr_growth,V3 model runtime,True,True,
+shoppers,0.0338807785888077,Pascal,V1 model memory,True,True,223.18018010424296
+shoppers,0.0338807785888077,Pascal,V3 model runtime,True,True,
+shoppers,0.0338807785888077,DefMe,V1 model memory,True,True,223.18018010424296
+shoppers,0.0338807785888077,DefMe,V3 model runtime,True,True,
+shoppers,0.0338807785888077,Zart,V1 model memory,True,True,223.18018010424294
+shoppers,0.0338807785888077,Zart,V3 model runtime,True,True,
+shoppers,0.0338807785888077,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shoppers,0.0338807785888077,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+shoppers,0.0338807785888077,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shoppers,0.0338807785888077,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shoppers,0.0338807785888077,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+shoppers,0.0338807785888077,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+shoppers,0.0338807785888077,Zart,scaled model memory (not tested),True,True,223.18018010424294
+shoppers,0.2178223844282238,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+shoppers,0.2178223844282238,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+shoppers,0.2178223844282238,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+shoppers,0.2178223844282238,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+shoppers,0.2178223844282238,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+shoppers,0.2178223844282238,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+shoppers,0.2178223844282238,Gr_growth,V1 model memory,True,True,223.18018010424296
+shoppers,0.2178223844282238,Gr_growth,V3 model runtime,True,True,
+shoppers,0.2178223844282238,Pascal,V1 model memory,True,True,223.18018010424294
+shoppers,0.2178223844282238,Pascal,V3 model runtime,True,True,
+shoppers,0.2178223844282238,DefMe,V1 model memory,True,True,223.18018010424296
+shoppers,0.2178223844282238,DefMe,V3 model runtime,True,True,
+shoppers,0.2178223844282238,Zart,V1 model memory,True,True,223.18018010424294
+shoppers,0.2178223844282238,Zart,V3 model runtime,True,True,
+shoppers,0.2178223844282238,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shoppers,0.2178223844282238,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+shoppers,0.2178223844282238,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shoppers,0.2178223844282238,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+shoppers,0.2178223844282238,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+shoppers,0.2178223844282238,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+shoppers,0.2178223844282238,Zart,scaled model memory (not tested),True,True,223.18018010424296
+shoppers,0.7468572587185726,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+shoppers,0.7468572587185726,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+shoppers,0.7468572587185726,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.1801801042429
+shoppers,0.7468572587185726,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+shoppers,0.7468572587185726,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424294
+shoppers,0.7468572587185726,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+shoppers,0.7468572587185726,Gr_growth,V1 model memory,True,True,223.18018010424294
+shoppers,0.7468572587185726,Gr_growth,V3 model runtime,True,True,
+shoppers,0.7468572587185726,FGC_Stream,V1 model memory,True,True,223.18018010424294
+shoppers,0.7468572587185726,FGC_Stream,V3 model runtime,True,True,
+shoppers,0.7468572587185726,Pascal,V1 model memory,True,True,223.18018010424296
+shoppers,0.7468572587185726,Pascal,V3 model runtime,True,True,
+shoppers,0.7468572587185726,DefMe,V1 model memory,True,True,223.18018010424294
+shoppers,0.7468572587185726,DefMe,V3 model runtime,True,True,
+shoppers,0.7468572587185726,Zart,V1 model memory,True,True,223.180180104243
+shoppers,0.7468572587185726,Zart,V3 model runtime,False,False,
+shoppers,0.7468572587185726,Apriori_Gen_Borgelt,V2 probe memory,True,False,1.1047530180068965
+shoppers,0.7468572587185726,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shoppers,0.7468572587185726,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shoppers,0.7468572587185726,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+shoppers,0.7468572587185726,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+shoppers,0.7468572587185726,Pascal,scaled model memory (not tested),True,True,223.18018010424296
+shoppers,0.7468572587185726,DefMe,scaled model memory (not tested),True,True,223.180180104243
+shoppers,0.7468572587185726,Zart,scaled model memory (not tested),True,True,223.18018010424294
+shuttle,0.0043160919540229,Gr_growth,V1 model memory,True,True,223.18018010424294
+shuttle,0.0043160919540229,Gr_growth,V3 model runtime,True,True,
+shuttle,0.0043160919540229,Apriori_Gen_Borgelt,V1 model memory,True,False,223.1801801042429
+shuttle,0.0043160919540229,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+shuttle,0.0043160919540229,Eclat_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+shuttle,0.0043160919540229,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+shuttle,0.0043160919540229,FPgrowth_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+shuttle,0.0043160919540229,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+shuttle,0.0043160919540229,Pascal,V1 model memory,True,True,223.18018010424296
+shuttle,0.0043160919540229,Pascal,V3 model runtime,True,True,
+shuttle,0.0043160919540229,DefMe,V1 model memory,True,True,223.1801801042429
+shuttle,0.0043160919540229,DefMe,V3 model runtime,True,True,
+shuttle,0.0043160919540229,Zart,V1 model memory,True,True,223.18018010424296
+shuttle,0.0043160919540229,Zart,V3 model runtime,True,True,
+shuttle,0.0043160919540229,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shuttle,0.0043160919540229,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shuttle,0.0043160919540229,Gr_growth,V2 probe memory,True,True,1.1047530180068963
+shuttle,0.0043160919540229,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shuttle,0.0043160919540229,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+shuttle,0.0043160919540229,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+shuttle,0.0043160919540229,Zart,scaled model memory (not tested),True,True,223.18018010424296
+shuttle,0.1327068965517241,Gr_growth,V1 model memory,True,True,223.18018010424294
+shuttle,0.1327068965517241,Gr_growth,V3 model runtime,True,True,
+shuttle,0.1327068965517241,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+shuttle,0.1327068965517241,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+shuttle,0.1327068965517241,Eclat_Gen_Borgelt,V1 model memory,True,False,223.18018010424296
+shuttle,0.1327068965517241,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+shuttle,0.1327068965517241,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424296
+shuttle,0.1327068965517241,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+shuttle,0.1327068965517241,Pascal,V1 model memory,True,True,223.18018010424296
+shuttle,0.1327068965517241,Pascal,V3 model runtime,True,True,
+shuttle,0.1327068965517241,DefMe,V1 model memory,True,True,223.18018010424296
+shuttle,0.1327068965517241,DefMe,V3 model runtime,True,True,
+shuttle,0.1327068965517241,Zart,V1 model memory,True,True,223.18018010424296
+shuttle,0.1327068965517241,Zart,V3 model runtime,True,True,
+shuttle,0.1327068965517241,Eclat_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+shuttle,0.1327068965517241,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068967
+shuttle,0.1327068965517241,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+shuttle,0.1327068965517241,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+shuttle,0.1327068965517241,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+shuttle,0.1327068965517241,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+shuttle,0.1327068965517241,Zart,scaled model memory (not tested),True,True,223.1801801042429
+shuttle,0.2299942528735632,Gr_growth,V1 model memory,True,True,223.18018010424296
+shuttle,0.2299942528735632,Gr_growth,V3 model runtime,True,True,
+shuttle,0.2299942528735632,Apriori_Gen_Borgelt,V1 model memory,True,True,223.18018010424296
+shuttle,0.2299942528735632,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+shuttle,0.2299942528735632,Eclat_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+shuttle,0.2299942528735632,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+shuttle,0.2299942528735632,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+shuttle,0.2299942528735632,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+shuttle,0.2299942528735632,FGC_Stream,V1 model memory,True,True,223.18018010424296
+shuttle,0.2299942528735632,FGC_Stream,V3 model runtime,True,True,
+shuttle,0.2299942528735632,Pascal,V1 model memory,True,True,223.18018010424294
+shuttle,0.2299942528735632,Pascal,V3 model runtime,True,True,
+shuttle,0.2299942528735632,DefMe,V1 model memory,True,True,223.18018010424294
+shuttle,0.2299942528735632,DefMe,V3 model runtime,True,True,
+shuttle,0.2299942528735632,Zart,V1 model memory,True,True,223.18018010424294
+shuttle,0.2299942528735632,Zart,V3 model runtime,False,False,
+shuttle,0.2299942528735632,Apriori_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shuttle,0.2299942528735632,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shuttle,0.2299942528735632,Eclat_Gen_Borgelt,V2 probe memory,True,True,1.1047530180068965
+shuttle,0.2299942528735632,Gr_growth,V2 probe memory,True,True,1.1047530180068967
+shuttle,0.2299942528735632,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+shuttle,0.2299942528735632,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+shuttle,0.2299942528735632,DefMe,scaled model memory (not tested),True,True,223.18018010424296
+shuttle,0.2299942528735632,Zart,scaled model memory (not tested),True,True,223.18018010424294
+tictactoe,0.0581941544885177,Gr_growth,V1 model memory,True,True,223.18018010424294
+tictactoe,0.0581941544885177,Gr_growth,V3 model runtime,True,True,
+tictactoe,0.0581941544885177,Apriori_Gen_Borgelt,V1 model memory,False,False,223.18018010424296
+tictactoe,0.0581941544885177,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+tictactoe,0.0581941544885177,Eclat_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+tictactoe,0.0581941544885177,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+tictactoe,0.0581941544885177,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+tictactoe,0.0581941544885177,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+tictactoe,0.0581941544885177,FGC_Stream,V1 model memory,False,False,223.18018010424296
+tictactoe,0.0581941544885177,FGC_Stream,V3 model runtime,True,True,
+tictactoe,0.0581941544885177,Pascal,V1 model memory,True,True,223.18018010424294
+tictactoe,0.0581941544885177,Pascal,V3 model runtime,False,False,
+tictactoe,0.0581941544885177,DefMe,V1 model memory,True,False,223.18018010424296
+tictactoe,0.0581941544885177,DefMe,V3 model runtime,True,True,
+tictactoe,0.0581941544885177,Zart,V1 model memory,True,True,223.18018010424294
+tictactoe,0.0581941544885177,Zart,V3 model runtime,False,False,
+tictactoe,0.0581941544885177,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+tictactoe,0.0581941544885177,Apriori_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068967
+tictactoe,0.0581941544885177,Eclat_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+tictactoe,0.0581941544885177,Gr_growth,V2 probe memory,True,True,1.1047530180068967
+tictactoe,0.0581941544885177,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424294
+tictactoe,0.0581941544885177,Pascal,scaled model memory (not tested),True,True,223.18018010424294
+tictactoe,0.0581941544885177,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+tictactoe,0.0581941544885177,Zart,scaled model memory (not tested),True,True,223.18018010424296
+tictactoe,0.1584029227557411,Gr_growth,V1 model memory,True,True,223.18018010424296
+tictactoe,0.1584029227557411,Gr_growth,V3 model runtime,True,True,
+tictactoe,0.1584029227557411,Apriori_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+tictactoe,0.1584029227557411,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+tictactoe,0.1584029227557411,Eclat_Gen_Borgelt,V1 model memory,False,False,223.18018010424296
+tictactoe,0.1584029227557411,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+tictactoe,0.1584029227557411,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424296
+tictactoe,0.1584029227557411,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+tictactoe,0.1584029227557411,FGC_Stream,V1 model memory,False,False,223.18018010424294
+tictactoe,0.1584029227557411,FGC_Stream,V3 model runtime,True,True,
+tictactoe,0.1584029227557411,Pascal,V1 model memory,True,True,223.18018010424294
+tictactoe,0.1584029227557411,Pascal,V3 model runtime,False,False,
+tictactoe,0.1584029227557411,DefMe,V1 model memory,True,False,223.18018010424296
+tictactoe,0.1584029227557411,DefMe,V3 model runtime,True,True,
+tictactoe,0.1584029227557411,Zart,V1 model memory,True,True,223.18018010424294
+tictactoe,0.1584029227557411,Zart,V3 model runtime,False,False,
+tictactoe,0.1584029227557411,Apriori_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+tictactoe,0.1584029227557411,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+tictactoe,0.1584029227557411,Eclat_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+tictactoe,0.1584029227557411,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+tictactoe,0.1584029227557411,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424294
+tictactoe,0.1584029227557411,Pascal,scaled model memory (not tested),True,True,223.18018010424296
+tictactoe,0.1584029227557411,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+tictactoe,0.1584029227557411,Zart,scaled model memory (not tested),True,True,223.18018010424296
+tictactoe,0.2346033402922756,Gr_growth,V1 model memory,True,True,223.18018010424296
+tictactoe,0.2346033402922756,Gr_growth,V3 model runtime,True,True,
+tictactoe,0.2346033402922756,Apriori_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+tictactoe,0.2346033402922756,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+tictactoe,0.2346033402922756,Eclat_Gen_Borgelt,V1 model memory,False,False,223.18018010424294
+tictactoe,0.2346033402922756,Eclat_Gen_Borgelt,V3 model runtime,True,True,
+tictactoe,0.2346033402922756,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424296
+tictactoe,0.2346033402922756,FPgrowth_Gen_Borgelt,V3 model runtime,True,True,
+tictactoe,0.2346033402922756,FGC_Stream,V1 model memory,False,False,223.18018010424294
+tictactoe,0.2346033402922756,FGC_Stream,V3 model runtime,True,True,
+tictactoe,0.2346033402922756,Pascal,V1 model memory,True,True,223.1801801042429
+tictactoe,0.2346033402922756,Pascal,V3 model runtime,True,True,
+tictactoe,0.2346033402922756,DefMe,V1 model memory,True,False,223.18018010424294
+tictactoe,0.2346033402922756,DefMe,V3 model runtime,True,True,
+tictactoe,0.2346033402922756,Zart,V1 model memory,True,True,223.18018010424294
+tictactoe,0.2346033402922756,Zart,V3 model runtime,False,False,
+tictactoe,0.2346033402922756,Eclat_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068967
+tictactoe,0.2346033402922756,Apriori_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068967
+tictactoe,0.2346033402922756,FPgrowth_Gen_Borgelt,V2 probe memory,False,False,1.1047530180068965
+tictactoe,0.2346033402922756,Gr_growth,V2 probe memory,True,True,1.1047530180068965
+tictactoe,0.2346033402922756,FGC_Stream,scaled model memory (not tested),True,True,223.18018010424296
+tictactoe,0.2346033402922756,Pascal,scaled model memory (not tested),True,True,223.1801801042429
+tictactoe,0.2346033402922756,DefMe,scaled model memory (not tested),True,True,223.18018010424296
+tictactoe,0.2346033402922756,Zart,scaled model memory (not tested),True,True,223.18018010424296
+yearmsd,0.0457785561128952,Gr_growth,V1 model memory,False,False,223.18018010424296
+yearmsd,0.0457785561128952,Gr_growth,V3 model runtime,False,False,
+yearmsd,0.0457785561128952,Apriori_Gen_Borgelt,V1 model memory,True,False,223.180180104243
+yearmsd,0.0457785561128952,Apriori_Gen_Borgelt,V3 model runtime,True,False,
+yearmsd,0.0457785561128952,Eclat_Gen_Borgelt,V1 model memory,True,False,223.18018010424296
+yearmsd,0.0457785561128952,Eclat_Gen_Borgelt,V3 model runtime,True,False,
+yearmsd,0.0457785561128952,DefMe,V1 model memory,True,True,223.18018010424294
+yearmsd,0.0457785561128952,DefMe,V3 model runtime,True,True,
+yearmsd,0.0457785561128952,Apriori_Gen_Borgelt,V2 probe memory,True,True,3.274282303934975
+yearmsd,0.0457785561128952,Eclat_Gen_Borgelt,V2 probe memory,True,True,3.2742823039349744
+yearmsd,0.0457785561128952,Gr_growth,V2 probe memory,True,False,3.2742823039349744
+yearmsd,0.0457785561128952,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+yearmsd,0.0552654047288709,Gr_growth,V1 model memory,False,False,223.18018010424296
+yearmsd,0.0552654047288709,Gr_growth,V3 model runtime,False,False,
+yearmsd,0.0552654047288709,Apriori_Gen_Borgelt,V1 model memory,True,False,223.180180104243
+yearmsd,0.0552654047288709,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+yearmsd,0.0552654047288709,FPgrowth_Gen_Borgelt,V1 model memory,False,False,223.18018010424296
+yearmsd,0.0552654047288709,FPgrowth_Gen_Borgelt,V3 model runtime,False,False,
+yearmsd,0.0552654047288709,Eclat_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+yearmsd,0.0552654047288709,Eclat_Gen_Borgelt,V3 model runtime,True,False,
+yearmsd,0.0552654047288709,DefMe,V1 model memory,True,True,223.1801801042429
+yearmsd,0.0552654047288709,DefMe,V3 model runtime,True,True,
+yearmsd,0.0552654047288709,Apriori_Gen_Borgelt,V2 probe memory,True,True,3.274282303934975
+yearmsd,0.0552654047288709,Eclat_Gen_Borgelt,V2 probe memory,True,True,3.2742823039349744
+yearmsd,0.0552654047288709,Gr_growth,V2 probe memory,True,True,3.274282303934975
+yearmsd,0.0552654047288709,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,3.274282303934975
+yearmsd,0.0552654047288709,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+yearmsd,0.0707792837807682,Gr_growth,V1 model memory,False,False,223.18018010424296
+yearmsd,0.0707792837807682,Gr_growth,V3 model runtime,True,False,
+yearmsd,0.0707792837807682,Apriori_Gen_Borgelt,V1 model memory,True,False,223.180180104243
+yearmsd,0.0707792837807682,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+yearmsd,0.0707792837807682,FPgrowth_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+yearmsd,0.0707792837807682,FPgrowth_Gen_Borgelt,V3 model runtime,True,False,
+yearmsd,0.0707792837807682,Eclat_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+yearmsd,0.0707792837807682,Eclat_Gen_Borgelt,V3 model runtime,True,False,
+yearmsd,0.0707792837807682,DefMe,V1 model memory,True,True,223.18018010424294
+yearmsd,0.0707792837807682,DefMe,V3 model runtime,True,True,
+yearmsd,0.0707792837807682,Apriori_Gen_Borgelt,V2 probe memory,True,True,3.2742823039349744
+yearmsd,0.0707792837807682,Eclat_Gen_Borgelt,V2 probe memory,True,True,3.2742823039349744
+yearmsd,0.0707792837807682,Gr_growth,V2 probe memory,True,True,3.2742823039349744
+yearmsd,0.0707792837807682,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,3.2742823039349744
+yearmsd,0.0707792837807682,DefMe,scaled model memory (not tested),True,True,223.18018010424296
+yearmsd,0.1006854631363455,Gr_growth,V1 model memory,False,False,223.1801801042429
+yearmsd,0.1006854631363455,Gr_growth,V3 model runtime,True,False,
+yearmsd,0.1006854631363455,Apriori_Gen_Borgelt,V1 model memory,True,False,223.180180104243
+yearmsd,0.1006854631363455,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+yearmsd,0.1006854631363455,FPgrowth_Gen_Borgelt,V1 model memory,True,False,223.18018010424296
+yearmsd,0.1006854631363455,FPgrowth_Gen_Borgelt,V3 model runtime,True,False,
+yearmsd,0.1006854631363455,Eclat_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+yearmsd,0.1006854631363455,Eclat_Gen_Borgelt,V3 model runtime,True,False,
+yearmsd,0.1006854631363455,DefMe,V1 model memory,True,True,223.18018010424294
+yearmsd,0.1006854631363455,DefMe,V3 model runtime,True,True,
+yearmsd,0.1006854631363455,Apriori_Gen_Borgelt,V2 probe memory,True,True,3.274282303934975
+yearmsd,0.1006854631363455,Eclat_Gen_Borgelt,V2 probe memory,True,True,3.2742823039349744
+yearmsd,0.1006854631363455,Gr_growth,V2 probe memory,True,True,3.2742823039349744
+yearmsd,0.1006854631363455,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,3.274282303934975
+yearmsd,0.1006854631363455,DefMe,scaled model memory (not tested),True,True,223.18018010424294
+yearmsd,0.1262256352540531,Gr_growth,V1 model memory,False,False,223.18018010424294
+yearmsd,0.1262256352540531,Gr_growth,V3 model runtime,True,False,
+yearmsd,0.1262256352540531,Apriori_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+yearmsd,0.1262256352540531,Apriori_Gen_Borgelt,V3 model runtime,True,True,
+yearmsd,0.1262256352540531,FPgrowth_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+yearmsd,0.1262256352540531,FPgrowth_Gen_Borgelt,V3 model runtime,True,False,
+yearmsd,0.1262256352540531,Eclat_Gen_Borgelt,V1 model memory,True,False,223.18018010424294
+yearmsd,0.1262256352540531,Eclat_Gen_Borgelt,V3 model runtime,True,False,
+yearmsd,0.1262256352540531,DefMe,V1 model memory,True,True,223.18018010424296
+yearmsd,0.1262256352540531,DefMe,V3 model runtime,True,True,
+yearmsd,0.1262256352540531,Apriori_Gen_Borgelt,V2 probe memory,True,True,3.274282303934975
+yearmsd,0.1262256352540531,Eclat_Gen_Borgelt,V2 probe memory,True,True,3.2742823039349744
+yearmsd,0.1262256352540531,Gr_growth,V2 probe memory,True,True,3.274282303934975
+yearmsd,0.1262256352540531,FPgrowth_Gen_Borgelt,V2 probe memory,True,True,3.2742823039349744
+yearmsd,0.1262256352540531,DefMe,scaled model memory (not tested),True,True,223.18018010424294
