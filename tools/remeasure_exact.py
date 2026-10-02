@@ -6,8 +6,12 @@ run under --max-runtime seconds, in every table.
 
 Why: polled VmHWM read 0.02-0.6 MB for 3-5 ms runs whose exact peak is
 2.7-3.4 MB, and missed end-of-run peaks by 6-7% on ~1 s runs
-(results/peak_method_check.csv). The exact reading is stable (five repeats
-within 0.5 MB), so each run is measured once. The generator count is checked
+(results/peak_method_check.csv). For the native miners the exact reading is
+stable (five repeats within 0.5 MB) and each run is measured once. A JVM
+miner's peak varies from run to run by itself -- the collector grows the heap
+or does not: DefMe on connect at 0.5 read 935-1118 MB over five exact runs,
+on chess at 0.3 591 or 734 -- so JVM runs are measured JVM_REPEATS times and
+the median kept, every reading recorded. The generator count is checked
 against the recorded one; a mismatch is reported and the row not used.
 Runtimes are not replaced: concurrency would bias them, and the polled
 method measured them correctly.
@@ -44,7 +48,9 @@ SOURCES = {"paper": "results/summary_linux.csv",
 OUT = _ROOT / "results" / "exact_memory.csv"
 FIELDS = ["source", "algorithm", "category", "dataset", "param_value", "runtime_s_recorded",
           "peak_memory_mb_recorded", "generator_count_recorded", "peak_memory_mb_exact",
-          "peak_source", "generator_count", "count_matches", "rerun_runtime_s", "note"]
+          "memory_reps", "peak_source", "generator_count", "count_matches", "rerun_runtime_s",
+          "note"]
+JVM_REPEATS = 3
 
 
 def plan(max_runtime):
@@ -69,18 +75,31 @@ def job(t):
     row = {"source": src, "algorithm": algo, "category": cat, "dataset": ds, "param_value": p,
            "runtime_s_recorded": rt, "peak_memory_mb_recorded": mem,
            "generator_count_recorded": gc, "note": ""}
-    try:
-        res = R.run_once(algo, ds, p, max(60, int(3 * rt) + 30))
-    except Exception as exc:                                # noqa: BLE001
-        row["note"] = "%s: %s" % (type(exc).__name__, exc)
+    import statistics
+    reps = 1 if R.ALGORITHMS[algo].get("exe") else JVM_REPEATS
+    got = []
+    for _ in range(reps):
+        try:
+            res = R.run_once(algo, ds, p, max(60, int(3 * rt) + 30))
+        except Exception as exc:                            # noqa: BLE001
+            row["note"] = "%s: %s" % (type(exc).__name__, exc)
+            continue
+        if R._failed(algo, res):
+            row["note"] = "rerun failed: %s" % ("timeout" if res.get("timed_out") else
+                                                (res.get("stderr") or "")[-120:].replace("\n", " "))
+            continue
+        got.append(res)
+    if not got:
         return row
-    if R._failed(algo, res):
-        row["note"] = "rerun failed: %s" % ("timeout" if res.get("timed_out") else
-                                            (res.get("stderr") or "")[-120:].replace("\n", " "))
-        return row
-    row.update(peak_memory_mb_exact=res["peak_memory_mb"], peak_source=res["peak_source"],
-               generator_count=res["generator_count"], rerun_runtime_s=res["runtime_s"],
-               count_matches=R._same_count(res["generator_count"], gc))
+    mems = [x["peak_memory_mb"] for x in got]
+    counts = {str(x["generator_count"]) for x in got}
+    gcount = counts.pop() if len(counts) == 1 else "|".join(sorted(counts))
+    row.update(peak_memory_mb_exact=statistics.median(mems),
+               memory_reps=" ".join("%.2f" % m for m in mems),
+               peak_source="|".join(sorted({x["peak_source"] for x in got})),
+               generator_count=gcount,
+               rerun_runtime_s=statistics.median([x["runtime_s"] for x in got]),
+               count_matches=R._same_count(gcount, gc))
     return row
 
 
