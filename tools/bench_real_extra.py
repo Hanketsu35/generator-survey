@@ -196,6 +196,8 @@ def main(argv=None):
     ap.add_argument("--timeout", type=float, default=TIMEOUT)
     ap.add_argument("--extra-algos", nargs="*", default=[],
                     help="further implementations to run, e.g. FGC_Stream")
+    ap.add_argument("--instances", default=None,
+                    help="CSV of dataset,sigma,target_pairs to run instead of the plan")
     args = ap.parse_args(argv)
     os.chdir(_ROOT)
     out_csv = Path(args.out)
@@ -203,8 +205,17 @@ def main(argv=None):
 
     from src import config as _cfg
     algos = category1_algorithms() + [(a, _cfg.ALGORITHMS[a]) for a in args.extra_algos]
-    instances = plan(order, calibration=not args.no_calibration,
-                     cap_reachable=args.cap_reachable, targets=args.targets)
+    if args.instances:
+        rows = list(csv.DictReader(open(args.instances)))
+        instances = []
+        for r in rows:
+            probe = lm.DatasetProbe.build(str(RAW / ("%s.txt" % r["dataset"])))
+            instances.append((r["dataset"], float(r["sigma"]), int(r["target_pairs"]),
+                              "extension", probe.n_tx, probe.n_items))
+        order = sorted({r["dataset"] for r in rows})
+    else:
+        instances = plan(order, calibration=not args.no_calibration,
+                         cap_reachable=args.cap_reachable, targets=args.targets)
     done = done_keys(out_csv)
     jobs = []
     # Easiest difficulty level of EVERY dataset first, hardest last. Dataset by
