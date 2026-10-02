@@ -109,7 +109,10 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
   instances: 1.001x, against the engine's 2.029x (P = 0.959). Twelve of the
   13 were sampled. The rule that demotes a miner lagging in its probe
   (`PROGRESS_DEMOTE`, found post hoc, `results/PROGRESS_POSTHOC.md`) had
-  nothing to act on there, so it remains unconfirmed.
+  nothing to act on there. A targeted screen (`results/LAG_RESULTS.md`)
+  over 9 lower thresholds of 13 datasets found no instance where a miner
+  lags either: such instances are rare (6 in everything probed so far). The
+  rule stays on as an unconfirmed heuristic for that rare case.
 
   Over the three fresh confirmations the probe-backed ranking was below the
   engine every time: 1.110x vs 1.132x, 1.359x vs 1.514x, 1.001x vs 2.029x.

@@ -72,7 +72,8 @@ LB_INTERVAL = "floor"
 #: probed miner did (see recommend). Post hoc over 173 seen instances it
 #: turned two failed picks into the best ones and cost two others (Apriori
 #: slow but finishing within 3600 s): 1.073x -> 1.048x, failed picks 3 -> 1
-#: (results/PROGRESS_POSTHOC.md); confirmation: results/FRESH3_PROTOCOL.md.
+#: (results/PROGRESS_POSTHOC.md). Unconfirmed: two fresh tests found no
+#: instance where a miner lags (FRESH3_RESULTS.md, LAG_RESULTS.md).
 PROGRESS_DEMOTE = True
 
 
