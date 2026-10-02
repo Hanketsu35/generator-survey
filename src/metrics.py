@@ -20,6 +20,44 @@ CHILD_SCAN_S = 0.1
 #: "rss" (an instantaneous resident size) elsewhere. Recorded with each run.
 PEAK_SOURCE = "vmhwm" if os.path.exists("/proc/self/status") else "rss"
 
+#: Exact peak: each run is started through tools/peakrun, which forks the
+#: program and writes its ru_maxrss (wait4) when it exits. Polled VmHWM read
+#: 0.02-0.6 MB for 3-5 ms runs whose exact peak is 2.7-3.4 MB, and missed
+#: peaks reached in the last polling interval by 6-7% on ~1 s runs
+#: (results/peak_method_check.csv). A child forked from this Python process
+#: would start its high-water mark at Python's own footprint; forked from
+#: peakrun, at peakrun's (1.4 MiB). Where the run is killed (timeout) no exact
+#: value is written and the polled one is used, marked "vmhwm".
+PEAKRUN = str(Path(__file__).resolve().parent.parent / "tools" / "peakrun" / "peakrun")
+EXACT_PEAK = os.name == "posix" and os.access(PEAKRUN, os.X_OK)
+
+
+def _exact_wrap(cmd):
+    """-> (command run through peakrun, file it writes) or (cmd, None)."""
+    if not EXACT_PEAK:
+        return cmd, None
+    import tempfile
+    fd, pk = tempfile.mkstemp(prefix="peak_", suffix=".txt")
+    os.close(fd)
+    os.remove(pk)
+    return [PEAKRUN, pk] + cmd, pk
+
+
+def _exact_read(pk):
+    """Exact peak in MB from peakrun's file, or None; removes the file."""
+    if not pk:
+        return None
+    try:
+        with open(pk) as fh:
+            return round(int(fh.read().strip()) / 1024.0, 2)
+    except (OSError, ValueError):
+        return None
+    finally:
+        try:
+            os.remove(pk)
+        except OSError:
+            pass
+
 
 def _peak_bytes(proc):
     if PEAK_SOURCE == "vmhwm":
@@ -330,11 +368,15 @@ def run_spmf(
     cmd = (["java"] + heap_flags + ["-jar", SPMF_JAR, "run", spmf_name,
             input_file, output_file] + [str(p) for p in params])
 
+    cmd, pk = _exact_wrap(cmd)
     t0 = time.perf_counter()
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
     stdout, stderr, timed_out, monitor = _communicate_monitored(proc, timeout)
     runtime_s = time.perf_counter() - t0
+    exact = _exact_read(pk)
+    if timed_out:
+        exact = None
 
     generator_count = 0
     try:
@@ -357,8 +399,8 @@ def run_spmf(
 
     return {
         "runtime_s": round(runtime_s, 4),
-        "peak_memory_mb": peak_rss_mb(monitor),
-        "peak_source": PEAK_SOURCE,
+        "peak_memory_mb": exact if exact is not None else peak_rss_mb(monitor),
+        "peak_source": "wait4" if exact is not None else PEAK_SOURCE,
         "returncode": proc.returncode,
         "stdout": stdout[:2000],
         "stderr": stderr[:2000],
@@ -386,12 +428,16 @@ def run_external(
     exe_abs = str(Path(exe).resolve())
     cmd = [exe_abs] + [str(a) for a in cmd_args]
 
+    cmd, pk = _exact_wrap(cmd)
     t0 = time.perf_counter()
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
                             preexec_fn=_address_space_limiter(NATIVE_MEM_LIMIT_MB))
 
     stdout, stderr, timed_out, monitor = _communicate_monitored(proc, timeout)
     runtime_s = time.perf_counter() - t0
+    exact = _exact_read(pk)
+    if timed_out:
+        exact = None
 
     generator_count = 0
     try:
@@ -408,8 +454,8 @@ def run_external(
 
     return {
         "runtime_s": round(runtime_s, 4),
-        "peak_memory_mb": peak_rss_mb(monitor),
-        "peak_source": PEAK_SOURCE,
+        "peak_memory_mb": exact if exact is not None else peak_rss_mb(monitor),
+        "peak_source": "wait4" if exact is not None else PEAK_SOURCE,
         "returncode": proc.returncode,
         "stdout": (stdout or "")[:2000],
         "stderr": (stderr or "")[:2000],
