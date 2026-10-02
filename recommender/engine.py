@@ -95,8 +95,9 @@ class Recommendation:
     cost_band: Optional[tuple] = None
     #: The same, on the composite score the ranking actually uses.
     score_band: Optional[tuple] = None
-    #: 90% prediction intervals (recommender/intervals.py) on memory_mb and
-    #: runtime_s: where the measured cost is expected to fall. cost_band and
+    #: Prediction intervals shown to the user (intervals.display_interval,
+    #: level intervals.display_level(), calibrated over datasets) on memory_mb
+    #: and runtime_s: where the measured cost is expected to fall. cost_band and
     #: memory bands above describe the precision of the MEAN and are used only
     #: to form tiers; these describe the run the user will get.
     memory_interval: Optional[tuple] = None
@@ -415,6 +416,15 @@ class Recommender:
             # INTERVAL_RESULTS.md), so it is not offered as a 90% interval.
             rt_iv = (None if kind[0] == "probe"
                      else _iv.interval("%s_runtime%s" % kind, pred["runtime_s"]))
+            # what the user is shown: dataset-level intervals (intervals.py,
+            # display_interval); the ranking above keeps its own
+            mem_disp = _iv.display_interval("%s_memory%s" % kind, pred["memory_mb"])
+            if mem_disp and lb:
+                hi = (_iv.display_interval("model_memory", model_mem)[1] if LB_INTERVAL == "floor"
+                      else mem_disp[1])
+                mem_disp = (max(mem_disp[0], lb), max(hi, lb))
+            rt_disp = (None if kind[0] == "probe"
+                       else _iv.display_interval("%s_runtime%s" % kind, pred["runtime_s"]))
             notes = []
             ok = True
             if task.max_runtime_s and pred["runtime_s"] > task.max_runtime_s:
@@ -442,6 +452,8 @@ class Recommender:
                 "probed": probed,
                 "memory_interval": mem_iv,
                 "runtime_interval": rt_iv,
+                "memory_display": mem_disp,
+                "runtime_display": rt_disp,
                 "probe_note": probe_note,
                 "lagging": v.algorithm in lagging,
             })
@@ -529,8 +541,8 @@ class Recommender:
                 reasons=list(v.reasons),
                 warnings=(self._resolve_input_dependent(v, feats, task.threshold)
                           + ([r["probe_note"]] if r.get("probe_note") else [])),
-                memory_interval=r.get("memory_interval"),
-                runtime_interval=r.get("runtime_interval"),
+                memory_interval=r.get("memory_display"),
+                runtime_interval=r.get("runtime_display"),
                 budget_notes=r["budget_notes"],
                 post_filter=v.post_filter,
                 installed=(True if installed is None
@@ -628,11 +640,13 @@ def format_report(task, recs, rejected, feats, show_rejected=True):
                     % (len(tier1) - 1, "s" if len(tier1) > 2 else "")
                     if len(tier1) > 1 else ""))
         if top.memory_interval:
-            L.append("   memory: %.1f MB, 90%% prediction interval %.1f..%.1f MB"
-                     % (top.memory_mb, top.memory_interval[0], top.memory_interval[1]))
+            L.append("   memory: %.1f MB, %.0f%% prediction interval %.1f..%.1f MB"
+                     % (top.memory_mb, 100 * (_iv.display_level() or 0.9),
+                        top.memory_interval[0], top.memory_interval[1]))
         if top.runtime_interval:
-            L.append("   runtime: %.2f s, 90%% prediction interval up to %.2f s"
-                     % (top.runtime_s, top.runtime_interval[1]))
+            L.append("   runtime: %.2f s, %.0f%% prediction interval up to %.2f s"
+                     % (top.runtime_s, 100 * (_iv.display_level() or 0.9),
+                        top.runtime_interval[1]))
         if top.score_band:
             L.append("   ranking score %.3f, precision of the mean 5-95%% %.3f..%.3f"
                      % (top.score_band[0], top.score_band[1], top.score_band[2]))

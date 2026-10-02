@@ -31,6 +31,21 @@ RT_FLOOR = 0.01
 
 _q = None
 
+#: Shown to the user (``display_interval``), as against the ranking's own
+#: quantiles above. Calibrated at the level of DATASETS, not runs: a user's
+#: file is a new group, and exchangeability holds between groups, not
+#: between the runs inside one (Dunn, Wasserman & Ramdas, JASA 2023,
+#: "Distribution-free prediction sets for two-layer hierarchical models").
+#: Their CDF pooling: average the per-dataset empirical CDFs of the
+#: residual, take the alpha/2 and 1 - alpha/2 quantiles. Pooled runs had
+#: covered 79-88% of runs on unseen datasets at a nominal 90%; leave-one-
+#: dataset-out over 40 datasets, CDF pooling at 95% covered 94% (model
+#: memory) and 95% / 94% (probe, measured / sampled) on average per dataset
+#: (tools/interval_methods.py, tools/interval_groups_probe.py).
+DISPLAY_ALPHA = 0.05
+GROUPS_MODEL = _HERE.parent / "results" / "interval_groups.csv"
+GROUPS_PROBE = _HERE.parent / "results" / "interval_groups_probe.csv"
+
 
 def _quantile(x, alpha, k):
     import numpy as np
@@ -60,6 +75,61 @@ def build(residuals=RESIDUALS, out=QUANTILES, variant="affine"):
     return q
 
 
+def _cdf_pool(values, groups, alpha):
+    import numpy as np
+    x = np.asarray(values, float)
+    g = np.asarray(groups)
+    w = np.empty_like(x)
+    for k in set(g.tolist()):
+        m = g == k
+        w[m] = 1.0 / m.sum()
+    o = np.argsort(x)
+    x, c = x[o], np.cumsum(w[o]) / w.sum()
+    lo = x[min(np.searchsorted(c, alpha / 2), len(x) - 1)]
+    hi = x[min(np.searchsorted(c, 1 - alpha / 2), len(x) - 1)]
+    return [float(lo), float(hi)]
+
+
+def build_display(out=QUANTILES, alpha=DISPLAY_ALPHA):
+    """Add the dataset-level display quantiles to intervals.json."""
+    import numpy as np
+    import pandas as pd
+    q = json.loads(Path(out).read_text())
+    m = pd.read_csv(GROUPS_MODEL)
+    p = pd.read_csv(GROUPS_PROBE)
+    rt = lambda s: np.maximum(s, RT_FLOOR)                        # noqa: E731
+    kinds = {"model_memory": (m.dataset, np.log10(m.true_mem / m.pred_mem)),
+             "model_runtime": (m.dataset, np.log10(rt(m.true_rt) / rt(m.pred_rt)))}
+    for tag in ("measured", "sampled"):
+        s = p[p.kind == tag]
+        kinds["probe_memory_" + tag] = (s.dataset, np.log10(s.true_mem / s.est_mem))
+    disp = {"level": 1 - alpha, "method": "CDF pooling over datasets"}
+    for name, (g, r) in kinds.items():
+        disp[name] = {"log10": _cdf_pool(r.values, g.values, alpha), "n": int(len(r)),
+                      "datasets": int(g.nunique())}
+    q["display"] = disp
+    Path(out).write_text(json.dumps(q, indent=1) + "\n")
+    global _q
+    _q = None
+    return disp
+
+
+def display_interval(kind, point):
+    """(lo, hi) shown to the user for ``kind`` around ``point``, or None."""
+    d = _load().get("display") or {}
+    q = d.get(kind)
+    if q is None or point is None or not (point > 0):
+        return None
+    if kind.endswith("runtime"):
+        point = max(point, _load()["rt_floor"])
+    lo, hi = q["log10"]
+    return (point * 10 ** lo, point * 10 ** hi)
+
+
+def display_level():
+    return (_load().get("display") or {}).get("level")
+
+
 def _load():
     global _q
     if _q is None:
@@ -85,6 +155,14 @@ def width(kind):
 
 
 if __name__ == "__main__":
+    import sys
+    if "--display" in sys.argv:
+        for name, v in build_display().items():
+            if isinstance(v, dict):
+                lo, hi = v["log10"]
+                print("display %-24s x%.3f .. x%.3f  (width x%.1f, n=%d, %d datasets)"
+                      % (name, 10 ** lo, 10 ** hi, 10 ** (hi - lo), v["n"], v["datasets"]))
+        sys.exit(0)
     for name, v in build().items():
         if isinstance(v, dict):
             lo, hi = v["log10"]

@@ -190,8 +190,8 @@ const T = {
   budgetUnknown: ["Whether this fits the stated budget cannot be predicted for this data.",
                   "Bunun belirtilen bütçeye sığıp sığmayacağı bu veri için tahmin edilemiyor."],
   extrapShort: ["extrapolated: outside the measured range", "tahmin: ölçülen aralığın dışında"],
-  ivTip: ["90% prediction interval: where the measured value is expected to fall, calibrated on datasets the model had not seen",
-          "%90 tahmin aralığı: ölçülecek değerin düşmesi beklenen aralık; modelin görmediği veri setlerinde kalibre edildi"],
+  ivTip: ["95% prediction interval: where the measured value is expected to fall on a new dataset, calibrated over 40 datasets the estimate had not seen",
+          "%95 tahmin aralığı: yeni bir veri setinde ölçülecek değerin düşmesi beklenen aralık; tahminin görmediği 40 veri setinde kalibre edildi"],
   upTo: ["up to", "en çok"]
 };
 const t = k => (T[k] || [k, k])[TR ? 1 : 0];

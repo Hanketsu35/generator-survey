@@ -1,0 +1,641 @@
+target,alpha,method,dataset,source,coverage,width
+mem,0.1,M0 pooled,accidents,training LODO,0.9622641509433962,26.187096488636005
+mem,0.1,M0 pooled,bike_set,fresh,0.95,27.042286006724403
+mem,0.1,M0 pooled,bms1,training LODO,0.7631578947368421,24.90937451647464
+mem,0.1,M0 pooled,bms2,training LODO,1.0,26.753630355222842
+mem,0.1,M0 pooled,c20d10k,training LODO,0.9696969696969697,26.65195998127884
+mem,0.1,M0 pooled,c73d10k,training LODO,0.92,25.77817272516992
+mem,0.1,M0 pooled,census_kdd,fresh2,0.9259259259259259,25.813825629231246
+mem,0.1,M0 pooled,chainstore_fim,real_extra3,1.0,26.374504115937395
+mem,0.1,M0 pooled,chess,training LODO,0.8095238095238095,24.575345349685637
+mem,0.1,M0 pooled,chicago,training LODO,1.0,26.29932603274765
+mem,0.1,M0 pooled,connect,training LODO,1.0,28.764224074363163
+mem,0.1,M0 pooled,covertype,fresh2,0.9696969696969697,26.11728536479918
+mem,0.1,M0 pooled,diabetes130,fresh2,0.782608695652174,25.608477610339595
+mem,0.1,M0 pooled,dota2,fresh3,1.0,27.60700188379494
+mem,0.1,M0 pooled,ecommerce_fim,fresh,1.0,26.753630355222842
+mem,0.1,M0 pooled,fifa_set,fresh,0.75,25.243235157185275
+mem,0.1,M0 pooled,fruithut,real_extra3,1.0,27.52831067977775
+mem,0.1,M0 pooled,instacart,real_extra3,1.0,27.361587153995377
+mem,0.1,M0 pooled,kddcup99,training LODO,1.0,26.753630355222842
+mem,0.1,M0 pooled,kosarak,training LODO,0.8846153846153846,25.682989148742138
+mem,0.1,M0 pooled,liquor,hard,1.0,26.014045012857736
+mem,0.1,M0 pooled,microblog_set,fresh,0.5681818181818182,23.52749816532672
+mem,0.1,M0 pooled,miniboone,fresh3,0.8333333333333334,25.456342270348387
+mem,0.1,M0 pooled,mooc_set,hard,0.0,24.835044528311897
+mem,0.1,M0 pooled,msnbc_set,fresh,0.75,25.385017793598234
+mem,0.1,M0 pooled,mushroom,training LODO,0.9871794871794872,29.64837783118939
+mem,0.1,M0 pooled,onlineretail,training LODO,1.0,27.44984377775523
+mem,0.1,M0 pooled,pamap,training LODO,0.7727272727272727,25.59490357719819
+mem,0.1,M0 pooled,poker,fresh2,0.9117647058823529,25.74824600410365
+mem,0.1,M0 pooled,power,fresh3,1.0,26.29932603274765
+mem,0.1,M0 pooled,pumsb,training LODO,0.9310344827586207,25.850644377645878
+mem,0.1,M0 pooled,recordlink,training LODO,1.0,26.29932603274765
+mem,0.1,M0 pooled,retail,training LODO,0.9885057471264368,29.96706246455321
+mem,0.1,M0 pooled,sign_set,hard,0.7058823529411765,25.232292688286297
+mem,0.1,M0 pooled,skin,real_extra3,0.6111111111111112,25.085700645378957
+mem,0.1,M0 pooled,splice,fresh,0.6530612244897959,25.208164981702225
+mem,0.1,M0 pooled,t10i4d100k,training LODO,0.7222222222222222,26.466309011180087
+mem,0.1,M0 pooled,t20i6d100k,real_extra3,1.0,27.60700188379494
+mem,0.1,M0 pooled,t25i10d10k,fresh,1.0,27.990006687533267
+mem,0.1,M0 pooled,uscensus,fresh,0.9615384615384616,26.07726078288876
+mem,0.1,M1 CDF pooling,accidents,training LODO,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,bike_set,fresh,0.95,50.45622117464324
+mem,0.1,M1 CDF pooling,bms1,training LODO,0.7894736842105263,46.93935461432651
+mem,0.1,M1 CDF pooling,bms2,training LODO,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,c20d10k,training LODO,0.9696969696969697,50.45622117464324
+mem,0.1,M1 CDF pooling,c73d10k,training LODO,0.96,51.02820997388293
+mem,0.1,M1 CDF pooling,census_kdd,fresh2,0.9259259259259259,48.51895710403109
+mem,0.1,M1 CDF pooling,chainstore_fim,real_extra3,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,chess,training LODO,0.873015873015873,47.651623030631356
+mem,0.1,M1 CDF pooling,chicago,training LODO,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,connect,training LODO,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,covertype,fresh2,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,diabetes130,fresh2,0.8260869565217391,47.49524101284197
+mem,0.1,M1 CDF pooling,dota2,fresh3,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,ecommerce_fim,fresh,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,fifa_set,fresh,0.65,47.7300700414011
+mem,0.1,M1 CDF pooling,fruithut,real_extra3,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,instacart,real_extra3,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,kddcup99,training LODO,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,kosarak,training LODO,0.9230769230769231,48.51895710403109
+mem,0.1,M1 CDF pooling,liquor,hard,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,microblog_set,fresh,0.7727272727272727,49.43850965830467
+mem,0.1,M1 CDF pooling,miniboone,fresh3,0.9761904761904762,51.27825414444694
+mem,0.1,M1 CDF pooling,mooc_set,hard,0.0,25.352486966221257
+mem,0.1,M1 CDF pooling,msnbc_set,fresh,0.7142857142857143,48.21151473080591
+mem,0.1,M1 CDF pooling,mushroom,training LODO,0.9743589743589743,50.45622117464324
+mem,0.1,M1 CDF pooling,onlineretail,training LODO,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,pamap,training LODO,0.8181818181818182,46.93935461432651
+mem,0.1,M1 CDF pooling,poker,fresh2,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,power,fresh3,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,pumsb,training LODO,0.9655172413793104,51.02820997388293
+mem,0.1,M1 CDF pooling,recordlink,training LODO,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,retail,training LODO,0.9885057471264368,50.734310564770006
+mem,0.1,M1 CDF pooling,sign_set,hard,0.7058823529411765,48.21151473080591
+mem,0.1,M1 CDF pooling,skin,real_extra3,0.6111111111111112,46.90514156426821
+mem,0.1,M1 CDF pooling,splice,fresh,0.6530612244897959,48.03531665723289
+mem,0.1,M1 CDF pooling,t10i4d100k,training LODO,0.7333333333333333,49.22639639945888
+mem,0.1,M1 CDF pooling,t20i6d100k,real_extra3,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,t25i10d10k,fresh,1.0,51.27825414444694
+mem,0.1,M1 CDF pooling,uscensus,fresh,0.9615384615384616,51.02820997388293
+mem,0.1,M2 subsample,accidents,training LODO,1.0,98.81087268760739
+mem,0.1,M2 subsample,bike_set,fresh,1.0,98.88568827432128
+mem,0.1,M2 subsample,bms1,training LODO,0.8947368421052632,87.38522300449841
+mem,0.1,M2 subsample,bms2,training LODO,1.0,95.07864602698753
+mem,0.1,M2 subsample,c20d10k,training LODO,0.9696969696969697,94.53313584927346
+mem,0.1,M2 subsample,c73d10k,training LODO,1.0,93.80537934881207
+mem,0.1,M2 subsample,census_kdd,fresh2,0.9259259259259259,90.95951325160539
+mem,0.1,M2 subsample,chainstore_fim,real_extra3,1.0,95.65224924484582
+mem,0.1,M2 subsample,chess,training LODO,0.8888888888888888,82.20816375318157
+mem,0.1,M2 subsample,chicago,training LODO,1.0,94.19134976004324
+mem,0.1,M2 subsample,connect,training LODO,1.0,94.19134976004324
+mem,0.1,M2 subsample,covertype,fresh2,1.0,92.79774725163674
+mem,0.1,M2 subsample,diabetes130,fresh2,0.9130434782608695,82.79655590374695
+mem,0.1,M2 subsample,dota2,fresh3,1.0,94.66952435657932
+mem,0.1,M2 subsample,ecommerce_fim,fresh,1.0,94.38574989736813
+mem,0.1,M2 subsample,fifa_set,fresh,0.9,90.15752852232568
+mem,0.1,M2 subsample,fruithut,real_extra3,1.0,94.56964234082605
+mem,0.1,M2 subsample,instacart,real_extra3,1.0,94.40186801353627
+mem,0.1,M2 subsample,kddcup99,training LODO,1.0,94.62072370641289
+mem,0.1,M2 subsample,kosarak,training LODO,1.0,93.30999944483484
+mem,0.1,M2 subsample,liquor,hard,1.0,95.12054321300388
+mem,0.1,M2 subsample,microblog_set,fresh,0.9318181818181818,90.05493227306002
+mem,0.1,M2 subsample,miniboone,fresh3,0.9761904761904762,91.15583678590542
+mem,0.1,M2 subsample,mooc_set,hard,0.0,44.939232286833914
+mem,0.1,M2 subsample,msnbc_set,fresh,0.8571428571428571,90.8636025646269
+mem,0.1,M2 subsample,mushroom,training LODO,1.0,96.12020462042443
+mem,0.1,M2 subsample,onlineretail,training LODO,1.0,96.37628897202075
+mem,0.1,M2 subsample,pamap,training LODO,0.8636363636363636,81.70433940871293
+mem,0.1,M2 subsample,poker,fresh2,1.0,92.50104836111376
+mem,0.1,M2 subsample,power,fresh3,1.0,93.33709161087049
+mem,0.1,M2 subsample,pumsb,training LODO,1.0,90.1413595309506
+mem,0.1,M2 subsample,recordlink,training LODO,1.0,92.19292095883343
+mem,0.1,M2 subsample,retail,training LODO,1.0,91.94416951616437
+mem,0.1,M2 subsample,sign_set,hard,0.7058823529411765,84.43928233206354
+mem,0.1,M2 subsample,skin,real_extra3,0.8888888888888888,94.0029229128778
+mem,0.1,M2 subsample,splice,fresh,0.673469387755102,85.78013001364974
+mem,0.1,M2 subsample,t10i4d100k,training LODO,0.7333333333333333,86.64867295326988
+mem,0.1,M2 subsample,t20i6d100k,real_extra3,1.0,94.31022923431601
+mem,0.1,M2 subsample,t25i10d10k,fresh,1.0,94.46055596024347
+mem,0.1,M2 subsample,uscensus,fresh,0.9615384615384616,86.65847233348151
+mem,0.1,M3 repeated,accidents,training LODO,1.0,56.698156189936896
+mem,0.1,M3 repeated,bike_set,fresh,0.95,56.09112286942804
+mem,0.1,M3 repeated,bms1,training LODO,0.7894736842105263,46.56352297076701
+mem,0.1,M3 repeated,bms2,training LODO,1.0,56.698156189936896
+mem,0.1,M3 repeated,c20d10k,training LODO,0.9696969696969697,56.698156189936896
+mem,0.1,M3 repeated,c73d10k,training LODO,1.0,57.095200940288386
+mem,0.1,M3 repeated,census_kdd,fresh2,0.9259259259259259,50.85206947022321
+mem,0.1,M3 repeated,chainstore_fim,real_extra3,1.0,58.85873707152863
+mem,0.1,M3 repeated,chess,training LODO,0.873015873015873,49.980379810947916
+mem,0.1,M3 repeated,chicago,training LODO,1.0,57.095200940288386
+mem,0.1,M3 repeated,connect,training LODO,1.0,57.095200940288386
+mem,0.1,M3 repeated,covertype,fresh2,1.0,57.095200940288386
+mem,0.1,M3 repeated,diabetes130,fresh2,0.8695652173913043,47.52265277053057
+mem,0.1,M3 repeated,dota2,fresh3,1.0,56.81671302921064
+mem,0.1,M3 repeated,ecommerce_fim,fresh,1.0,56.81671302921064
+mem,0.1,M3 repeated,fifa_set,fresh,0.65,52.44433171531952
+mem,0.1,M3 repeated,fruithut,real_extra3,1.0,56.421604906829806
+mem,0.1,M3 repeated,instacart,real_extra3,1.0,56.421604906829806
+mem,0.1,M3 repeated,kddcup99,training LODO,1.0,56.421604906829806
+mem,0.1,M3 repeated,kosarak,training LODO,0.9230769230769231,49.876018673857665
+mem,0.1,M3 repeated,liquor,hard,1.0,56.421604906829806
+mem,0.1,M3 repeated,microblog_set,fresh,0.7727272727272727,48.63476715412877
+mem,0.1,M3 repeated,miniboone,fresh3,0.9761904761904762,50.30074875696964
+mem,0.1,M3 repeated,mooc_set,hard,0.0,24.11148921537084
+mem,0.1,M3 repeated,msnbc_set,fresh,0.6785714285714286,52.56875433869186
+mem,0.1,M3 repeated,mushroom,training LODO,0.9743589743589743,56.421604906829806
+mem,0.1,M3 repeated,onlineretail,training LODO,1.0,56.421604906829806
+mem,0.1,M3 repeated,pamap,training LODO,0.8181818181818182,46.56352297076701
+mem,0.1,M3 repeated,poker,fresh2,1.0,50.49843997255707
+mem,0.1,M3 repeated,power,fresh3,1.0,50.49843997255707
+mem,0.1,M3 repeated,pumsb,training LODO,0.9655172413793104,47.19217631200914
+mem,0.1,M3 repeated,recordlink,training LODO,1.0,50.49843997255707
+mem,0.1,M3 repeated,retail,training LODO,0.9885057471264368,50.49843997255707
+mem,0.1,M3 repeated,sign_set,hard,0.7058823529411765,47.49048818784332
+mem,0.1,M3 repeated,skin,real_extra3,0.6111111111111112,47.050063354067866
+mem,0.1,M3 repeated,splice,fresh,0.6530612244897959,48.63476715412877
+mem,0.1,M3 repeated,t10i4d100k,training LODO,0.7333333333333333,49.89314940809187
+mem,0.1,M3 repeated,t20i6d100k,real_extra3,1.0,52.15826372859681
+mem,0.1,M3 repeated,t25i10d10k,fresh,1.0,52.15826372859681
+mem,0.1,M3 repeated,uscensus,fresh,0.9615384615384616,51.26418371156637
+mem,0.05,M0 pooled,accidents,training LODO,1.0,100.68967214557586
+mem,0.05,M0 pooled,bike_set,fresh,1.0,99.91594849886388
+mem,0.05,M0 pooled,bms1,training LODO,0.7894736842105263,81.67262250056297
+mem,0.05,M0 pooled,bms2,training LODO,1.0,99.79872230766838
+mem,0.05,M0 pooled,c20d10k,training LODO,1.0,99.79872230766838
+mem,0.05,M0 pooled,c73d10k,training LODO,1.0,99.66491791901258
+mem,0.05,M0 pooled,census_kdd,fresh2,0.9259259259259259,89.33930023831343
+mem,0.05,M0 pooled,chainstore_fim,real_extra3,1.0,99.7150735287164
+mem,0.05,M0 pooled,chess,training LODO,0.873015873015873,82.09563546315373
+mem,0.05,M0 pooled,chicago,training LODO,1.0,99.69835218828362
+mem,0.05,M0 pooled,connect,training LODO,1.0,101.21430196316233
+mem,0.05,M0 pooled,covertype,fresh2,1.0,99.79872230766838
+mem,0.05,M0 pooled,diabetes130,fresh2,0.8695652173913043,88.37917462417404
+mem,0.05,M0 pooled,dota2,fresh3,1.0,99.98299670658434
+mem,0.05,M0 pooled,ecommerce_fim,fresh,1.0,99.79872230766838
+mem,0.05,M0 pooled,fifa_set,fresh,1.0,99.58138129153386
+mem,0.05,M0 pooled,fruithut,real_extra3,1.0,99.966230437792
+mem,0.05,M0 pooled,instacart,real_extra3,1.0,99.93270633440326
+mem,0.05,M0 pooled,kddcup99,training LODO,1.0,99.79872230766838
+mem,0.05,M0 pooled,kosarak,training LODO,0.9230769230769231,89.31964018887207
+mem,0.05,M0 pooled,liquor,hard,1.0,99.44786830121605
+mem,0.05,M0 pooled,microblog_set,fresh,0.9772727272727273,99.21880557027751
+mem,0.05,M0 pooled,miniboone,fresh3,0.9761904761904762,98.72631807179765
+mem,0.05,M0 pooled,mooc_set,hard,0.0,81.62325950753004
+mem,0.05,M0 pooled,msnbc_set,fresh,0.9642857142857143,98.79069990520023
+mem,0.05,M0 pooled,mushroom,training LODO,1.0,102.89373127043505
+mem,0.05,M0 pooled,onlineretail,training LODO,1.0,99.94946698055547
+mem,0.05,M0 pooled,pamap,training LODO,0.8636363636363636,88.10558734212658
+mem,0.05,M0 pooled,poker,fresh2,1.0,99.81546048210993
+mem,0.05,M0 pooled,power,fresh3,1.0,99.69835218828362
+mem,0.05,M0 pooled,pumsb,training LODO,0.9655172413793104,92.82817504006348
+mem,0.05,M0 pooled,recordlink,training LODO,1.0,99.69835218828362
+mem,0.05,M0 pooled,retail,training LODO,1.0,103.95027495145536
+mem,0.05,M0 pooled,sign_set,hard,0.7647058823529411,93.4718136404855
+mem,0.05,M0 pooled,skin,real_extra3,1.0,99.54798624895406
+mem,0.05,M0 pooled,splice,fresh,0.6938775510204082,71.22407604098602
+mem,0.05,M0 pooled,t10i4d100k,training LODO,0.7333333333333333,66.58750553770092
+mem,0.05,M0 pooled,t20i6d100k,real_extra3,1.0,99.98299670658434
+mem,0.05,M0 pooled,t25i10d10k,fresh,1.0,100.3414305517816
+mem,0.05,M0 pooled,uscensus,fresh,0.9615384615384616,94.73328349216366
+mem,0.05,M1 CDF pooling,accidents,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,bike_set,fresh,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,bms1,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,bms2,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,c20d10k,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,c73d10k,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,census_kdd,fresh2,0.9629629629629629,201.1887854456007
+mem,0.05,M1 CDF pooling,chainstore_fim,real_extra3,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,chess,training LODO,0.9206349206349206,196.5639457820963
+mem,0.05,M1 CDF pooling,chicago,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,connect,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,covertype,fresh2,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,diabetes130,fresh2,0.9130434782608695,196.5639457820963
+mem,0.05,M1 CDF pooling,dota2,fresh3,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,ecommerce_fim,fresh,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,fifa_set,fresh,0.9,212.3622607635424
+mem,0.05,M1 CDF pooling,fruithut,real_extra3,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,instacart,real_extra3,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,kddcup99,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,kosarak,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,liquor,hard,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,microblog_set,fresh,0.9772727272727273,223.18018010424296
+mem,0.05,M1 CDF pooling,miniboone,fresh3,0.9761904761904762,226.82226410254538
+mem,0.05,M1 CDF pooling,mooc_set,hard,0.0,68.9182234110934
+mem,0.05,M1 CDF pooling,msnbc_set,fresh,0.9285714285714286,212.3622607635424
+mem,0.05,M1 CDF pooling,mushroom,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,onlineretail,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,pamap,training LODO,0.9545454545454546,201.1887854456007
+mem,0.05,M1 CDF pooling,poker,fresh2,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,power,fresh3,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,pumsb,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,recordlink,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,retail,training LODO,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,sign_set,hard,0.7647058823529411,191.2722281451816
+mem,0.05,M1 CDF pooling,skin,real_extra3,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,splice,fresh,0.673469387755102,188.138529879074
+mem,0.05,M1 CDF pooling,t10i4d100k,training LODO,0.7333333333333333,191.2722281451816
+mem,0.05,M1 CDF pooling,t20i6d100k,real_extra3,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,t25i10d10k,fresh,1.0,226.82226410254538
+mem,0.05,M1 CDF pooling,uscensus,fresh,0.9615384615384616,201.1887854456007
+mem,0.05,M2 subsample,accidents,training LODO,1.0,681.2771550197606
+mem,0.05,M2 subsample,bike_set,fresh,1.0,680.3867908370693
+mem,0.05,M2 subsample,bms1,training LODO,1.0,681.6553460567252
+mem,0.05,M2 subsample,bms2,training LODO,1.0,681.6553460567252
+mem,0.05,M2 subsample,c20d10k,training LODO,1.0,681.5607845051954
+mem,0.05,M2 subsample,c73d10k,training LODO,1.0,684.7000312516672
+mem,0.05,M2 subsample,census_kdd,fresh2,0.9629629629629629,664.0506995007636
+mem,0.05,M2 subsample,chainstore_fim,real_extra3,1.0,671.8762366430112
+mem,0.05,M2 subsample,chess,training LODO,0.9523809523809523,623.0163578659101
+mem,0.05,M2 subsample,chicago,training LODO,1.0,651.6139870420224
+mem,0.05,M2 subsample,connect,training LODO,1.0,651.6139870420224
+mem,0.05,M2 subsample,covertype,fresh2,1.0,651.6139870420224
+mem,0.05,M2 subsample,diabetes130,fresh2,1.0,638.6038262849896
+mem,0.05,M2 subsample,dota2,fresh3,1.0,646.62236373628
+mem,0.05,M2 subsample,ecommerce_fim,fresh,1.0,645.7082270178635
+mem,0.05,M2 subsample,fifa_set,fresh,1.0,630.7259762650438
+mem,0.05,M2 subsample,fruithut,real_extra3,1.0,643.6641893237072
+mem,0.05,M2 subsample,instacart,real_extra3,1.0,643.6641893237072
+mem,0.05,M2 subsample,kddcup99,training LODO,1.0,643.6641893237072
+mem,0.05,M2 subsample,kosarak,training LODO,1.0,643.6641893237072
+mem,0.05,M2 subsample,liquor,hard,1.0,643.6641893237072
+mem,0.05,M2 subsample,microblog_set,fresh,1.0,635.7183946219511
+mem,0.05,M2 subsample,miniboone,fresh3,1.0,639.560180702447
+mem,0.05,M2 subsample,mooc_set,hard,0.14285714285714285,196.68385371802628
+mem,0.05,M2 subsample,msnbc_set,fresh,0.9642857142857143,657.0294935586353
+mem,0.05,M2 subsample,mushroom,training LODO,1.0,676.5319568367921
+mem,0.05,M2 subsample,onlineretail,training LODO,1.0,676.5319568367921
+mem,0.05,M2 subsample,pamap,training LODO,0.9545454545454546,658.5861693872733
+mem,0.05,M2 subsample,poker,fresh2,1.0,664.1392273687139
+mem,0.05,M2 subsample,power,fresh3,1.0,664.1392273687139
+mem,0.05,M2 subsample,pumsb,training LODO,1.0,664.1392273687139
+mem,0.05,M2 subsample,recordlink,training LODO,1.0,664.1392273687139
+mem,0.05,M2 subsample,retail,training LODO,1.0,663.8068914860137
+mem,0.05,M2 subsample,sign_set,hard,0.8235294117647058,584.7744659486967
+mem,0.05,M2 subsample,skin,real_extra3,1.0,656.5172823097519
+mem,0.05,M2 subsample,splice,fresh,0.7755102040816326,591.1830146224901
+mem,0.05,M2 subsample,t10i4d100k,training LODO,0.7777777777777778,546.1106151354536
+mem,0.05,M2 subsample,t20i6d100k,real_extra3,1.0,690.098503628913
+mem,0.05,M2 subsample,t25i10d10k,fresh,1.0,690.098503628913
+mem,0.05,M2 subsample,uscensus,fresh,0.9615384615384616,679.6469833003654
+mem,0.05,M3 repeated,accidents,training LODO,1.0,215.4131626666108
+mem,0.05,M3 repeated,bike_set,fresh,1.0,215.4131626666108
+mem,0.05,M3 repeated,bms1,training LODO,1.0,215.4131626666108
+mem,0.05,M3 repeated,bms2,training LODO,1.0,215.4131626666108
+mem,0.05,M3 repeated,c20d10k,training LODO,1.0,215.4131626666108
+mem,0.05,M3 repeated,c73d10k,training LODO,1.0,215.4131626666108
+mem,0.05,M3 repeated,census_kdd,fresh2,0.9629629629629629,212.3622607635424
+mem,0.05,M3 repeated,chainstore_fim,real_extra3,1.0,215.4131626666108
+mem,0.05,M3 repeated,chess,training LODO,0.9206349206349206,184.03292144203544
+mem,0.05,M3 repeated,chicago,training LODO,1.0,212.3622607635424
+mem,0.05,M3 repeated,connect,training LODO,1.0,212.3622607635424
+mem,0.05,M3 repeated,covertype,fresh2,1.0,212.3622607635424
+mem,0.05,M3 repeated,diabetes130,fresh2,0.9130434782608695,184.03292144203544
+mem,0.05,M3 repeated,dota2,fresh3,1.0,212.3622607635424
+mem,0.05,M3 repeated,ecommerce_fim,fresh,1.0,212.3622607635424
+mem,0.05,M3 repeated,fifa_set,fresh,0.9,204.9827867228821
+mem,0.05,M3 repeated,fruithut,real_extra3,1.0,212.3622607635424
+mem,0.05,M3 repeated,instacart,real_extra3,1.0,212.3622607635424
+mem,0.05,M3 repeated,kddcup99,training LODO,1.0,212.3622607635424
+mem,0.05,M3 repeated,kosarak,training LODO,1.0,212.3622607635424
+mem,0.05,M3 repeated,liquor,hard,1.0,212.3622607635424
+mem,0.05,M3 repeated,microblog_set,fresh,0.9545454545454546,212.3622607635424
+mem,0.05,M3 repeated,miniboone,fresh3,0.9761904761904762,188.36292586420572
+mem,0.05,M3 repeated,mooc_set,hard,0.0,65.79133082406601
+mem,0.05,M3 repeated,msnbc_set,fresh,0.9285714285714286,207.92767143008274
+mem,0.05,M3 repeated,mushroom,training LODO,1.0,215.4131626666108
+mem,0.05,M3 repeated,onlineretail,training LODO,1.0,215.4131626666108
+mem,0.05,M3 repeated,pamap,training LODO,0.9545454545454546,215.4131626666108
+mem,0.05,M3 repeated,poker,fresh2,1.0,215.4131626666108
+mem,0.05,M3 repeated,power,fresh3,1.0,215.4131626666108
+mem,0.05,M3 repeated,pumsb,training LODO,1.0,215.4131626666108
+mem,0.05,M3 repeated,recordlink,training LODO,1.0,215.4131626666108
+mem,0.05,M3 repeated,retail,training LODO,1.0,215.4131626666108
+mem,0.05,M3 repeated,sign_set,hard,0.7647058823529411,193.24352537093205
+mem,0.05,M3 repeated,skin,real_extra3,1.0,226.38649761922431
+mem,0.05,M3 repeated,splice,fresh,0.673469387755102,190.63004616442834
+mem,0.05,M3 repeated,t10i4d100k,training LODO,0.7333333333333333,194.02014014590188
+mem,0.05,M3 repeated,t20i6d100k,real_extra3,1.0,225.6356630444027
+mem,0.05,M3 repeated,t25i10d10k,fresh,1.0,225.6356630444027
+mem,0.05,M3 repeated,uscensus,fresh,0.9615384615384616,225.6356630444027
+rt,0.1,M0 pooled,accidents,training LODO,1.0,5466.678981755717
+rt,0.1,M0 pooled,bike_set,fresh,0.925,5197.184271254398
+rt,0.1,M0 pooled,bms1,training LODO,0.8947368421052632,5212.1882615979275
+rt,0.1,M0 pooled,bms2,training LODO,0.9696969696969697,5316.828337462236
+rt,0.1,M0 pooled,c20d10k,training LODO,0.9696969696969697,5277.040995925832
+rt,0.1,M0 pooled,c73d10k,training LODO,0.96,5184.277235970152
+rt,0.1,M0 pooled,census_kdd,fresh2,0.9629629629629629,5294.171165283903
+rt,0.1,M0 pooled,chainstore_fim,real_extra3,0.6071428571428571,4699.394233537623
+rt,0.1,M0 pooled,chess,training LODO,0.8253968253968254,4814.607071773019
+rt,0.1,M0 pooled,chicago,training LODO,1.0,5357.257335596919
+rt,0.1,M0 pooled,connect,training LODO,0.9830508474576272,5431.834978115688
+rt,0.1,M0 pooled,covertype,fresh2,0.8484848484848485,5098.411868949681
+rt,0.1,M0 pooled,diabetes130,fresh2,0.8695652173913043,5221.122626715369
+rt,0.1,M0 pooled,dota2,fresh3,0.9772727272727273,5407.30743235577
+rt,0.1,M0 pooled,ecommerce_fim,fresh,1.0,5383.435183860747
+rt,0.1,M0 pooled,fifa_set,fresh,0.9,5131.136634580364
+rt,0.1,M0 pooled,fruithut,real_extra3,1.0,5427.349497623651
+rt,0.1,M0 pooled,instacart,real_extra3,0.975609756097561,5347.188805938658
+rt,0.1,M0 pooled,kddcup99,training LODO,0.9696969696969697,5316.828337462236
+rt,0.1,M0 pooled,kosarak,training LODO,0.6923076923076923,4815.770057389236
+rt,0.1,M0 pooled,liquor,hard,1.0,5206.380089331865
+rt,0.1,M0 pooled,microblog_set,fresh,0.7954545454545454,4958.584485896066
+rt,0.1,M0 pooled,miniboone,fresh3,0.8333333333333334,4968.935748917321
+rt,0.1,M0 pooled,mooc_set,hard,0.0,4686.462845239109
+rt,0.1,M0 pooled,msnbc_set,fresh,0.9285714285714286,5164.8790778170305
+rt,0.1,M0 pooled,mushroom,training LODO,0.5769230769230769,3896.0365148411192
+rt,0.1,M0 pooled,onlineretail,training LODO,1.0,5422.9419942500335
+rt,0.1,M0 pooled,pamap,training LODO,0.6818181818181818,4807.635939410414
+rt,0.1,M0 pooled,poker,fresh2,0.9705882352941176,5320.613948759042
+rt,0.1,M0 pooled,power,fresh3,1.0,5357.257335596919
+rt,0.1,M0 pooled,pumsb,training LODO,0.9310344827586207,5298.869979260612
+rt,0.1,M0 pooled,recordlink,training LODO,1.0,5357.257335596919
+rt,0.1,M0 pooled,retail,training LODO,0.9080459770114943,5273.665081806881
+rt,0.1,M0 pooled,sign_set,hard,1.0,5261.761715477445
+rt,0.1,M0 pooled,skin,real_extra3,0.8888888888888888,5123.8451813266465
+rt,0.1,M0 pooled,splice,fresh,0.8367346938775511,4948.957438056483
+rt,0.1,M0 pooled,t10i4d100k,training LODO,0.8666666666666667,4906.670269354832
+rt,0.1,M0 pooled,t20i6d100k,real_extra3,0.9772727272727273,5358.618624528238
+rt,0.1,M0 pooled,t25i10d10k,fresh,0.8367346938775511,4948.957438056483
+rt,0.1,M0 pooled,uscensus,fresh,0.9230769230769231,5280.7068212523745
+rt,0.1,M1 CDF pooling,accidents,training LODO,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,bike_set,fresh,0.85,7206.503998755872
+rt,0.1,M1 CDF pooling,bms1,training LODO,0.9210526315789473,7087.391922093657
+rt,0.1,M1 CDF pooling,bms2,training LODO,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,c20d10k,training LODO,0.9696969696969697,7653.0762429399765
+rt,0.1,M1 CDF pooling,c73d10k,training LODO,0.92,7330.471959602375
+rt,0.1,M1 CDF pooling,census_kdd,fresh2,0.9629629629629629,7464.425054100114
+rt,0.1,M1 CDF pooling,chainstore_fim,real_extra3,0.8214285714285714,6505.825540928771
+rt,0.1,M1 CDF pooling,chess,training LODO,0.8253968253968254,6590.580930229191
+rt,0.1,M1 CDF pooling,chicago,training LODO,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,connect,training LODO,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,covertype,fresh2,0.9696969696969697,7464.425054100114
+rt,0.1,M1 CDF pooling,diabetes130,fresh2,0.8695652173913043,6759.212876345637
+rt,0.1,M1 CDF pooling,dota2,fresh3,0.9772727272727273,7653.0762429399765
+rt,0.1,M1 CDF pooling,ecommerce_fim,fresh,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,fifa_set,fresh,0.7,6763.9561846055985
+rt,0.1,M1 CDF pooling,fruithut,real_extra3,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,instacart,real_extra3,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,kddcup99,training LODO,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,kosarak,training LODO,0.8461538461538461,6505.825540928771
+rt,0.1,M1 CDF pooling,liquor,hard,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,microblog_set,fresh,0.8636363636363636,7206.503998755872
+rt,0.1,M1 CDF pooling,miniboone,fresh3,0.9523809523809523,7464.425054100114
+rt,0.1,M1 CDF pooling,mooc_set,hard,0.0,4149.610248390751
+rt,0.1,M1 CDF pooling,msnbc_set,fresh,0.9285714285714286,7492.84327505406
+rt,0.1,M1 CDF pooling,mushroom,training LODO,0.5384615384615384,6487.908808329446
+rt,0.1,M1 CDF pooling,onlineretail,training LODO,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,pamap,training LODO,0.8181818181818182,6505.825540928771
+rt,0.1,M1 CDF pooling,poker,fresh2,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,power,fresh3,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,pumsb,training LODO,0.9827586206896551,7536.148609878359
+rt,0.1,M1 CDF pooling,recordlink,training LODO,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,retail,training LODO,0.8850574712643678,7206.503998755872
+rt,0.1,M1 CDF pooling,sign_set,hard,0.8823529411764706,7206.503998755872
+rt,0.1,M1 CDF pooling,skin,real_extra3,0.8888888888888888,7206.503998755872
+rt,0.1,M1 CDF pooling,splice,fresh,0.7551020408163265,6900.884493986823
+rt,0.1,M1 CDF pooling,t10i4d100k,training LODO,0.8666666666666667,7206.503998755872
+rt,0.1,M1 CDF pooling,t20i6d100k,real_extra3,1.0,7848.894055403986
+rt,0.1,M1 CDF pooling,t25i10d10k,fresh,0.8367346938775511,7171.653950027783
+rt,0.1,M1 CDF pooling,uscensus,fresh,0.9615384615384616,7464.425054100114
+rt,0.1,M2 subsample,accidents,training LODO,1.0,22635.288299633645
+rt,0.1,M2 subsample,bike_set,fresh,0.9,21938.89815473378
+rt,0.1,M2 subsample,bms1,training LODO,0.9736842105263158,21682.210564944817
+rt,0.1,M2 subsample,bms2,training LODO,1.0,22924.47756422463
+rt,0.1,M2 subsample,c20d10k,training LODO,0.9696969696969697,22551.90104955522
+rt,0.1,M2 subsample,c73d10k,training LODO,0.96,22659.88330866535
+rt,0.1,M2 subsample,census_kdd,fresh2,0.9629629629629629,21869.141292175034
+rt,0.1,M2 subsample,chainstore_fim,real_extra3,0.9285714285714286,19877.877212444953
+rt,0.1,M2 subsample,chess,training LODO,0.9047619047619048,18474.011786022762
+rt,0.1,M2 subsample,chicago,training LODO,1.0,20882.56445852083
+rt,0.1,M2 subsample,connect,training LODO,1.0,20828.294201774923
+rt,0.1,M2 subsample,covertype,fresh2,1.0,20715.11030964491
+rt,0.1,M2 subsample,diabetes130,fresh2,0.8695652173913043,16745.2363287382
+rt,0.1,M2 subsample,dota2,fresh3,0.9772727272727273,20858.8871985069
+rt,0.1,M2 subsample,ecommerce_fim,fresh,1.0,20979.0062687124
+rt,0.1,M2 subsample,fifa_set,fresh,0.8,19627.193983131638
+rt,0.1,M2 subsample,fruithut,real_extra3,1.0,21205.817535389284
+rt,0.1,M2 subsample,instacart,real_extra3,1.0,21059.726076461335
+rt,0.1,M2 subsample,kddcup99,training LODO,1.0,21150.099160458987
+rt,0.1,M2 subsample,kosarak,training LODO,0.9615384615384616,19366.83393616753
+rt,0.1,M2 subsample,liquor,hard,1.0,21052.79112524894
+rt,0.1,M2 subsample,microblog_set,fresh,0.8636363636363636,19866.2800866996
+rt,0.1,M2 subsample,miniboone,fresh3,0.9523809523809523,20356.396168847874
+rt,0.1,M2 subsample,mooc_set,hard,0.0,7507.368775339719
+rt,0.1,M2 subsample,msnbc_set,fresh,0.9285714285714286,20371.35426445425
+rt,0.1,M2 subsample,mushroom,training LODO,0.6025641025641025,18542.96523518574
+rt,0.1,M2 subsample,onlineretail,training LODO,1.0,21226.53946386487
+rt,0.1,M2 subsample,pamap,training LODO,0.8181818181818182,15776.939045517542
+rt,0.1,M2 subsample,poker,fresh2,1.0,19872.892534581093
+rt,0.1,M2 subsample,power,fresh3,1.0,19971.486325613623
+rt,0.1,M2 subsample,pumsb,training LODO,1.0,19830.817446905978
+rt,0.1,M2 subsample,recordlink,training LODO,1.0,20169.079040936096
+rt,0.1,M2 subsample,retail,training LODO,0.896551724137931,19346.944386907184
+rt,0.1,M2 subsample,sign_set,hard,1.0,19216.462339466954
+rt,0.1,M2 subsample,skin,real_extra3,0.8888888888888888,18954.543398898586
+rt,0.1,M2 subsample,splice,fresh,0.8163265306122449,18199.953862820796
+rt,0.1,M2 subsample,t10i4d100k,training LODO,0.8666666666666667,18733.70533239557
+rt,0.1,M2 subsample,t20i6d100k,real_extra3,1.0,19880.85694256648
+rt,0.1,M2 subsample,t25i10d10k,fresh,0.8367346938775511,18009.973501409248
+rt,0.1,M2 subsample,uscensus,fresh,0.9615384615384616,17395.120900037113
+rt,0.1,M3 repeated,accidents,training LODO,1.0,9463.36625152634
+rt,0.1,M3 repeated,bike_set,fresh,0.85,8659.842862872361
+rt,0.1,M3 repeated,bms1,training LODO,0.9210526315789473,8249.50029953325
+rt,0.1,M3 repeated,bms2,training LODO,1.0,9334.726850144714
+rt,0.1,M3 repeated,c20d10k,training LODO,0.9696969696969697,9181.472431007116
+rt,0.1,M3 repeated,c73d10k,training LODO,0.92,8881.420622175894
+rt,0.1,M3 repeated,census_kdd,fresh2,0.9629629629629629,8249.50029953325
+rt,0.1,M3 repeated,chainstore_fim,real_extra3,0.8571428571428571,7845.408064496158
+rt,0.1,M3 repeated,chess,training LODO,0.8253968253968254,7584.886327398943
+rt,0.1,M3 repeated,chicago,training LODO,1.0,9378.857754236007
+rt,0.1,M3 repeated,connect,training LODO,1.0,9378.857754236007
+rt,0.1,M3 repeated,covertype,fresh2,1.0,9378.857754236007
+rt,0.1,M3 repeated,diabetes130,fresh2,0.8695652173913043,7225.168418783662
+rt,0.1,M3 repeated,dota2,fresh3,0.9772727272727273,8899.799272983597
+rt,0.1,M3 repeated,ecommerce_fim,fresh,1.0,9041.65108857343
+rt,0.1,M3 repeated,fifa_set,fresh,0.7,7866.130993520061
+rt,0.1,M3 repeated,fruithut,real_extra3,1.0,8899.799272983597
+rt,0.1,M3 repeated,instacart,real_extra3,1.0,8899.799272983597
+rt,0.1,M3 repeated,kddcup99,training LODO,1.0,8899.799272983597
+rt,0.1,M3 repeated,kosarak,training LODO,0.8461538461538461,7111.814867744512
+rt,0.1,M3 repeated,liquor,hard,1.0,9231.715602037886
+rt,0.1,M3 repeated,microblog_set,fresh,0.8636363636363636,8340.190889275307
+rt,0.1,M3 repeated,miniboone,fresh3,0.9523809523809523,8163.699780150347
+rt,0.1,M3 repeated,mooc_set,hard,0.0,4490.505642129957
+rt,0.1,M3 repeated,msnbc_set,fresh,0.9285714285714286,8707.231554536838
+rt,0.1,M3 repeated,mushroom,training LODO,0.5769230769230769,7695.6417072721415
+rt,0.1,M3 repeated,onlineretail,training LODO,1.0,9231.715602037886
+rt,0.1,M3 repeated,pamap,training LODO,0.8181818181818182,7326.833882629808
+rt,0.1,M3 repeated,poker,fresh2,1.0,8899.799272983597
+rt,0.1,M3 repeated,power,fresh3,1.0,8899.799272983597
+rt,0.1,M3 repeated,pumsb,training LODO,0.9827586206896551,8114.062766450983
+rt,0.1,M3 repeated,recordlink,training LODO,1.0,8899.799272983597
+rt,0.1,M3 repeated,retail,training LODO,0.896551724137931,8394.172480969888
+rt,0.1,M3 repeated,sign_set,hard,0.8823529411764706,7904.355794986484
+rt,0.1,M3 repeated,skin,real_extra3,0.8888888888888888,8015.93504562577
+rt,0.1,M3 repeated,splice,fresh,0.7551020408163265,7770.79450642383
+rt,0.1,M3 repeated,t10i4d100k,training LODO,0.8666666666666667,8040.328365025837
+rt,0.1,M3 repeated,t20i6d100k,real_extra3,1.0,8608.95258252519
+rt,0.1,M3 repeated,t25i10d10k,fresh,0.8367346938775511,7904.355794986484
+rt,0.1,M3 repeated,uscensus,fresh,0.9615384615384616,7848.894055403986
+rt,0.05,M0 pooled,accidents,training LODO,1.0,16064.35366982419
+rt,0.05,M0 pooled,bike_set,fresh,1.0,15925.984886838358
+rt,0.05,M0 pooled,bms1,training LODO,0.9210526315789473,13525.74671978913
+rt,0.05,M0 pooled,bms2,training LODO,1.0,15768.903142711326
+rt,0.05,M0 pooled,c20d10k,training LODO,1.0,15768.903142711326
+rt,0.05,M0 pooled,c73d10k,training LODO,1.0,15591.277400503508
+rt,0.05,M0 pooled,census_kdd,fresh2,0.9629629629629629,14752.12596287752
+rt,0.05,M0 pooled,chainstore_fim,real_extra3,0.8571428571428571,12886.024941679203
+rt,0.05,M0 pooled,chess,training LODO,0.8412698412698413,11500.06755095666
+rt,0.05,M0 pooled,chicago,training LODO,1.0,15635.495372175817
+rt,0.05,M0 pooled,connect,training LODO,1.0,16082.14479601871
+rt,0.05,M0 pooled,covertype,fresh2,1.0,15768.903142711326
+rt,0.05,M0 pooled,diabetes130,fresh2,0.8695652173913043,13346.452898920927
+rt,0.05,M0 pooled,dota2,fresh3,1.0,16016.447436124176
+rt,0.05,M0 pooled,ecommerce_fim,fresh,1.0,15768.903142711326
+rt,0.05,M0 pooled,fifa_set,fresh,1.0,15481.278794626332
+rt,0.05,M0 pooled,fruithut,real_extra3,1.0,15993.783739571478
+rt,0.05,M0 pooled,instacart,real_extra3,1.0,15948.552510275995
+rt,0.05,M0 pooled,kddcup99,training LODO,1.0,15768.903142711326
+rt,0.05,M0 pooled,kosarak,training LODO,0.8461538461538461,13063.44819201953
+rt,0.05,M0 pooled,liquor,hard,1.0,15306.892940941181
+rt,0.05,M0 pooled,microblog_set,fresh,0.9090909090909091,15104.972119258255
+rt,0.05,M0 pooled,miniboone,fresh3,0.9523809523809523,14104.339645166085
+rt,0.05,M0 pooled,mooc_set,hard,0.0,11491.701242830626
+rt,0.05,M0 pooled,msnbc_set,fresh,1.0,15657.651362799152
+rt,0.05,M0 pooled,mushroom,training LODO,0.8461538461538461,14483.522004880688
+rt,0.05,M0 pooled,onlineretail,training LODO,1.0,15971.1521127486
+rt,0.05,M0 pooled,pamap,training LODO,0.8181818181818182,12897.356217809796
+rt,0.05,M0 pooled,poker,fresh2,1.0,15791.248176357776
+rt,0.05,M0 pooled,power,fresh3,1.0,15635.495372175817
+rt,0.05,M0 pooled,pumsb,training LODO,1.0,16079.178240609222
+rt,0.05,M0 pooled,recordlink,training LODO,1.0,15635.495372175817
+rt,0.05,M0 pooled,retail,training LODO,0.9540229885057471,15271.639250039805
+rt,0.05,M0 pooled,sign_set,hard,1.0,15415.65248891852
+rt,0.05,M0 pooled,skin,real_extra3,1.0,15437.49695523488
+rt,0.05,M0 pooled,splice,fresh,0.9183673469387755,15129.93765910167
+rt,0.05,M0 pooled,t10i4d100k,training LODO,0.9,15046.88553519611
+rt,0.05,M0 pooled,t20i6d100k,real_extra3,1.0,16016.447436124176
+rt,0.05,M0 pooled,t25i10d10k,fresh,0.8571428571428571,15012.490524948758
+rt,0.05,M0 pooled,uscensus,fresh,0.9615384615384616,14709.266840252298
+rt,0.05,M1 CDF pooling,accidents,training LODO,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,bike_set,fresh,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,bms1,training LODO,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,bms2,training LODO,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,c20d10k,training LODO,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,c73d10k,training LODO,0.96,77264.54301153873
+rt,0.05,M1 CDF pooling,census_kdd,fresh2,0.9629629629629629,78041.59168491508
+rt,0.05,M1 CDF pooling,chainstore_fim,real_extra3,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,chess,training LODO,0.9365079365079365,74113.29563330139
+rt,0.05,M1 CDF pooling,chicago,training LODO,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,connect,training LODO,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,covertype,fresh2,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,diabetes130,fresh2,0.9130434782608695,72621.75863251512
+rt,0.05,M1 CDF pooling,dota2,fresh3,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,ecommerce_fim,fresh,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,fifa_set,fresh,0.9,74527.11143979897
+rt,0.05,M1 CDF pooling,fruithut,real_extra3,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,instacart,real_extra3,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,kddcup99,training LODO,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,kosarak,training LODO,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,liquor,hard,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,microblog_set,fresh,0.9090909090909091,74527.11143979897
+rt,0.05,M1 CDF pooling,miniboone,fresh3,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,mooc_set,hard,0.0,11836.234098753135
+rt,0.05,M1 CDF pooling,msnbc_set,fresh,0.9642857142857143,77310.12811135894
+rt,0.05,M1 CDF pooling,mushroom,training LODO,0.7692307692307693,71363.46524533724
+rt,0.05,M1 CDF pooling,onlineretail,training LODO,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,pamap,training LODO,0.8636363636363636,72621.75863251512
+rt,0.05,M1 CDF pooling,poker,fresh2,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,power,fresh3,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,pumsb,training LODO,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,recordlink,training LODO,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,retail,training LODO,0.9195402298850575,74948.82214554514
+rt,0.05,M1 CDF pooling,sign_set,hard,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,skin,real_extra3,0.9444444444444444,76379.95521211074
+rt,0.05,M1 CDF pooling,splice,fresh,0.8367346938775511,72773.37337758877
+rt,0.05,M1 CDF pooling,t10i4d100k,training LODO,0.8777777777777778,74488.92577725984
+rt,0.05,M1 CDF pooling,t20i6d100k,real_extra3,1.0,78041.59168491508
+rt,0.05,M1 CDF pooling,t25i10d10k,fresh,0.8367346938775511,72773.37337758877
+rt,0.05,M1 CDF pooling,uscensus,fresh,0.9615384615384616,78041.59168491508
+rt,0.05,M2 subsample,accidents,training LODO,1.0,339141.862198589
+rt,0.05,M2 subsample,bike_set,fresh,1.0,336397.35447020264
+rt,0.05,M2 subsample,bms1,training LODO,1.0,340384.08767203847
+rt,0.05,M2 subsample,bms2,training LODO,1.0,340384.08767203847
+rt,0.05,M2 subsample,c20d10k,training LODO,1.0,338663.2597186989
+rt,0.05,M2 subsample,c73d10k,training LODO,1.0,340075.4435890909
+rt,0.05,M2 subsample,census_kdd,fresh2,0.9629629629629629,322896.26384583785
+rt,0.05,M2 subsample,chainstore_fim,real_extra3,1.0,330619.43812618963
+rt,0.05,M2 subsample,chess,training LODO,0.9841269841269841,322932.38788205094
+rt,0.05,M2 subsample,chicago,training LODO,1.0,327585.88288753777
+rt,0.05,M2 subsample,connect,training LODO,1.0,327585.88288753777
+rt,0.05,M2 subsample,covertype,fresh2,1.0,327585.88288753777
+rt,0.05,M2 subsample,diabetes130,fresh2,1.0,325982.3503767348
+rt,0.05,M2 subsample,dota2,fresh3,1.0,326227.20597012114
+rt,0.05,M2 subsample,ecommerce_fim,fresh,1.0,326728.1577632961
+rt,0.05,M2 subsample,fifa_set,fresh,1.0,317112.19927860884
+rt,0.05,M2 subsample,fruithut,real_extra3,1.0,325056.6156029947
+rt,0.05,M2 subsample,instacart,real_extra3,1.0,325056.6156029947
+rt,0.05,M2 subsample,kddcup99,training LODO,1.0,325056.6156029947
+rt,0.05,M2 subsample,kosarak,training LODO,1.0,325056.6156029947
+rt,0.05,M2 subsample,liquor,hard,1.0,325056.6156029947
+rt,0.05,M2 subsample,microblog_set,fresh,0.9090909090909091,304765.59442074626
+rt,0.05,M2 subsample,miniboone,fresh3,1.0,330496.2084600838
+rt,0.05,M2 subsample,mooc_set,hard,0.0,36365.54407660296
+rt,0.05,M2 subsample,msnbc_set,fresh,1.0,358303.3536251454
+rt,0.05,M2 subsample,mushroom,training LODO,0.8076923076923077,298306.85310623946
+rt,0.05,M2 subsample,onlineretail,training LODO,1.0,340108.60441571736
+rt,0.05,M2 subsample,pamap,training LODO,1.0,336768.8378630275
+rt,0.05,M2 subsample,poker,fresh2,1.0,338336.2426273326
+rt,0.05,M2 subsample,power,fresh3,1.0,338336.2426273326
+rt,0.05,M2 subsample,pumsb,training LODO,1.0,338336.2426273326
+rt,0.05,M2 subsample,recordlink,training LODO,1.0,338649.82182446617
+rt,0.05,M2 subsample,retail,training LODO,0.9540229885057471,332846.1900693667
+rt,0.05,M2 subsample,sign_set,hard,1.0,331233.60322290857
+rt,0.05,M2 subsample,skin,real_extra3,1.0,328741.19604303327
+rt,0.05,M2 subsample,splice,fresh,0.9183673469387755,327249.2024657285
+rt,0.05,M2 subsample,t10i4d100k,training LODO,0.9,331271.1396936194
+rt,0.05,M2 subsample,t20i6d100k,real_extra3,1.0,344689.13969746156
+rt,0.05,M2 subsample,t25i10d10k,fresh,0.8979591836734694,332860.1244103601
+rt,0.05,M2 subsample,uscensus,fresh,1.0,338949.73144766537
+rt,0.05,M3 repeated,accidents,training LODO,1.0,82671.79779012667
+rt,0.05,M3 repeated,bike_set,fresh,1.0,82671.79779012667
+rt,0.05,M3 repeated,bms1,training LODO,1.0,82671.79779012667
+rt,0.05,M3 repeated,bms2,training LODO,1.0,82671.79779012667
+rt,0.05,M3 repeated,c20d10k,training LODO,1.0,82671.79779012667
+rt,0.05,M3 repeated,c73d10k,training LODO,0.96,81782.97045883707
+rt,0.05,M3 repeated,census_kdd,fresh2,0.9629629629629629,82246.92988170512
+rt,0.05,M3 repeated,chainstore_fim,real_extra3,1.0,82246.92988170512
+rt,0.05,M3 repeated,chess,training LODO,0.9365079365079365,78041.59168491508
+rt,0.05,M3 repeated,chicago,training LODO,1.0,82246.92988170512
+rt,0.05,M3 repeated,connect,training LODO,1.0,82246.92988170512
+rt,0.05,M3 repeated,covertype,fresh2,1.0,82246.92988170512
+rt,0.05,M3 repeated,diabetes130,fresh2,0.9130434782608695,75114.47178814738
+rt,0.05,M3 repeated,dota2,fresh3,1.0,82246.92988170512
+rt,0.05,M3 repeated,ecommerce_fim,fresh,1.0,82246.92988170512
+rt,0.05,M3 repeated,fifa_set,fresh,0.9,78100.00310951717
+rt,0.05,M3 repeated,fruithut,real_extra3,1.0,81782.97045883707
+rt,0.05,M3 repeated,instacart,real_extra3,1.0,81782.97045883707
+rt,0.05,M3 repeated,kddcup99,training LODO,1.0,81782.97045883707
+rt,0.05,M3 repeated,kosarak,training LODO,1.0,81782.97045883707
+rt,0.05,M3 repeated,liquor,hard,1.0,81782.97045883707
+rt,0.05,M3 repeated,microblog_set,fresh,0.9090909090909091,78100.00310951717
+rt,0.05,M3 repeated,miniboone,fresh3,1.0,82246.92988170512
+rt,0.05,M3 repeated,mooc_set,hard,0.0,14105.010963757655
+rt,0.05,M3 repeated,msnbc_set,fresh,0.9642857142857143,89650.23050822712
+rt,0.05,M3 repeated,mushroom,training LODO,0.7692307692307693,83001.63801734643
+rt,0.05,M3 repeated,onlineretail,training LODO,1.0,88809.9621774318
+rt,0.05,M3 repeated,pamap,training LODO,0.8636363636363636,71941.09374677396
+rt,0.05,M3 repeated,poker,fresh2,1.0,88809.9621774318
+rt,0.05,M3 repeated,power,fresh3,1.0,88809.9621774318
+rt,0.05,M3 repeated,pumsb,training LODO,1.0,88809.9621774318
+rt,0.05,M3 repeated,recordlink,training LODO,1.0,88809.9621774318
+rt,0.05,M3 repeated,retail,training LODO,0.9195402298850575,86097.41339971908
+rt,0.05,M3 repeated,sign_set,hard,1.0,87741.42663081198
+rt,0.05,M3 repeated,skin,real_extra3,0.9444444444444444,86097.41339971908
+rt,0.05,M3 repeated,splice,fresh,0.8367346938775511,83598.36796387602
+rt,0.05,M3 repeated,t10i4d100k,training LODO,0.8777777777777778,86097.41339971908
+rt,0.05,M3 repeated,t20i6d100k,real_extra3,1.0,89650.23050822712
+rt,0.05,M3 repeated,t25i10d10k,fresh,0.8367346938775511,83598.36796387602
+rt,0.05,M3 repeated,uscensus,fresh,0.9615384615384616,77310.12811135894

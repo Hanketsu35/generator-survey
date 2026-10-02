@@ -1,0 +1,10 @@
+adult         32561 tx    133 items   15 columns
+bank_full     45211 tx     71 items   17 columns
+nursery       12960 tx     32 items    9 columns
+letter        20000 tx    282 items   17 columns
+shuttle       43500 tx     45 items   10 columns
+krk           28056 tx     58 items    7 columns
+shoppers      12330 tx     86 items   18 columns
+car            1728 tx     25 items    7 columns
+tictactoe       958 tx     29 items   10 columns
+yearmsd      515345 tx    455 items   91 columns
