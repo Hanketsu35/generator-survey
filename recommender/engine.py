@@ -148,7 +148,10 @@ _RESULTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__
 #: of three) for every completed run under 600 s: results/exact/, built by
 #: tools/apply_exact_memory.py. results/training_runs.csv keeps the polled
 #: values that every pre-registered evaluation up to FRESH4 was scored on.
-TRAINING_TABLE = os.path.join(_RESULTS, "exact", "training_runs.csv")
+#: Since INTERVAL_ALLDATA_POSTHOC.md the engine trains on every dataset
+#: benchmarked so far (81), not the 22 of training_runs.csv: FGC-Stream had
+#: been seen on seven dense datasets only (FRESH6_RESULTS.md).
+TRAINING_TABLE = os.path.join(_RESULTS, "exact", "training_all.csv")
 PUBLISHED_TABLE = os.path.join(_RESULTS, "summary.csv")
 
 

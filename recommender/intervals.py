@@ -123,11 +123,15 @@ def build_display(out=QUANTILES, alpha=DISPLAY_ALPHA):
 #: Leave-one-dataset-out on exact memory: probe measured 0.967 and sampled
 #: 0.974 at a = 0.10 (39 and 23 datasets; 95% would need 39 per kind), model
 #: memory 0.963 and runtime 0.965 at a = 0.05 (50 datasets).
-EXACT_GROUPS_MODEL = _HERE.parent / "results" / "exact" / "interval_groups.csv"
-EXACT_GROUPS_PROBE = _HERE.parent / "results" / "exact" / "interval_groups_probe.csv"
+#: Pools as of the all-data model (results/INTERVAL_ALLDATA_POSTHOC.md): the
+#: model's residuals leave one of 75 datasets out of a model trained on all 81
+#: (tools/interval_pool_all.py); the probe's span 63 datasets measured and 24
+#: sampled, the small datasets of FRESH5/6 included.
+EXACT_GROUPS_MODEL = _HERE.parent / "results" / "exact" / "interval_groups_all.csv"
+EXACT_GROUPS_PROBE = _HERE.parent / "results" / "exact" / "interval_groups_probe_all.csv"
 SUBSAMPLES = 200
 LEVELS = {"model_memory": 0.95, "model_runtime": 0.95,
-          "probe_memory_measured": 0.90, "probe_memory_sampled": 0.90}
+          "probe_memory_measured": 0.95, "probe_memory_sampled": 0.90}
 #: The model's intervals are calibrated separately for native and JVM
 #: programs (a Mondrian split, each side still over ~50 datasets), and the
 #: runtime interval is centred on the survival MEDIAN, not the restricted mean.
@@ -140,6 +144,10 @@ NATIVE = {"Apriori_Gen_Borgelt", "Eclat_Gen_Borgelt", "FPgrowth_Gen_Borgelt", "G
 
 
 def model_class(algorithm):
+    """Calibration class: FGC-Stream alone (its errors are far larger than the
+    other native programs'), the other native programs, the JVM programs."""
+    if algorithm == "FGC_Stream":
+        return "fgc"
     return "native" if algorithm in NATIVE else "jvm"
 
 
@@ -173,7 +181,7 @@ def build_display_exact(out=QUANTILES):
     rt = lambda s: np.maximum(s, RT_FLOOR)                        # noqa: E731
     kinds = {}
     cls = m.algorithm.map(model_class)
-    for c in ("native", "jvm"):
+    for c in ("native", "jvm", "fgc"):
         mm = m[cls == c]
         kinds["model_memory_" + c] = (mm.dataset, np.log10(mm.true_mem / mm.pred_mem))
         kinds["model_runtime_" + c] = (mm.dataset,
@@ -184,7 +192,7 @@ def build_display_exact(out=QUANTILES):
     disp = {"method": "subsampling over datasets (Dunn et al. 2023, Method 2), exact memory; "
                       "model split native/JVM, runtime centred on the survival median"}
     for name, (g, r) in kinds.items():
-        lv = LEVELS[name.replace("_native", "").replace("_jvm", "")]
+        lv = LEVELS[name.replace("_native", "").replace("_jvm", "").replace("_fgc", "")]
         iv, k = _subsample_interval(r.values, g.values, 1 - lv)
         disp[name] = {"log10": iv, "n": int(len(r)), "datasets": k, "level": lv}
     q["display"] = disp
