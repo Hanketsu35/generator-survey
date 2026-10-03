@@ -131,6 +131,19 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
     met their guarantees: probe 0.908 at x1.1 wide, model 0.950 at x800.
     The runtime interval fell short (0.923 against 0.95).
 
+- **Every interval the engine shows now meets its guarantee on unseen data**
+  (`results/FRESH7_RESULTS.md`: 24 OpenML-CC18 datasets, selected by rule).
+  - The engine trains on all 81 benchmarked datasets.
+  - Runtime is reported as the typical (median) value, which is 3-5x more
+    accurate than the mean it replaced.
+  - Intervals are calibrated over datasets by subsampling, FGC-Stream on
+    its own.
+  - Measured coverage: probe memory 0.954 at 95% (x1.15 wide), model memory
+    0.991 and model runtime 0.980 at 95%. The model's intervals are very
+    wide, which is what it knows about a new dataset.
+  - Path: FRESH4 -> FRESH7 (`RUNTIME_INTERVAL_POSTHOC.md`,
+    `INTERVAL_ALLDATA_POSTHOC.md`).
+
 Sections below that report numbers on `results/summary.csv` are kept as they
 were measured; where re-measurement changes a conclusion, the section says so.
 
