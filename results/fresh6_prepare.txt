@@ -1,0 +1,13 @@
+audiology           226 tx    178 items   70 columns
+autos               205 tx    141 items   26 columns
+balance_scale       625 tx     23 items    5 columns
+breast_w            699 tx     91 items   10 columns
+diabetes            768 tx     39 items    9 columns
+glass               214 tx     44 items   10 columns
+heart_c             303 tx     49 items   14 columns
+ionosphere          351 tx    161 items   35 columns
+lymph               148 tx     63 items   19 columns
+sonar               208 tx    302 items   61 columns
+vehicle             846 tx    102 items   19 columns
+vowel               990 tx     80 items   14 columns
+zoo                 101 tx    143 items   18 columns
