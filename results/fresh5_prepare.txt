@@ -1,0 +1,12 @@
+anneal              898 tx     91 items   39 columns
+breast_cancer       286 tx     43 items   10 columns
+colic               368 tx     92 items   23 columns
+credit_a            690 tx     68 items   16 columns
+credit_g           1000 tx     85 items   21 columns
+hypothyroid        3772 tx     80 items   30 columns
+primary_tumor       339 tx     58 items   18 columns
+soybean             683 tx    118 items   36 columns
+vote                435 tx     34 items   17 columns
+waveform_5000      5000 tx    203 items   41 columns
+segment            2310 tx     95 items   20 columns
+susy            5000000 tx     91 items   19 columns
