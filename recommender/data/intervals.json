@@ -51,39 +51,42 @@
   "datasets": 9
  },
  "display": {
-  "level": 0.95,
-  "method": "CDF pooling over datasets",
+  "method": "subsampling over datasets (Dunn et al. 2023, Method 2), exact memory",
   "model_memory": {
    "log10": [
-    -0.7880426158276495,
-    1.5606130078896958
+    -1.0920456135507484,
+    1.8093008474942132
    ],
-   "n": 1523,
-   "datasets": 40
+   "n": 1862,
+   "datasets": 50,
+   "level": 0.95
   },
   "model_runtime": {
    "log10": [
-    -3.444823644283475,
-    1.4441317971438874
+    -3.542299920524014,
+    1.9640869206061118
    ],
-   "n": 1523,
-   "datasets": 40
+   "n": 1862,
+   "datasets": 50,
+   "level": 0.95
   },
   "probe_memory_measured": {
    "log10": [
-    -0.02041999181941214,
-    0.022845204838952488
+    -0.025049891761003404,
+    0.015550807512031655
    ],
-   "n": 412,
-   "datasets": 30
+   "n": 544,
+   "datasets": 39,
+   "level": 0.9
   },
   "probe_memory_sampled": {
    "log10": [
-    -0.41758566397263563,
-    0.09753045696635901
+    -0.3699692238787985,
+    0.12692371069813327
    ],
-   "n": 310,
-   "datasets": 22
+   "n": 329,
+   "datasets": 23,
+   "level": 0.9
   }
  }
 }

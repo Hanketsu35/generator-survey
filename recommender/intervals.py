@@ -114,6 +114,67 @@ def build_display(out=QUANTILES, alpha=DISPLAY_ALPHA):
     return disp
 
 
+#: Exact-memory pools (tools/interval_pool_exact.py) and the subsampling
+#: calibration that replaced CDF pooling. Dunn, Wasserman & Ramdas's Method 2
+#: draws one residual per dataset and takes order statistics floor((k+1)a/2)
+#: and ceil((k+1)(1-a/2)): a finite-sample guarantee of 1-a coverage for a
+#: new dataset, valid once k >= 2/a - 1. Endpoints here are averaged over
+#: SUBSAMPLES draws so the interval does not depend on one random draw.
+#: Leave-one-dataset-out on exact memory: probe measured 0.967 and sampled
+#: 0.974 at a = 0.10 (39 and 23 datasets; 95% would need 39 per kind), model
+#: memory 0.963 and runtime 0.965 at a = 0.05 (50 datasets).
+EXACT_GROUPS_MODEL = _HERE.parent / "results" / "exact" / "interval_groups.csv"
+EXACT_GROUPS_PROBE = _HERE.parent / "results" / "exact" / "interval_groups_probe.csv"
+SUBSAMPLES = 200
+LEVELS = {"model_memory": 0.95, "model_runtime": 0.95,
+          "probe_memory_measured": 0.90, "probe_memory_sampled": 0.90}
+
+
+def _subsample_interval(values, groups, alpha, seed=0):
+    import numpy as np
+    by = {}
+    for v, g in zip(values, groups):
+        by.setdefault(g, []).append(v)
+    gs = [np.asarray(v) for v in by.values()]
+    k = len(gs)
+    r, s_ = int(np.floor((k + 1) * alpha / 2)), int(np.ceil((k + 1) * (1 - alpha / 2)))
+    if r < 1 or s_ > k:
+        raise ValueError("%d datasets cannot give a %.0f%% interval (need %d)"
+                         % (k, 100 * (1 - alpha), int(np.ceil(2 / alpha - 1))))
+    rng = np.random.default_rng(seed)
+    lo, hi = [], []
+    for _ in range(SUBSAMPLES):
+        y = np.sort([g[rng.integers(len(g))] for g in gs])
+        lo.append(y[r - 1])
+        hi.append(y[s_ - 1])
+    return [float(np.mean(lo)), float(np.mean(hi))], k
+
+
+def build_display_exact(out=QUANTILES):
+    """Display intervals from the exact-memory pools, by subsampling."""
+    import numpy as np
+    import pandas as pd
+    q = json.loads(Path(out).read_text())
+    m = pd.read_csv(EXACT_GROUPS_MODEL)
+    p = pd.read_csv(EXACT_GROUPS_PROBE)
+    rt = lambda s: np.maximum(s, RT_FLOOR)                        # noqa: E731
+    kinds = {"model_memory": (m.dataset, np.log10(m.true_mem / m.pred_mem)),
+             "model_runtime": (m.dataset, np.log10(rt(m.true_rt) / rt(m.pred_rt)))}
+    for tag in ("measured", "sampled"):
+        s = p[p.kind == tag]
+        kinds["probe_memory_" + tag] = (s.dataset, np.log10(s.true_mem / s.est_mem))
+    disp = {"method": "subsampling over datasets (Dunn et al. 2023, Method 2), exact memory"}
+    for name, (g, r) in kinds.items():
+        lv = LEVELS[name]
+        iv, k = _subsample_interval(r.values, g.values, 1 - lv)
+        disp[name] = {"log10": iv, "n": int(len(r)), "datasets": k, "level": lv}
+    q["display"] = disp
+    Path(out).write_text(json.dumps(q, indent=1) + "\n")
+    global _q
+    _q = None
+    return disp
+
+
 def display_interval(kind, point):
     """(lo, hi) shown to the user for ``kind`` around ``point``, or None."""
     d = _load().get("display") or {}
@@ -126,8 +187,12 @@ def display_interval(kind, point):
     return (point * 10 ** lo, point * 10 ** hi)
 
 
-def display_level():
-    return (_load().get("display") or {}).get("level")
+def display_level(kind=None):
+    """Coverage level of the interval shown for ``kind`` (or the common one)."""
+    d = _load().get("display") or {}
+    if kind and isinstance(d.get(kind), dict) and "level" in d[kind]:
+        return d[kind]["level"]
+    return d.get("level")
 
 
 def _load():
@@ -156,6 +221,14 @@ def width(kind):
 
 if __name__ == "__main__":
     import sys
+    if "--display-exact" in sys.argv:
+        for name, v in build_display_exact().items():
+            if isinstance(v, dict):
+                lo, hi = v["log10"]
+                print("display %-24s %.0f%%  x%.3f .. x%.3f  (width x%.1f, n=%d, %d datasets)"
+                      % (name, 100 * v["level"], 10 ** lo, 10 ** hi, 10 ** (hi - lo), v["n"],
+                         v["datasets"]))
+        sys.exit(0)
     if "--display" in sys.argv:
         for name, v in build_display().items():
             if isinstance(v, dict):

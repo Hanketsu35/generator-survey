@@ -102,6 +102,9 @@ class Recommendation:
     #: to form tiers; these describe the run the user will get.
     memory_interval: Optional[tuple] = None
     runtime_interval: Optional[tuple] = None
+    #: their coverage levels (0.90 for the probe's, 0.95 for the model's)
+    memory_interval_level: Optional[float] = None
+    runtime_interval_level: Optional[float] = None
     #: 1 = best supported group. Within a tier the ordering is NOT supported by
     #: the data and must not be presented as a preference.
     tier: int = 1
@@ -137,7 +140,11 @@ _RESULTS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__
 #: extension datasets, with every short run re-measured
 #: (tools/build_training_table.py). The published experiments keep reading
 #: summary.csv through perfmodel.load_runs(), and so stay reproducible.
-TRAINING_TABLE = os.path.join(_RESULTS, "training_runs.csv")
+#: Peak memory measured exactly (tools/peakrun, wait4; JVM runs the median
+#: of three) for every completed run under 600 s: results/exact/, built by
+#: tools/apply_exact_memory.py. results/training_runs.csv keeps the polled
+#: values that every pre-registered evaluation up to FRESH4 was scored on.
+TRAINING_TABLE = os.path.join(_RESULTS, "exact", "training_runs.csv")
 PUBLISHED_TABLE = os.path.join(_RESULTS, "summary.csv")
 
 
@@ -454,6 +461,8 @@ class Recommender:
                 "runtime_interval": rt_iv,
                 "memory_display": mem_disp,
                 "runtime_display": rt_disp,
+                "memory_level": _iv.display_level("%s_memory%s" % kind) if mem_disp else None,
+                "runtime_level": _iv.display_level("%s_runtime%s" % kind) if rt_disp else None,
                 "probe_note": probe_note,
                 "lagging": v.algorithm in lagging,
             })
@@ -543,6 +552,8 @@ class Recommender:
                           + ([r["probe_note"]] if r.get("probe_note") else [])),
                 memory_interval=r.get("memory_display"),
                 runtime_interval=r.get("runtime_display"),
+                memory_interval_level=r.get("memory_level"),
+                runtime_interval_level=r.get("runtime_level"),
                 budget_notes=r["budget_notes"],
                 post_filter=v.post_filter,
                 installed=(True if installed is None
@@ -641,11 +652,11 @@ def format_report(task, recs, rejected, feats, show_rejected=True):
                     if len(tier1) > 1 else ""))
         if top.memory_interval:
             L.append("   memory: %.1f MB, %.0f%% prediction interval %.1f..%.1f MB"
-                     % (top.memory_mb, 100 * (_iv.display_level() or 0.9),
+                     % (top.memory_mb, 100 * (top.memory_interval_level or 0.9),
                         top.memory_interval[0], top.memory_interval[1]))
         if top.runtime_interval:
             L.append("   runtime: %.2f s, %.0f%% prediction interval up to %.2f s"
-                     % (top.runtime_s, 100 * (_iv.display_level() or 0.9),
+                     % (top.runtime_s, 100 * (top.runtime_interval_level or 0.9),
                         top.runtime_interval[1]))
         if top.score_band:
             L.append("   ranking score %.3f, precision of the mean 5-95%% %.3f..%.3f"
