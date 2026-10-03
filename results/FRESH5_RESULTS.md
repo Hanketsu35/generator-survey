@@ -32,7 +32,7 @@ undercovers was not investigated before this result. It stays as
 registered: a 95% label it did not earn here. The engine shows runtime
 intervals only for the model's estimates, and only as an upper end.
 
-The probe's misses (15 of 163 measured runs) are on the smallest datasets
+The probe's misses (16 of 163 measured runs; none of the 15 sampled) are on the smallest datasets
 (anneal, breast_cancer, colic: 286-898 transactions). Peaks there are about
 3 MB, and the interval's +/-5% is +/-0.15 MB, less than the run-to-run
 difference of a few pages. Not changed here.

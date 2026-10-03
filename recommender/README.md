@@ -117,6 +117,20 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
   Over the three fresh confirmations the probe-backed ranking was below the
   engine every time: 1.110x vs 1.132x, 1.359x vs 1.514x, 1.001x vs 2.029x.
 
+- **Memory is now measured exactly, and the intervals carry a dataset-level
+  guarantee.**
+  - Polled VmHWM could not measure runs of a few milliseconds, and read
+    end-of-run peaks 6-7% low (`results/peak_method_check.csv`).
+  - Every run now goes through `tools/peakrun` (`ru_maxrss` via `wait4`).
+    Every table was re-measured: 1,999 runs, JVM runs as the median of
+    three, since their peak varies by itself by up to 24%. The paper was
+    updated to match.
+  - Intervals are calibrated over 39-50 datasets by subsampling (Dunn,
+    Wasserman & Ramdas 2023): 90% for the probe, 95% for the model. On
+    twelve new datasets (`results/FRESH5_RESULTS.md`) the memory intervals
+    met their guarantees: probe 0.908 at x1.1 wide, model 0.950 at x800.
+    The runtime interval fell short (0.923 against 0.95).
+
 Sections below that report numbers on `results/summary.csv` are kept as they
 were measured; where re-measurement changes a conclusion, the section says so.
 
