@@ -387,7 +387,7 @@ function render(d) {
         t(r.source === "probe-measured" ? "probeMeasured" : "probeSampled")}</span>` : ""}</td>
       ${r.extrapolated && r.extrapolated.length
         ? `<td title="${esc(t("extrapShort"))}">(${fmt(r.runtime_s)} s)*</td><td>(${fmt(r.memory_mb, 1)} MB)*</td>`
-        : `<td>${fmt(r.runtime_s)} s${iv(r.runtime_interval, "s", true)}</td><td>${fmt(r.memory_mb, 1)} MB${iv(r.memory_interval, "MB")}</td>`}<td>${Math.round(100 * r.p_complete)}%</td>
+        : `<td>${fmt(r.runtime_typical_s ?? r.runtime_s)} s${iv(r.runtime_interval, "s")}</td><td>${fmt(r.memory_mb, 1)} MB${iv(r.memory_interval, "MB")}</td>`}<td>${Math.round(100 * r.p_complete)}%</td>
       <td><span class="tag ${r.installed ? "yes" : "no"}">${r.installed ? "✓" : "✗"}</span></td></tr>`;
   }).join("");
   const refused = (d.refused || []).map(r => `<li><b>${esc(r.display)}</b> — ${esc(r.reason)}</li>`).join("");

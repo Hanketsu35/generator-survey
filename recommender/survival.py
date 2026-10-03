@@ -114,6 +114,21 @@ def expected_runtime(grid, surv, cutoff=CUTOFF):
     return _restricted_integral(grid, surv, cutoff)
 
 
+def quantile_runtime(grid, surv, q=0.5, cutoff=CUTOFF):
+    """Smallest grid time with S(t) <= 1 - q, or the cutoff if S stays above.
+
+    The median (q = 0.5) is the TYPICAL runtime. The restricted mean above is
+    the right input to an expected cost, but for a miner with even a small
+    chance of reaching the cutoff it is dominated by that tail: Zart predicted
+    at 1,114 s where it ran 0.22 s (results/FRESH5_RESULTS.md), and an
+    interval centred there missed from below every time.
+    """
+    g = np.asarray(grid, float)
+    s = np.asarray(surv, float)
+    hit = np.nonzero(s <= 1.0 - q)[0]
+    return float(min(g[hit[0]], cutoff)) if hit.size else float(cutoff)
+
+
 def expected_par10(grid, surv, cutoff=CUTOFF, factor=PAR_FACTOR):
     """E[PAR10(T)] = int_0^C S dt + (factor-1) C S(C)  (Run2SurvivePAR10)."""
     return (_restricted_integral(grid, surv, cutoff)

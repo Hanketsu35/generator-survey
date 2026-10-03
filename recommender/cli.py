@@ -118,10 +118,14 @@ def main(argv=None):
                 {"algorithm": r.algorithm, "display": r.display, "match": r.match,
                  "predicted_runtime_s": round(r.runtime_s, 4),
                  "predicted_memory_mb": round(r.memory_mb, 2),
-                 "memory_interval_90": ([round(x, 2) for x in r.memory_interval]
-                                        if r.memory_interval else None),
-                 "runtime_interval_90": ([round(x, 4) for x in r.runtime_interval]
-                                         if r.runtime_interval else None),
+                 "memory_interval": ([round(x, 2) for x in r.memory_interval]
+                                     if r.memory_interval else None),
+                 "memory_interval_level": r.memory_interval_level,
+                 "runtime_interval": ([round(x, 4) for x in r.runtime_interval]
+                                      if r.runtime_interval else None),
+                 "runtime_interval_level": r.runtime_interval_level,
+                 "typical_runtime_s": (round(r.runtime_typical_s, 4)
+                                       if r.runtime_typical_s is not None else None),
                  "p_complete": round(r.p_complete, 4),
                  "expected_par10_cost": round(r.expected_cost, 3),
                  "on_pareto_front": r.on_pareto_front,

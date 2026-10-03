@@ -105,6 +105,10 @@ class Recommendation:
     #: their coverage levels (0.90 for the probe's, 0.95 for the model's)
     memory_interval_level: Optional[float] = None
     runtime_interval_level: Optional[float] = None
+    #: the typical runtime: the survival median where the model has one (the
+    #: runtime_s above is the restricted mean, the expected-cost input, which
+    #: a small chance of a timeout inflates), the measured value under a probe
+    runtime_typical_s: Optional[float] = None
     #: 1 = best supported group. Within a tier the ordering is NOT supported by
     #: the data and must not be presented as a preference.
     tier: int = 1
@@ -425,13 +429,23 @@ class Recommender:
                      else _iv.interval("%s_runtime%s" % kind, pred["runtime_s"]))
             # what the user is shown: dataset-level intervals (intervals.py,
             # display_interval); the ranking above keeps its own
-            mem_disp = _iv.display_interval("%s_memory%s" % kind, pred["memory_mb"])
+            mcls = "_" + _iv.model_class(v.algorithm)
+            dkind = kind if kind[0] == "probe" else ("model", mcls)
+            mem_disp = _iv.display_interval("%s_memory%s" % dkind, pred["memory_mb"])
             if mem_disp and lb:
-                hi = (_iv.display_interval("model_memory", model_mem)[1] if LB_INTERVAL == "floor"
-                      else mem_disp[1])
+                hi = (_iv.display_interval("model_memory" + mcls, model_mem)[1]
+                      if LB_INTERVAL == "floor" else mem_disp[1])
                 mem_disp = (max(mem_disp[0], lb), max(hi, lb))
+            # runtime: centred on the TYPICAL (median) runtime; the restricted
+            # mean in runtime_s stays the input to the expected cost
+            rt_typ = pred.get("runtime_median_s") or pred["runtime_s"]
+            if kind[0] == "probe":
+                rt_typ = pred["runtime_s"]
             rt_disp = (None if kind[0] == "probe"
-                       else _iv.display_interval("%s_runtime%s" % kind, pred["runtime_s"]))
+                       else _iv.display_interval("model_runtime" + mcls, rt_typ))
+            if rt_disp:
+                # beyond the benchmark's cutoff a run is a timeout, not a time
+                rt_disp = (min(rt_disp[0], _sv.CUTOFF), min(rt_disp[1], _sv.CUTOFF))
             notes = []
             ok = True
             if task.max_runtime_s and pred["runtime_s"] > task.max_runtime_s:
@@ -461,8 +475,9 @@ class Recommender:
                 "runtime_interval": rt_iv,
                 "memory_display": mem_disp,
                 "runtime_display": rt_disp,
-                "memory_level": _iv.display_level("%s_memory%s" % kind) if mem_disp else None,
-                "runtime_level": _iv.display_level("%s_runtime%s" % kind) if rt_disp else None,
+                "memory_level": _iv.display_level("%s_memory%s" % dkind) if mem_disp else None,
+                "runtime_level": _iv.display_level("model_runtime" + mcls) if rt_disp else None,
+                "runtime_typical": rt_typ,
                 "probe_note": probe_note,
                 "lagging": v.algorithm in lagging,
             })
@@ -554,6 +569,7 @@ class Recommender:
                 runtime_interval=r.get("runtime_display"),
                 memory_interval_level=r.get("memory_level"),
                 runtime_interval_level=r.get("runtime_level"),
+                runtime_typical_s=r.get("runtime_typical"),
                 budget_notes=r["budget_notes"],
                 post_filter=v.post_filter,
                 installed=(True if installed is None
@@ -655,9 +671,10 @@ def format_report(task, recs, rejected, feats, show_rejected=True):
                      % (top.memory_mb, 100 * (top.memory_interval_level or 0.9),
                         top.memory_interval[0], top.memory_interval[1]))
         if top.runtime_interval:
-            L.append("   runtime: %.2f s, %.0f%% prediction interval up to %.2f s"
-                     % (top.runtime_s, 100 * (top.runtime_interval_level or 0.9),
-                        top.runtime_interval[1]))
+            L.append("   runtime: typically %.2f s, %.0f%% prediction interval %.2f..%.2f s"
+                     % (top.runtime_typical_s or top.runtime_s,
+                        100 * (top.runtime_interval_level or 0.9),
+                        top.runtime_interval[0], top.runtime_interval[1]))
         if top.score_band:
             L.append("   ranking score %.3f, precision of the mean 5-95%% %.3f..%.3f"
                      % (top.score_band[0], top.score_band[1], top.score_band[2]))

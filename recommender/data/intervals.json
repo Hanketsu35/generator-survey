@@ -51,23 +51,41 @@
   "datasets": 9
  },
  "display": {
-  "method": "subsampling over datasets (Dunn et al. 2023, Method 2), exact memory",
-  "model_memory": {
+  "method": "subsampling over datasets (Dunn et al. 2023, Method 2), exact memory; model split native/JVM, runtime centred on the survival median",
+  "model_memory_native": {
    "log10": [
-    -1.0920456135507484,
-    1.8093008474942132
+    -1.1605911870291186,
+    1.8455248841076315
    ],
-   "n": 1862,
+   "n": 931,
    "datasets": 50,
    "level": 0.95
   },
-  "model_runtime": {
+  "model_runtime_native": {
    "log10": [
-    -3.542299920524014,
-    1.9640869206061118
+    -2.090235070380753,
+    2.6920306180358167
    ],
-   "n": 1862,
+   "n": 931,
    "datasets": 50,
+   "level": 0.95
+  },
+  "model_memory_jvm": {
+   "log10": [
+    -0.8748779941447548,
+    1.090702926528089
+   ],
+   "n": 931,
+   "datasets": 49,
+   "level": 0.95
+  },
+  "model_runtime_jvm": {
+   "log10": [
+    -2.9125167876927134,
+    2.167214848643864
+   ],
+   "n": 931,
+   "datasets": 49,
    "level": 0.95
   },
   "probe_memory_measured": {

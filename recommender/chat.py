@@ -546,6 +546,7 @@ class App:
                  "source": r.prediction_source,
                  "memory_interval": r.memory_interval, "runtime_interval": r.runtime_interval,
                  "memory_level": r.memory_interval_level, "runtime_level": r.runtime_interval_level,
+                 "runtime_typical_s": r.runtime_typical_s,
                  "within_budget": r.within_budget, "budget_notes": r.budget_notes,
                  "extrapolated": r.extrapolated} for r in recs]
         refused = [{"algorithm": v.algorithm, "display": v.display,

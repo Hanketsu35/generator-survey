@@ -128,6 +128,19 @@ EXACT_GROUPS_PROBE = _HERE.parent / "results" / "exact" / "interval_groups_probe
 SUBSAMPLES = 200
 LEVELS = {"model_memory": 0.95, "model_runtime": 0.95,
           "probe_memory_measured": 0.90, "probe_memory_sampled": 0.90}
+#: The model's intervals are calibrated separately for native and JVM
+#: programs (a Mondrian split, each side still over ~50 datasets), and the
+#: runtime interval is centred on the survival MEDIAN, not the restricted mean.
+#: Found on FRESH5's runtime shortfall (results/RUNTIME_INTERVAL_POSTHOC.md):
+#: every miss was a slow JVM miner on a small dataset, predicted at its
+#: timeout-inflated mean (Zart 1,114 s for a 0.22 s run). Leave-one-dataset-
+#: out: runtime 0.969 at x95k (was 0.965 at x315k), memory 0.964 at x536.
+NATIVE = {"Apriori_Gen_Borgelt", "Eclat_Gen_Borgelt", "FPgrowth_Gen_Borgelt", "Gr_growth",
+          "FGC_Stream"}
+
+
+def model_class(algorithm):
+    return "native" if algorithm in NATIVE else "jvm"
 
 
 def _subsample_interval(values, groups, alpha, seed=0):
@@ -158,14 +171,20 @@ def build_display_exact(out=QUANTILES):
     m = pd.read_csv(EXACT_GROUPS_MODEL)
     p = pd.read_csv(EXACT_GROUPS_PROBE)
     rt = lambda s: np.maximum(s, RT_FLOOR)                        # noqa: E731
-    kinds = {"model_memory": (m.dataset, np.log10(m.true_mem / m.pred_mem)),
-             "model_runtime": (m.dataset, np.log10(rt(m.true_rt) / rt(m.pred_rt)))}
+    kinds = {}
+    cls = m.algorithm.map(model_class)
+    for c in ("native", "jvm"):
+        mm = m[cls == c]
+        kinds["model_memory_" + c] = (mm.dataset, np.log10(mm.true_mem / mm.pred_mem))
+        kinds["model_runtime_" + c] = (mm.dataset,
+                                       np.log10(rt(mm.true_rt) / rt(mm.pred_rt_median)))
     for tag in ("measured", "sampled"):
         s = p[p.kind == tag]
         kinds["probe_memory_" + tag] = (s.dataset, np.log10(s.true_mem / s.est_mem))
-    disp = {"method": "subsampling over datasets (Dunn et al. 2023, Method 2), exact memory"}
+    disp = {"method": "subsampling over datasets (Dunn et al. 2023, Method 2), exact memory; "
+                      "model split native/JVM, runtime centred on the survival median"}
     for name, (g, r) in kinds.items():
-        lv = LEVELS[name]
+        lv = LEVELS[name.replace("_native", "").replace("_jvm", "")]
         iv, k = _subsample_interval(r.values, g.values, 1 - lv)
         disp[name] = {"log10": iv, "n": int(len(r)), "datasets": k, "level": lv}
     q["display"] = disp

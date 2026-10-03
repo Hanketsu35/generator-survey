@@ -299,9 +299,11 @@ class PerformanceModel:
         # runs that hit the cutoff.
         par10 = None
         band = None
+        rt_med = None
         if algo in self.surv:
             grid, s = _sv.curve(self.surv[algo], x)
             rt = _sv.expected_runtime(grid, s)
+            rt_med = _sv.quantile_runtime(grid, s, 0.5)
             p = 1.0 - _sv.timeout_probability(grid, s)
             par10 = _sv.expected_par10(grid, s)
             # How precise is that number? The engine needs this to avoid
@@ -312,6 +314,7 @@ class PerformanceModel:
             src = "survival"
 
         return {"runtime_s": rt, "memory_mb": mem, "p_complete": p,
+                "runtime_median_s": rt_med if src == "survival" else rt,
                 "expected_par10": par10, "cost_band": band,
                 "memory_band": mem_band, "source": src}
 

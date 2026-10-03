@@ -50,7 +50,8 @@ def model_pool():
                 rows.append({"dataset": ds, "source": "training LODO", "algorithm": r.algorithm,
                              "sigma": r.param_value, "true_mem": r.peak_memory_mb,
                              "pred_mem": p["memory_mb"], "true_rt": r.runtime_s,
-                             "pred_rt": p["runtime_s"]})
+                             "pred_rt": p["runtime_s"],
+                             "pred_rt_median": p.get("runtime_median_s", p["runtime_s"])})
         print("LODO %-14s" % ds, flush=True)
     lodo = pd.DataFrame(rows)
     lodo.to_csv(EX / "interval_residuals.csv", index=False)
@@ -66,7 +67,8 @@ def model_pool():
                     rows.append({"dataset": ds, "source": src, "algorithm": r.algorithm,
                                  "sigma": r.param_value, "true_mem": r.peak_memory_mb,
                                  "pred_mem": p["memory_mb"], "true_rt": r.runtime_s,
-                                 "pred_rt": p["runtime_s"]})
+                                 "pred_rt": p["runtime_s"],
+                             "pred_rt_median": p.get("runtime_median_s", p["runtime_s"])})
         print("unseen %s" % src, flush=True)
     d = pd.DataFrame(rows)
     d.to_csv(EX / "interval_groups.csv", index=False)
