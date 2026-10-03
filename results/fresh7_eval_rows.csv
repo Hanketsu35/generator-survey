@@ -1,0 +1,1700 @@
+dataset,kind,hit,width,level,err_typ,err_mean,sub
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.15015551438,0.95,0.9304395947667,1.8663283132176505,
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.150155514384,0.95,1.1708482036433094,2.76045210180293,
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.15015551437,0.95,1.1838390370564211,2.1756964691258105,
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.15015551438,0.95,1.04296907339318,2.1715552022982254,
+oml_analcatdata_dmft,X2 model memory,True,271.31616362305607,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,291604.7768590962,0.95,3.456310595268582,3.948205448128632,
+oml_analcatdata_dmft,X2 model memory,True,107.87781082141274,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,280449.96905175695,0.95,1.8057913668878092,3.422852336539481,
+oml_analcatdata_dmft,X2 model memory,True,107.87781082141272,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,280449.96905175695,0.95,0.17760185008091975,2.342518466191195,
+oml_analcatdata_dmft,X2 model memory,True,107.87781082141274,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,52130.57732193253,0.95,2.5298630848731336,3.570475092106893,
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.15015551438,0.95,0.9753673779057914,1.9303871601308173,
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.150155514384,0.95,1.1708482036433094,2.7604237174277144,
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.15015551437,0.95,1.1838390370564211,2.175719315595437,
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.15015551438,0.95,0.9566287488596871,2.0883517307287285,
+oml_analcatdata_dmft,X2 model memory,True,271.31616362305607,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,291604.7768590962,0.95,3.3964468496050713,3.937455538950804,
+oml_analcatdata_dmft,X2 model memory,True,107.87781082141274,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,280449.96905175695,0.95,1.8111634583541842,3.4238541668597886,
+oml_analcatdata_dmft,X2 model memory,True,107.87781082141272,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,280449.96905175695,0.95,0.19778718679216772,2.349347145275258,
+oml_analcatdata_dmft,X2 model memory,True,107.87781082141274,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,52130.57732193253,0.95,2.563741555166315,3.602213845111465,
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.15015551438,0.95,0.6869610968630034,1.9148433733763162,
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.15015551438,0.95,1.14921911265538,2.79522519418716,
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.15015551438,0.95,1.1760912590556813,2.196753307688227,
+oml_analcatdata_dmft,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,42083.15015551437,0.95,0.9273703630390235,2.17039105187235,
+oml_analcatdata_dmft,X2 model memory,True,271.31616362305607,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,291604.7768590962,0.95,3.5126091218420648,4.067505408288794,
+oml_analcatdata_dmft,X2 model memory,True,107.87781082141274,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,280449.96905175695,0.95,1.115142886155637,3.4365672865279184,
+oml_analcatdata_dmft,X2 model memory,True,107.87781082141274,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,280449.96905175695,0.95,0.18397068393079424,2.368800235286307,
+oml_analcatdata_dmft,X2 model memory,True,107.87781082141274,0.95,,,
+oml_analcatdata_dmft,X1 model runtime,True,58701.7366992371,0.95,2.5485780606589836,3.629384714572108,
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_analcatdata_dmft,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_banknote_authentication,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.15015551438,0.95,1.0273496077747564,1.9851284161755416,
+oml_banknote_authentication,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.150155514384,0.95,0.8129133566428556,2.7122159415730662,
+oml_banknote_authentication,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.15015551438,0.95,0.8709888137605754,2.0868788586982814,
+oml_banknote_authentication,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.15015551438,0.95,0.6464037262230695,2.0969968398600183,
+oml_banknote_authentication,X2 model memory,True,271.3161636230561,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,291604.77685909614,0.95,2.939478784694052,3.4780236273831817,
+oml_banknote_authentication,X2 model memory,True,107.87781082141274,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,280449.96905175695,0.95,1.0498090637657622,3.4142156038064173,
+oml_banknote_authentication,X2 model memory,True,107.87781082141274,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,280449.96905175695,0.95,0.24703990592399294,2.4350987507236423,
+oml_banknote_authentication,X2 model memory,True,107.87781082141272,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,115824.38374529441,0.95,2.1677352623929425,3.447419669656117,
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_banknote_authentication,X2 model memory,True,2800.119953243271,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.15015551438,0.95,0.7155165573160562,1.966409200105437,
+oml_banknote_authentication,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.150155514384,0.95,0.8129133566428556,2.712162095253997,
+oml_banknote_authentication,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.15015551438,0.95,0.8686444383948257,2.085900324277188,
+oml_banknote_authentication,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.15015551438,0.95,0.5378190950732742,2.0970503505212594,
+oml_banknote_authentication,X2 model memory,True,271.3161636230561,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,291604.77685909614,0.95,2.9710140070772093,3.505259225295657,
+oml_banknote_authentication,X2 model memory,True,107.87781082141271,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,280449.96905175695,0.95,1.0188018627656423,3.359887058971691,
+oml_banknote_authentication,X2 model memory,True,107.87781082141274,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,280449.96905175695,0.95,0.0680311709228331,2.3400639144825437,
+oml_banknote_authentication,X2 model memory,True,107.87781082141274,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,204334.42048697834,0.95,2.006360530417264,3.5168179478590913,
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_banknote_authentication,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.15015551438,0.95,0.4065401804339551,1.9778352783484863,
+oml_banknote_authentication,X2 model memory,True,2800.119953243271,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.15015551437,0.95,0.7860412102425542,2.711567620346728,
+oml_banknote_authentication,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.15015551438,0.95,0.5634810853944106,2.1103445055072707,
+oml_banknote_authentication,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,42083.15015551438,0.95,0.42160392686983106,2.0954630099772347,
+oml_banknote_authentication,X2 model memory,True,271.3161636230561,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,291604.77685909614,0.95,2.8680874311925386,3.6685632471773406,
+oml_banknote_authentication,X2 model memory,True,107.87781082141272,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,280449.96905175695,0.95,0.5740091825243321,3.254610524412108,
+oml_banknote_authentication,X2 model memory,True,107.87781082141274,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,280449.96905175695,0.95,0.10443859992295075,2.3768443254277907,
+oml_banknote_authentication,X2 model memory,True,107.87781082141274,0.95,,,
+oml_banknote_authentication,X1 model runtime,True,280449.96905175695,0.95,1.078115492182965,3.4813687416712846,
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_banknote_authentication,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.15015551438,0.95,0.8843348075206614,2.0364060464707223,
+oml_blood_transfusion_service_center,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.15015551438,0.95,1.3180633349627615,3.0649456408819327,
+oml_blood_transfusion_service_center,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.15015551438,0.95,1.2562365332059229,2.327442820898205,
+oml_blood_transfusion_service_center,X2 model memory,True,2800.11995324327,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.150155514384,0.95,1.1667260555800518,2.321002924436401,
+oml_blood_transfusion_service_center,X2 model memory,True,271.3161636230561,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,291604.7768590962,0.95,3.4368755066606793,3.9586521173871327,
+oml_blood_transfusion_service_center,X2 model memory,True,107.87781082141274,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,261698.58312037503,0.95,1.8771600326632083,3.5502640529374556,
+oml_blood_transfusion_service_center,X2 model memory,True,107.87781082141275,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,280449.96905175695,0.95,0.32767645086329905,2.741719390292874,
+oml_blood_transfusion_service_center,X2 model memory,True,107.87781082141274,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,40527.80976309413,0.95,2.6245041459443175,3.6307465761676907,
+oml_blood_transfusion_service_center,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.15015551438,0.95,1.0273496077747564,2.1785483230351064,
+oml_blood_transfusion_service_center,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.15015551438,0.95,1.3180633349627615,3.0649456408819327,
+oml_blood_transfusion_service_center,X2 model memory,True,2800.11995324327,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.15015551438,0.95,1.2562365332059229,2.327442820898205,
+oml_blood_transfusion_service_center,X2 model memory,True,2800.119953243271,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.150155514384,0.95,1.1667260555800518,2.321002924436401,
+oml_blood_transfusion_service_center,X2 model memory,True,271.31616362305607,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,291604.7768590962,0.95,3.4412784740004216,3.988439813184544,
+oml_blood_transfusion_service_center,X2 model memory,True,107.87781082141274,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,261698.58312037503,0.95,1.8961010377633447,3.5665458800970846,
+oml_blood_transfusion_service_center,X2 model memory,True,107.87781082141275,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,280449.96905175695,0.95,0.32116861098334476,2.735202200081044,
+oml_blood_transfusion_service_center,X2 model memory,True,107.87781082141272,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,52130.57732193253,0.95,2.538316772360006,3.6521021915365113,
+oml_blood_transfusion_service_center,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.15015551438,0.95,0.9830315970772233,2.168970895949628,
+oml_blood_transfusion_service_center,X2 model memory,True,2800.11995324327,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.15015551438,0.95,1.3180633349627615,3.082362411076359,
+oml_blood_transfusion_service_center,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.15015551438,0.95,1.2562365332059229,2.3423371415650833,
+oml_blood_transfusion_service_center,X2 model memory,True,2800.119953243271,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,42083.15015551437,0.95,1.161966616364075,2.320365946760224,
+oml_blood_transfusion_service_center,X2 model memory,True,271.3161636230561,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,291604.77685909614,0.95,3.5364985513824916,4.172106912884586,
+oml_blood_transfusion_service_center,X2 model memory,True,107.87781082141274,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,280449.96905175695,0.95,1.8850059829828516,3.597446121611929,
+oml_blood_transfusion_service_center,X2 model memory,True,107.87781082141272,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,280449.96905175695,0.95,0.18054059937953384,2.676184541326982,
+oml_blood_transfusion_service_center,X2 model memory,True,107.87781082141274,0.95,,,
+oml_blood_transfusion_service_center,X1 model runtime,True,52130.57732193253,0.95,2.5765351424992624,3.668411812858264,
+oml_blood_transfusion_service_center,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_blood_transfusion_service_center,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_churn,X2 model memory,True,2800.11995324327,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551437,0.95,0.16453309836096208,1.3899700957667358,
+oml_churn,X2 model memory,True,2800.119953243271,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.3031495434625655,2.389588562939343,
+oml_churn,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.44203988469403016,1.7339681770890856,
+oml_churn,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.11711339909634343,1.519162148682869,
+oml_churn,X2 model memory,True,271.31616362305607,0.95,,,
+oml_churn,X1 model runtime,True,291604.7768590962,0.95,0.35143575344232114,0.14564213772440823,
+oml_churn,X2 model memory,True,107.87781082141275,0.95,,,
+oml_churn,X1 model runtime,True,248677.33931500223,0.95,0.33067242614685005,2.0038751034072484,
+oml_churn,X2 model memory,True,107.87781082141272,0.95,,,
+oml_churn,X1 model runtime,True,280449.96905175695,0.95,0.03536157516494021,2.4612202603456024,
+oml_churn,X2 model memory,True,107.87781082141272,0.95,,,
+oml_churn,X1 model runtime,True,14464.47413353302,0.95,0.10620320979959315,0.7568534109781795,
+oml_churn,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_churn,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.6562817455030203,1.9345785749516213,
+oml_churn,X2 model memory,True,2800.119953243271,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.5786011527228725,2.66504017219965,
+oml_churn,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.94764967722513,2.240567346254179,
+oml_churn,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.5720616748648144,1.9745011773025583,
+oml_churn,X2 model memory,True,271.3161636230561,0.95,,,
+oml_churn,X1 model runtime,True,291604.7768590962,0.95,0.016579233449060836,0.5509214069445669,
+oml_churn,X2 model memory,True,107.87781082141272,0.95,,,
+oml_churn,X1 model runtime,True,261698.58312037503,0.95,1.2184721004579724,2.9121418464693956,
+oml_churn,X2 model memory,True,107.87781082141274,0.95,,,
+oml_churn,X1 model runtime,True,280449.96905175695,0.95,0.1679871404395312,2.5937674712747416,
+oml_churn,X2 model memory,True,107.87781082141272,0.95,,,
+oml_churn,X1 model runtime,True,40527.80976309413,0.95,1.4667442548641656,2.566129627484347,
+oml_churn,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_churn,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.7467124572460891,2.0682197994369207,
+oml_churn,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.8592820992142216,2.9618132205770653,
+oml_churn,X2 model memory,True,2800.119953243271,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,1.142544500103517,2.449326392844226,
+oml_churn,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.48405426711411703,2.1566605237639163,
+oml_churn,X2 model memory,True,271.31616362305607,0.95,,,
+oml_churn,X1 model runtime,True,291604.77685909614,0.95,0.907392285343854,1.5821026613056182,
+oml_churn,X2 model memory,True,107.87781082141274,0.95,,,
+oml_churn,X1 model runtime,True,280449.96905175695,0.95,0.6072113832005356,3.167983549791557,
+oml_churn,X2 model memory,True,107.87781082141274,0.95,,,
+oml_churn,X1 model runtime,True,280449.96905175695,0.95,0.012941418120519485,2.4530458210946122,
+oml_churn,X2 model memory,True,107.87781082141274,0.95,,,
+oml_churn,X1 model runtime,True,40527.80976309413,0.95,2.2348222110833325,3.2731781001134794,
+oml_churn,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_churn,X2 model memory,True,2800.119953243271,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.8991949431084194,2.2099808290639213,
+oml_churn,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.6720978579357174,3.1137200855950797,
+oml_churn,X2 model memory,True,2800.11995324327,0.95,,,
+oml_churn,X1 model runtime,True,42083.150155514384,0.95,1.1019537853075505,2.4273489849381615,
+oml_churn,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_churn,X1 model runtime,True,42083.15015551438,0.95,0.6211762817750351,2.2947842050620713,
+oml_churn,X2 model memory,True,271.3161636230561,0.95,,,
+oml_churn,X1 model runtime,True,291604.77685909614,0.95,1.2864132124586634,2.2028439379709406,
+oml_churn,X2 model memory,True,107.87781082141274,0.95,,,
+oml_churn,X1 model runtime,True,280449.96905175695,0.95,0.6002967145171936,3.463734728434156,
+oml_churn,X2 model memory,True,107.87781082141272,0.95,,,
+oml_churn,X1 model runtime,True,280449.96905175695,0.95,0.09975811171911518,2.4028943711116697,
+oml_churn,X2 model memory,True,107.87781082141274,0.95,,,
+oml_churn,X1 model runtime,True,115824.38374529441,0.95,2.218491185310796,3.6649320774958034,
+oml_churn,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_churn,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551438,0.95,0.8534374525477443,2.0461224555253943,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551437,0.95,0.8027737252919757,2.9206298657711405,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551438,0.95,0.29866326238487423,1.8810340846873912,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551438,0.95,0.25933136158017367,1.9447065435985145,
+oml_climate_model_simulation_crashes,X2 model memory,True,271.3161636230561,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,291604.7768590962,0.95,2.2036905306071755,2.709541517354863,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141274,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,280449.96905175695,0.95,0.4552861854196799,2.843829085703555,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141274,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,280449.96905175695,0.95,0.03919026565188038,2.4308644623223996,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141272,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,40527.80976309413,0.95,1.1292115284735513,2.1440083297720225,
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551438,0.95,0.33243845991560533,2.0051040310562183,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551437,0.95,0.7860412102425542,2.9205879228138825,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.150155514384,0.95,0.47992316432166526,2.1537641101720886,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551438,0.95,0.35471485462675756,2.0396354973361803,
+oml_climate_model_simulation_crashes,X2 model memory,True,271.31616362305607,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,291604.77685909614,0.95,2.409393753017684,3.0134649729379146,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141272,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,280449.96905175695,0.95,0.6721924723334904,3.2134610728821156,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141274,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,280449.96905175695,0.95,0.06534241088423624,2.456979416719382,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141274,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,52130.57732193253,0.95,1.9191076632852764,3.039457215085392,
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551438,0.95,0.43275472161557327,2.1046204484333413,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551437,0.95,0.7860412102425542,2.9205678407594085,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.150155514384,0.95,0.4927603890268375,2.1664066946232343,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551438,0.95,0.41161970596323016,2.0960116846380314,
+oml_climate_model_simulation_crashes,X2 model memory,True,271.31616362305607,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,291604.77685909614,0.95,2.569334736605665,3.170948207728922,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141272,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,280449.96905175695,0.95,0.8430462835552883,3.367070119074985,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141274,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,280449.96905175695,0.95,0.06806299494436896,2.430143166906344,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141272,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,52130.57732193253,0.95,2.1386424435586138,3.2592826498817677,
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551438,0.95,0.4065401804339551,2.2097173900663734,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551438,0.95,0.5514499979728751,2.9201171342456185,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551438,0.95,0.4871383754771865,2.1667556582409118,
+oml_climate_model_simulation_crashes,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,42083.15015551438,0.95,0.41161970596323016,2.0954404262982056,
+oml_climate_model_simulation_crashes,X2 model memory,True,271.31616362305607,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,291604.77685909614,0.95,3.130946867101869,3.965002782090943,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141274,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,280449.96905175695,0.95,0.38107643113382395,3.2223280490280333,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141274,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,280449.96905175695,0.95,0.06316473516663344,2.3141938842493244,
+oml_climate_model_simulation_crashes,X2 model memory,True,107.87781082141274,0.95,,,
+oml_climate_model_simulation_crashes,X1 model runtime,True,115824.38374529441,0.95,2.12490212987141,3.528654259020327,
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_climate_model_simulation_crashes,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cmc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551438,0.95,0.9374444963353586,1.9671006226409968,
+oml_cmc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551438,0.95,1.2927574696979913,2.8011389014059556,
+oml_cmc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551438,0.95,1.2031580897225032,2.150306743960773,
+oml_cmc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551437,0.95,1.0091050396047618,2.139282027628328,
+oml_cmc,X2 model memory,True,271.31616362305607,0.95,,,
+oml_cmc,X1 model runtime,True,291604.7768590962,0.95,1.5207604195705224,2.010030737572794,
+oml_cmc,X2 model memory,True,107.87781082141274,0.95,,,
+oml_cmc,X1 model runtime,True,261698.58312037503,0.95,1.4989291359401253,3.0624608284137227,
+oml_cmc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_cmc,X1 model runtime,True,280449.96905175695,0.95,0.21576301781020288,2.4972915779668887,
+oml_cmc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_cmc,X1 model runtime,True,52130.57732193253,0.95,1.2405074993523868,2.3434205642692785,
+oml_cmc,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_cmc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cmc,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_cmc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cmc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551438,0.95,0.9995654882259822,2.0796662923871727,
+oml_cmc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551438,0.95,1.2511513431753545,2.8559487786487274,
+oml_cmc,X2 model memory,True,2800.119953243271,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551438,0.95,1.2562365332059229,2.2230958588504546,
+oml_cmc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551438,0.95,1.0484418035504044,2.210010958881136,
+oml_cmc,X2 model memory,True,271.31616362305607,0.95,,,
+oml_cmc,X1 model runtime,True,291604.7768590962,0.95,2.2782626941516995,2.762227998078725,
+oml_cmc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_cmc,X1 model runtime,True,280449.96905175695,0.95,1.0338629755450932,3.447853506381125,
+oml_cmc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_cmc,X1 model runtime,True,280449.96905175695,0.95,0.2300648695228915,2.54935033565678,
+oml_cmc,X2 model memory,True,107.87781082141274,0.95,,,
+oml_cmc,X1 model runtime,True,52130.57732193253,0.95,2.4789930411988337,3.5576305865299283,
+oml_cmc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cmc,"X3 probe memory, measured",False,1.1482344125454629,0.95,,,probe-measured
+oml_cmc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cmc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cmc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551438,0.95,1.163785891628323,2.8059227248081196,
+oml_cmc,X2 model memory,True,2800.11995324327,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551438,0.95,1.146404920916755,2.0767999882848227,
+oml_cmc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551438,0.95,0.9925535178321356,2.0573982491002942,
+oml_cmc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cmc,X1 model runtime,True,42083.15015551438,0.95,1.0484418035504044,2.1396714853439494,
+oml_cmc,X2 model memory,True,271.3161636230561,0.95,,,
+oml_cmc,X1 model runtime,True,291604.7768590962,0.95,2.109582255098994,3.49587067164517,
+oml_cmc,X2 model memory,True,107.87781082141274,0.95,,,
+oml_cmc,X1 model runtime,True,280449.96905175695,0.95,0.5147973935396394,3.230615118572866,
+oml_cmc,X2 model memory,True,107.87781082141274,0.95,,,
+oml_cmc,X1 model runtime,True,280449.96905175695,0.95,0.13999259282220844,2.172249582358537,
+oml_cmc,X2 model memory,True,107.87781082141274,0.95,,,
+oml_cmc,X1 model runtime,True,204334.42048697834,0.95,2.0721969655230876,3.625811681554822,
+oml_cmc,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_cmc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cmc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cmc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.150155514384,0.95,0.13973935491397818,1.046726865372543,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.7988568699214037,0.14014071049188465,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551437,0.95,0.829249611269328,0.07460271850335444,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.7845610673447837,0.17940699112650835,
+oml_cylinder_bands,X2 model memory,False,271.3161636230561,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,59622.14586579778,0.95,0.8862109981361976,0.8015939937933698,
+oml_cylinder_bands,X2 model memory,True,107.87781082141274,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,280449.96905175695,0.95,0.43776171915220696,2.3720700711492815,
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.150155514384,0.95,0.08516271691112004,1.2716289371976413,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.5115944412552329,0.4273467746324525,
+oml_cylinder_bands,X2 model memory,True,2800.11995324327,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551437,0.95,0.5509074688805811,0.3529448608921014,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.5468906476690842,0.41616879297421794,
+oml_cylinder_bands,X2 model memory,False,271.3161636230561,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,59622.14586579778,0.95,1.0824314776818502,0.9978144733390224,
+oml_cylinder_bands,X2 model memory,True,107.87781082141274,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,280449.96905175695,0.95,0.19412560590240194,2.609224393263673,
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,X2 model memory,True,2800.11995324327,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.150155514384,0.95,1.4889849078091122,2.675451128095633,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.6916296411702755,1.7029202703438227,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.6540160190589446,1.5984924847702557,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.652579892422545,1.7629685800238721,
+oml_cylinder_bands,X2 model memory,True,271.31616362305607,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,59622.14586579778,0.95,2.1946218732373657,2.110004868894538,
+oml_cylinder_bands,X2 model memory,True,107.87781082141272,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,7315.7270772428665,0.95,1.612254259129258,1.9723132263521894,
+oml_cylinder_bands,X2 model memory,True,107.87781082141272,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,280449.96905175695,0.95,0.4535367431101787,3.2130869162425157,
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,False,42083.150155514384,0.95,1.731346975545955,3.1278206127564325,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.6464037262230695,1.84752391700115,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.9434945159061026,1.8344179285429767,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.7283537820212285,1.9399239638847694,
+oml_cylinder_bands,X2 model memory,True,271.31616362305607,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,59622.14586579778,0.95,3.7676392876464297,3.680205101016006,
+oml_cylinder_bands,X2 model memory,True,107.87781082141274,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,37033.83430427739,0.95,2.744258496022722,3.707913992283411,
+oml_cylinder_bands,X2 model memory,True,107.87781082141272,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,280449.96905175695,0.95,0.4984656866656574,3.0815716411050977,
+oml_cylinder_bands,X2 model memory,True,107.87781082141272,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,14464.47413353302,0.95,2.789225853038866,3.447934698536085,
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.9822712330395684,2.6735188028377865,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.37657695705651195,1.5464009191936734,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.40140054078154414,1.4997936511084726,
+oml_cylinder_bands,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,42083.15015551438,0.95,0.19522626949594224,1.5009853337849612,
+oml_cylinder_bands,X2 model memory,True,271.3161636230561,0.95,,,
+oml_cylinder_bands,X1 model runtime,False,59622.14586579778,0.95,5.200276643574164,5.048899706654166,
+oml_cylinder_bands,X2 model memory,True,107.87781082141272,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,280449.96905175695,0.95,1.0344283405395422,3.270933809578404,
+oml_cylinder_bands,X2 model memory,True,107.87781082141274,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,280449.96905175695,0.95,0.15665723309320556,2.939752018876455,
+oml_cylinder_bands,X2 model memory,True,107.87781082141274,0.95,,,
+oml_cylinder_bands,X1 model runtime,True,280449.96905175695,0.95,1.241942856320908,3.414663322487346,
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_cylinder_bands,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551438,0.95,1.3180633349627615,2.4936519723298654,
+oml_dresses_sales,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551438,0.95,0.8600322730265804,1.6021285046734228,
+oml_dresses_sales,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551438,0.95,1.0489864606908736,1.811330180763885,
+oml_dresses_sales,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551438,0.95,1.165541076722373,1.9038349537862065,
+oml_dresses_sales,X2 model memory,True,271.31616362305607,0.95,,,
+oml_dresses_sales,X1 model runtime,True,291604.7768590962,0.95,2.5189483655433746,3.023984514218452,
+oml_dresses_sales,X2 model memory,True,107.87781082141272,0.95,,,
+oml_dresses_sales,X1 model runtime,True,261698.58312037503,0.95,1.6347664973010947,3.178835718537459,
+oml_dresses_sales,X2 model memory,True,107.87781082141274,0.95,,,
+oml_dresses_sales,X1 model runtime,True,280449.969051757,0.95,0.20173368720317172,2.4764833957581036,
+oml_dresses_sales,X2 model memory,True,107.87781082141274,0.95,,,
+oml_dresses_sales,X1 model runtime,True,52130.57732193253,0.95,1.8935703060459765,2.983450169324741,
+oml_dresses_sales,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551438,0.95,1.1144307760189478,2.4173013294054173,
+oml_dresses_sales,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551438,0.95,1.1760912590556813,1.9704692626723344,
+oml_dresses_sales,X2 model memory,True,2800.11995324327,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551438,0.95,0.7512791039833423,1.8124976685672523,
+oml_dresses_sales,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551437,0.95,1.161966616364075,1.901712590588388,
+oml_dresses_sales,X2 model memory,True,271.31616362305607,0.95,,,
+oml_dresses_sales,X1 model runtime,True,291604.7768590962,0.95,3.0523822217158885,3.6545517468132998,
+oml_dresses_sales,X2 model memory,True,107.87781082141274,0.95,,,
+oml_dresses_sales,X1 model runtime,True,280449.96905175695,0.95,1.4431539549926877,3.352526122156347,
+oml_dresses_sales,X2 model memory,True,107.87781082141272,0.95,,,
+oml_dresses_sales,X1 model runtime,True,280449.969051757,0.95,0.264094431242188,2.3880880104729796,
+oml_dresses_sales,X2 model memory,True,107.87781082141272,0.95,,,
+oml_dresses_sales,X1 model runtime,True,56527.14310945273,0.95,2.5134875938022536,3.61572268793312,
+oml_dresses_sales,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551438,0.95,1.1760912590556813,1.9199470629885083,
+oml_dresses_sales,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551437,0.95,1.212187604403958,2.5530254419616436,
+oml_dresses_sales,X2 model memory,True,2800.119953243271,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551438,0.95,0.7630266741301877,1.7638993717368414,
+oml_dresses_sales,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_dresses_sales,X1 model runtime,True,42083.15015551437,0.95,1.161966616364075,1.9013646387972596,
+oml_dresses_sales,X2 model memory,True,271.3161636230561,0.95,,,
+oml_dresses_sales,X1 model runtime,True,291604.77685909614,0.95,3.0810094166328748,4.04822330202645,
+oml_dresses_sales,X2 model memory,True,107.87781082141272,0.95,,,
+oml_dresses_sales,X1 model runtime,True,280449.96905175695,0.95,1.01228188987306,3.3050334937718677,
+oml_dresses_sales,X2 model memory,True,107.87781082141272,0.95,,,
+oml_dresses_sales,X1 model runtime,True,280449.969051757,0.95,0.27148282526570866,2.2913439758764604,
+oml_dresses_sales,X2 model memory,True,107.87781082141274,0.95,,,
+oml_dresses_sales,X1 model runtime,True,115824.38374529441,0.95,2.2416390571130633,3.589791501223639,
+oml_dresses_sales,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_dresses_sales,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.15015551438,0.95,0.7369224190217042,1.5474641763135075,
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.150155514384,0.95,0.18350375754013667,2.098738816967802,
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.15015551438,0.95,0.31276839893522534,1.536501276219237,
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.15015551438,0.95,0.5680027346101789,1.5626055623017685,
+oml_electricity,X2 model memory,True,107.87781082141272,0.95,,,
+oml_electricity,X1 model runtime,True,126259.33137560159,0.95,1.0891021317259268,2.353965627410927,
+oml_electricity,X2 model memory,True,107.87781082141274,0.95,,,
+oml_electricity,X1 model runtime,True,280449.96905175695,0.95,0.4377849146158158,2.472390945162221,
+oml_electricity,X2 model memory,True,107.87781082141274,0.95,,,
+oml_electricity,X1 model runtime,True,52130.57732193253,0.95,0.9716793166037075,1.9240159509244277,
+oml_electricity,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_electricity,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_electricity,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_electricity,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.15015551438,0.95,0.5862657241447304,1.5330888536893748,
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.150155514384,0.95,0.4588049174954547,2.3735498320189663,
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.15015551438,0.95,0.4777093312914466,1.7286176029627485,
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.15015551437,0.95,0.5790654999908628,1.6803448942246693,
+oml_electricity,X2 model memory,True,271.31616362305607,0.95,,,
+oml_electricity,X1 model runtime,False,291604.77685909614,0.95,0.8657240593869695,0.016080510229811315,
+oml_electricity,X2 model memory,True,107.87781082141272,0.95,,,
+oml_electricity,X1 model runtime,True,280449.96905175695,0.95,0.6070690077151042,2.9801794500500827,
+oml_electricity,X2 model memory,True,107.87781082141274,0.95,,,
+oml_electricity,X1 model runtime,True,280449.96905175695,0.95,0.6751143552231734,2.895621615273754,
+oml_electricity,X2 model memory,True,107.87781082141272,0.95,,,
+oml_electricity,X1 model runtime,True,280449.96905175695,0.95,0.06327919342438977,2.519472232867451,
+oml_electricity,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_electricity,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_electricity,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_electricity,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.15015551438,0.95,0.7900504736833514,1.738575761319183,
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.15015551438,0.95,0.6672473140743742,1.9186235779939211,
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.15015551437,0.95,0.5873841232881316,2.5285818942478793,
+oml_electricity,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_electricity,X1 model runtime,True,42083.15015551438,0.95,0.5705172807000695,1.76759365208969,
+oml_electricity,X2 model memory,True,271.31616362305607,0.95,,,
+oml_electricity,X1 model runtime,True,291604.7768590962,0.95,0.16176480430850548,1.596346359180466,
+oml_electricity,X2 model memory,True,107.87781082141272,0.95,,,
+oml_electricity,X1 model runtime,True,280449.96905175695,0.95,0.2937266990626081,3.11284300722492,
+oml_electricity,X2 model memory,True,107.87781082141272,0.95,,,
+oml_electricity,X1 model runtime,True,280449.96905175695,0.95,0.0003095470422588859,2.4393131041976384,
+oml_electricity,X2 model memory,True,107.87781082141272,0.95,,,
+oml_electricity,X1 model runtime,True,280449.96905175695,0.95,0.7424818086949616,3.2276735592090744,
+oml_electricity,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_electricity,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_electricity,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_electricity,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.6101699028157341,2.3122707362229087,
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.5129033451327809,1.7520447292971257,
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551437,0.95,0.7249611897177644,1.6904266667405214,
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551437,0.95,0.5600144420130045,1.6878162525933698,
+oml_eucalyptus,X2 model memory,True,271.31616362305607,0.95,,,
+oml_eucalyptus,X1 model runtime,True,291604.7768590962,0.95,1.7554671312032677,2.2640016710272133,
+oml_eucalyptus,X2 model memory,True,107.87781082141274,0.95,,,
+oml_eucalyptus,X1 model runtime,True,126259.33137560159,0.95,0.42091728135539197,1.7743858936302155,
+oml_eucalyptus,X2 model memory,True,107.87781082141272,0.95,,,
+oml_eucalyptus,X1 model runtime,True,280449.96905175695,0.95,0.09973889798629533,2.3095842863596685,
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,X2 model memory,True,2800.11995324327,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.5127391139294577,1.9713544194572565,
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,1.011570443597278,2.7525998412897206,
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.6825204562147602,2.080889069323133,
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.6464037262230695,2.0525481664397294,
+oml_eucalyptus,X2 model memory,True,271.31616362305607,0.95,,,
+oml_eucalyptus,X1 model runtime,True,291604.7768590962,0.95,2.3525297432325356,2.859785825739876,
+oml_eucalyptus,X2 model memory,True,107.87781082141272,0.95,,,
+oml_eucalyptus,X1 model runtime,True,261698.58312037503,0.95,1.6736248459739411,3.3257594727265287,
+oml_eucalyptus,X2 model memory,True,107.87781082141272,0.95,,,
+oml_eucalyptus,X1 model runtime,True,280449.96905175695,0.95,0.1982111230454045,2.371734990981671,
+oml_eucalyptus,X2 model memory,True,107.87781082141272,0.95,,,
+oml_eucalyptus,X1 model runtime,True,40527.80976309413,0.95,1.7652289422802108,2.8232425432172215,
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.9822712330395684,2.7514422108785888,
+oml_eucalyptus,X2 model memory,True,2800.119953243271,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.5109795219806298,1.9939517455722,
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.7355988996981799,2.1336793325813477,
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.6464037262230695,2.052420364859023,
+oml_eucalyptus,X2 model memory,True,271.3161636230561,0.95,,,
+oml_eucalyptus,X1 model runtime,True,291604.7768590962,0.95,2.8010466157896916,3.3365441483895593,
+oml_eucalyptus,X2 model memory,True,107.87781082141274,0.95,,,
+oml_eucalyptus,X1 model runtime,True,280449.96905175695,0.95,1.002857729890222,3.4825200915815238,
+oml_eucalyptus,X2 model memory,True,107.87781082141274,0.95,,,
+oml_eucalyptus,X1 model runtime,True,280449.96905175695,0.95,0.18817441971017915,2.39396425274623,
+oml_eucalyptus,X2 model memory,True,107.87781082141274,0.95,,,
+oml_eucalyptus,X1 model runtime,True,40527.80976309413,0.95,2.6570558528571038,3.694396053035154,
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.7355988996981799,2.1147376388971604,
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.6766936096248666,2.750689125564069,
+oml_eucalyptus,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.5563025007672873,2.0386208600314366,
+oml_eucalyptus,X2 model memory,True,2800.119953243271,0.95,,,
+oml_eucalyptus,X1 model runtime,True,42083.15015551438,0.95,0.6464037262230695,2.0521709205646217,
+oml_eucalyptus,X2 model memory,True,271.31616362305607,0.95,,,
+oml_eucalyptus,X1 model runtime,True,291604.77685909614,0.95,3.1569084489811776,4.103295876056739,
+oml_eucalyptus,X2 model memory,True,107.87781082141274,0.95,,,
+oml_eucalyptus,X1 model runtime,True,280449.96905175695,0.95,0.9153671371329413,3.4289271963086527,
+oml_eucalyptus,X2 model memory,True,107.87781082141272,0.95,,,
+oml_eucalyptus,X1 model runtime,True,280449.96905175695,0.95,0.21445594559299774,2.1818612756031954,
+oml_eucalyptus,X2 model memory,True,107.87781082141274,0.95,,,
+oml_eucalyptus,X1 model runtime,True,115824.38374529441,0.95,2.190543554882649,3.6204204899630597,
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_eucalyptus,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,False,42083.15015551438,0.95,3.3267363307924396,2.327644368646945,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141272,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,False,280449.96905175695,0.95,2.764371195347539,0.20578966923222883,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.15015551438,0.95,0.3217041173521515,0.8178644255689338,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.150155514384,0.95,0.3160836646095873,1.402836287122888,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.119953243271,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.15015551438,0.95,0.3769815289126708,0.795898405726649,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.150155514384,0.95,0.5085771336208127,0.825846307251761,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141272,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,88918.81968288973,0.95,0.06711921371794093,1.438920865471731,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141272,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,280449.96905175695,0.95,0.09616323629117078,2.6491252355618498,
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.15015551438,0.95,0.3353918304829664,1.469973640283964,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.150155514384,0.95,0.7610000993158615,2.4799133013560795,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.15015551438,0.95,0.18274029540096257,1.3573743458320857,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.150155514384,0.95,0.18614661164402385,1.5371148760460387,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,271.31616362305607,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,59622.14586579778,0.95,0.9281440634134921,0.7304227910213589,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141274,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,91070.922944228,0.95,1.0757507110921611,2.4440588464298774,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141272,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,280449.96905175695,0.95,0.5056694535910604,3.053405666234041,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141274,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,9325.255565406369,0.95,1.706426536758715,2.1854326849951096,
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.15015551438,0.95,0.5186941824544125,1.654149352106271,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.150155514384,0.95,1.3457407019476428,3.0646225450651383,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.15015551438,0.95,0.3360592778663493,1.5111705879116035,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.150155514384,0.95,0.4066931279551357,1.7579950900550927,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,271.31616362305607,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,59622.14586579778,0.95,1.1398081140058804,0.939718359148096,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141272,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,160060.64508086292,0.95,1.0220160108351668,2.6188264885441437,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141274,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,280449.96905175695,0.95,0.542421282542898,3.0712480671191607,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141275,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,9325.255565406369,0.95,2.0427758507154015,2.519680181491388,
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.119953243271,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.15015551438,0.95,0.5317793629082005,1.6670734663131535,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.150155514384,0.95,1.2967780715117563,3.0156599146292518,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.15015551438,0.95,0.3196939586640097,1.5102276146588816,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,42083.150155514384,0.95,0.40152289448904543,1.7528248565890023,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,271.3161636230561,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,59622.14586579778,0.95,1.316876381312212,1.116678460255947,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141274,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,248677.33931500223,0.95,0.8175497272904343,2.5940388704466444,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141272,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,280449.96905175695,0.95,0.49909440752019063,2.9892143750220783,
+oml_gesturephasesegmentationprocessed,X2 model memory,True,107.87781082141275,0.95,,,
+oml_gesturephasesegmentationprocessed,X1 model runtime,True,14464.47413353302,0.95,1.8502822360536921,2.499078122549116,
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_gesturephasesegmentationprocessed,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_ilpd,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551438,0.95,0.8689871156795069,1.9707519557428166,
+oml_ilpd,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551438,0.95,0.9822712330395684,2.8725345602504384,
+oml_ilpd,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551438,0.95,0.8709888137605754,2.1280702253635257,
+oml_ilpd,X2 model memory,True,2800.119953243271,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551438,0.95,0.43060912542540575,2.043013048906008,
+oml_ilpd,X2 model memory,True,271.3161636230561,0.95,,,
+oml_ilpd,X1 model runtime,True,291604.77685909614,0.95,2.3305034637090194,2.885581839576882,
+oml_ilpd,X2 model memory,True,107.87781082141272,0.95,,,
+oml_ilpd,X1 model runtime,True,280449.96905175695,0.95,0.7852512067461589,3.149704045001498,
+oml_ilpd,X2 model memory,True,107.87781082141274,0.95,,,
+oml_ilpd,X1 model runtime,True,280449.96905175695,0.95,0.13734320456864654,2.3477796274769656,
+oml_ilpd,X2 model memory,True,107.87781082141272,0.95,,,
+oml_ilpd,X1 model runtime,True,56527.14310945273,0.95,1.8469857627264137,2.8721037448723137,
+oml_ilpd,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_ilpd,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_ilpd,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_ilpd,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_ilpd,X2 model memory,True,2800.119953243271,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551438,0.95,0.6349320968589933,2.0550251387138814,
+oml_ilpd,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551438,0.95,0.9822712330395684,2.87231404444157,
+oml_ilpd,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551437,0.95,0.6138418218760692,2.1495046575474057,
+oml_ilpd,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551438,0.95,0.42160392686983106,2.149537681001396,
+oml_ilpd,X2 model memory,True,271.31616362305607,0.95,,,
+oml_ilpd,X1 model runtime,True,291604.77685909614,0.95,2.6046375917487135,3.420537556417564,
+oml_ilpd,X2 model memory,True,107.87781082141272,0.95,,,
+oml_ilpd,X1 model runtime,True,280449.96905175695,0.95,0.5750041302261679,3.2618034881933773,
+oml_ilpd,X2 model memory,True,107.87781082141274,0.95,,,
+oml_ilpd,X1 model runtime,True,280449.96905175695,0.95,0.07704071389185202,2.34957058843953,
+oml_ilpd,X2 model memory,True,107.87781082141274,0.95,,,
+oml_ilpd,X1 model runtime,True,115824.38374529441,0.95,2.181216470429353,3.5023157844893515,
+oml_ilpd,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_ilpd,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_ilpd,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_ilpd,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_ilpd,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551438,0.95,0.6949300265342787,2.1153111916990346,
+oml_ilpd,X2 model memory,True,2800.119953243271,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551437,0.95,0.8027737252919757,2.871993928627724,
+oml_ilpd,X2 model memory,True,2800.11995324327,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551437,0.95,0.6138418218760692,2.1494725930488263,
+oml_ilpd,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_ilpd,X1 model runtime,True,42083.15015551438,0.95,0.3212333817522681,2.0488325989327087,
+oml_ilpd,X2 model memory,True,271.31616362305607,0.95,,,
+oml_ilpd,X1 model runtime,True,291604.7768590962,0.95,2.5951366773555193,3.8300743909989516,
+oml_ilpd,X2 model memory,True,107.87781082141272,0.95,,,
+oml_ilpd,X1 model runtime,True,280449.96905175695,0.95,0.4530287041007268,3.1946381616120427,
+oml_ilpd,X2 model memory,True,107.87781082141274,0.95,,,
+oml_ilpd,X1 model runtime,True,280449.96905175695,0.95,0.03665876191221378,2.1625464926025155,
+oml_ilpd,X2 model memory,True,107.87781082141274,0.95,,,
+oml_ilpd,X1 model runtime,True,280449.96905175695,0.95,1.0289094747229928,3.4580263126427893,
+oml_ilpd,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_ilpd,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_ilpd,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_ilpd,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.150155514384,0.95,0.5788417060655235,1.3116916292270115,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.119953243271,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.15015551438,0.95,0.5848768694852234,2.1999126643579565,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.150155514384,0.95,0.5798443838633092,1.5571767512623045,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.15015551438,0.95,0.4586378490256493,1.4928106107855414,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,271.31616362305607,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,291604.7768590962,0.95,0.3322535540204405,0.19601881582622904,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,107.87781082141274,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,91070.922944228,0.95,1.362923008811836,2.520070218233006,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,107.87781082141274,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,280449.96905175695,0.95,0.47964964225257767,2.4334437531864994,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,107.87781082141272,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,52130.57732193253,0.95,1.1781492496459538,2.1911633250068436,
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.15015551438,0.95,0.639959781436027,1.5269540790337792,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.15015551438,0.95,0.7372900290672719,2.3520007697246728,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.119953243271,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.150155514384,0.95,0.6986661956619272,1.673816179505161,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.15015551438,0.95,0.6262050446251117,1.663061161012157,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,271.31616362305607,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,291604.7768590962,0.95,0.18704987194643077,0.40146415803988766,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,107.87781082141274,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,280449.96905175695,0.95,1.4400848140597833,3.0391464203875107,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,107.87781082141274,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,280449.96905175695,0.95,0.15337757379473418,2.395994193415529,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,107.87781082141274,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,115824.38374529441,0.95,1.660561016936711,2.975330145605597,
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.15015551438,0.95,0.5371674903270263,1.4393516693161648,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.15015551438,0.95,0.6977032232281248,2.4269425480731206,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.15015551438,0.95,0.7741456680582534,1.7788951092041454,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,2800.119953243271,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,42083.15015551438,0.95,0.7642591794279494,1.817808519424816,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,271.3161636230561,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,291604.77685909614,0.95,0.09110676299010485,0.589206763019908,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,107.87781082141272,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,280449.96905175695,0.95,0.704916926575976,3.0905424602803726,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,107.87781082141274,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,280449.969051757,0.95,0.11134813155897799,2.4401770769612106,
+oml_jungle_chess_2pcs_raw_endgame_complete,X2 model memory,True,107.87781082141274,0.95,,,
+oml_jungle_chess_2pcs_raw_endgame_complete,X1 model runtime,True,116092.79669962324,0.95,1.8097327309279037,3.1225318848668855,
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_jungle_chess_2pcs_raw_endgame_complete,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551438,0.95,1.2511513431753545,2.8920503201057914,
+oml_mfeat_morphological,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551437,0.95,1.080987046910887,2.0949289125771795,
+oml_mfeat_morphological,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551438,0.95,1.2562365332059229,2.246704579528075,
+oml_mfeat_morphological,X2 model memory,True,2800.119953243271,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551438,0.95,1.0484418035504044,2.2060913567622404,
+oml_mfeat_morphological,X2 model memory,True,271.3161636230561,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,291604.7768590962,0.95,2.30476255689726,2.778438672596665,
+oml_mfeat_morphological,X2 model memory,True,107.87781082141274,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,261698.58312037503,0.95,1.800238780346482,3.3803339604730795,
+oml_mfeat_morphological,X2 model memory,True,107.87781082141274,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,280449.96905175695,0.95,0.3075168961570122,2.405567189617962,
+oml_mfeat_morphological,X2 model memory,True,107.87781082141274,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,52130.57732193253,0.95,2.2619848417837956,3.355267380882682,
+oml_mfeat_morphological,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,X2 model memory,True,2800.11995324327,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551438,0.95,1.2511513431753545,2.9181434865556173,
+oml_mfeat_morphological,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551438,0.95,0.9995654882259822,2.1136766322327833,
+oml_mfeat_morphological,X2 model memory,True,2800.11995324327,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551438,0.95,1.1956229435869368,2.26415471500048,
+oml_mfeat_morphological,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551438,0.95,1.0484418035504044,2.2049581663084052,
+oml_mfeat_morphological,X2 model memory,True,271.3161636230561,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,291604.7768590962,0.95,2.496212953180211,2.990109945402771,
+oml_mfeat_morphological,X2 model memory,True,107.87781082141274,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,280449.969051757,0.95,1.7940945639908232,3.4286853889462945,
+oml_mfeat_morphological,X2 model memory,True,107.87781082141272,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,280449.96905175695,0.95,0.18416004276610426,2.393578071576255,
+oml_mfeat_morphological,X2 model memory,True,107.87781082141274,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,52130.57732193253,0.95,2.5560518909300334,3.6377233926736396,
+oml_mfeat_morphological,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,X2 model memory,True,2800.11995324327,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551437,0.95,1.178763848917008,2.8840942473865816,
+oml_mfeat_morphological,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551438,0.95,0.9995654882259822,2.1151479011469747,
+oml_mfeat_morphological,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551438,0.95,1.236033147117636,2.271902553350607,
+oml_mfeat_morphological,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,42083.15015551438,0.95,1.0484418035504044,2.2046826527425702,
+oml_mfeat_morphological,X2 model memory,True,271.31616362305607,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,291604.77685909614,0.95,3.0905352786532156,3.7182563350587485,
+oml_mfeat_morphological,X2 model memory,True,107.87781082141274,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,280449.96905175695,0.95,0.8576856254547636,3.2471314980798223,
+oml_mfeat_morphological,X2 model memory,True,107.87781082141274,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,280449.96905175695,0.95,0.2319636582347837,2.308033109033731,
+oml_mfeat_morphological,X2 model memory,True,107.87781082141272,0.95,,,
+oml_mfeat_morphological,X1 model runtime,True,115824.38374529441,0.95,2.2733897550166793,3.6467467002375105,
+oml_mfeat_morphological,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_mfeat_morphological,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_numerai28_6,X2 model memory,True,2800.119953243271,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,1.075082318625889,0.24606958361619752,
+oml_numerai28_6,X2 model memory,True,2800.11995324327,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,1.141605737224959,0.9459729707220482,
+oml_numerai28_6,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,1.2874185771884907,0.07506278413926726,
+oml_numerai28_6,X2 model memory,True,2800.11995324327,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,1.73869409444017,0.29901709729624076,
+oml_numerai28_6,X2 model memory,True,107.87781082141274,0.95,,,
+oml_numerai28_6,X1 model runtime,True,261698.58312037503,0.95,1.2626281775195394,0.3523764796122728,
+oml_numerai28_6,X2 model memory,True,107.87781082141274,0.95,,,
+oml_numerai28_6,X1 model runtime,True,280449.96905175695,0.95,0.4097087936220929,2.096114406464989,
+oml_numerai28_6,X2 model memory,True,107.87781082141275,0.95,,,
+oml_numerai28_6,X1 model runtime,True,56527.14310945273,0.95,0.719877634424314,0.3651300043596272,
+oml_numerai28_6,"X4 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_numerai28_6,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.150155514384,0.95,1.004113966493045,0.07099693069955836,
+oml_numerai28_6,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,1.0004840734091025,1.1292893333685947,
+oml_numerai28_6,X2 model memory,True,2800.11995324327,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,0.9885689207321022,0.5363641206436516,
+oml_numerai28_6,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,1.3444369335115578,0.11061340990641538,
+oml_numerai28_6,X2 model memory,True,107.87781082141274,0.95,,,
+oml_numerai28_6,X1 model runtime,True,280449.96905175695,0.95,1.1435422446126913,1.4154240582621669,
+oml_numerai28_6,X2 model memory,True,107.87781082141271,0.95,,,
+oml_numerai28_6,X1 model runtime,True,280449.96905175695,0.95,0.2904588878002706,2.3406696492013275,
+oml_numerai28_6,X2 model memory,True,107.87781082141274,0.95,,,
+oml_numerai28_6,X1 model runtime,True,115824.38374529441,0.95,0.19731887593730787,1.5837630929359374,
+oml_numerai28_6,"X4 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_numerai28_6,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,1.0478347486195208,0.3611239801197971,
+oml_numerai28_6,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,0.6400010164920203,1.668860612262492,
+oml_numerai28_6,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.150155514384,0.95,0.7878179813412388,0.7986555781307904,
+oml_numerai28_6,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,1.181778399770347,0.27351309045032546,
+oml_numerai28_6,X2 model memory,True,107.87781082141274,0.95,,,
+oml_numerai28_6,X1 model runtime,True,280449.96905175695,0.95,1.2218893855226955,1.5942367457822795,
+oml_numerai28_6,X2 model memory,True,107.87781082141272,0.95,,,
+oml_numerai28_6,X1 model runtime,True,280449.96905175695,0.95,0.23054902173180478,2.4005058000075015,
+oml_numerai28_6,X2 model memory,True,107.87781082141272,0.95,,,
+oml_numerai28_6,X1 model runtime,True,116092.79669962324,0.95,0.5581755240351074,1.9375119169942359,
+oml_numerai28_6,"X4 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_numerai28_6,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,0.9951474972055879,0.419069656270132,
+oml_numerai28_6,X2 model memory,True,2800.119953243271,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,0.5808096915581693,1.7278607827374242,
+oml_numerai28_6,X2 model memory,True,2800.119953243271,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.150155514384,0.95,0.7574155590570876,0.8290759426735208,
+oml_numerai28_6,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_numerai28_6,X1 model runtime,True,42083.15015551438,0.95,1.0535312215748105,0.401597543927876,
+oml_numerai28_6,X2 model memory,True,107.87781082141274,0.95,,,
+oml_numerai28_6,X1 model runtime,True,280449.96905175695,0.95,1.2245340108310947,1.567099401175444,
+oml_numerai28_6,X2 model memory,True,107.87781082141272,0.95,,,
+oml_numerai28_6,X1 model runtime,True,280449.96905175695,0.95,0.168338117451447,2.4627104839146927,
+oml_numerai28_6,X2 model memory,True,107.87781082141274,0.95,,,
+oml_numerai28_6,X1 model runtime,True,204334.42048697834,0.95,0.31855338410882716,1.9283843360511916,
+oml_numerai28_6,"X4 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_numerai28_6,"X4 probe memory, sampled",True,3.0447536542571307,0.9,,,probe-extrapolated
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,29182.367719754147,0.95,1.2059951939349995,0.37101897698766534,
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,1.6754532506612856,0.6161329000962392,
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,1.9211961381295888,0.7482039221913668,
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,1.802779859134919,0.6421071373698326,
+oml_pc4,X2 model memory,True,107.87781082141274,0.95,,,
+oml_pc4,X1 model runtime,True,280449.969051757,0.95,1.0416474026637832,1.1982737225059037,
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,29182.367719754147,0.95,0.24874971214721248,0.5909647311544407,
+oml_pc4,X2 model memory,True,2800.11995324327,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,0.9223039047900448,0.14664559901048732,
+oml_pc4,X2 model memory,True,2800.11995324327,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,1.0584978063620136,0.11440862696781078,
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,0.9589771839851853,0.21122553318599846,
+oml_pc4,X2 model memory,True,107.87781082141274,0.95,,,
+oml_pc4,X1 model runtime,True,280449.969051757,0.95,0.2852170246119335,1.9458169055845649,
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,False,29182.367719754147,0.95,1.8214247453368728,2.661139188638526,
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,0.8675563635761754,1.9371587811938296,
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,0.6668260596243635,1.8397324929541878,
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,0.7907976611425028,1.961232081198086,
+oml_pc4,X2 model memory,True,271.3161636230561,0.95,,,
+oml_pc4,X1 model runtime,True,59622.14586579778,0.95,1.408521402098563,1.3296697920284641,
+oml_pc4,X2 model memory,True,107.87781082141274,0.95,,,
+oml_pc4,X1 model runtime,True,1424.9487850904422,0.95,1.1933343553296922,0.9247559393027543,
+oml_pc4,X2 model memory,True,107.87781082141274,0.95,,,
+oml_pc4,X1 model runtime,True,280449.969051757,0.95,0.7431871936525745,2.918779268002555,
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,X2 model memory,True,2800.11995324327,0.95,,,
+oml_pc4,X1 model runtime,False,29182.367719754147,0.95,2.8099837022154883,3.6010979053053846,
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,1.3791241460703918,2.4208510448948295,
+oml_pc4,X2 model memory,True,2800.119953243271,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,1.2860071220794747,2.3933165442100455,
+oml_pc4,X2 model memory,True,2800.119953243271,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,1.1826999033360426,2.316382731676028,
+oml_pc4,X2 model memory,True,271.31616362305607,0.95,,,
+oml_pc4,X1 model runtime,True,59622.14586579778,0.95,2.837435593476981,2.760996894857998,
+oml_pc4,X2 model memory,True,107.87781082141272,0.95,,,
+oml_pc4,X1 model runtime,False,1424.9487850904422,0.95,4.033597508032537,3.752578266879547,
+oml_pc4,X2 model memory,True,107.87781082141274,0.95,,,
+oml_pc4,X1 model runtime,True,280449.969051757,0.95,0.7799317657492455,2.6523491385874376,
+oml_pc4,X2 model memory,True,107.87781082141272,0.95,,,
+oml_pc4,X1 model runtime,False,1424.9487850904422,0.95,3.7824429483906004,3.6159371620066048,
+oml_pc4,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,42083.150155514384,0.95,1.3477202170340383,3.105496491972014,
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,0.6219129986300778,1.875799262944951,
+oml_pc4,X2 model memory,True,2800.11995324327,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551438,0.95,0.9684829485539351,2.122502782832506,
+oml_pc4,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pc4,X1 model runtime,True,42083.15015551437,0.95,0.9084850188786497,1.9051210899538549,
+oml_pc4,X2 model memory,True,271.3161636230561,0.95,,,
+oml_pc4,X1 model runtime,True,59622.14586579778,0.95,4.3127683989352255,4.183624323898734,
+oml_pc4,X2 model memory,True,107.87781082141272,0.95,,,
+oml_pc4,X1 model runtime,True,248677.33931500223,0.95,1.9063952582217643,3.6169072679180228,
+oml_pc4,X2 model memory,True,107.87781082141272,0.95,,,
+oml_pc4,X1 model runtime,True,280449.96905175695,0.95,0.1391980415108903,2.534962688997309,
+oml_pc4,X2 model memory,True,107.87781082141274,0.95,,,
+oml_pc4,X1 model runtime,False,3856.9795804504947,0.95,3.7067150067971286,3.826932062307599,
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_pc4,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,X2 model memory,True,2800.119953243271,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.150155514384,0.95,0.06519949343435621,0.9885808751288856,
+oml_pendigits,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.150155514384,0.95,0.8070143536486125,1.153127123264036,
+oml_pendigits,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.15015551438,0.95,0.293987228107383,1.033634084020108,
+oml_pendigits,X2 model memory,True,2800.11995324327,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.15015551438,0.95,0.0820701335195994,1.176108731148434,
+oml_pendigits,X2 model memory,True,107.87781082141275,0.95,,,
+oml_pendigits,X1 model runtime,True,88918.81968288973,0.95,0.3383032668021802,1.5181744932126606,
+oml_pendigits,X2 model memory,True,107.87781082141272,0.95,,,
+oml_pendigits,X1 model runtime,True,280449.96905175695,0.95,0.23295919670491805,2.3911796052567804,
+oml_pendigits,X2 model memory,True,107.87781082141272,0.95,,,
+oml_pendigits,X1 model runtime,True,9397.814107717095,0.95,0.029228089488157617,0.3053453934708832,
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,X2 model memory,True,2800.11995324327,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.15015551438,0.95,0.21785214642494247,1.5103206663059252,
+oml_pendigits,X2 model memory,True,2800.119953243271,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.15015551437,0.95,0.0553619174055524,2.0254355004851785,
+oml_pendigits,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.150155514384,0.95,0.17883129642171003,1.7174458478131007,
+oml_pendigits,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.15015551438,0.95,0.06553444860735541,1.640123352216549,
+oml_pendigits,X2 model memory,True,271.31616362305607,0.95,,,
+oml_pendigits,X1 model runtime,True,291604.77685909614,0.95,0.3174986943933937,0.22293815244712462,
+oml_pendigits,X2 model memory,True,107.87781082141275,0.95,,,
+oml_pendigits,X1 model runtime,True,280449.96905175695,0.95,0.08343451022485446,2.6098797282676602,
+oml_pendigits,X2 model memory,True,107.87781082141274,0.95,,,
+oml_pendigits,X1 model runtime,True,280449.96905175695,0.95,0.14333592999793004,2.706417599649625,
+oml_pendigits,X2 model memory,True,107.87781082141272,0.95,,,
+oml_pendigits,X1 model runtime,True,115824.38374529441,0.95,1.0908687159321273,2.485977907262592,
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_pendigits,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.15015551438,0.95,0.4427964730134546,1.8195687288553521,
+oml_pendigits,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.15015551437,0.95,0.5581545056288808,2.5446241017745552,
+oml_pendigits,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.150155514384,0.95,0.3562048874764353,1.9092946273378588,
+oml_pendigits,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.15015551438,0.95,0.1227508504601244,1.8274616017895693,
+oml_pendigits,X2 model memory,True,271.3161636230561,0.95,,,
+oml_pendigits,X1 model runtime,True,291604.77685909614,0.95,0.19547932706676527,0.6151012361132251,
+oml_pendigits,X2 model memory,True,107.87781082141272,0.95,,,
+oml_pendigits,X1 model runtime,True,280449.96905175695,0.95,0.15297531299596429,2.9310889275355674,
+oml_pendigits,X2 model memory,True,107.87781082141274,0.95,,,
+oml_pendigits,X1 model runtime,True,280449.96905175695,0.95,0.018006059222928743,2.677322830074961,
+oml_pendigits,X2 model memory,True,107.87781082141272,0.95,,,
+oml_pendigits,X1 model runtime,True,115824.38374529441,0.95,1.6996530240801095,3.0891494639538926,
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.15015551438,0.95,0.291971381420419,1.7667382886201148,
+oml_pendigits,X2 model memory,True,2800.119953243271,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.15015551438,0.95,0.4989115895234434,2.5988843051114734,
+oml_pendigits,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.150155514384,0.95,0.42066287670335367,1.9737251543130272,
+oml_pendigits,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_pendigits,X1 model runtime,True,42083.15015551438,0.95,0.2977522859027453,2.002127583171343,
+oml_pendigits,X2 model memory,True,271.31616362305607,0.95,,,
+oml_pendigits,X1 model runtime,True,291604.7768590962,0.95,0.21961327818549523,1.0142447487565065,
+oml_pendigits,X2 model memory,True,107.87781082141272,0.95,,,
+oml_pendigits,X1 model runtime,True,280449.9690517569,0.95,0.22352296294056462,2.8377267892910334,
+oml_pendigits,X2 model memory,True,107.87781082141272,0.95,,,
+oml_pendigits,X1 model runtime,True,280449.96905175695,0.95,0.052217516025845935,2.602258008308485,
+oml_pendigits,X2 model memory,True,107.87781082141274,0.95,,,
+oml_pendigits,X1 model runtime,True,280449.96905175695,0.95,0.5191435205941317,3.0426428763388698,
+oml_pendigits,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_pendigits,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phishingwebsites,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,12664.608937954055,0.95,1.166692462975238,0.5958756585360734,
+oml_phishingwebsites,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,42083.15015551438,0.95,1.2502111056527196,0.4580241205768979,
+oml_phishingwebsites,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,42083.15015551438,0.95,1.3568843423777819,0.41499649355163676,
+oml_phishingwebsites,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,42083.15015551438,0.95,1.400169776169613,0.48265811958468596,
+oml_phishingwebsites,X2 model memory,True,107.87781082141274,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,280449.96905175695,0.95,1.0907444501999015,1.0033251852936584,
+oml_phishingwebsites,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phishingwebsites,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phishingwebsites,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phishingwebsites,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,42083.15015551438,0.95,1.0862754005513116,2.8182556439061504,
+oml_phishingwebsites,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,42083.15015551438,0.95,0.46124449262082423,1.9364995255893453,
+oml_phishingwebsites,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,42083.15015551438,0.95,0.633881703945345,2.038644099726152,
+oml_phishingwebsites,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,42083.15015551437,0.95,0.6206832889484237,1.8584997216680958,
+oml_phishingwebsites,X2 model memory,True,271.31616362305607,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,61268.43203847333,0.95,0.99618577841102,0.7641944263676188,
+oml_phishingwebsites,X2 model memory,True,107.87781082141274,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,248677.33931500223,0.95,1.4778250025361757,3.153854094672601,
+oml_phishingwebsites,X2 model memory,True,107.87781082141272,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,280449.96905175695,0.95,0.32179590087428367,2.80596369422172,
+oml_phishingwebsites,X2 model memory,True,107.87781082141274,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,56527.14310945273,0.95,2.088378309377415,3.285347268495525,
+oml_phishingwebsites,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phishingwebsites,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phishingwebsites,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phishingwebsites,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phishingwebsites,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,42083.15015551438,0.95,0.7234508141822442,2.8870498185443325,
+oml_phishingwebsites,X2 model memory,True,2800.119953243271,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,42083.15015551437,0.95,0.4894643798428343,1.9789397271927367,
+oml_phishingwebsites,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,42083.15015551438,0.95,0.7371669835229092,2.0072050547789555,
+oml_phishingwebsites,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,42083.15015551438,0.95,0.5161661776172707,1.9064376611950402,
+oml_phishingwebsites,X2 model memory,True,271.31616362305607,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,229198.6282628966,0.95,1.5616460870038038,1.8832879900731874,
+oml_phishingwebsites,X2 model memory,True,107.87781082141272,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,280449.96905175695,0.95,0.953749545113694,3.2577544541670025,
+oml_phishingwebsites,X2 model memory,True,107.87781082141274,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,280449.96905175695,0.95,0.2283049676775047,2.8126902828936555,
+oml_phishingwebsites,X2 model memory,True,107.87781082141272,0.95,,,
+oml_phishingwebsites,X1 model runtime,True,116092.79669962324,0.95,2.146572511849096,3.5138993122029287,
+oml_phishingwebsites,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phishingwebsites,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_phishingwebsites,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phishingwebsites,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phoneme,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551438,0.95,0.8781304951193767,1.91727810439324,
+oml_phoneme,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551438,0.95,0.9822712330395684,2.85133379633657,
+oml_phoneme,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551438,0.95,0.8727388274726688,2.1081898897915394,
+oml_phoneme,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551438,0.95,1.0350292822023681,2.103523287037054,
+oml_phoneme,X2 model memory,True,271.31616362305607,0.95,,,
+oml_phoneme,X1 model runtime,True,291604.7768590962,0.95,1.6152459014126102,2.0679873748111746,
+oml_phoneme,X2 model memory,True,107.87781082141274,0.95,,,
+oml_phoneme,X1 model runtime,True,261698.58312037503,0.95,1.6327644777048644,3.1440329520752264,
+oml_phoneme,X2 model memory,True,107.87781082141272,0.95,,,
+oml_phoneme,X1 model runtime,True,280449.969051757,0.95,0.23101171103127074,2.3715606645497043,
+oml_phoneme,X2 model memory,True,107.87781082141272,0.95,,,
+oml_phoneme,X1 model runtime,True,52130.57732193253,0.95,2.1726763767000734,3.1576504685942512,
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_phoneme,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551438,0.95,0.6509085588657794,1.9850842337031926,
+oml_phoneme,X2 model memory,True,2800.119953243271,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551438,0.95,0.9822712330395684,2.8511560317189155,
+oml_phoneme,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551437,0.95,0.6138418218760692,2.128938354116966,
+oml_phoneme,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551438,0.95,0.42160392686983106,2.101556985950822,
+oml_phoneme,X2 model memory,True,271.3161636230561,0.95,,,
+oml_phoneme,X1 model runtime,True,291604.77685909614,0.95,1.6377593097226824,2.1707405126837584,
+oml_phoneme,X2 model memory,True,107.87781082141272,0.95,,,
+oml_phoneme,X1 model runtime,True,280449.96905175695,0.95,0.8779397535513833,3.2889075637382605,
+oml_phoneme,X2 model memory,True,107.87781082141274,0.95,,,
+oml_phoneme,X1 model runtime,True,280449.96905175695,0.95,0.06931154029612516,2.341910488423816,
+oml_phoneme,X2 model memory,True,107.87781082141272,0.95,,,
+oml_phoneme,X1 model runtime,True,115824.38374529441,0.95,2.1300308752574457,3.4279378876387896,
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phoneme,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551438,0.95,0.6949300265342787,2.052951750978155,
+oml_phoneme,X2 model memory,True,2800.11995324327,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551437,0.95,0.8027737252919757,2.850798780759212,
+oml_phoneme,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551438,0.95,0.38450413810124123,1.950317774380607,
+oml_phoneme,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_phoneme,X1 model runtime,True,42083.15015551438,0.95,0.4199557484897579,2.1004503494227054,
+oml_phoneme,X2 model memory,True,271.31616362305607,0.95,,,
+oml_phoneme,X1 model runtime,True,291604.77685909614,0.95,1.4875132825810395,2.2879890985658418,
+oml_phoneme,X2 model memory,True,107.87781082141274,0.95,,,
+oml_phoneme,X1 model runtime,True,280449.96905175695,0.95,0.4564623377411723,3.118554134111927,
+oml_phoneme,X2 model memory,True,107.87781082141274,0.95,,,
+oml_phoneme,X1 model runtime,True,280449.96905175695,0.95,0.08136441859715154,2.2071121277444714,
+oml_phoneme,X2 model memory,True,107.87781082141274,0.95,,,
+oml_phoneme,X1 model runtime,True,204334.42048697834,0.95,1.8749747763891433,3.3964754071327814,
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_phoneme,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,True,42083.15015551438,0.95,2.5042398621681934,1.365456750678605,
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,True,42083.150155514384,0.95,2.4788784138520725,0.73388981764044,
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,True,42083.15015551438,0.95,2.78030668141194,1.602767841599969,
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,False,42083.15015551438,0.95,2.975258048568156,1.57404809340496,
+oml_satimage,X2 model memory,True,107.87781082141272,0.95,,,
+oml_satimage,X1 model runtime,True,280449.96905175695,0.95,2.114460659098282,0.44763534607471345,
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,True,42083.15015551438,0.95,0.26494984747685607,1.4450686045287837,
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,True,42083.150155514384,0.95,0.19974034361323273,1.9446981703591946,
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,True,42083.15015551438,0.95,0.13357839148146824,1.4011910436069674,
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,True,42083.15015551438,0.95,0.023934126420865058,1.4254433034157876,
+oml_satimage,X2 model memory,True,107.87781082141274,0.95,,,
+oml_satimage,X1 model runtime,True,88918.81968288973,0.95,0.8247652610428224,2.2279073283388384,
+oml_satimage,X2 model memory,True,107.87781082141274,0.95,,,
+oml_satimage,X1 model runtime,True,280449.96905175695,0.95,0.08663352103057335,2.6195069634002914,
+oml_satimage,X2 model memory,True,107.87781082141274,0.95,,,
+oml_satimage,X1 model runtime,True,4753.917212259831,0.95,1.1070536218642353,1.324886638278792,
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_satimage,X2 model memory,True,2800.11995324327,0.95,,,
+oml_satimage,X1 model runtime,True,42083.15015551437,0.95,0.5966872075641014,1.8149151261967218,
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,True,42083.150155514384,0.95,1.3869547018608441,3.131912528606806,
+oml_satimage,X2 model memory,True,2800.11995324327,0.95,,,
+oml_satimage,X1 model runtime,True,42083.15015551437,0.95,0.38082769956089246,1.6654777470473359,
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,True,42083.15015551438,0.95,0.5403003675570635,1.941809544551986,
+oml_satimage,X2 model memory,True,271.31616362305607,0.95,,,
+oml_satimage,X1 model runtime,True,59622.14586579778,0.95,1.734149464992773,1.4944523816736606,
+oml_satimage,X2 model memory,True,107.87781082141272,0.95,,,
+oml_satimage,X1 model runtime,True,88918.81968288973,0.95,1.2966334235095835,2.6897745343790005,
+oml_satimage,X2 model memory,True,107.87781082141274,0.95,,,
+oml_satimage,X1 model runtime,True,280449.96905175695,0.95,0.3549342026643019,2.8562583774932016,
+oml_satimage,X2 model memory,True,107.87781082141272,0.95,,,
+oml_satimage,X1 model runtime,True,7127.652403613574,0.95,2.238500605244259,2.628046805985845,
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,True,42083.15015551438,0.95,0.6752110933598604,1.85553305461553,
+oml_satimage,X2 model memory,True,2800.11995324327,0.95,,,
+oml_satimage,X1 model runtime,True,42083.150155514384,0.95,1.4091276808120357,3.154082198702193,
+oml_satimage,X2 model memory,True,2800.119953243271,0.95,,,
+oml_satimage,X1 model runtime,True,42083.15015551437,0.95,0.4864612809738058,1.7710965529569573,
+oml_satimage,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_satimage,X1 model runtime,True,42083.15015551438,0.95,0.4925275857610628,1.8940214003612657,
+oml_satimage,X2 model memory,True,271.31616362305607,0.95,,,
+oml_satimage,X1 model runtime,True,59622.14586579778,0.95,2.010728208358307,1.7707108059083607,
+oml_satimage,X2 model memory,True,107.87781082141271,0.95,,,
+oml_satimage,X1 model runtime,True,93399.11488550626,0.95,1.3769750321176506,2.7866128279727294,
+oml_satimage,X2 model memory,True,107.87781082141272,0.95,,,
+oml_satimage,X1 model runtime,True,280449.96905175695,0.95,0.4082344099334777,2.9095585847623773,
+oml_satimage,X2 model memory,True,107.87781082141272,0.95,,,
+oml_satimage,X1 model runtime,True,7127.652403613574,0.95,2.3641156556706475,2.7518405918322264,
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_satimage,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,X2 model memory,True,2800.119953243271,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,0.1838548792493411,1.4469780492260844,
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,0.332194694881476,1.0769964673550032,
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,0.03166926822062715,1.1116121773563163,
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,0.10038733788231258,1.1939219171067108,
+oml_steel_plates_fault,X2 model memory,True,271.3161636230561,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,291604.7768590962,0.95,0.144761687482591,0.38393461879278,
+oml_steel_plates_fault,X2 model memory,True,107.87781082141272,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,280449.96905175695,0.95,0.042115490121478,2.744245140030264,
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,0.3617623966352938,1.9925823727267362,
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,0.059413807889982025,1.4699404280104882,
+oml_steel_plates_fault,X2 model memory,True,2800.11995324327,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551437,0.95,0.21220300519056565,1.462707391293317,
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,0.5004413516861911,1.6535790407567557,
+oml_steel_plates_fault,X2 model memory,True,271.3161636230561,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,291604.7768590962,0.95,0.3305259461315103,0.8570885344435766,
+oml_steel_plates_fault,X2 model memory,True,107.87781082141274,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,280449.96905175695,0.95,0.08254965111709535,2.9005612090713844,
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,1.1988529668296601,2.8296670247964117,
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,0.7072764361598508,2.136050305931169,
+oml_steel_plates_fault,X2 model memory,True,2800.119953243271,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551437,0.95,0.7600530282908474,2.010417015468345,
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,1.0588900349879762,2.223689716735744,
+oml_steel_plates_fault,X2 model memory,True,271.31616362305607,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,291604.77685909614,0.95,0.8523024937143993,1.4762846211814578,
+oml_steel_plates_fault,X2 model memory,True,107.87781082141272,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,248677.33931500223,0.95,0.36736036328059707,2.115240784974273,
+oml_steel_plates_fault,X2 model memory,True,107.87781082141274,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,280449.96905175695,0.95,0.16078020465060566,3.0717527229007806,
+oml_steel_plates_fault,X2 model memory,True,107.87781082141274,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,9397.814107717095,0.95,0.01177416435370486,0.4949460736664465,
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,False,42083.15015551438,0.95,1.877371345869774,3.5081734801342535,
+oml_steel_plates_fault,X2 model memory,True,2800.11995324327,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,0.8625564405548563,2.293381212297457,
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,0.8305886686851442,2.1772537116702155,
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,1.108661651718972,2.274504332530661,
+oml_steel_plates_fault,X2 model memory,True,271.31616362305607,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,291604.77685909614,0.95,1.4797363606011131,2.3387303364730276,
+oml_steel_plates_fault,X2 model memory,True,107.87781082141274,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,280449.96905175695,0.95,0.6532037765984771,3.2766989716396453,
+oml_steel_plates_fault,X2 model memory,True,107.87781082141274,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,280449.96905175695,0.95,0.14255297887396534,3.0306796277579107,
+oml_steel_plates_fault,X2 model memory,True,107.87781082141272,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,40527.80976309413,0.95,2.2380155672496826,3.316410325654705,
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",False,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.150155514384,0.95,0.6785183790401139,2.281087536866679,
+oml_steel_plates_fault,X2 model memory,True,2800.11995324327,0.95,,,
+oml_steel_plates_fault,X1 model runtime,False,42083.15015551438,0.95,1.877371345869774,3.5081132074854477,
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,0.8305886686851442,2.1703621105782775,
+oml_steel_plates_fault,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,42083.15015551438,0.95,1.25478968739721,2.406232338385918,
+oml_steel_plates_fault,X2 model memory,True,271.31616362305607,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,291604.7768590962,0.95,1.8205277163259577,3.1146873867486593,
+oml_steel_plates_fault,X2 model memory,True,107.87781082141274,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,280449.96905175695,0.95,0.929480628418368,3.6196674758566827,
+oml_steel_plates_fault,X2 model memory,True,107.87781082141272,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,280449.96905175695,0.95,0.22705432684590415,3.0360295963743567,
+oml_steel_plates_fault,X2 model memory,True,107.87781082141274,0.95,,,
+oml_steel_plates_fault,X1 model runtime,True,56527.14310945273,0.95,2.5229565985909654,3.7185139854323896,
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_steel_plates_fault,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.925642581611516,0.9336084620389618,
+oml_wall_robot_navigation,X2 model memory,True,2800.11995324327,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.8895090614659513,0.4179659822692342,
+oml_wall_robot_navigation,X2 model memory,True,2800.11995324327,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.5759645372943187,0.527020370098549,
+oml_wall_robot_navigation,X2 model memory,True,2800.119953243271,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.5008477840212688,0.5265401620786327,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,280449.96905175695,0.95,0.3814873626140617,2.2254747772944246,
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.25706095436472415,1.6021542418855408,
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.3364271018009841,0.974075134886907,
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.4677903502870062,1.1151563455575584,
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.04322864640775627,1.1567504949370195,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,91070.922944228,0.95,0.3981574890790015,1.719895235759425,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141271,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,280449.96905175695,0.95,0.15500677342462604,2.7143647933707995,
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,X2 model memory,True,2800.11995324327,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.9530493919803881,2.8122393136378703,
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.12414839156414804,1.7578575479170682,
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.10354059190706953,1.8020824451198172,
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.150155514384,0.95,0.38197846482926917,1.7560713101291137,
+oml_wall_robot_navigation,X2 model memory,True,271.3161636230561,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,291604.77685909614,0.95,0.268327561218096,0.8150575289570297,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,261698.58312037503,0.95,1.2126127572477445,2.962748458616086,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,280449.96905175695,0.95,0.08246571636088733,3.0181911616226857,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,56527.14310945273,0.95,1.5666272362188791,2.7536050247409167,
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.150155514384,0.95,1.3690600846387802,3.2643277537512927,
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.26901485923281776,1.9031290903001468,
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.1687508958899379,1.8668718122264614,
+oml_wall_robot_navigation,X2 model memory,True,2800.119953243271,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.523721217866358,1.9576750499345152,
+oml_wall_robot_navigation,X2 model memory,True,271.3161636230561,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,291604.77685909614,0.95,0.526805830768405,1.065051979777872,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,280449.96905175695,0.95,0.701188212182517,3.2317682668528667,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,280449.96905175695,0.95,0.12000912088932995,3.033861751001599,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,56527.14310945273,0.95,1.8497534838770608,3.034234280911578,
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.2756793554641846,1.9097465540852077,
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.150155514384,0.95,1.3541344067088845,3.2493898220569855,
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.07721165318472034,1.775204672080418,
+oml_wall_robot_navigation,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,42083.15015551438,0.95,0.5195251032727498,1.9536955851650006,
+oml_wall_robot_navigation,X2 model memory,True,271.31616362305607,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,291604.77685909614,0.95,0.795122457610731,1.5645565662019447,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,280449.96905175695,0.95,0.3767575650252124,3.042950311005127,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,280449.96905175695,0.95,0.12477351138968035,3.015426958692877,
+oml_wall_robot_navigation,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wall_robot_navigation,X1 model runtime,True,115824.38374529441,0.95,1.5392275265747164,2.9885321865402994,
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wall_robot_navigation,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_wdbc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.150155514384,0.95,0.6601688323700492,2.1063535835118836,
+oml_wdbc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,0.4936074042889983,1.606502513613208,
+oml_wdbc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,0.33160408025088,1.5485125496418897,
+oml_wdbc,X2 model memory,True,2800.119953243271,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,0.19323668881369868,1.5887058502134768,
+oml_wdbc,X2 model memory,True,271.31616362305607,0.95,,,
+oml_wdbc,X1 model runtime,True,59622.14586579778,0.95,2.4873526561484134,2.294067103585775,
+oml_wdbc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wdbc,X1 model runtime,True,280449.96905175695,0.95,0.3776686807046305,2.8537924522959797,
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.150155514384,0.95,1.0763801370948125,2.522556750862912,
+oml_wdbc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,0.7522794052713239,1.8694467877767795,
+oml_wdbc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,0.5815741831962951,1.798323399266328,
+oml_wdbc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,0.506084950654979,1.9013248862998433,
+oml_wdbc,X2 model memory,True,271.3161636230561,0.95,,,
+oml_wdbc,X1 model runtime,True,59622.14586579778,0.95,2.8835859830420993,2.689062357613836,
+oml_wdbc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wdbc,X1 model runtime,True,88918.81968288973,0.95,0.787786210232602,2.1326215256921155,
+oml_wdbc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wdbc,X1 model runtime,True,280449.96905175695,0.95,0.416526655027464,2.9348381168814863,
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454629,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_wdbc,X2 model memory,True,2800.11995324327,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.150155514384,0.95,1.6052374652323194,3.051408487626166,
+oml_wdbc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,1.086232676675332,2.2187467229299247,
+oml_wdbc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,0.847044679229953,2.0636601598916693,
+oml_wdbc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,0.7781512503836436,2.186618465771483,
+oml_wdbc,X2 model memory,True,271.31616362305607,0.95,,,
+oml_wdbc,X1 model runtime,True,59622.14586579778,0.95,3.2957064584653786,3.099097737952614,
+oml_wdbc,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wdbc,X1 model runtime,True,126259.33137560159,0.95,1.7216712501393396,3.2107227125668194,
+oml_wdbc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wdbc,X1 model runtime,True,280449.96905175695,0.95,0.3731779789804022,2.995111792838522,
+oml_wdbc,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wdbc,X1 model runtime,True,7127.652403613574,0.95,1.7927421841007207,2.1837355234612112,
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,X2 model memory,False,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,False,42083.150155514384,0.95,2.0866800937346244,3.532849293173169,
+oml_wdbc,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,1.2323607123535703,2.3656011187684927,
+oml_wdbc,X2 model memory,False,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,0.9684829485539351,2.3772179844613506,
+oml_wdbc,X2 model memory,False,2800.119953243271,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,1.0484418035504044,2.2647058454289724,
+oml_wdbc,X2 model memory,True,271.31616362305607,0.95,,,
+oml_wdbc,X1 model runtime,True,59622.14586579778,0.95,4.072572601767264,3.8734935870692535,
+oml_wdbc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wdbc,X1 model runtime,True,280449.96905175695,0.95,1.517161591173842,3.4885325629931696,
+oml_wdbc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wdbc,X1 model runtime,True,280449.96905175695,0.95,0.4416652763174779,3.0562147635209294,
+oml_wdbc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wdbc,X1 model runtime,True,9397.814107717095,0.95,2.9747715426106702,3.4602694268956466,
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,X2 model memory,False,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,False,42083.150155514384,0.95,2.0866800937346244,3.5328463882600447,
+oml_wdbc,X2 model memory,True,2800.11995324327,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,1.1902279117002306,2.314708165587533,
+oml_wdbc,X2 model memory,False,2800.119953243271,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,0.9684829485539351,2.37720586488837,
+oml_wdbc,X2 model memory,False,2800.1199532432706,0.95,,,
+oml_wdbc,X1 model runtime,True,42083.15015551438,0.95,1.0484418035504044,2.264692757949783,
+oml_wdbc,X2 model memory,True,271.3161636230561,0.95,,,
+oml_wdbc,X1 model runtime,False,59622.14586579778,0.95,4.961909950391861,4.7625392262390385,
+oml_wdbc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wdbc,X1 model runtime,True,280449.96905175695,0.95,0.9685287652371021,3.47350336862637,
+oml_wdbc,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wdbc,X1 model runtime,True,280449.96905175695,0.95,0.42973491968094163,3.044284406884393,
+oml_wdbc,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wdbc,X1 model runtime,True,14464.47413353302,0.95,2.8374861983018946,3.5018386251871307,
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454624,0.95,,,probe-measured
+oml_wdbc,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551438,0.95,0.9781315851045749,2.0657363046845933,
+oml_wilt,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551438,0.95,1.011570443597278,2.889483765145752,
+oml_wilt,X2 model memory,True,2800.11995324327,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551438,0.95,1.14705767102836,2.2244698388628814,
+oml_wilt,X2 model memory,True,2800.11995324327,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551438,0.95,1.0358298252528282,2.1835176233138953,
+oml_wilt,X2 model memory,True,271.3161636230561,0.95,,,
+oml_wilt,X1 model runtime,True,291604.7768590962,0.95,1.7098025797325138,2.2542697648817662,
+oml_wilt,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wilt,X1 model runtime,True,280449.96905175695,0.95,1.6715268037321458,3.261919705882349,
+oml_wilt,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wilt,X1 model runtime,True,280449.96905175695,0.95,0.1405369080260781,2.4320534129753133,
+oml_wilt,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wilt,X1 model runtime,True,52130.57732193253,0.95,2.2687333519986943,3.305966155750667,
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,X2 model memory,True,2800.11995324327,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551438,0.95,0.8957617672700255,2.0087352806645025,
+oml_wilt,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551438,0.95,1.011570443597278,2.8893714524667846,
+oml_wilt,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551438,0.95,1.14705767102836,2.2262421259144536,
+oml_wilt,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551437,0.95,0.9273703630390235,2.183406969984508,
+oml_wilt,X2 model memory,True,271.31616362305607,0.95,,,
+oml_wilt,X1 model runtime,True,291604.7768590962,0.95,1.869118557069537,2.415106099627619,
+oml_wilt,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wilt,X1 model runtime,True,280449.96905175695,0.95,0.9150843598191477,3.297954996789873,
+oml_wilt,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wilt,X1 model runtime,True,280449.96905175695,0.95,0.12709240429275007,2.3884990209924624,
+oml_wilt,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wilt,X1 model runtime,True,56527.14310945273,0.95,2.452016685603445,3.517534502658795,
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551438,0.95,0.7910553977304311,2.1146184112231854,
+oml_wilt,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551438,0.95,1.011570443597278,2.9152258113482916,
+oml_wilt,X2 model memory,True,2800.1199532432706,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551438,0.95,1.0297894708318556,2.251274023554946,
+oml_wilt,X2 model memory,True,2800.11995324327,0.95,,,
+oml_wilt,X1 model runtime,True,42083.15015551438,0.95,0.6211762817750351,2.1817578971534375,
+oml_wilt,X2 model memory,True,271.3161636230561,0.95,,,
+oml_wilt,X1 model runtime,True,291604.77685909614,0.95,2.493414557611688,3.3817084064881513,
+oml_wilt,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wilt,X1 model runtime,True,280449.96905175695,0.95,0.5837238490316178,3.2640974829486002,
+oml_wilt,X2 model memory,True,107.87781082141272,0.95,,,
+oml_wilt,X1 model runtime,True,280449.96905175695,0.95,0.050919344196462435,2.319503068785348,
+oml_wilt,X2 model memory,True,107.87781082141274,0.95,,,
+oml_wilt,X1 model runtime,True,115824.38374529441,0.95,2.182259552547975,3.5234508961572493,
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
+oml_wilt,"X3 probe memory, measured",True,1.1482344125454627,0.95,,,probe-measured
