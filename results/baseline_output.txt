@@ -1,0 +1,74 @@
+== memory, PRIMARY fresh7+fresh8: 119 instances, 32 datasets
+   recommender, probe                 regret 1.030x  [1.005..1.064]  failed picks 0/119
+   ISAC (k-means clusters)            regret 1.132x  [1.050..1.230]  failed picks 1/119
+   AutoFolio (SMAC, 1800s/fold)       regret 1.137x  [1.059..1.233]  failed picks 1/119
+   pairwise ranking                   regret 1.181x  [1.086..1.300]  failed picks 1/119
+   regression (PAR10-imputed)         regret 1.225x  [1.111..1.349]  failed picks 1/119
+   SUNNY (k-NN, k=16)                 regret 1.357x  [1.199..1.556]  failed picks 1/119
+   recommender, no probe              regret 2.023x  [1.713..2.405]  failed picks 1/119
+   survival (expected_par10)          regret 2.641x  [2.255..3.069]  failed picks 0/119
+   SBS (fixed choice)                 regret 2.682x  [2.335..3.103]  failed picks 0/119
+   random pick                        regret 5.182x  [4.351..6.196]  failed picks 9/119
+   unrestricted selectors picking an implementation Layer 2 rejects:
+      SBS (fixed choice)              0.0%
+      random pick                     25.2%
+      regression (PAR10-imputed)      0.0%
+      pairwise ranking                0.0%
+      SUNNY (k-NN, k=16)              0.0%
+      ISAC (k-means clusters)         0.0%
+      survival (expected_par10)       0.0%
+== memory, all test sets: 335 instances, 90 datasets
+   recommender, probe                 regret 1.018x  [1.006..1.031]  failed picks 0/335
+   ISAC (k-means clusters)            regret 1.121x  [1.076..1.170]  failed picks 4/335
+   AutoFolio (SMAC, 1800s/fold)       regret 1.133x  [1.072..1.208]  failed picks 3/335
+   pairwise ranking                   regret 1.155x  [1.094..1.227]  failed picks 4/335
+   regression (PAR10-imputed)         regret 1.163x  [1.095..1.235]  failed picks 2/335
+   SUNNY (k-NN, k=16)                 regret 1.344x  [1.247..1.448]  failed picks 1/335
+   recommender, no probe              regret 1.739x  [1.566..1.920]  failed picks 4/335
+   survival (expected_par10)          regret 2.349x  [2.102..2.605]  failed picks 0/335
+   SBS (fixed choice)                 regret 2.653x  [2.418..2.929]  failed picks 5/335
+   random pick                        regret 4.934x  [4.378..5.590]  failed picks 31/335
+   unrestricted selectors picking an implementation Layer 2 rejects:
+      SBS (fixed choice)              0.0%
+      random pick                     21.5%
+      regression (PAR10-imputed)      0.0%
+      pairwise ranking                0.0%
+      SUNNY (k-NN, k=16)              0.0%
+      ISAC (k-means clusters)         0.0%
+      survival (expected_par10)       0.0%
+== runtime, PRIMARY fresh7+fresh8: 119 instances, 32 datasets
+   pairwise ranking                   regret 1.205x  [1.105..1.332]  failed picks 1/119
+   recommender, no probe              regret 1.220x  [1.119..1.351]  failed picks 1/119
+   SUNNY (k-NN, k=16)                 regret 1.239x  [1.151..1.355]  failed picks 0/119
+   regression (PAR10-imputed)         regret 1.261x  [1.173..1.376]  failed picks 1/119
+   SBS (fixed choice)                 regret 1.262x  [1.177..1.371]  failed picks 0/119
+   AutoFolio (SMAC, 1800s/fold)       regret 1.286x  [1.189..1.404]  failed picks 1/119
+   ISAC (k-means clusters)            regret 1.315x  [1.194..1.465]  failed picks 1/119
+   survival (expected_par10)          regret 1.317x  [1.140..1.572]  failed picks 1/119
+   random pick                        regret 4.977x  [3.858..6.312]  failed picks 9/119
+   unrestricted selectors picking an implementation Layer 2 rejects:
+      SBS (fixed choice)              0.0%
+      random pick                     25.2%
+      regression (PAR10-imputed)      0.0%
+      pairwise ranking                0.0%
+      SUNNY (k-NN, k=16)              0.0%
+      ISAC (k-means clusters)         0.0%
+      survival (expected_par10)       1.7%
+== runtime, all test sets: 335 instances, 90 datasets
+   pairwise ranking                   regret 1.221x  [1.152..1.302]  failed picks 1/335
+   ISAC (k-means clusters)            regret 1.232x  [1.177..1.302]  failed picks 1/335
+   SUNNY (k-NN, k=16)                 regret 1.256x  [1.187..1.331]  failed picks 1/335
+   AutoFolio (SMAC, 1800s/fold)       regret 1.277x  [1.198..1.366]  failed picks 1/335
+   regression (PAR10-imputed)         regret 1.277x  [1.212..1.359]  failed picks 3/335
+   recommender, no probe              regret 1.280x  [1.205..1.371]  failed picks 4/335
+   SBS (fixed choice)                 regret 1.368x  [1.269..1.491]  failed picks 5/335
+   survival (expected_par10)          regret 1.417x  [1.298..1.569]  failed picks 3/335
+   random pick                        regret 5.125x  [4.252..6.202]  failed picks 31/335
+   unrestricted selectors picking an implementation Layer 2 rejects:
+      SBS (fixed choice)              0.0%
+      random pick                     21.5%
+      regression (PAR10-imputed)      0.0%
+      pairwise ranking                0.0%
+      SUNNY (k-NN, k=16)              0.0%
+      ISAC (k-means clusters)         0.0%
+      survival (expected_par10)       1.2%
