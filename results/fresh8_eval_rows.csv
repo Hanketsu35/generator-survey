@@ -1,0 +1,505 @@
+dataset,kind,hit,width,level,err_typ,err_mean,sub
+oml_click_prediction_small,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.15015551438,0.95,1.6044207209054406,0.21872930462822773,
+oml_click_prediction_small,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.150155514384,0.95,1.3584577937664708,0.005504420925317457,
+oml_click_prediction_small,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.15015551438,0.95,0.8869292289323274,0.08994157083217434,
+oml_click_prediction_small,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.15015551438,0.95,0.9916632966101755,0.661709286688885,
+oml_click_prediction_small,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,261698.58312037503,0.95,1.2483873914819086,0.3901194752369239,
+oml_click_prediction_small,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,280449.96905175695,0.95,0.8503006217463991,1.9274421057255502,
+oml_click_prediction_small,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_click_prediction_small,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_click_prediction_small,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_click_prediction_small,"Y1 probe memory, sampled",False,3.044753654257131,0.9,,,probe-extrapolated
+oml_click_prediction_small,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.15015551438,0.95,1.5520237027880124,0.05186983930082263,
+oml_click_prediction_small,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.15015551438,0.95,1.4213161716948821,0.15611578468582551,
+oml_click_prediction_small,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.15015551438,0.95,0.8964848064358111,0.1691177266205911,
+oml_click_prediction_small,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.15015551438,0.95,0.7376750638699212,0.9099924608820428,
+oml_click_prediction_small,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,261698.58312037503,0.95,0.04150948999614477,1.5343306267174233,
+oml_click_prediction_small,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,280449.969051757,0.95,0.43236059254401293,2.3722812578123538,
+oml_click_prediction_small,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,52130.57732193253,0.95,0.5880541246668887,1.6443832251726627,
+oml_click_prediction_small,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_click_prediction_small,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_click_prediction_small,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_click_prediction_small,"Y1 probe memory, sampled",True,3.0447536542571307,0.9,,,probe-extrapolated
+oml_click_prediction_small,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.15015551438,0.95,1.2707897104067085,0.37854418512335886,
+oml_click_prediction_small,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.15015551438,0.95,1.1952037644880305,0.3574184018793416,
+oml_click_prediction_small,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.15015551438,0.95,0.6801554398330272,0.37052428032781676,
+oml_click_prediction_small,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,42083.150155514384,0.95,0.590327609512422,1.1370772186461102,
+oml_click_prediction_small,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,280449.96905175695,0.95,0.3038877255542032,2.7324657175149114,
+oml_click_prediction_small,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,280449.96905175695,0.95,0.4235363849346319,2.322006225583402,
+oml_click_prediction_small,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_click_prediction_small,Y2 model runtime,True,56527.14310945273,0.95,1.7676531388829793,2.78122395323384,
+oml_click_prediction_small,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_click_prediction_small,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_click_prediction_small,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_click_prediction_small,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_comet_mc_sample,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.150155514384,0.95,0.09425647431358251,0.9072575033890934,
+oml_comet_mc_sample,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.15015551438,0.95,0.1025486883692611,1.6893364014681835,
+oml_comet_mc_sample,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.15015551438,0.95,0.13321914915860752,0.9486924429665795,
+oml_comet_mc_sample,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.15015551438,0.95,0.023598642930890958,0.9298183669184957,
+oml_comet_mc_sample,Y3 model memory,True,107.87781082141275,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,91070.922944228,0.95,1.5534414601485842,2.7951716675296736,
+oml_comet_mc_sample,Y3 model memory,True,107.87781082141271,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,280449.96905175695,0.95,0.11393702152962806,2.6849183836310826,
+oml_comet_mc_sample,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,9397.814107717095,0.95,2.100125879243745,2.4779324150743576,
+oml_comet_mc_sample,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_comet_mc_sample,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_comet_mc_sample,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_comet_mc_sample,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_comet_mc_sample,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.15015551438,0.95,0.4470678445530044,0.9196812479191184,
+oml_comet_mc_sample,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.15015551438,0.95,0.08324353317387452,1.6685580193867824,
+oml_comet_mc_sample,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.15015551437,0.95,0.08715017571890012,0.9398693597095948,
+oml_comet_mc_sample,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.15015551438,0.95,0.022006068788711888,0.9280928634325833,
+oml_comet_mc_sample,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,261698.58312037503,0.95,1.1215987290430112,2.791713986106561,
+oml_comet_mc_sample,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,280449.96905175695,0.95,0.07617319723557893,2.688540768444689,
+oml_comet_mc_sample,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,40527.80976309413,0.95,1.4911671929886368,2.4902862323107984,
+oml_comet_mc_sample,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_comet_mc_sample,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_comet_mc_sample,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_comet_mc_sample,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_comet_mc_sample,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.15015551438,0.95,0.5917191579897436,0.8595804091393326,
+oml_comet_mc_sample,Y3 model memory,True,271.3161636230561,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,291604.77685909614,0.95,1.0516149337649556,1.7583135831498349,
+oml_comet_mc_sample,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.15015551437,0.95,0.06730218611681554,1.6846831657079486,
+oml_comet_mc_sample,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.15015551438,0.95,0.2777105819882118,0.9586050716037368,
+oml_comet_mc_sample,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,42083.15015551438,0.95,0.027319174749839272,0.9120621162120447,
+oml_comet_mc_sample,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,261698.58312037503,0.95,1.3480151641703282,2.9599502172212113,
+oml_comet_mc_sample,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,280449.96905175695,0.95,0.027998496039284525,2.5899912088063766,
+oml_comet_mc_sample,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_comet_mc_sample,Y2 model runtime,True,52130.57732193253,0.95,1.8737203324748757,2.926684955267139,
+oml_comet_mc_sample,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_comet_mc_sample,"Y1 probe memory, sampled",False,3.044753654257131,0.9,,,probe-extrapolated
+oml_comet_mc_sample,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_comet_mc_sample,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,1.6429700238812859,0.6473683186756305,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.150155514384,0.95,0.331952593619441,1.1384871477741492,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,1.7426149433596112,0.8959237612751336,
+oml_creditcard,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,1.4142378347701456,0.3266354536441177,
+oml_creditcard,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_creditcard,Y2 model runtime,True,280449.96905175695,0.95,0.3943532166498968,2.0835553968674154,
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,1.355939539222406,0.361612016269989,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.150155514384,0.95,0.7072638727777603,0.7631681732538809,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,1.3730327926930002,0.526676710828394,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,1.2090652014709302,0.12170655834187762,
+oml_creditcard,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_creditcard,Y2 model runtime,True,61237.49094327738,0.95,0.8168760575978025,0.38401909046177435,
+oml_creditcard,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_creditcard,Y2 model runtime,True,280449.96905175695,0.95,0.19322147781693788,2.2846587492820047,
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,1.0949026193449367,0.0908897792952414,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.150155514384,0.95,0.049881942855355695,1.42054811234898,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,1.0227301749462092,0.1764910284113691,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,0.8250200289467002,0.2753108221086607,
+oml_creditcard,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_creditcard,Y2 model runtime,True,88918.81968288973,0.95,0.31101200095483034,1.0530566185155363,
+oml_creditcard,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_creditcard,Y2 model runtime,True,280449.96905175695,0.95,0.0967324171654754,2.5697619509124827,
+oml_creditcard,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_creditcard,Y2 model runtime,True,7127.652403613574,0.95,0.7889033151156809,1.1823487734375702,
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,0.8081709086233458,0.19633192121870377,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.150155514384,0.95,0.37042626783858784,1.840848555166944,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,0.9652118561208335,0.12258939793944966,
+oml_creditcard,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,0.6325997930655074,0.4679620719335463,
+oml_creditcard,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_creditcard,Y2 model runtime,True,126259.33137560159,0.95,0.39902297184090396,1.0690850969878871,
+oml_creditcard,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_creditcard,Y2 model runtime,True,280449.96905175695,0.95,0.24394330066992548,2.6623091055825348,
+oml_creditcard,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_creditcard,Y2 model runtime,True,9397.814107717095,0.95,0.7464830084272756,1.224095261311135,
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",False,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",False,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,0.8052833393419283,0.19921949050012144,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.150155514384,0.95,0.3679293589949592,1.8383516463233154,
+oml_creditcard,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,0.8182282677873545,0.02439419039402938,
+oml_creditcard,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_creditcard,Y2 model runtime,True,42083.15015551438,0.95,0.6290231681796863,0.4715386968193674,
+oml_creditcard,Y3 model memory,True,271.3161636230561,0.95,,,
+oml_creditcard,Y2 model runtime,True,59622.14586579778,0.95,1.232283789629097,1.0986479063249475,
+oml_creditcard,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_creditcard,Y2 model runtime,True,126259.33137560159,0.95,0.3821989784622737,1.0859090903665176,
+oml_creditcard,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_creditcard,Y2 model runtime,True,280449.96905175695,0.95,0.24861256650917876,2.666978371421788,
+oml_creditcard,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_creditcard,Y2 model runtime,True,9397.814107717095,0.95,0.8024759725568296,1.2800882254406891,
+oml_creditcard,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",False,3.0447536542571307,0.9,,,probe-extrapolated
+oml_creditcard,"Y1 probe memory, sampled",False,3.044753654257131,0.9,,,probe-extrapolated
+oml_fars,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_fars,Y2 model runtime,True,42083.150155514384,0.95,1.5133926514180835,0.17583390396158702,
+oml_fars,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_fars,Y2 model runtime,True,42083.15015551438,0.95,1.164867708095791,0.2905606022775747,
+oml_fars,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_fars,Y2 model runtime,True,42083.15015551438,0.95,1.1830738476741063,0.3621518427246346,
+oml_fars,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_fars,Y2 model runtime,True,42083.15015551438,0.95,1.0685310193100503,0.5631925778591012,
+oml_fars,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_fars,Y2 model runtime,True,280449.96905175695,0.95,1.1533857158878271,1.4365146253889156,
+oml_fars,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_fars,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_fars,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_fars,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_fars,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_fars,Y2 model runtime,True,42083.150155514384,0.95,0.410704109569224,2.0686390547422726,
+oml_fars,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_fars,Y2 model runtime,True,42083.15015551438,0.95,0.5438284335955612,0.8947358189124552,
+oml_fars,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_fars,Y2 model runtime,True,42083.15015551438,0.95,0.5779974549453203,0.8282803935133374,
+oml_fars,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_fars,Y2 model runtime,True,42083.15015551438,0.95,0.18360086083442678,1.1777115045882227,
+oml_fars,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_fars,Y2 model runtime,True,280449.969051757,0.95,0.26809801804245753,2.1368720577652955,
+oml_fars,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_fars,Y2 model runtime,True,111947.26780637863,0.95,0.0775403740579522,1.5276434047947616,
+oml_fars,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_fars,Y2 model runtime,True,280449.96905175695,0.95,0.262505134261561,2.758163414009634,
+oml_fars,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_fars,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_fars,"Y1 probe memory, sampled",True,3.0447536542571307,0.9,,,probe-extrapolated
+oml_fars,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_fars,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_fars,Y2 model runtime,True,42083.150155514384,0.95,0.005556081944087625,1.883798105602686,
+oml_fars,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_fars,Y2 model runtime,True,42083.15015551438,0.95,0.5286442407925984,0.7586792286771056,
+oml_fars,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_fars,Y2 model runtime,True,42083.15015551438,0.95,0.5024400648712994,0.5725226725910701,
+oml_fars,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_fars,Y2 model runtime,True,42083.15015551438,0.95,0.5447805867281673,0.8503691237726133,
+oml_fars,Y3 model memory,True,271.3161636230561,0.95,,,
+oml_fars,Y2 model runtime,True,229198.6282628966,0.95,2.0931084406226868,2.3662309085330078,
+oml_fars,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_fars,Y2 model runtime,True,280449.96905175695,0.95,0.3264047739825932,2.7592375828597673,
+oml_fars,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_fars,Y2 model runtime,True,280449.969051757,0.95,0.6148233105790714,2.997621313061802,
+oml_fars,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_fars,Y2 model runtime,True,280449.96905175695,0.95,0.14081311841790486,2.547805645048426,
+oml_fars,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_fars,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_fars,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_fars,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_ldpa,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.150155514384,0.95,0.009456240994441686,1.9242565777811877,
+oml_ldpa,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.15015551438,0.95,0.5155665697496352,1.1325228135204612,
+oml_ldpa,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.15015551438,0.95,0.05881996339991694,1.21867801479389,
+oml_ldpa,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.15015551438,0.95,0.24333670392917223,1.223087488347571,
+oml_ldpa,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_ldpa,Y2 model runtime,True,88918.81968288973,0.95,0.19440548267064503,1.357144371150511,
+oml_ldpa,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_ldpa,Y2 model runtime,True,280449.96905175695,0.95,0.14678849276588882,2.0585896961240473,
+oml_ldpa,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_ldpa,Y2 model runtime,True,9397.814107717095,0.95,0.6086148919033444,0.7978007372214109,
+oml_ldpa,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_ldpa,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_ldpa,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_ldpa,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_ldpa,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.15015551438,0.95,0.3598966548848026,1.1772311544675926,
+oml_ldpa,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.15015551437,0.95,0.08677038165717652,2.0105973338250553,
+oml_ldpa,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.15015551438,0.95,0.15431467864959267,1.342544877494071,
+oml_ldpa,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.15015551438,0.95,0.33378994592899175,1.3266406430374822,
+oml_ldpa,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_ldpa,Y2 model runtime,True,280449.96905175695,0.95,0.1387572737524486,2.510339053090015,
+oml_ldpa,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_ldpa,Y2 model runtime,True,280449.96905175695,0.95,0.022900781465328878,2.3594893582361474,
+oml_ldpa,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_ldpa,Y2 model runtime,True,280449.96905175695,0.95,0.04218757458093857,2.5159291704518516,
+oml_ldpa,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_ldpa,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_ldpa,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_ldpa,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_ldpa,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.15015551438,0.95,0.39859259253923407,1.2422969549529932,
+oml_ldpa,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.15015551438,0.95,0.062091574368986865,2.0150976881956164,
+oml_ldpa,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.15015551438,0.95,0.1714150956351082,1.3600659530351171,
+oml_ldpa,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_ldpa,Y2 model runtime,True,42083.15015551438,0.95,0.006933012394454637,1.3720203890080862,
+oml_ldpa,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_ldpa,Y2 model runtime,True,280449.96905175695,0.95,0.3512956429696947,2.445188065348361,
+oml_ldpa,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_ldpa,Y2 model runtime,True,280449.96905175695,0.95,0.056092499168025,2.2659822931101643,
+oml_ldpa,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_ldpa,Y2 model runtime,True,280449.96905175695,0.95,0.14970615754549788,2.585212645242288,
+oml_ldpa,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_ldpa,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_ldpa,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_ldpa,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_sensordataresource,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551437,0.95,1.6194426385213103,0.18537962494610613,
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,1.3526511033494735,0.5294092512352144,
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,1.1986115260135066,0.5047162987470978,
+oml_sensordataresource,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,1.0141486332967191,0.21269703502356502,
+oml_sensordataresource,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,280449.96905175695,0.95,1.647624456368772,0.7083760586460034,
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.0447536542571307,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551437,0.95,1.4524889621414674,0.01842594856626303,
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,1.159759018447435,0.33651716633317597,
+oml_sensordataresource,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,0.9986381975022143,0.30511080233438875,
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,0.8392422953652048,0.03779069709205075,
+oml_sensordataresource,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,280449.96905175695,0.95,1.4327321211471646,0.9232683938676107,
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551437,0.95,0.16672357991669662,1.2673244358567057,
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,0.3883625790809315,0.43791286679251085,
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,0.3992684175615209,0.36211465758269507,
+oml_sensordataresource,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,0.019057634275701018,0.78391969136139,
+oml_sensordataresource,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,280449.96905175695,0.95,0.3118062962483206,2.6366037950139125,
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551437,0.95,0.33641339946135124,1.7703769872230823,
+oml_sensordataresource,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,0.2929272516388808,0.5326804417990953,
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,0.3452643124339301,0.41754161834509307,
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,0.04929041111637025,0.8661822742544913,
+oml_sensordataresource,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,61237.49094327738,0.95,0.7149925226527433,1.886984614828471,
+oml_sensordataresource,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,9311.13734879629,0.95,1.5113967078273651,1.977903708716965,
+oml_sensordataresource,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,280449.96905175695,0.95,0.6510746253652049,2.927235610311267,
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_sensordataresource,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,0.39657986198589656,1.772901922296461,
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551438,0.95,0.22368509265635367,0.5832288165367909,
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.15015551437,0.95,0.23577775488334085,0.5608216422527257,
+oml_sensordataresource,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,42083.150155514384,0.95,0.019461378395088425,0.7136523847126929,
+oml_sensordataresource,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,93399.11488550626,0.95,2.012461792783977,3.315590396812184,
+oml_sensordataresource,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,24104.260199690023,0.95,2.5122974095788,3.3342583914891883,
+oml_sensordataresource,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_sensordataresource,Y2 model runtime,True,280449.96905175695,0.95,0.4550932986281156,2.8021659149098403,
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_sensordataresource,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.814219022316649,0.030410133993943763,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.9654075068973682,0.8372098807095847,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.7346959368619298,0.12096618448486139,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551437,0.95,0.8127164125769442,0.23889217883138117,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,261698.58312037503,0.95,0.971091368751549,0.6020365589294279,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,280449.96905175695,0.95,0.1611522544503219,2.0610193226319042,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,52130.57732193253,0.95,0.5282208129181698,0.46584640905163677,
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.7875100002627912,0.14189747983660536,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.9238482245059931,0.8787041157745643,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.48448732645400205,0.37068777702173905,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.5595656420213884,0.4795978647344554,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,280449.96905175695,0.95,1.1242798842011055,1.3022599143108113,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,280449.96905175695,0.95,0.12150178217685244,2.230322401745404,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,115824.38374529441,0.95,0.08060141465198967,1.2373453145867068,
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.6086365040260765,0.40258399104077136,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.41165477354626856,1.3906659840970943,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.33213563341283237,0.5193161760873353,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551437,0.95,0.28906361474724285,0.779017393098165,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,280449.96905175695,0.95,0.9608916806070996,1.6578228500318282,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,280449.969051757,0.95,0.08189145077336023,2.356887518056135,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,204334.42048697834,0.95,0.28033276460503403,1.839401558908984,
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.47288686705088245,0.5395757698479413,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.35618526056503647,1.446076766035836,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551438,0.95,0.16110948955777743,0.6897442576582725,
+oml_spoken_arabic_digit,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,42083.15015551437,0.95,0.22660074915392533,0.8413919801989911,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,280449.96905175695,0.95,0.9639251214846981,1.7885353807664914,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,280449.969051757,0.95,0.08169979389385826,2.3570712881133935,
+oml_spoken_arabic_digit,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_spoken_arabic_digit,Y2 model runtime,True,204334.42048697834,0.95,0.41375926419619546,1.9713413636138426,
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_spoken_arabic_digit,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_walking_activity,Y3 model memory,True,2800.119953243271,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.15015551438,0.95,0.7268985562181609,1.4403179275002194,
+oml_walking_activity,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.150155514384,0.95,0.3201529676160181,2.233990753882525,
+oml_walking_activity,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.15015551438,0.95,0.32975414692587596,1.5015555047716744,
+oml_walking_activity,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.15015551438,0.95,0.5056301270497461,1.4863825693964885,
+oml_walking_activity,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_walking_activity,Y2 model runtime,True,280449.96905175695,0.95,0.7247268277527821,2.6442493351398797,
+oml_walking_activity,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_walking_activity,Y2 model runtime,True,280449.96905175695,0.95,0.2200990195508575,2.452364429598661,
+oml_walking_activity,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_walking_activity,Y2 model runtime,True,204334.42048697834,0.95,0.9678981131803959,2.4153419790093875,
+oml_walking_activity,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_walking_activity,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_walking_activity,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_walking_activity,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_walking_activity,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.15015551438,0.95,0.5181470854436536,1.3550063996797368,
+oml_walking_activity,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.150155514384,0.95,0.2725838818519818,2.1863293573231934,
+oml_walking_activity,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.15015551438,0.95,0.3237355654468809,1.4963770806727834,
+oml_walking_activity,Y3 model memory,True,2800.11995324327,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.15015551438,0.95,0.5408746881839254,1.5224867600205974,
+oml_walking_activity,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_walking_activity,Y2 model runtime,True,280449.96905175695,0.95,0.5745208303824543,2.928610104422319,
+oml_walking_activity,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_walking_activity,Y2 model runtime,True,280449.96905175695,0.95,0.15897930730634624,2.4540249352753833,
+oml_walking_activity,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_walking_activity,Y2 model runtime,True,280449.96905175695,0.95,0.48880407735621356,2.825765352735794,
+oml_walking_activity,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_walking_activity,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_walking_activity,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_walking_activity,"Y1 probe memory, sampled",True,3.044753654257131,0.9,,,probe-extrapolated
+oml_walking_activity,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.15015551438,0.95,0.5235589247175755,1.3450199366207662,
+oml_walking_activity,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.150155514384,0.95,0.13989244951395938,2.0535930636329014,
+oml_walking_activity,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.15015551438,0.95,0.3122802432274096,1.512762569973916,
+oml_walking_activity,Y3 model memory,True,2800.1199532432706,0.95,,,
+oml_walking_activity,Y2 model runtime,True,42083.15015551438,0.95,0.33667035193311495,1.4355192291945567,
+oml_walking_activity,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_walking_activity,Y2 model runtime,True,280449.96905175695,0.95,0.553831654565601,2.9089789643296613,
+oml_walking_activity,Y3 model memory,True,107.87781082141274,0.95,,,
+oml_walking_activity,Y2 model runtime,True,280449.96905175695,0.95,0.44372077666614534,2.9105496841364147,
+oml_walking_activity,Y3 model memory,True,107.87781082141272,0.95,,,
+oml_walking_activity,Y2 model runtime,True,280449.96905175695,0.95,0.04735791679208858,2.414096477353417,
+oml_walking_activity,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_walking_activity,"Y1 probe memory, sampled",True,3.0447536542571307,0.9,,,probe-extrapolated
+oml_walking_activity,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
+oml_walking_activity,"Y1 probe memory, sampled",True,3.0447536542571316,0.9,,,probe-extrapolated
