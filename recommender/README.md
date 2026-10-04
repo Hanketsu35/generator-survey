@@ -142,7 +142,9 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
     0.991 and model runtime 0.980 at 95%. The model's intervals are very
     wide, which is what it knows about a new dataset.
   - Path: FRESH4 -> FRESH7 (`RUNTIME_INTERVAL_POSTHOC.md`,
-    `INTERVAL_ALLDATA_POSTHOC.md`).
+    `INTERVAL_ALLDATA_POSTHOC.md`). The probe's sampled interval, which
+    FRESH7 could test on one dataset only, met its 90% guarantee on eight
+    large OpenML datasets (0.954, x3 wide; `results/FRESH8_RESULTS.md`).
 
 Sections below that report numbers on `results/summary.csv` are kept as they
 were measured; where re-measurement changes a conclusion, the section says so.
