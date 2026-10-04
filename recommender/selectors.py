@@ -26,6 +26,8 @@ rhetorical.
 
 ``SBSSelector`` and ``VBSOracle`` bracket the scale.
 """
+import os
+
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
@@ -283,6 +285,136 @@ class SunnySelector(Selector):
         for a in self.order_:                 # nothing comparable: fall back
             if a in candidates:
                 return a
+        return candidates[0]
+
+
+class ISACSelector(Selector):
+    """ISAC (Kadioglu, Malitsky, Sellmann & Tierney, ECAI 2010).
+
+    Instances are clustered in standardised feature space and each cluster is
+    assigned the algorithm with the lowest mean cost over its members; a new
+    instance gets its nearest cluster's algorithm. ISAC chooses the number of
+    clusters with g-means. Here k is chosen by silhouette over 2..10, a
+    documented simplification.
+    """
+    name = "ISAC (k-means clusters)"
+
+    def fit(self, train, cols):
+        from sklearn.cluster import KMeans
+        from sklearn.metrics import silhouette_score
+        t = add_par10(train)
+        wide = t.pivot_table(index=["dataset", "param_value"], columns="algorithm",
+                             values="par10", aggfunc="min")
+        feats = (t.drop_duplicates(subset=["dataset", "param_value"])
+                  .set_index(["dataset", "param_value"])[cols]).reindex(wide.index)
+        X = feats.to_numpy(float)
+        self.mu_ = np.nanmean(X, axis=0)
+        self.sd_ = np.nanstd(X, axis=0)
+        self.sd_[self.sd_ < 1e-12] = 1.0
+        Z = np.nan_to_num((X - self.mu_) / self.sd_)
+        best = (None, -2)
+        for k in range(2, min(10, len(Z) - 1) + 1):
+            km = KMeans(n_clusters=k, n_init=10, random_state=0).fit(Z)
+            sc = silhouette_score(Z, km.labels_) if len(set(km.labels_)) > 1 else -1
+            if sc > best[1]:
+                best = (km, sc)
+        self.km_ = best[0]
+        self.order_ = t.groupby("algorithm").par10.mean().sort_values().index.tolist()
+        self.rank_ = {}
+        for c in range(self.km_.n_clusters):
+            m = wide[self.km_.labels_ == c]
+            self.rank_[c] = m.mean().sort_values().index.tolist()
+        return self
+
+    def select(self, x, candidates):
+        z = np.nan_to_num((np.asarray(x, float) - self.mu_) / self.sd_)
+        c = int(self.km_.predict(z.reshape(1, -1))[0])
+        for a in self.rank_.get(c, []) + self.order_:
+            if a in candidates:
+                return a
+        return candidates[0]
+
+
+class AutoFolioSelector(Selector):
+    """AutoFolio (Lindauer, Hoos, Hutter & Schaub, JAIR 2015), run as published.
+
+    AutoFolio configures an algorithm selector (pairwise classification or
+    regression, per-algorithm regression, multi-class classification, with
+    feature preprocessing and optional pre-solving) by SMAC, cross-validating
+    on the training data. Here it is trained on each leave-one-dataset-out
+    fold through tools/autofolio/af_run.py in its own Python 3.10 environment.
+    Its internal cross-validation folds are whole DATASETS, as in the outer
+    loop. The budget per fold is ``wallclock`` seconds of SMAC.
+    """
+
+    def __init__(self, wallclock=60, objective="runtime", seed=12345):
+        self.wallclock = wallclock
+        self.objective = objective
+        self.seed = seed
+        self.name = "AutoFolio (SMAC, %ds/fold)" % wallclock
+
+    def fit(self, train, cols):
+        import subprocess
+        import tempfile
+        root = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                            "tools", "autofolio")
+        self.py_ = os.path.join(root, ".venv", "bin", "python")
+        self.script_ = os.path.join(root, "af_run.py")
+        self.dir_ = tempfile.mkdtemp(prefix="af_")
+        t = add_par10(train)
+        wide = t.pivot_table(index=["dataset", "param_value"], columns="algorithm",
+                             values="par10", aggfunc="min")
+        # AutoFolio needs a complete matrix: a missing (instance, algorithm)
+        # is scored as a timeout.
+        wide = wide.fillna(CUTOFF * PAR_FACTOR)
+        feats = (t.drop_duplicates(subset=["dataset", "param_value"])
+                  .set_index(["dataset", "param_value"])[cols]).reindex(wide.index)
+        names = ["%s@%r" % (d, p) for d, p in wide.index]
+        wide.index = feats.index = names
+        feats = feats.fillna(feats.median())
+        ds = sorted({n.split("@")[0] for n in names})
+        fold = {d: 1 + i % 10 for i, d in enumerate(ds)}
+        cv = pd.DataFrame({"fold": [fold[n.split("@")[0]] for n in names]}, index=names)
+        self.cols_ = cols
+        self.fill_ = feats.median()
+        self.order_ = t.groupby("algorithm").par10.mean().sort_values().index.tolist()
+        paths = {k: os.path.join(self.dir_, k + ".csv") for k in ("perf", "feats", "cv")}
+        wide.to_csv(paths["perf"])
+        feats.to_csv(paths["feats"])
+        cv.to_csv(paths["cv"])
+        self.model_ = os.path.join(self.dir_, "model.pkl")
+        obj = "runtime" if self.objective == "runtime" else "solution_quality"
+        subprocess.run([self.py_, self.script_, "fit", paths["perf"], paths["feats"],
+                        paths["cv"], obj, str(CUTOFF), str(self.wallclock), str(self.seed),
+                        self.model_], check=True, capture_output=True, text=True)
+        self.cache_ = {}
+        return self
+
+    def prepare(self, X):
+        """Predict a batch of feature rows in one AutoFolio call."""
+        import json
+        import subprocess
+        X = np.asarray(X, float)
+        f = pd.DataFrame(X, columns=self.cols_, index=["q%d" % i for i in range(len(X))])
+        f = f.fillna(self.fill_)
+        fp, out = os.path.join(self.dir_, "q.csv"), os.path.join(self.dir_, "q.json")
+        f.to_csv(fp)
+        subprocess.run([self.py_, self.script_, "predict", self.model_, fp, out],
+                       check=True, capture_output=True, text=True)
+        pred = json.load(open(out))
+        for i, row in enumerate(X):
+            self.cache_[tuple(np.round(row, 12))] = pred.get("q%d" % i)
+
+    def select(self, x, candidates):
+        key = tuple(np.round(np.asarray(x, float), 12))
+        if key not in self.cache_:
+            self.prepare([x])
+        a = self.cache_.get(key)
+        if a in candidates:
+            return a
+        for b in self.order_:
+            if b in candidates:
+                return b
         return candidates[0]
 
 

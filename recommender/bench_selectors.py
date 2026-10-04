@@ -29,7 +29,12 @@ from . import metafeatures as mf
 from .perfmodel import load_runs, design_columns, rows_with_features, FEATURE_SETS
 from .selectors import (CUTOFF, PAR_FACTOR, PairwiseRankSelector,
                         RegressionSelector, SBSSelector, SurvivalSelector,
-                        npar10, par10, SunnySelector, RandomSelector)
+                        npar10, par10, SunnySelector, RandomSelector,
+                        ISACSelector, AutoFolioSelector)
+
+#: SMAC budget per fold for AutoFolio, seconds; 0 leaves AutoFolio out
+AF_WALLCLOCK = 0
+_OBJECTIVE = "runtime"
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(_HERE, "out")
@@ -41,7 +46,10 @@ def _cut(objective):
 
 
 def build_selectors():
-    return [
+    extra = [ISACSelector()]
+    if AF_WALLCLOCK:
+        extra.append(AutoFolioSelector(wallclock=AF_WALLCLOCK, objective=_OBJECTIVE))
+    return extra + [
         SBSSelector(),
         RandomSelector(),
         SunnySelector(k=16),
@@ -113,6 +121,8 @@ def run(df, category=1, verbose=True, portfolio="all", objective="runtime",
     # in feature_ablation.py shows the answer depends on the objective, with
     # threshold-dependent landmarks doubling the instance plane's explained
     # performance variance while not improving selection on memory.
+    global _OBJECTIVE
+    _OBJECTIVE = objective
     cols = design_columns(features)
     sub = rows_with_features(df, features)
     sub = sub[sub.category == category].copy()
@@ -158,6 +168,11 @@ def run(df, category=1, verbose=True, portfolio="all", objective="runtime",
         fitted = []
         for s in build_selectors():
             fitted.append(s.fit(train, cols))
+
+        batch = [g[cols].iloc[0].to_numpy(float) for _t, g in test.groupby("param_value")]
+        for s in fitted:
+            if hasattr(s, "prepare"):
+                s.prepare(batch)
 
         for (thr,), g in test.groupby(["param_value"]):
             costs = dict(zip(g.algorithm, g.par10))
@@ -267,11 +282,15 @@ def main(argv=None):
                          "published static set)")
     ap.add_argument("--objective", default="runtime",
                     choices=["runtime", "memory"])
+    ap.add_argument("--af-wallclock", type=int, default=0,
+                    help="SMAC seconds per fold for AutoFolio (0: leave it out)")
     ap.add_argument("--table", default=None,
                     help="runs table to evaluate on (default: results/summary.csv, "
                          "the published table; results/training_runs.csv is the "
                          "re-measured one with the extension datasets)")
     args = ap.parse_args(argv)
+    global AF_WALLCLOCK
+    AF_WALLCLOCK = args.af_wallclock
 
     os.makedirs(OUT_DIR, exist_ok=True)
     df = load_runs(args.table) if args.table else load_runs()
