@@ -1,6 +1,6 @@
 # Confirmation on hard thresholds: results
 
-Protocol: `HARD_PROTOCOL.md` (420e79a). Truth: `hard_summary.csv` (72 runs,
+Protocol: `HARD_PROTOCOL.md` (4ea63c4). Truth: `hard_summary.csv` (72 runs,
 2.5 h: 24 timeouts at 600 s, 12 errors). Probes: `probe_points_hard.csv`.
 Output: `hard_eval_output.txt`.
 

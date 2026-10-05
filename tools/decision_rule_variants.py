@@ -3,7 +3,7 @@ instance probed so far (training LODO, both confirmations).
 
     python tools/decision_rule_variants.py
 
-Variants: upper-end rule alone (as of a575497); plus lower bounds from miners
+Variants: upper-end rule alone (as of 4eb8f25); plus lower bounds from miners
 stopped in their probe; plus the probe's scale applied to model estimates
 (beta 0.5), with the two interval forms for a stopped miner. Uses the engine
 itself, with ProbeResults rebuilt from the recorded probe points and

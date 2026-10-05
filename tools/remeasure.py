@@ -3,7 +3,7 @@
     python tools/remeasure.py --plan
     python tools/remeasure.py                  # ~70 min, sequential, < 1 GB typical
 
-Why. Up to commit 147e49a the monitor polled instantaneous RSS every 0.1 s
+Why. Up to commit 594fd7a the monitor polled instantaneous RSS every 0.1 s
 from a thread. A native miner that runs in 10-15 ms was read once, at spawn:
 apriori on mushroom at 0.5 is recorded at 0.02 MB (Linux) and 2.48 MB
 (Windows); measured properly it takes 3.7-4.2 MB. The memory labels the

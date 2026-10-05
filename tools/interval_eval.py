@@ -28,7 +28,7 @@ def frozen_ok():
     c = subprocess.run(["git", "log", "-1", "--format=%h", "--", "results/INTERVAL_PROTOCOL.md"],
                        capture_output=True, text=True, check=True).stdout.strip()
     ok = True
-    for path, commit in [(p, c) for p in FROZEN] + [("results/training_runs.csv", "490be30")]:
+    for path, commit in [(p, c) for p in FROZEN] + [("results/training_runs.csv", "5f2467a")]:
         now = hashlib.sha256((_ROOT / path).read_bytes()).hexdigest()
         then = hashlib.sha256(subprocess.run(["git", "show", "%s:%s" % (commit, path)],
                                              capture_output=True, check=True).stdout).hexdigest()

@@ -1,6 +1,6 @@
 # Seventh fresh confirmation: results
 
-Protocol: `FRESH7_PROTOCOL.md` (ccad3bc). Truth: `fresh7_summary.csv` (920
+Protocol: `FRESH7_PROTOCOL.md` (a46c8b8). Truth: `fresh7_summary.csv` (920
 runs, 7.7 h: 67 timeouts, 11 errors), measured exactly. Probes:
 `probe_fresh7.jsonl`. Output: `fresh7_eval_output.txt`; rows:
 `fresh7_eval_rows.csv`. The data are 24 OpenML-CC18 datasets, selected by

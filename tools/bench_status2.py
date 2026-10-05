@@ -3,7 +3,7 @@
     python tools/bench_status2.py
 
 The model under test is the engine trained on results/training_runs.csv AS
-COMMITTED with the protocol (0f3e5d1). The script refuses to score if the
+COMMITTED with the protocol (ededb6a). The script refuses to score if the
 file differs from that version: a rebuilt training table would be a
 different model from the one the criteria were registered for.
 """
@@ -23,7 +23,7 @@ os.chdir(_ROOT)
 
 import bench_status as bs                               # noqa: E402
 
-PROTOCOL_COMMIT = "0f3e5d1"
+PROTOCOL_COMMIT = "ededb6a"
 TABLE = "results/training_runs.csv"
 OUT = _ROOT / "results" / "real_extra2_summary.csv"
 DATASETS = ("chicago", "kddcup99", "onlineretail", "pamap", "recordlink")

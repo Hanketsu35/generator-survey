@@ -1,6 +1,6 @@
 # Prediction intervals: results
 
-Protocol: `INTERVAL_PROTOCOL.md` (f6e8d66). Output: `interval_eval_output.txt`,
+Protocol: `INTERVAL_PROTOCOL.md` (3db7c8e). Output: `interval_eval_output.txt`,
 rows: `interval_eval_rows.csv`. There are 210 completed runs on 8 unseen
 datasets; eshop_set had no completed run.
 

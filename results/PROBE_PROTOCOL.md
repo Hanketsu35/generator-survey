@@ -41,7 +41,7 @@ probe could not cost falls back to the model.
 ## Evaluation
 
 Leave-one-dataset-out over the 17 transactional datasets of
-`results/training_runs.csv` (as committed in 490be30); the model is refitted
+`results/training_runs.csv` (as committed in 5f2467a); the model is refitted
 without the held-out dataset each time. Instances and regret as in
 `tools/remeasure_eval.py` M4: memory only where every eligible miner
 completed; runtime with failures at 10 x 3,600 s.

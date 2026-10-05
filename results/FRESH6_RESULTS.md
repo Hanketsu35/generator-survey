@@ -1,6 +1,6 @@
 # Sixth fresh confirmation: results
 
-Protocol: `FRESH6_PROTOCOL.md` (c6029de). Truth: `fresh6_summary.csv` (450
+Protocol: `FRESH6_PROTOCOL.md` (114debe). Truth: `fresh6_summary.csv` (450
 runs, 1.7 h: 14 timeouts, 5 errors). Probes: `probe_fresh6.jsonl`. Output:
 `fresh6_eval_output.txt`; rows: `fresh6_eval_rows.csv`. That is 13 small
 datasets (101-990 transactions).

@@ -1,6 +1,6 @@
 # Targeted confirmation of the progress rule: results
 
-Protocol: `LAG_PROTOCOL.md` (78067cc). Screen: `probe_lag.jsonl`; the selection is `lag_instances.csv`, which is empty.
+Protocol: `LAG_PROTOCOL.md` (4a2560d). Screen: `probe_lag.jsonl`; the selection is `lag_instances.csv`, which is empty.
 
 ## Result: underpowered, no pass or fail
 

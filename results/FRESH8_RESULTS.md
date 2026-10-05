@@ -1,6 +1,6 @@
 # Eighth fresh confirmation: results
 
-Protocol: `FRESH8_PROTOCOL.md` (ffb27aa). Truth: `fresh8_summary.csv` (310
+Protocol: `FRESH8_PROTOCOL.md` (e918d4e). Truth: `fresh8_summary.csv` (310
 runs, 5.0 h: 51 timeouts, 17 errors). Probes: `probe_fresh8.jsonl`. Output:
 `fresh8_eval_output.txt`; rows: `fresh8_eval_rows.csv`. The data are 8 large
 OpenML datasets (100,968-1,496,391 transactions), selected by rule, and the

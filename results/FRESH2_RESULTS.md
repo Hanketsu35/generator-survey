@@ -1,6 +1,6 @@
 # Second fresh confirmation: results
 
-Protocol: `FRESH2_PROTOCOL.md` (41579ee). Truth: `fresh2_summary.csv`
+Protocol: `FRESH2_PROTOCOL.md` (7664db1). Truth: `fresh2_summary.csv`
 (180 runs, 5.1 h: 52 timeouts at 600 s, 11 errors). Probes:
 `probe_fresh2.jsonl`. Output: `fresh2_eval_output.txt`; rows:
 `fresh2_eval_rows.csv`, `fresh2_gr_accuracy.csv`.

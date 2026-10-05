@@ -1,8 +1,8 @@
 # The progress rule where it acted after it was frozen: results
 
-Protocol: `LAG2_PROTOCOL.md` (54ec6c4). Script `tools/lag2_eval.py`; rows in
+Protocol: `LAG2_PROTOCOL.md` (03c6bfc). Script `tools/lag2_eval.py`; rows in
 `lag2_rows.csv`; output in `lag2_output.txt`. Run after the ranking
-quantiles were adopted (`RANKQ_RESULTS.md`, 8a336b1).
+quantiles were adopted (`RANKQ_RESULTS.md`, 59500fb).
 
 ## Result: underpowered, no pass or fail
 

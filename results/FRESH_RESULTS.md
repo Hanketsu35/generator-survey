@@ -1,6 +1,6 @@
 # Fresh confirmation: results
 
-Protocol: `FRESH_PROTOCOL.md` (d75b069). Truth: `fresh_summary.csv`
+Protocol: `FRESH_PROTOCOL.md` (a1d9867). Truth: `fresh_summary.csv`
 (370 runs, 5.7 h: 49 timeouts at 600 s, 32 errors). Probes:
 `probe_fresh.jsonl`, run one instance at a time after the benchmark.
 Output: `fresh_eval_output.txt`; rows: `fresh_eval_rows.csv`. That gives

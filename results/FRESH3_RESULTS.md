@@ -1,6 +1,6 @@
 # Third fresh confirmation: results
 
-Protocol: `FRESH3_PROTOCOL.md` (3e60bbd). Truth: `fresh3_summary.csv`
+Protocol: `FRESH3_PROTOCOL.md` (2ff1a5b). Truth: `fresh3_summary.csv`
 (130 runs, 1.9 h: 17 timeouts at 600 s, no errors). Probes:
 `probe_fresh3.jsonl`. Output: `fresh3_eval_output.txt`; rows:
 `fresh3_eval_rows.csv`.

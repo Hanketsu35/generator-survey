@@ -656,7 +656,7 @@ python -m recommender.nl_domain_eval --split test     # scored once
 word the rules key on banned and checked mechanically, split into dev and test,
 with three goal-less questions per split -- one of them the literal *"which
 algorithm should I use for this dataset?"*. Models run locally through Ollama.
-The configuration was frozen in commit `ee34ecb` **before** the test split was
+The configuration was frozen in commit `325800a` **before** the test split was
 scored. Test split, 29 questions that state a goal:
 
 | system | right | **silent error** | asked back | goal-less asked back |

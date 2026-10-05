@@ -1,6 +1,6 @@
 # Ranking quantiles on exact memory: results
 
-Protocol: `RANKQ_PROTOCOL.md` (b8876ac). Post hoc on the baseline
+Protocol: `RANKQ_PROTOCOL.md` (2ef6ff6). Post hoc on the baseline
 comparison's instances. Script `tools/rankq_eval.py`; rows in
 `rankq_rows.csv`; output in `rankq_output.txt`.
 

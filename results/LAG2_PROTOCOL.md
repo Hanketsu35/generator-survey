@@ -10,8 +10,8 @@ README calls the rule untested. A count of the stored probes (miners' probe
 progress only, no truth read) shows that the rule's condition did occur
 after the rule was frozen:
 
-- rule committed 3e60bbd (2026-10-01); its criteria `LAG_PROTOCOL.md`
-  78067cc (2026-10-02);
+- rule committed 2ff1a5b (2026-10-01); its criteria `LAG_PROTOCOL.md`
+  4a2560d (2026-10-02);
 - FRESH5–FRESH8 (probes `results/probe_fresh{5,6,7,8}.jsonl`, truth
   `results/fresh{5,6,7,8}_summary.csv`) were collected from 2026-10-03 on.
 

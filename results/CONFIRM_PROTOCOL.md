@@ -27,8 +27,8 @@ instacart skin t20i6d100k --out results/real_extra3_summary.csv
 ## Frozen under test
 
 - engine: `Recommender()` on `results/training_runs.csv` as of commit
-  490be30 (17 transactional datasets, none of these five);
-- probe: `recommender/probe.py` as of commit b9442dd, affine extrapolation
+  5f2467a (17 transactional datasets, none of these five);
+- probe: `recommender/probe.py` as of commit ced9dc7, affine extrapolation
   (log-log also reported);
 - decision rule: native costs from the probe, JVM costs from the engine,
   lowest eligible cost wins (as in `tools/probe_eval.py`).

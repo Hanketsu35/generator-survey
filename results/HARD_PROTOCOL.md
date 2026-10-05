@@ -15,7 +15,7 @@ where some miner fails.
 ## Data
 
 Every dataset available locally that is in neither the training table
-(`training_runs.csv` at 490be30) nor the first confirmation, and is not a
+(`training_runs.csv` at 5f2467a) nor the first confirmation, and is not a
 subset or sibling of one of them. Converted by `tools/prepare_hard.py` with
 rules fixed before any run (`hard_prepare.txt`): utility databases keep the
 item part, and sequence databases keep the set of items in each sequence.
@@ -52,9 +52,9 @@ never finishes is not an answer.
 
 ## Frozen under test
 
-- engine: `Recommender()` on `training_runs.csv` at 490be30, with
+- engine: `Recommender()` on `training_runs.csv` at 5f2467a, with
   `recommender/engine.py` and `recommender/perfmodel.py` as of this commit;
-- probe: `recommender/probe.py` at b9442dd, affine (log-log also reported);
+- probe: `recommender/probe.py` at ced9dc7, affine (log-log also reported);
 - decision rule as in the first confirmation: native costs from the probe,
   the rest from the engine, lowest eligible cost wins.
 

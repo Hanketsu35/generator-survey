@@ -1,6 +1,6 @@
 # Fourth fresh confirmation: results
 
-Protocol: `FRESH4_PROTOCOL.md` (fee62e9). Truth: `fresh4_summary.csv`
+Protocol: `FRESH4_PROTOCOL.md` (861fd9a). Truth: `fresh4_summary.csv`
 (380 runs, 4.1 h: 40 timeouts, 1 error). Probes: `probe_fresh4.jsonl`.
 Output: `fresh4_eval_output.txt`; rows: `fresh4_eval_rows.csv`.
 

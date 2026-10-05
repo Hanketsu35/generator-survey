@@ -1,6 +1,6 @@
 # Fifth fresh confirmation: results
 
-Protocol: `FRESH5_PROTOCOL.md` (83d66a5). Truth: `fresh5_summary.csv` (450
+Protocol: `FRESH5_PROTOCOL.md` (4191068). Truth: `fresh5_summary.csv` (450
 runs, 3.6 h: 32 timeouts, 1 error), measured exactly through `tools/peakrun`.
 Probes: `probe_fresh5.jsonl`. Output: `fresh5_eval_output.txt`; rows:
 `fresh5_eval_rows.csv`. That is 12 datasets.

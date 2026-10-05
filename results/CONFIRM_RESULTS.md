@@ -1,6 +1,6 @@
 # Confirmation on unseen data: results
 
-Protocol: `CONFIRM_PROTOCOL.md` (committed at bc5b8b5, before any run).
+Protocol: `CONFIRM_PROTOCOL.md` (committed at 1d1811f, before any run).
 Scorer: `tools/confirm_eval.py` (frozen-input check passed). Full output:
 `confirm_eval_output.txt`; truth: `real_extra3_summary.csv` (198 runs,
 10.1 h, 2 workers); probes: `probe_points_confirm.csv` (run one at a time).

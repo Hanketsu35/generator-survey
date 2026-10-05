@@ -27,7 +27,7 @@ PE.POINTS = _ROOT / "results" / "probe_points_hard.csv"
 OUT = _ROOT / "results" / "hard_eval_output.txt"
 #: engine.py and perfmodel.py are pinned to the protocol's commit (HARD_COMMIT)
 HARD_COMMIT = os.environ.get("HARD_COMMIT")
-FROZEN = {"results/training_runs.csv": "490be30", "recommender/probe.py": "b9442dd"}
+FROZEN = {"results/training_runs.csv": "5f2467a", "recommender/probe.py": "ced9dc7"}
 BUDGETS = (25, 50, 100, 200, 500)
 NATIVE = ("Apriori_Gen_Borgelt", "Eclat_Gen_Borgelt", "FPgrowth_Gen_Borgelt", "Gr_growth")
 FAIL_REGRET = 10.0
