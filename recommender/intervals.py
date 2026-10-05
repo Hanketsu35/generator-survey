@@ -171,6 +171,28 @@ def _subsample_interval(values, groups, alpha, seed=0):
     return [float(np.mean(lo)), float(np.mean(hi))], k
 
 
+def ranking_exact(q=None):
+    """The ranking's quantiles (same construction as build()) on the exact
+    pools the display uses (results/RANKQ_PROTOCOL.md). Probe runtime keys are
+    kept: the exact pool has no probe runtime estimate."""
+    import numpy as np
+    import pandas as pd
+    q = dict(q if q is not None else json.loads(QUANTILES.read_text()))
+    m = pd.read_csv(EXACT_GROUPS_MODEL)
+    p = pd.read_csv(EXACT_GROUPS_PROBE)
+    rt = lambda s: np.maximum(s, RT_FLOOR)                        # noqa: E731
+    kinds = {"model_memory": (m.dataset, np.log10(m.true_mem / m.pred_mem)),
+             "model_runtime": (m.dataset, np.log10(rt(m.true_rt) / rt(m.pred_rt)))}
+    for tag in ("measured", "sampled"):
+        s = p[p.kind == tag]
+        kinds["probe_memory_" + tag] = (s.dataset, np.log10(s.true_mem / s.est_mem))
+    for name, (g, r) in kinds.items():
+        k = int(g.nunique())
+        q[name] = {"log10": _quantile(r.values, ALPHA, k), "n": int(len(r)), "datasets": k,
+                   "source": "exact"}
+    return q
+
+
 def build_display_exact(out=QUANTILES):
     """Display intervals from the exact-memory pools, by subsampling."""
     import numpy as np
@@ -258,6 +280,15 @@ def width(kind):
 
 if __name__ == "__main__":
     import sys
+    if "--ranking-exact" in sys.argv:
+        q = ranking_exact()
+        QUANTILES.write_text(json.dumps(q, indent=1) + "\n")
+        for name in ("model_memory", "model_runtime", "probe_memory_measured",
+                     "probe_memory_sampled"):
+            lo, hi = q[name]["log10"]
+            print("ranking %-24s x%.3f .. x%.3f  (n=%d, %d datasets)"
+                  % (name, 10 ** lo, 10 ** hi, q[name]["n"], q[name]["datasets"]))
+        sys.exit(0)
     if "--display-exact" in sys.argv:
         for name, v in build_display_exact().items():
             if isinstance(v, dict):

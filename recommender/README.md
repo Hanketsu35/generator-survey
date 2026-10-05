@@ -155,7 +155,11 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
   - probes on any request with a memory BUDGET and uses only the probe's
     memory figures there;
   - warns when `tools/peakrun` is not built, instead of measuring
-    differently in silence.
+    differently in silence;
+  - ranks on quantiles from the exact pools too. The ranking's own 90%
+    quantiles had still come from the 794 polled runs. Rebuilt on the exact
+    pools, they changed no pick on any of 335 test instances
+    (`results/RANKQ_RESULTS.md`).
 
 Sections below that report numbers on `results/summary.csv` are kept as they
 were measured; where re-measurement changes a conclusion, the section says so.
