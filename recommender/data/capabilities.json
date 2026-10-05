@@ -346,7 +346,7 @@
     },
     {
       "id": "Arima",
-      "display": "Arima (AprioriRare)",
+      "display": "AprioriRare",
       "category": 5,
       "input_type": "transactional",
       "provenance": "SPMF v2.65 (AprioriRare; the MRG-Exp variant is not separately exposed)",

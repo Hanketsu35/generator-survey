@@ -1,0 +1,18 @@
+"minimal generator" itemset              38
+"minimal generators" itemsets            38
+"minimal generators" mining              54
+generators "closed itemsets"             87
+generators "closed patterns"             24
+"sequential generator"                   46
+"sequential generators"                  46
+"generator patterns"                     96
+"free itemsets"                          8
+"free sets" frequency                    42
+"key patterns" mining                    114
+"key itemsets"                           5
+"utility" generators itemsets            28
+generators "closed graph"                11
+"generators" "data streams" closed       16
+"minimal rare itemsets"                  10
+"disjunction-free"                       73
+unique: 546

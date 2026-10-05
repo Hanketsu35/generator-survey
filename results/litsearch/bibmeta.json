@@ -1,0 +1,835 @@
+{
+ "stumme2002titanic": {
+  "title": "Computing iceberg concept lattices with Titanic",
+  "year": 2002,
+  "authors": [
+   "Gerd Stumme",
+   "Rafik Taouil",
+   "Yves Bastide",
+   "Nicolas Pasquier",
+   "Lotfi Lakhal"
+  ],
+  "venue": "Data & Knowledge Engineering",
+  "biblio": {
+   "volume": "42",
+   "issue": "2",
+   "first_page": "189",
+   "last_page": "222"
+  },
+  "doi": "https://doi.org/10.1016/s0169-023x(02)00057-5",
+  "type": "article",
+  "container": "Data &amp; Knowledge Engineering",
+  "event": null,
+  "page": "189-222",
+  "volume": "42",
+  "issued": 2002,
+  "cr_authors": [
+   "Stumme, Gerd",
+   "Taouil, Rafik",
+   "Bastide, Yves",
+   "Pasquier, Nicolas",
+   "Lakhal, Lotfi"
+  ],
+  "cr_type": "journal-article",
+  "publisher": "Elsevier BV"
+ },
+ "boulicaut2003free": {
+  "title": "Free-Sets: A Condensed Representation of Boolean Data for the Approximation of Frequency Queries",
+  "year": 2003,
+  "authors": [
+   "Jean‐François Boulicaut",
+   "Artur Bykowski",
+   "Christophe Rigotti"
+  ],
+  "venue": "Data Mining and Knowledge Discovery",
+  "biblio": {
+   "volume": "7",
+   "issue": "1",
+   "first_page": "5",
+   "last_page": "22"
+  },
+  "doi": "https://doi.org/10.1023/a:1021571501451",
+  "type": "article",
+  "container": "Data Mining and Knowledge Discovery",
+  "event": null,
+  "page": "5-22",
+  "volume": "7",
+  "issued": 2003,
+  "cr_authors": [
+   "Boulicaut, Jean-François",
+   "Bykowski, Artur",
+   "Rigotti, Christophe"
+  ],
+  "cr_type": "journal-article",
+  "publisher": "Springer Science and Business Media LLC"
+ },
+ "boulicaut2002constraints": {
+  "title": "Mining free itemsets under constraints",
+  "year": 2002,
+  "authors": [
+   "Jean‐François Boulicaut",
+   "Baptiste Jeudy"
+  ],
+  "venue": null,
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "322",
+   "last_page": "329"
+  },
+  "doi": "https://doi.org/10.1109/ideas.2001.938100",
+  "type": "conference-paper",
+  "container": "Proceedings 2001 International Database Engineering and Applications Symposium",
+  "event": "2001 International Database Engineering and Applications Symposium",
+  "page": "322-329",
+  "volume": null,
+  "issued": null,
+  "cr_authors": [
+   "Boulicaut, J.-F.",
+   "Jeudy, B."
+  ],
+  "cr_type": "proceedings-article",
+  "publisher": "IEEE Comput. Soc"
+ },
+ "nehme2005family": {
+  "title": "On Computing the Minimal Generator Family for Concept Lattices and Icebergs",
+  "year": 2005,
+  "authors": [
+   "Kamal Nehme",
+   "Petko Valtchev",
+   "Mohamed H. Rouane",
+   "Robert P. Godin"
+  ],
+  "venue": "Lecture notes in computer science",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "192",
+   "last_page": "207"
+  },
+  "doi": "https://doi.org/10.1007/978-3-540-32262-7_13",
+  "type": "conference-paper",
+  "container": "Lecture Notes in Computer Science",
+  "event": null,
+  "page": "192-207",
+  "volume": null,
+  "issued": 2005,
+  "cr_authors": [
+   "Nehmé, Kamal",
+   "Valtchev, Petko",
+   "Rouane, Mohamed H.",
+   "Godin, Robert"
+  ],
+  "cr_type": "book-chapter",
+  "publisher": "Springer Berlin Heidelberg"
+ },
+ "li2005relative": {
+  "title": "Relative Risk and Odds Ratio: A Data Mining Perspective (Corrected Version)",
+  "year": 2005,
+  "authors": [
+   "Haiquan Li",
+   "Jinyan Li",
+   "Limsoon Wong",
+   "Mengling Feng",
+   "Yap‐Peng Tan"
+  ],
+  "venue": null,
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": null,
+   "last_page": null
+  },
+  "doi": null,
+  "type": "article"
+ },
+ "li2007dpminer": {
+  "title": "Mining statistically important equivalence classes and delta-discriminative emerging patterns",
+  "year": 2007,
+  "authors": [
+   "Jinyan Li",
+   "Guimei Liu",
+   "Limsoon Wong"
+  ],
+  "venue": "ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD)",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "430",
+   "last_page": "439"
+  },
+  "doi": "https://doi.org/10.1145/1281192.1281240",
+  "type": "conference-paper",
+  "container": "Proceedings of the 13th ACM SIGKDD international conference on Knowledge discovery and data mining",
+  "event": "KDD07: The 13th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+  "page": "430-439",
+  "volume": null,
+  "issued": 2007,
+  "cr_authors": [
+   "Li, Jinyan",
+   "Liu, Guimei",
+   "Wong, Limsoon"
+  ],
+  "cr_type": "proceedings-article",
+  "publisher": "ACM"
+ },
+ "vo2009mgcharm": {
+  "title": "Fast algorithm for mining minimal generators of frequent closed itemsets and their applications",
+  "year": 2009,
+  "authors": [
+   "Bay Vo",
+   "Bac Hoai Le"
+  ],
+  "venue": null,
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "1407",
+   "last_page": "1411"
+  },
+  "doi": "https://doi.org/10.1109/iccie.2009.5223846",
+  "type": "conference-paper",
+  "container": "2009 International Conference on Computers &amp; Industrial Engineering",
+  "event": "Industrial Engineering (CIE39)",
+  "page": "1407-1411",
+  "volume": null,
+  "issued": 2009,
+  "cr_authors": [
+   "Vo, Bay",
+   "Le, Bac"
+  ],
+  "cr_type": "proceedings-article",
+  "publisher": "IEEE"
+ },
+ "tran2014genclose": {
+  "title": "Simultaneous mining of frequent closed itemsets and their generators: Foundation and algorithm",
+  "year": 2014,
+  "authors": [
+   "Anh Tran",
+   "Tin Truong",
+   "Bac Hoai Le"
+  ],
+  "venue": "Engineering Applications of Artificial Intelligence",
+  "biblio": {
+   "volume": "36",
+   "issue": null,
+   "first_page": "64",
+   "last_page": "80"
+  },
+  "doi": "https://doi.org/10.1016/j.engappai.2014.07.004",
+  "type": "article",
+  "container": "Engineering Applications of Artificial Intelligence",
+  "event": null,
+  "page": "64-80",
+  "volume": "36",
+  "issued": 2014,
+  "cr_authors": [
+   "Tran, Anh",
+   "Truong, Tin",
+   "Le, Bac"
+  ],
+  "cr_type": "journal-article",
+  "publisher": "Elsevier BV"
+ },
+ "szathmary2014cgt": {
+  "title": "CGT : A vertical miner for frequent equivalence classes of itemsets",
+  "year": 2014,
+  "authors": [
+   "László Szathmáry",
+   "Márton Ispány"
+  ],
+  "venue": null,
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "161",
+   "last_page": "169"
+  },
+  "doi": "https://doi.org/10.17048/futurerfid.1.2014.161",
+  "type": "conference-paper",
+  "container": "Proceedings of the 1st International Conference and Exhibition on Future RFID Technologies",
+  "event": "1st International Conference on Future RFID Technologies",
+  "page": "161-169",
+  "volume": null,
+  "issued": 2014,
+  "cr_authors": [
+   "Szathmáry, László",
+   "Ispány, Márton"
+  ],
+  "cr_type": "proceedings-article",
+  "publisher": "Eszterházy Károly Főiskola, Eger"
+ },
+ "nabeshima2020pairs": {
+  "title": "Fast Enumeration of Pairs of Minimal Generators and Their Closure Itemsets",
+  "year": 2020,
+  "authors": [
+   "Takahiro Nabeshima"
+  ],
+  "venue": "The Japanese Society for Artificial Intelligence",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": null,
+   "last_page": null
+  },
+  "doi": null,
+  "type": "article"
+ },
+ "iwanuma2021enum": {
+  "title": "Enumerating Minimal Generators from Closed Itemsets – Toward Effective Compression of Negative Association Rules",
+  "year": 2021,
+  "authors": [
+   "Koji Iwanuma",
+   "Kento Yajima",
+   "Yoshitaka Yamamoto"
+  ],
+  "venue": "IEEE Asia-Pacific Conference on Computer Science and Data Engineering (CSDE)",
+  "biblio": {
+   "volume": "57",
+   "issue": null,
+   "first_page": "1",
+   "last_page": "7"
+  },
+  "doi": "https://doi.org/10.1109/csde53843.2021.9718380",
+  "type": "conference-paper",
+  "container": "2021 IEEE Asia-Pacific Conference on Computer Science and Data Engineering (CSDE)",
+  "event": "2021 IEEE Asia-Pacific Conference on Computer Science and Data Engineering (CSDE)",
+  "page": "1-7",
+  "volume": null,
+  "issued": 2021,
+  "cr_authors": [
+   "Iwanuma, Koji",
+   "Yajima, Kento",
+   "Yamamoto, Yoshitaka"
+  ],
+  "cr_type": "proceedings-article",
+  "publisher": "IEEE"
+ },
+ "yajima2022bottomup": {
+  "title": "A Bottom-Up Enumeration Algorithm of Minimal Generators without Support Counting for Compressing Negative Association Rules",
+  "year": 2022,
+  "authors": [
+   "Kento Yajima",
+   "Koji Iwanuma",
+   "Yoshitaka Yamamoto"
+  ],
+  "venue": "International Congress on Advanced Applied Informatics (IIAI-AAI)",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "665",
+   "last_page": "668"
+  },
+  "doi": "https://doi.org/10.1109/iiaiaai55812.2022.00135",
+  "type": "conference-paper",
+  "container": "2022 12th International Congress on Advanced Applied Informatics (IIAI-AAI)",
+  "event": "2022 12th International Congress on Advanced Applied Informatics (IIAI-AAI)",
+  "page": "665-668",
+  "volume": null,
+  "issued": 2022,
+  "cr_authors": [
+   "Yajima, Kento",
+   "Iwanuma, Koji",
+   "Yamamoto, Yoshitaka"
+  ],
+  "cr_type": "proceedings-article",
+  "publisher": "IEEE"
+ },
+ "mochizuki2024space": {
+  "title": "A Space-Saving Algorithm for Enumerating Minimal Generators in Negative Rule Mining",
+  "year": 2024,
+  "authors": [
+   "Shogo Mochizuki",
+   "Koji Iwanuma"
+  ],
+  "venue": "IIAI International Congress on Advanced Applied Informatics (IIAI-AAI)",
+  "biblio": {
+   "volume": "57",
+   "issue": null,
+   "first_page": "689",
+   "last_page": "692"
+  },
+  "doi": "https://doi.org/10.1109/iiai-aai63651.2024.00139",
+  "type": "conference-paper",
+  "container": "2024 16th IIAI International Congress on Advanced Applied Informatics (IIAI-AAI)",
+  "event": "2024 16th IIAI International Congress on Advanced Applied Informatics (IIAI-AAI)",
+  "page": "689-692",
+  "volume": "57",
+  "issued": 2024,
+  "cr_authors": [
+   "Mochizuki, Shogo",
+   "Iwanuma, Koji"
+  ],
+  "cr_type": "proceedings-article",
+  "publisher": "IEEE"
+ },
+ "lo2008genminer": {
+  "title": "Mining and Ranking Generators of Sequential Pattern",
+  "year": 2008,
+  "authors": [
+   "David Lo",
+   "Siau‐Cheng Khoo",
+   "Jinyan Li"
+  ],
+  "venue": "Singapore Management University Institutional Knowledge (InK) (Singapore Management University)",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": null,
+   "last_page": null
+  },
+  "doi": null,
+  "type": "conference-paper"
+ },
+ "lo2010iterative": {
+  "title": "Mining Iterative Generators and Representative Rules for Software Specification Discovery",
+  "year": 2010,
+  "authors": [
+   "David Lo",
+   "Jinyan Li",
+   "Iimsoon wong",
+   "Siau‐Cheng Khoo"
+  ],
+  "venue": "IEEE Transactions on Knowledge and Data Engineering",
+  "biblio": {
+   "volume": "23",
+   "issue": "2",
+   "first_page": "282",
+   "last_page": "296"
+  },
+  "doi": "https://doi.org/10.1109/tkde.2010.24",
+  "type": "article",
+  "container": "IEEE Transactions on Knowledge and Data Engineering",
+  "event": null,
+  "page": "282-296",
+  "volume": "23",
+  "issued": 2011,
+  "cr_authors": [
+   "Lo, D",
+   "Jinyan Li, ",
+   "Iimsoon wong, ",
+   "Siau-Cheng Khoo, "
+  ],
+  "cr_type": "journal-article",
+  "publisher": "Institute of Electrical and Electronics Engineers (IEEE)"
+ },
+ "he2011incremental": {
+  "title": "Efficient Incremental Mining of Frequent Sequence Generators",
+  "year": 2011,
+  "authors": [
+   "Yukai He",
+   "Jianyong Wang",
+   "Lizhu Zhou"
+  ],
+  "venue": "Lecture notes in computer science",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "168",
+   "last_page": "182"
+  },
+  "doi": "https://doi.org/10.1007/978-3-642-20149-3_14",
+  "type": "conference-paper",
+  "container": "Lecture Notes in Computer Science",
+  "event": null,
+  "page": "168-182",
+  "volume": null,
+  "issued": 2011,
+  "cr_authors": [
+   "He, Yukai",
+   "Wang, Jianyong",
+   "Zhou, Lizhu"
+  ],
+  "cr_type": "book-chapter",
+  "publisher": "Springer Berlin Heidelberg"
+ },
+ "yi2012seqgen": {
+  "title": "SeqGen: Mining Sequential Generator Patterns from Sequence Databases",
+  "year": 2012,
+  "authors": [
+   "Shengwei Yi",
+   "Tianheng H. Zhao",
+   "Yuanyuan Zhang",
+   "Shilong Ma",
+   "Jie Yin",
+   "Zhanbin Che"
+  ],
+  "venue": "Advanced Science Letters",
+  "biblio": {
+   "volume": "11",
+   "issue": "1",
+   "first_page": "340",
+   "last_page": "345"
+  },
+  "doi": "https://doi.org/10.1166/asl.2012.3008",
+  "type": "article",
+  "container": "Advanced Science Letters",
+  "event": null,
+  "page": "340-345",
+  "volume": "11",
+  "issued": 2012,
+  "cr_authors": [
+   "Yi, Shengwei",
+   "Zhao, Tianheng",
+   "Zhang, Yuanyuan",
+   "Ma, Shilong",
+   "Yin, Jie",
+   "Che, Zhanbin"
+  ],
+  "cr_type": "journal-article",
+  "publisher": "American Scientific Publishers"
+ },
+ "pham2012msgps": {
+  "title": "MSGPs: A Novel Algorithm for Mining Sequential Generator Patterns",
+  "year": 2012,
+  "authors": [
+   "Thi-Thiet Pham",
+   "Jiawei Luo",
+   "Tzung‐Pei Hong",
+   "Bay Vo"
+  ],
+  "venue": "Lecture notes in computer science",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "393",
+   "last_page": "401"
+  },
+  "doi": "https://doi.org/10.1007/978-3-642-34707-8_40",
+  "type": "conference-paper",
+  "container": "Lecture Notes in Computer Science",
+  "event": null,
+  "page": "393-401",
+  "volume": null,
+  "issued": 2012,
+  "cr_authors": [
+   "Pham, Thi-Thiet",
+   "Luo, Jiawei",
+   "Hong, Tzung-Pei",
+   "Vo, Bay"
+  ],
+  "cr_type": "book-chapter",
+  "publisher": "Springer Berlin Heidelberg"
+ },
+ "pham2013clogen": {
+  "title": "An effective algorithm for mining closed sequential patterns and their minimal generators based on prefix trees",
+  "year": 2013,
+  "authors": [
+   "Thi Thiet Pham",
+   "Jiawei Luo",
+   "Bay Vo"
+  ],
+  "venue": "International Journal of Intelligent Information and Database Systems",
+  "biblio": {
+   "volume": "7",
+   "issue": "4",
+   "first_page": "324",
+   "last_page": "324"
+  },
+  "doi": "https://doi.org/10.1504/ijiids.2013.056314",
+  "type": "article",
+  "container": "International Journal of Intelligent Information and Database Systems",
+  "event": null,
+  "page": "324",
+  "volume": "7",
+  "issued": 2013,
+  "cr_authors": [
+   "Pham, Thi Thiet",
+   "Luo, Jiawei",
+   "Vo, Bay"
+  ],
+  "cr_type": "journal-article",
+  "publisher": "Inderscience Publishers"
+ },
+ "pham2015pretree": {
+  "title": "Efficiently Mining Sequential Generator Patterns Using Prefix Trees",
+  "year": 2015,
+  "authors": [
+   "Thi-Thiet Pham"
+  ],
+  "venue": "Fundamenta Informaticae",
+  "biblio": {
+   "volume": "138",
+   "issue": "3",
+   "first_page": "373",
+   "last_page": "386"
+  },
+  "doi": "https://doi.org/10.3233/fi-2015-1217",
+  "type": "article",
+  "container": "Fundamenta Informaticae",
+  "event": null,
+  "page": "373-386",
+  "volume": "138",
+  "issued": 2015,
+  "cr_authors": [
+   "Pham, Thi-Thiet"
+  ],
+  "cr_type": "journal-article",
+  "publisher": "SAGE Publications"
+ },
+ "zhang2015contiguous": {
+  "title": "Mining Contiguous Sequential Generators in Biological Sequences",
+  "year": 2015,
+  "authors": [
+   "Jingsong Zhang",
+   "Yinglin Wang",
+   "Chao Zhang",
+   "Yongyong Shi"
+  ],
+  "venue": "IEEE Transactions on Computational Biology and Bioinformatics",
+  "biblio": {
+   "volume": "13",
+   "issue": "5",
+   "first_page": "855",
+   "last_page": "867"
+  },
+  "doi": "https://doi.org/10.1109/tcbb.2015.2495132",
+  "type": "article",
+  "container": "IEEE/ACM Transactions on Computational Biology and Bioinformatics",
+  "event": null,
+  "page": "855-867",
+  "volume": "13",
+  "issued": 2016,
+  "cr_authors": [
+   "Zhang, Jingsong",
+   "Wang, Yinglin",
+   "Zhang, Chao",
+   "Shi, Yongyong"
+  ],
+  "cr_type": "journal-article",
+  "publisher": "Institute of Electrical and Electronics Engineers (IEEE)"
+ },
+ "duong2018fgenclosm": {
+  "title": "Efficient algorithms for simultaneously mining concise representations of sequential patterns based on extended pruning conditions",
+  "year": 2017,
+  "authors": [
+   "Hai Duong",
+   "Tin Truong",
+   "Bac Hoai Le"
+  ],
+  "venue": "Engineering Applications of Artificial Intelligence",
+  "biblio": {
+   "volume": "67",
+   "issue": null,
+   "first_page": "197",
+   "last_page": "210"
+  },
+  "doi": "https://doi.org/10.1016/j.engappai.2017.09.024",
+  "type": "article",
+  "container": "Engineering Applications of Artificial Intelligence",
+  "event": null,
+  "page": "197-210",
+  "volume": "67",
+  "issued": 2018,
+  "cr_authors": [
+   "Duong, Hai",
+   "Truong, Tin",
+   "Le, Bac"
+  ],
+  "cr_type": "journal-article",
+  "publisher": "Elsevier BV"
+ },
+ "mai2017chui": {
+  "title": "An efficient approach for mining closed high utility itemsets and generators",
+  "year": 2017,
+  "authors": [
+   "Thang Mai",
+   "Loan T. T. Nguyen"
+  ],
+  "venue": "Journal of Information and Telecommunication",
+  "biblio": {
+   "volume": "1",
+   "issue": "3",
+   "first_page": "193",
+   "last_page": "207"
+  },
+  "doi": "https://doi.org/10.1080/24751839.2017.1347392",
+  "type": "article",
+  "container": "Journal of Information and Telecommunication",
+  "event": null,
+  "page": "193-207",
+  "volume": "1",
+  "issued": 2017,
+  "cr_authors": [
+   "Mai, Thang",
+   "Nguyen, Loan T. T."
+  ],
+  "cr_type": "journal-article",
+  "publisher": "Informa UK Limited"
+ },
+ "merugula2020integrated": {
+  "title": "An integrated approach for mining closed and generator high utility itemsets",
+  "year": 2020,
+  "authors": [
+   "Suneetha Merugula",
+   "M. V. P. Chandra Sekhara Rao"
+  ],
+  "venue": "International Journal of Knowledge-based and Intelligent Engineering Systems",
+  "biblio": {
+   "volume": "24",
+   "issue": "1",
+   "first_page": "27",
+   "last_page": "35"
+  },
+  "doi": "https://doi.org/10.3233/kes-200026",
+  "type": "article",
+  "container": "International Journal of Knowledge-based and Intelligent Engineering Systems",
+  "event": null,
+  "page": "27-35",
+  "volume": "24",
+  "issued": 2020,
+  "cr_authors": [
+   "Merugula, Suneetha",
+   "Rao, M.V.P. Chandra Sekhara"
+  ],
+  "cr_type": "journal-article",
+  "publisher": "SAGE Publications"
+ },
+ "gao2009streamgen": {
+  "title": "Efficient itemset generator discovery over a stream sliding window",
+  "year": 2009,
+  "authors": [
+   "Chuancong Gao",
+   "Jianyong Wang"
+  ],
+  "venue": null,
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "355",
+   "last_page": "364"
+  },
+  "doi": "https://doi.org/10.1145/1645953.1646000",
+  "type": "conference-paper",
+  "container": "Proceedings of the 18th ACM conference on Information and knowledge management",
+  "event": "CIKM '09: Conference on Information and Knowledge Management",
+  "page": "355-364",
+  "volume": null,
+  "issued": 2009,
+  "cr_authors": [
+   "Gao, Chuancong",
+   "Wang, Jianyong"
+  ],
+  "cr_type": "proceedings-article",
+  "publisher": "ACM"
+ },
+ "yi2012stream": {
+  "title": "Efficient Sequential Generator Discovery Over Stream Sliding Windows",
+  "year": 2012,
+  "authors": [
+   "Shengwei Yi",
+   "Yuanyuan Zhang",
+   "Tianheng H. Zhao",
+   "Shilong Ma",
+   "Jie Yin",
+   "Hejie Sun",
+   "Xin Chen"
+  ],
+  "venue": "Advanced Science Letters",
+  "biblio": {
+   "volume": "11",
+   "issue": "1",
+   "first_page": "437",
+   "last_page": "442"
+  },
+  "doi": "https://doi.org/10.1166/asl.2012.3059",
+  "type": "article",
+  "container": "Advanced Science Letters",
+  "event": null,
+  "page": "437-442",
+  "volume": "11",
+  "issued": 2012,
+  "cr_authors": [
+   "Yi, Shengwei",
+   "Zhang, Yuanyuan",
+   "Zhao, Tianheng",
+   "Ma, Shilong",
+   "Yin, Jie",
+   "Sun, Hejie",
+   "Chen, Xin"
+  ],
+  "cr_type": "journal-article",
+  "publisher": "American Scientific Publishers"
+ },
+ "szathmary2012walkyg": {
+  "title": "Efficient Vertical Mining of Minimal Rare Itemsets",
+  "year": 2012,
+  "authors": [
+   "László Szathmáry",
+   "Petko Valtchev",
+   "Amedeo Napoli",
+   "Robert P. Godin"
+  ],
+  "venue": null,
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": null,
+   "last_page": null
+  },
+  "doi": null,
+  "type": "article"
+ },
+ "hidouri2023kminimal": {
+  "title": "Targeting Minimal Rare Itemsets from Transaction Databases",
+  "year": 2023,
+  "authors": [
+   "Amel Hidouri",
+   "Badran Raddaoui",
+   "Saïd Jabbour"
+  ],
+  "venue": "International Joint Conference on Artificial Intelligence",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "2114",
+   "last_page": "2121"
+  },
+  "doi": "https://doi.org/10.24963/ijcai.2023/235",
+  "type": "conference-paper",
+  "container": "Proceedings of the Thirty-Second International Joint Conference on Artificial Intelligence",
+  "event": "Thirty-Second International Joint Conference on Artificial Intelligence {IJCAI-23}",
+  "page": "2114-2121",
+  "volume": null,
+  "issued": 2023,
+  "cr_authors": [
+   "Hidouri, Amel",
+   "Raddaoui, Badran",
+   "Jabbour, Said"
+  ],
+  "cr_type": "proceedings-article",
+  "publisher": "International Joint Conferences on Artificial Intelligence Organization"
+ },
+ "szathmary2009talkyg_fix": {
+  "title": "Efficient Vertical Mining of Frequent Closures and Generators",
+  "year": 2009,
+  "authors": [
+   "László Szathmáry",
+   "Petko Valtchev",
+   "Amedeo Napoli",
+   "Robert P. Godin"
+  ],
+  "venue": "Lecture notes in computer science",
+  "biblio": {
+   "volume": null,
+   "issue": null,
+   "first_page": "393",
+   "last_page": "404"
+  },
+  "doi": "https://doi.org/10.1007/978-3-642-03915-7_34",
+  "type": "conference-paper",
+  "container": "Lecture Notes in Computer Science",
+  "event": null,
+  "page": "393-404",
+  "volume": null,
+  "issued": 2009,
+  "cr_authors": [
+   "Szathmary, Laszlo",
+   "Valtchev, Petko",
+   "Napoli, Amedeo",
+   "Godin, Robert"
+  ],
+  "cr_type": "book-chapter",
+  "publisher": "Springer Berlin Heidelberg"
+ }
+}

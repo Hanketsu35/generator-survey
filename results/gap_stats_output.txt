@@ -1,0 +1,75 @@
+== G3 excess peak memory over the best eligible miner, PRIMARY (119 instances)
+   SBS (fixed choice)                 median   10.8 MB  mean    81.8 MB  >10 MB  69.7%  >100 MB   6.7%  failed 0
+   random pick                        median    2.2 MB  mean    40.8 MB  >10 MB  29.9%  >100 MB   7.5%  failed 52
+   regression (PAR10-imputed)         median    0.0 MB  mean    49.2 MB  >10 MB  20.3%  >100 MB   7.6%  failed 1
+   pairwise ranking                   median    0.0 MB  mean    42.3 MB  >10 MB  16.2%  >100 MB   2.6%  failed 2
+   SUNNY (k-NN, k=16)                 median    0.0 MB  mean    22.8 MB  >10 MB  24.6%  >100 MB   5.9%  failed 1
+   ISAC (k-means clusters)            median    0.0 MB  mean    45.0 MB  >10 MB  13.6%  >100 MB   6.8%  failed 1
+   survival (expected_par10)          median   10.8 MB  mean   106.9 MB  >10 MB  70.6%  >100 MB   7.6%  failed 0
+   AutoFolio (SMAC, 1800s/fold)       median    0.0 MB  mean    45.9 MB  >10 MB  14.4%  >100 MB   6.8%  failed 1
+   recommender, no probe              median   10.6 MB  mean    51.3 MB  >10 MB  54.2%  >100 MB   6.8%  failed 1
+   recommender, probe                 median    0.0 MB  mean    65.2 MB  >10 MB   4.2%  >100 MB   2.5%  failed 0
+== G3 excess peak memory over the best eligible miner, all (335 instances)
+   SBS (fixed choice)                 median   10.8 MB  mean    72.4 MB  >10 MB  64.8%  >100 MB   7.3%  failed 5
+   random pick                        median    1.9 MB  mean    63.9 MB  >10 MB  29.9%  >100 MB  10.2%  failed 138
+   regression (PAR10-imputed)         median    0.0 MB  mean    58.5 MB  >10 MB  14.4%  >100 MB   8.1%  failed 2
+   pairwise ranking                   median    0.0 MB  mean    32.0 MB  >10 MB  11.6%  >100 MB   3.4%  failed 8
+   SUNNY (k-NN, k=16)                 median    0.0 MB  mean    47.3 MB  >10 MB  20.7%  >100 MB   7.2%  failed 1
+   ISAC (k-means clusters)            median    0.0 MB  mean    32.2 MB  >10 MB   9.1%  >100 MB   4.5%  failed 4
+   survival (expected_par10)          median   10.7 MB  mean    89.0 MB  >10 MB  59.1%  >100 MB   8.4%  failed 0
+   AutoFolio (SMAC, 1800s/fold)       median    0.0 MB  mean    54.8 MB  >10 MB  11.4%  >100 MB   7.5%  failed 3
+   recommender, no probe              median    1.3 MB  mean    59.1 MB  >10 MB  39.0%  >100 MB   7.6%  failed 4
+   recommender, probe                 median    0.0 MB  mean    28.6 MB  >10 MB   2.4%  >100 MB   1.5%  failed 0
+== G2 probe wall time against the runtime of the recommended run
+   PRIMARY  n=119  probe wall: median 0.14 s, 90% 1.2 s, max 67.5 s | run: median 0.03 s
+            output already produced by the probe (direct, measured): 68.9%
+            extra time beyond the run: median 0.10 s, 90% 0.9 s; extra > run on 85.7%
+            on runs of 10 s or more (5): extra / run median 0.641
+   all      n=335  probe wall: median 0.16 s, 90% 1.9 s, max 68.0 s | run: median 0.03 s
+            output already produced by the probe (direct, measured): 72.5%
+            extra time beyond the run: median 0.11 s, 90% 1.4 s; extra > run on 81.8%
+            on runs of 10 s or more (18): extra / run median 0.315
+== G4 PRIMARY: 32 datasets; Wilcoxon signed-rank on per-dataset mean log regret, recommender with probe vs each, Holm-corrected
+   vs SBS (fixed choice)               better/worse/tied datasets 28/ 2/ 2  p 2.35e-06  Holm 1.70e-05
+   vs random pick                      better/worse/tied datasets 32/ 0/ 0  p 4.66e-10  Holm 4.19e-09
+   vs regression (PAR10-imputed)       better/worse/tied datasets 12/ 5/15  p 8.61e-03  Holm 3.44e-02
+   vs pairwise ranking                 better/worse/tied datasets 11/ 4/17  p 8.98e-03  Holm 3.44e-02
+   vs SUNNY (k-NN, k=16)               better/worse/tied datasets 16/ 4/12  p 7.80e-04  Holm 3.90e-03
+   vs ISAC (k-means clusters)          better/worse/tied datasets  9/ 4/19  p 2.77e-02  Holm 3.44e-02
+   vs survival (expected_par10)        better/worse/tied datasets 29/ 1/ 2  p 2.13e-06  Holm 1.70e-05
+   vs AutoFolio (SMAC, 1800s/fold)     better/worse/tied datasets 11/ 5/16  p 1.51e-02  Holm 3.44e-02
+   vs recommender, no probe            better/worse/tied datasets 26/ 3/ 3  p 7.23e-06  Holm 4.34e-05
+   Friedman chi2 172.6, p 1.78e-32; average rank (1 = best):
+      recommender, probe                 3.22
+      AutoFolio (SMAC, 1800s/fold)       3.81
+      ISAC (k-means clusters)            3.89
+      pairwise ranking                   4.14
+      regression (PAR10-imputed)         4.20
+      SUNNY (k-NN, k=16)                 4.78
+      recommender, no probe              6.66
+      SBS (fixed choice)                 7.38
+      survival (expected_par10)          7.42
+      random pick                        9.50
+   Nemenyi critical difference (alpha 0.05, k=10): 2.39
+== G4 all: 90 datasets; Wilcoxon signed-rank on per-dataset mean log regret, recommender with probe vs each, Holm-corrected
+   vs SBS (fixed choice)               better/worse/tied datasets 80/ 3/ 7  p 3.87e-15  Holm 3.10e-14
+   vs random pick                      better/worse/tied datasets 88/ 0/ 2  p 3.73e-16  Holm 3.36e-15
+   vs regression (PAR10-imputed)       better/worse/tied datasets 27/12/51  p 1.31e-04  Holm 3.48e-04
+   vs pairwise ranking                 better/worse/tied datasets 27/12/51  p 7.39e-05  Holm 2.96e-04
+   vs SUNNY (k-NN, k=16)               better/worse/tied datasets 44/ 8/38  p 1.13e-08  Holm 5.65e-08
+   vs ISAC (k-means clusters)          better/worse/tied datasets 26/11/53  p 1.16e-04  Holm 3.48e-04
+   vs survival (expected_par10)        better/worse/tied datasets 77/ 4/ 9  p 1.36e-14  Holm 9.50e-14
+   vs AutoFolio (SMAC, 1800s/fold)     better/worse/tied datasets 27/13/50  p 2.43e-04  Holm 3.48e-04
+   vs recommender, no probe            better/worse/tied datasets 61/ 8/21  p 7.76e-12  Holm 4.66e-11
+   Friedman chi2 431.2, p 3.03e-87; average rank (1 = best):
+      recommender, probe                 3.36
+      AutoFolio (SMAC, 1800s/fold)       3.98
+      regression (PAR10-imputed)         4.11
+      ISAC (k-means clusters)            4.18
+      pairwise ranking                   4.24
+      SUNNY (k-NN, k=16)                 5.03
+      recommender, no probe              6.12
+      survival (expected_par10)          7.23
+      SBS (fixed choice)                 7.58
+      random pick                        9.17
+   Nemenyi critical difference (alpha 0.05, k=10): 1.43

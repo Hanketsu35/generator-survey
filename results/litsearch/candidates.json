@@ -1,0 +1,416 @@
+[
+ {
+  "key": "condensed representation to find frequent",
+  "year": 2001,
+  "title": "A condensed representation to find frequent patterns",
+  "authors": "Artur Bykowski, Christophe Rigotti",
+  "venue": null,
+  "doi": "https://doi.org/10.1145/375551.375604",
+  "abstract": "Given a large set of data, a common data mining problem is to extract the frequent patterns occurring in this set. The idea presented in this paper is to extract a condensed representation of the frequent patterns called disjunction-free sets, instead of extracting the whole frequent pattern collection. We show that this condensed representation can be used to regenerate all frequent patterns and their exact frequencies."
+ },
+ {
+  "key": "Mining free itemsets under constraints",
+  "year": 2002,
+  "title": "Mining free itemsets under constraints",
+  "authors": "Jean‐François Boulicaut, Baptiste Jeudy",
+  "venue": null,
+  "doi": "https://doi.org/10.1109/ideas.2001.938100",
+  "abstract": "Computing frequent itemsets and their frequencies from large Boolean matrices (e.g., to derive association rules) has been one of the hot topics in data mining. Levelwise algorithms (e.g., the a priori algorithm) have been proved effective for frequent itemset mining from sparse data. However, in many practical applications, the computation turns out to be intractable for the user-given frequency threshold and the lack of focus leads to huge collections of frequent itemsets. In the last three years, two promising issues have been investigated: the use of user defined constraints and closed set mining. To the best of our knowledge, combining these two frameworks has not been studied yet. The authors show that the benefit of these two approaches can be combined into levelwise algorithms. An experimental validation related to the discovery of association rules with negations is reported."
+ },
+ {
+  "key": "Closed Keys Base",
+  "year": 2002,
+  "title": "The Closed Keys Base of Frequent Itemsets",
+  "authors": "V. Phan Luong",
+  "venue": "Lecture notes in computer science",
+  "doi": "https://doi.org/10.1007/3-540-46145-0_18",
+  "abstract": ""
+ },
+ {
+  "key": "Computing the Minimal Generator Family",
+  "year": 2005,
+  "title": "On Computing the Minimal Generator Family for Concept Lattices and Icebergs",
+  "authors": "Kamal Nehme, Petko Valtchev, Mohamed H. Rouane, Robert P. Godin",
+  "venue": "Lecture notes in computer science",
+  "doi": "https://doi.org/10.1007/978-3-540-32262-7_13",
+  "abstract": ""
+ },
+ {
+  "key": "Succinct Systems of Minimal Generators",
+  "year": 2005,
+  "title": "Mining Succinct Systems of Minimal Generators of Formal Concepts",
+  "authors": "Guozhu Dong, Chunyu Jiang, Jian Pei, Jinyan Li",
+  "venue": "Lecture notes in computer science",
+  "doi": "https://doi.org/10.1007/11408079_17",
+  "abstract": ""
+ },
+ {
+  "key": "generators are preferable",
+  "year": 2006,
+  "title": "Minimum description length principle: generators are preferable to closed patterns",
+  "authors": "Jinyan Li, Haiquan Li, Limsoon Wong, Jian Pei",
+  "venue": null,
+  "doi": null,
+  "abstract": "Proceedings of the National Conference on Artificial Intelligence"
+ },
+ {
+  "key": "Precedence Links and Associated Generators",
+  "year": 2008,
+  "title": "Efficient Mining of Frequent Closures with Precedence Links and Associated Generators",
+  "authors": "László Szathmáry, Petko Valtchev, Amedeo Napoli",
+  "venue": "HAL (Le Centre pour la Communication Scientifique Directe)",
+  "doi": null,
+  "abstract": "The effective construction of many association rule bases require the computation of frequent closures, generators, and precedence links between closures. However, these tasks are rarely combined, and no scalable algorithm exists at present for their joint computation. We propose here a method that solves this challenging problem in two separated steps. First, we introduce a new algorithm called Touch for finding frequent closed itemsets (FCIs) and their generators (FGs). Touch applies depth-first traversal, and experimental results indicate that this algorithm is highly efficient and outperforms its levelwise competitors. Second, we propose another algorithm called Snow for extracting efficiently the precedence from the output of Touch. To do so, we apply hypergraph theory. Snow is a generic algorithm that can be used with any FCI/FG-miner. The two algorithms, Touch and Snow, provide a "
+ },
+ {
+  "key": "Mining and Ranking Generators of Sequential Patterns",
+  "year": 2008,
+  "title": "Mining and Ranking Generators of Sequential Patterns",
+  "authors": "David Lo, Siau‐Cheng Khoo, Jinyan Li",
+  "venue": "SIAM International Conference on Data Mining",
+  "doi": "https://doi.org/10.1137/1.9781611972788.51",
+  "abstract": "Sequential pattern mining first proposed by Agrawal and Srikant has received intensive research due to its wide range applicability in many real-life domains. Various improvements have been proposed which include mining a closed set of sequential patterns. Sequential patterns supported by the same sequences in the database can be considered as belonging to an equivalence class. Each equivalence class contains patterns partially-ordered by sub-sequence relationship and having the same support. Within an equivalence class, the set of maximal and minimal patterns are referred to as closed patterns and generators respectively. Generators used together with closed patterns can provide additional information which closed patterns alone are not able to provide. Also, as generators are the minimal members, they are preferable over closed patterns for model selection and classification based on t"
+ },
+ {
+  "key": "Efficient itemset generator discovery over a stream",
+  "year": 2009,
+  "title": "Efficient itemset generator discovery over a stream sliding window",
+  "authors": "Chuancong Gao, Jianyong Wang",
+  "venue": null,
+  "doi": "https://doi.org/10.1145/1645953.1646000",
+  "abstract": "Mining generator patterns has raised great research interest in recent years. The main purpose of mining itemset generators is that they can form equivalence classes together with closed itemsets, and can be used to generate simple classification rules according to the MDL principle. In this paper, we devise an efficient algorithm called StreamGen to mine frequent itemset generators over a stream sliding window. We adopt a novel enumeration tree structure to help keep the information of mined generators and the border between generators and non-generators, and propose some optimization techniques to speed up the mining process. We further extend the algorithm to directly mine a set of high quality classification rules over stream sliding windows while keeping high performance. The extensive performance study shows that our algorithm outperforms other state-of-the-art algorithms which per"
+ },
+ {
+  "key": "Fast algorithm for mining minimal generators",
+  "year": 2009,
+  "title": "Fast algorithm for mining minimal generators of frequent closed itemsets and their applications",
+  "authors": "Bay Vo, Bac Hoai Le",
+  "venue": null,
+  "doi": "https://doi.org/10.1109/iccie.2009.5223846",
+  "abstract": "The number of frequent closed itemsets (FCIs) are usually fewer than numbers of frequent itemsets. However, it is necessary to find minimal generators (mGs) for mining association rule from them. The finding mGs approaches based on generating candidate lose timeliness when the number of frequent closed itemsets are large. In this paper, we present MG-CHARM, an efficient algorithm for finding all mGs of frequent closed itemsets. Based on the mGs properties mentioned in section 2.4, we develop an algorithm which does not generate candidates by mining directly the mGs of frequent closed itemsets at mining FCIs. Thus, the time for finding mGs of frequent closed itemsets is insignificant. Experiment shows that the time of MG-CHARM is fewer than the time of finding mGs after finding all closed itemsets (CHARM), especially in case of the the length of each frequent closed itemset is long. We al"
+ },
+ {
+  "key": "Mining Iterative Generators",
+  "year": 2010,
+  "title": "Mining Iterative Generators and Representative Rules for Software Specification Discovery",
+  "authors": "David Lo, Jinyan Li, Iimsoon wong, Siau‐Cheng Khoo",
+  "venue": "IEEE Transactions on Knowledge and Data Engineering",
+  "doi": "https://doi.org/10.1109/tkde.2010.24",
+  "abstract": "Billions of dollars are spent annually on software-related cost. It is estimated that up to 45 percent of software cost is due to the difficulty in understanding existing systems when performing maintenance tasks (i.e., adding features, removing bugs, etc.). One of the root causes is that software products often come with poor, incomplete, or even without any documented specifications. In an effort to improve program understanding, Lo et al. have proposed iterative pattern mining which outputs patterns that are repeated frequently within a program trace, or across multiple traces, or both. Frequent iterative patterns reflect frequent program behaviors that likely correspond to software specifications. To reduce the number of patterns and improve the efficiency of the algorithm, Lo et al. have also introduced mining closed iterative patterns, i.e., maximal patterns without any superpatter"
+ },
+ {
+  "key": "Extracting Closed Patterns and their Generators",
+  "year": 2010,
+  "title": "Pattern Mining in Numerical Data: Extracting Closed Patterns and their Generators",
+  "authors": "Mehdi Kaytoue, Sergei O. Kuznetsov, Amedeo Napoli",
+  "venue": "HAL (Le Centre pour la Communication Scientifique Directe)",
+  "doi": null,
+  "abstract": "In this paper we study the extraction of closed patterns associated to their generators in numerical data. Many works have addressed the problem of extracting itemsets for generating association rules. Considering numerical data, an appropriate discretization is most of the time necessary, in order to split attribute ranges into intervals maximizing some interest functions, e.g. support, confidence, or other statistical measures. We investigate here an alternative point of view using pattern structures in Formal Concept Analysis. Pattern structures can be efficiently used to extract closed patterns without any prior discretization. Two original and efficient algorithms for characterizing frequent closed patterns and their generators in numerical data are proposed and experimented. Finally, we conclude showing the usefulness of such patterns in classification problems and privacy preservi"
+ },
+ {
+  "key": "Incremental Mining of Frequent Sequence Generators",
+  "year": 2011,
+  "title": "Efficient Incremental Mining of Frequent Sequence Generators",
+  "authors": "Yukai He, Jianyong Wang, Lizhu Zhou",
+  "venue": "Lecture notes in computer science",
+  "doi": "https://doi.org/10.1007/978-3-642-20149-3_14",
+  "abstract": ""
+ },
+ {
+  "key": "An effective algorithm for mining sequential generators",
+  "year": 2011,
+  "title": "An effective algorithm for mining sequential generators",
+  "authors": "Shengwei Yi, Tianheng H. Zhao, Yuanyuan Zhang, Shilong Ma",
+  "venue": "Procedia Engineering",
+  "doi": "https://doi.org/10.1016/j.proeng.2011.08.684",
+  "abstract": "Mining frequent sequences patterns invokes the interests of many searchers. However, the result set of frequent sequences is tremendous. While frequent sequential generator patterns can compact the result set of frequent sequences greatly and are superior to the frequent sequential closed patterns in classification and model selection. The existing sequential generator patterns mining algorithm fails to make full use of the relationship between a sequence and its subsequence. And when mining the frequent sequential generators, the existing algorithms are ineffective and inefficient. In order to resolve this problem, an effective and efficient algorithm is presented. A lot of experiments about the performance on datasets are conducted. The results show that the algorithm proposed is better than the existing algorithms for mining the sequential generators."
+ },
+ {
+  "key": "Fast Mining of Iceberg Lattices",
+  "year": 2011,
+  "title": "Fast Mining of Iceberg Lattices: A Modular Approach Using Generators",
+  "authors": "László Szathmáry, Petko Valtchev, Amedeo Napoli, Robert P. Godin",
+  "venue": null,
+  "doi": null,
+  "abstract": "Abstract. Beside its central place in FCA, the task of constructing the concept lattice, i.e., concepts plus Hasse diagram, has attracted some interest within the data mining (DM) field, primarily to support the mining of association rule bases. Yet most FCA algorithms do not pass the scalability test fundamental in DM. We are interested in the iceberg part of the lattice, alias the frequent closed itemsets (FCIs) plus precedence, augmented with the respective generators (FGs) as these provide the starting point for nearly all known bases. Here, we investigate a modular approach that follows a workflow of individual tasks that diverges from what is currently practiced. A straightforward instantiation thereof, Snow-Touch, is presented that combines past contributions of ours, Touch for FCIs/FGs and Snow for precedence. A performance comparison of Snow-Touch to its closest competitor, Char"
+ },
+ {
+  "key": "Efficient Sequential Generator Discovery Over Stream",
+  "year": 2012,
+  "title": "Efficient Sequential Generator Discovery Over Stream Sliding Windows",
+  "authors": "Shengwei Yi, Yuanyuan Zhang, Tianheng H. Zhao, Shilong Ma",
+  "venue": "Advanced Science Letters",
+  "doi": "https://doi.org/10.1166/asl.2012.3059",
+  "abstract": ""
+ },
+ {
+  "key": "Efficient Vertical Mining of Minimal Rare",
+  "year": 2012,
+  "title": "Efficient Vertical Mining of Minimal Rare Itemsets",
+  "authors": "László Szathmáry, Petko Valtchev, Amedeo Napoli, Robert P. Godin",
+  "venue": null,
+  "doi": null,
+  "abstract": "Abstract. Rareitemsetsareimportantsortofpatternsthathaveawide range of practical applications, in particular, in analysis of biomedical data. Although mining rare patterns poses specific algorithmic problems, it is yet insufficiently studied. In a previous work, we proposed a levelwise approach for rare itemset mining that traverses the search space bottomup and proceeds in two steps: (1) moving across the frequent zone until the minimal rare itemsets are reached and (2) listing all rare itemsets. As the efficiency of the frequent zone traversal is crucial for the overall performance of the rare miner, we are looking for ways to speed it up. Here,weexaminethebenefitsofdepth-firstmethodsforthattaskassuch methods are known to outperform the levelwise ones in many practical cases. The new method relies on a set of structural results that helps save a certain amount of computation and eventu"
+ },
+ {
+  "key": "minimal rare itemsets in a depth-first",
+  "year": 2012,
+  "title": "Finding minimal rare itemsets in a depth-first manner",
+  "authors": "László Szathmáry, Petko Valtchev, Amedeo Napoli, Robert P. Godin",
+  "venue": "HAL (Le Centre pour la Communication Scientifique Directe)",
+  "doi": null,
+  "abstract": "International audience"
+ },
+ {
+  "key": "MSGPs",
+  "year": 2012,
+  "title": "MSGPs: A Novel Algorithm for Mining Sequential Generator Patterns",
+  "authors": "Thi-Thiet Pham, Jiawei Luo, Tzung‐Pei Hong, Bay Vo",
+  "venue": "Lecture notes in computer science",
+  "doi": "https://doi.org/10.1007/978-3-642-34707-8_40",
+  "abstract": ""
+ },
+ {
+  "key": "SeqGen",
+  "year": 2012,
+  "title": "SeqGen: Mining Sequential Generator Patterns from Sequence Databases",
+  "authors": "Shengwei Yi, Tianheng H. Zhao, Yuanyuan Zhang, Shilong Ma",
+  "venue": "Advanced Science Letters",
+  "doi": "https://doi.org/10.1166/asl.2012.3008",
+  "abstract": ""
+ },
+ {
+  "key": "fast compound algorithm for mining generators",
+  "year": 2013,
+  "title": "A fast compound algorithm for mining generators, closed itemsets, and computing links between equivalence classes",
+  "authors": "László Szathmáry, Petko Valtchev, Amedeo Napoli, Robert P. Godin",
+  "venue": "Annals of Mathematics and Artificial Intelligence",
+  "doi": "https://doi.org/10.1007/s10472-013-9372-8",
+  "abstract": ""
+ },
+ {
+  "key": "Mining Concurrently Closed Itemsets and Generators",
+  "year": 2013,
+  "title": "An Approach for Mining Concurrently Closed Itemsets and Generators",
+  "authors": "Anh Tran, Tin Truong, Bac Hoai Le",
+  "venue": "Studies in computational intelligence",
+  "doi": "https://doi.org/10.1007/978-3-319-00293-4_27",
+  "abstract": ""
+ },
+ {
+  "key": "closed sequential patterns and their minimal generators",
+  "year": 2013,
+  "title": "An effective algorithm for mining closed sequential patterns and their minimal generators based on prefix trees",
+  "authors": "Thi Thiet Pham, Jiawei Luo, Bay Vo",
+  "venue": "International Journal of Intelligent Information and Database Systems",
+  "doi": "https://doi.org/10.1504/ijiids.2013.056314",
+  "abstract": "Sequential generator patterns and closed sequential patterns play an important role in data mining tasks. They are proposed to address difficult problems in mining sequential pattern and have often been used together to generate non-redundant rules. Based on their important role, this paper proposes an efficient algorithm called CloGen for mining closed sequential patterns and their minimal sequential generator patterns. The CloGen algorithm uses the parent-child relationship on prefix tree structure and inserts fields into each node on prefix tree to determine whether that is a minimal sequential generator pattern or closed sequential pattern. Experimental results show that the performance runtime of CloGen algorithm is much faster than that of other algorithms by more than one order of magnitude."
+ },
+ {
+  "key": "sequential generator pattern using prefix trees and hash",
+  "year": 2014,
+  "title": "An efficient algorithm for mining sequential generator pattern using prefix trees and hash tables",
+  "authors": "Thi Thiet Pham, Jiawei Luo, Tzung‐Pei Hong",
+  "venue": "International Journal of Intelligent Systems Technologies and Applications",
+  "doi": "https://doi.org/10.1504/ijista.2014.065151",
+  "abstract": "Mining long frequent sequences that contain a combinatorial number of frequent subsequences or using very low support thresholds to mine sequential patterns is both time– and memory–consuming. The mining of closed sequential patterns, sequential generator patterns, and maximum sequences has been proposed to overcome this problem. This paper proposes an algorithm for generating all sequential generator patterns. This algorithm uses a vertical approach to listing and counting the support of sequence based on the prime block encoding approach to represent candidate sequences and determine the frequency for each candidate. The search space of the proposed algorithm is much smaller than those of other algorithms because super sequence frequency–based pruning and non–generator–based pruning are applied. Besides, hash tables are also used for fast checking the existed sequential generator patte"
+ },
+ {
+  "key": "CGT : A vertical miner",
+  "year": 2014,
+  "title": "CGT : A vertical miner for frequent equivalence classes of itemsets",
+  "authors": "László Szathmáry, Márton Ispány",
+  "venue": null,
+  "doi": "https://doi.org/10.17048/futurerfid.1.2014.161",
+  "abstract": "In this paper we present a vertical, depth-first algorithm that outputs frequent generators (FGs) and their associated frequent closed itemsets (FCIs).The proposed algorithm -called CGT -is a single-pass algorithm and it explores frequent equivalence classes in a dataset."
+ },
+ {
+  "key": "Simultaneous mining of frequent closed itemsets and their generators",
+  "year": 2014,
+  "title": "Simultaneous mining of frequent closed itemsets and their generators: Foundation and algorithm",
+  "authors": "Anh Tran, Tin Truong, Bac Hoai Le",
+  "venue": "Engineering Applications of Artificial Intelligence",
+  "doi": "https://doi.org/10.1016/j.engappai.2014.07.004",
+  "abstract": ""
+ },
+ {
+  "key": "Efficiently Mining Sequential Generator Patterns Using Prefix Trees",
+  "year": 2015,
+  "title": "Efficiently Mining Sequential Generator Patterns Using Prefix Trees",
+  "authors": "Thi-Thiet Pham",
+  "venue": "Fundamenta Informaticae",
+  "doi": "https://doi.org/10.3233/fi-2015-1217",
+  "abstract": "Mining long frequent sequences that contain a combinatorial number of frequent subsequences or using very low support thresholds to mine sequential patterns is usually both time- and memory-consuming. The mining of closed sequential patterns, sequential generator patterns, and maximum sequences has been proposed to overcome this problem. Sequential generator patterns, when used together with closed sequential patterns, can provide additional information that closed sequential patterns alone cannot provide. Mining sequential generator patterns is thus an important task in data mining as well. This paper proposes an algorithm called MSGP-PreTree for mining all sequential generator patterns based on the prefix-tree structure. The algorithm uses the characteristics of sequential generator patterns and sequence extensions to efficiently perform a depth-first search on a prefix tree. It also u"
+ },
+ {
+  "key": "extended version of the Apriori algorithm",
+  "year": 2015,
+  "title": "Finding minimal rare itemsets with an extended version of the Apriori algorithm",
+  "authors": "László Szathmáry",
+  "venue": null,
+  "doi": "https://doi.org/10.14794/icai.9.2014.1.85",
+  "abstract": "In this paper we investigate the extraction of rare itemsets, focusing on a special subset of rare itemsets called minimal rare itemsets.Rare itemsets are important patterns that have a wide range of practical applications, especially in the analysis of biomedical data.In this preliminary study we investigate how to modify the well-known frequent itemset mining algorithm Apriori in order to extract rare itemsets too."
+ },
+ {
+  "key": "Contiguous Sequential Generators",
+  "year": 2015,
+  "title": "Mining Contiguous Sequential Generators in Biological Sequences",
+  "authors": "Jingsong Zhang, Yinglin Wang, Chao Zhang, Yongyong Shi",
+  "venue": "IEEE Transactions on Computational Biology and Bioinformatics",
+  "doi": "https://doi.org/10.1109/tcbb.2015.2495132",
+  "abstract": "The discovery of conserved sequential patterns in biological sequences is essential to unveiling common shared functions. Mining sequential generators as well as mining closed sequential patterns can contribute to a more concise result set than mining all sequential patterns, especially in the analysis of big data in bioinformatics. Previous studies have also presented convincing arguments that the generator is preferable to the closed pattern in inductive inference and classification. However, classic sequential generator mining algorithms, due to the lack of consideration on the contiguous constraint along with the lower-closed one, still pose a great challenge at spawning a large number of inefficient and redundant patterns, which is too huge for effective usage. Driven by some extensive applications of patterns with contiguous feature, we propose ConSgen, an efficient algorithm for d"
+ },
+ {
+  "key": "Mining Minimal High-Utility Itemsets",
+  "year": 2016,
+  "title": "Mining Minimal High-Utility Itemsets",
+  "authors": "Philippe Fournier‐Viger, Jerry Chun‐Wei Lin, Chengwei Wu, Vincent S. M. Tseng",
+  "venue": "Lecture notes in computer science",
+  "doi": "https://doi.org/10.1007/978-3-319-44403-1_6",
+  "abstract": ""
+ },
+ {
+  "key": "closed high utility itemsets and generators",
+  "year": 2017,
+  "title": "An efficient approach for mining closed high utility itemsets and generators",
+  "authors": "Thang Mai, Loan T. T. Nguyen",
+  "venue": "Journal of Information and Telecommunication",
+  "doi": "https://doi.org/10.1080/24751839.2017.1347392",
+  "abstract": "Mining closed high utility itemsets (CHUIs) serves as a compact and lossless representation of high utility itemsets (HUIs). CHUIs and their generators are useful in analytical and recommendation systems. In this paper, we introduce a lattice approach to extract CHUIs and their generators from a set of HUIs quickly. The experimental results show that mining CHUIs and their generators from a lattice of HUIs is efficient in both runtime and memory usage."
+ },
+ {
+  "key": "simultaneously mining concise representations of sequential",
+  "year": 2017,
+  "title": "Efficient algorithms for simultaneously mining concise representations of sequential patterns based on extended pruning conditions",
+  "authors": "Hai Duong, Tin Truong, Bac Hoai Le",
+  "venue": "Engineering Applications of Artificial Intelligence",
+  "doi": "https://doi.org/10.1016/j.engappai.2017.09.024",
+  "abstract": ""
+ },
+ {
+  "key": "integrated approach for mining closed and generator high utility",
+  "year": 2020,
+  "title": "An integrated approach for mining closed and generator high utility itemsets",
+  "authors": "Suneetha Merugula, M. V. P. Chandra Sekhara Rao",
+  "venue": "International Journal of Knowledge-based and Intelligent Engineering Systems",
+  "doi": "https://doi.org/10.3233/kes-200026",
+  "abstract": "High Utility Itemset Mining (HUIM) is playing an important role in extracting meaningful knowledge that is profitable itemsets rather than their occurrence frequency. HUIM result thrives into a huge number of utility itemsets that makes it difficult in decision policy. The alternative procedure is condensed representation of HUI’s that contains utility itemsets without any redundancy. Closed High Utility Itemsets (CHUI) and High Utility Generators (HUG) are lossless utility itemsets useful in recommendation systems. In this paper, we address how to extract Closed and Generator HUI’s from the given dataset. For faster accessing, it is proposed hash based technique that store itemsets with the frequency, utility value, closed flag, and generator flag. Experimental results shows that it outperforms other approaches in time and space."
+ },
+ {
+  "key": "Closed High-Utility Itemsets and Generators based on Multiple",
+  "year": 2020,
+  "title": "Extraction of Closed High-Utility Itemsets and Generators based on Multiple Minimum Support and Utility",
+  "authors": "G. Srilatha, Naveen S Chandra",
+  "venue": "European Journal of Molecular & Clinical Medicine",
+  "doi": null,
+  "abstract": ""
+ },
+ {
+  "key": "Fast Enumeration of Pairs of Minimal Generators",
+  "year": 2020,
+  "title": "Fast Enumeration of Pairs of Minimal Generators and Their Closure Itemsets",
+  "authors": "Takahiro Nabeshima",
+  "venue": "The Japanese Society for Artificial Intelligence",
+  "doi": null,
+  "abstract": ""
+ },
+ {
+  "key": "Enumerating Minimal Generators from Closed Itemsets",
+  "year": 2021,
+  "title": "Enumerating Minimal Generators from Closed Itemsets – Toward Effective Compression of Negative Association Rules",
+  "authors": "Koji Iwanuma, Kento Yajima, Yoshitaka Yamamoto",
+  "venue": "IEEE Asia-Pacific Conference on Computer Science and Data Engineering (CSDE)",
+  "doi": "https://doi.org/10.1109/csde53843.2021.9718380",
+  "abstract": "Negative association rules are valuable and essential for expressing various latent properties which hide in big data. The number of valid negative association rules, however, always becomes so huge, thus an effective compression method of the set of negative rules is quite important. Minimal generators are very useful for compressing the set of valid negative rules. In this paper, we study several efficient algorithms for enumerating minimal generators from given closed itemsets. Especially we propose a novel enumeration algorithm which does not use any support computation, but uses an eager hash search in a top-down tree search. We show experimental results for evaluating our enumeration algorithms, and confirm very good performance of the enumeration method without support computation."
+ },
+ {
+  "key": "Bottom-Up Enumeration Algorithm of Minimal Generators",
+  "year": 2022,
+  "title": "A Bottom-Up Enumeration Algorithm of Minimal Generators without Support Counting for Compressing Negative Association Rules",
+  "authors": "Kento Yajima, Koji Iwanuma, Yoshitaka Yamamoto",
+  "venue": "International Congress on Advanced Applied Informatics (IIAI-AAI)",
+  "doi": "https://doi.org/10.1109/iiaiaai55812.2022.00135",
+  "abstract": "Negative association rules are valuable and essential for expressing various latent properties which hide in big data. The set of valid negative association rules, however, always becomes so huge, thus an effective compression method of negative rules is quite important. Minimal generators are important concepts for compressing the set of valid negative rules. In this paper, we study a bottom-up efficient algorithms for enumerating minimal generators from given closed itemsets. So far, support calculations have always been a bottleneck in data mining calculations. Therefore, we here propose a novel enumeration algorithm which does not use any explicit support computation. We show experimental results for evaluating our bottom-up enumeration algorithm, where the algorithm performs well in terms of memory consumption compared to previous algorithms."
+ },
+ {
+  "key": "concise and informative representations of frequent high utility",
+  "year": 2023,
+  "title": "Efficient mining of concise and informative representations of frequent high utility itemsets",
+  "authors": "Thong Tran, Hai Duong, Tin Truong, Bac Hoai Le",
+  "venue": "Engineering Applications of Artificial Intelligence",
+  "doi": "https://doi.org/10.1016/j.engappai.2023.107111",
+  "abstract": ""
+ },
+ {
+  "key": "Closed Itemsets and Generators Over Uncertain",
+  "year": 2023,
+  "title": "Mining Frequent Closed Itemsets and Generators Over Uncertain Data",
+  "authors": "Lulu Zhao, Chilian Chen, Wanyong Tian",
+  "venue": "IEEE International Conference on Electronic Information and Communication Technology (ICEICT)",
+  "doi": "https://doi.org/10.1109/iceict57916.2023.10245860",
+  "abstract": "The rapid development of computer technology and the widespread use of Internet products have already led us into the era of big data, and researchers are increasingly focused on developing advanced data mining techniques to extract valuable insights from large datasets. Frequent itemset mining refers to mining the frequently occurring itemsets in data, which is a reliable method to get useful information from a large amount of data and is used on the Internet, finance, medical and other fields. But as a rule, the number of frequent itemsets extracted from data is exponential, which reduces the usefulness of mining results. To achieve the compressed representation of frequent itemsets, researchers have proposed the concept of frequent closed itemsets, which are greatly reduced in number compared to frequent itemsets and retain the integrity of the information contained in frequent itemse"
+ },
+ {
+  "key": "Targeting Minimal Rare Itemsets",
+  "year": 2023,
+  "title": "Targeting Minimal Rare Itemsets from Transaction Databases",
+  "authors": "Amel Hidouri, Badran Raddaoui, Saïd Jabbour",
+  "venue": "International Joint Conference on Artificial Intelligence",
+  "doi": "https://doi.org/10.24963/ijcai.2023/235",
+  "abstract": "The computation of minimal rare itemsets is a well known task in data mining, with numerous applications, e.g., drugs effects analysis and network security, among others. This paper presents a novel approach to the computation of minimal rare itemsets. First, we introduce a generalization of the traditional minimal rare itemset model called k-minimal rare itemset. A k-minimal rare itemset is defined as an itemset that becomes frequent or rare based on the removal of at least k or at most (k − 1) items from it. We claim that our work is the first to propose this generalization in the field of data mining. We then present a SAT-based framework for efficiently discovering k-minimal rare itemsets from large transaction databases. Afterwards, by partitioning the k-minimal rare itemset mining problem into smaller sub-problems, we aim to make it more manageable and easier to solve. Finally, to "
+ },
+ {
+  "key": "Space-Saving Algorithm for Enumerating Minimal Generators",
+  "year": 2024,
+  "title": "A Space-Saving Algorithm for Enumerating Minimal Generators in Negative Rule Mining",
+  "authors": "Shogo Mochizuki, Koji Iwanuma",
+  "venue": "IIAI International Congress on Advanced Applied Informatics (IIAI-AAI)",
+  "doi": "https://doi.org/10.1109/iiai-aai63651.2024.00139",
+  "abstract": "A positive/negative association rule describes the relationship between co-occurrence and anti-co-occurrence of events (item sets) in the data. The number of association rules extracted from the data, especially negative rules, is extremely huge, and some compression is absolutely necessary. In [3], we proposed a lossless compression method for rule sets, using minimal generators. Thus, the efficient enumeration of minimal generators is definitely important for negative association rule mining. In [6], an algorithm for enumerating minimal generators from closed itemsets was proposed. By recording all itemsets examined once to a hash table, all minimal generators can be enumerated without any support calculations, which can speed up the enumeration computation. The size of the hash table, however, becomes very large. In this study, we propose a method of enumerating minimal generators fro"
+ },
+ {
+  "key": "MRI-CE",
+  "year": 2024,
+  "title": "MRI-CE: Minimal rare itemset discovery using the cross-entropy method",
+  "authors": "Wei Guo Song, Zhen Sun, Philippe Fournier‐Viger, Youxi Wu",
+  "venue": "Information Sciences",
+  "doi": "https://doi.org/10.1016/j.ins.2024.120392",
+  "abstract": ""
+ },
+ {
+  "key": "Concise Patterns for Frequent High-Utility Occupancy",
+  "year": 2025,
+  "title": "Efficient Mining of Concise Patterns for Frequent High-Utility Occupancy Itemsets Using Extended Pruning Strategies",
+  "authors": "Tien Hoang, Lan Huynh, Hai Duong, Tin Truong",
+  "venue": "Research and Development on Information and Communication Technology",
+  "doi": "https://doi.org/10.32913/mic-ict-research.v2025.n2.1360",
+  "abstract": "Concise representations of frequent high utility occupancy itemsets (FHUOIs), including maximal (MFHUOIs), closed (CFHUOIs), and generator (GFHUOIs) FHUOIs, play a crucial role in utility-driven mining. They offer significant advantages over the full set of FHUOIs, such as reduced size, improved efficiency, lower storage costs, and easier analysis. Moreover, MFHUOIs enable the recovery of all FHUOIs, while CFHUOIs and GFHUOIs together facilitate the generation of non-redundant high utility occupancy rules and the efficient retrieval of all FHUOIs and their key information. Despite their importance, existing methods mine CFHUOIs and GFHUOIs separately and lack an approach for mining MFHUOIs. To address this gap, this paper proposes two novel algorithms, namely MaxFHUOI-Miner and CGFHUOI-Miner. MaxFHUOI-Miner efficiently extracts only MFHUOIs using the extended pruning strategies EPNonMaxB"
+ },
+ {
+  "key": "Finding Minimal Rare Itemsets and Rare Association",
+  "year": 2010,
+  "title": "Finding Minimal Rare Itemsets and Rare Association Rules",
+  "authors": "László Szathmáry, Petko Valtchev, Amedeo Napoli",
+  "venue": "Lecture notes in computer science",
+  "doi": "https://doi.org/10.1007/978-3-642-15280-1_5",
+  "abstract": ""
+ },
+ {
+  "key": "Using rule-free sets",
+  "year": 2004,
+  "title": "Using rule-free sets to find frequent itemsets",
+  "authors": "Dong Ya Zhao, Yansheng Lu, Tao Wang, Aihua Yin",
+  "venue": "International Conference on Machine Learning and Cybernetics",
+  "doi": "https://doi.org/10.1109/icmlc.2003.1264434",
+  "abstract": "Given a large set of data, extracting frequent itemsets in this set is a challenging job in data mining. Many efficient algorithms have been proposed in the literature. The idea presented in this paper is to extract a condensed representation of the frequent itemsets called rule-free sets, instead of extracting the whole frequent itemsets collection. We show that this condensed representation can be applied to regenerate all frequent itemsets and their exact frequencies without any access to the original data. An algorithm, RFS-MINER, is presented to extract the frequent rule-free sets and practical experiments show that this representation can be extracted very efficiently. We compared it with another representation in the literature called frequent closed sets and in nearly all experiments we have run, the rule free sets have been extracted much more efficiently than frequently closed "
+ },
+ {
+  "key": "Optimized Algorithm for Mining Frequent Rule-Free",
+  "year": 2005,
+  "title": "An Optimized Algorithm for Mining Frequent Rule-Free Sets",
+  "authors": "Yansheng Lu",
+  "venue": "Computer Engineering and Science",
+  "doi": null,
+  "abstract": "Given a large collection of transactions containing items, a basic common problem is to extract the so-called frequent itemset. The idea presented in this paper is to extract a condensed representation of the frequent itemsets called rule-free sets, instead of extracting the whole frequent itemset collection. We show that this condensed representation can be used to regenerate all frequent patterns and their exact frequencies without any access to the original data. An algorithm named HOPE-III is given to extract the frequent rule-free sets. We compared it with an algorithm named A-Close which extracts another condensed representation of frequent itemsets previously investigated in the literature called frequent closed sets. The experiments show that in all cases, HOPE-III is much more efficient than A-Close."
+ }
+]
