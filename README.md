@@ -1,8 +1,24 @@
-# Minimal Generator Algorithm Benchmark
+# Minimal generators: survey, benchmark, and a semantics-aware recommender
 
-Benchmark harness and survey paper for **"An Analytical and Empirical Survey of Minimal Generator Algorithms"** (CENG 643, 2025).
+Code, data and paper for **"Which minimal-generator miner answers the question
+asked? A benchmark-grounded, semantics-aware recommender with pre-registered
+validation"** (in preparation for *Knowledge-Based Systems*; `kbs/`).
 
-Covers 25 AND-generator algorithms across 5 families (transactional, sequential, high-utility, graph, rare/stream), benchmarks 17 implementations over 12 real-world datasets in 655 controlled runs.
+- **Survey.** A systematic search finds 52 minimal-generator algorithms in
+  five families. 14 have an executable implementation (`results/litsearch/`).
+- **Benchmark.** The 17 executable implementations (the 14 algorithms plus
+  three native post-filtering baselines), with exact peak memory
+  (`tools/peakrun`). 81 datasets, 3,284 runs in the training table.
+- **Output audit.** Every implementation is checked against oracles for
+  the definition it claims (`tools/validate_*.py`).
+- **Recommender.** `recommender/`: semantic filter, cost model, probe on the
+  user's file, and prediction intervals calibrated over datasets. Every test
+  was pre-registered (`results/*_PROTOCOL.md`, `results/*_RESULTS.md`).
+- **Reproduction.** `kbs/REPRODUCE.md` maps every table and figure of the
+  paper to the command that produces it.
+
+The earlier survey manuscript is in `report/`. It is kept as written, and
+its counts (25 algorithms) predate the systematic search.
 
 ---
 
@@ -15,8 +31,13 @@ Covers 25 AND-generator algorithms across 5 families (transactional, sequential,
 │   ├── datasets.py       # Dataset download and formatting
 │   ├── metrics.py        # SPMF/external runner, memory monitor
 │   └── analyze.py        # Results aggregation and plot generation
+├── recommender/          # the recommender (engine, probe, intervals, CLI, chat)
+├── kbs/                  # the KBS paper (main.tex, sections/, figures/)
+├── tools/                # evaluation scripts, validators, peakrun launcher
 ├── external_algos/
-│   └── Gr_growth/        # Gr-growth C++ source + Windows binary
+│   ├── Gr_growth/        # Gr-growth C++ source
+│   ├── FGC_Stream/       # FGC-Stream C++ source
+│   └── borgelt/          # Borgelt's Apriori, Eclat, FP-growth
 ├── results/
 │   ├── summary.csv       # Full 655-run results table
 │   └── raw/              # Per-run JSON files
@@ -71,18 +92,21 @@ Verify:
 java -jar spmf/spmf.jar
 ```
 
-### 2. Build Gr-growth (non-Windows only)
+### 2. Build the native programs and the memory launcher
 
-A pre-compiled Windows binary is included at `external_algos/Gr_growth/grgrowth-v1/GrGrowth-PBD-source/GrGrowth_PBd.exe`.
-
-On Linux/macOS, compile from source:
+On Linux, each native program is built next to its Windows `.exe` name
+without the extension, and `src/config.py` picks the extension-less binary
+automatically:
 
 ```bash
-cd external_algos/Gr_growth/grgrowth-v1/GrGrowth-PBD-source
-g++ -O2 -o GrGrowth_PBd *.cpp
+gcc -O2 -static -o tools/peakrun/peakrun tools/peakrun/peakrun.c
+cd external_algos/Gr_growth/grgrowth-v1/GrGrowth-PBD-source && g++ -O2 -std=c++17 -o GrGrowth_PBd *.cpp
 ```
 
-Then update `config.py` → `"exe"` path for `Gr_growth` to point to the compiled binary.
+The other native programs are built the same way: FGC-Stream from
+`external_algos/FGC_Stream/FGC-Stream/` (`FGC_Stream_release`), and the
+Borgelt programs with their own makefiles. Without `tools/peakrun/peakrun`,
+the harness warns and falls back to polling memory, which misses short runs.
 
 > **Important — the `k` argument.** Gr-growth's third command-line argument is
 > the *depth of the subset test*, not a pattern-length cap. Only `k=1` yields
@@ -93,17 +117,7 @@ Then update `config.py` → `"exe"` path for `Gr_growth` to point to the compile
 > This benchmark therefore pins `GRGROWTH_K = 1` in `src/config.py`. Do not
 > change it unless you intend to mine a different pattern family.
 
-### 3. FGC-Stream (optional)
-
-FGC-Stream is a Windows-only binary not included in this repository due to size. To enable it, obtain the executable from the authors and place it at:
-
-```
-external_algos/FGC_Stream/FGC-Stream/FGC_Stream_release.exe
-```
-
-Without this binary, FGC-Stream runs are skipped automatically (`available: False`).
-
-### 4. Download Datasets
+### 3. Download Datasets
 
 Datasets are downloaded automatically from the SPMF public dataset repository:
 
@@ -259,22 +273,30 @@ abort again at 11.1–11.8 GB.
 | Pascal, Zart, DefMe, TalkyG, TalkyG-Diffset | Transactional | SPMF v2.65 |
 | FEAT, FSGP, VGEN | Sequential | SPMF v2.65 |
 | HUG-Miner, GHUI-Miner, HUCI-Miner-Gen. | High-Utility | SPMF v2.65 |
-| Arima | Rare | SPMF v2.65 |
-| FGC-Stream | Stream | Windows binary (not bundled) |
+| AprioriRare (labelled `Arima` in `src/config.py` and the results tables) | Rare | SPMF v2.65 |
+| FGC-Stream | Stream | C++ source (this repo) |
 
-11 of 25 surveyed algorithms have no public implementation and are not benchmarked.
-Availability is strongly time-dependent: 13 of the 17 algorithms published up to 2015
-are executable (76.5%), against only 1 of the 8 published from 2016 onwards (12.5%).
+38 of the 52 algorithms found by the systematic search have no executable
+implementation (`results/litsearch/SCREENING.md`). Availability depends on age:
+13 of the 36 algorithms published up to 2015 are executable (36.1%), and 1 of
+the 16 published from 2016 onwards (6.3%).
+
+The rare-itemset implementation in SPMF is AprioriRare, which finds the minimal
+rare itemsets. Szathmary et al. (2007) propose it together with Arima, which
+restores all rare itemsets. Earlier versions of this repository called the
+implementation Arima. The identifier is kept so that the results tables stay
+valid.
 
 ---
 
 ## Citation
 
 ```bibtex
-@misc{kacikan2025generators,
-  author  = {Kacikan, Egemen},
-  title   = {An Analytical and Empirical Survey of Minimal Generator Algorithms},
-  year    = {2025},
+@misc{kacikan2026generators,
+  author  = {Ka\c{c}{\i}kan, Egemen and Ergen\c{c} Bostano\u{g}lu, Belgin and Onan, Aytug},
+  title   = {Which Minimal-Generator Miner Answers the Question Asked? A Benchmark-Grounded,
+             Semantics-Aware Recommender with Pre-Registered Validation},
+  year    = {2026},
   url     = {https://github.com/Hanketsu35/generator-survey}
 }
 ```
