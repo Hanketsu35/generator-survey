@@ -117,3 +117,14 @@ results/synthetic_scratch/
 tools/autofolio/src/
 tools/peakrun/peakrun
 results/exact/reprobe.log
+
+# Earlier KAIS draft, kept locally and never committed
+report/main_kais.tex
+report/main_kais.pdf
+report/main_kais.aux
+report/main_kais.bbl
+report/main_kais.blg
+report/main_kais.log
+report/main_kais.out
+# Local Zart audit logs
+results/valzart/
