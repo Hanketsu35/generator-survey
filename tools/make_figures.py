@@ -85,7 +85,7 @@ def regret():
                     m.split(" (")[0].replace(" +probe", "") + " + probe features": b[m].values,
                     **{k: v for k, v in data.items() if k not in ("probe-argmin", "recommender + probe")}}
     names = list(data)[::-1]
-    fig, ax = plt.subplots(figsize=(3.4, 2.9))
+    fig, ax = plt.subplots(figsize=(4.6, 3.0))
     for i, k in enumerate(names):
         v = np.minimum(data[k], 10.0)
         y = i + (np.random.default_rng(i).random(len(v)) - 0.5) * 0.5
