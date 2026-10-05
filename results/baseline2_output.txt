@@ -1,0 +1,30 @@
+== memory, PRIMARY fresh7+fresh8: 119 instances, 32 datasets
+   recommender, probe                 1.030x [1.006..1.062] failed 0
+   probe-argmin                       1.029x [1.005..1.061] failed 0
+   pairwise ranking +probe            1.145x [1.066..1.253] failed 1
+   regression (PAR10-imputed) +probe  1.096x [1.028..1.190] failed 0
+   SUNNY (k-NN, k=16) +probe          1.142x [1.053..1.262] failed 0
+   ISAC (k-means clusters) +probe     1.078x [1.031..1.132] failed 1
+   AutoFolio (SMAC, 1800s/fold) +probe 1.098x [1.033..1.190] failed 0
+   recommender vs probe-argmin                   ratio 1.001 [1.000..1.002]  P(rec better) 0.0000
+   recommender vs pairwise ranking +probe        ratio 0.899 [0.826..0.961]  P(rec better) 1.0000
+   recommender vs regression (PAR10-imputed) +probe ratio 0.940 [0.866..0.999]  P(rec better) 0.9675
+   recommender vs SUNNY (k-NN, k=16) +probe      ratio 0.902 [0.814..0.980]  P(rec better) 0.9920
+   recommender vs ISAC (k-means clusters) +probe ratio 0.955 [0.918..0.986]  P(rec better) 0.9995
+   recommender vs AutoFolio (SMAC, 1800s/fold) +probe ratio 0.938 [0.867..0.993]  P(rec better) 0.9900
+   recommender and probe-argmin pick the same implementation on 99.2%
+== memory, all test sets: 335 instances, 90 datasets
+   recommender, probe                 1.018x [1.006..1.033] failed 0
+   probe-argmin                       1.025x [1.009..1.044] failed 1
+   pairwise ranking +probe            1.110x [1.061..1.168] failed 2
+   regression (PAR10-imputed) +probe  1.105x [1.052..1.172] failed 0
+   SUNNY (k-NN, k=16) +probe          1.167x [1.100..1.252] failed 2
+   ISAC (k-means clusters) +probe     1.066x [1.043..1.094] failed 1
+   AutoFolio (SMAC, 1800s/fold) +probe 1.120x [1.065..1.187] failed 0
+   recommender vs probe-argmin                   ratio 0.993 [0.980..1.000]  P(rec better) 0.6095
+   recommender vs pairwise ranking +probe        ratio 0.917 [0.873..0.957]  P(rec better) 1.0000
+   recommender vs regression (PAR10-imputed) +probe ratio 0.921 [0.869..0.968]  P(rec better) 1.0000
+   recommender vs SUNNY (k-NN, k=16) +probe      ratio 0.872 [0.814..0.926]  P(rec better) 1.0000
+   recommender vs ISAC (k-means clusters) +probe ratio 0.954 [0.934..0.972]  P(rec better) 1.0000
+   recommender vs AutoFolio (SMAC, 1800s/fold) +probe ratio 0.909 [0.858..0.956]  P(rec better) 1.0000
+   recommender and probe-argmin pick the same implementation on 99.1%
