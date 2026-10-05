@@ -152,6 +152,22 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
     FRESH7 could test on one dataset only, met its 90% guarantee on eight
     large OpenML datasets (0.954, x3 wide; `results/FRESH8_RESULTS.md`).
 
+- **Against standard selectors, the memory gain comes from measuring**
+  (`results/BASELINE_RESULTS.md`, `results/BASELINE2_RESULTS.md`).
+  - On memory, the recommender with its probe scores 1.030x on the 32 held-out
+    OpenML datasets. AutoFolio scores 1.137-1.145x over three seeds, ISAC
+    1.132x, and the other selectors more.
+  - Reading the probe alone (probe-argmin) does as well, 1.029x, picking the
+    same implementation on 118 of 119 instances.
+  - Selectors given the probe's values as features do worse (1.066-1.167x).
+  - On runtime, the recommender is level with the learned selectors.
+  - Further views are in `results/GAP_ANALYSES.md`: megabytes, the probe's own
+    time, and Wilcoxon and Friedman/Nemenyi tests.
+- **The survey count is decided on full texts** (`results/litsearch/RULE.md`,
+  `VERIFIED.md`): 35 minimal-generator algorithms are counted, 12 of them
+  executable. HUCI-Miner-Generators and the recent utility-occupancy and
+  average-utility "generator" miners define minimality relative to
+  high-utility subsets, so they are not support-minimal generators.
 - **Audit before writing up** (2026-10-05). The engine now:
   - shows the typical (median) runtime in its table and budget checks, not
     the restricted mean, which a small chance of a timeout inflates;

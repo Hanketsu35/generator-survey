@@ -315,7 +315,7 @@
       "soundness": {
         "status": "different_family",
         "summary": "Despite its name, this implementation returns NO support-minimal generators. Its minimality is defined with respect to utility.",
-        "evidence": "oracle on foodmart/theta=50: of 2002 returned patterns, 0 are support-minimal and 0 are closed, but 1976 (98.7%) are minimal with respect to utility (no immediate subset reaches the threshold).",
+        "evidence": "oracle on foodmart/theta=50: of 2002 returned patterns, 0 are support-minimal and 0 are closed, but 1976 (98.7%) are minimal with respect to utility (no immediate subset reaches the threshold). The paper agrees: its Def. 13 (arXiv 1410.2988) makes a generator minimal only among high-utility subsets and rejects the support-minimal Def. 12 (results/litsearch/verify_E.md).",
         "consequence": "Its pattern counts are NOT commensurable with HUG-Miner's or GHUI-Miner's and must not be tabulated in the same column."
       },
       "completeness": {"status": "unvalidated"},

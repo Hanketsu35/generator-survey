@@ -21,10 +21,11 @@ lives**, and the results split three ways:
                    high-utility itemsets, and the model does say no.
 
 ``semantic``       the description contains the answer but the distinction is
-                   subtle enough to be read past. Example: Arima mines *minimal
-                   rare* itemsets -- minimal in the maximum-support region,
-                   which is the opposite side of the support axis from
-                   support-minimality. The model reads "minimal" and agrees.
+                   subtle enough to be read past. Example: AprioriRare (the
+                   implementation listed as "Arima") mines *minimal rare*
+                   itemsets. They are generators, but of the rare region, not
+                   the frequent generators the request asks for. The model
+                   reads "minimal" and agrees.
 
 ``measured_only``  no document anywhere states the truth, because it was
                    discovered by running the code against an oracle. Talky-G
