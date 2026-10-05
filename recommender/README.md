@@ -41,7 +41,7 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
   samples of the user's own file and their cost is extrapolated to full size
   (`probe.py`). Leave-one-dataset-out over 17 datasets: memory regret 1.073x
   against the model's 1.282x (pre-registered P1 passed, with an extrapolation
-  form amended after one smoke-test instance; see `literature/NOTES.md` §10).
+  form amended after one smoke-test instance; see the probe protocol, `results/PROBE_PROTOCOL.md`).
   On runtime the probe's own time dominates millisecond-scale runs (6.29x vs
   1.19x, P3 failed), so runtime stays with the model.
 
@@ -321,7 +321,7 @@ seven. It is also why the plane explains only 23% of performance variation —
 the root cause of every weak selector number above is the features, not the
 model class.
 
-Figures: `plots/instance_space_{runtime,memory}_{pls,pca}.pdf`.
+Figures: `plots/instance_space_{runtime,memory}_{pls,pca}.pdf` (generated, not tracked).
 
 `effective instance count` is computed, not asserted: it is the cluster-sampling
 design effect `n / (1 + (m̄−1)·ICC)` with the between-dataset share read as an
@@ -514,9 +514,8 @@ Three things this says, none of them flattering to a naive reading:
    had the best accuracy and the worst cost: one catastrophic pick outweighs
    many small wins when the loss is asymmetric. Judge selectors on cost.
 
-See `literature/NOTES.md`, including a mistake of ours that a 10× penalty on
-peak memory manufactured an apparent 4.35× headroom where the clean subset
-shows 1.016×.
+One mistake of ours belongs here: a 10× penalty on peak memory manufactured
+an apparent 4.35× headroom where the clean subset shows 1.016×.
 
 ### Selector results after re-measurement
 

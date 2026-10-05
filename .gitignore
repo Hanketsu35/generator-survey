@@ -131,3 +131,19 @@ results/valzart/
 # Copyrighted full texts fetched for verification; never commit
 results/litsearch/Fetched_pdfs/
 results/litsearch/pdfs/
+
+# --- Not part of the reproduction package (kept locally) ---------------------
+# Manuscripts: the KBS paper, its supplement, figures and cover letter, the
+# earlier survey drafts, and working notes. The reproduction guide is
+# REPRODUCE.md at the root.
+kbs/
+report/
+plots/
+literature/
+HANDOFF.md
+tools/make_elsevier.py
+results/litsearch/TO_FETCH.md
+external_algos/Gr_growth/grgrowth-v1.zip
+# run logs and completion markers
+results/*.log
+results/*.done

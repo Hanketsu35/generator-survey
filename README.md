@@ -2,7 +2,9 @@
 
 Code, data and paper for **"Which minimal-generator miner answers the question
 asked? A benchmark-grounded, semantics-aware recommender with pre-registered
-validation"** (in preparation for *Knowledge-Based Systems*; `kbs/`).
+validation"** (in preparation for *Knowledge-Based Systems*). The manuscript
+itself is not distributed here; this repository holds what is needed to
+reproduce it.
 
 - **Survey.** A systematic search, decided on full texts, counts 35
   minimal-generator algorithms. 12 have an executable implementation
@@ -16,11 +18,8 @@ validation"** (in preparation for *Knowledge-Based Systems*; `kbs/`).
 - **Recommender.** `recommender/`: semantic filter, cost model, probe on the
   user's file, and prediction intervals calibrated over datasets. Every test
   was pre-registered (`results/*_PROTOCOL.md`, `results/*_RESULTS.md`).
-- **Reproduction.** `kbs/REPRODUCE.md` maps every table and figure of the
+- **Reproduction.** `REPRODUCE.md` maps every table and figure of the
   paper to the command that produces it.
-
-The earlier survey manuscript is in `report/`. It is kept as written, and
-its counts (25 algorithms) predate the systematic search.
 
 ---
 
@@ -34,20 +33,15 @@ its counts (25 algorithms) predate the systematic search.
 │   ├── metrics.py        # SPMF/external runner, memory monitor
 │   └── analyze.py        # Results aggregation and plot generation
 ├── recommender/          # the recommender (engine, probe, intervals, CLI, chat)
-├── kbs/                  # the KBS paper (main.tex, sections/, figures/)
 ├── tools/                # evaluation scripts, validators, peakrun launcher
 ├── external_algos/
 │   ├── Gr_growth/        # Gr-growth C++ source
 │   ├── FGC_Stream/       # FGC-Stream C++ source
 │   └── borgelt/          # Borgelt's Apriori, Eclat, FP-growth
-├── results/
-│   ├── summary.csv       # Full 655-run results table
-│   └── raw/              # Per-run JSON files
-├── plots/                # Generated figures (PDF)
-└── report/
-    ├── main.tex          # LaTeX source
-    ├── main.pdf          # Compiled paper
-    └── references.bib
+└── results/              # every measured run, protocol and result
+    ├── summary_linux.csv # original benchmark (667 runs)
+    ├── exact/            # exact-memory tables, training table, probes
+    └── litsearch/        # systematic search and full-text verification
 ```
 
 ---
@@ -175,13 +169,13 @@ Results are appended to `results/summary.csv` and individual JSON files are save
 python -m src.analyze
 ```
 
-Generates all figures from the paper into `plots/`.
+Generates the original benchmark's figures into `plots/` (not tracked).
 
 Every derived number quoted in the paper comes from:
 
 ```bash
 python tools/paper_numbers.py     # single source of truth for the text
-python -m src.analyze             # figures + report/tables.md
+python -m src.analyze             # figures and tables of the original benchmark
 ```
 
 ---
@@ -198,25 +192,6 @@ python -m src.analyze             # figures + report/tables.md
 | `tools/validate_sequential.py` | Subsequence oracle: validates FEAT/FSGP/VGEN and explains their differences |
 | `tools/validate_remaining.py` | GHUI/HUCI semantics + FGC-Stream generator–closure verification |
 | `tools/validate_rare.py` | Maximum-support oracle for Arima: minimal-rare-itemset soundness **and** negative-border completeness |
-| `tools/make_elsevier.py` | Regenerates `report/main_elsevier.tex` (Elsevier `elsarticle`) from the KAIS source, which it never modifies |
-
-> **Two journal formats, one source.** `report/main_kais_sn.tex` (Springer
-> `sn-jnl`, KAIS) is the master. The Elsevier version is **generated**, never
-> hand-edited:
->
-> ```bash
-> python tools/make_elsevier.py            # report/main_elsevier.tex
-> python tools/make_elsevier.py --review   # double-spaced, line-numbered
-> ```
->
-> Edit the KAIS file, then re-run the script. The converter rewrites only the
-> front matter (`\author`/`\affil` → `\author`/`\affiliation`, `\abstract{}` →
-> the `abstract` environment, `\keywords` → `keyword` with `\sep`, `\bmhead` →
-> `\section*`, plus `\bibliographystyle{elsarticle-harv}`) and applies three
-> class-specific typographic corrections, because `elsarticle` is 12 pt where
-> `sn-jnl` is 10 pt: absolute `text width` values in the taxonomy `forest` and
-> the fixed `tabularx` columns are scaled by the font ratio, and table notes are
-> set ragged-right. Both versions build with 0 errors and 0 overfull boxes.
 
 > **HUCI-Miner-Generators does not output minimal generators.** Measured on
 > foodmart: of its 2,002 patterns at min_utility=50, **0 are support-minimal**
