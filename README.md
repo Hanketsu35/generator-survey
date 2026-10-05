@@ -4,10 +4,12 @@ Code, data and paper for **"Which minimal-generator miner answers the question
 asked? A benchmark-grounded, semantics-aware recommender with pre-registered
 validation"** (in preparation for *Knowledge-Based Systems*; `kbs/`).
 
-- **Survey.** A systematic search finds 52 minimal-generator algorithms in
-  five families. 14 have an executable implementation (`results/litsearch/`).
-- **Benchmark.** The 17 executable implementations (the 14 algorithms plus
-  three native post-filtering baselines), with exact peak memory
+- **Survey.** A systematic search, decided on full texts, counts 35
+  minimal-generator algorithms. 12 have an executable implementation
+  (`results/litsearch/VERIFIED.md`).
+- **Benchmark.** 17 implementations: those of the 12 executable algorithms
+  (Talky-G in two variants), HUCI-Miner-Generators (it claims generators but
+  computes another family), and three native post-filtering baselines, with exact peak memory
   (`tools/peakrun`). 81 datasets, 3,284 runs in the training table.
 - **Output audit.** Every implementation is checked against oracles for
   the definition it claims (`tools/validate_*.py`).
@@ -272,14 +274,15 @@ abort again at 11.1–11.8 GB.
 | Gr-growth | Transactional | C++ source (this repo) |
 | Pascal, Zart, DefMe, TalkyG, TalkyG-Diffset | Transactional | SPMF v2.65 |
 | FEAT, FSGP, VGEN | Sequential | SPMF v2.65 |
-| HUG-Miner, GHUI-Miner, HUCI-Miner-Gen. | High-Utility | SPMF v2.65 |
+| HUG-Miner, GHUI-Miner | High-Utility | SPMF v2.65 |
+| HUCI-Miner-Gen. (not a generator miner: utility-minimal, see the audit) | High-Utility | SPMF v2.65 |
 | AprioriRare (labelled `Arima` in `src/config.py` and the results tables) | Rare | SPMF v2.65 |
 | FGC-Stream | Stream | C++ source (this repo) |
 
-38 of the 52 algorithms found by the systematic search have no executable
-implementation (`results/litsearch/SCREENING.md`). Availability depends on age:
-13 of the 36 algorithms published up to 2015 are executable (36.1%), and 1 of
-the 16 published from 2016 onwards (6.3%).
+Of the 35 algorithms counted after full-text verification
+(`results/litsearch/RULE.md`, `VERIFIED.md`), 12 have an executable
+implementation. Availability depends on age: 11 of the 29 published up to
+2015 are executable, and 1 of the 6 published from 2016 onwards.
 
 The rare-itemset implementation in SPMF is AprioriRare, which finds the minimal
 rare itemsets. Szathmary et al. (2007) propose it together with Arima, which

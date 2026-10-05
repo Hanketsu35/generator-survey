@@ -65,7 +65,8 @@ each one.
    algorithm, as for TITANIC and A-Close.
 2. **Our own oracle audit counts as evidence of what an implementation
    outputs.** This applies only to executable implementations whose
-   output we verified. FSGP's and FGC-Stream's papers are paywalled, but
+   output we verified. FGC-Stream's paper is paywalled (FSGP's, first thought
+   paywalled, is open access and was read in the second pass), but
    their released implementations were checked against the oracles of
    Section 4.3 of the paper: every output pattern is a generator, and
    their sets agree with the other implementations'. Verifying the output

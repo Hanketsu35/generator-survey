@@ -1,3 +1,5 @@
+> **Superseded** by `RULE.md` and `VERIFIED.md` (full-text verification). This file records the first screening on titles and abstracts.
+
 # Systematic search for minimal-generator algorithms: screening (gap G8)
 
 Search: `tools/litsearch.py`, run on OpenAlex (title and abstract) on

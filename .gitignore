@@ -128,3 +128,6 @@ report/main_kais.log
 report/main_kais.out
 # Local Zart audit logs
 results/valzart/
+# Copyrighted full texts fetched for verification; never commit
+results/litsearch/Fetched_pdfs/
+results/litsearch/pdfs/

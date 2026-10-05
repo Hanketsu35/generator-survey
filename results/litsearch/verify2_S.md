@@ -1,0 +1,196 @@
+# Full-text verification, batch S (2026-10-05)
+
+Rule: `RULE.md` including the 2026-10-05 Amendments (generators must be an
+identified part of the output; peer review required). All decisions below rest
+on the full text, extracted with `pdftotext -layout` from
+`Fetched_pdfs/`. Quotes are short and verbatim (extraction artefacts in math
+symbols left as-is or described in brackets).
+
+---
+
+## 1. FSGP
+
+- **Citation:** S. Yi, T. Zhao, Y. Zhang, S. Ma, Z. Che. "An effective algorithm
+  for mining sequential generators." *Procedia Engineering* 15 (2011)
+  3653–3657 (CEIS 2011). doi:10.1016/j.proeng.2011.08.684.
+- **File read:** `1-s2.0-S1877705811021850-main.pdf` (full text, 5 pages).
+  Note: the PDF is open access (CC BY-NC-ND), so it is not paywalled as
+  Amendment 2 of RULE.md assumed; the paper text now supports the decision
+  directly, in addition to the oracle audit.
+- **Quote (Sec. 2, Definition 1, p. 3654):** "the problem of mining sequential
+  generator patterns is to find all the set of frequent sequential generator
+  patterns from the transaction database SDB."
+- **Generator test (Sec. 2, Theorem 2, p. 3655):** a sequence is a generator
+  "if and only if there is no a subsequence" S_n^(i) (item i removed,
+  1 ≤ i ≤ n) with equal support; the generator definition is taken from FEAT
+  (Gao et al., WWW 2008).
+- **Input:** sequence database SDB, min_sup.
+- **Output:** Algorithm 1 (p. 3655): "Output: the result set of the sequential
+  generator patterns: GS"; GS is obtained by removing non-generators from the
+  candidate set by Theorem 2.
+- **Condition:** frequency (support ≥ min_sup).
+- **Support-minimal / non-contiguous:** yes. Minimality is on support; the
+  subsequence relation is the standard one (deleting any item i at any
+  position, following FEAT), not contiguous.
+- **Peer review:** "Selection and/or peer-review under responsibility of
+  [CEIS 2011]" (p. 3653).
+- **Decision: INCLUDE.** Weaknesses: no formal completeness proof, Theorem 1
+  (safe pruning) is stated without proof, and the evaluation covers one dataset.
+  These do not trigger an exclusion clause.
+
+---
+
+## 2a. FGenSM
+
+- **Citation:** B. Le, H. Duong, T. Truong, P. Fournier-Viger. "FCloSM, FGenSM:
+  two efficient algorithms for mining frequent closed and generator sequences
+  using the local pruning strategy." *Knowledge and Information Systems* 53
+  (2017) 71–107. doi:10.1007/s10115-017-1032-6.
+- **File read:** `s10115-017-1032-6.pdf` (full text).
+- **Quote (Sec. 2, Definition 3, p. 76):** "A sequence α is said to be a
+  generator if none of its subsequences has the same support as supp(α)"; "The
+  problem of frequent (or frequent generator or frequent closed) sequence
+  mining is to discover FS (or FGS or FGS [sic], respectively)."
+- **Output quote (Sec. 6.2, p. 88):** FGenSM "returns as a result of the
+  complete set of frequent generator sequences (FCS [sic])". Context makes
+  clear FGS is meant. Correctness: "guaranteed by Theorem 1 and Corollaries
+  1–3" (p. 89). The proofs are in the appendices.
+- **Input:** sequence database D (1-SDB or n-SDB), minsupp.
+- **Output:** FGS, the frequent generator sequences.
+- **Condition:** frequency.
+- **Support-minimal / non-contiguous:** yes. Definition 2a (p. 75–76) defines
+  α ⊑ β by indices 1 ≤ j1 < … < jp ≤ q with E_k ⊆ E_jk. This is the standard
+  non-contiguous embedding.
+- **Decision: INCLUDE.**
+
+## 2b. FCloSM
+
+- Same paper and file as 2a.
+- **Quote (Sec. 6.1, p. 87):** FCloSM "returns as result the set of all
+  frequent closed sequences (FCS)". Fig. 4 (p. 88) gives its output as FCS
+  only. HybridSearch lines 7.b/10.b/11.b/18.b/21.b/26.b (generator checks)
+  "are not used" when running FCloSM.
+- **Input:** SDB, minsupp. **Output:** FCS only. **Condition:** frequency.
+- **Decision: EXCLUDE.** It is closed-only, and generators are neither computed
+  nor output.
+
+---
+
+## 3. ConSgen (contiguous sequential generators)
+
+- **Citation:** J. Zhang, Y. Wang, C. Zhang, Y. Shi. "Mining Contiguous
+  Sequential Generators in Biological Sequences." *IEEE/ACM Transactions on
+  Computational Biology and Bioinformatics* 13(5) (2016) 855–867.
+- **File read:** `2016-tcbb-sequential.pdf` (full text).
+- **Quote (Sec. 2.2, Problem statement, p. 857):** "the problem of mining
+  contiguous sequential generators is to discover the full set of contiguous
+  subsequences with lower-closure feature."
+- **Definitions (Sec. 2.1, pp. 856–857):** Definition 1 defines "S1 is a
+  contiguous subsequence of S2" and calls S1 "a snippet of S2". Definition 4
+  says s is a ConSG "if there exists no contiguous sequential pattern s0" that
+  is a proper contiguous subsequence of s with equal support. The text
+  extraction of Definition 1's index condition is garbled. The contiguity
+  semantics are nevertheless confirmed by the running example, Tables 1–2
+  (p. 857). AGC has support 4 as an ordinary sequential pattern but support 3
+  as a ConSG, because AGGCA contains AGC only with a gap. Candidates are
+  generated by n-gram "shingles" that "keep the original adjacency and
+  ordering".
+- **Input:** a database of biological sequences (DNA or protein) and a support
+  threshold.
+- **Output:** the contiguous (substring) sequential generators.
+- **Condition:** frequency.
+- **Support-minimal / non-contiguous:** no. Both the patterns and the
+  minimality test use contiguous (substring) containment. The authors note
+  that the ConSG set "is not a proper subset of the set of sequential
+  generators".
+- **Decision: EXCLUDE.** The pattern language is contiguous (substring)
+  patterns, which the rule excludes.
+
+---
+
+## 4. Duong, Truong, Le, EAAI 2018: FGenCloSM, FMaxSM, MaxGenCloSM
+
+- **Citation:** H. Duong, T. Truong, B. Le. "Efficient algorithms for
+  simultaneously mining concise representations of sequential patterns based
+  on extended pruning conditions." *Engineering Applications of Artificial
+  Intelligence* 67 (2018) 197–210. doi:10.1016/j.engappai.2017.09.024.
+- **File read:** `1-s2.0-S0952197617302385-main.pdf` (full text).
+- **Shared definitions (Sec. 2, Definition 3, p. 199):** "A sequence 𝛼 is said
+  to be a generator if none of its subsequences has the same support as supp
+  (𝛼)"; "The problem of frequent (or frequent generator, frequent closed and
+  maximal) sequence mining is to discover FS (or FGS, FCS and FMS,
+  respectively)." Definition 2a gives the standard non-contiguous
+  subsequence relation (indices 1 ⩽ j1 < … < jp ⩽ q, E_k ⊆ E_jk). The input
+  is a sequence database (1-SDB or n-SDB) with minsupp. Correctness (Sec. 4.2,
+  p. 203): "the correctness of the MaxGenCloSM, FGenCloSM and FMaxSM
+  algorithms is guaranteed by Proposition 1 and Corollaries 1–3."
+
+### 4a. MaxGenCloSM
+- **Quote (Sec. 4.2, p. 202):** "MaxGenCloSM returns the sets of frequent
+  maximal sequences FMS, closed sequences FCS and generators FGS."
+- **Output:** FMS, FCS and FGS. FGS is an identified, complete part of the
+  output.
+- **Condition:** frequency. Generators are support-minimal under the
+  non-contiguous relation.
+- **Decision: INCLUDE** under Amendment 1, since additional output is allowed.
+
+### 4b. FGenCloSM
+- **Quote (Sec. 4.2, p. 203):** "the FGenCloSM algorithm for efficiently mining
+  all closed and generator sequences during the same process is obtained by
+  modifying the MaxGenCloSM algorithm" by omitting FMS.
+- **Output:** FCS and FGS. **Condition:** frequency. The generators are
+  support-minimal and non-contiguous.
+- **Decision: INCLUDE.** Amendment 1 applies.
+
+### 4c. FMaxSM
+- **Quote (Sec. 4.2, p. 203):** "we only use the FMS set to save all frequent
+  maximal sequences, i.e., the FCS and FGS sets are omitted."
+- **Output:** FMS only (maximal sequences).
+- **Decision: EXCLUDE.** It is maximal-only and outputs no generators. The
+  closed-only exclusion and the "generators not output" clause apply.
+
+---
+
+## 5. StreamGen
+
+- **Citation:** C. Gao, J. Wang. "Efficient itemset generator discovery over a
+  stream sliding window." *Proc. 18th ACM Conference on Information and
+  Knowledge Management (CIKM '09)*, Hong Kong, 2009, pp. 355–364.
+  doi:10.1145/1645953.1646000.
+- **File read:** `1645953.1646000.pdf` (full text).
+- **Quote (Sec. 3, Definition 2, p. 356):** "A frequent itemset generator (or
+  shortly generator) 𝑆 is a frequent itemset where there is no itemset 𝑆∗
+  such that 𝑆∗ ⊂ 𝑆 and 𝑠𝑢𝑝𝑆∗ = 𝑠𝑢𝑝𝑆."
+- **Problem quote (Sec. 3, p. 356):** "The main task of this work is to mine
+  the complete set of frequent itemset generators from the most recent sliding
+  window of 𝑀 transactions in a transactional data stream."
+- **Input:** a transactional data stream. The database is the sliding window of
+  the M most recent transactions, kept in an FP-tree. Parameters are min
+  support and the window size.
+- **Output:** all frequent generators of the current window, kept as
+  "Generator Node[s]" in an enumeration tree ("we keep all the frequent
+  generators in the current sliding window", Sec. 4.2). It also has an
+  optional extension that outputs generator-based classification rules.
+- **Condition:** frequency within a sliding window. RULE.md explicitly allows a
+  sliding-window or stream condition.
+- **Support-minimal / exact:** yes. Minimality is on support, with set
+  inclusion as the relation (Theorem 1 gives the equivalent check against
+  subsets of size |S|−1). The ADD and REMOVE operations are exact
+  incremental updates backed by Theorems 6–13. There is no approximation.
+- **Peer review:** CIKM '09 full paper (ACM).
+- **Decision: INCLUDE.**
+
+---
+
+## Summary
+
+| Algorithm | Decision | One-line reason |
+|---|---|---|
+| FSGP (Yi et al., Procedia Eng. 2011) | INCLUDE | Def. 1: finds "all" frequent sequential generators; output GS; support-minimal, standard subsequence; peer-reviewed (CEIS 2011); PDF is open access |
+| FGenSM (Le et al., KAIS 2017) | INCLUDE | Returns the "complete set of frequent generator sequences"; Def. 3 support-minimal; non-contiguous subsequence (Def. 2a) |
+| FCloSM (Le et al., KAIS 2017) | EXCLUDE (closed-only) | Output is FCS only; generator checks are disabled |
+| ConSgen (Zhang et al., TCBB 2016) | EXCLUDE (pattern language: contiguous/substring) | Mines "contiguous subsequences" (snippets/n-grams); support and minimality use contiguous containment |
+| MaxGenCloSM (Duong et al., EAAI 2018) | INCLUDE | Returns FMS, FCS and FGS; FGS is an identified complete part (Amendment 1) |
+| FGenCloSM (Duong et al., EAAI 2018) | INCLUDE | Outputs FCS and FGS; generators support-minimal, non-contiguous (Amendment 1) |
+| FMaxSM (Duong et al., EAAI 2018) | EXCLUDE (no generators output) | Maximal-only: "FCS and FGS sets are omitted" |
+| StreamGen (Gao & Wang, CIKM 2009) | INCLUDE | Complete set of frequent itemset generators (Def. 2, support-minimal) over a sliding window; exact incremental maintenance |
