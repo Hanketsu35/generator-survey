@@ -54,7 +54,8 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
   2.172x); budget answers were 100% vs 62%. The probe's two losses came from
   the decision rule, which set a measurement against an optimistic model
   guess.
-- **Cost estimates now come with calibrated 90% prediction intervals**
+- *(Superseded by the exact-memory, dataset-level intervals below.)*
+  **Cost estimates now come with calibrated 90% prediction intervals**
   (`intervals.py`, `results/INTERVAL_RESULTS.md`). The band shown before was
   a bootstrap of the forest mean, and it covered 5% of runs on unseen data.
   Split-conformal intervals from leave-one-dataset-out residuals cover 88%
@@ -145,6 +146,16 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
     `INTERVAL_ALLDATA_POSTHOC.md`). The probe's sampled interval, which
     FRESH7 could test on one dataset only, met its 90% guarantee on eight
     large OpenML datasets (0.954, x3 wide; `results/FRESH8_RESULTS.md`).
+
+- **Audit before writing up** (2026-10-05). The engine now:
+  - shows the typical (median) runtime in its table and budget checks, not
+    the restricted mean, which a small chance of a timeout inflates;
+  - shows no interval for implementations outside the calibration (the
+    sequential, utility and rare-pattern miners), with a note saying why;
+  - probes on any request with a memory BUDGET and uses only the probe's
+    memory figures there;
+  - warns when `tools/peakrun` is not built, instead of measuring
+    differently in silence.
 
 Sections below that report numbers on `results/summary.csv` are kept as they
 were measured; where re-measurement changes a conclusion, the section says so.

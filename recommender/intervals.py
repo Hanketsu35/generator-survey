@@ -190,7 +190,11 @@ def build_display_exact(out=QUANTILES):
         s = p[p.kind == tag]
         kinds["probe_memory_" + tag] = (s.dataset, np.log10(s.true_mem / s.est_mem))
     disp = {"method": "subsampling over datasets (Dunn et al. 2023, Method 2), exact memory; "
-                      "model split native/JVM, runtime centred on the survival median"}
+                      "model split native/JVM, runtime centred on the survival median",
+            # only these were in the calibration and the confirmations; an
+            # interval for any other implementation would claim a coverage
+            # nothing has measured
+            "algorithms": sorted(set(m.algorithm))}
     for name, (g, r) in kinds.items():
         lv = LEVELS[name.replace("_native", "").replace("_jvm", "").replace("_fgc", "")]
         iv, k = _subsample_interval(r.values, g.values, 1 - lv)
@@ -212,6 +216,12 @@ def display_interval(kind, point):
         point = max(point, _load()["rt_floor"])
     lo, hi = q["log10"]
     return (point * 10 ** lo, point * 10 ** hi)
+
+
+def calibrated(algorithm):
+    """Whether the model's display intervals were calibrated on ``algorithm``."""
+    algos = (_load().get("display") or {}).get("algorithms")
+    return algos is None or algorithm in algos
 
 
 def display_level(kind=None):

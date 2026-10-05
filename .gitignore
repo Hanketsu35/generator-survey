@@ -115,3 +115,5 @@ external_algos/Gr_growth/grgrowth-v1/*-source/*.o
 # Sentetik sweep'in gecici cikti dizini (sayim yapilir, dosya silinir).
 results/synthetic_scratch/
 tools/autofolio/src/
+tools/peakrun/peakrun
+results/exact/reprobe.log

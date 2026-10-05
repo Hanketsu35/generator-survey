@@ -220,7 +220,8 @@ def _cost(r):
     """
     if r.extrapolated:
         return "costs not predicted: this data is outside what it was measured on"
-    return "predicted %s s, %s MB" % (_num(r.runtime_s), _num(r.memory_mb))
+    return "predicted typically %s s, %s MB" % (_num(r.runtime_typical_s or r.runtime_s),
+                                                _num(r.memory_mb))
 
 
 def _caveats(r):

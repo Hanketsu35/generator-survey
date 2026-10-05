@@ -349,9 +349,13 @@ class Recommender:
         extrapolation); on runtime it lost badly once its own wall-clock time
         was charged (6.29x against 1.19x, P3 failed), because where the best
         miner takes milliseconds the probe's 0.35 s median dominates. So:
-        memory requests on a transactional file, and nothing else.
+        memory requests on a transactional file -- and, since H4 of
+        results/HARD_RESULTS.md (budget answers correct 1.000 with the probe
+        against 0.620 with the model), any request with a MEMORY BUDGET, where
+        only its memory figures are used (see ``recommend``).
         """
-        return (task.objective == "memory" and task.data_type == "transactional"
+        return ((task.objective == "memory" or bool(task.max_memory_mb))
+                and task.data_type == "transactional"
                 and bool(task.dataset_path) and task.threshold is not None)
 
     def recommend(self, task, top=None, probe=None):
@@ -365,6 +369,11 @@ class Recommender:
         """
         feats = self._features(task)
         eligible, rejected = self.db.filter(task)
+        # On a request that does not optimise memory the probe is there for a
+        # memory budget only: its memory figures are used, its runtimes are
+        # not (on runtime it lost once its own time was charged, P3 of
+        # PROBE_PROTOCOL.md), and the runtime side stays the model's.
+        memory_only = probe is not None and task.objective != "memory"
         installed = installed_implementations()
 
         thr = task.threshold if task.threshold is not None else 0.1
@@ -393,7 +402,7 @@ class Recommender:
                               "it to be heavy here; its memory estimate is the model's"
                               % ("full file" if probe.mode == "direct" else "a sample",
                                  floor))
-                if pred["runtime_s"] < floor:
+                if pred["runtime_s"] < floor and not memory_only:
                     pred = dict(pred, runtime_s=float(floor))
                 # ... and what it had used when it stopped is a lower bound on
                 # its memory (the cap itself when it ran out of memory)
@@ -409,11 +418,15 @@ class Recommender:
                 # error 0.02-0.04 on memory and 0.06-0.08 on runtime for
                 # extrapolation; a direct measurement is repeatable to ~5%.
                 mf_, rf_ = (1.05, 1.1) if pc["mode"] == "measured" else (1.1, 1.2)
-                pred = dict(pred, memory_mb=m, runtime_s=t, p_complete=1.0,
-                            expected_par10=None,
-                            source="probe-%s" % pc["mode"],
-                            memory_band=(m, m / mf_, m * mf_),
-                            cost_band=(t, t / rf_, t * rf_))
+                if memory_only:
+                    pred = dict(pred, memory_mb=m, source="probe-%s" % pc["mode"],
+                                memory_band=(m, m / mf_, m * mf_))
+                else:
+                    pred = dict(pred, memory_mb=m, runtime_s=t, p_complete=1.0,
+                                expected_par10=None,
+                                source="probe-%s" % pc["mode"],
+                                memory_band=(m, m / mf_, m * mf_),
+                                cost_band=(t, t / rf_, t * rf_))
                 probed = True
                 kind = ("probe", "_measured" if pc["mode"] == "measured" else "_sampled")
             lb = pc.get("memory_lb") if pc.get("mode") == "failed" else None
@@ -428,7 +441,7 @@ class Recommender:
                 mem_iv = (max(mem_iv[0], lb), max(hi, lb))
             # The probe's runtime interval undercovered on unseen data (0.83,
             # INTERVAL_RESULTS.md), so it is not offered as a 90% interval.
-            rt_iv = (None if kind[0] == "probe"
+            rt_iv = (None if kind[0] == "probe" and not memory_only
                      else _iv.interval("%s_runtime%s" % kind, pred["runtime_s"]))
             # what the user is shown: dataset-level intervals (intervals.py,
             # display_interval); the ranking above keeps its own
@@ -442,19 +455,27 @@ class Recommender:
             # runtime: centred on the TYPICAL (median) runtime; the restricted
             # mean in runtime_s stays the input to the expected cost
             rt_typ = pred.get("runtime_median_s") or pred["runtime_s"]
-            if kind[0] == "probe":
+            rt_probe = kind[0] == "probe" and not memory_only
+            if rt_probe:
                 rt_typ = pred["runtime_s"]
-            rt_disp = (None if kind[0] == "probe"
+            rt_disp = (None if rt_probe
                        else _iv.display_interval("model_runtime" + mcls, rt_typ))
+            uncal = not _iv.calibrated(v.algorithm)
+            if uncal:
+                # calibrated and confirmed on the transactional miners only
+                mem_disp = rt_disp = None
             if rt_disp:
                 # beyond the benchmark's cutoff a run is a timeout, not a time
                 rt_disp = (min(rt_disp[0], _sv.CUTOFF), min(rt_disp[1], _sv.CUTOFF))
             notes = []
             ok = True
-            if task.max_runtime_s and pred["runtime_s"] > task.max_runtime_s:
+            # the budget is checked against the runtime the user is shown,
+            # the typical one; the restricted mean is inflated by the chance of
+            # a timeout and flagged miners that typically finish in seconds
+            if task.max_runtime_s and rt_typ > task.max_runtime_s:
                 ok = False
-                notes.append("predicted %.1fs exceeds the %.0fs budget"
-                             % (pred["runtime_s"], task.max_runtime_s))
+                notes.append("typically %.1fs, over the %.0fs budget"
+                             % (rt_typ, task.max_runtime_s))
             if task.max_memory_mb and pred["memory_mb"] > task.max_memory_mb:
                 ok = False
                 notes.append("predicted %.0fMB exceeds the %.0fMB budget"
@@ -480,7 +501,9 @@ class Recommender:
                 "runtime_display": rt_disp,
                 "memory_level": _iv.display_level("%s_memory%s" % dkind) if mem_disp else None,
                 "runtime_level": _iv.display_level("model_runtime" + mcls) if rt_disp else None,
+                "rt_probe": rt_probe,
                 "runtime_typical": rt_typ,
+                "uncalibrated": uncal,
                 "probe_note": probe_note,
                 "lagging": v.algorithm in lagging,
             })
@@ -567,7 +590,10 @@ class Recommender:
                 score_band=r.get("score_band"),
                 reasons=list(v.reasons),
                 warnings=(self._resolve_input_dependent(v, feats, task.threshold)
-                          + ([r["probe_note"]] if r.get("probe_note") else [])),
+                          + ([r["probe_note"]] if r.get("probe_note") else [])
+                          + (["no calibrated interval: the intervals are calibrated and "
+                              "confirmed on the transactional miners only"]
+                             if r.get("uncalibrated") else [])),
                 memory_interval=r.get("memory_display"),
                 runtime_interval=r.get("runtime_display"),
                 memory_interval_level=r.get("memory_level"),
@@ -577,7 +603,8 @@ class Recommender:
                 post_filter=v.post_filter,
                 installed=(True if installed is None
                            else v.algorithm in installed),
-                extrapolated=([] if r.get("probed") else self.outside_domain(v.algorithm, feats)),
+                extrapolated=([] if r.get("probed") and r.get("rt_probe")
+                              else self.outside_domain(v.algorithm, feats)),
             ))
         # Recompute the Pareto flags on the sorted list (indices moved).
         front2 = set(pareto_front([{"runtime_s": o.runtime_s,
@@ -632,7 +659,7 @@ def format_report(task, recs, rejected, feats, show_rejected=True):
         L.append("LAYER 3 - ranked by predicted %s" % task.objective)
         L.append("")
         hdr = ("%-4s %-26s %10s %10s %7s %12s %6s %s"
-               % ("tier", "implementation", "runtime_s", "memory_MB", "P(fin)",
+               % ("tier", "implementation", "typical_s", "memory_MB", "P(fin)",
                   "PAR10_cost", "pareto", "match"))
         L.append(hdr)
         L.append("-" * len(hdr))
@@ -650,7 +677,7 @@ def format_report(task, recs, rejected, feats, show_rejected=True):
             if not r.installed:
                 bad += "  <-- NOT INSTALLED HERE"
             L.append("%-4s %-26s %10.2f %10.1f %6.0f%% %12.1f %6s %s%s"
-                     % (label, r.display, r.runtime_s, r.memory_mb,
+                     % (label, r.display, r.runtime_typical_s or r.runtime_s, r.memory_mb,
                         100 * r.p_complete, r.expected_cost, flag, r.match, bad))
 
         tier1 = [r for r in recs if r.tier == 1]

@@ -30,6 +30,13 @@ PEAK_SOURCE = "vmhwm" if os.path.exists("/proc/self/status") else "rss"
 #: value is written and the polled one is used, marked "vmhwm".
 PEAKRUN = str(Path(__file__).resolve().parent.parent / "tools" / "peakrun" / "peakrun")
 EXACT_PEAK = os.name == "posix" and os.access(PEAKRUN, os.X_OK)
+if os.name == "posix" and not EXACT_PEAK:
+    # Without the launcher every reading falls back to polling, which misses
+    # runs of a few ms and end-of-run peaks: say so instead of measuring
+    # differently in silence. Build: see tools/peakrun/README.md.
+    import warnings
+    warnings.warn("tools/peakrun/peakrun not built: peak memory falls back to polled VmHWM "
+                  "(build with: gcc -O2 -static -o tools/peakrun/peakrun tools/peakrun/peakrun.c)")
 
 
 def _exact_wrap(cmd):

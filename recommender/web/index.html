@@ -203,6 +203,9 @@ const t = k => (T[k] || [k, k])[TR ? 1 : 0];
 const DELIM = {commas: "virgül", semicolons: "noktalı virgül", tabs: "sekme", pipes: "dikey çizgi",
                spaces: "boşluk"};
 const SERVER_TR = [
+  [/^no calibrated interval: the intervals are calibrated and confirmed on the transactional miners only$/,
+   () => "kalibre edilmiş aralık yok: aralıklar yalnızca işlem (transactional) madencileri üzerinde kalibre edilip doğrulandı"],
+  [/^typically ([\d.]+)s, over the (\d+)s budget$/, (m, a, b) => `tipik olarak ${a} s, ${b} s bütçesinin üstünde`],
   [/^no native miner finished its probe on your file; the ranking rests on how much memory each had taken when stopped, which does not show whether it will finish$/,
    () => "verinde yapılan denemede hiçbir yerel algoritma bitmedi; sıralama, durdurulduklarında ne kadar bellek almış olduklarına dayanıyor ve bu, bitip bitmeyeceklerini göstermiyor"],
   [/^did not finish the probe on your file \((full file|a sample), (\d+) s\): expect it to be heavy here; its memory estimate is the model's$/,
@@ -386,7 +389,7 @@ function render(d) {
       (r.source || "").startsWith("probe") ? ` <span class="tag yes" title="${esc(t("probeTip"))}">${
         t(r.source === "probe-measured" ? "probeMeasured" : "probeSampled")}</span>` : ""}</td>
       ${r.extrapolated && r.extrapolated.length
-        ? `<td title="${esc(t("extrapShort"))}">(${fmt(r.runtime_s)} s)*</td><td>(${fmt(r.memory_mb, 1)} MB)*</td>`
+        ? `<td title="${esc(t("extrapShort"))}">(${fmt(r.runtime_typical_s ?? r.runtime_s)} s)*</td><td>(${fmt(r.memory_mb, 1)} MB)*</td>`
         : `<td>${fmt(r.runtime_typical_s ?? r.runtime_s)} s${iv(r.runtime_interval, "s")}</td><td>${fmt(r.memory_mb, 1)} MB${iv(r.memory_interval, "MB")}</td>`}<td>${Math.round(100 * r.p_complete)}%</td>
       <td><span class="tag ${r.installed ? "yes" : "no"}">${r.installed ? "✓" : "✗"}</span></td></tr>`;
   }).join("");

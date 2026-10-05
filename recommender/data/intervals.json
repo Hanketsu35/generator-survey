@@ -52,6 +52,18 @@
  },
  "display": {
   "method": "subsampling over datasets (Dunn et al. 2023, Method 2), exact memory; model split native/JVM, runtime centred on the survival median",
+  "algorithms": [
+   "Apriori_Gen_Borgelt",
+   "DefMe",
+   "Eclat_Gen_Borgelt",
+   "FGC_Stream",
+   "FPgrowth_Gen_Borgelt",
+   "Gr_growth",
+   "Pascal",
+   "TalkyG_Diffset",
+   "Talky_G",
+   "Zart"
+  ],
   "model_memory_native": {
    "log10": [
     -1.2793992467567548,
