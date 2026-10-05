@@ -271,7 +271,7 @@ learnable — and picks the cheapest implementation that accepts the input forma
 
 | | |
 |---|---|
-| specification violated by performance-first selection | **193 / 830 (23.3%)** |
+| specification violated by performance-first selection | **188 / 830 (22.7%)** (re-run on exact memory, `results/e2_exact_output.txt`; 193 when first run) |
 | violated by semantics-first selection | 0 (by construction) |
 | price of correctness (compliant vs non-compliant pick) | 1.87× geometric mean |
 | queries admitting **no** compliant implementation | 30 (3.6%) |

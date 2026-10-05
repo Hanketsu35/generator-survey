@@ -1,0 +1,108 @@
+
+==============================================================================
+E1  ORACLE GAP -- what per-instance selection buys on performance alone
+==============================================================================
+  58 configurations, 9 implementations with full coverage
+
+  implementation               PAR10 mean s  geo-mean vs VBS
+  ----------------------------------------------------------
+  Gr_growth                           0.559            1.197
+  FPgrowth_Gen_Borgelt                0.568            1.280
+  Eclat_Gen_Borgelt                   0.730            1.404
+  DefMe                               3.097           13.699
+  Apriori_Gen_Borgelt                 9.562            3.235
+  TalkyG_Diffset                    641.474           16.250
+  Talky_G                           642.258           15.710
+  Pascal                           8321.280          867.121
+  Zart                            11914.405         1861.991
+  VIRTUAL BEST (oracle)               0.510            1.000
+
+  single best (SBS)          : Gr_growth
+  VBS/SBS on PAR10 mean      : 1.096x
+  VBS/SBS on geo-mean        : 1.197x
+  configurations won by SBS  : 30 of 58 (51.7%)
+
+  READ THIS AS A NEGATIVE RESULT: a perfect per-instance selector
+  improves on 'always run the single best implementation' by only
+  19.7% in geometric mean. Performance prediction cannot carry a
+  paper on this benchmark; it is a supporting component, not the claim.
+
+  Memory, on the 39 configurations where every implementation completed:
+    Apriori_Gen_Borgelt           1.458x vs per-config best
+    Gr_growth                     1.627x vs per-config best
+    Eclat_Gen_Borgelt             1.860x vs per-config best
+    FPgrowth_Gen_Borgelt          1.924x vs per-config best
+    Pascal                       20.874x vs per-config best
+    Talky_G                      37.131x vs per-config best
+    TalkyG_Diffset               37.684x vs per-config best
+    DefMe                        40.484x vs per-config best
+    Zart                         46.748x vs per-config best
+
+  The objectives CONFLICT: Gr_growth is best on runtime (1.20x) but
+  1.63x on memory, while Apriori_Gen_Borgelt is best on memory (1.46x) but 3.24x
+  on runtime. Pareto-front recommendation under a declared budget is
+  therefore defensible where 'predict the fastest' is not.
+
+==============================================================================
+E2  SEMANTIC ERROR RATE of a performance-first selector  [HEADLINE]
+==============================================================================
+
+  The selector below is given the TRUE measured runtime and memory of every
+  implementation on every configuration -- a perfect performance oracle,
+  strictly stronger than any learned model. It then picks the cheapest
+  implementation that accepts the input format, exactly as an
+  algorithm-selection framework that assumes semantic interchangeability
+  would. Layer 2 then checks whether that pick computes what was requested.
+
+  The workload is the cross product of every benchmark configuration with a
+  set of REQUIREMENT PROFILES and OBJECTIVES. The profiles matter because a
+  user's specification is not exhausted by the pattern family: which side of
+  a non-integral threshold is kept, and whether the empty pattern is
+  reported, change the output set. A performance-first selector has no
+  channel in which those requirements can even be expressed.
+
+  queries = 83 configurations x 5 profiles x 2 objectives = 830
+  performance-first pick violates the specification : 188 (22.7%)
+  semantics-first pick violates it                  : 0 (0.0%) by construction
+
+  By requirement profile:
+    profile                 queries    wrong      rate
+    --------------------------------------------------
+    default                     166        8      4.8%
+    floor boundary              166       80     48.2%
+    ceil boundary               166       84     50.6%
+    empty set required          166        8      4.8%
+    empty set forbidden         166        8      4.8%
+
+  By objective:
+    runtime                     415       89     21.4%
+    memory                      415       99     23.9%
+
+  Failure modes:
+      30 x  emits the minimal_rare_itemset family, not minimal_generator
+            picked: Arima(30)
+            on: accidents, retail, t10i4d100k
+      10 x  emits the utility_minimal family, not high_utility_generator
+            picked: HUCI_Miner_Generators(10)
+            on: chainstore
+      72 x  uses the ceil threshold boundary, request requires floor -- patterns whose support equals th
+            picked: Apriori_Gen_Borgelt(41), FPgrowth_Gen_Borgelt(15), VGEN(9), Eclat_Gen_Borgelt(7)
+            on: bible, chess, connect, mushroom, pumsb, retail, sign, t10i4d100k
+      76 x  uses the floor threshold boundary, request requires ceil -- patterns whose support equals th
+            picked: Gr_growth(52), FEAT(13), FSGP(10), DefMe(1)
+            on: accidents, bible, chess, connect, leviathan, pumsb, retail, sign, t10i4d100k
+
+  PRICE OF CORRECTNESS on the 158 queries where the performance-first
+  pick was non-compliant -- cost of the cheapest COMPLIANT
+  implementation relative to that non-compliant pick:
+    geometric mean 1.685x, median 1.451x, worst 5.22x
+
+  UNSATISFIABLE: 30 queries (3.6%) admit no compliant implementation
+    ceil boundary             6 queries, e.g. accidents, retail, t10i4d100k
+    default                   6 queries, e.g. accidents, retail, t10i4d100k
+    empty set forbidden       6 queries, e.g. accidents, retail, t10i4d100k
+    empty set required        6 queries, e.g. accidents, retail, t10i4d100k
+    floor boundary            6 queries, e.g. accidents, retail, t10i4d100k
+  A recommender that reports 'no implementation satisfies this
+  specification' is giving the correct answer; a performance-first
+  selector returns a fast implementation instead.

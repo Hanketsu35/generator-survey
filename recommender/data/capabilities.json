@@ -264,7 +264,8 @@
       "provenance": "SPMF v2.65",
       "emits": {"family": "sequential_generator", "evidence": "oracle"},
       "conventions": {
-        "empty_set": "never",
+        "empty_set": "always",
+        "empty_set_evidence": "results/seqval/VGEN_sign_0.03.txt and _0.04.txt begin with the empty sequence, #SUP: 730 = |D|; FEAT and FSGP do not emit it",
         "threshold_boundary": "ceil",
         "boundary_evidence": "oracle: on sign/0.03 (threshold 21.9) VGEN's effective floor is 22; all 3802 patterns it omits relative to FEAT/FSGP have support exactly 21. Same at 0.04 (128 omitted, all at support 29, threshold 29.2)."
       },
