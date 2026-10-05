@@ -1,0 +1,23 @@
+group,set,dataset,sigma,engine,mode,progress,D,reg_D,S,reg_S
+A,fresh5,hypothyroid,0.0076219512195121,comparison,direct,"{""Aprior"": 0.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 1.0}",Gr_growth,1.4778426302179535,Apriori_Gen_Borgelt,1.0
+A,fresh5,hypothyroid,0.0076219512195121,deployed,direct,"{""Aprior"": 0.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 1.0}",Gr_growth,1.4778426302179535,Apriori_Gen_Borgelt,1.0
+A,fresh6,audiology,0.9502212389380532,comparison,direct,"{""Aprior"": 1.0, ""Eclat_"": 0.0, ""FPgrow"": 1.0, ""Gr_gro"": 1.0}",Gr_growth,4.108071795948358,Gr_growth,4.108071795948358
+A,fresh6,audiology,0.9502212389380532,deployed,direct,"{""Aprior"": 1.0, ""Eclat_"": 0.0, ""FPgrow"": 1.0, ""Gr_gro"": 1.0}",Gr_growth,4.108071795948358,Gr_growth,4.108071795948358
+A,fresh7,oml_pc4,0.0135459533607681,comparison,direct,"{""Aprior"": 0.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 1.0}",Gr_growth,1.0852475142234275,Gr_growth,1.0852475142234275
+A,fresh7,oml_pc4,0.0135459533607681,deployed,direct,"{""Aprior"": 0.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 1.0}",Gr_growth,1.0852475142234275,Gr_growth,1.0852475142234275
+A,fresh7,oml_phishingwebsites,0.141180461329715,comparison,direct,"{""Aprior"": 0.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 1.0}",Gr_growth,1.1959002435026178,Apriori_Gen_Borgelt,1.0
+A,fresh7,oml_phishingwebsites,0.141180461329715,deployed,direct,"{""Aprior"": 0.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 1.0}",Gr_growth,1.1959002435026178,Apriori_Gen_Borgelt,1.0
+A,fresh7,oml_satimage,0.0492612752721617,comparison,direct,"{""Aprior"": 0.0, ""Eclat_"": 0.0, ""FPgrow"": 0.0, ""Gr_gro"": 1.0}",Gr_growth,2.2615343071700442,Apriori_Gen_Borgelt,2.4679302540890857
+A,fresh7,oml_satimage,0.0492612752721617,deployed,direct,"{""Aprior"": 0.0, ""Eclat_"": 0.0, ""FPgrow"": 0.0, ""Gr_gro"": 1.0}",Gr_growth,2.2615343071700442,Apriori_Gen_Borgelt,2.4679302540890857
+B,fresh,ecommerce_fim,0.0007178631051752,comparison,direct,"{""Aprior"": 1.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 0.0}",Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0
+B,fresh,ecommerce_fim,0.0007178631051752,deployed,direct,"{""Aprior"": 1.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 0.0}",Eclat_Gen_Borgelt,1.0,Eclat_Gen_Borgelt,1.0
+B,fresh,ecommerce_fim,0.001118530884808,comparison,direct,"{""Aprior"": 1.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 0.0}",Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0
+B,fresh,ecommerce_fim,0.001118530884808,deployed,direct,"{""Aprior"": 1.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 0.0}",Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0
+B,fresh,ecommerce_fim,0.002787979966611,comparison,direct,"{""Aprior"": 1.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 0.0}",Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0
+B,fresh,ecommerce_fim,0.002787979966611,deployed,direct,"{""Aprior"": 1.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 0.0}",Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0
+B,fresh,ecommerce_fim,0.0079966611018363,comparison,direct,"{""Aprior"": 1.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 0.0}",Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0
+B,fresh,ecommerce_fim,0.0079966611018363,deployed,direct,"{""Aprior"": 1.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 0.0}",Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0
+B,fresh,ecommerce_fim,0.0150751252086811,comparison,direct,"{""Aprior"": 1.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 0.0}",Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0
+B,fresh,ecommerce_fim,0.0150751252086811,deployed,direct,"{""Aprior"": 1.0, ""Eclat_"": 1.0, ""FPgrow"": 1.0, ""Gr_gro"": 0.0}",Apriori_Gen_Borgelt,1.0,Apriori_Gen_Borgelt,1.0
+B,fresh,uscensus,0.05409375,comparison,sampled,"{""Aprior"": 0.0, ""Eclat_"": 0.0, ""FPgrow"": 0.0, ""Gr_gro"": 0.33}",Gr_growth,1.0,Apriori_Gen_Borgelt,10.0
+B,fresh,uscensus,0.05409375,deployed,sampled,"{""Aprior"": 0.0, ""Eclat_"": 0.0, ""FPgrow"": 0.0, ""Gr_gro"": 0.33}",Gr_growth,1.0,Apriori_Gen_Borgelt,10.0

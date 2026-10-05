@@ -112,8 +112,13 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
   (`PROGRESS_DEMOTE`, found post hoc, `results/PROGRESS_POSTHOC.md`) had
   nothing to act on there. A targeted screen (`results/LAG_RESULTS.md`)
   over 9 lower thresholds of 13 datasets found no instance where a miner
-  lags either: such instances are rare (6 in everything probed so far). The
-  rule stays on as an unconfirmed heuristic for that rare case.
+  lags either: such instances are rare. Its condition did occur on 5
+  instances of FRESH5–FRESH8, after the rule was frozen
+  (`results/LAG2_RESULTS.md`). There it changed 3 picks: 1 better and 2
+  worse (1.779x vs 1.615x without it). That is below the protocol's
+  minimum of 4 changed picks, so it is no verdict. Over everything, the
+  rule has got 4 picks right and 4 wrong. It stays on as an unconfirmed
+  heuristic for a rare case.
 
   Over the three fresh confirmations the probe-backed ranking was below the
   engine every time: 1.110x vs 1.132x, 1.359x vs 1.514x, 1.001x vs 2.029x.

@@ -1,0 +1,26 @@
+A comparison n= 5 ds= 5 | D 1.779x fail 0 | S 1.615x fail 0 | changed 3: D better 1, worse 2
+A deployed   n= 5 ds= 5 | D 1.779x fail 0 | S 1.615x fail 0 | changed 3: D better 1, worse 2
+B comparison n= 6 ds= 2 | D 1.000x fail 0 | S 1.468x fail 1 | changed 1: D better 1, worse 0
+B deployed   n= 6 ds= 2 | D 1.000x fail 0 | S 1.468x fail 1 | changed 1: D better 1, worse 0
+  A comparison fresh5  hypothyroid                        0.00762195 direct  {"Aprior": 0.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 1.0}  D Gr_growth 1.478 | S Apriori_Gen_Borgelt 1.000  CHANGED
+  A deployed   fresh5  hypothyroid                        0.00762195 direct  {"Aprior": 0.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 1.0}  D Gr_growth 1.478 | S Apriori_Gen_Borgelt 1.000  CHANGED
+  A comparison fresh6  audiology                          0.950221   direct  {"Aprior": 1.0, "Eclat_": 0.0, "FPgrow": 1.0, "Gr_gro": 1.0}  D Gr_growth 4.108 | S Gr_growth 4.108
+  A deployed   fresh6  audiology                          0.950221   direct  {"Aprior": 1.0, "Eclat_": 0.0, "FPgrow": 1.0, "Gr_gro": 1.0}  D Gr_growth 4.108 | S Gr_growth 4.108
+  A comparison fresh7  oml_pc4                            0.013546   direct  {"Aprior": 0.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 1.0}  D Gr_growth 1.085 | S Gr_growth 1.085
+  A deployed   fresh7  oml_pc4                            0.013546   direct  {"Aprior": 0.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 1.0}  D Gr_growth 1.085 | S Gr_growth 1.085
+  A comparison fresh7  oml_phishingwebsites               0.14118    direct  {"Aprior": 0.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 1.0}  D Gr_growth 1.196 | S Apriori_Gen_Borgelt 1.000  CHANGED
+  A deployed   fresh7  oml_phishingwebsites               0.14118    direct  {"Aprior": 0.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 1.0}  D Gr_growth 1.196 | S Apriori_Gen_Borgelt 1.000  CHANGED
+  A comparison fresh7  oml_satimage                       0.0492613  direct  {"Aprior": 0.0, "Eclat_": 0.0, "FPgrow": 0.0, "Gr_gro": 1.0}  D Gr_growth 2.262 | S Apriori_Gen_Borgelt 2.468  CHANGED
+  A deployed   fresh7  oml_satimage                       0.0492613  direct  {"Aprior": 0.0, "Eclat_": 0.0, "FPgrow": 0.0, "Gr_gro": 1.0}  D Gr_growth 2.262 | S Apriori_Gen_Borgelt 2.468  CHANGED
+  B comparison fresh   ecommerce_fim                      0.000717863 direct  {"Aprior": 1.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 0.0}  D Eclat_Gen_Borgelt 1.000 | S Eclat_Gen_Borgelt 1.000
+  B deployed   fresh   ecommerce_fim                      0.000717863 direct  {"Aprior": 1.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 0.0}  D Eclat_Gen_Borgelt 1.000 | S Eclat_Gen_Borgelt 1.000
+  B comparison fresh   ecommerce_fim                      0.00111853 direct  {"Aprior": 1.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 0.0}  D Apriori_Gen_Borgelt 1.000 | S Apriori_Gen_Borgelt 1.000
+  B deployed   fresh   ecommerce_fim                      0.00111853 direct  {"Aprior": 1.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 0.0}  D Apriori_Gen_Borgelt 1.000 | S Apriori_Gen_Borgelt 1.000
+  B comparison fresh   ecommerce_fim                      0.00278798 direct  {"Aprior": 1.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 0.0}  D Apriori_Gen_Borgelt 1.000 | S Apriori_Gen_Borgelt 1.000
+  B deployed   fresh   ecommerce_fim                      0.00278798 direct  {"Aprior": 1.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 0.0}  D Apriori_Gen_Borgelt 1.000 | S Apriori_Gen_Borgelt 1.000
+  B comparison fresh   ecommerce_fim                      0.00799666 direct  {"Aprior": 1.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 0.0}  D Apriori_Gen_Borgelt 1.000 | S Apriori_Gen_Borgelt 1.000
+  B deployed   fresh   ecommerce_fim                      0.00799666 direct  {"Aprior": 1.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 0.0}  D Apriori_Gen_Borgelt 1.000 | S Apriori_Gen_Borgelt 1.000
+  B comparison fresh   ecommerce_fim                      0.0150751  direct  {"Aprior": 1.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 0.0}  D Apriori_Gen_Borgelt 1.000 | S Apriori_Gen_Borgelt 1.000
+  B deployed   fresh   ecommerce_fim                      0.0150751  direct  {"Aprior": 1.0, "Eclat_": 1.0, "FPgrow": 1.0, "Gr_gro": 0.0}  D Apriori_Gen_Borgelt 1.000 | S Apriori_Gen_Borgelt 1.000
+  B comparison fresh   uscensus                           0.0540938  sampled {"Aprior": 0.0, "Eclat_": 0.0, "FPgrow": 0.0, "Gr_gro": 0.33}  D Gr_growth 1.000 | S Apriori_Gen_Borgelt 10.000  CHANGED
+  B deployed   fresh   uscensus                           0.0540938  sampled {"Aprior": 0.0, "Eclat_": 0.0, "FPgrow": 0.0, "Gr_gro": 0.33}  D Gr_growth 1.000 | S Apriori_Gen_Borgelt 10.000  CHANGED
