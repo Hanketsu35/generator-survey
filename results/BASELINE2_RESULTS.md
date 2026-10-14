@@ -1,6 +1,6 @@
 # Is the memory gain just from measuring? Results
 
-Protocol: `BASELINE2_PROTOCOL.md` (2008a17). Script
+Protocol: `BASELINE2_PROTOCOL.md` (2ae3765). Script
 `tools/baseline2_comparison.py --af-wallclock 1800`. Rows in
 `baseline2_rows.csv`, output in `baseline2_output.txt`, log in
 `baseline2.log`. Training with probe features: 531 rows, 59 instances,

@@ -4,7 +4,7 @@
     python tools/confirm_eval.py             # Q1-Q4
 
 Refuses to score if the frozen inputs changed: results/training_runs.csv must
-equal its version at 5f2467a, and recommender/probe.py its version at ced9dc7.
+equal its version at 3cdbf91, and recommender/probe.py its version at 57a6441.
 """
 import argparse
 import hashlib
@@ -27,7 +27,7 @@ import probe_eval as PE                                    # noqa: E402
 TRUTH = _ROOT / "results" / "real_extra3_summary.csv"
 PE.POINTS = _ROOT / "results" / "probe_points_confirm.csv"
 OUT = _ROOT / "results" / "confirm_eval_output.txt"
-FROZEN = {"results/training_runs.csv": "5f2467a", "recommender/probe.py": "ced9dc7"}
+FROZEN = {"results/training_runs.csv": "3cdbf91", "recommender/probe.py": "57a6441"}
 BUDGETS = (25, 50, 100, 200, 500)
 NATIVE = ("Apriori_Gen_Borgelt", "Eclat_Gen_Borgelt", "FPgrowth_Gen_Borgelt", "Gr_growth")
 

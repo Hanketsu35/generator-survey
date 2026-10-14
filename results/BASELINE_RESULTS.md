@@ -1,6 +1,6 @@
 # Baseline comparison: results
 
-Protocol: `BASELINE_PROTOCOL.md` (2218f2b). Script:
+Protocol: `BASELINE_PROTOCOL.md` (7c9eed2). Script:
 `tools/baseline_comparison.py`. Rows: `baseline_rows.csv`; full output:
 `baseline_output.txt` (`baseline_output_noaf.txt` is the dry run without
 AutoFolio, identical otherwise).
