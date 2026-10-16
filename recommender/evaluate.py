@@ -156,12 +156,19 @@ def e2_semantic_errors(df, db):
     ]
     objectives = ("runtime", "memory")
 
+    # A configuration is a (dataset, threshold) pair of ONE parameter: the
+    # same number is a minimum support for a generator miner and a maximum
+    # support for a rare-itemset miner (Arima), and grouping on the value
+    # alone used to pose Arima's maxsup points as generator requests at
+    # which no generator miner had been run.
+    feats_cache = mf.load_cache()
     rows = []
-    for (ds, thr), g in df.groupby(["dataset", "param_value"]):
+    for (ds, pname_, thr), g in df.groupby(["dataset", "param_name", "param_value"]):
         dtype = mf.DATASET_TYPES.get(ds)
         family = DEFAULT_REQUEST.get(dtype) if dtype else None
-        if family is None:
+        if family is None or pname_ not in ("minsup", "min_utility"):
             continue
+        n_tx = feats_cache.get(ds, {}).get("n_tx")
         cand = g[g.completed]
         if cand.empty:
             continue
@@ -173,6 +180,7 @@ def e2_semantic_errors(df, db):
             for pname, extra in profiles:
                 task = MiningTask(data_type=dtype, family=family, dataset=ds,
                                   threshold=float(thr), trust="verified_only",
+                                  n_transactions=int(n_tx) if n_tx else None,
                                   objective=obj, **extra)
                 v = db.evaluate(pick, task)
                 elig = [a for a in cand.algorithm if db.evaluate(a, task).eligible]

@@ -17,6 +17,7 @@ learned model: every claim it makes is traceable to an oracle measurement
 recorded in ``data/capabilities.json``.
 """
 import json
+import math
 import os
 from dataclasses import dataclass
 from typing import List, Optional
@@ -79,6 +80,28 @@ class CapabilityDB:
             if task.threshold is None or abs(c["param_value"] - task.threshold) < 1e-12:
                 return c
         return None
+
+    # ------------------------------------------------------------------
+    @staticmethod
+    def _effective_boundary(recorded, task):
+        """The threshold side an implementation keeps on this instance.
+
+        'same' when sigma*|D| is an integer, where floor and ceil coincide.
+        A 'round' implementation is called with round(sigma*|D|) by the
+        harness and the probe (src/harness.py, recommender/probe.py), so it
+        keeps the floor side when the fraction is below one half and the
+        ceil side otherwise; the same expression is used here.
+        """
+        # A utility threshold is an absolute utility, not a share of |D|.
+        if (task.threshold is None or not task.n_transactions
+                or task.data_type == "utility"):
+            return "unknown" if recorded == "round" else recorded
+        x = task.threshold * task.n_transactions
+        if abs(x - round(x)) < 1e-9:
+            return "same"
+        if recorded == "round":
+            return "floor" if max(1, int(round(x))) <= math.floor(x) else "ceil"
+        return recorded
 
     # ------------------------------------------------------------------
     def evaluate(self, algo, task) -> Verdict:
@@ -186,8 +209,8 @@ class CapabilityDB:
 
         # --- 5. reporting conventions ------------------------------------
         conv = impl.get("conventions", {})
-        b = conv.get("threshold_boundary", "unknown")
-        if task.boundary != "any":
+        b = self._effective_boundary(conv.get("threshold_boundary", "unknown"), task)
+        if task.boundary != "any" and b != "same":
             if b == "unknown":
                 warnings.append("threshold boundary convention was not determined; "
                                 "output may differ by patterns sitting exactly on "

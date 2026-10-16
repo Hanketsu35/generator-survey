@@ -80,8 +80,8 @@
       "emits": {"family": "minimal_generator", "evidence": "oracle", "conditional_on": {"k": 1}},
       "conventions": {
         "empty_set": "always",
-        "threshold_boundary": "floor",
-        "boundary_evidence": "oracle: on Chess at minsup=0.7 (2237.2) returns 99 itemsets of support exactly 2237 that the native post-filters omit"
+        "threshold_boundary": "round",
+        "boundary_evidence": "the program takes an absolute support, and the harness and the probe pass round(sigma*|D|) (src/harness.py, recommender/probe.py): the floor side when the fraction is below one half, the ceil side otherwise. Oracle: on Chess at minsup=0.7 (2237.2) it returns 99 itemsets of support exactly 2237 that the ceil-side native post-filters omit. Recorded as floor until 2026-10-16, which was right only for fractions below one half."
       },
       "soundness": {"status": "verified", "violations": 0},
       "completeness": {
@@ -330,7 +330,7 @@
       "input_type": "transactional",
       "provenance": "native C++ Windows binary (not bundled)",
       "emits": {"family": "generator_closure_pairs", "evidence": "oracle"},
-      "conventions": {"empty_set": "always", "threshold_boundary": "floor"},
+      "conventions": {"empty_set": "always", "threshold_boundary": "round", "boundary_evidence": "the program takes an absolute support, and the harness passes round(sigma*|D|) (src/harness.py): the floor side when the fraction is below one half, the ceil side otherwise. Recorded as floor until 2026-10-16."},
       "soundness": {"status": "verified", "violations": 0},
       "completeness": {"status": "verified"},
       "validation": {

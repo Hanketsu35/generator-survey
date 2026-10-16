@@ -287,17 +287,24 @@ learnable — and picks the cheapest implementation that accepts the input forma
 
 | | |
 |---|---|
-| specification violated by performance-first selection | **188 / 830 (22.7%)** (re-run on exact memory, `results/e2_exact_output.txt`; 193 when first run) |
+| specification violated by performance-first selection | **132 / 800 (16.5%)** (exact memory, `results/e2_exact_output.txt`) |
 | violated by semantics-first selection | 0 (by construction) |
-| price of correctness (compliant vs non-compliant pick) | 1.87× geometric mean |
-| queries admitting **no** compliant implementation | 30 (3.6%) |
+| price of correctness (compliant vs non-compliant pick) | 3.27× geometric mean (median 1.71×) |
+| queries admitting **no** compliant implementation | 0 |
 
-By profile: floor boundary 58.4%, ceil boundary 41.6%, default 5.4%. By objective:
-runtime 21.4%, memory 25.1%.
+By profile: floor boundary 50.0%, ceil boundary 28.8%, default 1.2%. By objective:
+runtime 15.2%, memory 17.8%.
 
-Failure modes: 88 wrong-boundary picks, 60 opposite-boundary picks, 30 picks of
-Arima (rare itemsets, not generators), 15 picks of HUCI-Miner-Generators
-(utility-minimal, not support-minimal).
+Failure modes: 78 picks keeping the ceil side for a floor request, 44 the
+reverse, 10 picks of HUCI-Miner-Generators (utility-minimal, not
+support-minimal). Configurations where sigma*|D| is an integer, where the two
+sides coincide, are not counted.
+
+Corrected on 2026-10-16 (it was 188 / 830, 22.7%): configurations are now
+grouped by parameter as well as value, so Arima's *maxsup* points are no
+longer posed as generator requests (30 queries), and Gr-growth and
+FGC-Stream are recorded as `round` -- the harness passes them
+round(sigma*|D|) -- instead of `floor`, with the side decided per instance.
 
 ### Selector comparison — normalized PAR10 (leave-one-dataset-out)
 

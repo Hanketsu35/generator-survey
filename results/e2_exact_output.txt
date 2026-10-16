@@ -61,48 +61,35 @@ E2  SEMANTIC ERROR RATE of a performance-first selector  [HEADLINE]
   reported, change the output set. A performance-first selector has no
   channel in which those requirements can even be expressed.
 
-  queries = 83 configurations x 5 profiles x 2 objectives = 830
-  performance-first pick violates the specification : 188 (22.7%)
+  queries = 80 configurations x 5 profiles x 2 objectives = 800
+  performance-first pick violates the specification : 132 (16.5%)
   semantics-first pick violates it                  : 0 (0.0%) by construction
 
   By requirement profile:
     profile                 queries    wrong      rate
     --------------------------------------------------
-    default                     166        8      4.8%
-    floor boundary              166       80     48.2%
-    ceil boundary               166       84     50.6%
-    empty set required          166        8      4.8%
-    empty set forbidden         166        8      4.8%
+    default                     160        2      1.2%
+    floor boundary              160       80     50.0%
+    ceil boundary               160       46     28.8%
+    empty set required          160        2      1.2%
+    empty set forbidden         160        2      1.2%
 
   By objective:
-    runtime                     415       89     21.4%
-    memory                      415       99     23.9%
+    runtime                     400       61     15.2%
+    memory                      400       71     17.8%
 
   Failure modes:
-      30 x  emits the minimal_rare_itemset family, not minimal_generator
-            picked: Arima(30)
-            on: accidents, retail, t10i4d100k
       10 x  emits the utility_minimal family, not high_utility_generator
             picked: HUCI_Miner_Generators(10)
             on: chainstore
-      72 x  uses the ceil threshold boundary, request requires floor -- patterns whose support equals th
-            picked: Apriori_Gen_Borgelt(41), FPgrowth_Gen_Borgelt(15), VGEN(9), Eclat_Gen_Borgelt(7)
-            on: bible, chess, connect, mushroom, pumsb, retail, sign, t10i4d100k
-      76 x  uses the floor threshold boundary, request requires ceil -- patterns whose support equals th
-            picked: Gr_growth(52), FEAT(13), FSGP(10), DefMe(1)
-            on: accidents, bible, chess, connect, leviathan, pumsb, retail, sign, t10i4d100k
+      78 x  uses the ceil threshold boundary, request requires floor -- patterns whose support equals th
+            picked: Apriori_Gen_Borgelt(31), Gr_growth(18), FPgrowth_Gen_Borgelt(13), VGEN(9), Eclat_Gen_Borgelt(7)
+            on: accidents, bible, chess, connect, mushroom, pumsb, retail, sign
+      44 x  uses the floor threshold boundary, request requires ceil -- patterns whose support equals th
+            picked: Gr_growth(20), FEAT(13), FSGP(10), DefMe(1)
+            on: accidents, bible, chess, connect, leviathan, pumsb, retail, sign
 
-  PRICE OF CORRECTNESS on the 158 queries where the performance-first
+  PRICE OF CORRECTNESS on the 132 queries where the performance-first
   pick was non-compliant -- cost of the cheapest COMPLIANT
   implementation relative to that non-compliant pick:
-    geometric mean 1.685x, median 1.451x, worst 5.22x
-
-  UNSATISFIABLE: 30 queries (3.6%) admit no compliant implementation
-    ceil boundary             6 queries, e.g. accidents, retail, t10i4d100k
-    default                   6 queries, e.g. accidents, retail, t10i4d100k
-    empty set forbidden       6 queries, e.g. accidents, retail, t10i4d100k
-    empty set required        6 queries, e.g. accidents, retail, t10i4d100k
-    floor boundary            6 queries, e.g. accidents, retail, t10i4d100k
-  A recommender that reports 'no implementation satisfies this
-  specification' is giving the correct answer; a performance-first
-  selector returns a fast implementation instead.
+    geometric mean 3.273x, median 1.712x, worst 64.46x

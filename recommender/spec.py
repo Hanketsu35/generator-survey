@@ -49,6 +49,7 @@ class MiningTask:
     family: str = "minimal_generator"
     #: 'floor' keeps patterns whose support equals floor(sigma*|D|);
     #: 'ceil' requires support >= ceil(sigma*|D|); 'any' = caller does not care.
+    #: When sigma*|D| is an integer the two coincide.
     boundary: str = "any"
     #: True  = the empty pattern must be present in the output
     #: False = the empty pattern must be absent
@@ -63,6 +64,10 @@ class MiningTask:
     dataset: Optional[str] = None       # named benchmark dataset, or
     dataset_path: Optional[str] = None  # a path to mine meta-features from
     threshold: Optional[float] = None   # minsup / maxsup / min_utility
+    #: |D|, so that the filter can tell which side of a fractional absolute
+    #: threshold an implementation keeps; filled in by the engine from the
+    #: file's meta-features when the caller leaves it out.
+    n_transactions: Optional[int] = None
 
     # --- operational budget (soft constraints, drive the ranking) ---------
     max_runtime_s: Optional[float] = None

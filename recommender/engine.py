@@ -7,6 +7,7 @@ one asked for (Gr-growth at k>=2), or one that returns non-minimal itemsets on
 exactly the dataset requested (Talky-G on mushroom).  Here nothing reaches the
 ranking stage until it has been shown to compute the requested family.
 """
+import dataclasses
 import hashlib
 import os
 import pickle
@@ -368,6 +369,8 @@ class Recommender:
         training domain, since nothing about it was learned from other data.
         """
         feats = self._features(task)
+        if task.n_transactions is None and feats.get("n_tx"):
+            task = dataclasses.replace(task, n_transactions=int(feats["n_tx"]))
         eligible, rejected = self.db.filter(task)
         # On a request that does not optimise memory the probe is there for a
         # memory budget only: its memory figures are used, its runtimes are
