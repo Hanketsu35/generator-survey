@@ -36,8 +36,8 @@ reproduce it.
 ├── tools/                # evaluation scripts, validators, peakrun launcher
 ├── external_algos/
 │   ├── Gr_growth/        # Gr-growth C++ source
-│   ├── FGC_Stream/       # FGC-Stream C++ source
-│   └── borgelt/          # Borgelt's Apriori, Eclat, FP-growth
+│   ├── FGC_Stream/       # FGC-Stream (third-party; fetched, see below)
+│   └── borgelt/          # Borgelt's Apriori, Eclat, FP-growth (fetched, see below)
 └── results/              # every measured run, protocol and result
     ├── summary_linux.csv # original benchmark (667 runs)
     ├── exact/            # exact-memory tables, training table, probes
@@ -99,10 +99,23 @@ gcc -O2 -static -o tools/peakrun/peakrun tools/peakrun/peakrun.c
 cd external_algos/Gr_growth/grgrowth-v1/GrGrowth-PBD-source && g++ -O2 -std=c++17 -o GrGrowth_PBd *.cpp
 ```
 
-The other native programs are built the same way: FGC-Stream from
-`external_algos/FGC_Stream/FGC-Stream/` (`FGC_Stream_release`), and the
-Borgelt programs with their own makefiles. Without `tools/peakrun/peakrun`,
-the harness warns and falls back to polling memory, which misses short runs.
+The other native programs are third-party code that this repository does
+not carry. One script fetches and builds them at the versions the paper
+measured:
+
+```bash
+bash tools/fetch_native.sh
+```
+
+| Program | Source | Version |
+|---|---|---|
+| Apriori, Eclat, FP-growth (Borgelt) | https://borgelt.net/src/ | 6.31, 5.24, 6.21, all 2022.11.22; tarballs checked by SHA-256 |
+| FGC-Stream | https://github.com/Louis-Romain-Roux/FGC-Stream | commit `2ebf751` (2020-11-15), plus `tools/patches/fgc_stream_gcc.patch` (one `template<>` that GCC requires) and `-include cstdint` |
+
+The binaries land in `external_algos/borgelt/` and
+`external_algos/FGC_Stream/FGC-Stream/FGC_Stream_release`, where
+`src/config.py` expects them. Without `tools/peakrun/peakrun`, the harness
+warns and falls back to polling memory, which misses short runs.
 
 > **Important — the `k` argument.** Gr-growth's third command-line argument is
 > the *depth of the subset test*, not a pattern-length cap. Only `k=1` yields
@@ -252,7 +265,7 @@ abort again at 11.1–11.8 GB.
 | HUG-Miner, GHUI-Miner | High-Utility | SPMF v2.65 |
 | HUCI-Miner-Gen. (not a generator miner: utility-minimal, see the audit) | High-Utility | SPMF v2.65 |
 | AprioriRare (labelled `Arima` in `src/config.py` and the results tables) | Rare | SPMF v2.65 |
-| FGC-Stream | Stream | C++ source (this repo) |
+| FGC-Stream | Stream | C++ source, fetched by `tools/fetch_native.sh` (commit `2ebf751`) |
 
 Of the 35 algorithms counted after full-text verification
 (`results/litsearch/RULE.md`, `VERIFIED.md`), 12 have an executable

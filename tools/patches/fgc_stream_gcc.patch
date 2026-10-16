@@ -1,0 +1,12 @@
+diff --git a/FGC-Stream/main.cpp b/FGC-Stream/main.cpp
+index 7eca211..822c0a4 100644
+--- a/FGC-Stream/main.cpp
++++ b/FGC-Stream/main.cpp
+@@ -291,6 +291,7 @@ void sanityCheck_full(ClosedIS* clos, TIDList* TList) {
+ // template override due to what seems to be a VS bug ?
+ // comment this function, and compare readings of trx with debug/release configs
+ // if differences between D and R, then nasty bug still present...
++template<>
+ void Transaction<uint32_t>::load(char* _s, const char* _delims, const short _withcrc) {
+   uint32_t v;
+   uint32_t oldV = 1 << 31;

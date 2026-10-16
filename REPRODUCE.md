@@ -4,7 +4,10 @@ Every table and figure of the manuscript, with the command that produces it
 and the file it writes. Commands run from the repository root with the
 project's Python environment (`.venv`). The AutoFolio baselines need their
 own Python 3.10 environment in `tools/autofolio/.venv` (see
-`tools/autofolio/af_run.py`).
+`tools/autofolio/af_run.py`). The native programs that are not in this
+repository (Borgelt's Apriori, Eclat and FP-growth, and FGC-Stream; the
+probe runs three of them) are fetched and built at the measured versions by
+`bash tools/fetch_native.sh` (see README, section 2).
 
 **Machine.** One machine was used throughout: Intel Core i7-12700F, 32 GB RAM,
 Ubuntu 26.04 (Linux 7.0), Java 21, SPMF 2.65. Absolute times and peaks
@@ -34,7 +37,7 @@ to polling.
 | output audit (Table 2) | `python tools/validate_generators.py`, `validate_sequential.py`, `validate_hui.py`, `validate_rare.py`, `validate_remaining.py` | `results/validate_*.txt`, `results/seqval/` |
 | E1 and the regularities of §4.4 | `python -m recommender.evaluate` (exact table: see `results/e2_exact_output.txt`) | `results/e2_exact_output.txt` |
 | extension memory ranges | `python tools/extension_table.py --exact` | stdout |
-| Figure 2 (memory crossing) | `python tools/make_figures.py` | `kbs/figures/crossing.pdf` |
+| Figure 1 (memory crossing) | `python tools/make_figures.py` | `kbs/figures/crossing.pdf` |
 
 ## Section 5: the recommender
 
