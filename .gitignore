@@ -147,3 +147,6 @@ external_algos/Gr_growth/grgrowth-v1.zip
 # run logs and completion markers
 results/*.log
 results/*.done
+
+# Advisor feedback on the manuscript (not part of the reproduction package)
+feedbacks/
