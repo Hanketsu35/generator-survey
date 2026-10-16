@@ -198,7 +198,7 @@ false.** Of 17 executable implementations:
 |---|---|
 | HUCI-Miner-Generators | returns **0 / 2002** support-minimal patterns — a different family entirely, despite the name |
 | Gr-growth (`k ≥ 2`) | an **undocumented parameter** silently switches to the disjunction-free family; 40% of the output, faster for exactly that reason |
-| Talky-G, Talky-G-diffset | return **non-minimal itemsets on 7 of 57** configurations, up to 13.8% of the output |
+| Talky-G, Talky-G-diffset | return **non-minimal itemsets on 7 of 57** configurations, up to 12.2% of the output |
 | VGEN vs FEAT/FSGP | disagree on **3802 patterns** at one configuration — a threshold-rounding convention, not an algorithmic difference |
 | Talky-G (empty set) | emits the empty set **iff the dataset has no full-support item** — an input-dependent convention |
 
