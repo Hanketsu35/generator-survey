@@ -115,6 +115,8 @@ def _run(name, path, n, sigma, timeout, workdir, failures=None):
     # one output file per miner and size: the miners now run side by side
     out = os.path.join(workdir, "out_%s_%d.txt" % (name, n))
     if cfg.get("exe_type") == "grgrowth":
+        from src.datasets import newline_terminated
+        path = str(newline_terminated(path))
         base = out[:-4]
         res = M.run_external(cfg["exe"], [path, max(1, int(round(sigma * n))), GRGROWTH_K, base],
                              base + ".txt", timeout=timeout,

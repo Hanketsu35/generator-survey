@@ -26,6 +26,8 @@ report/tables.md
 literature.md
 int
 fg.fbd.sum.txt
+fg.sum.txt
+DPM.sum.txt
 *.fbd
 *.fbd.sum.txt
 "$1"
@@ -57,6 +59,9 @@ results/test_*.txt
 
 # FGC-Stream: has its own git repo — clone from GitHub (see README)
 external_algos/FGC_Stream/
+# GC-growth and DPMiner: fetched and built by tools/fetch_native.sh
+external_algos/GC_growth/
+external_algos/DPMiner/
 
 # Visual Studio build artifacts
 **/Debug/

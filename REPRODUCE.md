@@ -5,8 +5,8 @@ and the file it writes. Commands run from the repository root with the
 project's Python environment (`.venv`). The AutoFolio baselines need their
 own Python 3.10 environment in `tools/autofolio/.venv` (see
 `tools/autofolio/af_run.py`). The native programs that are not in this
-repository (Borgelt's Apriori, Eclat and FP-growth, and FGC-Stream; the
-probe runs three of them) are fetched and built at the measured versions by
+repository (Borgelt's Apriori, Eclat and FP-growth, FGC-Stream, GC-growth
+and DPM-delta; the probe runs three of them) are fetched and built at the measured versions by
 `bash tools/fetch_native.sh` (see README, section 2).
 
 **Machine.** One machine was used throughout: Intel Core i7-12700F, 32 GB RAM,
@@ -24,6 +24,7 @@ to polling.
 | item | command | output |
 |---|---|---|
 | systematic search (Table 1) | `python tools/litsearch.py` | `results/litsearch/hits.csv`, `queries.txt` |
+| search addendum (minimal infrequent / rare terms) | `python tools/litsearch.py --addendum` | `results/litsearch/hits_addendum.csv`, `queries_addendum.txt`, decisions in `ADDENDUM.md` |
 | screening decisions, counts | (manual, documented) | `results/litsearch/SCREENING.md` |
 | bibliographic metadata | (OpenAlex and Crossref, recorded) | `results/litsearch/bibmeta.json` |
 
@@ -35,6 +36,9 @@ to polling.
 | exact re-measurement | `python tools/remeasure_exact.py`, then `python tools/apply_exact_memory.py` | `results/exact_memory.csv`, `results/exact/` |
 | training table (81 datasets) | `python tools/build_training_all.py` | `results/exact/training_all.csv` |
 | output audit (Table 2) | `python tools/validate_generators.py`, `validate_sequential.py`, `validate_hui.py`, `validate_rare.py`, `validate_remaining.py` | `results/validate_*.txt`, `results/seqval/` |
+| GC-growth and DPM-delta audit | `python tools/validate_nus.py` | `results/validate_nus.txt` |
+| GC-growth benchmark | `python tools/bench_nus.py` | `results/gcgrowth_summary.csv` |
+| Gr-growth unterminated last line | `python tools/grgrowth_newline.py` | `results/grgrowth_newline.csv` |
 | E1 and the regularities of §4.4 | `python -m recommender.evaluate` (exact table: see `results/e2_exact_output.txt`) | `results/e2_exact_output.txt` |
 | extension memory ranges | `python tools/extension_table.py --exact` | stdout |
 | Figure 1 (memory crossing) | `python tools/make_figures.py` | `kbs/figures/crossing.pdf` |

@@ -117,10 +117,14 @@ bash tools/fetch_native.sh
 |---|---|---|
 | Apriori, Eclat, FP-growth (Borgelt) | https://borgelt.net/src/ | 6.31, 5.24, 6.21, all 2022.11.22; tarballs checked by SHA-256 |
 | FGC-Stream | https://github.com/Louis-Romain-Roux/FGC-Stream | commit `2ebf751` (2020-11-15), plus `tools/patches/fgc_stream_gcc.patch` (one `template<>` that GCC requires) and `-include cstdint` |
+| GC-growth, DPMiner (DPM-delta) | https://www.comp.nus.edu.sg/~wongls/projects/pattern-spaces/ | `GcGrowth-v2.zip`, `dpm-v1.zip`, SHA-256 checked; pointer casts made 64-bit (`uintptr_t`) and an empty `crtdbg.h` supplied |
 
 The binaries land in `external_algos/borgelt/` and
 `external_algos/FGC_Stream/FGC-Stream/FGC_Stream_release`, where
-`src/config.py` expects them. Without `tools/peakrun/peakrun`, the harness
+`src/config.py` expects them. GC-growth and DPM-delta land in
+`external_algos/GC_growth/` and `external_algos/DPMiner/`; they were found
+after the benchmark and are run only by `tools/validate_nus.py` and
+`tools/bench_nus.py`, not by the harness or the recommender. Without `tools/peakrun/peakrun`, the harness
 warns and falls back to polling memory, which misses short runs.
 
 > **Important — the `k` argument.** Gr-growth's third command-line argument is
@@ -211,6 +215,9 @@ python -m src.analyze             # figures and tables of the original benchmark
 | `tools/validate_sequential.py` | Subsequence oracle: validates FEAT/FSGP/VGEN and explains their differences |
 | `tools/validate_remaining.py` | GHUI/HUCI semantics + FGC-Stream generator–closure verification |
 | `tools/validate_rare.py` | Maximum-support oracle for Arima: minimal-rare-itemset soundness **and** negative-border completeness |
+| `tools/validate_nus.py` | GC-growth and DPM-delta: bitset support, immediate-subset minimality, closure per pair, and set equality with Eclat's generators |
+| `tools/bench_nus.py` | GC-growth on Gr-growth's 58 configurations, exact peak (`results/gcgrowth_summary.csv`) |
+| `tools/grgrowth_newline.py` | Re-runs Gr-growth on the four datasets whose last line has no newline (`results/grgrowth_newline.csv`) |
 
 > **HUCI-Miner-Generators does not output minimal generators.** Measured on
 > foodmart: of its 2,002 patterns at min_utility=50, **0 are support-minimal**

@@ -78,11 +78,50 @@ def get_utility_dataset_path(name: str) -> Path:
     return fixed
 
 
+def newline_terminated(path) -> Path:
+    """`path`, or a cached copy of it whose last line ends with a newline.
+
+    The data reader shared by Gr-growth, GC-growth and DPMiner (data.cpp of
+    the NUS programs) drops a final line that has no line terminator, as
+    their readmes warn. SPMF's mushroom and connect, and kosarak and
+    c73d10k, end without one: those programs mined 8,415 of mushroom's
+    8,416 transactions and missed generators whose support reaches the
+    threshold only through the last one. Every other reader handles both
+    forms, so every input goes through here.
+    """
+    path = Path(path)
+    with open(path, "rb") as f:
+        f.seek(0, os.SEEK_END)
+        if f.tell() == 0:
+            return path
+        f.seek(-1, os.SEEK_END)
+        if f.read(1) == b"\n":
+            return path
+    import hashlib
+    import tempfile
+    st = path.stat()
+    key = hashlib.sha1(("%s|%d|%d" % (path.resolve(), st.st_size, st.st_mtime_ns)).encode()).hexdigest()[:16]
+    cache = Path(tempfile.gettempdir()) / "mg_newline"
+    cache.mkdir(exist_ok=True)
+    out = cache / ("%s_%s" % (key, path.name))
+    if not out.exists():
+        tmp = out.with_suffix(out.suffix + ".part")
+        with open(path, "rb") as src, open(tmp, "wb") as dst:
+            while True:
+                chunk = src.read(1 << 20)
+                if not chunk:
+                    break
+                dst.write(chunk)
+            dst.write(b"\n")
+        os.replace(tmp, out)
+    return out
+
+
 def get_dataset_path(name: str) -> Path:
     p = RAW_DIR / f"{name}.txt"
     if not p.exists():
         raise FileNotFoundError(f"Dataset bulunamadi: {p}. Once download_all() calistir.")
-    return p
+    return newline_terminated(p)
 
 def get_dataset_stats(name: str) -> dict:
     path = get_dataset_path(name)

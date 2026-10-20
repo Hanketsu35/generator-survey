@@ -91,7 +91,7 @@
         "evidence": "oracle: mushroom/0.2 returns 683 of 1703 generators at k=100"
       },
       "validation": {"oracle": "vertical bitset support oracle + set equality against DefMe", "scope": "58 transactional configurations"},
-      "notes": ["Fastest dedicated generator miner and lowest peak memory, but native C++ so the advantage is not attributable to algorithm design alone."]
+      "notes": ["Fastest dedicated generator miner and lowest peak memory, but native C++ so the advantage is not attributable to algorithm design alone.", "Its data reader drops a final line without a newline (the NUS readme asks for one). SPMF's mushroom and connect, kosarak and c73d10k end without one, and until 2026-10-20 it mined one transaction fewer there: on 13 of 29 runs it missed generators whose support reaches the threshold only through that transaction (up to 1,208 on c73d10k at 0.447). Peak memory and runtime were unchanged within repeatability (results/grgrowth_newline.csv). src/datasets.newline_terminated now feeds every input newline-terminated."]
     },
     {
       "id": "Talky_G",
