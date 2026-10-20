@@ -1,4 +1,4 @@
-"""AutoFolio's memory regret under another SMAC seed (gap G5, kbs/GAPS.md).
+"""AutoFolio's memory regret under another SMAC seed (Supplementary Section S2).
 
     python tools/autofolio_seeds.py --seed 1
 

@@ -328,7 +328,7 @@
       "display": "FGC-Stream",
       "category": 5,
       "input_type": "transactional",
-      "provenance": "native C++ Windows binary (not bundled)",
+      "provenance": "native C++, built from source at commit 2ebf751 (tools/fetch_native.sh)",
       "emits": {"family": "generator_closure_pairs", "evidence": "oracle"},
       "conventions": {"empty_set": "always", "threshold_boundary": "round", "boundary_evidence": "the program takes an absolute support, and the harness passes round(sigma*|D|) (src/harness.py): the floor side when the fraction is below one half, the ceil side otherwise. Recorded as floor until 2026-10-16."},
       "soundness": {"status": "verified", "violations": 0},

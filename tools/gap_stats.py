@@ -1,4 +1,4 @@
-"""Additional reporting on the baseline comparison (gaps G2-G4, kbs/GAPS.md).
+"""Additional reporting on the baseline comparison (post hoc; Supplementary S2).
 
     python tools/gap_stats.py
 
@@ -6,10 +6,17 @@ Not new tests: further views of results/baseline_rows.csv and the stored
 probes, computed after BASELINE_RESULTS.md.
   G2  the probe's wall time against the runtime of the implementation it
       leads to, per memory instance with a probe;
-  G3  regret in megabytes: the pick's peak minus the best eligible peak;
+  G3  excess peak memory in megabytes: the pick's peak minus the best
+      eligible peak, failed picks excluded; also the mean over the instances
+      on which no method but the random pick failed;
   G4  Wilcoxon signed-rank tests (per-dataset mean log regret, recommender
       with probe against each method, Holm-corrected) and a Friedman test
-      with average ranks over datasets.
+      with average ranks over datasets, and the Nemenyi and Bonferroni-Dunn
+      critical differences.
+  G5  the paired cluster bootstrap of BASELINE_RESULTS.md (recommender with
+      probe against ISAC and AutoFolio on PRIMARY), recomputed with the
+      project's bootstrap (probe_eval.boot: 2,000 resamples, fixed seed); the
+      registered values were computed outside the released scripts.
 Writes results/gap_stats_output.txt.
 """
 import os
@@ -84,17 +91,25 @@ def main():
             L.append("   %-34s median %6.1f MB  mean %7.1f MB  >10 MB %5.1f%%  >100 MB %5.1f%%  failed %d"
                      % (meth, np.median(mb), mb.mean(), 100 * np.mean(mb > 10),
                         100 * np.mean(mb > 100), int((~okk).sum())))
+        common = np.all([q[x].values < BC.FAIL for x in methods if x != "random pick"], axis=0)
+        L.append("   common instances (no method but the random pick failed): %d" % common.sum())
+        for meth in methods:
+            if meth == "random pick":
+                continue
+            mb = (q[meth].values[common] - 1.0) * best[common]
+            L.append("   %-34s mean %7.1f MB  >10 MB %5.1f%%" % (meth, mb.mean(), 100 * np.mean(mb > 10)))
 
     # ---- G2: probe time --------------------------------------------------
     L.append("== G2 probe wall time against the runtime of the recommended run")
     for label, q in (("PRIMARY", m[m.primary]), ("all", m)):
         rows = []
-        for s, ds, sg in zip(q.set, q.dataset, q.sigma):
+        for s, ds, sg, reg in zip(q.set, q.dataset, q.sigma, q[REC]):
             pr = probes.get((ds, round(float(sg), 9)))
             tv = T[(s, ds, round(float(sg), 9))]
-            # the recommender's memory pick is the lowest-memory eligible miner
-            # on 99% of these instances; use the truth's best as its run
-            a = min(tv, key=lambda k: tv[k][0])
+            # the recommender's pick: the eligible miner whose peak is its
+            # regret times the best peak
+            lo = min(v[0] for v in tv.values())
+            a = min(tv, key=lambda k: abs(tv[k][0] - reg * lo))
             rt = tv[a][1]
             already = pr.mode == "direct" and pr.costs.get(a, {}).get("mode") == "measured"
             rows.append((pr.wall_s, rt, already))
@@ -137,9 +152,20 @@ def main():
         L.append("   Friedman chi2 %.1f, p %.2e; average rank (1 = best):" % (fr.statistic, fr.pvalue))
         k, n = len(methods), len(per)
         cd = 3.164 * np.sqrt(k * (k + 1) / (6.0 * n))   # Nemenyi, q_0.05 for k = 10
+        cd_bd = 2.773 * np.sqrt(k * (k + 1) / (6.0 * n))  # Bonferroni-Dunn, q_0.05 for k = 10
         for meth, r in ranks.items():
             L.append("      %-34s %.2f" % (meth, r))
         L.append("   Nemenyi critical difference (alpha 0.05, k=%d): %.2f" % (k, cd))
+        L.append("   Bonferroni-Dunn critical difference against the recommender (alpha 0.05, k=%d): %.2f"
+                 % (k, cd_bd))
+    # ---- G5: paired bootstrap ---------------------------------------------
+    q = m[m.primary]
+    L.append("== G5 paired cluster bootstrap on PRIMARY, recommender with probe vs ...")
+    for meth in ("ISAC (k-means clusters)", "AutoFolio (SMAC, 1800s/fold)"):
+        pb, band = PE.boot(q, REC, meth)
+        L.append("   %-32s ratio %.3f [5-95%% %.3f..%.3f], P(better) %.4f; point ratio %.3f"
+                 % (meth, band[1], band[0], band[2], pb,
+                    np.exp(np.log(q[REC]).mean() - np.log(q[meth]).mean())))
     out = "\n".join(L)
     (_ROOT / "results" / "gap_stats_output.txt").write_text(out + "\n")
     print(out)

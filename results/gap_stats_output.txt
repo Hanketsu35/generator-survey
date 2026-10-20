@@ -9,6 +9,16 @@
    AutoFolio (SMAC, 1800s/fold)       median    0.0 MB  mean    45.9 MB  >10 MB  14.4%  >100 MB   6.8%  failed 1
    recommender, no probe              median   10.6 MB  mean    51.3 MB  >10 MB  54.2%  >100 MB   6.8%  failed 1
    recommender, probe                 median    0.0 MB  mean    65.2 MB  >10 MB   4.2%  >100 MB   2.5%  failed 0
+   common instances (no method but the random pick failed): 117
+   SBS (fixed choice)                 mean    27.0 MB  >10 MB  70.1%
+   regression (PAR10-imputed)         mean    49.6 MB  >10 MB  20.5%
+   pairwise ranking                   mean    42.3 MB  >10 MB  16.2%
+   SUNNY (k-NN, k=16)                 mean    23.0 MB  >10 MB  24.8%
+   ISAC (k-means clusters)            mean    45.3 MB  >10 MB  13.7%
+   survival (expected_par10)          mean    52.6 MB  >10 MB  70.9%
+   AutoFolio (SMAC, 1800s/fold)       mean    46.3 MB  >10 MB  14.5%
+   recommender, no probe              mean    51.7 MB  >10 MB  54.7%
+   recommender, probe                 mean    10.2 MB  >10 MB   3.4%
 == G3 excess peak memory over the best eligible miner, all (335 instances)
    SBS (fixed choice)                 median   10.8 MB  mean    72.4 MB  >10 MB  64.8%  >100 MB   7.3%  failed 5
    random pick                        median    1.9 MB  mean    63.9 MB  >10 MB  29.9%  >100 MB  10.2%  failed 138
@@ -20,15 +30,25 @@
    AutoFolio (SMAC, 1800s/fold)       median    0.0 MB  mean    54.8 MB  >10 MB  11.4%  >100 MB   7.5%  failed 3
    recommender, no probe              median    1.3 MB  mean    59.1 MB  >10 MB  39.0%  >100 MB   7.6%  failed 4
    recommender, probe                 median    0.0 MB  mean    28.6 MB  >10 MB   2.4%  >100 MB   1.5%  failed 0
+   common instances (no method but the random pick failed): 322
+   SBS (fixed choice)                 mean    53.9 MB  >10 MB  66.1%
+   regression (PAR10-imputed)         mean    57.8 MB  >10 MB  14.6%
+   pairwise ranking                   mean    32.5 MB  >10 MB  11.8%
+   SUNNY (k-NN, k=16)                 mean    49.1 MB  >10 MB  21.4%
+   ISAC (k-means clusters)            mean    33.1 MB  >10 MB   9.3%
+   survival (expected_par10)          mean    63.2 MB  >10 MB  60.9%
+   AutoFolio (SMAC, 1800s/fold)       mean    56.5 MB  >10 MB  11.8%
+   recommender, no probe              mean    60.7 MB  >10 MB  40.1%
+   recommender, probe                 mean     9.3 MB  >10 MB   2.2%
 == G2 probe wall time against the runtime of the recommended run
    PRIMARY  n=119  probe wall: median 0.14 s, 90% 1.2 s, max 67.5 s | run: median 0.03 s
-            output already produced by the probe (direct, measured): 68.9%
-            extra time beyond the run: median 0.10 s, 90% 0.9 s; extra > run on 85.7%
-            on runs of 10 s or more (5): extra / run median 0.641
+            output already produced by the probe (direct, measured): 71.4%
+            extra time beyond the run: median 0.10 s, 90% 0.9 s; extra > run on 86.6%
+            on runs of 10 s or more (6): extra / run median 0.903
    all      n=335  probe wall: median 0.16 s, 90% 1.9 s, max 68.0 s | run: median 0.03 s
-            output already produced by the probe (direct, measured): 72.5%
-            extra time beyond the run: median 0.11 s, 90% 1.4 s; extra > run on 81.8%
-            on runs of 10 s or more (18): extra / run median 0.315
+            output already produced by the probe (direct, measured): 74.0%
+            extra time beyond the run: median 0.11 s, 90% 1.4 s; extra > run on 82.1%
+            on runs of 10 s or more (19): extra / run median 0.407
 == G4 PRIMARY: 32 datasets; Wilcoxon signed-rank on per-dataset mean log regret, recommender with probe vs each, Holm-corrected
    vs SBS (fixed choice)               better/worse/tied datasets 28/ 2/ 2  p 2.35e-06  Holm 1.70e-05
    vs random pick                      better/worse/tied datasets 32/ 0/ 0  p 4.66e-10  Holm 4.19e-09
@@ -51,6 +71,7 @@
       survival (expected_par10)          7.42
       random pick                        9.50
    Nemenyi critical difference (alpha 0.05, k=10): 2.39
+   Bonferroni-Dunn critical difference against the recommender (alpha 0.05, k=10): 2.10
 == G4 all: 90 datasets; Wilcoxon signed-rank on per-dataset mean log regret, recommender with probe vs each, Holm-corrected
    vs SBS (fixed choice)               better/worse/tied datasets 80/ 3/ 7  p 3.87e-15  Holm 3.10e-14
    vs random pick                      better/worse/tied datasets 88/ 0/ 2  p 3.73e-16  Holm 3.36e-15
@@ -73,3 +94,7 @@
       SBS (fixed choice)                 7.58
       random pick                        9.17
    Nemenyi critical difference (alpha 0.05, k=10): 1.43
+   Bonferroni-Dunn critical difference against the recommender (alpha 0.05, k=10): 1.25
+== G5 paired cluster bootstrap on PRIMARY, recommender with probe vs ...
+   ISAC (k-means clusters)          ratio 0.914 [5-95% 0.842..0.972], P(better) 0.9995; point ratio 0.910
+   AutoFolio (SMAC, 1800s/fold)     ratio 0.909 [5-95% 0.833..0.968], P(better) 1.0000; point ratio 0.906

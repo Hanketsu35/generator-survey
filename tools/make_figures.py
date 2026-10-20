@@ -1,4 +1,4 @@
-"""Figures of the KBS paper (gap G7, kbs/GAPS.md).
+"""Figures of the KBS paper (the figures of the paper).
 
     python tools/make_figures.py
 

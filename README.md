@@ -86,7 +86,13 @@ Verify:
 
 ```bash
 java -jar spmf/spmf.jar
+sha256sum spmf/spmf.jar
 ```
+
+The results were measured with SPMF 2.65, whose `spmf.jar` has SHA-256
+`730556538a655932137f91b049bc93b7d887092583281edabd3c2b04a9d94960`. The
+download page serves the current release; a different checksum means a
+different version.
 
 ### 2. Build the native programs and the memory launcher
 

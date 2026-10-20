@@ -1,4 +1,4 @@
-"""Systematic search for minimal-generator algorithms (gap G8, kbs/GAPS.md).
+"""Systematic search for minimal-generator algorithms (Supplementary Section S3).
 
     python tools/litsearch.py
 
