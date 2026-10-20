@@ -1,12 +1,18 @@
 """Systematic search for minimal-generator algorithms (Supplementary Section S3).
 
-    python tools/litsearch.py
+    python tools/litsearch.py              # the registered search
+    python tools/litsearch.py --addendum   # the addendum of 2026-10-20
 
 OpenAlex (title and abstract search), run 2026-10-05. The queries cover the
 names the same object has carried: minimal generators, generators of closed
 itemsets, free sets / free itemsets, key patterns / key itemsets, sequential
 and utility generators, generators in graphs and streams. Every hit is kept
 in results/litsearch/hits.csv for screening (results/litsearch/SCREENING.md).
+
+The addendum adds the terms the registered queries lacked: minimal rare
+itemsets are also called minimal(ly) infrequent itemsets or minimal rare
+(infrequent) patterns, and a review of the survey found a rare-itemset
+miner (IFP_min) published under such a name only. Its hits, minus those already in hits.csv, go to hits_addendum.csv.
 """
 import csv
 import json
@@ -35,6 +41,14 @@ QUERIES = [
     '"minimal rare itemsets"',
     '"disjunction-free"',
 ]
+ADDENDUM = [
+    '"minimal infrequent"',
+    '"minimally infrequent"',
+    '"minimal rare itemset"',
+    '"minimal rare pattern"',
+    '"minimal rare patterns"',
+    '"minimal infrequent pattern"',
+]
 
 
 def fetch(q):
@@ -53,30 +67,40 @@ def fetch(q):
     return out
 
 
-def main():
+def main(addendum=False):
     OUT.mkdir(parents=True, exist_ok=True)
     seen = {}
     log = []
-    for q in QUERIES:
+    known = set()
+    if addendum:
+        with open(OUT / "hits.csv", newline="") as fh:
+            known = {r["id"] for r in csv.DictReader(fh)}
+    for q in (ADDENDUM if addendum else QUERIES):
         res = fetch(q)
         log.append("%-40s %d" % (q, len(res)))
         for w in res:
             src = ((w.get("primary_location") or {}).get("source") or {}).get("display_name") or ""
             k = w["id"]
+            if k in known:
+                continue
             if k not in seen:
                 seen[k] = {"id": k, "doi": w.get("doi") or "", "year": w.get("publication_year"),
                            "title": (w.get("title") or "").replace("\n", " "), "venue": src,
                            "type": w.get("type"), "queries": q}
             else:
                 seen[k]["queries"] += " | " + q
-    with open(OUT / "hits.csv", "w", newline="") as fh:
+    name = "hits_addendum.csv" if addendum else "hits.csv"
+    with open(OUT / name, "w", newline="") as fh:
         wr = csv.DictWriter(fh, fieldnames=["year", "title", "venue", "type", "doi", "id", "queries"])
         wr.writeheader()
         for r in sorted(seen.values(), key=lambda r: (r["year"] or 0, r["title"])):
             wr.writerow(r)
-    (OUT / "queries.txt").write_text("\n".join(log) + "\nunique: %d\n" % len(seen))
+    qname = "queries_addendum.txt" if addendum else "queries.txt"
+    (OUT / qname).write_text("\n".join(log) + "\nunique, not in hits.csv: %d\n" % len(seen)
+                             if addendum else "\n".join(log) + "\nunique: %d\n" % len(seen))
     print("\n".join(log), "\nunique:", len(seen))
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    main(addendum="--addendum" in sys.argv[1:])

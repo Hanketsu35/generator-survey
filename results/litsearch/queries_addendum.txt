@@ -1,0 +1,7 @@
+"minimal infrequent"                     50
+"minimally infrequent"                   50
+"minimal rare itemset"                   10
+"minimal rare pattern"                   6
+"minimal rare patterns"                  6
+"minimal infrequent pattern"             2
+unique, not in hits.csv: 55
