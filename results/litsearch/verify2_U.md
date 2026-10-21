@@ -1,7 +1,7 @@
 # Full-text verification, batch U (2026-10-05)
 
 Rule: RULE.md including Amendments 1-3. Text extracted with `pdftotext -layout`.
-Files are in `Fetched_pdfs/`. Quotes are short and verbatim. Page numbers are the printed journal or proceedings page numbers.
+Files are in `papers/` (not tracked). Quotes are short and verbatim. Page numbers are the printed journal or proceedings page numbers.
 
 ---
 

@@ -3,7 +3,7 @@
 Rule: `RULE.md` including the 2026-10-05 Amendments (generators must be an
 identified part of the output; peer review required). All decisions below rest
 on the full text, extracted with `pdftotext -layout` from
-`Fetched_pdfs/`. Quotes are short and verbatim (extraction artefacts in math
+`papers/` (not tracked). Quotes are short and verbatim (extraction artefacts in math
 symbols left as-is or described in brackets).
 
 ---
