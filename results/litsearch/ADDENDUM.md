@@ -51,16 +51,31 @@ Set aside under the rule's exclusions:
 | CORI, Bouasker and Ben Yahia, SAC 2015 | **exclude**: a different family | Abstract: "mining rare correlated patterns according to the bond measure"; the output is every pattern that is correlated (bond >= minbond) and rare, not the minimal rare itemsets. |
 | CMRP-OD, Cai et al., Computer Journal 66(1) 2023 (10.1093/comjnl/bxab139) | set aside at screening (uncertain data streams); full text confirms | title: "... Outlier Detection Approach For Uncertain Data Streams Under Monotonic Constraints". It is not the LNCS 2020 work below. |
 
-## Not yet decided: full text not available
+## Undecided: full text not available
 
-- Loo, Yip, Kao, Cheung, DEXA 2000 (10.1007/3-540-44469-6_66)
+Neither work could be obtained: OpenAlex and Semantic Scholar list both as
+closed, no repository holds a copy (HKU Hub's record of the DEXA paper has
+no file; the HKU technical report TR-2000-03 is not online), and the
+authors' institutions' subscriptions do not cover them (2026-10-22). They
+are recorded as undecided, as the other works whose full text could not be
+read, and are not counted.
+
+- Loo, Yip, Kao, Cheung, "Exploiting the duality of maximal frequent
+  itemsets and minimal infrequent itemsets for I/O efficient association
+  rule mining", DEXA 2000, LNCS 1873 (10.1007/3-540-44469-6_66). By its
+  title and abstract the target is the maximal frequent itemsets, with the
+  minimal infrequent itemsets used to verify them.
 - AMCMRP-Outlier: Cai, Chen, Li, Liu, "Minimal rare-pattern-based outlier
   detection method for data streams by considering anti-monotonic
   constraints", ISC 2020, LNCS 12472 (10.1007/978-3-030-62974-8_16). The
   Computer Journal paper describes it as mining minimal rare patterns from
   certain data streams under anti-monotonic constraints; whether its output
-  is the whole family or a constrained subfamily needs the full text.
+  is the whole family or a constrained subfamily is not known.
 
 The IJAERD 2016 paper "Minimally infrequent itemset mining using
-pattern-growth paradigm" repeats the IFP_min title and is to be checked as
-a version of it.
+pattern-growth paradigm" (More and Shishupal, IJAERD 3(6), 10.21090/ijaerd.030647;
+read from the Internet Archive's copy of 2017-01-14, the DOI target is gone)
+repeats IFP_min's title but is not a version of it: its abstract and
+algorithms concern infrequent weighted itemsets ("two algorithm that perform
+IWI and Minimal IWI mining"; "Output: f, the set of IWIs"). **Excluded**
+with the other weighted-support works.
