@@ -6,17 +6,19 @@ that the authors fetched through institutional access: `verify2_T.md`,
 committed. First-pass evidence, with verbatim quotes and the URL read: `verify_A.md` (transactional classics),
 `verify_B.md` (newer transactional), `verify_C.md` (subfamilies, rare,
 stream), `verify_D.md` (sequential), `verify_E.md` (utility, graph).
+The candidates of the second search (minimal infrequent and minimal rare
+terms) are decided in `ADDENDUM.md` and merged into the counts below.
 Amendment 1 is "an identified part of the output"; amendment 2 is "our
 oracle audit counts as evidence"; amendment 3 is peer review.
 
-## Counted (verified): 35
+## Counted (verified): 41
 
 | family | algorithm | evidence | executable |
 |---|---|---|---|
 | transactional | Pascal | audit of the SPMF implementation (am. 2); key patterns flagged in the paper's output (am. 1) | S |
 | transactional | Prince | CLA 2005 paper, same authors and algorithm: closed itemsets with their minimal generators, plus rule bases (am. 1) | – |
 | transactional | Gr-growth | AAAI'06 Alg. 2 "Output: the complete set of frequent generators"; PODS'05 Thm 3.2 | C |
-| transactional | GC-growth | PODS'05 Thm 3.4: closed patterns with all their generators | – |
+| transactional | GC-growth | PODS'05 Thm 3.4: closed patterns with all their generators; program found later, audited (`results/validate_nus.txt`) | C |
 | transactional | Zart | frequent itemsets plus closed itemsets with their generators (am. 1); audited | S |
 | transactional | Talky-G (with its diffset variant) | IDA'09 §3.2 "the IT-tree contains all FGs"; audited | S |
 | transactional | Touch | IDA'09 §4: closed itemsets with all their generators | – |
@@ -25,7 +27,7 @@ oracle audit counts as evidence"; amendment 3 is peer review.
 | transactional | free itemsets under constraints (Boulicaut, Jeudy) | IDEAS'01 Thm 3 | – |
 | transactional | HLinEx, disjunction-free sets (Bykowski, Rigotti) | Information Systems 2003 version: frequent disjunction-free sets plus border (am. 1) | – |
 | transactional | IncA-Gen / Magalice-A (Nehmé et al.) | ICFCA'05 Def. 1, Props 1–5: all generators of each concept; lattice order as extra output (am. 1) | – |
-| transactional | DPMiner | KDD'07, Corollary 1: closed patterns with all their generators | – |
+| transactional | DPMiner | KDD'07, Corollary 1: closed patterns with all their generators. The released program (DPM-delta, found later) returns only the delta-discriminative classes (`results/validate_nus.txt`) | C (subfamily) |
 | transactional | CGT | FutureRFID'14: all frequent generators with closure and support | – |
 | transactional | SSMG-Miner (succinct systems) | DASFAA'05: an exact succinct system of minimal generators (a subfamily) | – |
 | sequential | FEAT | WWW'08 §2.1 "complete set of sequence generators which are frequent"; audited | S |
@@ -48,13 +50,21 @@ oracle audit counts as evidence"; amendment 3 is peer review.
 | sequential | MaxGenCloSM | EAAI'18 p. 202: maximal, closed and generator sets (am. 1) | – |
 | stream | StreamGen | CIKM'09 §3 "the complete set of frequent itemset generators" over the window; Thms 6–13 | – |
 | stream | FGC-Stream | audit of the released implementation (am. 2); 1,246 checks | C |
+| rare | IFP_min | COMAD'11 Def. 1, Sect. 5.2 completeness and soundness (`ADDENDUM.md`) | – |
+| rare | CP4MII | IJCAI'19 Thm 1 (`ADDENDUM.md`); source public, does not build | – |
+| rare | RP-VIPER | DaWaK'23 Alg. 1 "Output: List of all minimal rare patterns"; on its claim (`ADDENDUM.md`) | – |
+| stream | MIP-DS | ESWA'15 Def. 3, Sect. 4.1 "generates all possible minimal infrequent patterns"; on its claim (`ADDENDUM.md`) | – |
+| stream | MIMDS_1/2 | IAJIT'21 Alg. 1 "Output: MP"; on its claim (`ADDENDUM.md`) | – |
+| stream | MRPM | ITC'22 Def. 3, Alg. 1 "Output: MRPs" (`ADDENDUM.md`) | – |
 
 Executable among the counted: Pascal, Gr-growth, Zart, Talky-G (and its
 diffset variant), DefMe, FEAT, FSGP, VGEN, HUG-Miner, GHUI-Miner,
-AprioriRare and FGC-Stream. That makes **12 algorithms** and 13
-implementations.
+AprioriRare and FGC-Stream: **12 algorithms** and 13 implementations,
+the benchmark's. The programs of GC-growth and DPMiner were found later
+(audited; GC-growth benchmarked separately, `results/gcgrowth_summary.csv`),
+which makes **14 executable algorithms**.
 
-## Excluded (verified): 21
+## Excluded (verified): 26 (21 here, 5 in `ADDENDUM.md`)
 
 | algorithm | reason |
 |---|---|
@@ -79,13 +89,16 @@ implementations.
 
 - Nabeshima & Iwanuma, JSAI 2020: it meets the rule, but JSAI annual
   conference papers are not refereed (amendment 3).
+- Kyiv (Demchuk & Leith), arXiv:1403.6985: meets the rule, no refereed
+  version (`ADDENDUM.md`).
 
-## Unverified (no full text reachable, even with institutional access): 14
+## Unverified (no full text reachable, even with institutional access): 16
 
 Not counted. Phan Luong 2002; Kryszkiewicz 2001; Kryszkiewicz & Gajek 2002;
 RFS-Miner; HOPE-III; NOV-mGCFSI; IncGen (He et al. 2011); SeqGen; MSGPs
 (2012/2014); CloGen; MSGP-PreTree; StreamSeqGen; MFG-HUI; Merugula & Rao
-2020.
+2020; from the second search, Loo et al. (DEXA 2000) and AMCMRP-Outlier
+(ISC 2020).
 
 The same authors' later papers suggest that MFG-HUI uses the relative
 utility definition and would be excluded. NOV-mGCFSI was in the original
@@ -95,20 +108,20 @@ survey.
 
 | family | counted | executable |
 |---|---|---|
-| transactional | 18 | 5 (Pascal, Gr-growth, Zart, Talky-G, DefMe) |
+| transactional | 18 | 7 (Pascal, Gr-growth, GC-growth, Zart, DPMiner (subfamily), Talky-G, DefMe) |
 | sequential | 7 | 3 (FEAT, FSGP, VGEN) |
 | high-utility | 2 | 2 (HUG-Miner, GHUI-Miner) |
 | graph | 1 | 0 |
-| rare | 5 | 1 (AprioriRare) |
-| stream | 2 | 1 (FGC-Stream) |
-| **total** | **35** | **12 (34.3%)** |
+| rare | 8 | 1 (AprioriRare) |
+| stream | 5 | 1 (FGC-Stream) |
+| **total** | **41** | **14 (34.1%)** |
 
 By era (first publication):
 
 | era | counted | executable |
 |---|---|---|
-| up to 2015 | 29 | 11 (37.9%) |
-| since 2016 | 6 | 1 (16.7%) |
+| up to 2015 | 31 | 13 (41.9%) |
+| since 2016 | 10 | 1 (10.0%) |
 
 ## What changed against the original survey's 25
 

@@ -6,10 +6,10 @@ validation"** (in preparation for *Knowledge-Based Systems*). The manuscript
 itself is not distributed here; this repository holds what is needed to
 reproduce it.
 
-- **Survey.** A systematic search, decided on full texts, counts 35
-  minimal-generator algorithms. 12 have an executable implementation
+- **Survey.** A systematic search, decided on full texts, counts 41
+  minimal-generator algorithms. 14 have an executable implementation
   (`results/litsearch/VERIFIED.md`).
-- **Benchmark.** 17 implementations: those of the 12 executable algorithms
+- **Benchmark.** 17 implementations: those of 12 of the executable algorithms
   (Talky-G in two variants), HUCI-Miner-Generators (it claims generators but
   computes another family), and three native post-filtering baselines, with exact peak memory
   (`tools/peakrun`). 81 datasets, 3,284 runs in the training table.
@@ -279,11 +279,16 @@ abort again at 11.1–11.8 GB.
 | HUCI-Miner-Gen. (not a generator miner: utility-minimal, see the audit) | High-Utility | SPMF v2.65 |
 | AprioriRare (labelled `Arima` in `src/config.py` and the results tables) | Rare | SPMF v2.65 |
 | FGC-Stream | Stream | C++ source, fetched by `tools/fetch_native.sh` (commit `2ebf751`) |
+| GC-growth | Transactional | C++ source (NUS), fetched by `tools/fetch_native.sh`; audited and benchmarked separately |
+| DPMiner (DPM-delta; only the delta-discriminative classes) | Transactional | C++ source (NUS), fetched by `tools/fetch_native.sh`; audited only |
 
-Of the 35 algorithms counted after full-text verification
-(`results/litsearch/RULE.md`, `VERIFIED.md`), 12 have an executable
-implementation. Availability depends on age: 11 of the 29 published up to
-2015 are executable, and 1 of the 6 published from 2016 onwards.
+Of the 41 algorithms counted after full-text verification
+(`results/litsearch/RULE.md`, `VERIFIED.md`, `ADDENDUM.md`), 14 have an
+executable implementation. Availability depends on age: 13 of the 31
+published up to 2015 are executable, and 1 of the 10 published from 2016
+onwards. GC-growth and DPMiner were found after the benchmark: they are
+audited (`tools/validate_nus.py`), GC-growth is benchmarked on its own
+(`tools/bench_nus.py`), and neither is in the recommender's portfolio.
 
 The rare-itemset implementation in SPMF is AprioriRare, which finds the minimal
 rare itemsets. Szathmary et al. (2007) propose it together with Arima, which
