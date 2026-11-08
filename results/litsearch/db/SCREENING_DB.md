@@ -77,4 +77,88 @@ Six of the 41 counted algorithms have no record in any of the five sources:
 
 All six entered the survey through the original survey's list, not through a
 search. The query misses the forms "sequence generator*" and "graph
-generator*"; a supplementary query is still to be run.
+generator*", and "minimal patterns" for DefMe. The supplementary query below
+was written for these gaps.
+
+## Supplementary query (2026-11-09)
+
+```
+("sequence generator*" AND (frequent OR mining))
+OR ("graph generator*" AND (frequent OR mining)) OR "subgraph generator*"
+OR ("tree generator*" AND (frequent OR mining))
+OR ("free pattern*" AND (mining OR frequent))
+OR ("minimal pattern*" AND (mining OR frequent) AND (free OR generator* OR closed))
+OR ("equivalence class*" AND ("closed pattern*" OR "closed itemset*"))
+OR ("minimal generator*" AND (lattice* OR closure* OR pattern*))
+OR "delta-free" OR "δ-free"
+```
+
+It was run with the same field syntax on the same five sources. OpenAlex has
+no truncation, so there it ran as 15 queries with singular and plural forms
+(`tools/litsearch.py --supplement`, `../queries_supplement.txt`).
+
+| source | records | file |
+|---|---|---|
+| OpenAlex | 364 | `../hits_supplement.csv` |
+| Web of Science Core Collection | 235 | `wos_supp_2026-11-09.txt` |
+| Scopus | 318 | `scopus_supp_2026-11-09.csv` |
+| IEEE Xplore | 118 | `ieee_xplore_supp_2026-11-09.csv` |
+| ACM Guide to Computing Literature | 83 | `acm_dl_supp_2026-11-09.json` |
+| **total** | **1,118** | |
+
+ACM did not let the result page be saved this time. The DOI, year and
+document type of each record were read from the page; titles and abstracts
+come from OpenAlex by DOI, as before. For the 17 ACM-only DOIs (prefix
+10.5555), which OpenAlex does not hold, the title and venue were read from
+the page.
+
+`tools/merge_db.py --supplement` removes duplicates the same way and writes
+`merged_supp.csv`. The 1,118 records are 584 works. 108 of them are already
+in `merged.csv` and keep their R number and their decision. The other 476 are
+new and numbered S0001 to S0476. Their decisions are in `screening_supp.csv`:
+
+| code | works |
+|---|---|
+| X1 outside pattern mining | 392 |
+| X2 another pattern class | 28 |
+| X3 no mining algorithm | 23 |
+| X4 another data model or pattern language | 18 |
+| X5 not a refereed CS publication | 8 |
+| K already decided (FEAT, Fogger, DefMe) | 3 |
+| FT full text needed | 4 |
+| **total** | **476** |
+
+Most of X1 are random-graph generators, pseudo-random sequence generators,
+δ-free graphs in combinatorics, the δ phase of alloys, δ-free ATPase, and
+minimal generators of ideals in commutative algebra. The four new candidates
+are S0089 (concept lattice and minimal generators, ARIMA 2005), S0099
+(frequent δ-free patterns in large databases, DS 2005), S0229 (δ-free
+sequential patterns, ICDM 2014) and S0262 (exact and approximate minimal
+pattern mining, 2017, an extended version of DefMe).
+
+### Validation after the supplement
+
+| work | main query | supplement |
+|---|---|---|
+| FEAT (WWW 2008) | no | yes (S0123) |
+| Fogger (EDBT 2009) | no | yes (S0145) |
+| DefMe (PAKDD 2014) | no | yes (S0224) |
+| Pascal (SIGKDD Explorations 2000) | no | no |
+| GC-growth (PODS 2005) | no | no |
+| ICTAI 2007 (AprioriRare, MRG-Exp) | no | no |
+
+38 of the 41 counted algorithms are now retrieved by the database search.
+The remaining three come from the original survey's list. Their papers are
+not indexed under any of the terms; GC-growth's journal version (KDD 2007,
+R0435) is retrieved, as is the 2010 version of the ICTAI paper (R0584).
+
+## Totals over both queries
+
+| step | main | supplement | total |
+|---|---|---|---|
+| records identified | 2,779 | 1,118 | 3,897 |
+| duplicates removed | 932 | 534 + 108 already in main | 1,574 |
+| works screened | 1,847 | 476 | 2,323 |
+| excluded on title and abstract | 1,704 | 469 | 2,173 |
+| decided before (K) | 112 | 3 | 115 |
+| to the full text (FT) | 31 | 4 | 35 |

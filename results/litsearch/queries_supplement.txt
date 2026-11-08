@@ -1,0 +1,16 @@
+"sequence generator" AND (frequent OR mining) 29
+"sequence generators" AND (frequent OR mining) 29
+"graph generator" AND (frequent OR mining) 42
+"graph generators" AND (frequent OR mining) 42
+"subgraph generator"                     14
+"subgraph generators"                    14
+"tree generator" AND (frequent OR mining) 7
+"tree generators" AND (frequent OR mining) 7
+"free patterns" AND (mining OR frequent) 22
+"minimal patterns" AND (mining OR frequent) AND (free OR generators OR closed) 4
+"equivalence classes" AND ("closed patterns" OR "closed itemsets") 29
+"minimal generators" AND (lattice OR closure OR patterns) 118
+"minimal generator" AND (lattice OR closure OR pattern) 118
+"delta-free"                             52
+"δ-free"                                 65
+unique: 364

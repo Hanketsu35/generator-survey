@@ -2,6 +2,7 @@
 
     python tools/litsearch.py              # the registered search
     python tools/litsearch.py --addendum   # the addendum of 2026-10-20
+    python tools/litsearch.py --supplement # the supplementary query of 2026-11-09
 
 OpenAlex (title and abstract search), run 2026-10-05. The queries cover the
 names the same object has carried: minimal generators, generators of closed
@@ -13,6 +14,14 @@ The addendum adds the terms the registered queries lacked: minimal rare
 itemsets are also called minimal(ly) infrequent itemsets or minimal rare
 (infrequent) patterns, and a review of the survey found a rare-itemset
 miner (IFP_min) published under such a name only. Its hits, minus those already in hits.csv, go to hits_addendum.csv.
+
+The supplement of 2026-11-09 adds the forms that the validation of the
+multi-database search found missing (results/litsearch/db/SCREENING_DB.md):
+sequence, graph, subgraph and tree generators, free and minimal patterns,
+equivalence classes of closed patterns, minimal generators in lattices, and
+delta-free sets. The same query was run on Web of Science, Scopus, IEEE Xplore
+and ACM. All its hits go to hits_supplement.csv; duplicates are removed later
+by tools/merge_db.py.
 """
 import csv
 import json
@@ -49,6 +58,23 @@ ADDENDUM = [
     '"minimal rare patterns"',
     '"minimal infrequent pattern"',
 ]
+SUPPLEMENT = [
+    '"sequence generator" AND (frequent OR mining)',
+    '"sequence generators" AND (frequent OR mining)',
+    '"graph generator" AND (frequent OR mining)',
+    '"graph generators" AND (frequent OR mining)',
+    '"subgraph generator"',
+    '"subgraph generators"',
+    '"tree generator" AND (frequent OR mining)',
+    '"tree generators" AND (frequent OR mining)',
+    '"free patterns" AND (mining OR frequent)',
+    '"minimal patterns" AND (mining OR frequent) AND (free OR generators OR closed)',
+    '"equivalence classes" AND ("closed patterns" OR "closed itemsets")',
+    '"minimal generators" AND (lattice OR closure OR patterns)',
+    '"minimal generator" AND (lattice OR closure OR pattern)',
+    '"delta-free"',
+    '"δ-free"',
+]
 
 
 def fetch(q):
@@ -67,7 +93,7 @@ def fetch(q):
     return out
 
 
-def main(addendum=False):
+def main(addendum=False, supplement=False):
     OUT.mkdir(parents=True, exist_ok=True)
     seen = {}
     log = []
@@ -75,7 +101,7 @@ def main(addendum=False):
     if addendum:
         with open(OUT / "hits.csv", newline="") as fh:
             known = {r["id"] for r in csv.DictReader(fh)}
-    for q in (ADDENDUM if addendum else QUERIES):
+    for q in (ADDENDUM if addendum else SUPPLEMENT if supplement else QUERIES):
         res = fetch(q)
         log.append("%-40s %d" % (q, len(res)))
         for w in res:
@@ -89,13 +115,14 @@ def main(addendum=False):
                            "type": w.get("type"), "queries": q}
             else:
                 seen[k]["queries"] += " | " + q
-    name = "hits_addendum.csv" if addendum else "hits.csv"
+    name = "hits_addendum.csv" if addendum else "hits_supplement.csv" if supplement else "hits.csv"
     with open(OUT / name, "w", newline="") as fh:
         wr = csv.DictWriter(fh, fieldnames=["year", "title", "venue", "type", "doi", "id", "queries"])
         wr.writeheader()
         for r in sorted(seen.values(), key=lambda r: (r["year"] or 0, r["title"])):
             wr.writerow(r)
-    qname = "queries_addendum.txt" if addendum else "queries.txt"
+    qname = ("queries_addendum.txt" if addendum else "queries_supplement.txt" if supplement
+             else "queries.txt")
     (OUT / qname).write_text("\n".join(log) + "\nunique, not in hits.csv: %d\n" % len(seen)
                              if addendum else "\n".join(log) + "\nunique: %d\n" % len(seen))
     print("\n".join(log), "\nunique:", len(seen))
@@ -103,4 +130,4 @@ def main(addendum=False):
 
 if __name__ == "__main__":
     import sys
-    main(addendum="--addendum" in sys.argv[1:])
+    main(addendum="--addendum" in sys.argv[1:], supplement="--supplement" in sys.argv[1:])

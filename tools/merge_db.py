@@ -1,6 +1,7 @@
 """Merge the database exports of the multi-database search and remove duplicates.
 
-    python tools/merge_db.py
+    python tools/merge_db.py               # the main query
+    python tools/merge_db.py --supplement  # the supplementary query of 2026-11-09
 
 Sources (results/litsearch/):
   hits.csv, hits_addendum.csv     OpenAlex, 2026-10-05 and 2026-10-20 (tools/litsearch.py)
@@ -17,6 +18,11 @@ needs no network.
 Two records are the same work when they share a DOI, or when their
 normalised titles are equal and they do not carry two different DOIs.
 Output: db/merged.csv, one row per work, with the databases that returned it.
+
+The supplementary query (hits_supplement.csv and the db/*_supp_* files) is
+merged the same way into db/merged_supp.csv. A work that is already in
+merged.csv keeps its R number; a new work gets an S number. merged.csv is not
+changed, so the screening decisions in screening.csv stay attached.
 """
 import csv
 import json
@@ -90,28 +96,36 @@ def openalex(keys, field):
     return cache
 
 
-def load():
+MAIN = {"openalex": ("hits.csv", "hits_addendum.csv"), "wos": "wos_2026-11-08.txt",
+        "scopus": "scopus_2026-11-09.csv", "ieee": "ieee_xplore_2026-11-08.csv",
+        "acm": "acm_dl_2026-11-08.json"}
+SUPP = {"openalex": ("hits_supplement.csv",), "wos": "wos_supp_2026-11-09.txt",
+        "scopus": "scopus_supp_2026-11-09.csv", "ieee": "ieee_xplore_supp_2026-11-09.csv",
+        "acm": "acm_dl_supp_2026-11-09.json"}
+
+
+def load(files=MAIN):
     out = []
-    for name in ("hits.csv", "hits_addendum.csv"):
+    for name in files["openalex"]:
         with open(LIT / name, newline="") as fh:
             for r in csv.DictReader(fh):
                 out.append(rec("OpenAlex", r["id"].rsplit("/", 1)[-1], r["title"], r["year"],
                                r["venue"], r["doi"], "", r["type"]))
-    with open(DB / "wos_2026-11-08.txt", encoding="utf-8-sig", newline="") as fh:
+    with open(DB / files["wos"], encoding="utf-8-sig", newline="") as fh:
         for r in csv.DictReader(fh, delimiter="\t", quoting=csv.QUOTE_NONE):
             out.append(rec("WoS", r["UT"], r["TI"], r["PY"] or r["EA"], r["SO"], r["DI"],
                            r["AB"], r["DT"]))
-    with open(DB / "scopus_2026-11-09.csv", encoding="utf-8-sig", newline="") as fh:
+    with open(DB / files["scopus"], encoding="utf-8-sig", newline="") as fh:
         for r in csv.DictReader(fh):
             ab = "" if r["Abstract"].startswith("[No abstract") else r["Abstract"]
             out.append(rec("Scopus", r["EID"], r["Title"], r["Year"], r["Source title"],
                            r["DOI"], ab, r["Document Type"]))
-    with open(DB / "ieee_xplore_2026-11-08.csv", encoding="utf-8-sig", newline="") as fh:
+    with open(DB / files["ieee"], encoding="utf-8-sig", newline="") as fh:
         for r in csv.DictReader(fh):
             out.append(rec("IEEE", r["DOI"] or r["PDF Link"], r["Document Title"],
                            r["Publication Year"], r["Publication Title"], r["DOI"],
                            r["Abstract"], r.get("Document Identifier", "")))
-    for r in json.loads((DB / "acm_dl_2026-11-08.json").read_text()):
+    for r in json.loads((DB / files["acm"]).read_text()):
         venue = re.sub(r"https?://doi\.org/\S*$", "", r.get("venue") or "")
         out.append(rec("ACM", r["doi"], r["title"], r.get("date"), venue, r["doi"],
                        r.get("abstract", "").rstrip("…"), r.get("type")))
@@ -167,6 +181,43 @@ def pick(g, key):
     return vals[0][1] if vals else ""
 
 
+def supplement():
+    """Merge the supplementary query and match its works against merged.csv."""
+    recs = load(SUPP)
+    complete(recs)
+    groups = cluster(recs)
+    with open(DB / "merged.csv", newline="") as fh:
+        old = list(csv.DictReader(fh))
+    by_doi = {d: r["rid"] for r in old for d in r["doi"].split(";") if d}
+    by_title = {ntitle(r["title"]): r["rid"] for r in old if len(ntitle(r["title"])) >= 20}
+    rows = []
+    for g in groups:
+        rid = next((by_doi[d] for d in sorted(g["dois"]) if d in by_doi), None)
+        if rid is None:
+            rid = next((by_title[t] for t in sorted(g["titles"]) if t in by_title), None)
+        srcs = sorted({r["src"] for r in g["recs"]}, key=ORDER.index)
+        rows.append({"rid": rid or "", "year": pick(g, "year"), "title": pick(g, "title"),
+                     "venue": pick(g, "venue"), "type": pick(g, "type"),
+                     "doi": ";".join(sorted(g["dois"])), "sources": ";".join(srcs),
+                     "n_records": len(g["recs"]), "abstract": pick(g, "abstract"),
+                     "ids": ";".join(f"{r['src']}:{r['sid']}" for r in g["recs"])})
+    new = sorted((r for r in rows if not r["rid"]), key=lambda r: (r["year"] or 0, ntitle(r["title"])))
+    for i, r in enumerate(new, 1):
+        r["rid"] = "S%04d" % i
+    rows.sort(key=lambda r: (r["rid"][0] == "R", r["rid"]))
+    with open(DB / "merged_supp.csv", "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]))
+        w.writeheader()
+        w.writerows(rows)
+    n = {s: sum(r["src"] == s for r in recs) for s in ORDER}
+    print("records per source:", n, "total", len(recs))
+    print("unique works:", len(rows), " duplicates removed:", len(recs) - len(rows))
+    print("already in merged.csv:", len(rows) - len(new), " new works:", len(new))
+    only = {s: sum(r["sources"] == s for r in new) for s in ORDER}
+    print("new works found by one source only:", only)
+    print("new works without abstract:", sum(not r["abstract"] for r in new))
+
+
 def main():
     recs = load()
     complete(recs)
@@ -192,4 +243,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    supplement() if "--supplement" in sys.argv[1:] else main()
