@@ -162,3 +162,10 @@ R0435) is retrieved, as is the 2010 version of the ICTAI paper (R0584).
 | excluded on title and abstract | 1,704 | 469 | 2,173 |
 | decided before (K) | 112 | 3 | 115 |
 | to the full text (FT) | 31 | 4 | 35 |
+
+## Full text
+
+The 35 records coded FT are decided in `FULLTEXT_DB.md`: eight new works
+are counted (GenAll, GBorder2, FTMiner, FFIP, RTGener, DeFFeD, HUGN,
+MRP-TBMiner), one meets the rule in a venue whose refereeing is not
+established (CMG), and ten works could not be read yet.

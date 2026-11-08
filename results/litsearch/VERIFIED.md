@@ -7,11 +7,12 @@ committed. First-pass evidence, with verbatim quotes and the URL read: `verify_A
 `verify_B.md` (newer transactional), `verify_C.md` (subfamilies, rare,
 stream), `verify_D.md` (sequential), `verify_E.md` (utility, graph).
 The candidates of the second search (minimal infrequent and minimal rare
-terms) are decided in `ADDENDUM.md` and merged into the counts below.
+terms) are decided in `ADDENDUM.md`, and those of the multi-database search
+of 2026-11-09 in `db/FULLTEXT_DB.md`; both are merged into the counts below.
 Amendment 1 is "an identified part of the output"; amendment 2 is "our
 oracle audit counts as evidence"; amendment 3 is peer review.
 
-## Counted (verified): 41
+## Counted (verified): 49
 
 | family | algorithm | evidence | executable |
 |---|---|---|---|
@@ -56,6 +57,14 @@ oracle audit counts as evidence"; amendment 3 is peer review.
 | stream | MIP-DS | ESWA'15 Def. 3, Sect. 4.1 "generates all possible minimal infrequent patterns"; on its claim (`ADDENDUM.md`) | – |
 | stream | MIMDS_1/2 | IAJIT'21 Alg. 1 "Output: MP"; on its claim (`ADDENDUM.md`) | – |
 | stream | MRPM | ITC'22 Def. 3, Alg. 1 "Output: MRPs" (`ADDENDUM.md`) | – |
+| transactional | GenAll | ARIMA'05 Alg. 1: every concept with its list of minimal generators (`db/FULLTEXT_DB.md`) | – |
+| transactional | GBorder2 | PKDD'05 §2: maintains FG with supports and its negative border as the database changes; on its claim (`db/FULLTEXT_DB.md`) | – |
+| transactional | FTMiner (δ-free, δ = 0) | DS'05 Thm 2: all γ-frequent δ-free patterns (`db/FULLTEXT_DB.md`) | – |
+| transactional | FFIP (δ-free, δ = 0) | APCIP'09 Alg. 2 "Output: FreqFreePart(r, σ, δ)"; on its claim (`db/FULLTEXT_DB.md`) | – |
+| sequential | DeFFeD (δ-free sequences, δ = 0) | ICDM'14 Def. 2.5, §II-C "the complete set of frequent δ-free sequential patterns" (`db/FULLTEXT_DB.md`) | – |
+| high-utility | HUGN | IJICIC'16 Defs 2.8–2.9: support-minimal generators that are high-utility; on its claim (`db/FULLTEXT_DB.md`) | – |
+| tree | RTGener | CyberC'13 "find all frequent rooted tree generators"; on its claim (`db/FULLTEXT_DB.md`) | – |
+| stream | MRP-TBMiner | Chinese J. Computers'19 Def. 5: all minimal rare patterns of the window; on its claim (`db/FULLTEXT_DB.md`) | – |
 
 Executable among the counted: Pascal, Gr-growth, Zart, Talky-G (and its
 diffset variant), DefMe, FEAT, FSGP, VGEN, HUG-Miner, GHUI-Miner,
@@ -91,8 +100,14 @@ which makes **14 executable algorithms**.
   conference papers are not refereed (amendment 3).
 - Kyiv (Demchuk & Leith), arXiv:1403.6985: meets the rule, no refereed
   version (`ADDENDUM.md`).
+- CMG (in CONCISE), SCRS Conference Proceedings on Intelligent Systems 2021:
+  meets the rule; the venue does not state a review process
+  (`db/FULLTEXT_DB.md`).
 
 ## Unverified (no full text reachable, even with institutional access): 16
+
+The multi-database search adds candidates that could not be read yet; they
+are listed in `db/FULLTEXT_DB.md` and are not counted.
 
 Not counted. Phan Luong 2002; Kryszkiewicz 2001; Kryszkiewicz & Gajek 2002;
 RFS-Miner; HOPE-III; NOV-mGCFSI; IncGen (He et al. 2011); SeqGen; MSGPs
@@ -108,20 +123,21 @@ survey.
 
 | family | counted | executable |
 |---|---|---|
-| transactional | 18 | 7 (Pascal, Gr-growth, GC-growth, Zart, DPMiner (subfamily), Talky-G, DefMe) |
-| sequential | 7 | 3 (FEAT, FSGP, VGEN) |
-| high-utility | 2 | 2 (HUG-Miner, GHUI-Miner) |
+| transactional | 22 | 7 (Pascal, Gr-growth, GC-growth, Zart, DPMiner (subfamily), Talky-G, DefMe) |
+| sequential | 8 | 3 (FEAT, FSGP, VGEN) |
+| high-utility | 3 | 2 (HUG-Miner, GHUI-Miner) |
 | graph | 1 | 0 |
+| tree | 1 | 0 |
 | rare | 8 | 1 (AprioriRare) |
-| stream | 5 | 1 (FGC-Stream) |
-| **total** | **41** | **14 (34.1%)** |
+| stream | 6 | 1 (FGC-Stream) |
+| **total** | **49** | **14 (28.6%)** |
 
 By era (first publication):
 
 | era | counted | executable |
 |---|---|---|
-| up to 2015 | 31 | 13 (41.9%) |
-| since 2016 | 10 | 1 (10.0%) |
+| up to 2015 | 37 | 13 (35.1%) |
+| since 2016 | 12 | 1 (8.3%) |
 
 ## What changed against the original survey's 25
 
