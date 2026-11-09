@@ -6,9 +6,11 @@ validation"** (in preparation for *Knowledge-Based Systems*). The manuscript
 itself is not distributed here; this repository holds what is needed to
 reproduce it.
 
-- **Survey.** A systematic search, decided on full texts, counts 41
-  minimal-generator algorithms. 14 have an executable implementation
-  (`results/litsearch/VERIFIED.md`).
+- **Survey.** A systematic search of five databases (Web of Science,
+  Scopus, IEEE Xplore, ACM, OpenAlex), decided on full texts, counts 48
+  minimal-generator algorithms over itemsets and sequences. 14 have an
+  executable implementation (`results/litsearch/VERIFIED.md`; screening
+  records in `results/litsearch/db/`).
 - **Benchmark.** 17 implementations: those of 12 of the executable algorithms
   (Talky-G in two variants), HUCI-Miner-Generators (it claims generators but
   computes another family), and three native post-filtering baselines, with exact peak memory
@@ -282,11 +284,11 @@ abort again at 11.1–11.8 GB.
 | GC-growth | Transactional | C++ source (NUS), fetched by `tools/fetch_native.sh`; audited and benchmarked separately |
 | DPMiner (DPM-delta; only the delta-discriminative classes) | Transactional | C++ source (NUS), fetched by `tools/fetch_native.sh`; audited only |
 
-Of the 41 algorithms counted after full-text verification
-(`results/litsearch/RULE.md`, `VERIFIED.md`, `ADDENDUM.md`), 14 have an
-executable implementation. Availability depends on age: 13 of the 31
-published up to 2015 are executable, and 1 of the 10 published from 2016
-onwards. GC-growth and DPMiner were found after the benchmark: they are
+Of the 48 algorithms counted after full-text verification
+(`results/litsearch/RULE.md`, `VERIFIED.md`, `ADDENDUM.md`,
+`db/FULLTEXT_DB.md`), 14 have an executable implementation. Availability
+depends on age: 13 of the 35 published up to 2015 are executable, and 1 of
+the 13 published from 2016 onwards. GC-growth and DPMiner were found after the benchmark: they are
 audited (`tools/validate_nus.py`), GC-growth is benchmarked on its own
 (`tools/bench_nus.py`), and neither is in the recommender's portfolio.
 

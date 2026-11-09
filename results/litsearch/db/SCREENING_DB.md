@@ -64,7 +64,8 @@ of `../RULE.md`.
 
 ## Validation against the counted algorithms
 
-Six of the 41 counted algorithms have no record in any of the five sources:
+Six of the 41 algorithms counted at the time (before the full-text step
+below and the scope change) have no record in any of the five sources:
 
 | work | likely reason |
 |---|---|
@@ -147,10 +148,30 @@ pattern mining, 2017, an extended version of DefMe).
 | GC-growth (PODS 2005) | no | no |
 | ICTAI 2007 (AprioriRare, MRG-Exp) | no | no |
 
-38 of the 41 counted algorithms are now retrieved by the database search.
-The remaining three come from the original survey's list. Their papers are
-not indexed under any of the terms; GC-growth's journal version (KDD 2007,
-R0435) is retrieved, as is the 2010 version of the ICTAI paper (R0584).
+Counted per algorithm, after the scope change of 2026-11-09 (`../RULE.md`
+am. 4, which removes Fogger): the database search retrieves the paper on
+which the decision was made for 44 of the 48 counted algorithms. The four
+others are Pascal, GC-growth, and AprioriRare and MRG-Exp, which share the
+ICTAI 2007 paper; the 2010 version of that paper is retrieved (R0584). All
+four came from the original survey's list. (An earlier count here, "38 of
+41", counted the ICTAI paper as one item and included Fogger.)
+
+## Candidates over the whole survey (for the PRISMA flow)
+
+| | candidates |
+|---|---|
+| first pass, OpenAlex and other methods (`../VERIFIED.md`, `../ADDENDUM.md`) | 85 |
+| new from the five-database search (29 works in `FULLTEXT_DB.md`, less Gr-growth, Kryszkiewicz 2004 and Kryszkiewicz & Gajek 2002, decided before) | 26 |
+| **total decided on the full text** | **111** |
+
+Outcome: 48 counted, 2 meet the rule but are out of scope (Fogger,
+RTGener), 36 excluded, 2 not refereed, 23 not reachable.
+
+Eight candidates have no record in any of the five databases and came
+from the original survey's list or from the references of included
+papers: Pascal, GC-growth, the three algorithms of the ICTAI 2007 paper
+(AprioriRare, MRG-Exp, Arima), TITANIC, CORI and MC-FHAUIM. Four of them
+are counted. The other 103 candidates are all retrieved.
 
 ## Totals over both queries
 
