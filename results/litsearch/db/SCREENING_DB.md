@@ -163,20 +163,24 @@ four came from the original survey's list. (An earlier count here, "38 of
 | first pass, OpenAlex and other methods (`../VERIFIED.md`, `../ADDENDUM.md`) | 85 |
 | new from the five-database search (29 works in `FULLTEXT_DB.md`, less Gr-growth, Kryszkiewicz 2004 and Kryszkiewicz & Gajek 2002, decided before) | 26 |
 | **total decided on the full text** | **111** |
-| new from Google Scholar (`FULLTEXT_SCHOLAR.md`: 14 works, less Soulet & Rioult 2016, already a candidate) | 13 |
-| **total with Google Scholar** | **124** |
+| new from Google Scholar (`FULLTEXT_SCHOLAR.md`: 14 works, less Soulet & Rioult 2016 and Phan-Luong's one-phase method, already candidates) | 12 |
+| **total with Google Scholar** | **123** |
 
 Outcome before Google Scholar: 48 counted, 2 meet the rule but are out of
 scope (Fogger, RTGener), 36 excluded, 2 not refereed, 23 not reachable.
-With Google Scholar: 49 counted (CDP+I), 38 excluded (Huấn 2020, IC2;
-arules generator target, EC6), 2 out of scope, 2 not refereed, 33 not
-reachable (10 Scholar candidates whose full text could not be obtained).
+With Google Scholar and the full texts read in the browser on 2026-11-10:
+50 counted (CDP+I; the closed keys base of Phan Luong 2002, formerly not
+reachable), 43 excluded (Huấn 2020, Hanusse & Maabout 2011, Troiano et al.
+2009, Duong et al. 2024: IC2; Bouasker et al. 2015: EC4; Cordero et al.
+2022: EC2; arules generator target: EC6), 2 out of scope, 2 not refereed,
+26 not reachable (22 earlier, 4 from Scholar).
 
 Google Scholar (2026-11-10, Publish or Perish, 8 queries, first 200 results
 each; two queries returned 50 and 138): 1,388 records, 1,218 unique, 250
 already among the database works, 968 screened on title and snippet
-(`scholar_screening.csv`). It retrieves the deciding papers of Pascal and of
-AprioriRare with MRG-Exp, which no database returned; GC-growth remains the
+(`scholar_screening.csv`). It retrieves the deciding papers of Pascal, of
+AprioriRare with MRG-Exp, and of CDP+I, which no database returned (the
+databases retrieve 45 of the 50 counted algorithms' deciding papers); GC-growth remains the
 one counted algorithm found only through references.
 
 Eight candidates have no record in any of the five databases and came
