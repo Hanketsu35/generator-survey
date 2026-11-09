@@ -87,3 +87,16 @@ each one.
 5. **CMG (in CONCISE, SCRS Proceedings 2021) is counted.** It meets the
    rule; the publisher's page does not describe the review process, and the
    authors decided to treat the proceedings as refereed.
+
+## Amendments of 2026-11-10
+
+6. **Google Scholar as a further source.** Eight queries on the names of the
+   database query, run with Publish or Perish; the first 200 results of each
+   are screened on title and snippet (`db/scholar_screening.csv`), and the
+   candidates are decided on their full texts like the others
+   (`db/FULLTEXT_SCHOLAR.md`).
+7. **Post-filters are not algorithms (EC6).** An option that mines all
+   frequent itemsets with an existing miner and then removes the
+   non-generators (Borgelt's programs, the arules generator target) is a
+   reduction of a given representation, not a generator-mining algorithm.
+   This writes down how the Borgelt programs were already treated.

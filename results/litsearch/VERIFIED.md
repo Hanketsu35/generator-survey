@@ -14,7 +14,7 @@ of 2026-11-09 in `db/FULLTEXT_DB.md`; both are merged into the counts below.
 Amendment 1 is "an identified part of the output"; amendment 2 is "our
 oracle audit counts as evidence"; amendment 3 is peer review.
 
-## Counted (verified): 48
+## Counted (verified): 49
 
 | family | algorithm | evidence | executable |
 |---|---|---|---|
@@ -66,13 +66,16 @@ oracle audit counts as evidence"; amendment 3 is peer review.
 | high-utility | HUGN | IJICIC'16 Defs 2.8–2.9: support-minimal generators that are high-utility; on its claim (`db/FULLTEXT_DB.md`) | – |
 | transactional | CMG (in CONCISE) | SCRS'21 §3.1, Alg. 1 "Ensure: ⟨Closed, Maximal, Generator, Supp⟩" (am. 1); venue counted as refereed (`RULE.md` am. 5) | – |
 | stream | MRP-TBMiner | Chinese J. Computers'19 Def. 5: all minimal rare patterns of the window; on its claim (`db/FULLTEXT_DB.md`) | – |
+| transactional | CDP+I (constraint dominance programming; also minimal rare itemsets) | ECAI'20 (Koçak, Akgün, Guns, Miguel), found by Google Scholar; decided on the arXiv preprint and the released ESSENCE models `gen_fis.essence`, `min_rare_fis.essence` (`db/FULLTEXT_SCHOLAR.md`) | M |
 
 Executable among the counted: Pascal, Gr-growth, Zart, Talky-G (and its
 diffset variant), DefMe, FEAT, FSGP, VGEN, HUG-Miner, GHUI-Miner,
 AprioriRare and FGC-Stream: **12 algorithms** and 13 implementations,
 the benchmark's. The programs of GC-growth and DPMiner were found later
 (audited; GC-growth benchmarked separately, `results/gcgrowth_summary.csv`),
-which makes **14 executable algorithms**.
+which makes **14 executable algorithms**. CDP+I, found by the Google Scholar
+search (2026-11-10), releases its constraint models and scripts
+(github.com/stacs-cp/ECAI2020-CDP, Zenodo 10.5281/zenodo.3675340): **15**.
 
 ## Excluded (verified): 26 (21 here, 5 in `ADDENDUM.md`)
 
@@ -128,19 +131,19 @@ survey.
 
 | family | counted | executable |
 |---|---|---|
-| transactional | 23 | 7 (Pascal, Gr-growth, GC-growth, Zart, DPMiner (subfamily), Talky-G, DefMe) |
+| transactional | 24 | 8 (Pascal, Gr-growth, GC-growth, Zart, DPMiner (subfamily), Talky-G, DefMe, CDP+I) |
 | sequential | 8 | 3 (FEAT, FSGP, VGEN) |
 | high-utility | 3 | 2 (HUG-Miner, GHUI-Miner) |
 | rare | 8 | 1 (AprioriRare) |
 | stream | 6 | 1 (FGC-Stream) |
-| **total** | **48** | **14 (29.2%)** |
+| **total** | **49** | **15 (30.6%)** |
 
 By era (first publication):
 
 | era | counted | executable |
 |---|---|---|
 | up to 2015 | 35 | 13 (37.1%) |
-| since 2016 | 13 | 1 (7.7%) |
+| since 2016 | 14 | 2 (14.3%) |
 
 ## What changed against the original survey's 25
 
