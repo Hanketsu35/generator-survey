@@ -6,13 +6,15 @@ that the authors fetched through institutional access: `verify2_T.md`,
 committed. First-pass evidence, with verbatim quotes and the URL read: `verify_A.md` (transactional classics),
 `verify_B.md` (newer transactional), `verify_C.md` (subfamilies, rare,
 stream), `verify_D.md` (sequential), `verify_E.md` (utility, graph).
+Amendments 4 (scope: itemsets and sequences) and 5 (CMG's venue) of
+2026-11-09 are in `RULE.md`.
 The candidates of the second search (minimal infrequent and minimal rare
 terms) are decided in `ADDENDUM.md`, and those of the multi-database search
 of 2026-11-09 in `db/FULLTEXT_DB.md`; both are merged into the counts below.
 Amendment 1 is "an identified part of the output"; amendment 2 is "our
 oracle audit counts as evidence"; amendment 3 is peer review.
 
-## Counted (verified): 49
+## Counted (verified): 48
 
 | family | algorithm | evidence | executable |
 |---|---|---|---|
@@ -37,7 +39,6 @@ oracle audit counts as evidence"; amendment 3 is peer review.
 | sequential | GenMiner | SDM'08 §6–7 "mines a full set of generators" | – |
 | high-utility | HUG-Miner | ADMA'14 §2.3: support-minimal generators that are high-utility; audited | S |
 | high-utility | GHUI-Miner | ADMA'14 Alg. 1: generators of classes holding a HUI; it also reads the CHUIs mined from the same database; audited | S |
-| graph | Fogger | EDBT'09 §2.1: complete set of frequent connected subgraph generators | – |
 | rare | AprioriRare | ICTAI'07, Prop. 1: minimal rare itemsets are generators; audited | S |
 | rare | MRG-Exp | ICTAI'07 "Output: FGs plus mRGs" | – |
 | rare | MINIT | DMIN'07: all minimal infrequent itemsets | – |
@@ -63,7 +64,7 @@ oracle audit counts as evidence"; amendment 3 is peer review.
 | transactional | FFIP (δ-free, δ = 0) | APCIP'09 Alg. 2 "Output: FreqFreePart(r, σ, δ)"; on its claim (`db/FULLTEXT_DB.md`) | – |
 | sequential | DeFFeD (δ-free sequences, δ = 0) | ICDM'14 Def. 2.5, §II-C "the complete set of frequent δ-free sequential patterns" (`db/FULLTEXT_DB.md`) | – |
 | high-utility | HUGN | IJICIC'16 Defs 2.8–2.9: support-minimal generators that are high-utility; on its claim (`db/FULLTEXT_DB.md`) | – |
-| tree | RTGener | CyberC'13 "find all frequent rooted tree generators"; on its claim (`db/FULLTEXT_DB.md`) | – |
+| transactional | CMG (in CONCISE) | SCRS'21 §3.1, Alg. 1 "Ensure: ⟨Closed, Maximal, Generator, Supp⟩" (am. 1); venue counted as refereed (`RULE.md` am. 5) | – |
 | stream | MRP-TBMiner | Chinese J. Computers'19 Def. 5: all minimal rare patterns of the window; on its claim (`db/FULLTEXT_DB.md`) | – |
 
 Executable among the counted: Pascal, Gr-growth, Zart, Talky-G (and its
@@ -100,9 +101,13 @@ which makes **14 executable algorithms**.
   conference papers are not refereed (amendment 3).
 - Kyiv (Demchuk & Leith), arXiv:1403.6985: meets the rule, no refereed
   version (`ADDENDUM.md`).
-- CMG (in CONCISE), SCRS Conference Proceedings on Intelligent Systems 2021:
-  meets the rule; the venue does not state a review process
-  (`db/FULLTEXT_DB.md`).
+
+## Recorded, not counted (scope: structured patterns, `RULE.md` am. 4)
+
+- Fogger, EDBT 2009: complete set of frequent connected subgraph
+  generators (`verify_E.md`). Not executable.
+- RTGener, CyberC 2013: all frequent rooted tree generators, on its claim
+  (`db/FULLTEXT_DB.md`). Not executable.
 
 ## Unverified (no full text reachable, even with institutional access): 16
 
@@ -123,21 +128,19 @@ survey.
 
 | family | counted | executable |
 |---|---|---|
-| transactional | 22 | 7 (Pascal, Gr-growth, GC-growth, Zart, DPMiner (subfamily), Talky-G, DefMe) |
+| transactional | 23 | 7 (Pascal, Gr-growth, GC-growth, Zart, DPMiner (subfamily), Talky-G, DefMe) |
 | sequential | 8 | 3 (FEAT, FSGP, VGEN) |
 | high-utility | 3 | 2 (HUG-Miner, GHUI-Miner) |
-| graph | 1 | 0 |
-| tree | 1 | 0 |
 | rare | 8 | 1 (AprioriRare) |
 | stream | 6 | 1 (FGC-Stream) |
-| **total** | **49** | **14 (28.6%)** |
+| **total** | **48** | **14 (29.2%)** |
 
 By era (first publication):
 
 | era | counted | executable |
 |---|---|---|
-| up to 2015 | 37 | 13 (35.1%) |
-| since 2016 | 12 | 1 (8.3%) |
+| up to 2015 | 35 | 13 (37.1%) |
+| since 2016 | 13 | 1 (7.7%) |
 
 ## What changed against the original survey's 25
 
@@ -149,5 +152,6 @@ By era (first publication):
 - **Counted once:** Talky-G-Diffset is counted with Talky-G; it has no
   separate paper.
 - **Kept and verified:** Pascal, Prince, Gr-growth, Zart, Talky-G, Touch,
-  DefMe, FEAT, FSGP, VGEN, HUG-Miner, GHUI-Miner, Fogger, MINIT and
+  DefMe, FEAT, FSGP, VGEN, HUG-Miner, GHUI-Miner, MINIT and
   FGC-Stream.
+- **Out of scope since 2026-11-09:** Fogger (graph), `RULE.md` am. 4.

@@ -74,3 +74,16 @@ each one.
 3. **Peer review is required** (criterion I3 of the first screening, left
    out of this file by mistake). An algorithm that satisfies the rule but
    appeared only in a non-refereed venue is recorded and not counted.
+
+## Amendments of 2026-11-09
+
+4. **Scope: itemsets and sequences.** The survey covers generators over
+   transaction and sequence databases, with the utility, rarity and stream
+   conditions above. Structured pattern languages (subgraphs, subtrees) are
+   out of scope. Each had one counted algorithm (Fogger for graphs, RTGener
+   for rooted trees), neither executable, and a family of one cannot be
+   compared with the others. Both are recorded in `VERIFIED.md` and not
+   counted.
+5. **CMG (in CONCISE, SCRS Proceedings 2021) is counted.** It meets the
+   rule; the publisher's page does not describe the review process, and the
+   authors decided to treat the proceedings as refereed.

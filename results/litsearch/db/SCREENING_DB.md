@@ -166,6 +166,6 @@ R0435) is retrieved, as is the 2010 version of the ICTAI paper (R0584).
 ## Full text
 
 The 35 records coded FT are decided in `FULLTEXT_DB.md`: eight new works
-are counted (GenAll, GBorder2, FTMiner, FFIP, RTGener, DeFFeD, HUGN,
-MRP-TBMiner), one meets the rule in a venue whose refereeing is not
-established (CMG), and ten works could not be read yet.
+are counted (GenAll, GBorder2, FTMiner, FFIP, DeFFeD, HUGN, MRP-TBMiner,
+CMG), one meets the rule but mines trees and is out of scope (RTGener),
+ten are excluded, two were decided before, and eight could not be read.
