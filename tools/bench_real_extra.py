@@ -166,9 +166,30 @@ def _native_cap_mb():
     return int(psutil.virtual_memory().total / 4 / (1024 * 1024))
 
 
+#: Free memory (GB) required before a run starts (--min-free-gb); 0 = off.
+MIN_FREE_GB = float(os.environ.get("BENCH_MIN_FREE_GB", "0"))
+
+
+def _shared_machine_guard():
+    """On a shared machine: mark this worker (and the miners it starts) as the
+    first thing the kernel's OOM killer takes, and wait until enough memory is
+    free before a run starts. Neither changes what a run measures."""
+    try:
+        with open("/proc/self/oom_score_adj", "w") as fh:
+            fh.write("1000")
+    except OSError:
+        pass
+    if MIN_FREE_GB <= 0:
+        return
+    import psutil
+    while psutil.virtual_memory().available / 2 ** 30 < MIN_FREE_GB:
+        time.sleep(30)
+
+
 def job_runner(job):
     """run_one plus the columns this table adds."""
     from src import metrics as _m
+    _shared_machine_guard()
     _m.NATIVE_MEM_LIMIT_MB = _native_cap_mb()
     target, role = job[-2], job[-1]
     row = run_one(job[:-2])
@@ -198,7 +219,14 @@ def main(argv=None):
                     help="further implementations to run, e.g. FGC_Stream")
     ap.add_argument("--instances", default=None,
                     help="CSV of dataset,sigma,target_pairs to run instead of the plan")
+    ap.add_argument("--min-free-gb", type=float, default=0.0,
+                    help="wait before each run until this much memory is free "
+                         "(shared machine); runs are also marked first for the OOM killer")
     args = ap.parse_args(argv)
+    if args.min_free_gb > 0:
+        os.environ["BENCH_MIN_FREE_GB"] = str(args.min_free_gb)
+        global MIN_FREE_GB
+        MIN_FREE_GB = args.min_free_gb
     os.chdir(_ROOT)
     out_csv = Path(args.out)
     order = list(args.datasets)
