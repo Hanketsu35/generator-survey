@@ -1,0 +1,12 @@
+oml_beijing_multi_site_air_quality         420768 tx      111 items   18 columns
+oml_sgemm_gpu_kernel                       241600 tx       60 items   18 columns
+oml_gender_by_name                         147269 tx   133920 items    4 columns
+oml_drug_directory                         120215 tx   356199 items   21 columns
+oml_bmc_trainingdata                       177640 tx      137 items   40 columns
+oml_30mlday                                300000 tx      136 items   26 columns
+oml_acspubliccoverage                     1138289 tx       83 items   19 columns
+oml_used_cars_dataset                      426880 tx  1560157 items   26 columns
+oml_quality_prediction_in_a_mining_process   737453 tx  4113195 items   24 columns
+oml_completecryptocurrencymarkethistory    632218 tx     2901 items    9 columns
+oml_edmunds_car_review                     299045 tx  739585 items   8 columns
+oml_quora_insincere_questions_2018: not converted (the conversion crashes with a segmentation fault on 1,306,122 free-text rows, twice); left out
