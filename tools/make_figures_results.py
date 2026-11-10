@@ -214,7 +214,7 @@ def rounds():
     r = [("EXTENSION", 1, 2), ("EXTENSION2", 2, 2), ("PROBE", 1, 2), ("CONFIRM", 3, 1),
          ("HARD", 2, 1), ("INTERVAL", 3, 1), ("FRESH", 2, 3), ("FRESH2", 4, 0),
          ("FRESH3", 3, 0), ("FRESH4", 1, 2), ("FRESH5", 2, 1), ("FRESH6", 2, 2),
-         ("FRESH7", 3, 0), ("FRESH8", 3, 0), ("BASELINE2", 2, 0)]
+         ("FRESH7", 3, 0), ("FRESH8", 3, 0), ("BASELINE2", 2, 0), ("FRESH9", 7, 0)]
     x = np.arange(len(r))
     fig, ax = plt.subplots(figsize=(6.8, 1.9))
     ax.bar(x, [a for _, a, _ in r], color=BLUE, width=0.6, label="passed")
@@ -222,12 +222,12 @@ def rounds():
     ax.axhline(0, color="0.3", lw=0.6)
     ax.set_xticks(x)
     ax.set_xticklabels([n for n, _, _ in r], rotation=35, ha="right")
-    ax.set_yticks([-3, -2, -1, 0, 1, 2, 3, 4])
-    ax.set_yticklabels(["3", "2", "1", "0", "1", "2", "3", "4"])
+    ax.set_yticks([-3, -2, -1, 0, 2, 4, 6])
+    ax.set_yticklabels(["3", "2", "1", "0", "2", "4", "6"])
     ax.set_ylabel("criteria")
-    ax.axvspan(11.5, 14.5, color="0.9", lw=0, zorder=0)
-    ax.text(13, 4.3, "configuration frozen", ha="center", fontsize=6)
-    ax.set_ylim(-3.6, 4.9)
+    ax.axvspan(11.5, 15.5, color="0.9", lw=0, zorder=0)
+    ax.text(13.5, 7.3, "configuration frozen", ha="center", fontsize=6)
+    ax.set_ylim(-3.6, 8.0)
     ax.legend(frameon=False, loc="upper left", ncol=2)
     fig.tight_layout()
     fig.savefig(OUT / "rounds.pdf", bbox_inches="tight")
