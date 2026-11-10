@@ -14,7 +14,9 @@ reproduce it.
 - **Benchmark.** 17 implementations: those of 12 of the executable algorithms
   (Talky-G in two variants), HUCI-Miner-Generators (it claims generators but
   computes another family), and three native post-filtering baselines, with exact peak memory
-  (`tools/peakrun`). 81 datasets, 3,284 runs in the training table.
+  (`tools/peakrun`). 81 datasets, 3,284 runs in the training table
+  (the cost models are fitted on 22 of them, see
+  `results/TRAINING_SET_NOTE.md`).
 - **Output audit.** Every implementation is checked against oracles for
   the definition it claims (`tools/validate_*.py`).
 - **Recommender.** `recommender/`: semantic filter, cost model, probe on the

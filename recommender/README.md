@@ -139,7 +139,11 @@ all. Full account: `results/REMEASURE_RESULTS.md`.
 
 - **Every interval the engine shows now meets its guarantee on unseen data**
   (`results/FRESH7_RESULTS.md`: 24 OpenML-CC18 datasets, selected by rule).
-  - The engine trains on all 81 benchmarked datasets.
+  - The engine reads `results/exact/training_all.csv` (81 benchmarked
+    datasets), but `perfmodel.load_runs` keeps only the datasets in the
+    meta-feature cache, so its cost models are fitted on 22 of them
+    (`results/TRAINING_SET_NOTE.md`). The intervals are calibrated on
+    residuals from all of them.
   - Runtime is reported as the typical (median) value, which is 3-5x more
     accurate than the mean it replaced.
   - Intervals are calibrated over datasets by subsampling, FGC-Stream on
