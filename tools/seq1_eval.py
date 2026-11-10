@@ -28,6 +28,11 @@ _ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_ROOT))
 sys.path.insert(0, str(_ROOT / "tools"))
 os.chdir(_ROOT)
+# The JRE the way bench_real_extra.py finds it: the shell's PATH may lack it.
+import glob as _glob                                       # noqa: E402
+_jre = sorted(_glob.glob(os.path.expanduser("~/.local/opt/jdk-*/bin")))
+if _jre:
+    os.environ["PATH"] = _jre[-1] + os.pathsep + os.environ.get("PATH", "")
 
 import probe_eval as PE                                    # noqa: E402
 

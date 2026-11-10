@@ -47,3 +47,11 @@ not shown (Section 5.4 of the paper).
 `recommender/engine.py`, `recommender/capabilities.py`,
 `recommender/perfmodel.py`, `recommender/survival.py`,
 `results/exact/training_all.csv`, `tools/seq1_eval.py`.
+
+## Amendment (before any miner ran)
+
+The first attempt failed on all 48 runs with exit code 127 (java not found):
+`seq1_eval.py --run` did not put the JRE on PATH, as `bench_real_extra.py`
+does. No miner ran, so no truth was produced. The runner now sets the PATH
+the same way, the empty table was deleted, and the runs start again. Nothing
+else changed.
