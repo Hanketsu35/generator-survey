@@ -33,3 +33,21 @@ before the second rewrite, for anyone holding an older copy.
 | 2026-10-05 | `2008a17` | `2ae3765` | Pre-register two baselines that separate the recommender from measuring: probe-argmin and selectors given the probe |
 | 2026-10-05 | `2ef6ff6` | `3ad27a7` | Pre-register rebuilding the ranking quantiles on exact memory |
 | 2026-10-05 | `59500fb` | `4c56655` | Rank on quantiles from the exact pools; no pick changes on any of 335 test instances |
+
+## History rewrite of 2026-11-11
+
+Before the first push of these commits, the database exports (Web of Science, Scopus, IEEE Xplore, ACM, Google Scholar) and the abstract column of `results/litsearch/db/merged*.csv` were removed from every commit not yet pushed, because the providers' terms restrict redistribution. Order, dates and all other content are unchanged. The first eleven of these commits kept their hashes; the others map as follows.
+
+| old | new | subject |
+|---|---|---|
+| `a602897` | `51c4c35` | Multi-database search: WoS 550, Scopus 571, IEEE Xplore 938, |
+| `a586e92` | `5e08b98` | Supplementary query for the missed term forms (sequence, gra |
+| `4b7a328` | `6f7fe79` | Full text of the 35 multi-database candidates: GenAll, GBord |
+| `c51f306` | `4248858` | Scope limited to itemsets and sequences (Fogger and RTGener  |
+| `d570904` | `c6dd993` | Recall counted per algorithm (44 of 48 retrieved by the data |
+| `f790ffb` | `016c2de` | Figures for the results and discussion: per-implementation p |
+| `22e0aed` | `2900df7` | Pre-register a ninth fresh confirmation: the progress rule w |
+| `59ee087` | `9b0ff28` | Google Scholar as a further source: 8 queries, 1,388 records |
+| `3329dd4` | `8528253` | Scholar candidates read on full text through institutional a |
+| `0612092` | `c59fb13` | FRESH9 results: every criterion passed; the progress rule co |
+| `083e8d0` | `b8ec3d9` | Rounds figure includes FRESH9 |

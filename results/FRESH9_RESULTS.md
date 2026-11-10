@@ -1,6 +1,6 @@
 # Ninth fresh confirmation: results
 
-Protocol: `FRESH9_PROTOCOL.md` (22e0aed). Probes `probe_fresh9.jsonl`;
+Protocol: `FRESH9_PROTOCOL.md` (2900df7; 22e0aed before the history rewrite of 2026-11-11, `COMMIT_MAP.md`). Probes `probe_fresh9.jsonl`;
 selection `fresh9_truth_instances.csv`; truth `fresh9_summary.csv` (570 runs:
 Part A 90 runs, 8.7 h; all 480 runs of Part B, 8.3 h; one run at a time, 10 GB
 free required before each run); scoring `tools/fresh9_eval.py`, output

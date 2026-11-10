@@ -2,8 +2,8 @@
 
     python tools/scholar_screen.py
 
-Reads results/litsearch/db/scholar_*.csv (Publish or Perish exports, 200
-results per query), drops records whose normalised title or DOI is among the
+Reads results/litsearch/db/raw/scholar_*.csv (Publish or Perish exports,
+200 results per query; kept locally, not redistributed), drops records whose normalised title or DOI is among the
 works already screened (merged.csv, merged_supp.csv), and writes
 results/litsearch/db/scholar_screening.csv with one code per remaining work.
 Codes are those of SCREENING_DB.md: X1 outside pattern mining, X2 another
@@ -86,7 +86,7 @@ def code(title):
 
 
 def main():
-    files = sorted(glob.glob(str(DB / "scholar_*_2026-11-*.csv")))
+    files = sorted(glob.glob(str(DB / "raw" / "scholar_*_2026-11-*.csv")))
     d = pd.concat([pd.read_csv(f).assign(file=Path(f).name) for f in files], ignore_index=True)
     seen_t, seen_d = set(), set()
     for f in ("merged.csv", "merged_supp.csv"):

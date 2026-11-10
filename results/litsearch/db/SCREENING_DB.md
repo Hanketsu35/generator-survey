@@ -206,3 +206,14 @@ The 35 records coded FT are decided in `FULLTEXT_DB.md`: eight new works
 are counted (GenAll, GBorder2, FTMiner, FFIP, DeFFeD, HUGN, MRP-TBMiner,
 CMG), one meets the rule but mines trees and is out of scope (RTGener),
 ten are excluded, two were decided before, and eight could not be read.
+
+## Files not redistributed
+
+The exports themselves (`wos_*.txt`, `scopus_*.csv`, `ieee_xplore_*.csv`,
+`acm_dl_*.json`, and the Publish or Perish files `scholar_q*.csv`) and the
+merged tables with their abstracts are not in the repository: the providers'
+terms restrict redistribution. They are kept by the authors in `db/raw/`. The
+repository keeps, for every work, its record identifier, title, venue, DOI,
+the sources that returned it and its screening code (`merged*.csv`,
+`screening*.csv`, `scholar_screening.csv`), so each decision can be checked
+and each query rerun.

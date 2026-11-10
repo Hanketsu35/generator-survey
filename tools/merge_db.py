@@ -36,6 +36,9 @@ from pathlib import Path
 
 LIT = Path(__file__).resolve().parent.parent / "results" / "litsearch"
 DB = LIT / "db"
+#: The database exports themselves are not redistributed (the providers' terms
+#: restrict it); they are kept locally in db/raw/, which git ignores.
+RAW = DB / "raw"
 CACHE = DB / "openalex_meta.json"
 csv.field_size_limit(sys.maxsize)
 ORDER = ["OpenAlex", "WoS", "Scopus", "IEEE", "ACM"]
@@ -111,21 +114,21 @@ def load(files=MAIN):
             for r in csv.DictReader(fh):
                 out.append(rec("OpenAlex", r["id"].rsplit("/", 1)[-1], r["title"], r["year"],
                                r["venue"], r["doi"], "", r["type"]))
-    with open(DB / files["wos"], encoding="utf-8-sig", newline="") as fh:
+    with open(RAW / files["wos"], encoding="utf-8-sig", newline="") as fh:
         for r in csv.DictReader(fh, delimiter="\t", quoting=csv.QUOTE_NONE):
             out.append(rec("WoS", r["UT"], r["TI"], r["PY"] or r["EA"], r["SO"], r["DI"],
                            r["AB"], r["DT"]))
-    with open(DB / files["scopus"], encoding="utf-8-sig", newline="") as fh:
+    with open(RAW / files["scopus"], encoding="utf-8-sig", newline="") as fh:
         for r in csv.DictReader(fh):
             ab = "" if r["Abstract"].startswith("[No abstract") else r["Abstract"]
             out.append(rec("Scopus", r["EID"], r["Title"], r["Year"], r["Source title"],
                            r["DOI"], ab, r["Document Type"]))
-    with open(DB / files["ieee"], encoding="utf-8-sig", newline="") as fh:
+    with open(RAW / files["ieee"], encoding="utf-8-sig", newline="") as fh:
         for r in csv.DictReader(fh):
             out.append(rec("IEEE", r["DOI"] or r["PDF Link"], r["Document Title"],
                            r["Publication Year"], r["Publication Title"], r["DOI"],
                            r["Abstract"], r.get("Document Identifier", "")))
-    for r in json.loads((DB / files["acm"]).read_text()):
+    for r in json.loads((RAW / files["acm"]).read_text()):
         venue = re.sub(r"https?://doi\.org/\S*$", "", r.get("venue") or "")
         out.append(rec("ACM", r["doi"], r["title"], r.get("date"), venue, r["doi"],
                        r.get("abstract", "").rstrip("…"), r.get("type")))
@@ -181,6 +184,21 @@ def pick(g, key):
     return vals[0][1] if vals else ""
 
 
+def write_merged(rows, name):
+    """The public table without abstracts (db/name) and the full one with them
+    (db/raw/, not redistributed)."""
+    RAW.mkdir(exist_ok=True)
+    with open(RAW / name.replace(".csv", "_full.csv"), "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]))
+        w.writeheader()
+        w.writerows(rows)
+    with open(DB / name, "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=[k for k in rows[0] if k != "abstract"],
+                           lineterminator="\n", extrasaction="ignore")
+        w.writeheader()
+        w.writerows(rows)
+
+
 def supplement():
     """Merge the supplementary query and match its works against merged.csv."""
     recs = load(SUPP)
@@ -205,10 +223,7 @@ def supplement():
     for i, r in enumerate(new, 1):
         r["rid"] = "S%04d" % i
     rows.sort(key=lambda r: (r["rid"][0] == "R", r["rid"]))
-    with open(DB / "merged_supp.csv", "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0]))
-        w.writeheader()
-        w.writerows(rows)
+    write_merged(rows, "merged_supp.csv")
     n = {s: sum(r["src"] == s for r in recs) for s in ORDER}
     print("records per source:", n, "total", len(recs))
     print("unique works:", len(rows), " duplicates removed:", len(recs) - len(rows))
@@ -230,10 +245,7 @@ def main():
                      "doi": ";".join(sorted(g["dois"])), "sources": ";".join(srcs),
                      "n_records": len(g["recs"]), "abstract": pick(g, "abstract"),
                      "ids": ";".join(f"{r['src']}:{r['sid']}" for r in g["recs"])})
-    with open(DB / "merged.csv", "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0]))
-        w.writeheader()
-        w.writerows(rows)
+    write_merged(rows, "merged.csv")
     n = {s: sum(r["src"] == s for r in recs) for s in ORDER}
     print("records per source:", n, "total", len(recs))
     print("unique works:", len(rows), " duplicates removed:", len(recs) - len(rows))

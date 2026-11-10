@@ -152,5 +152,9 @@ external_algos/Gr_growth/grgrowth-v1.zip
 results/*.log
 results/*.done
 
+# Database exports (WoS, Scopus, IEEE Xplore, ACM, Google Scholar) and the
+# merged tables with abstracts: the providers' terms restrict redistribution
+results/litsearch/db/raw/
+
 # Advisor feedback on the manuscript (not part of the reproduction package)
 feedbacks/
