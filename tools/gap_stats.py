@@ -86,12 +86,12 @@ def main():
                          for s, ds, sg in zip(q.set, q.dataset, q.sigma)])
         for meth in methods:
             r = q[meth].values
-            okk = r < BC.FAIL
+            okk = r != BC.FAIL                 # exactly 10 is a failed pick; a completed pick can exceed 10
             mb = (r[okk] - 1.0) * best[okk]
             L.append("   %-34s median %6.1f MB  mean %7.1f MB  >10 MB %5.1f%%  >100 MB %5.1f%%  failed %d"
                      % (meth, np.median(mb), mb.mean(), 100 * np.mean(mb > 10),
                         100 * np.mean(mb > 100), int((~okk).sum())))
-        common = np.all([q[x].values < BC.FAIL for x in methods if x != "random pick"], axis=0)
+        common = np.all([q[x].values != BC.FAIL for x in methods if x != "random pick"], axis=0)
         L.append("   common instances (no method but the random pick failed): %d" % common.sum())
         for meth in methods:
             if meth == "random pick":

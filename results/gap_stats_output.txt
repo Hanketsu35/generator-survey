@@ -1,45 +1,45 @@
 == G3 excess peak memory over the best eligible miner, PRIMARY (119 instances)
    SBS (fixed choice)                 median   10.8 MB  mean    81.8 MB  >10 MB  69.7%  >100 MB   6.7%  failed 0
-   random pick                        median    2.2 MB  mean    40.8 MB  >10 MB  29.9%  >100 MB   7.5%  failed 52
+   random pick                        median   13.3 MB  mean   137.7 MB  >10 MB  57.3%  >100 MB  23.6%  failed 9
    regression (PAR10-imputed)         median    0.0 MB  mean    49.2 MB  >10 MB  20.3%  >100 MB   7.6%  failed 1
-   pairwise ranking                   median    0.0 MB  mean    42.3 MB  >10 MB  16.2%  >100 MB   2.6%  failed 2
+   pairwise ranking                   median    0.0 MB  mean    43.0 MB  >10 MB  16.9%  >100 MB   3.4%  failed 1
    SUNNY (k-NN, k=16)                 median    0.0 MB  mean    22.8 MB  >10 MB  24.6%  >100 MB   5.9%  failed 1
    ISAC (k-means clusters)            median    0.0 MB  mean    45.0 MB  >10 MB  13.6%  >100 MB   6.8%  failed 1
    survival (expected_par10)          median   10.8 MB  mean   106.9 MB  >10 MB  70.6%  >100 MB   7.6%  failed 0
    AutoFolio (SMAC, 1800s/fold)       median    0.0 MB  mean    45.9 MB  >10 MB  14.4%  >100 MB   6.8%  failed 1
    recommender, no probe              median   10.6 MB  mean    51.3 MB  >10 MB  54.2%  >100 MB   6.8%  failed 1
    recommender, probe                 median    0.0 MB  mean    65.2 MB  >10 MB   4.2%  >100 MB   2.5%  failed 0
-   common instances (no method but the random pick failed): 117
-   SBS (fixed choice)                 mean    27.0 MB  >10 MB  70.1%
-   regression (PAR10-imputed)         mean    49.6 MB  >10 MB  20.5%
-   pairwise ranking                   mean    42.3 MB  >10 MB  16.2%
-   SUNNY (k-NN, k=16)                 mean    23.0 MB  >10 MB  24.8%
-   ISAC (k-means clusters)            mean    45.3 MB  >10 MB  13.7%
-   survival (expected_par10)          mean    52.6 MB  >10 MB  70.9%
-   AutoFolio (SMAC, 1800s/fold)       mean    46.3 MB  >10 MB  14.5%
-   recommender, no probe              mean    51.7 MB  >10 MB  54.7%
-   recommender, probe                 mean    10.2 MB  >10 MB   3.4%
+   common instances (no method but the random pick failed): 118
+   SBS (fixed choice)                 mean    26.8 MB  >10 MB  69.5%
+   regression (PAR10-imputed)         mean    49.2 MB  >10 MB  20.3%
+   pairwise ranking                   mean    43.0 MB  >10 MB  16.9%
+   SUNNY (k-NN, k=16)                 mean    22.8 MB  >10 MB  24.6%
+   ISAC (k-means clusters)            mean    45.0 MB  >10 MB  13.6%
+   survival (expected_par10)          mean    52.2 MB  >10 MB  70.3%
+   AutoFolio (SMAC, 1800s/fold)       mean    45.9 MB  >10 MB  14.4%
+   recommender, no probe              mean    51.3 MB  >10 MB  54.2%
+   recommender, probe                 mean    10.1 MB  >10 MB   3.4%
 == G3 excess peak memory over the best eligible miner, all (335 instances)
    SBS (fixed choice)                 median   10.8 MB  mean    72.4 MB  >10 MB  64.8%  >100 MB   7.3%  failed 5
-   random pick                        median    1.9 MB  mean    63.9 MB  >10 MB  29.9%  >100 MB  10.2%  failed 138
+   random pick                        median   11.2 MB  mean   162.3 MB  >10 MB  54.6%  >100 MB  26.3%  failed 31
    regression (PAR10-imputed)         median    0.0 MB  mean    58.5 MB  >10 MB  14.4%  >100 MB   8.1%  failed 2
-   pairwise ranking                   median    0.0 MB  mean    32.0 MB  >10 MB  11.6%  >100 MB   3.4%  failed 8
+   pairwise ranking                   median    0.0 MB  mean    33.4 MB  >10 MB  12.7%  >100 MB   4.5%  failed 4
    SUNNY (k-NN, k=16)                 median    0.0 MB  mean    47.3 MB  >10 MB  20.7%  >100 MB   7.2%  failed 1
    ISAC (k-means clusters)            median    0.0 MB  mean    32.2 MB  >10 MB   9.1%  >100 MB   4.5%  failed 4
    survival (expected_par10)          median   10.7 MB  mean    89.0 MB  >10 MB  59.1%  >100 MB   8.4%  failed 0
    AutoFolio (SMAC, 1800s/fold)       median    0.0 MB  mean    54.8 MB  >10 MB  11.4%  >100 MB   7.5%  failed 3
    recommender, no probe              median    1.3 MB  mean    59.1 MB  >10 MB  39.0%  >100 MB   7.6%  failed 4
    recommender, probe                 median    0.0 MB  mean    28.6 MB  >10 MB   2.4%  >100 MB   1.5%  failed 0
-   common instances (no method but the random pick failed): 322
-   SBS (fixed choice)                 mean    53.9 MB  >10 MB  66.1%
-   regression (PAR10-imputed)         mean    57.8 MB  >10 MB  14.6%
-   pairwise ranking                   mean    32.5 MB  >10 MB  11.8%
-   SUNNY (k-NN, k=16)                 mean    49.1 MB  >10 MB  21.4%
-   ISAC (k-means clusters)            mean    33.1 MB  >10 MB   9.3%
-   survival (expected_par10)          mean    63.2 MB  >10 MB  60.9%
-   AutoFolio (SMAC, 1800s/fold)       mean    56.5 MB  >10 MB  11.8%
-   recommender, no probe              mean    60.7 MB  >10 MB  40.1%
-   recommender, probe                 mean     9.3 MB  >10 MB   2.2%
+   common instances (no method but the random pick failed): 326
+   SBS (fixed choice)                 mean    53.2 MB  >10 MB  65.3%
+   regression (PAR10-imputed)         mean    57.1 MB  >10 MB  14.4%
+   pairwise ranking                   mean    33.9 MB  >10 MB  12.9%
+   SUNNY (k-NN, k=16)                 mean    48.5 MB  >10 MB  21.2%
+   ISAC (k-means clusters)            mean    32.7 MB  >10 MB   9.2%
+   survival (expected_par10)          mean    62.5 MB  >10 MB  60.1%
+   AutoFolio (SMAC, 1800s/fold)       mean    55.8 MB  >10 MB  11.7%
+   recommender, no probe              mean    60.0 MB  >10 MB  39.6%
+   recommender, probe                 mean     9.2 MB  >10 MB   2.1%
 == G2 probe wall time against the runtime of the recommended run
    PRIMARY  n=119  probe wall: median 0.14 s, 90% 1.2 s, max 67.5 s | run: median 0.03 s
             output already produced by the probe (direct, measured): 71.4%
