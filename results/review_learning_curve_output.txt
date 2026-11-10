@@ -1,0 +1,21 @@
+Learned selectors and the recommender trained on 22 vs 81 datasets, scored on PRIMARY
+(geometric-mean regret; failed pick = 10; post hoc)
+objective memory
+   SBS (fixed choice)                 22 datasets 2.682x (failed 0/119) | 81 datasets 1.166x (failed 1/119)
+   random pick                        22 datasets 5.182x (failed 9/119) | 81 datasets 5.182x (failed 9/119)
+   regression (PAR10-imputed)         22 datasets 1.225x (failed 1/119) | 81 datasets 1.088x (failed 1/119)
+   pairwise ranking                   22 datasets 1.181x (failed 1/119) | 81 datasets 1.118x (failed 1/119)
+   SUNNY (k-NN, k=16)                 22 datasets 1.357x (failed 1/119) | 81 datasets 1.114x (failed 1/119)
+   ISAC (k-means clusters)            22 datasets 1.132x (failed 1/119) | 81 datasets 1.166x (failed 1/119)
+   survival (expected_par10)          22 datasets 2.641x (failed 0/119) | 81 datasets 1.207x (failed 1/119)
+   recommender, no probe              22 datasets 2.023x (failed 1/119) | 81 datasets 1.127x (failed 1/119)
+   recommender, probe                 22 datasets 1.030x (failed 0/119) | 81 datasets 1.030x (failed 0/119)
+objective runtime
+   SBS (fixed choice)                 22 datasets 1.262x (failed 0/119) | 81 datasets 1.184x (failed 1/119)
+   random pick                        22 datasets 4.977x (failed 9/119) | 81 datasets 4.977x (failed 9/119)
+   regression (PAR10-imputed)         22 datasets 1.261x (failed 1/119) | 81 datasets 1.198x (failed 1/119)
+   pairwise ranking                   22 datasets 1.205x (failed 1/119) | 81 datasets 1.109x (failed 1/119)
+   SUNNY (k-NN, k=16)                 22 datasets 1.239x (failed 0/119) | 81 datasets 1.255x (failed 1/119)
+   ISAC (k-means clusters)            22 datasets 1.315x (failed 1/119) | 81 datasets 1.252x (failed 0/119)
+   survival (expected_par10)          22 datasets 1.317x (failed 1/119) | 81 datasets 1.525x (failed 0/119)
+   recommender, no probe              22 datasets 1.220x (failed 1/119) | 81 datasets 1.370x (failed 1/119)
