@@ -128,7 +128,7 @@ def ranks():
     order = res[True][0].sort_values().index[::-1]
     fig, ax = plt.subplots(figsize=(3.4, 2.6))
     y = np.arange(len(order))
-    for prim, c, mk, lab, dy in ((True, BLUE, "o", "PRIMARY (32 datasets)", 0.12),
+    for prim, c, mk, lab, dy in ((True, BLUE, "o", "held-out (32 datasets)", 0.12),
                                  (False, GREY, "s", "all test sets (90)", -0.12)):
         r, cd = res[prim]
         ax.scatter(r[order].values, y + dy, color=c, marker=mk, s=14, label=lab, zorder=3)
@@ -150,7 +150,7 @@ def paired():
         x, y = np.exp(g[m]), np.exp(g["recommender + probe"])
         isp = np.array([ds in prim for ds in g.index])
         ax.scatter(x[~isp], y[~isp], s=9, alpha=0.6, color=GREY, linewidths=0, label="earlier test sets")
-        ax.scatter(x[isp], y[isp], s=11, alpha=0.8, color=BLUE, linewidths=0, label="PRIMARY")
+        ax.scatter(x[isp], y[isp], s=11, alpha=0.8, color=BLUE, linewidths=0, label="held-out")
         hi = max(x.max(), y.max()) * 1.1
         ax.plot([1, hi], [1, hi], color="0.3", lw=0.8, ls="--")
         ax.set_xscale("log")
@@ -173,7 +173,7 @@ def paired():
 def probe_time():
     b = pd.read_csv(RES / "baseline2_rows.csv")
     fig, ax = plt.subplots(figsize=(3.4, 2.2))
-    for sub, lab, c in ((b, "all test sets (335)", GREY), (b[b.primary], "PRIMARY (119)", BLUE)):
+    for sub, lab, c in ((b, "all test sets (335)", GREY), (b[b.primary], "held-out (119)", BLUE)):
         v = np.sort(sub["probe wall s"].values)
         ax.step(v, np.arange(1, len(v) + 1) / len(v), where="post", color=c, label=lab)
         print(lab, "median %.2f p90 %.2f max %.1f" % (np.median(v), np.quantile(v, .9), v.max()))
