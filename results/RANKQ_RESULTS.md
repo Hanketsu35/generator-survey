@@ -41,3 +41,9 @@ The new quantiles are adopted (`python -m recommender.intervals
 --ranking-exact`): they are no worse and add no failed pick. No PRIMARY
 pick changed, so the confirmed results (baseline comparison, FRESH7, FRESH8)
 stand for the adopted ranking, and no fresh confirmation is needed.
+
+Note (2026-11-11): "trained on 81" above is wrong for the cost models. The
+deployed engine's cost models are fitted on the 22 datasets of
+`results/exact/training_runs.csv` (17 of them with transactional runs); the
+81 benchmarked datasets supply only the interval residuals. See
+`TRAINING_SET_NOTE.md`. The comparison and its outcome are unchanged.

@@ -217,3 +217,8 @@ repository keeps, for every work, its record identifier, title, venue, DOI,
 the sources that returned it and its screening code (`merged*.csv`,
 `screening*.csv`, `scholar_screening.csv`), so each decision can be checked
 and each query rerun.
+
+Note (2026-11-11): `screening.csv` codes R0310 (Kryszkiewicz, SAC 2004) as K
+because it had been decided before this search (VERIFIED.md, excluded); the
+tables above count it under FT. Both describe the same exclusion, which is
+why screening.csv gives K 113 / FT 30 and this file 112 / 31.

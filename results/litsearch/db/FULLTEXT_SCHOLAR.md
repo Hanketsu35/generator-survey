@@ -33,3 +33,28 @@ account); Vo & Nguyen 2017 chapter (no source located); Le 2007, minimal
 infrequent itemsets on a cluster (no source located). Soulet & Rioult 2016
 (extended DefMe; Springer abstract read, no subscription) stays among the
 earlier unreachable candidates.
+
+## Review check of 2026-11-11 (after the Deep Review of the manuscript)
+
+**Re-check of the title rule.** All 589 Scholar works coded X2 by the title
+rule of `tools/scholar_screen.py` were re-read by title one by one (the 354
+X1 titles name no mining task). Five needed a closer look:
+
+| Work | Decision | Basis |
+|---|---|---|
+| Szathmary et al., "Efficient vertical mining of frequent closed itemsets and generators" | already counted (Touch, Talky-G) | the ligature "ﬀ" had defeated the rule's prefix match |
+| Liu, Li & Wong, SDM 2006, "Positive borders or negative borders" | already counted (Gr-growth) | the abstract names GrGrowth as its algorithm |
+| Valtchev et al., JETAI 2002, "Generating frequent itemsets incrementally" | EXCLUDE, IC2 | abstract: incremental mining of frequent closed itemsets only |
+| Calders & Goethals, PKDD 2002, "Mining all non-derivable frequent itemsets" (NDI) | EXCLUDE, IC2 | full text (arXiv cs/0206004), §5: the NDIs are a subset of ConFreqDFree, the frequent disjunction-free sets *with part of their border*; an NDI need not be free (a singleton contained in every transaction has bounds [0, |D|] and is non-derivable but not free), and the generators among the NDIs are not identified. Another condensed representation |
+| Calders & Goethals, DMKD 2007, "Non-derivable itemset mining" (NDI, journal version; also dfNDI, SDM 2005) | EXCLUDE, IC2 | full text (Springer, institutional access): same output family; dfNDI mines the same NDI collection depth-first |
+
+**Candidates from the references of MINIT and Kyiv.**
+
+| Work | Decision | Basis |
+|---|---|---|
+| Manning & Haglin, ICDM 2005; Manning, Haglin & Keane, DMKD 16:165–196 (2008), SUDA2 | **COUNT** (rare, first published 2005). **Executable**: C++ in the R package sdcMicro (`suda2`) | full text (Springer, institutional access), §2: "an MSU is a unique itemset with no unique proper subsets … find all k-MSUs, 1 ≤ k ≤ maxk, where maxk ≤ C". With maxk = C this is the complete set of minimal rare itemsets of support 1 at minimum support 2 (IC2 for one parameter setting); exact recursive search; refereed |
+| Elliot, Manning & Ford, IJUFKS 10(5):493–509 (2002), SUDA | not reachable | World Scientific page refused the full text; SUDA2's paper says SUDA "always conducts an exhaustive search for MSUs", which suggests COUNT, but the rule needs the paper |
+
+Counts after this check: 127 candidates; 48 counted, 14 executable
+(rare 9, 2 executable); not counted 79 (excluded 45, families of fewer than
+five 5, not refereed 2, no full text 27).

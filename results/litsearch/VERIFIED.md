@@ -14,7 +14,7 @@ of 2026-11-09 in `db/FULLTEXT_DB.md`; both are merged into the counts below.
 Amendment 1 is "an identified part of the output"; amendment 2 is "our
 oracle audit counts as evidence"; amendment 3 is peer review.
 
-## Counted (verified): 50
+## Counted (verified): 48 (see the final counts below)
 
 | family | algorithm | evidence | executable |
 |---|---|---|---|
@@ -134,9 +134,9 @@ survey.
 |---|---|---|
 | transactional | 25 | 8 (Pascal, Gr-growth, GC-growth, Zart, DPMiner (subfamily), Talky-G, DefMe, CDP+I) |
 | sequential | 8 | 3 (FEAT, FSGP, VGEN) |
-| rare | 8 | 1 (AprioriRare) |
+| rare | 9 | 2 (AprioriRare, SUDA2) |
 | stream | 6 | 1 (FGC-Stream) |
-| **total** | **47** | **13 (27.7%)** |
+| **total** | **48** | **14 (29.2%)** |
 
 High-utility (3 counted before, 2 executable: HUG-Miner, GHUI-Miner) is
 recorded, not counted, since 2026-11-11 (`RULE.md` am. 8).
@@ -145,7 +145,7 @@ By era (first publication):
 
 | era | counted | executable |
 |---|---|---|
-| up to 2015 | 34 | 11 (32.4%) |
+| up to 2015 | 35 | 12 (34.3%) |
 | since 2016 | 13 | 2 (15.4%) |
 
 ## What changed against the original survey's 25
@@ -161,3 +161,5 @@ By era (first publication):
   DefMe, FEAT, FSGP, VGEN, HUG-Miner, GHUI-Miner, MINIT and
   FGC-Stream.
 - **Out of scope since 2026-11-09:** Fogger (graph), `RULE.md` am. 4.
+
+SUDA2 counted and the NDI miners excluded on 2026-11-11 (`db/FULLTEXT_SCHOLAR.md`, review check).

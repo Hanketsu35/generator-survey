@@ -48,3 +48,12 @@ threshold sides), 48 instances on 24 datasets:
 The progress rule is reported as confirmed where it acts. The current
 system, with the ranking quantiles rebuilt after FRESH8, is confirmed on new
 data.
+
+## Sizes on the selected instances (added 2026-11-11, from `fresh9_summary.csv`)
+
+On the seven scorable progress-rule instances the recommender's pick ran
+18 s in the median (161 s at most), with peaks up to 6.7 GB; it was the best
+on five and within 9% (1.006×, 1.084×) on the other two. The heaviest
+completed alternative needed 1.9 GB in the median against 0.48 GB for the
+best, and 44 of the 90 runs on the nine selected instances hit the 600 s
+cutoff.
