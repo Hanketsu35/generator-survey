@@ -8,9 +8,9 @@ reproduce it.
 
 - **Survey.** A systematic search of five databases (Web of Science,
   Scopus, IEEE Xplore, ACM, OpenAlex) and Google Scholar, decided on full
-  texts, counts 47 minimal-generator algorithms over transaction and
+  texts, counts 48 minimal-generator algorithms over transaction and
   sequence databases (families of fewer than five algorithms, such as
-  high-utility generators, are recorded but not counted). 13 have an executable implementation (`results/litsearch/VERIFIED.md`; screening
+  high-utility generators, are recorded but not counted). 14 have an executable implementation (`results/litsearch/VERIFIED.md`; screening
   records in `results/litsearch/db/`).
 - **Benchmark.** 17 implementations: those of 10 of the 13 executable algorithms
   (Talky-G in two variants), the high-utility miners HUG-Miner and GHUI-Miner, HUCI-Miner-Generators (it claims generators but
@@ -287,10 +287,10 @@ abort again at 11.1–11.8 GB.
 | GC-growth | Transactional | C++ source (NUS), fetched by `tools/fetch_native.sh`; audited and benchmarked separately |
 | DPMiner (DPM-delta; only the delta-discriminative classes) | Transactional | C++ source (NUS), fetched by `tools/fetch_native.sh`; audited only |
 
-Of the 47 algorithms counted after full-text verification
+Of the 48 algorithms counted after full-text verification
 (`results/litsearch/RULE.md`, `VERIFIED.md`, `ADDENDUM.md`,
-`db/FULLTEXT_DB.md`, `db/FULLTEXT_SCHOLAR.md`), 13 have an executable
-implementation. Availability depends on age: 11 of the 34 published up to
+`db/FULLTEXT_DB.md`, `db/FULLTEXT_SCHOLAR.md`), 14 have an executable
+implementation (SUDA2 through the R package sdcMicro). Availability depends on age: 12 of the 35 published up to
 2015 are executable, and 2 of the 13 published from 2016 onwards
 (FGC-Stream, and CDP+I, released as constraint models). GC-growth and DPMiner were found after the benchmark: they are
 audited (`tools/validate_nus.py`), GC-growth is benchmarked on its own
