@@ -1,0 +1,4 @@
+SEQ1: 16 instances, 3 datasets
+S1 runtime: recommender 2.102x vs single best 2.102x (recommender <= SBS): PASS | failed 3 vs 3
+S2 memory: recommender 2.012x vs single best 2.278x (recommender <= SBS): PASS | failed 3 vs 4
+S3 (reported) cheapest pick violating a floor/ceiling request: 32 of 64 (50.0%)
