@@ -1,0 +1,211 @@
+algorithm,category,dataset,param_name,param_value,runtime_s,peak_memory_mb,generator_count,timed_out,error,timestamp,n_tx,n_items,target_pairs,role,machine
+Apriori_Gen_Borgelt,1,oml_30mlday,minsup,0.07234916666666667,3.6962,83.29,16245,False,,20261111_032445,300000,136,1000,extension,Linux x86_64
+DefMe,1,oml_30mlday,minsup,0.07234916666666667,1.1954,1017.63,16246,False,,20261111_032447,300000,136,1000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_30mlday,minsup,0.07234916666666667,1.3879,152.25,16245,False,,20261111_032448,300000,136,1000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_30mlday,minsup,0.07234916666666667,1.5342,215.3,16245,False,,20261111_032450,300000,136,1000,extension,Linux x86_64
+Gr_growth,1,oml_30mlday,minsup,0.07234916666666667,2.3002,172.33,16246,False,,20261111_032453,300000,136,1000,extension,Linux x86_64
+Pascal,1,oml_30mlday,minsup,0.07234916666666667,171.3952,405.6,16245,False,,20261111_032744,300000,136,1000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_30mlday,minsup,0.07234916666666667,1.1262,745.99,16246,False,,20261111_032746,300000,136,1000,extension,Linux x86_64
+Talky_G,1,oml_30mlday,minsup,0.07234916666666667,1.0669,771.68,16246,False,,20261111_032747,300000,136,1000,extension,Linux x86_64
+Zart,1,oml_30mlday,minsup,0.07234916666666667,314.1971,874.18,16246,False,,20261111_033301,300000,136,1000,extension,Linux x86_64
+FGC_Stream,1,oml_30mlday,minsup,0.07234916666666667,600.0277,146.98,0,True,,20261111_034302,300000,136,1000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_acspubliccoverage,minsup,0.02818418696833581,21.6443,148.46,261082,False,,20261111_034324,1138289,83,1000,extension,Linux x86_64
+DefMe,1,oml_acspubliccoverage,minsup,0.02818418696833581,48.9152,1718.67,261083,False,,20261111_034413,1138289,83,1000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_acspubliccoverage,minsup,0.02818418696833581,2.5392,241.59,261082,False,,20261111_034416,1138289,83,1000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_acspubliccoverage,minsup,0.02818418696833581,1.4641,249.3,261082,False,,20261111_034417,1138289,83,1000,extension,Linux x86_64
+Gr_growth,1,oml_acspubliccoverage,minsup,0.02818418696833581,1.3534,74.05,261083,False,,20261111_034419,1138289,83,1000,extension,Linux x86_64
+Pascal,1,oml_acspubliccoverage,minsup,0.02818418696833581,600.1494,662.03,7783,True,,20261111_035419,1138289,83,1000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_acspubliccoverage,minsup,0.02818418696833581,13.8476,1549.63,261083,False,,20261111_035433,1138289,83,1000,extension,Linux x86_64
+Talky_G,1,oml_acspubliccoverage,minsup,0.02818418696833581,7.9934,1406.77,261083,False,,20261111_035442,1138289,83,1000,extension,Linux x86_64
+Zart,1,oml_acspubliccoverage,minsup,0.02818418696833581,600.1788,1450.85,0,True,,20261111_040442,1138289,83,1000,extension,Linux x86_64
+FGC_Stream,1,oml_acspubliccoverage,minsup,0.02818418696833581,600.0374,159.5,0,True,,20261111_041442,1138289,83,1000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_beijing_multi_site_air_quality,minsup,0.041972654764620886,1.6068,91.45,1755,False,,20261111_041444,420768,111,1000,extension,Linux x86_64
+DefMe,1,oml_beijing_multi_site_air_quality,minsup,0.041972654764620886,0.9055,798.66,1756,False,,20261111_041445,420768,111,1000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_beijing_multi_site_air_quality,minsup,0.041972654764620886,1.053,151.76,1755,False,,20261111_041447,420768,111,1000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_beijing_multi_site_air_quality,minsup,0.041972654764620886,0.9797,171.32,1755,False,,20261111_041448,420768,111,1000,extension,Linux x86_64
+Gr_growth,1,oml_beijing_multi_site_air_quality,minsup,0.041972654764620886,1.013,120.79,1756,False,,20261111_041449,420768,111,1000,extension,Linux x86_64
+Pascal,1,oml_beijing_multi_site_air_quality,minsup,0.041972654764620886,79.1818,392.98,1755,False,,20261111_041608,420768,111,1000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_beijing_multi_site_air_quality,minsup,0.041972654764620886,0.9,754.04,1756,False,,20261111_041610,420768,111,1000,extension,Linux x86_64
+Talky_G,1,oml_beijing_multi_site_air_quality,minsup,0.041972654764620886,0.9228,740.27,1756,False,,20261111_041611,420768,111,1000,extension,Linux x86_64
+Zart,1,oml_beijing_multi_site_air_quality,minsup,0.041972654764620886,112.0222,771.2,1756,False,,20261111_041803,420768,111,1000,extension,Linux x86_64
+FGC_Stream,1,oml_beijing_multi_site_air_quality,minsup,0.041972654764620886,600.0279,188.56,0,True,,20261111_042803,420768,111,1000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_bmc_trainingdata,minsup,0.19654216392704346,600.1283,169.33,0,True,,20261111_043804,177640,137,1000,extension,Linux x86_64
+DefMe,1,oml_bmc_trainingdata,minsup,0.19654216392704346,600.1696,1167.2,17986828,True,,20261111_044805,177640,137,1000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_bmc_trainingdata,minsup,0.19654216392704346,207.5033,7820.74,76237080,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/eclat: not enough memory,20261111_045138,177640,137,1000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_bmc_trainingdata,minsup,0.19654216392704346,202.7175,7832.24,76815915,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/fpgrowth: not enough memory,20261111_045507,177640,137,1000,extension,Linux x86_64
+Gr_growth,1,oml_bmc_trainingdata,minsup,0.19654216392704346,349.4126,7832.38,152902472,False,killed by signal 6: what():  std::bad_alloc,20261111_050107,177640,137,1000,extension,Linux x86_64
+Pascal,1,oml_bmc_trainingdata,minsup,0.19654216392704346,600.0539,389.02,74516,True,,20261111_051108,177640,137,1000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_bmc_trainingdata,minsup,0.19654216392704346,600.1734,1351.46,6261341,True,,20261111_052108,177640,137,1000,extension,Linux x86_64
+Talky_G,1,oml_bmc_trainingdata,minsup,0.19654216392704346,600.1623,1205.4,6338581,True,,20261111_053109,177640,137,1000,extension,Linux x86_64
+Zart,1,oml_bmc_trainingdata,minsup,0.19654216392704346,600.1552,839.66,0,True,,20261111_054110,177640,137,1000,extension,Linux x86_64
+FGC_Stream,1,oml_bmc_trainingdata,minsup,0.19654216392704346,600.0719,162.24,0,True,,20261111_055110,177640,137,1000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_completecryptocurrencymarkethistory,minsup,0.0013804573738805286,0.2389,50.94,10741,False,,20261111_055110,632218,2901,1000,extension,Linux x86_64
+DefMe,1,oml_completecryptocurrencymarkethistory,minsup,0.0013804573738805286,2.5958,1935.48,10742,False,,20261111_055113,632218,2901,1000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_completecryptocurrencymarkethistory,minsup,0.0013804573738805286,0.2247,59.27,10741,False,,20261111_055114,632218,2901,1000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_completecryptocurrencymarkethistory,minsup,0.0013804573738805286,0.1973,57.36,10741,False,,20261111_055114,632218,2901,1000,extension,Linux x86_64
+Gr_growth,1,oml_completecryptocurrencymarkethistory,minsup,0.0013804573738805286,0.247,15.63,10742,False,,20261111_055115,632218,2901,1000,extension,Linux x86_64
+Pascal,1,oml_completecryptocurrencymarkethistory,minsup,0.0013804573738805286,225.3786,368.66,10741,False,,20261111_055500,632218,2901,1000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_completecryptocurrencymarkethistory,minsup,0.0013804573738805286,1.4536,1887.8,10760,False,,20261111_055502,632218,2901,1000,extension,Linux x86_64
+Talky_G,1,oml_completecryptocurrencymarkethistory,minsup,0.0013804573738805286,1.3589,1994.66,10760,False,,20261111_055503,632218,2901,1000,extension,Linux x86_64
+Zart,1,oml_completecryptocurrencymarkethistory,minsup,0.0013804573738805286,600.1936,1979.73,0,True,,20261111_060504,632218,2901,1000,extension,Linux x86_64
+FGC_Stream,1,oml_completecryptocurrencymarkethistory,minsup,0.0013804573738805286,600.0192,95.01,0,True,,20261111_061504,632218,2901,1000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_drug_directory,minsup,0.00841617102691012,0.2578,50.11,7575,False,,20261111_061505,120215,356199,1000,extension,Linux x86_64
+DefMe,1,oml_drug_directory,minsup,0.00841617102691012,1.6206,4935.15,7576,False,,20261111_061506,120215,356199,1000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_drug_directory,minsup,0.00841617102691012,0.2114,62.25,7575,False,,20261111_061507,120215,356199,1000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_drug_directory,minsup,0.00841617102691012,0.1958,59.57,7575,False,,20261111_061507,120215,356199,1000,extension,Linux x86_64
+Gr_growth,1,oml_drug_directory,minsup,0.00841617102691012,0.1126,18.2,7576,False,,20261111_061508,120215,356199,1000,extension,Linux x86_64
+Pascal,1,oml_drug_directory,minsup,0.00841617102691012,35.2973,213.77,7575,False,,20261111_061543,120215,356199,1000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_drug_directory,minsup,0.00841617102691012,2.8442,7635.18,,False,java.lang.OutOfMemoryError: Java heap space,20261111_061546,120215,356199,1000,extension,Linux x86_64
+Talky_G,1,oml_drug_directory,minsup,0.00841617102691012,2.8453,6968.88,,False,java.lang.OutOfMemoryError: Java heap space,20261111_061549,120215,356199,1000,extension,Linux x86_64
+Zart,1,oml_drug_directory,minsup,0.00841617102691012,176.6172,792.34,7576,False,,20261111_061846,120215,356199,1000,extension,Linux x86_64
+FGC_Stream,1,oml_drug_directory,minsup,0.00841617102691012,600.025,104.75,0,True,,20261111_062846,120215,356199,1000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_edmunds_car_review,minsup,0.0012230600745707168,0.3981,95.98,1361,False,,20261111_062847,299045,739585,1000,extension,Linux x86_64
+DefMe,1,oml_edmunds_car_review,minsup,0.0012230600745707168,3.712,8057.41,,False,java.lang.OutOfMemoryError: Java heap space,20261111_062851,299045,739585,1000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_edmunds_car_review,minsup,0.0012230600745707168,0.4095,98.15,1361,False,,20261111_062852,299045,739585,1000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_edmunds_car_review,minsup,0.0012230600745707168,0.3978,97.45,1361,False,,20261111_062852,299045,739585,1000,extension,Linux x86_64
+Gr_growth,1,oml_edmunds_car_review,minsup,0.0012230600745707168,0.1198,17.91,1362,False,,20261111_062853,299045,739585,1000,extension,Linux x86_64
+Pascal,1,oml_edmunds_car_review,minsup,0.0012230600745707168,82.3551,231.0,1361,False,,20261111_063015,299045,739585,1000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_edmunds_car_review,minsup,0.0012230600745707168,2.7692,8027.17,,False,java.lang.OutOfMemoryError: Java heap space,20261111_063018,299045,739585,1000,extension,Linux x86_64
+Talky_G,1,oml_edmunds_car_review,minsup,0.0012230600745707168,3.6307,8056.14,,False,java.lang.OutOfMemoryError: Java heap space,20261111_063022,299045,739585,1000,extension,Linux x86_64
+Zart,1,oml_edmunds_car_review,minsup,0.0012230600745707168,204.6759,1497.41,1362,False,,20261111_063347,299045,739585,1000,extension,Linux x86_64
+FGC_Stream,1,oml_edmunds_car_review,minsup,0.0012230600745707168,600.0283,242.28,0,True,,20261111_064347,299045,739585,1000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_gender_by_name,minsup,0.07276310696752201,0.0674,25.06,26,False,,20261111_064348,147269,133920,1000,extension,Linux x86_64
+DefMe,1,oml_gender_by_name,minsup,0.07276310696752201,0.6149,1586.58,27,False,,20261111_064349,147269,133920,1000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_gender_by_name,minsup,0.07276310696752201,0.0692,25.23,26,False,,20261111_064349,147269,133920,1000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_gender_by_name,minsup,0.07276310696752201,0.0679,25.43,26,False,,20261111_064349,147269,133920,1000,extension,Linux x86_64
+Gr_growth,1,oml_gender_by_name,minsup,0.07276310696752201,0.0337,14.31,27,False,,20261111_064349,147269,133920,1000,extension,Linux x86_64
+Pascal,1,oml_gender_by_name,minsup,0.07276310696752201,0.3778,113.62,26,False,,20261111_064350,147269,133920,1000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_gender_by_name,minsup,0.07276310696752201,2.5012,7885.72,,False,java.lang.OutOfMemoryError: Java heap space,20261111_064353,147269,133920,1000,extension,Linux x86_64
+Talky_G,1,oml_gender_by_name,minsup,0.07276310696752201,2.8559,7813.52,,False,java.lang.OutOfMemoryError: Java heap space,20261111_064356,147269,133920,1000,extension,Linux x86_64
+Zart,1,oml_gender_by_name,minsup,0.07276310696752201,0.4437,223.72,27,False,,20261111_064357,147269,133920,1000,extension,Linux x86_64
+FGC_Stream,1,oml_gender_by_name,minsup,0.07276310696752201,600.0229,76.85,0,True,,20261111_065357,147269,133920,1000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_quality_prediction_in_a_mining_process,minsup,0.0010275231099473457,3.5077,491.17,1835,False,,20261111_065401,737453,4113195,1000,extension,Linux x86_64
+DefMe,1,oml_quality_prediction_in_a_mining_process,minsup,0.0010275231099473457,8.6564,8065.23,,False,java.lang.OutOfMemoryError: Java heap space,20261111_065409,737453,4113195,1000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_quality_prediction_in_a_mining_process,minsup,0.0010275231099473457,4.2951,498.02,1835,False,,20261111_065414,737453,4113195,1000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_quality_prediction_in_a_mining_process,minsup,0.0010275231099473457,4.0776,498.09,1835,False,,20261111_065418,737453,4113195,1000,extension,Linux x86_64
+Gr_growth,1,oml_quality_prediction_in_a_mining_process,minsup,0.0010275231099473457,1.1749,47.8,1836,False,,20261111_065420,737453,4113195,1000,extension,Linux x86_64
+Pascal,1,oml_quality_prediction_in_a_mining_process,minsup,0.0010275231099473457,600.1737,1284.62,1068,True,,20261111_070420,737453,4113195,1000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_quality_prediction_in_a_mining_process,minsup,0.0010275231099473457,5.1248,8012.13,,False,java.lang.OutOfMemoryError: Java heap space,20261111_070426,737453,4113195,1000,extension,Linux x86_64
+Talky_G,1,oml_quality_prediction_in_a_mining_process,minsup,0.0010275231099473457,9.1769,8068.41,,False,java.lang.OutOfMemoryError: Java heap space,20261111_070435,737453,4113195,1000,extension,Linux x86_64
+Zart,1,oml_quality_prediction_in_a_mining_process,minsup,0.0010275231099473457,600.2277,2810.02,0,True,,20261111_071435,737453,4113195,1000,extension,Linux x86_64
+FGC_Stream,1,oml_quality_prediction_in_a_mining_process,minsup,0.0010275231099473457,600.0678,996.86,0,True,,20261111_072436,737453,4113195,1000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_sgemm_gpu_kernel,minsup,0.06575641556291391,1.2166,50.91,5639,False,,20261111_072437,241600,60,1000,extension,Linux x86_64
+DefMe,1,oml_sgemm_gpu_kernel,minsup,0.06575641556291391,0.8012,679.15,5640,False,,20261111_072438,241600,60,1000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_sgemm_gpu_kernel,minsup,0.06575641556291391,0.8732,94.51,5639,False,,20261111_072439,241600,60,1000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_sgemm_gpu_kernel,minsup,0.06575641556291391,0.5433,140.3,5639,False,,20261111_072440,241600,60,1000,extension,Linux x86_64
+Gr_growth,1,oml_sgemm_gpu_kernel,minsup,0.06575641556291391,0.4716,73.26,5640,False,,20261111_072441,241600,60,1000,extension,Linux x86_64
+Pascal,1,oml_sgemm_gpu_kernel,minsup,0.06575641556291391,76.0435,343.48,5639,False,,20261111_072557,241600,60,1000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_sgemm_gpu_kernel,minsup,0.06575641556291391,0.7944,596.13,5669,False,,20261111_072558,241600,60,1000,extension,Linux x86_64
+Talky_G,1,oml_sgemm_gpu_kernel,minsup,0.06575641556291391,0.7715,622.16,5669,False,,20261111_072559,241600,60,1000,extension,Linux x86_64
+Zart,1,oml_sgemm_gpu_kernel,minsup,0.06575641556291391,158.9834,431.75,5640,False,,20261111_072838,241600,60,1000,extension,Linux x86_64
+FGC_Stream,1,oml_sgemm_gpu_kernel,minsup,0.06575641556291391,600.0314,88.79,0,True,,20261111_073839,241600,60,1000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_used_cars_dataset,minsup,0.030485733695652172,1.9173,207.04,4820,False,,20261111_073841,426880,1560157,1000,extension,Linux x86_64
+DefMe,1,oml_used_cars_dataset,minsup,0.030485733695652172,4.5446,8055.74,,False,java.lang.OutOfMemoryError: Java heap space,20261111_073845,426880,1560157,1000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_used_cars_dataset,minsup,0.030485733695652172,1.5422,272.86,4820,False,,20261111_073847,426880,1560157,1000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_used_cars_dataset,minsup,0.030485733695652172,1.3634,303.35,4820,False,,20261111_073849,426880,1560157,1000,extension,Linux x86_64
+Gr_growth,1,oml_used_cars_dataset,minsup,0.030485733695652172,1.0322,75.18,4821,False,,20261111_073850,426880,1560157,1000,extension,Linux x86_64
+Pascal,1,oml_used_cars_dataset,minsup,0.030485733695652172,160.0758,709.05,4820,False,,20261111_074130,426880,1560157,1000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_used_cars_dataset,minsup,0.030485733695652172,3.3156,8043.67,,False,java.lang.OutOfMemoryError: Java heap space,20261111_074134,426880,1560157,1000,extension,Linux x86_64
+Talky_G,1,oml_used_cars_dataset,minsup,0.030485733695652172,4.4907,8054.08,,False,java.lang.OutOfMemoryError: Java heap space,20261111_074139,426880,1560157,1000,extension,Linux x86_64
+Zart,1,oml_used_cars_dataset,minsup,0.030485733695652172,167.4125,1840.04,4821,False,,20261111_074426,426880,1560157,1000,extension,Linux x86_64
+FGC_Stream,1,oml_used_cars_dataset,minsup,0.030485733695652172,600.0256,153.48,0,True,,20261111_075427,426880,1560157,1000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_30mlday,minsup,0.013595833333333333,72.0359,120.09,1018427,False,,20261111_075539,300000,136,5000,extension,Linux x86_64
+DefMe,1,oml_30mlday,minsup,0.013595833333333333,32.7717,1184.57,1018428,False,,20261111_075612,300000,136,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_30mlday,minsup,0.013595833333333333,7.7314,233.44,1018427,False,,20261111_075620,300000,136,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_30mlday,minsup,0.013595833333333333,6.7592,1418.16,1018427,False,,20261111_075627,300000,136,5000,extension,Linux x86_64
+Gr_growth,1,oml_30mlday,minsup,0.013595833333333333,10.8895,246.0,1018428,False,,20261111_075638,300000,136,5000,extension,Linux x86_64
+Pascal,1,oml_30mlday,minsup,0.013595833333333333,600.1373,392.75,4811,True,,20261111_080639,300000,136,5000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_30mlday,minsup,0.013595833333333333,25.5031,1308.12,1018428,False,,20261111_080704,300000,136,5000,extension,Linux x86_64
+Talky_G,1,oml_30mlday,minsup,0.013595833333333333,19.632,1240.97,1018428,False,,20261111_080724,300000,136,5000,extension,Linux x86_64
+Zart,1,oml_30mlday,minsup,0.013595833333333333,600.0779,805.04,0,True,,20261111_081725,300000,136,5000,extension,Linux x86_64
+FGC_Stream,1,oml_30mlday,minsup,0.013595833333333333,600.0261,78.98,0,True,,20261111_082725,300000,136,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_acspubliccoverage,minsup,0.00013682816929619807,355.5046,2905.55,83484997,False,,20261111_083326,1138289,83,5000,extension,Linux x86_64
+DefMe,1,oml_acspubliccoverage,minsup,0.00013682816929619807,600.1374,1890.17,2480027,True,,20261111_084326,1138289,83,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_acspubliccoverage,minsup,0.00013682816929619807,242.3461,7236.8,83484997,False,,20261111_084734,1138289,83,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_acspubliccoverage,minsup,0.00013682816929619807,225.9875,7330.72,83484997,False,,20261111_085126,1138289,83,5000,extension,Linux x86_64
+Gr_growth,1,oml_acspubliccoverage,minsup,0.00013682816929619807,84.3238,3825.13,83484998,False,,20261111_085255,1138289,83,5000,extension,Linux x86_64
+Pascal,1,oml_acspubliccoverage,minsup,0.00013682816929619807,600.1497,700.48,2309,True,,20261111_090256,1138289,83,5000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_acspubliccoverage,minsup,0.00013682816929619807,600.1899,1449.43,3295310,True,,20261111_091256,1138289,83,5000,extension,Linux x86_64
+Talky_G,1,oml_acspubliccoverage,minsup,0.00013682816929619807,600.1864,1431.35,3446756,True,,20261111_092257,1138289,83,5000,extension,Linux x86_64
+Zart,1,oml_acspubliccoverage,minsup,0.00013682816929619807,600.1815,1385.96,0,True,,20261111_093257,1138289,83,5000,extension,Linux x86_64
+FGC_Stream,1,oml_acspubliccoverage,minsup,0.00013682816929619807,600.0654,201.51,0,True,,20261111_094258,1138289,83,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_beijing_multi_site_air_quality,minsup,0.00684403281618374,7.9079,96.37,65436,False,,20261111_094306,420768,111,5000,extension,Linux x86_64
+DefMe,1,oml_beijing_multi_site_air_quality,minsup,0.00684403281618374,9.2067,1162.18,65437,False,,20261111_094315,420768,111,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_beijing_multi_site_air_quality,minsup,0.00684403281618374,3.3562,166.56,65436,False,,20261111_094319,420768,111,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_beijing_multi_site_air_quality,minsup,0.00684403281618374,2.8107,696.73,65436,False,,20261111_094322,420768,111,5000,extension,Linux x86_64
+Gr_growth,1,oml_beijing_multi_site_air_quality,minsup,0.00684403281618374,3.2161,136.38,65437,False,,20261111_094325,420768,111,5000,extension,Linux x86_64
+Pascal,1,oml_beijing_multi_site_air_quality,minsup,0.00684403281618374,600.1333,377.56,4888,True,,20261111_095326,420768,111,5000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_beijing_multi_site_air_quality,minsup,0.00684403281618374,4.5629,1235.6,65437,False,,20261111_095331,420768,111,5000,extension,Linux x86_64
+Talky_G,1,oml_beijing_multi_site_air_quality,minsup,0.00684403281618374,4.1424,1216.97,65437,False,,20261111_095335,420768,111,5000,extension,Linux x86_64
+Zart,1,oml_beijing_multi_site_air_quality,minsup,0.00684403281618374,600.1468,774.19,0,True,,20261111_100335,420768,111,5000,extension,Linux x86_64
+FGC_Stream,1,oml_beijing_multi_site_air_quality,minsup,0.00684403281618374,600.0198,84.6,0,True,,20261111_101336,420768,111,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_bmc_trainingdata,minsup,0.004372607520828642,600.1375,1080.72,0,True,,20261111_102336,177640,137,5000,extension,Linux x86_64
+DefMe,1,oml_bmc_trainingdata,minsup,0.004372607520828642,600.1689,1241.69,4113093,True,,20261111_103337,177640,137,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_bmc_trainingdata,minsup,0.004372607520828642,196.7747,7819.03,76038109,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/eclat: not enough memory,20261111_103659,177640,137,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_bmc_trainingdata,minsup,0.004372607520828642,191.3391,7834.17,76532185,False,non-zero exit code 1: /home/hanketsu/Desktop/Projects/CENG643/TermProject/external_algos/borgelt/fpgrowth: not enough memory,20261111_104016,177640,137,5000,extension,Linux x86_64
+Gr_growth,1,oml_bmc_trainingdata,minsup,0.004372607520828642,332.7557,7832.32,152374121,False,killed by signal 6: what():  std::bad_alloc,20261111_104559,177640,137,5000,extension,Linux x86_64
+Pascal,1,oml_bmc_trainingdata,minsup,0.004372607520828642,600.1427,414.07,111703,True,,20261111_105559,177640,137,5000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_bmc_trainingdata,minsup,0.004372607520828642,600.1344,1140.83,3911423,True,,20261111_110600,177640,137,5000,extension,Linux x86_64
+Talky_G,1,oml_bmc_trainingdata,minsup,0.004372607520828642,600.1736,1002.53,3874959,True,,20261111_111601,177640,137,5000,extension,Linux x86_64
+Zart,1,oml_bmc_trainingdata,minsup,0.004372607520828642,600.1586,804.5,0,True,,20261111_112601,177640,137,5000,extension,Linux x86_64
+FGC_Stream,1,oml_bmc_trainingdata,minsup,0.004372607520828642,600.1349,395.97,0,True,,20261111_113602,177640,137,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_completecryptocurrencymarkethistory,minsup,0.0005263216169106226,0.596,65.29,33707,False,,20261111_113602,632218,2901,5000,extension,Linux x86_64
+DefMe,1,oml_completecryptocurrencymarkethistory,minsup,0.0005263216169106226,15.0718,1991.72,33708,False,,20261111_113618,632218,2901,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_completecryptocurrencymarkethistory,minsup,0.0005263216169106226,0.3909,116.66,33707,False,,20261111_113618,632218,2901,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_completecryptocurrencymarkethistory,minsup,0.0005263216169106226,0.2487,76.63,33707,False,,20261111_113619,632218,2901,5000,extension,Linux x86_64
+Gr_growth,1,oml_completecryptocurrencymarkethistory,minsup,0.0005263216169106226,0.295,34.12,33708,False,,20261111_113619,632218,2901,5000,extension,Linux x86_64
+Pascal,1,oml_completecryptocurrencymarkethistory,minsup,0.0005263216169106226,600.0489,370.52,1133,True,,20261111_114620,632218,2901,5000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_completecryptocurrencymarkethistory,minsup,0.0005263216169106226,2.0943,1912.62,33996,False,,20261111_114622,632218,2901,5000,extension,Linux x86_64
+Talky_G,1,oml_completecryptocurrencymarkethistory,minsup,0.0005263216169106226,1.7948,2030.0,33996,False,,20261111_114624,632218,2901,5000,extension,Linux x86_64
+Zart,1,oml_completecryptocurrencymarkethistory,minsup,0.0005263216169106226,600.196,1832.54,0,True,,20261111_115625,632218,2901,5000,extension,Linux x86_64
+FGC_Stream,1,oml_completecryptocurrencymarkethistory,minsup,0.0005263216169106226,600.0199,99.22,0,True,,20261111_120625,632218,2901,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_drug_directory,minsup,0.0016532878592521731,0.4185,50.41,41866,False,,20261111_120625,120215,356199,5000,extension,Linux x86_64
+DefMe,1,oml_drug_directory,minsup,0.0016532878592521731,3.0226,5568.4,41867,False,,20261111_120629,120215,356199,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_drug_directory,minsup,0.0016532878592521731,0.2616,68.32,41866,False,,20261111_120629,120215,356199,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_drug_directory,minsup,0.0016532878592521731,0.2314,66.3,41866,False,,20261111_120630,120215,356199,5000,extension,Linux x86_64
+Gr_growth,1,oml_drug_directory,minsup,0.0016532878592521731,0.1683,22.48,41867,False,,20261111_120630,120215,356199,5000,extension,Linux x86_64
+Pascal,1,oml_drug_directory,minsup,0.0016532878592521731,296.695,284.64,41866,False,,20261111_121127,120215,356199,5000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_drug_directory,minsup,0.0016532878592521731,2.6547,7543.46,,False,java.lang.OutOfMemoryError: Java heap space,20261111_121130,120215,356199,5000,extension,Linux x86_64
+Talky_G,1,oml_drug_directory,minsup,0.0016532878592521731,2.9345,6975.92,,False,java.lang.OutOfMemoryError: Java heap space,20261111_121133,120215,356199,5000,extension,Linux x86_64
+Zart,1,oml_drug_directory,minsup,0.0016532878592521731,600.1557,843.8,0,True,,20261111_122133,120215,356199,5000,extension,Linux x86_64
+FGC_Stream,1,oml_drug_directory,minsup,0.0016532878592521731,600.0222,99.94,0,True,,20261111_123134,120215,356199,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_edmunds_car_review,minsup,0.00017305087863030648,0.4413,111.9,9871,False,,20261111_123134,299045,739585,5000,extension,Linux x86_64
+DefMe,1,oml_edmunds_car_review,minsup,0.00017305087863030648,3.567,8056.44,,False,java.lang.OutOfMemoryError: Java heap space,20261111_123138,299045,739585,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_edmunds_car_review,minsup,0.00017305087863030648,0.424,120.4,9871,False,,20261111_123139,299045,739585,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_edmunds_car_review,minsup,0.00017305087863030648,0.3986,109.7,9871,False,,20261111_123139,299045,739585,5000,extension,Linux x86_64
+Gr_growth,1,oml_edmunds_car_review,minsup,0.00017305087863030648,0.1453,25.84,9872,False,,20261111_123140,299045,739585,5000,extension,Linux x86_64
+Pascal,1,oml_edmunds_car_review,minsup,0.00017305087863030648,600.0953,639.57,2909,True,,20261111_124140,299045,739585,5000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_edmunds_car_review,minsup,0.00017305087863030648,2.6886,8029.83,,False,java.lang.OutOfMemoryError: Java heap space,20261111_124143,299045,739585,5000,extension,Linux x86_64
+Talky_G,1,oml_edmunds_car_review,minsup,0.00017305087863030648,3.5631,8056.79,,False,java.lang.OutOfMemoryError: Java heap space,20261111_124147,299045,739585,5000,extension,Linux x86_64
+Zart,1,oml_edmunds_car_review,minsup,0.00017305087863030648,600.2215,2590.61,0,True,,20261111_125147,299045,739585,5000,extension,Linux x86_64
+FGC_Stream,1,oml_edmunds_car_review,minsup,0.00017305087863030648,600.0285,253.61,0,True,,20261111_130148,299045,739585,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_quality_prediction_in_a_mining_process,minsup,0.00024374434709737434,3.7504,547.17,26494,False,,20261111_130151,737453,4113195,5000,extension,Linux x86_64
+DefMe,1,oml_quality_prediction_in_a_mining_process,minsup,0.00024374434709737434,7.9092,8064.38,,False,java.lang.OutOfMemoryError: Java heap space,20261111_130200,737453,4113195,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_quality_prediction_in_a_mining_process,minsup,0.00024374434709737434,3.5892,540.8,26494,False,,20261111_130203,737453,4113195,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_quality_prediction_in_a_mining_process,minsup,0.00024374434709737434,3.4526,533.32,26494,False,,20261111_130207,737453,4113195,5000,extension,Linux x86_64
+Gr_growth,1,oml_quality_prediction_in_a_mining_process,minsup,0.00024374434709737434,1.3923,81.88,26495,False,,20261111_130209,737453,4113195,5000,extension,Linux x86_64
+Pascal,1,oml_quality_prediction_in_a_mining_process,minsup,0.00024374434709737434,600.1916,2880.84,7503,True,,20261111_131209,737453,4113195,5000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_quality_prediction_in_a_mining_process,minsup,0.00024374434709737434,4.9707,8012.24,,False,java.lang.OutOfMemoryError: Java heap space,20261111_131214,737453,4113195,5000,extension,Linux x86_64
+Talky_G,1,oml_quality_prediction_in_a_mining_process,minsup,0.00024374434709737434,7.6789,8066.95,,False,java.lang.OutOfMemoryError: Java heap space,20261111_131222,737453,4113195,5000,extension,Linux x86_64
+Zart,1,oml_quality_prediction_in_a_mining_process,minsup,0.00024374434709737434,600.3917,7437.81,0,True,,20261111_132223,737453,4113195,5000,extension,Linux x86_64
+FGC_Stream,1,oml_quality_prediction_in_a_mining_process,minsup,0.00024374434709737434,600.0686,963.4,0,True,,20261111_133223,737453,4113195,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_sgemm_gpu_kernel,minsup,0.022705918874172185,6.1947,54.29,100055,False,,20261111_133230,241600,60,5000,extension,Linux x86_64
+DefMe,1,oml_sgemm_gpu_kernel,minsup,0.022705918874172185,3.9333,699.05,100056,False,,20261111_133234,241600,60,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_sgemm_gpu_kernel,minsup,0.022705918874172185,2.2681,108.2,100055,False,,20261111_133236,241600,60,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_sgemm_gpu_kernel,minsup,0.022705918874172185,1.0674,254.8,100055,False,,20261111_133238,241600,60,5000,extension,Linux x86_64
+Gr_growth,1,oml_sgemm_gpu_kernel,minsup,0.022705918874172185,1.0484,83.27,100056,False,,20261111_133239,241600,60,5000,extension,Linux x86_64
+Pascal,1,oml_sgemm_gpu_kernel,minsup,0.022705918874172185,600.111,334.6,53950,True,,20261111_134239,241600,60,5000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_sgemm_gpu_kernel,minsup,0.022705918874172185,2.7755,805.06,103746,False,,20261111_134242,241600,60,5000,extension,Linux x86_64
+Talky_G,1,oml_sgemm_gpu_kernel,minsup,0.022705918874172185,2.3189,788.3,103746,False,,20261111_134245,241600,60,5000,extension,Linux x86_64
+Zart,1,oml_sgemm_gpu_kernel,minsup,0.022705918874172185,600.0749,460.05,0,True,,20261111_135245,241600,60,5000,extension,Linux x86_64
+FGC_Stream,1,oml_sgemm_gpu_kernel,minsup,0.022705918874172185,600.0285,55.84,0,True,,20261111_140246,241600,60,5000,extension,Linux x86_64
+Apriori_Gen_Borgelt,1,oml_used_cars_dataset,minsup,0.003869354385307346,8.257,206.75,172108,False,,20261111_140254,426880,1560157,5000,extension,Linux x86_64
+DefMe,1,oml_used_cars_dataset,minsup,0.003869354385307346,4.6677,8055.72,,False,java.lang.OutOfMemoryError: Java heap space,20261111_140259,426880,1560157,5000,extension,Linux x86_64
+Eclat_Gen_Borgelt,1,oml_used_cars_dataset,minsup,0.003869354385307346,3.0486,304.49,172108,False,,20261111_140302,426880,1560157,5000,extension,Linux x86_64
+FPgrowth_Gen_Borgelt,1,oml_used_cars_dataset,minsup,0.003869354385307346,2.435,477.88,172108,False,,20261111_140305,426880,1560157,5000,extension,Linux x86_64
+Gr_growth,1,oml_used_cars_dataset,minsup,0.003869354385307346,2.5388,118.25,172109,False,,20261111_140308,426880,1560157,5000,extension,Linux x86_64
+Pascal,1,oml_used_cars_dataset,minsup,0.003869354385307346,600.1339,708.46,4879,True,,20261111_141308,426880,1560157,5000,extension,Linux x86_64
+TalkyG_Diffset,1,oml_used_cars_dataset,minsup,0.003869354385307346,3.2469,8044.1,,False,java.lang.OutOfMemoryError: Java heap space,20261111_141312,426880,1560157,5000,extension,Linux x86_64
+Talky_G,1,oml_used_cars_dataset,minsup,0.003869354385307346,4.709,8056.61,,False,java.lang.OutOfMemoryError: Java heap space,20261111_141317,426880,1560157,5000,extension,Linux x86_64
+Zart,1,oml_used_cars_dataset,minsup,0.003869354385307346,600.1871,1807.5,0,True,,20261111_142317,426880,1560157,5000,extension,Linux x86_64
+FGC_Stream,1,oml_used_cars_dataset,minsup,0.003869354385307346,600.0228,89.62,0,True,,20261111_143317,426880,1560157,5000,extension,Linux x86_64

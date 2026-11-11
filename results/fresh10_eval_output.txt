@@ -1,0 +1,9 @@
+FRESH10: 21 instances on 11 datasets
+H1 (primary) recommender with probe, memory: 1.000x (<= 1.10), failed 0 vs probe-argmin 0: PASS
+H2 cost models on 81 datasets, memory without probe: 81 1.396x vs 22 1.337x (81 < 22): FAIL
+H3 cost models on 81 datasets, runtime: 81 1.562x vs 22 1.281x (81 <= 1.05 x 22): FAIL
+Y1 probe memory, sampled    mean per-dataset coverage 0.938 (bar 0.90) -> PASS | min 0.75 | datasets 10
+Y2 model runtime            mean per-dataset coverage 0.989 (bar 0.95) -> PASS | min 0.89 | datasets 10
+Y3 model memory             mean per-dataset coverage 1.000 (bar 0.95) -> PASS | min 1.00 | datasets 10
+Y4 probe memory, measured   mean per-dataset coverage 1.000 (bar 0.95) -> PASS | min 1.00 | datasets 3
+sizes: best peak median 54 MB, max 2906 MB
