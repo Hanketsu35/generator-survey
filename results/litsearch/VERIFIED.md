@@ -134,17 +134,19 @@ survey.
 |---|---|---|
 | transactional | 25 | 8 (Pascal, Gr-growth, GC-growth, Zart, DPMiner (subfamily), Talky-G, DefMe, CDP+I) |
 | sequential | 8 | 3 (FEAT, FSGP, VGEN) |
-| high-utility | 3 | 2 (HUG-Miner, GHUI-Miner) |
 | rare | 8 | 1 (AprioriRare) |
 | stream | 6 | 1 (FGC-Stream) |
-| **total** | **50** | **15 (30.0%)** |
+| **total** | **47** | **13 (27.7%)** |
+
+High-utility (3 counted before, 2 executable: HUG-Miner, GHUI-Miner) is
+recorded, not counted, since 2026-11-11 (`RULE.md` am. 8).
 
 By era (first publication):
 
 | era | counted | executable |
 |---|---|---|
-| up to 2015 | 36 | 13 (36.1%) |
-| since 2016 | 14 | 2 (14.3%) |
+| up to 2015 | 34 | 11 (32.4%) |
+| since 2016 | 13 | 2 (15.4%) |
 
 ## What changed against the original survey's 25
 
