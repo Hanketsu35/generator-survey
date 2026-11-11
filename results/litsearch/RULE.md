@@ -103,9 +103,8 @@ each one.
 
 ## Amendment of 2026-11-11
 
-8. **Families of fewer than five algorithms are not counted (EC7).** On the
-   advisor's request the survey keeps the families that can be compared as
-   families. High-utility generators (HUG-Miner, GHUI-Miner, HUGN: three
+8. **Families of fewer than five algorithms are not counted (EC7).** The survey
+   keeps the families that can be compared as families. High-utility generators (HUG-Miner, GHUI-Miner, HUGN: three
    algorithms) join subgraph and subtree generators (one each, am. 4) as
    recorded, not counted. IC1 no longer names utilities. The counts become
    47 counted and 13 executable (34 up to 2015, 11 executable; 13 since
